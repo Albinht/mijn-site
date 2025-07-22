@@ -1,16 +1,16 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import graphImage from '../assets/graph.png' // voeg hier je eigen afbeelding toe
-import avatarImage from '../assets/avatar.png' // profielfoto in overlay
-import masterSeoImage from '../assets/Master_seo fundamentals.png'
-import keywordResearchImage from '../assets/Keyword_research.png'
-import contentRanksImage from '../assets/content that ranks.png'
-import Button from '../components/Button'
-import ReviewSlider from '../components/ReviewSlider'
-import FeatureSection from '../components/FeatureSection'
-import CurriculumSection from '../components/CurriculumSection' // added import statement
+import graphImage from '../../../assets/graph.png' // voeg hier je eigen afbeelding toe
+import avatarImage from '../../../assets/avatar.png' // profielfoto in overlay
+import masterSeoImage from '../../../assets/Master_seo fundamentals.png'
+import keywordResearchImage from '../../../assets/Keyword_research.png'
+import contentRanksImage from '../../../assets/content that ranks.png'
+import Button from '../../../components/Button'
+import ReviewSlider from '../../../components/ReviewSlider'
+import FeatureSection from '../../../components/FeatureSection'
+import CurriculumSection from '../../../components/CurriculumSection' // added import statement
 
-export default function Home() {
+export default function SEOBlueprint() {
   return (
     <main className="min-h-screen bg-white text-gray-900 px-6 py-8 md:py-16">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
