@@ -34,9 +34,9 @@ export const metadata = {
   creator: 'Albin',
   publisher: 'Albin Marketing',
   icons: {
-    icon: '/avatar.png',
-    shortcut: '/avatar.png',
-    apple: '/avatar.png',
+    icon: '/icon.png',
+    shortcut: '/icon.png',
+    apple: '/icon.png',
   },
   openGraph: {
     title: 'Albin Marketing - Digital Marketing Expert',
