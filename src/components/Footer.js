@@ -37,12 +37,12 @@ const Footer = () => {
                 />
               </div>
               <div>
-                <h3 className="text-[32px] font-semibold leading-[130%]" style={{ color: 'rgb(140, 40, 145)' }}>
+                <h3 className="text-[32px] font-semibold leading-[130%]" style={{ color: 'rgb(0, 0, 0)' }}>
                   About Me
                 </h3>
               </div>
             </div>
-            <p className="text-[18px] leading-[140%] mb-6" style={{ color: 'rgb(140, 40, 145)' }}>
+            <p className="text-[18px] leading-[140%] mb-6" style={{ color: 'rgb(0, 0, 0)' }}>
               I am a 23 year old entrepreneur with multiple successful online ecommerce stores built through SEO. I am now helping others achieve the same success.
             </p>
             <Button as={Link} href="/work-with-me">
@@ -53,7 +53,7 @@ const Footer = () => {
           {/* Services */}
           <div>
             <div className="mb-4">
-              <p className="text-[22px] font-medium leading-[130%] capitalize" style={{ color: 'rgba(140, 40, 145, 0.4)' }}>
+              <p className="text-[22px] font-medium leading-[130%] capitalize" style={{ color: '#8c2891' }}>
                 Services
               </p>
             </div>
@@ -62,7 +62,7 @@ const Footer = () => {
                 <Link 
                   href="/services/seo" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
-                  style={{ color: 'rgb(140, 40, 145)' }}
+                  style={{ color: 'rgb(0, 0, 0)' }}
                 >
                   SEO
                 </Link>
@@ -71,7 +71,7 @@ const Footer = () => {
                 <Link 
                   href="/services/email-marketing" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
-                  style={{ color: 'rgb(140, 40, 145)' }}
+                  style={{ color: 'rgb(0, 0, 0)' }}
                 >
                   Email Marketing
                 </Link>
@@ -80,7 +80,7 @@ const Footer = () => {
                 <Link 
                   href="/services/paid-ads" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
-                  style={{ color: 'rgb(140, 40, 145)' }}
+                  style={{ color: 'rgb(0, 0, 0)' }}
                 >
                   Paid Ads
                 </Link>
@@ -89,7 +89,7 @@ const Footer = () => {
                 <Link 
                   href="/services/cro" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
-                  style={{ color: 'rgb(140, 40, 145)' }}
+                  style={{ color: 'rgb(0, 0, 0)' }}
                 >
                   CRO
                 </Link>
@@ -100,7 +100,7 @@ const Footer = () => {
           {/* Blueprints */}
           <div>
             <div className="mb-4">
-              <p className="text-[22px] font-medium leading-[130%] capitalize" style={{ color: 'rgba(140, 40, 145, 0.4)' }}>
+              <p className="text-[22px] font-medium leading-[130%] capitalize" style={{ color: '#8c2891' }}>
                 Blueprints
               </p>
             </div>
@@ -109,7 +109,7 @@ const Footer = () => {
                 <Link 
                   href="/blueprints/seo" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
-                  style={{ color: 'rgb(140, 40, 145)' }}
+                  style={{ color: 'rgb(0, 0, 0)' }}
                 >
                   SEO Blueprint
                 </Link>
@@ -118,7 +118,7 @@ const Footer = () => {
                 <Link 
                   href="/blueprints/google-ads" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
-                  style={{ color: 'rgb(140, 40, 145)' }}
+                  style={{ color: 'rgb(0, 0, 0)' }}
                 >
                   Google Ads Blueprint
                 </Link>
@@ -127,7 +127,7 @@ const Footer = () => {
                 <Link 
                   href="/blueprints/klaviyo" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
-                  style={{ color: 'rgb(140, 40, 145)' }}
+                  style={{ color: 'rgb(0, 0, 0)' }}
                 >
                   Klaviyo Blueprint
                 </Link>
@@ -136,7 +136,7 @@ const Footer = () => {
                 <Link 
                   href="/blueprints/meta" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
-                  style={{ color: 'rgb(140, 40, 145)' }}
+                  style={{ color: 'rgb(0, 0, 0)' }}
                 >
                   Meta Blueprint
                 </Link>
@@ -147,7 +147,7 @@ const Footer = () => {
           {/* Locations */}
           <div>
             <div className="mb-4">
-              <p className="text-[22px] font-medium leading-[130%] capitalize" style={{ color: 'rgba(140, 40, 145, 0.4)' }}>
+              <p className="text-[22px] font-medium leading-[130%] capitalize" style={{ color: '#8c2891' }}>
                 Locations
               </p>
             </div>
@@ -156,7 +156,7 @@ const Footer = () => {
                 <Link 
                   href="/marketing-barneveld" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
-                  style={{ color: 'rgb(140, 40, 145)' }}
+                  style={{ color: 'rgb(0, 0, 0)' }}
                 >
                   Barneveld
                 </Link>
@@ -165,7 +165,7 @@ const Footer = () => {
                 <Link 
                   href="/ede" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
-                  style={{ color: 'rgb(140, 40, 145)' }}
+                  style={{ color: 'rgb(0, 0, 0)' }}
                 >
                   Ede
                 </Link>
@@ -174,7 +174,7 @@ const Footer = () => {
                 <Link 
                   href="/amersfoort" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
-                  style={{ color: 'rgb(140, 40, 145)' }}
+                  style={{ color: 'rgb(0, 0, 0)' }}
                 >
                   Amersfoort
                 </Link>
@@ -183,7 +183,7 @@ const Footer = () => {
                 <Link 
                   href="/leusden" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
-                  style={{ color: 'rgb(140, 40, 145)' }}
+                  style={{ color: 'rgb(0, 0, 0)' }}
                 >
                   Leusden
                 </Link>
@@ -192,7 +192,7 @@ const Footer = () => {
                 <Link 
                   href="/nijkerk" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
-                  style={{ color: 'rgb(140, 40, 145)' }}
+                  style={{ color: 'rgb(0, 0, 0)' }}
                 >
                   Nijkerk
                 </Link>
@@ -201,7 +201,7 @@ const Footer = () => {
                 <Link 
                   href="/bennekom" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
-                  style={{ color: 'rgb(140, 40, 145)' }}
+                  style={{ color: 'rgb(0, 0, 0)' }}
                 >
                   Bennekom
                 </Link>
@@ -210,7 +210,7 @@ const Footer = () => {
                 <Link 
                   href="/lunteren" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
-                  style={{ color: 'rgb(140, 40, 145)' }}
+                  style={{ color: 'rgb(0, 0, 0)' }}
                 >
                   Lunteren
                 </Link>

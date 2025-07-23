@@ -27,28 +27,28 @@ const geistMono = Geist_Mono({
 
 // Metadata (optioneel aanpassen)
 export const metadata = {
-  title: 'Albin Marketing - Digital Marketing Expert',
+  title: 'Niblah - Digital Marketing Expert',
   description: 'Professional digital marketing services including SEO, Google Ads, and website optimization. Get your business found online and attract more customers.',
   keywords: 'digital marketing, SEO, Google Ads, website optimization, online marketing',
-  authors: [{ name: 'Albin' }],
-  creator: 'Albin',
-  publisher: 'Albin Marketing',
+  authors: [{ name: 'Niblah' }],
+  creator: 'Niblah',
+  publisher: 'Niblah',
   icons: {
     icon: '/icon.png',
     shortcut: '/icon.png',
     apple: '/icon.png',
   },
   openGraph: {
-    title: 'Albin Marketing - Digital Marketing Expert',
+    title: 'Niblah - Digital Marketing Expert',
     description: 'Professional digital marketing services including SEO, Google Ads, and website optimization.',
     url: 'https://albinmarketing.com',
-    siteName: 'Albin Marketing',
+    siteName: 'Niblah',
     images: [
       {
         url: '/avatar.png',
         width: 800,
         height: 800,
-        alt: 'Albin - Digital Marketing Expert',
+        alt: 'Niblah - Digital Marketing Expert',
       },
     ],
     locale: 'en_US',
@@ -56,7 +56,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Albin Marketing - Digital Marketing Expert',
+    title: 'Niblah - Digital Marketing Expert',
     description: 'Professional digital marketing services including SEO, Google Ads, and website optimization.',
     images: ['/avatar.png'],
   },

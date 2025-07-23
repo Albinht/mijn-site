@@ -64,7 +64,6 @@ export default function Header() {
             )}
           </div>
           <Link href="/youtube">YouTube</Link>
-          <Link href="#">Contact</Link>
           <Button as={Link} href="/work-with-me">
             Work with me <span>→</span>
           </Button>
@@ -103,10 +102,8 @@ export default function Header() {
               )}
             </div>
             
-            <Link href="#" onClick={() => setIsMobileMenuOpen(false)}>YouTube</Link>
+            <Link href="/youtube" onClick={() => setIsMobileMenuOpen(false)}>YouTube</Link>
             
-            
-            <Link href="#" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
             <div className="pt-2">
               <Button as={Link} href="/work-with-me" onClick={() => setIsMobileMenuOpen(false)}>
                 Work with me <span>→</span>

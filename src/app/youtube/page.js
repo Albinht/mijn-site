@@ -23,7 +23,7 @@ const blogPosts = [
     id: 2,
     title: "Real Ecommerce SEO: My Framework for Long-Term Organic Growth",
     excerpt: "Discover my proven e-commerce SEO framework that drives sustainable organic growth. From technical optimization to content strategy, learn the complete system I use to scale online stores.",
-    videoId: "7cshITRgi10",
+    videoId: "7cshITRgi10&t",
     publishDate: "2024-01-15",
     readTime: "18 min read",
     category: "E-commerce SEO",
@@ -70,9 +70,11 @@ const BlogCard = ({ post }) => (
         <span>{post.readTime}</span>
       </div>
       
-      <h2 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
-        {post.title}
-      </h2>
+      <Link href={`/youtube/${post.id}`}>
+        <h2 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 hover:text-purple-600 transition-colors cursor-pointer">
+          {post.title}
+        </h2>
+      </Link>
       
       <p className="text-gray-600 mb-4 line-clamp-3">
         {post.excerpt}
