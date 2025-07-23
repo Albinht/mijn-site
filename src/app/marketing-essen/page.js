@@ -43,7 +43,7 @@ export default function MarketingEssen() {
         <link rel="canonical" href="https://www.niblah.com/marketing-essen" />
       </Head>
 
-      <main className="min-h-screen bg-white text-gray-900 px-6 py-8 md:py-14">
+      <main className="min-h-screen bg-white text-gray-900 px-6 py-2 md:py-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* HERO */}
           <div>

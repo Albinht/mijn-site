@@ -15,51 +15,51 @@ import FeatureSection from '../../components/FeatureSection'
 export default function MarketingGarderen() {
   // Lokale Garderen reviews
   const dutchReviews = [
-    { name: 'Hotel de Garderense Heide', rating: 5, text: 'Dankzij Albin staan we nu #1 in Google voor "hotel Garderen". Veel meer boekingen sinds de lokale SEO optimalisatie!' },
-    { name: 'Garage Veluwse Service', rating: 5, text: 'Onze Google Ads campagne draait perfect. We krijgen elke week nieuwe klanten uit Garderen en omgeving. Top service!' },
-    { name: 'Restaurant Het Boshuis', rating: 5, text: 'Sinds we met Albin werken hebben we 3x zoveel reserveringen. Onze nieuwe website ziet er professioneel uit en converteert goed.' },
-    { name: 'Kapsalon Stijlvol Garderen', rating: 5, text: 'Lokale SEO heeft ons bedrijf getransformeerd. We staan nu bovenaan bij "kapper Garderen" en hebben een volle agenda.' },
-    { name: 'Installatiebedrijf Technisch', rating: 5, text: 'Google Ads campagne loopt fantastisch. We krijgen kwalitatieve leads uit heel de regio. Investering heeft zich al terugverdiend.' },
-    { name: 'Tandartspraktijk Garderen', rating: 4.5, text: 'Professionele aanpak en snelle resultaten. Onze online zichtbaarheid in Garderen is enorm verbeterd.' },
+    { name: 'Hotel de Garderense Heide', rating: 5, text: 'Met Albin als SEO specialist staan we op #1 in Google voor "hotel Garderen". Onze bezetting is zichtbaar toegenomen!' },
+    { name: 'Garage Veluwse Service', rating: 5, text: 'Dankzij het marketing bureau uit Garderen krijgen we nu wekelijks nieuwe klanten uit de regio. De Google Ads draaien perfect!' },
+    { name: 'Restaurant Het Boshuis', rating: 5, text: 'Onze reserveringen zijn verdrievoudigd sinds de nieuwe SEO strategie. De website is professioneel én effectief.' },
+    { name: 'Kapsalon Stijlvol Garderen', rating: 5, text: 'We worden nu gevonden op “kapper Garderen” – en dat merken we aan een overvolle agenda!' },
+    { name: 'Installatiebedrijf Technisch', rating: 5, text: 'De lokale online zichtbaarheid is enorm verbeterd. De investering in SEO en marketing was het dubbel en dwars waard.' },
+    { name: 'Tandartspraktijk Garderen', rating: 4.5, text: 'Albin heeft snel voor meetbaar resultaat gezorgd. Onze praktijk wordt nu lokaal goed gevonden.' },
   ]
   const dutchMoreReviews = [
-    { name: 'Bouwbedrijf Garderen BV', rating: 5, text: 'Van pagina 3 naar positie #1 in 4 maanden tijd. De lokale SEO strategie werkt echt voor bouwbedrijven in Garderen.' },
-    { name: 'Schoonheidssalon Natuurlijk', rating: 5, text: 'Onze omzet is verdubbeld sinds de website optimalisatie. Veel meer boekingen via Google uit de hele regio.' },
-    { name: 'Fietsenwinkel Garderen', rating: 4.5, text: 'Dankzij de lokale marketing strategie hebben we veel meer klanten uit Barneveld, Voorthuizen en omgeving.' },
-    { name: 'Advocatenkantoor Garderen', rating: 5, text: 'Excellente service en resultaten. We krijgen nu regelmatig nieuwe cliënten via onze verbeterde online aanwezigheid.' },
-    { name: 'Tuincentrum Garderense Groen', rating: 5, text: 'Google Ads voor tuinartikelen loopt perfect. Vooral in het voorjaar veel extra klanten uit heel Garderen.' },
-    { name: 'Dierenarts Garderen', rating: 4.5, text: 'Lokale SEO heeft ons geholpen om de #1 dierenarts van Garderen te worden op Google. Zeer tevreden!' },
+    { name: 'Bouwbedrijf Garderen BV', rating: 5, text: 'Binnen vier maanden naar de eerste plek in Google. Lokale SEO werkt écht voor bedrijven in Garderen.' },
+    { name: 'Schoonheidssalon Natuurlijk', rating: 5, text: 'Meer aanvragen en meer boekingen uit de regio Garderen. De nieuwe website en SEO maken het verschil.' },
+    { name: 'Fietsenwinkel Garderen', rating: 4.5, text: 'We trekken meer klanten uit Voorthuizen en Barneveld dankzij een slimme marketingstrategie.' },
+    { name: 'Advocatenkantoor Garderen', rating: 5, text: 'Dankzij de online marketing staan we nu bovenaan bij de juiste zoekopdrachten. Meer nieuwe cliënten uit Garderen.' },
+    { name: 'Tuincentrum Garderense Groen', rating: 5, text: 'Onze tuinartikelen zijn lokaal veel zichtbaarder geworden. Vooral in het seizoen merken we dit in onze omzet.' },
+    { name: 'Dierenarts Garderen', rating: 4.5, text: 'Onze praktijk is online de nummer één in Garderen. Zeer tevreden over het resultaat!' },
   ]
 
   return (
     <>
       {/* SEO TITEL & META BESCHRIJVING */}
       <Head>
-        <title>SEO Specialist Garderen | Marketing Bureau & Online Marketing Garderen</title>
+        <title>SEO Specialist Garderen | Marketing Bureau Garderen | SEO & Marketing bedrijf</title>
         <meta
           name="description"
-          content="SEO Specialist Garderen nodig? Hét marketing bureau voor Garderen. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Garderen."
+          content="Op zoek naar een SEO specialist in Garderen? Kies voor hét marketing bureau Garderen. Meer klanten uit Garderen dankzij sterke SEO, Google Ads en slimme websites. Gratis advies!"
         />
-        <link rel="canonical" href="https://wwww.niblah.com/marketing-garderen" />
+        <link rel="canonical" href="https://www.niblah.com/marketing-garderen" />
       </Head>
 
-      <main className="min-h-screen bg-white text-gray-900 px-6 py-4 md:py-10">
+      <main className="min-h-screen bg-white text-gray-900 px-6 py-2 md:py-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* HERO */}
           <div>
             <h1 className="text-4xl md:text-5xl font-bold leading-tight">
               <span className="text-[#000]">SEO Specialist Garderen</span> &amp;<br />
-              <span className="bg-[#F7D8FA] px-2 rounded italic">Marketing Garderen</span>
+              <span className="bg-[#F7D8FA] px-2 rounded italic">Marketing bureau Garderen</span>
             </h1>
             <p className="mt-6 text-lg text-gray-700">
-              <strong>Op zoek naar het beste marketing bureau in Garderen?</strong><br />
-              Als <b>SEO specialist in Garderen</b> help ik bedrijven aan meer lokale klanten met bewezen SEO & marketing strategieën.
+              <strong>Jouw bedrijf ook bovenaan in Google?</strong><br />
+              Als <b>SEO specialist Garderen</b> en <b>marketing bedrijf Garderen</b> help ik ondernemers lokaal groeien met resultaatgerichte SEO, krachtige Google Ads en converterende websites. Alles gericht op meer klanten uit Garderen.
             </p>
             <ul className="mt-6 space-y-2 text-gray-800">
-              <li>✓ Lokale SEO voor Garderen bedrijven</li>
-              <li>✓ Google Ads campagnes die converteren</li>
-              <li>✓ Professionele websites & online marketing</li>
-              <li>✓ Meer klanten uit Garderen en omgeving</li>
+              <li>✓ SEO Garderen: beter gevonden door lokale klanten</li>
+              <li>✓ Google Ads die direct leads en omzet opleveren</li>
+              <li>✓ Websites die voor jouw bedrijf werken</li>
+              <li>✓ Meer zichtbaarheid in Garderen en omgeving</li>
             </ul>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <Button as="a" href="tel:+31648728828">
@@ -68,8 +68,13 @@ export default function MarketingGarderen() {
               <Button variant="secondary" as="a" href="https://wa.me/31648728828" target="_blank" rel="noopener noreferrer">
                 WhatsApp
               </Button>
+              <div className="flex items-center gap-2 bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-medium mt-2 sm:mt-0">
+                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                Direct beschikbaar
+              </div>
             </div>
-            <p className="mt-4 text-sm text-red-600">Urgent questions? Send me a WhatsApp on +31 6 48728828</p>
+            <p className="mt-4 text-sm text-gray-500">100+ bedrijven uit Garderen en omgeving gingen je voor</p>
+            <p className="mt-4 text-sm text-green-700">Ook spoed? WhatsApp direct: <b>+31 6 48728828</b></p>
           </div>
 
           {/* AFBEELDING */}
@@ -85,60 +90,96 @@ export default function MarketingGarderen() {
           </div>
         </div>
 
+        {/* USP & FEATURE SECTION */}
+        <FeatureSection
+          title="Marketing bedrijf Garderen: resultaat, groei en lokale impact"
+          subtitle="Jouw zichtbaarheid en omzet lokaal vergroten."
+          features={[
+            {
+              badge: "SEO specialist Garderen",
+              title: "Lokale SEO voor ondernemers in Garderen",
+              description: "Met een slimme SEO strategie scoort jouw bedrijf op zoektermen als 'jouw dienst Garderen'. Meer zichtbaarheid en concrete aanvragen uit de regio.",
+              visualTitle: "SEO Plan Garderen",
+              visualSubtitle: "Hoger in Google",
+              image: masterSeoImage
+            },
+            {
+              badge: "Google Ads",
+              title: "Google Ads voor Garderen",
+              description: "Meer leads en aanvragen uit Garderen? Met Google Ads bereik je direct nieuwe klanten. Altijd gericht op jouw ideale doelgroep.",
+              visualTitle: "Lokale klanten",
+              visualSubtitle: "Direct resultaat",
+              image: keywordResearchImage
+            },
+            {
+              badge: "Conversiegerichte websites",
+              title: "Websites & Online Marketing",
+              description: "Wij bouwen snelle, mobiele en vindbare websites die gericht zijn op conversie. Lokaal succes gegarandeerd.",
+              visualTitle: "Webdesign Garderen",
+              visualSubtitle: "Meer aanvragen",
+              image: contentRanksImage
+            }
+          ]}
+        />
+
         {/* REVIEWS SECTIE */}
-        <ReviewSlider reviews={dutchReviews} moreReviews={dutchMoreReviews} />
+        <ReviewSlider
+          reviews={dutchReviews}
+          moreReviews={dutchMoreReviews}
+          title="Garderen kiest voor <span class='bg-[#F7D8FA] px-2 rounded italic'>SEO & Marketing</span> van Albin"
+        />
 
         {/* DIENSTEN SECTIE */}
         <section className="py-16">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Marketing Bureau <span className="bg-[#F7D8FA] px-2 rounded italic">Garderen</span>
+                Marketing bedrijf in <span className="bg-[#F7D8FA] px-2 rounded italic">Garderen</span>
               </h2>
               <p className="text-lg text-gray-600">
-                Specialistische marketing diensten voor bedrijven in Garderen
+                Jouw complete marketing bureau Garderen – voor lokale ondernemers, MKB en ZZP.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Lokale SEO Garderen */}
+              {/* SEO Garderen */}
               <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Lokale SEO Garderen</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">SEO Specialist Garderen</h3>
                 <p className="text-gray-600 mb-6">
-                  Word gevonden door klanten in Garderen. Lokale SEO zorgt voor meer zichtbaarheid in Google.
+                  Wil je met je bedrijf hoger scoren in Google? Als SEO specialist in Garderen zorg ik voor vindbaarheid en groei – lokaal én regionaal.
                 </p>
                 <ul className="space-y-2 text-gray-700 mb-6">
-                  <li>✓ Google My Business optimalisatie</li>
-                  <li>✓ Lokale zoekwoorden</li>
-                  <li>✓ Online reviews management</li>
-                  <li>✓ Lokale linkbuilding</li>
+                  <li>✓ Lokale zoekwoorden & content Garderen</li>
+                  <li>✓ Google Mijn Bedrijf optimalisatie</li>
+                  <li>✓ Autoriteit & review management</li>
+                  <li>✓ Lokale linkbuilding strategie</li>
                 </ul>
               </div>
               {/* Google Ads Garderen */}
               <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow border-2" style={{ borderColor: '#8C2891' }}>
                 <div className="bg-[#F7D8FA] text-[#8C2891] px-3 py-1 rounded-full text-sm font-medium mb-4 inline-block">
-                  Meest gekozen door Garderen
+                  Meest gekozen dienst in Garderen
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Google Ads Garderen</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Google Ads Bureau Garderen</h3>
                 <p className="text-gray-600 mb-6">
-                  Snel meer klanten uit Garderen? Met Google Ads bereik je direct lokale aanvragen en leads.
+                  Snel meer aanvragen en klanten? Met Google Ads bereik je direct jouw doelgroep in Garderen en omgeving.
                 </p>
                 <ul className="space-y-2 text-gray-700 mb-6">
-                  <li>✓ Lokale campagnes</li>
-                  <li>✓ Geografische targeting</li>
+                  <li>✓ Maatwerk campagnes</li>
+                  <li>✓ Lokale targeting voor Garderen</li>
                   <li>✓ Conversie optimalisatie</li>
                   <li>✓ Maandelijkse rapportages</li>
                 </ul>
               </div>
               {/* Website & Online Marketing */}
               <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Website & Online Marketing</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Website & Online Marketing Garderen</h3>
                 <p className="text-gray-600 mb-6">
-                  Moderne websites & online marketing die conversiegericht zijn voor de Garderense markt.
+                  Van conversiegerichte websites tot slimme online marketing voor bedrijven in Garderen. Meer lokale aanvragen, meer groei.
                 </p>
                 <ul className="space-y-2 text-gray-700 mb-6">
-                  <li>✓ Professioneel ontwerp</li>
-                  <li>✓ Lokale focus</li>
-                  <li>✓ Snel & mobielvriendelijk</li>
+                  <li>✓ Website design op maat</li>
+                  <li>✓ Mobielvriendelijk & snel</li>
+                  <li>✓ SEO-proof & lokaal geoptimaliseerd</li>
                   <li>✓ Gericht op meer omzet</li>
                 </ul>
               </div>
@@ -150,15 +191,15 @@ export default function MarketingGarderen() {
         <section id="contact-section" className="py-16 px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Gratis kennismaken met jouw <span className="bg-[#F7D8FA] px-2 rounded italic">SEO Specialist Garderen</span>?
+              Gratis kennismaken met jouw <span className="bg-[#F7D8FA] px-2 rounded italic">SEO specialist Garderen</span>?
             </h2>
             <p className="text-xl text-gray-600 mb-8">
-              Ontdek wat mijn marketing bureau voor jouw bedrijf in Garderen kan doen.
+              Ontdek wat mijn marketing bureau Garderen voor jouw bedrijf kan betekenen.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Direct Bellen</h3>
-                <p className="text-gray-600 mb-4">Klaar om te starten? Bel mij als Garderen SEO specialist voor een gratis gesprek.</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Direct bellen</h3>
+                <p className="text-gray-600 mb-4">Snel contact? Bel als je wilt sparren over SEO of marketing voor jouw bedrijf in Garderen.</p>
                 <a
                   href="tel:+31648728828"
                   className="inline-block bg-[#8C2891] hover:bg-[#7A2280] text-white px-6 py-3 rounded-lg font-medium transition-colors"
@@ -167,8 +208,8 @@ export default function MarketingGarderen() {
                 </a>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">WhatsApp Direct</h3>
-                <p className="text-gray-600 mb-4">Liever WhatsApp? Stuur direct een bericht – snel reactie.</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">WhatsApp direct</h3>
+                <p className="text-gray-600 mb-4">Stuur direct een WhatsApp voor een snelle reactie of korte vraag.</p>
                 <a
                   href="https://wa.me/31648728828"
                   target="_blank"
@@ -180,7 +221,7 @@ export default function MarketingGarderen() {
               </div>
             </div>
             <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Actief in Garderen &amp; Regio</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Actief in Garderen &amp; regio</h3>
               <p className="text-gray-600">
                 Voorthuizen • Kootwijkerbroek • Barneveld • Nijkerk • Ede • Amersfoort • Leusden • Bennekom
               </p>

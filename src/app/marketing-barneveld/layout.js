@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Marketing in Barneveld | Lokale SEO & Google Ads Expert - Albin Marketing',
+  title: 'Marketing in Barneveld | Lokale SEO & Google Ads Expert - Niblah Marketing',
   description: 'Marketing diensten in Barneveld. Lokale SEO optimalisatie, Google Ads campagnes en website ontwerp voor Barnevelder bedrijven. Domineer lokale zoekresultaten!',
   keywords: 'marketing Barneveld, lokale SEO Barneveld, Google Ads Barneveld, website ontwerp Barneveld, online marketing Barneveld, SEO specialist Barneveld',
   openGraph: {

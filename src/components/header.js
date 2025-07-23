@@ -8,10 +8,12 @@ import Button from './Button'; // Importeer de nieuwe Button component
 export default function Header() {
   const [isServicesOpen, setIsServicesOpen] = useState(false)
   const [isBlueprintsOpen, setIsBlueprintsOpen] = useState(false)
+  const [isToolsOpen, setIsToolsOpen] = useState(false)
   const [isLocationsOpen, setIsLocationsOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const servicesTimeoutRef = useRef(null);
   const blueprintsTimeoutRef = useRef(null);
+  const toolsTimeoutRef = useRef(null);
   const locationsTimeoutRef = useRef(null);
   return (
     <header className="w-full bg-white border-b border-gray-100">
@@ -62,6 +64,34 @@ export default function Header() {
             {isBlueprintsOpen && (
               <div className="absolute mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-10">
                 <Link href="/blueprints/seo" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">SEO Blueprint</Link>
+              </div>
+            )}
+          </div>
+          
+          {/* Tools Dropdown */}
+          <div 
+            className="relative"
+            onMouseEnter={() => {
+              clearTimeout(toolsTimeoutRef.current);
+              setIsToolsOpen(true);
+            }}
+            onMouseLeave={() => {
+              toolsTimeoutRef.current = setTimeout(() => {
+                setIsToolsOpen(false);
+              }, 200); // 200ms delay
+            }}
+          >
+            <button className="flex items-center space-x-1">
+              <span>Tools</span>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            {isToolsOpen && (
+              <div className="absolute mt-2 w-64 bg-white border border-gray-200 rounded-md shadow-lg z-10">
+                <Link href="/tools/ai-marketing-audit" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">AI Marketing Audit</Link>
+                <Link href="/tools/break-even-roas-calculator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"> Break even ROAS Calculator</Link>
+                <Link href="/tools/cpa-calculator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">CPA Calculator</Link>
               </div>
             )}
           </div>
@@ -165,6 +195,26 @@ export default function Header() {
               {isBlueprintsOpen && (
                 <div className="ml-4 mt-2 space-y-2">
                   <Link href="/blueprints/seo" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>SEO Blueprint</Link>
+                </div>
+              )}
+            </div>
+            
+            {/* Mobile Tools */}
+            <div>
+              <button 
+                className="flex items-center justify-between w-full text-left"
+                onClick={() => setIsToolsOpen(!isToolsOpen)}
+              >
+                <span>Tools</span>
+                <svg className={`w-4 h-4 transition-transform ${isToolsOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {isToolsOpen && (
+                <div className="ml-4 mt-2 space-y-2">
+                  <Link href="/tools/ai-marketing-audit" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>🤖 AI Marketing Audit</Link>
+                  <Link href="/tools/break-even-roas-calculator" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>📊 ROAS Calculator</Link>
+                  <Link href="/tools/cpa-calculator" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>💰 CPA Calculator</Link>
                 </div>
               )}
             </div>
