@@ -99,7 +99,7 @@ export default function AIMarketingAudit() {
               Free <span className="bg-[#F7D8FA] px-2 rounded italic">AI Marketing Audit</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Get instant insights into your website's marketing performance. Our AI analyzes your SEO, 
+              Get instant insights into your website&apos;s marketing performance. Our AI analyzes your SEO, 
               content, and user experience to give you actionable recommendations.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">

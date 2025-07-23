@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 
@@ -117,7 +117,7 @@ export default function BreakEvenROASCalculator() {
     return Object.keys(newErrors).length === 0
   }
 
-  const calculateROAS = () => {
+  const calculateROAS = useCallback(() => {
     if (!validateInputs()) return
 
     // Helper function to calculate cost including VAT
@@ -159,7 +159,7 @@ export default function BreakEvenROASCalculator() {
       netProfit: netProfit,
       profitMargin: profitMargin
     })
-  }
+  }, [inputs])
 
   const handleInputChange = (field, value) => {
     setInputs(prev => ({

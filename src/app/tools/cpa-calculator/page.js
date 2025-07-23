@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 
@@ -106,7 +106,7 @@ export default function CPACalculator() {
     return Object.keys(newErrors).length === 0
   }
 
-  const calculateCPA = () => {
+  const calculateCPA = useCallback(() => {
     if (!validateInputs()) return
 
     const cpc = parseFloat(inputs.currentCPC) || 0
@@ -131,7 +131,7 @@ export default function CPACalculator() {
       requiredConversionRate: Math.max(0, Math.min(100, requiredConversionRate)),
       costPerHundredClicks: Math.max(0, costPerHundredClicks)
     })
-  }
+  }, [inputs])
 
   const handleInputChange = (field, value) => {
     setInputs(prev => ({
