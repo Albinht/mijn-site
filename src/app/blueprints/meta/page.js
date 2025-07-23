@@ -53,7 +53,7 @@ export default function MetaBlueprint() {
               </div>
               <h3 className="text-xl font-semibold mb-3" style={{fontFamily: 'var(--font-poppins)'}}>Audience Targeting</h3>
               <p className="text-gray-700" style={{fontFamily: 'var(--font-poppins)'}}>
-                Master advanced audience targeting including lookalikes, custom audiences, and interest-based targeting for maximum ROI.
+                Master Meta&apos;s Advertising Platform&apos;s targeting including lookalikes, custom audiences, and interest-based targeting for maximum ROI.
               </p>
             </div>
             

@@ -67,31 +67,6 @@ export default function Header() {
           <Link href="#">Marketing</Link>
           <Link href="/youtube">YouTube</Link>
           
-          {/* Services Dropdown */}
-          <div 
-            className="relative"
-            onMouseEnter={() => {
-              clearTimeout(servicesTimeoutRef.current);
-              setIsServicesOpen(true);
-            }}
-            onMouseLeave={() => {
-              servicesTimeoutRef.current = setTimeout(() => {
-                setIsServicesOpen(false);
-              }, 200); // 200ms delay
-            }}
-          >
-            <button className="flex items-center space-x-1">
-              <span>Services</span>
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            {isServicesOpen && (
-              <div className="absolute mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-10">
-                <Link href="/services/seo" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">SEO</Link>
-              </div>
-            )}
-          </div>
           
           <Link href="#">Contact</Link>
           <Button as={Link} href="/work-with-me">
@@ -135,23 +110,6 @@ export default function Header() {
             <Link href="#" onClick={() => setIsMobileMenuOpen(false)}>Marketing</Link>
             <Link href="#" onClick={() => setIsMobileMenuOpen(false)}>YouTube</Link>
             
-            {/* Mobile Services */}
-            <div>
-              <button 
-                className="flex items-center justify-between w-full text-left"
-                onClick={() => setIsServicesOpen(!isServicesOpen)}
-              >
-                <span>Services</span>
-                <svg className={`w-4 h-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {isServicesOpen && (
-                <div className="ml-4 mt-2 space-y-2">
-                  <Link href="/services/seo" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>SEO</Link>
-                </div>
-              )}
-            </div>
             
             <Link href="#" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
             <div className="pt-2">

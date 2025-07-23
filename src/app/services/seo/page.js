@@ -10,7 +10,7 @@ export default function SEO() {
         
         <div className="prose prose-lg max-w-none">
           <p className="text-xl text-gray-700 mb-8" style={{fontFamily: 'var(--font-poppins)'}}>
-            Get your website to rank #1 on Google with my proven SEO strategies that have helped 20+ sites reach the top.
+            Get your business found by customers who are actively searching for what you offer. We&apos;ll optimize your website to rank higher in Google and drive qualified organic traffic.
           </p>
           
           <div className="grid md:grid-cols-2 gap-8 mb-12">

@@ -9,8 +9,11 @@ export default function CRO() {
         </h1>
         
         <div className="prose prose-lg max-w-none">
+          <p className="text-xl text-gray-600 mb-8">
+          Don&apos;t just drive traffic - convert it into revenue with our proven CRO strategies.
+        </p>
           <p className="text-xl text-gray-700 mb-8" style={{fontFamily: 'var(--font-poppins)'}}>
-            Maximize your website's potential by optimizing every element to convert more visitors into customers.
+            Maximize your website&apos;s potential by optimizing every element to convert more visitors into customers.
           </p>
           
           <div className="grid md:grid-cols-2 gap-8 mb-12">

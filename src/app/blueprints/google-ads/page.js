@@ -17,7 +17,7 @@ const googleAdsReviews = [
   {
     name: 'AdMaster Pro',
     rating: 5,
-    text: 'Went from losing money on Google Ads to 4x ROAS in just 3 weeks. The bidding strategies alone saved me thousands in wasted spend.',
+    text: 'Albin&apos;s Google Ads course is incredible! Our ROAS went from 2.1x to 6.8x in just 2 months. The bidding strategies alone saved us thousands.',
   },
   {
     name: 'E-commerce King',
@@ -42,7 +42,7 @@ const googleAdsReviews = [
   {
     name: 'Retail Store',
     rating: 5,
-    text: 'Shopping campaigns were always a mystery to me. Now I"m generating 6x more revenue from the same budget. Amazing course!',
+    text: 'Shopping campaigns were always a mystery to me. Now I&apos;m generating 6x more revenue from the same budget. Amazing course!',
   },
 ];
 
@@ -65,7 +65,7 @@ const moreGoogleAdsReviews = [
   {
     name: 'Agency Owner',
     rating: 5,
-    text: 'We use this course to train all our Google Ads specialists. It\'s the most practical and up-to-date training available.',
+    text: 'We use this course to train all our Google Ads specialists. It&apos;s the most practical and up-to-date training available.',
   },
   {
     name: 'Consultant',
@@ -75,7 +75,7 @@ const moreGoogleAdsReviews = [
   {
     name: 'Small Business',
     rating: 4.5,
-    text: 'As a complete beginner, this course made Google Ads finally make sense. Now I\'m running profitable campaigns confidently.',
+    text: 'As a complete beginner, this course made Google Ads finally make sense. Now I&apos;m running profitable campaigns confidently.',
   },
 ];
 
@@ -114,7 +114,7 @@ const GoogleAdsReviewSlider = () => {
 
   return (
     <section className="bg-white py-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">The <span className="bg-[#F7D8FA] px-2 rounded italic">reviews</span> don't lie</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">The <span className="bg-[#F7D8FA] px-2 rounded italic">reviews</span> don&apos;t lie</h2>
         
         {/* First slider - scrolling left */}
         <div className="relative w-full overflow-hidden mb-8">
@@ -201,9 +201,9 @@ export default function GoogleAdsBlueprint() {
         </div>
       </div>
 
-      {/* WHAT YOU'LL LEARN SECTION */}
+      {/* WHAT YOU&apos;LL LEARN SECTION */}
       <FeatureSection 
-        title="What You'll Learn"
+        title="What You&apos;ll Learn"
         subtitle="Google Ads Mastery"
         features={[
           {
@@ -217,7 +217,7 @@ export default function GoogleAdsBlueprint() {
           {
             badge: "Strategy",
             title: "Smart Bidding & Budget Optimization",
-            description: "Discover the bidding strategies that actually work in 2025. Learn when to use Target CPA, Target ROAS, and Maximize Conversions to scale profitably without wasting budget.",
+            description: "Master the fundamentals of Google Ads that actually drive results. No fluff, no outdated tactics - just the proven strategies that get profitable campaigns in 2025.",
             visualTitle: "Bidding Mastery",
             visualSubtitle: "Optimize for profit",
             image: biddingGoogleAdsImage

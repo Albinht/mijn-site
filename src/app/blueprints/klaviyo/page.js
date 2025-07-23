@@ -7,7 +7,7 @@ export default function KlaviyoBlueprint() {
       <div className="px-6 py-16">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6" style={{fontFamily: 'var(--font-poppins)', color: 'rgb(140, 40, 145)'}}>
-            Klaviyo Blueprint
+            Master Klaviyo&apos;s Email Marketing Secrets
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto" style={{fontFamily: 'var(--font-poppins)'}}>

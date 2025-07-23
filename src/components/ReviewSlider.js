@@ -102,7 +102,7 @@ const ReviewSlider = () => {
 
   return (
     <section className="bg-white py-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">The <span className="bg-[#F7D8FA] px-2 rounded italic">reviews</span> don't lie</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">The <span className="bg-[#F7D8FA] px-2 rounded italic">reviews</span> don&apos;t lie</h2>
         
         {/* First slider - scrolling left */}
         <div className="relative w-full overflow-hidden mb-8">

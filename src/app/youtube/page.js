@@ -2,41 +2,44 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Button from '../../components/Button'
 import avatarImage from '../../assets/avatar.png'
+import productDescriptionsImage from '../../assets/Product descriptions.png'
+import ecomSeoFrameworkImage from '../../assets/E-com SEO framework.png'
+import translateVideoImage from '../../assets/translate video.png'
 
 // Blog posts data - easily add new posts here
 const blogPosts = [
   {
     id: 1,
-    title: "How I Scaled My Client's E-commerce Store to €50k/Month with SEO",
-    excerpt: "In this video, I break down the exact SEO strategy I used to help my client grow from €5k to €50k monthly revenue in just 6 months. You'll learn the keyword research process, content strategy, and technical SEO optimizations that made this possible.",
-    videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
-    publishDate: "2024-01-15",
-    readTime: "8 min read",
-    category: "SEO Case Study",
-    thumbnail: "/api/placeholder/600/400", // Replace with actual thumbnail
-    tags: ["SEO", "E-commerce", "Case Study", "Growth"]
+    title: "How to Write Product Descriptions That Rank on Google",
+    excerpt: "Master the art of writing product descriptions that not only convert customers but also rank high on Google. Learn the exact framework I use to optimize product pages for both users and search engines.",
+    videoId: "k2-w1UWjBEU",
+    publishDate: "2024-01-20",
+    readTime: "12 min read",
+    category: "E-commerce SEO",
+    thumbnail: productDescriptionsImage,
+    tags: ["SEO", "E-commerce", "Product Descriptions", "Copywriting"]
   },
   {
     id: 2,
-    title: "Google Ads Mistakes That Are Killing Your ROI (And How to Fix Them)",
-    excerpt: "Stop wasting money on Google Ads! In this video, I reveal the 5 most common mistakes I see businesses make with their Google Ads campaigns and show you exactly how to fix them for better ROI.",
-    videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
-    publishDate: "2024-01-10",
-    readTime: "12 min read", 
-    category: "Google Ads",
-    thumbnail: "/api/placeholder/600/400", // Replace with actual thumbnail
-    tags: ["Google Ads", "PPC", "ROI", "Optimization"]
+    title: "Real Ecommerce SEO: My Framework for Long-Term Organic Growth",
+    excerpt: "Discover my proven e-commerce SEO framework that drives sustainable organic growth. From technical optimization to content strategy, learn the complete system I use to scale online stores.",
+    videoId: "7cshITRgi10",
+    publishDate: "2024-01-15",
+    readTime: "18 min read",
+    category: "E-commerce SEO",
+    thumbnail: ecomSeoFrameworkImage,
+    tags: ["SEO", "E-commerce", "Framework", "Organic Growth"]
   },
   {
     id: 3,
-    title: "My Complete Keyword Research Process (Free Tools Only)",
-    excerpt: "You don't need expensive tools to do effective keyword research. In this comprehensive tutorial, I show you my complete keyword research process using only free tools that anyone can access.",
-    videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
-    publishDate: "2024-01-05",
+    title: "Shopify Translate & Adapt: Add Unlimited Languages – Bulk Translation Hack",
+    excerpt: "Unlock global markets with this Shopify translation hack! Learn how to add unlimited languages to your store using Translate & Adapt, plus my bulk translation method to save hours of work.",
+    videoId: "1bWKz69cBIU",
+    publishDate: "2024-01-10",
     readTime: "15 min read",
-    category: "SEO Tutorial",
-    thumbnail: "/api/placeholder/600/400", // Replace with actual thumbnail
-    tags: ["SEO", "Keyword Research", "Free Tools", "Tutorial"]
+    category: "Shopify Tutorial",
+    thumbnail: translateVideoImage,
+    tags: ["Shopify", "Translation", "International", "Tutorial"]
   }
 ];
 
@@ -53,14 +56,6 @@ const BlogCard = ({ post }) => (
         <span className="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium">
           {post.category}
         </span>
-      </div>
-      {/* YouTube Play Button Overlay */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="bg-red-600 rounded-full p-4 hover:bg-red-700 transition-colors cursor-pointer">
-          <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M8 5v14l11-7z"/>
-          </svg>
-        </div>
       </div>
     </div>
     
@@ -110,29 +105,19 @@ export default function YouTubePage() {
       <section className="bg-white py-16">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center">
-            <div className="flex justify-center mb-6">
-              <div className="relative w-20 h-20">
-                <Image
-                  src={avatarImage}
-                  alt="Albin Hot"
-                  fill
-                  className="rounded-full object-cover border-4 border-white shadow-lg"
-                />
-              </div>
-            </div>
             
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               YouTube <span className="bg-[#F7D8FA] px-2 rounded italic">Video</span> Blog
             </h1>
             
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Praktische SEO en marketing tutorials, case studies en tips. 
-              Alles wat je nodig hebt om je online business te laten groeien.
+              Practical SEO and marketing tutorials, case studies and tips. 
+              Everything you need to grow your online business.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button as="a" href="https://youtube.com/@albinhot" target="_blank" rel="noopener noreferrer">
-                Subscribe op YouTube <span>→</span>
+              <Button as="a" href="https://www.youtube.com/channel/UCvy37Ft-33KdCaYVCDHA35Q" target="_blank" rel="noopener noreferrer">
+                Subscribe on YouTube <span>→</span>
               </Button>
               <Button variant="secondary" as={Link} href="/work-with-me">
                 Work with me
@@ -150,7 +135,7 @@ export default function YouTubePage() {
               Latest <span className="bg-[#F7D8FA] px-2 rounded italic">Videos</span> & Tutorials
             </h2>
             <p className="text-lg text-gray-600">
-              Praktische marketing content die je direct kunt toepassen
+              Practical marketing content you can apply immediately
             </p>
           </div>
           
@@ -166,18 +151,18 @@ export default function YouTubePage() {
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Mis geen nieuwe <span className="bg-[#F7D8FA] px-2 rounded italic">video</span>
+            Don't miss new <span className="bg-[#F7D8FA] px-2 rounded italic">videos</span>
           </h2>
           <p className="text-lg text-gray-600 mb-8">
-            Elke week nieuwe praktische marketing tips en case studies
+            Weekly practical marketing tips and case studies
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button as="a" href="https://youtube.com/@albinhot" target="_blank" rel="noopener noreferrer">
-              Subscribe op YouTube <span>→</span>
+              Subscribe on YouTube <span>→</span>
             </Button>
             <Button variant="secondary" as={Link} href="/blueprints/seo">
-              Bekijk SEO Blueprint
+              View SEO Blueprint
             </Button>
           </div>
         </div>
