@@ -131,7 +131,7 @@ export default function CPACalculator() {
       requiredConversionRate: Math.max(0, Math.min(100, requiredConversionRate)),
       costPerHundredClicks: Math.max(0, costPerHundredClicks)
     })
-  }, [inputs])
+  }, [])
 
   const handleInputChange = (field, value) => {
     setInputs(prev => ({

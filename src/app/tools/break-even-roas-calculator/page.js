@@ -159,7 +159,7 @@ export default function BreakEvenROASCalculator() {
       netProfit: netProfit,
       profitMargin: profitMargin
     })
-  }, [inputs])
+  }, [])
 
   const handleInputChange = (field, value) => {
     setInputs(prev => ({
