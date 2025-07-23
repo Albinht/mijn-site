@@ -104,7 +104,7 @@ export default function YouTubePage() {
   return (
     <main className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-white py-16">
+      <section className="bg-white py-4 md:py-10">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center">
             

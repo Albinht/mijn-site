@@ -174,7 +174,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 px-6">
+      <section className="py-4 md:py-10 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           
           {/* TEXT SECTION */}
@@ -193,16 +193,16 @@ export default function Home() {
               <li>✓ Focus on ROI and sustainable growth</li>
             </ul>
             <div className="mt-8 flex items-center gap-4">
-              <Button as={Link} href="/work-with-me">
+              <Button as={Link} href="/work-with-me" className="text-sm px-4 py-2">
                 Work with me <span>→</span>
               </Button>
               <div className="flex items-center gap-2 bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-medium">
                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                Available for new projects
+                Available
               </div>
             </div>
             <p className="mt-4 text-sm text-gray-500">Trusted by 100+ businesses to drive their growth</p> 
-            <p className="mt-4 text-sm text-gray-500">Urgent questions? Send me a WhatsApp on +31 6 48728828</p>
+            <p className="mt-4 text-sm text-red-600">Urgent questions? Send me a WhatsApp on +31 6 48728828</p>
           </div>
 
           {/* IMAGE SECTION */}
