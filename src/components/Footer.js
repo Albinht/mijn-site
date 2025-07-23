@@ -163,7 +163,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link 
-                  href="/ede" 
+                  href="/marketing-ede" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
                   style={{ color: 'rgb(0, 0, 0)' }}
                 >
@@ -172,7 +172,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link 
-                  href="/amersfoort" 
+                  href="/marketing-amersfoort" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
                   style={{ color: 'rgb(0, 0, 0)' }}
                 >
@@ -181,7 +181,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link 
-                  href="/leusden" 
+                  href="/marketing-leusden" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
                   style={{ color: 'rgb(0, 0, 0)' }}
                 >
@@ -190,7 +190,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link 
-                  href="/nijkerk" 
+                  href="/marketing-nijkerk" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
                   style={{ color: 'rgb(0, 0, 0)' }}
                 >
@@ -199,7 +199,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link 
-                  href="/bennekom" 
+                  href="/marketing-bennekom" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
                   style={{ color: 'rgb(0, 0, 0)' }}
                 >
@@ -208,7 +208,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link 
-                  href="/lunteren" 
+                  href="/marketing-lunteren" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
                   style={{ color: 'rgb(0, 0, 0)' }}
                 >

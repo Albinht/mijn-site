@@ -50,7 +50,7 @@ export default function SEOBlueprint() {
             </Button>
           </div>
           <p className="mt-2 text-sm text-gray-500">100+ copies sold already</p>
-          <p className="mt-2 text-xs text-red-500">🧾 Questions? The service is as good as the course, Whatsapp me +31648728828 <a href="https://wa.link/vk8v1j" className="underline">here</a>.</p>
+          <p className="mt-2 text-xs text-red-500">🧾 Questions? The service is as good as the blueprint, Whatsapp me +31648728828 <a href="https://wa.link/vk8v1j" className="underline">here</a>.</p>
         </div>
 
         {/* IMAGE SECTION */}
