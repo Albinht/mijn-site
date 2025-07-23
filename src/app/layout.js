@@ -27,8 +27,39 @@ const geistMono = Geist_Mono({
 
 // Metadata (optioneel aanpassen)
 export const metadata = {
-  title: 'Albin Marketing',
-  description: 'Next.js marketing site',
+  title: 'Albin Marketing - Digital Marketing Expert',
+  description: 'Professional digital marketing services including SEO, Google Ads, and website optimization. Get your business found online and attract more customers.',
+  keywords: 'digital marketing, SEO, Google Ads, website optimization, online marketing',
+  authors: [{ name: 'Albin' }],
+  creator: 'Albin',
+  publisher: 'Albin Marketing',
+  icons: {
+    icon: '/avatar.png',
+    shortcut: '/avatar.png',
+    apple: '/avatar.png',
+  },
+  openGraph: {
+    title: 'Albin Marketing - Digital Marketing Expert',
+    description: 'Professional digital marketing services including SEO, Google Ads, and website optimization.',
+    url: 'https://albinmarketing.com',
+    siteName: 'Albin Marketing',
+    images: [
+      {
+        url: '/avatar.png',
+        width: 800,
+        height: 800,
+        alt: 'Albin - Digital Marketing Expert',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Albin Marketing - Digital Marketing Expert',
+    description: 'Professional digital marketing services including SEO, Google Ads, and website optimization.',
+    images: ['/avatar.png'],
+  },
 }
 
 export default function RootLayout({ children }) {

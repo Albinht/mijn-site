@@ -9,6 +9,17 @@ import Button from '../components/Button'
 import FeatureSection from '../components/FeatureSection'
 import ReviewSlider from '../components/ReviewSlider'
 
+export const metadata = {
+  title: 'Digital Marketing Services | Albin Marketing - SEO, Google Ads & More',
+  description: 'Professional digital marketing services to grow your business online. Expert SEO, Google Ads management, and website optimization. Get more customers and increase revenue.',
+  keywords: 'digital marketing services, SEO expert, Google Ads management, website optimization, online marketing consultant, digital marketing agency',
+  openGraph: {
+    title: 'Digital Marketing Services | Albin Marketing',
+    description: 'Professional digital marketing services to grow your business online. Expert SEO, Google Ads management, and website optimization.',
+    images: ['/avatar.png'],
+  },
+}
+
 // Service reviews data
 const serviceReviews = [
   {
