@@ -170,7 +170,7 @@ const CurriculumSection = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <div className="inline-block bg-[#F7D8FA] text-gray-800 px-4 py-2 rounded-full text-sm font-medium mb-4">
-            What you'll learn
+            What you&apos;ll learn
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-4">What you&apos;ll learn</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">

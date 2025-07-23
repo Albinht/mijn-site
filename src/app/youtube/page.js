@@ -151,7 +151,7 @@ export default function YouTubePage() {
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Don't miss new <span className="bg-[#F7D8FA] px-2 rounded italic">videos</span>
+            Don&apos;t miss new <span className="bg-[#F7D8FA] px-2 rounded italic">videos</span>
           </h2>
           <p className="text-lg text-gray-600 mb-8">
             Weekly practical marketing tips and case studies

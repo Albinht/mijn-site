@@ -38,7 +38,7 @@ export default function SEO() {
             <div className="bg-gray-50 p-6 rounded-lg">
               <h3 className="text-xl font-semibold mb-4" style={{fontFamily: 'var(--font-poppins)'}}>Technical SEO</h3>
               <p className="text-gray-700" style={{fontFamily: 'var(--font-poppins)'}}>
-                Optimize your website's technical foundation for maximum search engine visibility.
+                Optimize your website&apos;s technical foundation for maximum search engine visibility.
               </p>
             </div>
           </div>

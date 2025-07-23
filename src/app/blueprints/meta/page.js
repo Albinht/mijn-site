@@ -29,7 +29,7 @@ export default function MetaBlueprint() {
       <div className="bg-gray-50 px-6 py-16">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12" style={{fontFamily: 'var(--font-poppins)', color: 'rgb(140, 40, 145)'}}>
-            What You'll Master
+            What You&apos;ll Master
           </h2>
           
           <div className="grid md:grid-cols-3 gap-8">

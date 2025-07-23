@@ -154,7 +154,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <Link 
-                  href="/marketing-bureau-barneveld" 
+                  href="/marketing-barneveld" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
                   style={{ color: 'rgb(140, 40, 145)' }}
                 >
