@@ -85,7 +85,7 @@ export default function CPACalculator() {
   // Calculate results whenever inputs change
   useEffect(() => {
     calculateCPA()
-  }, [inputs])
+  }, [inputs, calculateCPA])
 
   const validateInputs = () => {
     const newErrors = {}
@@ -330,7 +330,7 @@ export default function CPACalculator() {
                 <ul className="text-sm text-blue-800 space-y-1">
                   {results.calculatedCPA > parseFloat(inputs.targetCPA) ? (
                     <>
-                      <li>• You're spending too much! You pay ${results.calculatedCPA.toFixed(2)} per customer but want to pay ${inputs.targetCPA}</li>
+                      <li>• You&apos;re spending too much! You pay ${results.calculatedCPA.toFixed(2)} per customer but want to pay ${inputs.targetCPA}</li>
                       <li>• Either pay less per click (${results.requiredCPC.toFixed(2)}) OR get more people to buy ({results.requiredConversionRate.toFixed(2)}%)</li>
                       <li>• Make your ads better and your website easier to buy from</li>
                     </>
@@ -354,7 +354,7 @@ export default function CPACalculator() {
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">What is CPA?</h3>
                 <p className="text-gray-600 mb-4">
-                  CPA means "how much you pay to get one customer." It's super simple math: 
+                  CPA means &quot;how much you pay to get one customer.&quot; It&apos;s super simple math: 
                   <strong>What you pay per click ÷ How many people buy = Cost per customer</strong>
                 </p>
                 <p className="text-gray-600">
@@ -369,7 +369,7 @@ export default function CPACalculator() {
                   Simple rule: spend less to get a customer than they spend with you!
                 </p>
                 <p className="text-gray-600">
-                  This helps you spend your ad money smart, not just get lots of clicks that don't buy anything.
+                  This helps you spend your ad money smart, not just get lots of clicks that don&apos;t buy anything.
                 </p>
               </div>
             </div>

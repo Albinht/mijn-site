@@ -100,7 +100,7 @@ export default function BreakEvenROASCalculator() {
   // Calculate results whenever inputs change
   useEffect(() => {
     calculateROAS()
-  }, [inputs])
+  }, [inputs, calculateROAS])
 
   const validateInputs = () => {
     const newErrors = {}
@@ -529,7 +529,7 @@ export default function BreakEvenROASCalculator() {
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">What is ROAS?</h3>
                 <p className="text-gray-600 mb-4">
                   Return on Ad Spend (ROAS) measures how much revenue you generate for every dollar spent on advertising. 
-                  It's calculated as: <strong>Revenue ÷ Ad Spend = ROAS</strong>
+                  It&apos;s calculated as: <strong>Revenue ÷ Ad Spend = ROAS</strong>
                 </p>
                 <p className="text-gray-600">
                   For example, a 4:1 ROAS means you earn $4 for every $1 spent on ads.
@@ -538,9 +538,9 @@ export default function BreakEvenROASCalculator() {
 
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Why Break Even ROAS Matters</h3>
-                <p className="text-gray-600 mb-4">
-                  Your break-even ROAS is the minimum return needed to avoid losing money on your ad campaigns. 
-                  Running campaigns below this threshold means you're losing money on every sale.
+                <p className="text-gray-600 mb-4">Let&apos;s calculate your break-even ROAS to understand the minimum return needed to cover your advertising costs.</p>
+                <p className="text-gray-600">
+                  Running campaigns below this threshold means you&apos;re losing money on every sale.
                 </p>
                 <p className="text-gray-600">
                   Understanding your true break-even point helps you set realistic ROAS targets and optimize profitably.

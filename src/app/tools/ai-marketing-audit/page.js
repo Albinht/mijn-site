@@ -52,7 +52,7 @@ export default function AIMarketingAudit() {
       setAuditResults(results)
       setShowEmailForm(true)
     } catch (error) {
-      setError('Sorry, we couldn\'t analyze your website. Please try again.')
+      setError('Sorry, we couldn&apos;t analyze your website. Please try again.')
       console.error('Audit error:', error)
     } finally {
       setIsAnalyzing(false)
