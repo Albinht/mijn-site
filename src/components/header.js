@@ -37,6 +37,7 @@ export default function Header() {
             <p className="text-sm text-gray-500 -mt-0.5 italic">
               Learn to Rank #1 in Google
             </p>
+            <p className="text-xs text-gray-500">@niblahistaken</p>
           </div>
         </div>
 
