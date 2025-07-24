@@ -37,6 +37,15 @@ export default function Header() {
             <p className="text-sm text-gray-500 -mt-0.5 italic">
               Learn to Rank #1 in Google
             </p>
+            <div className="flex items-center space-x-1 text-xs text-gray-500">
+              <span>@niblahistaken</span>
+              <Image
+                src="https://schilderenopnummerwinkel.nl/wp-content/uploads/2025/07/Twitter_Verified_Badge.svg.png"
+                alt="Twitter Verified Badge"
+                width={16}
+                height={16}
+              />
+            </div>
           </div>
         </div>
 
