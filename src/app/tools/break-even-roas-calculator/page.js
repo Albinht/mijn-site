@@ -130,7 +130,7 @@ export default function BreakEvenROASCalculator() {
     // Calculate revenue with VAT
     const totalRevenue = calculateWithVAT(inputs.revenue, inputs.revenueVAT)
 
-    // Calculate all costs with VAT
+    // Calculate all costs with VAT (excluding advertising costs)
     const costOfGoodsTotal = calculateWithVAT(inputs.costOfGoods, inputs.costOfGoodsVAT)
     const shippingTotal = calculateWithVAT(inputs.shippingCosts, inputs.shippingVAT)
     const transactionTotal = calculateWithVAT(inputs.transactionCosts, inputs.transactionVAT)
@@ -138,26 +138,31 @@ export default function BreakEvenROASCalculator() {
     
     const totalCosts = costOfGoodsTotal + shippingTotal + transactionTotal + otherTotal
     
-    // Calculate profit metrics
-    const netProfit = totalRevenue - totalCosts
-    const profitMargin = totalRevenue > 0 ? (netProfit / totalRevenue) * 100 : 0
+    // Calculate gross profit and profit margin
+    const grossProfit = totalRevenue - totalCosts
+    const profitMarginDecimal = totalRevenue > 0 ? grossProfit / totalRevenue : 0
+    const profitMarginPercentage = profitMarginDecimal * 100
     
-    // Calculate ROAS values
-    const breakEvenROAS = totalCosts > 0 ? totalRevenue / totalCosts : 0
+    // Calculate Break Even ROAS using the correct formula: 1 / profit margin (in decimal)
+    // This is the minimum ROAS needed to break even (no profit, no loss)
+    const breakEvenROAS = profitMarginDecimal > 0 ? 1 / profitMarginDecimal : 0
     
     // Calculate profitable ROAS (including desired profit margin)
     const desiredProfitMargin = parseFloat(inputs.desiredProfitMargin) || 0
-    const desiredProfit = totalRevenue * (desiredProfitMargin / 100)
-    const totalCostsWithDesiredProfit = totalCosts + desiredProfit
-    const profitableROAS = totalCostsWithDesiredProfit > 0 ? totalRevenue / totalCostsWithDesiredProfit : 0
+    const desiredProfitMarginDecimal = desiredProfitMargin / 100
+    
+    // For profitable ROAS, we need to account for the desired profit margin
+    // Total margin needed = current margin - desired profit margin
+    const remainingMarginForAds = profitMarginDecimal - desiredProfitMarginDecimal
+    const profitableROAS = remainingMarginForAds > 0 ? 1 / remainingMarginForAds : 0
 
     setResults({
       totalRevenue: Math.max(0, totalRevenue),
       totalCosts: Math.max(0, totalCosts),
       breakEvenROAS: Math.max(0, breakEvenROAS),
       profitableROAS: Math.max(0, profitableROAS),
-      netProfit: netProfit,
-      profitMargin: profitMargin
+      netProfit: grossProfit,
+      profitMargin: profitMarginPercentage
     })
   }
 
