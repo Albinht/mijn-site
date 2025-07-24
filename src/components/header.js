@@ -31,8 +31,13 @@ export default function Header() {
             />
           </Link>
           <div className="leading-tight">
-            <p className="font-semibold text-gray-900 text-base">
+            <p className="font-semibold text-gray-900 text-base flex items-center gap-1">
               Albin Hot
+              <img 
+                src="https://schilderenopnummerwinkel.nl/wp-content/uploads/2025/07/Twitter_Verified_Badge.svg.png" 
+                alt="Verified" 
+                className="w-4 h-4" 
+              />
             </p>
             <p className="text-sm text-gray-500 -mt-0.5 italic">
               Learn to Rank #1 in Google
