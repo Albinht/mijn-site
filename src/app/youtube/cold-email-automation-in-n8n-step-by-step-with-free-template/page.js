@@ -48,7 +48,7 @@ function BlogContent() {
     return (
         <>
             <h2>Why N8N is Perfect for Cold Email Automation</h2>
-            <p>N8N is a powerful, open-source workflow automation tool that's perfect for cold email campaigns. Unlike expensive tools like Zapier or HubSpot, N8N gives you:</p>
+            <p>N8N is a powerful, open-source workflow automation tool that&apos;s perfect for cold email campaigns. Unlike expensive tools like Zapier or HubSpot, N8N gives you:</p>
             <ul>
                 <li>Complete control over your email automation</li>
                 <li>Advanced JavaScript customization capabilities</li>
