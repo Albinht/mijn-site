@@ -57,13 +57,13 @@ function BlogContent() {
                 <li>Built-in delay and randomization features to avoid spam filters</li>
             </ul>
 
-            <h2>What You'll Learn in This Tutorial</h2>
+            <h2>What You&apos;ll Learn in This Tutorial</h2>
             <p>This comprehensive guide covers everything you need to build a professional cold email automation system:</p>
             <ul>
                 <li>✅ How to pull leads and email templates directly from Google Sheets</li>
                 <li>✅ How to use JavaScript to randomize and rotate your email content</li>
                 <li>✅ How to personalize and send emails using Gmail or an SMTP server</li>
-                <li>✅ How to log each email's send status and timestamp back into Sheets</li>
+                <li>✅ How to log each email&apos;s send status and timestamp back into Sheets</li>
                 <li>✅ How to reduce spam risk by adding delays between email sends</li>
                 <li>✅ How to loop your workflow to send emails in bulk automatically</li>
             </ul>
@@ -182,7 +182,7 @@ function TableOfContents() {
         // Define the headings manually since we're using JSX components now
         const blogHeadings = [
             { level: 2, text: 'Why N8N is Perfect for Cold Email Automation', id: 'why-n8n-is-perfect-for-cold-email-automation' },
-            { level: 2, text: "What You'll Learn in This Tutorial", id: 'what-youll-learn-in-this-tutorial' },
+            { level: 2, text: "What You&apos;ll Learn in This Tutorial", id: 'what-youll-learn-in-this-tutorial' },
             { level: 2, text: 'Essential JavaScript Code Snippets', id: 'essential-javascript-code-snippets' },
             { level: 3, text: '1. Pick a Random Template JavaScript', id: '1-pick-a-random-template-javascript' },
             { level: 3, text: '2. Personalize the Email', id: '2-personalize-the-email' },
