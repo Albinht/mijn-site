@@ -5,15 +5,27 @@ import avatarImage from '../../assets/avatar.png'
 import productDescriptionsImage from '../../assets/Product descriptions.png'
 import ecomSeoFrameworkImage from '../../assets/E-com SEO framework.png'
 import translateVideoImage from '../../assets/translate video.png'
+import n8nEmailImage from '../../assets/n8n-email-automation.png'
 
-// Blog posts data - easily add new posts here
+// Blog posts data - easily add new posts here (sorted newest to oldest)
 const blogPosts = [
   {
+    id: 4,
+    slug: "cold-email-automation-in-n8n-step-by-step-with-free-template",
+    title: "Cold Email Automation in N8N – Step-by-Step with FREE Template",
+    excerpt: "Master cold email automation with N8N! Learn how to pull leads from Google Sheets, randomize content, personalize emails, and automate bulk sending with proper delays to avoid spam filters.",
+    publishDate: "2025-01-25",
+    readTime: "20 min read",
+    category: "Email Marketing",
+    thumbnail: n8nEmailImage,
+    tags: ["N8N", "Email Automation", "Cold Email", "JavaScript", "Google Sheets"]
+  },
+  {
     id: 1,
+    slug: "how-to-write-product-descriptions-that-rank-on-google",
     title: "How to Write Product Descriptions That Rank on Google",
     excerpt: "Master the art of writing product descriptions that not only convert customers but also rank high on Google. Learn the exact framework I use to optimize product pages for both users and search engines.",
-    videoId: "k2-w1UWjBEU",
-    publishDate: "2024-01-20",
+    publishDate: "2025-01-20",
     readTime: "12 min read",
     category: "E-commerce SEO",
     thumbnail: productDescriptionsImage,
@@ -21,10 +33,10 @@ const blogPosts = [
   },
   {
     id: 2,
+    slug: "real-ecommerce-seo-my-framework-for-long-term-organic-growth",
     title: "Real Ecommerce SEO: My Framework for Long-Term Organic Growth",
     excerpt: "Discover my proven e-commerce SEO framework that drives sustainable organic growth. From technical optimization to content strategy, learn the complete system I use to scale online stores.",
-    videoId: "7cshITRgi10&t",
-    publishDate: "2024-01-15",
+    publishDate: "2025-01-15",
     readTime: "18 min read",
     category: "E-commerce SEO",
     thumbnail: ecomSeoFrameworkImage,
@@ -32,10 +44,10 @@ const blogPosts = [
   },
   {
     id: 3,
+    slug: "shopify-translate-and-adapt-add-unlimited-languages-bulk-translation-hack",
     title: "Shopify Translate & Adapt: Add Unlimited Languages – Bulk Translation Hack",
     excerpt: "Unlock global markets with this Shopify translation hack! Learn how to add unlimited languages to your store using Translate & Adapt, plus my bulk translation method to save hours of work.",
-    videoId: "1bWKz69cBIU",
-    publishDate: "2024-01-10",
+    publishDate: "2025-01-10",
     readTime: "15 min read",
     category: "Shopify Tutorial",
     thumbnail: translateVideoImage,
@@ -70,7 +82,7 @@ const BlogCard = ({ post }) => (
         <span>{post.readTime}</span>
       </div>
       
-      <Link href={`/youtube/${post.id}`}>
+      <Link href={`/youtube/${post.slug}`}>
         <h2 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 hover:text-purple-600 transition-colors cursor-pointer">
           {post.title}
         </h2>
@@ -91,7 +103,7 @@ const BlogCard = ({ post }) => (
         ))}
       </div>
       
-      <Link href={`/youtube/${post.id}`}>
+      <Link href={`/youtube/${post.slug}`}>
         <Button className="w-full">
           Watch Video & Read More <span>→</span>
         </Button>
