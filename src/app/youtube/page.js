@@ -10,6 +10,17 @@ import n8nEmailImage from '../../assets/n8n-email-automation.png'
 // Blog posts data - easily add new posts here (sorted newest to oldest)
 const blogPosts = [
   {
+    id: 5,
+    slug: "klaviyo-signup-forms-email-automation-send-deliverables-instantly",
+    title: "Klaviyo Signup Forms + Email Automation — Send Deliverables Instantly",
+    excerpt: "Learn how to build Klaviyo signup forms that instantly send your lead magnet or welcome offer.",
+    publishDate: "2025-01-30",
+    readTime: "10 min read",
+    category: "Email Marketing",
+    thumbnail: n8nEmailImage,
+    tags: ["Klaviyo", "Email Automation", "Lead Generation"]
+  },
+  {
     id: 4,
     slug: "cold-email-automation-in-n8n-step-by-step-with-free-template",
     title: "Cold Email Automation in N8N – Step-by-Step with FREE Template",
