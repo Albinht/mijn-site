@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import Button from '../../../components/Button';
 import authorImage from '../../../assets/author.png';
-import n8nEmailImage from '../../../assets/n8n-email-automation.png';
 
 const post = {
   id: 5,
@@ -37,7 +36,7 @@ const post = {
   publishDate: '2025-01-30',
   readTime: '10 min read',
   category: 'Email Marketing',
-  thumbnail: n8nEmailImage,
+  thumbnail: "https://schilderenopnummerwinkel.nl/wp-content/uploads/2025/07/SCR-20250727-btcn-scaled.png",
   tags: ['Klaviyo', 'Email Automation', 'Lead Generation']
 };
 

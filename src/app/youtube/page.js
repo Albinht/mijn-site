@@ -17,7 +17,7 @@ const blogPosts = [
     publishDate: "2025-01-30",
     readTime: "10 min read",
     category: "Email Marketing",
-    thumbnail: n8nEmailImage,
+    thumbnail: "https://schilderenopnummerwinkel.nl/wp-content/uploads/2025/07/SCR-20250727-btcn-scaled.png",
     tags: ["Klaviyo", "Email Automation", "Lead Generation"]
   },
   {
