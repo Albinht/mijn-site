@@ -14,17 +14,6 @@ import klaviyoImage from '../../assets/klaviyo.png'
 // Blog posts data - easily add new posts here (sorted newest to oldest)
 const blogPosts = [
   {
-<<<<<<< HEAD
-    id: 5,
-    slug: "klaviyo-signup-forms-email-automation-send-deliverables-instantly",
-    title: "Klaviyo Signup Forms + Email Automation — Send Deliverables Instantly",
-    excerpt: "Learn how to build Klaviyo signup forms that instantly send your lead magnet or welcome offer.",
-    publishDate: "2025-01-30",
-    readTime: "10 min read",
-    category: "Email Marketing",
-    thumbnail: n8nEmailImage,
-    tags: ["Klaviyo", "Email Automation", "Lead Generation"]
-=======
     id: 8,
     slug: "klaviyo-signup-forms-email-automation-send-deliverables-instantly",
     title: "Klaviyo Signup Forms + Email Automation — Send Deliverables Instantly",
@@ -67,7 +56,6 @@ const blogPosts = [
     category: "WhatsApp Integration",
     thumbnail: apiGuideWhatsAppImage,
     tags: ["WhatsApp", "N8N", "Business API", "Webhook", "Meta", "Customer Service", "Automation"]
->>>>>>> 5115cba (Je commit message hier)
   },
   {
     id: 4,
