@@ -209,24 +209,7 @@ const post = {
     tags: ["Klaviyo", "Email Automation", "Lead Generation", "Marketing", "Signup Forms"]
 };
 
-// Page-level SEO metadata for Next.js App Router
-export const metadata = {
-    title: `${post.title} | YouTube Tutorial`,
-    description: post.description,
-    keywords: post.tags.join(', '),
-    openGraph: {
-        title: post.title,
-        description: post.description,
-        type: 'article',
-        publishedTime: post.publishDate,
-        tags: post.tags,
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: post.title,
-        description: post.description,
-    }
-};
+
 
 export default function KlaviyoSignupFormsPage() {
     return (
