@@ -6,10 +6,15 @@ import productDescriptionsImage from '../../assets/Product descriptions.png'
 import ecomSeoFrameworkImage from '../../assets/E-com SEO framework.png'
 import translateVideoImage from '../../assets/translate video.png'
 import n8nEmailImage from '../../assets/n8n-email-automation.png'
+import n8nWhatsAppImage from '../../assets/n8n-whatsapp-chatbot.png'
+import apiGuideWhatsAppImage from '../../assets/API guide whatsapp.webp'
+import n8nOpenRouterImage from '../../assets/n8n open router.webp'
+import klaviyoImage from '../../assets/klaviyo.png'
 
 // Blog posts data - easily add new posts here (sorted newest to oldest)
 const blogPosts = [
   {
+<<<<<<< HEAD
     id: 5,
     slug: "klaviyo-signup-forms-email-automation-send-deliverables-instantly",
     title: "Klaviyo Signup Forms + Email Automation — Send Deliverables Instantly",
@@ -19,6 +24,50 @@ const blogPosts = [
     category: "Email Marketing",
     thumbnail: n8nEmailImage,
     tags: ["Klaviyo", "Email Automation", "Lead Generation"]
+=======
+    id: 8,
+    slug: "klaviyo-signup-forms-email-automation-send-deliverables-instantly",
+    title: "Klaviyo Signup Forms + Email Automation — Send Deliverables Instantly",
+    excerpt: "Learn how to set up Klaviyo signup forms and automate instant delivery of lead magnets. Complete guide to building trust and engagement with new subscribers through automated email sequences.",
+    publishDate: "2025-07-27",
+    readTime: "12 min read",
+    category: "Email Marketing",
+    thumbnail: klaviyoImage,
+    tags: ["Klaviyo", "Email Marketing", "Automation", "Lead Magnets", "Signup Forms", "E-commerce"]
+  },
+  {
+    id: 5,
+    slug: "build-your-own-whatsapp-chatbot-with-n8n-no-code-guide",
+    title: "Build Your Own WhatsApp Chatbot with N8N (No-Code Guide)",
+    excerpt: "Learn how to create a powerful AI-powered WhatsApp chatbot using N8N without any coding. Complete tutorial with OpenRouter integration and WhatsApp Business API setup.",
+    publishDate: "2025-07-28",
+    readTime: "25 min read",
+    category: "Chatbot Automation",
+    thumbnail: n8nWhatsAppImage,
+    tags: ["N8N", "WhatsApp", "Chatbot", "AI", "OpenRouter", "No-Code", "Automation"]
+  },
+  {
+    id: 6,
+    slug: "how-to-connect-open-router-to-n8n",
+    title: "How to Connect Open Router to N8N",
+    excerpt: "Complete step-by-step guide to integrate OpenRouter API with N8N for AI-powered workflows. Access 100+ AI models including GPT-4, Claude, and Llama through one unified API.",
+    publishDate: "2025-07-28",
+    readTime: "15 min read",
+    category: "AI Integration",
+    thumbnail: n8nOpenRouterImage,
+    tags: ["OpenRouter", "N8N", "AI", "API", "GPT-4", "Claude", "Integration"]
+  },
+  {
+    id: 7,
+    slug: "how-to-connect-whatsapp-business-cloud-credentials-to-n8n",
+    title: "How to Connect WhatsApp Business Cloud Credentials to N8N",
+    excerpt: "Complete step-by-step guide to integrate WhatsApp Business Cloud API with N8N. Learn how to set up webhooks, send messages, and handle incoming communications for automated customer service.",
+    publishDate: "2025-07-28",
+    readTime: "20 min read",
+    category: "WhatsApp Integration",
+    thumbnail: apiGuideWhatsAppImage,
+    tags: ["WhatsApp", "N8N", "Business API", "Webhook", "Meta", "Customer Service", "Automation"]
+>>>>>>> 5115cba (Je commit message hier)
   },
   {
     id: 4,
@@ -124,6 +173,9 @@ const BlogCard = ({ post }) => (
 );
 
 export default function YouTubePage() {
+  // Sort blog posts by publish date (newest first)
+  const sortedPosts = [...blogPosts].sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+
   return (
     <main className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -162,10 +214,11 @@ export default function YouTubePage() {
             <p className="text-lg text-gray-600">
               Practical marketing content you can apply immediately
             </p>
+
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post) => (
+            {sortedPosts.map((post) => (
               <BlogCard key={post.id} post={post} />
             ))}
           </div>
