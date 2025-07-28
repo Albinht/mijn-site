@@ -7,6 +7,7 @@ import { Geist, Geist_Mono } from 'next/font/google'
 // Componenten
 import Header from '../components/header.js'
 import Footer from '../components/Footer.js'
+import GoogleAnalytics from '../components/GoogleAnalytics.js'
 
 // Fonts activeren
 const poppins = Poppins({
@@ -65,7 +66,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable}`}>
+      <head>
+      </head>
       <body suppressHydrationWarning={true} className="font-sans">
+        <GoogleAnalytics />
         <Header />
         {children}
         <Footer />
