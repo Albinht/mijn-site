@@ -10,9 +10,21 @@ import n8nWhatsAppImage from '../../assets/n8n-whatsapp-chatbot.png'
 import apiGuideWhatsAppImage from '../../assets/API guide whatsapp.webp'
 import n8nOpenRouterImage from '../../assets/n8n open router.webp'
 import klaviyoImage from '../../assets/klaviyo.png'
+import apifyVideoImage from '../../assets/Apify video.jpg'
 
 // Blog posts data - easily add new posts here (sorted newest to oldest)
 const blogPosts = [
+  {
+    id: 9,
+    slug: "automated-lead-scraping-with-apify-and-n8n-google-maps-to-sheets",
+    title: "Automated Lead Scraping with Apify and N8N: Google Maps to Sheets",
+    excerpt: "Learn how to build a fully automated system to scrape leads from Google Maps using Apify, enrich them with AI, and store them in Google Sheets using N8N. Complete with personalized cold outreach generation.",
+    publishDate: "2025-07-29",
+    readTime: "15 min read",
+    category: "Lead Generation",
+    thumbnail: apifyVideoImage,
+    tags: ["N8N", "Apify", "Lead Generation", "Google Maps", "AI", "Automation", "Google Sheets"]
+  },
   {
     id: 8,
     slug: "klaviyo-signup-forms-email-automation-send-deliverables-instantly",
