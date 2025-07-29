@@ -3,9 +3,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import graphImage from '../assets/graph.png'
-import avatarImage from '../assets/avatar.png'
-import Button from '../components/Button'
+import graphImage from '../../assets/graph.png'
+import avatarImage from '../../assets/avatar.png'
+import Button from '../../components/Button'
 
 export default function Marketing() {
   const locations = [
