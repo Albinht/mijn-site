@@ -98,6 +98,7 @@ export default function Header() {
                 <Link href="/tools/ai-marketing-audit" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">AI Marketing Audit</Link>
                 <Link href="/tools/break-even-roas-calculator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"> Break even ROAS Calculator</Link>
                 <Link href="/tools/cpa-calculator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">CPA Calculator</Link>
+                <Link href="/tools/tekens-tellen" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Tekens Tellen Tool</Link>
               </div>
             )}
           </div>
@@ -221,6 +222,7 @@ export default function Header() {
                   <Link href="/tools/ai-marketing-audit" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>🤖 AI Marketing Audit</Link>
                   <Link href="/tools/break-even-roas-calculator" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>📊 ROAS Calculator</Link>
                   <Link href="/tools/cpa-calculator" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>💰 CPA Calculator</Link>
+                  <Link href="/tools/tekens-tellen" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>📝 Tekens Tellen Tool</Link>
                 </div>
               )}
             </div>

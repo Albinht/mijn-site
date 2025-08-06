@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import Head from 'next/head'
 
 export default function TekensTellen() {
   const [text, setText] = useState('')
@@ -20,18 +19,7 @@ export default function TekensTellen() {
   }
 
   return (
-    <>
-      <Head>
-        <title>Karakters en Tekens Tellen – Snel, Nauwkeurig en 100% Gratis | Niblah</title>
-        <meta name="description" content="Gratis tekens teller om karakters, woorden en letters te tellen. Perfect voor SEO-titels, meta descriptions en social media posts. Gebruik onze teken counter nu!" />
-        <meta name="keywords" content="tekens tellen, karakters tellen, woorden tellen, letters tellen, teken counter, SEO tool, meta description, page title, hoeveel tekens, karakter teller" />
-        <meta property="og:title" content="Karakters en Tekens Tellen – Snel, Nauwkeurig en 100% Gratis" />
-        <meta property="og:description" content="Gratis tekens teller om karakters, woorden en letters te tellen. Perfect voor SEO-titels, meta descriptions en social media posts." />
-        <meta property="og:type" content="website" />
-        <meta name="robots" content="index, follow" />
-      </Head>
-
-      <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white">
         {/* Hero Section */}
         <section className="py-16 px-6">
           <div className="max-w-7xl mx-auto text-center">
@@ -402,6 +390,5 @@ export default function TekensTellen() {
           </div>
         </section>
       </main>
-    </>
   )
 }
