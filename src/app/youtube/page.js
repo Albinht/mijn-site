@@ -11,9 +11,21 @@ import apiGuideWhatsAppImage from '../../assets/API guide whatsapp.webp'
 import n8nOpenRouterImage from '../../assets/n8n open router.webp'
 import klaviyoImage from '../../assets/klaviyo.png'
 import apifyVideoImage from '../../assets/Apify video.jpg'
+import shopifyTranslateAiImage from '../../assets/SCR-20250806-pnlp.png'
 
 // Blog posts data - easily add new posts here (sorted newest to oldest)
 const blogPosts = [
+  {
+    id: 10,
+    slug: "translate-your-shopify-store-automatically-with-ai-n8n-google-sheets",
+    title: "Translate Your Shopify Store Automatically with AI + n8n & Google Sheets (No Manual Work!)",
+    excerpt: "If you're scaling internationally with Shopify, you know the pain of manually translating every product, blog, and page. It's slow, error-prone, and definitely not scalable. Learn how to build a fully automated translation workflow using Google Sheets, n8n, and OpenRouter AI for high-quality, SEO-friendly outputs with no manual work.",
+    publishDate: "2025-08-06",
+    readTime: "22 min read",
+    category: "Shopify Automation",
+    thumbnail: shopifyTranslateAiImage,
+    tags: ["Shopify", "AI", "N8N", "Google Sheets", "Translation", "OpenRouter", "Automation", "SEO", "International"]
+  },
   {
     id: 9,
     slug: "automated-lead-scraping-with-apify-and-n8n-google-maps-to-sheets",
