@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import Button from '../../../../components/Button'
@@ -56,7 +56,7 @@ const MOCK_JOB_STATUSES = [
   'queue', 'analysis', 'training', 'generation', 'quality_check', 'complete'
 ]
 
-export default function ProcessingPage() {
+function ProcessingPageContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
 
@@ -433,5 +433,54 @@ export default function ProcessingPage() {
         </div>
       </div>
     </main>
+  )
+}
+
+// Loading component that matches the design
+function ProcessingLoading() {
+  return (
+    <main className="min-h-screen bg-gray-50 py-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Header */}
+        <div className="text-center mb-8">
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <span className="bg-[#F7D8FA] px-2 rounded italic">Processing</span> Your Headshots
+          </h1>
+          <p className="text-lg text-gray-600 mb-6">
+            Loading processing status...
+          </p>
+          
+          {/* Progress Bar */}
+          <div className="max-w-md mx-auto mb-6">
+            <div className="bg-gray-200 rounded-full h-2">
+              <div 
+                className="bg-blue-600 h-2 rounded-full transition-all duration-300"
+                style={{ width: '100%' }}
+              ></div>
+            </div>
+            <div className="flex justify-between text-xs text-gray-500 mt-2">
+              <span className="text-blue-600">Upload</span>
+              <span className="text-blue-600">Styles</span>
+              <span className="text-blue-600">Payment</span>
+              <span className="text-blue-600 font-medium">Processing</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex items-center justify-center">
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
+        </div>
+      </div>
+    </main>
+  )
+}
+
+// Suspense wrapper component
+export default function ProcessingPage() {
+  return (
+    <Suspense fallback={<ProcessingLoading />}>
+      <ProcessingPageContent />
+    </Suspense>
   )
 }
