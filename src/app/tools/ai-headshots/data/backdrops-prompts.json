@@ -1,0 +1,1626 @@
+[
+  {
+    "id": "modern-office-1",
+    "name": "Modern Office Space",
+    "category": "office",
+    "originalPrompt": {
+      "positive": "Professional headshot background: modern office space, Clean, contemporary office with glass walls, corporate office environment, business setting, professional workspace, office interior, natural lighting, professional atmosphere, white and gray and blue color palette, architectural photography, interior design, professional environment, high resolution, perfect lighting, commercial quality, depth of field, professional backdrop",
+      "negative": "poor lighting, amateur photography, cluttered, unprofessional, blurry, low quality, distorted",
+      "style": "office",
+      "technical": "professional_background"
+    },
+    "marketingPrompt": {
+      "hero": "Professional headshot background: modern office space - perfect setting for business portraits",
+      "showcase": "Premium backdrop option: modern office space for sophisticated professional headshots",
+      "category": "office environment: modern office space for professional photography"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with modern office space background, natural lighting, confident smile, Clean, contemporary office with glass walls, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with modern office space background, natural lighting, professional expression, Clean, contemporary office with glass walls, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with modern office space background, natural lighting, approachable look, Clean, contemporary office with glass walls, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with modern office space background, natural lighting, executive presence, Clean, contemporary office with glass walls, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with modern office space background, studio lighting, confident smile, Clean, contemporary office with glass walls, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with modern office space background, studio lighting, professional expression, Clean, contemporary office with glass walls, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with modern office space background, studio lighting, approachable look, Clean, contemporary office with glass walls, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with modern office space background, studio lighting, executive presence, Clean, contemporary office with glass walls, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with modern office space background, soft lighting, confident smile, Clean, contemporary office with glass walls, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with modern office space background, soft lighting, professional expression, Clean, contemporary office with glass walls, background photography"
+      }
+    ]
+  },
+  {
+    "id": "executive-office-1",
+    "name": "Executive Office",
+    "category": "office",
+    "originalPrompt": {
+      "positive": "Professional headshot background: executive office, Sophisticated executive office with mahogany desk, corporate office environment, business setting, professional workspace, office interior, warm lighting, authoritative atmosphere, brown and gold and dark-wood color palette, architectural photography, interior design, professional environment, high resolution, perfect lighting, commercial quality, depth of field, professional backdrop",
+      "negative": "poor lighting, amateur photography, cluttered, unprofessional, blurry, low quality, distorted",
+      "style": "office",
+      "technical": "professional_background"
+    },
+    "marketingPrompt": {
+      "hero": "Professional headshot background: executive office - perfect setting for business portraits",
+      "showcase": "Premium backdrop option: executive office for sophisticated professional headshots",
+      "category": "office environment: executive office for professional photography"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with executive office background, natural lighting, confident smile, Sophisticated executive office with mahogany desk, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with executive office background, natural lighting, professional expression, Sophisticated executive office with mahogany desk, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with executive office background, natural lighting, approachable look, Sophisticated executive office with mahogany desk, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with executive office background, natural lighting, executive presence, Sophisticated executive office with mahogany desk, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with executive office background, studio lighting, confident smile, Sophisticated executive office with mahogany desk, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with executive office background, studio lighting, professional expression, Sophisticated executive office with mahogany desk, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with executive office background, studio lighting, approachable look, Sophisticated executive office with mahogany desk, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with executive office background, studio lighting, executive presence, Sophisticated executive office with mahogany desk, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with executive office background, soft lighting, confident smile, Sophisticated executive office with mahogany desk, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with executive office background, soft lighting, professional expression, Sophisticated executive office with mahogany desk, background photography"
+      }
+    ]
+  },
+  {
+    "id": "conference-room-1",
+    "name": "Conference Room",
+    "category": "office",
+    "originalPrompt": {
+      "positive": "Professional headshot background: conference room, Professional conference room with large table, corporate office environment, business setting, professional workspace, office interior, bright lighting, collaborative atmosphere, white and gray and black color palette, architectural photography, interior design, professional environment, high resolution, perfect lighting, commercial quality, depth of field, professional backdrop",
+      "negative": "poor lighting, amateur photography, cluttered, unprofessional, blurry, low quality, distorted",
+      "style": "office",
+      "technical": "professional_background"
+    },
+    "marketingPrompt": {
+      "hero": "Professional headshot background: conference room - perfect setting for business portraits",
+      "showcase": "Premium backdrop option: conference room for sophisticated professional headshots",
+      "category": "office environment: conference room for professional photography"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with conference room background, natural lighting, confident smile, Professional conference room with large table, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with conference room background, natural lighting, professional expression, Professional conference room with large table, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with conference room background, natural lighting, approachable look, Professional conference room with large table, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with conference room background, natural lighting, executive presence, Professional conference room with large table, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with conference room background, studio lighting, confident smile, Professional conference room with large table, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with conference room background, studio lighting, professional expression, Professional conference room with large table, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with conference room background, studio lighting, approachable look, Professional conference room with large table, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with conference room background, studio lighting, executive presence, Professional conference room with large table, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with conference room background, soft lighting, confident smile, Professional conference room with large table, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with conference room background, soft lighting, professional expression, Professional conference room with large table, background photography"
+      }
+    ]
+  },
+  {
+    "id": "corner-office-1",
+    "name": "Corner Office View",
+    "category": "office",
+    "originalPrompt": {
+      "positive": "Professional headshot background: corner office view, Prestigious corner office with city view, corporate office environment, business setting, professional workspace, office interior, natural lighting, prestigious atmosphere, blue and white and gray color palette, architectural photography, interior design, professional environment, high resolution, perfect lighting, commercial quality, depth of field, professional backdrop",
+      "negative": "poor lighting, amateur photography, cluttered, unprofessional, blurry, low quality, distorted",
+      "style": "office",
+      "technical": "professional_background"
+    },
+    "marketingPrompt": {
+      "hero": "Professional headshot background: corner office view - perfect setting for business portraits",
+      "showcase": "Premium backdrop option: corner office view for sophisticated professional headshots",
+      "category": "office environment: corner office view for professional photography"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with corner office view background, natural lighting, confident smile, Prestigious corner office with city view, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with corner office view background, natural lighting, professional expression, Prestigious corner office with city view, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with corner office view background, natural lighting, approachable look, Prestigious corner office with city view, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with corner office view background, natural lighting, executive presence, Prestigious corner office with city view, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with corner office view background, studio lighting, confident smile, Prestigious corner office with city view, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with corner office view background, studio lighting, professional expression, Prestigious corner office with city view, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with corner office view background, studio lighting, approachable look, Prestigious corner office with city view, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with corner office view background, studio lighting, executive presence, Prestigious corner office with city view, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with corner office view background, soft lighting, confident smile, Prestigious corner office with city view, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with corner office view background, soft lighting, professional expression, Prestigious corner office with city view, background photography"
+      }
+    ]
+  },
+  {
+    "id": "startup-office-1",
+    "name": "Startup Office",
+    "category": "office",
+    "originalPrompt": {
+      "positive": "Professional headshot background: startup office, Modern startup office with exposed brick, corporate office environment, business setting, professional workspace, office interior, natural lighting, innovative atmosphere, red and white and wood color palette, architectural photography, interior design, professional environment, high resolution, perfect lighting, commercial quality, depth of field, professional backdrop",
+      "negative": "poor lighting, amateur photography, cluttered, unprofessional, blurry, low quality, distorted",
+      "style": "office",
+      "technical": "professional_background"
+    },
+    "marketingPrompt": {
+      "hero": "Professional headshot background: startup office - perfect setting for business portraits",
+      "showcase": "Premium backdrop option: startup office for sophisticated professional headshots",
+      "category": "office environment: startup office for professional photography"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with startup office background, natural lighting, confident smile, Modern startup office with exposed brick, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with startup office background, natural lighting, professional expression, Modern startup office with exposed brick, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with startup office background, natural lighting, approachable look, Modern startup office with exposed brick, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with startup office background, natural lighting, executive presence, Modern startup office with exposed brick, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with startup office background, studio lighting, confident smile, Modern startup office with exposed brick, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with startup office background, studio lighting, professional expression, Modern startup office with exposed brick, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with startup office background, studio lighting, approachable look, Modern startup office with exposed brick, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with startup office background, studio lighting, executive presence, Modern startup office with exposed brick, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with startup office background, soft lighting, confident smile, Modern startup office with exposed brick, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with startup office background, soft lighting, professional expression, Modern startup office with exposed brick, background photography"
+      }
+    ]
+  },
+  {
+    "id": "white-studio-1",
+    "name": "Pure White Studio",
+    "category": "studio",
+    "originalPrompt": {
+      "positive": "Professional headshot background: pure white studio, Clean white photography studio background, photography studio, controlled lighting, seamless background, professional studio setup, soft lighting, neutral atmosphere, white color palette, architectural photography, interior design, professional environment, high resolution, perfect lighting, commercial quality, depth of field, professional backdrop",
+      "negative": "poor lighting, amateur photography, cluttered, unprofessional, blurry, low quality, distorted",
+      "style": "studio",
+      "technical": "professional_background"
+    },
+    "marketingPrompt": {
+      "hero": "Professional headshot background: pure white studio - perfect setting for business portraits",
+      "showcase": "Premium backdrop option: pure white studio for sophisticated professional headshots",
+      "category": "studio environment: pure white studio for professional photography"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with pure white studio background, natural lighting, confident smile, Clean white photography studio background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with pure white studio background, natural lighting, professional expression, Clean white photography studio background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with pure white studio background, natural lighting, approachable look, Clean white photography studio background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with pure white studio background, natural lighting, executive presence, Clean white photography studio background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with pure white studio background, studio lighting, confident smile, Clean white photography studio background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with pure white studio background, studio lighting, professional expression, Clean white photography studio background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with pure white studio background, studio lighting, approachable look, Clean white photography studio background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with pure white studio background, studio lighting, executive presence, Clean white photography studio background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with pure white studio background, soft lighting, confident smile, Clean white photography studio background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with pure white studio background, soft lighting, professional expression, Clean white photography studio background, background photography"
+      }
+    ]
+  },
+  {
+    "id": "gray-studio-1",
+    "name": "Professional Gray Studio",
+    "category": "studio",
+    "originalPrompt": {
+      "positive": "Professional headshot background: professional gray studio, Professional gray studio backdrop, photography studio, controlled lighting, seamless background, professional studio setup, even lighting, professional atmosphere, gray color palette, architectural photography, interior design, professional environment, high resolution, perfect lighting, commercial quality, depth of field, professional backdrop",
+      "negative": "poor lighting, amateur photography, cluttered, unprofessional, blurry, low quality, distorted",
+      "style": "studio",
+      "technical": "professional_background"
+    },
+    "marketingPrompt": {
+      "hero": "Professional headshot background: professional gray studio - perfect setting for business portraits",
+      "showcase": "Premium backdrop option: professional gray studio for sophisticated professional headshots",
+      "category": "studio environment: professional gray studio for professional photography"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with professional gray studio background, natural lighting, confident smile, Professional gray studio backdrop, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with professional gray studio background, natural lighting, professional expression, Professional gray studio backdrop, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with professional gray studio background, natural lighting, approachable look, Professional gray studio backdrop, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with professional gray studio background, natural lighting, executive presence, Professional gray studio backdrop, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with professional gray studio background, studio lighting, confident smile, Professional gray studio backdrop, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with professional gray studio background, studio lighting, professional expression, Professional gray studio backdrop, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with professional gray studio background, studio lighting, approachable look, Professional gray studio backdrop, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with professional gray studio background, studio lighting, executive presence, Professional gray studio backdrop, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with professional gray studio background, soft lighting, confident smile, Professional gray studio backdrop, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with professional gray studio background, soft lighting, professional expression, Professional gray studio backdrop, background photography"
+      }
+    ]
+  },
+  {
+    "id": "black-studio-1",
+    "name": "Dramatic Black Studio",
+    "category": "studio",
+    "originalPrompt": {
+      "positive": "Professional headshot background: dramatic black studio, Dramatic black studio background, photography studio, controlled lighting, seamless background, professional studio setup, dramatic lighting, bold atmosphere, black color palette, architectural photography, interior design, professional environment, high resolution, perfect lighting, commercial quality, depth of field, professional backdrop",
+      "negative": "poor lighting, amateur photography, cluttered, unprofessional, blurry, low quality, distorted",
+      "style": "studio",
+      "technical": "professional_background"
+    },
+    "marketingPrompt": {
+      "hero": "Professional headshot background: dramatic black studio - perfect setting for business portraits",
+      "showcase": "Premium backdrop option: dramatic black studio for sophisticated professional headshots",
+      "category": "studio environment: dramatic black studio for professional photography"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with dramatic black studio background, natural lighting, confident smile, Dramatic black studio background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with dramatic black studio background, natural lighting, professional expression, Dramatic black studio background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with dramatic black studio background, natural lighting, approachable look, Dramatic black studio background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with dramatic black studio background, natural lighting, executive presence, Dramatic black studio background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with dramatic black studio background, studio lighting, confident smile, Dramatic black studio background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with dramatic black studio background, studio lighting, professional expression, Dramatic black studio background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with dramatic black studio background, studio lighting, approachable look, Dramatic black studio background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with dramatic black studio background, studio lighting, executive presence, Dramatic black studio background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with dramatic black studio background, soft lighting, confident smile, Dramatic black studio background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with dramatic black studio background, soft lighting, professional expression, Dramatic black studio background, background photography"
+      }
+    ]
+  },
+  {
+    "id": "gradient-blue-1",
+    "name": "Blue Gradient Studio",
+    "category": "studio",
+    "originalPrompt": {
+      "positive": "Professional headshot background: blue gradient studio, Professional blue gradient backdrop, photography studio, controlled lighting, seamless background, professional studio setup, soft lighting, corporate atmosphere, blue and white color palette, architectural photography, interior design, professional environment, high resolution, perfect lighting, commercial quality, depth of field, professional backdrop",
+      "negative": "poor lighting, amateur photography, cluttered, unprofessional, blurry, low quality, distorted",
+      "style": "studio",
+      "technical": "professional_background"
+    },
+    "marketingPrompt": {
+      "hero": "Professional headshot background: blue gradient studio - perfect setting for business portraits",
+      "showcase": "Premium backdrop option: blue gradient studio for sophisticated professional headshots",
+      "category": "studio environment: blue gradient studio for professional photography"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with blue gradient studio background, natural lighting, confident smile, Professional blue gradient backdrop, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with blue gradient studio background, natural lighting, professional expression, Professional blue gradient backdrop, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with blue gradient studio background, natural lighting, approachable look, Professional blue gradient backdrop, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with blue gradient studio background, natural lighting, executive presence, Professional blue gradient backdrop, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with blue gradient studio background, studio lighting, confident smile, Professional blue gradient backdrop, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with blue gradient studio background, studio lighting, professional expression, Professional blue gradient backdrop, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with blue gradient studio background, studio lighting, approachable look, Professional blue gradient backdrop, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with blue gradient studio background, studio lighting, executive presence, Professional blue gradient backdrop, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with blue gradient studio background, soft lighting, confident smile, Professional blue gradient backdrop, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with blue gradient studio background, soft lighting, professional expression, Professional blue gradient backdrop, background photography"
+      }
+    ]
+  },
+  {
+    "id": "textured-gray-1",
+    "name": "Textured Gray Wall",
+    "category": "studio",
+    "originalPrompt": {
+      "positive": "Professional headshot background: textured gray wall, Sophisticated textured gray studio wall, photography studio, controlled lighting, seamless background, professional studio setup, soft lighting, sophisticated atmosphere, gray color palette, architectural photography, interior design, professional environment, high resolution, perfect lighting, commercial quality, depth of field, professional backdrop",
+      "negative": "poor lighting, amateur photography, cluttered, unprofessional, blurry, low quality, distorted",
+      "style": "studio",
+      "technical": "professional_background"
+    },
+    "marketingPrompt": {
+      "hero": "Professional headshot background: textured gray wall - perfect setting for business portraits",
+      "showcase": "Premium backdrop option: textured gray wall for sophisticated professional headshots",
+      "category": "studio environment: textured gray wall for professional photography"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with textured gray wall background, natural lighting, confident smile, Sophisticated textured gray studio wall, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with textured gray wall background, natural lighting, professional expression, Sophisticated textured gray studio wall, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with textured gray wall background, natural lighting, approachable look, Sophisticated textured gray studio wall, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with textured gray wall background, natural lighting, executive presence, Sophisticated textured gray studio wall, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with textured gray wall background, studio lighting, confident smile, Sophisticated textured gray studio wall, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with textured gray wall background, studio lighting, professional expression, Sophisticated textured gray studio wall, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with textured gray wall background, studio lighting, approachable look, Sophisticated textured gray studio wall, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with textured gray wall background, studio lighting, executive presence, Sophisticated textured gray studio wall, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with textured gray wall background, soft lighting, confident smile, Sophisticated textured gray studio wall, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with textured gray wall background, soft lighting, professional expression, Sophisticated textured gray studio wall, background photography"
+      }
+    ]
+  },
+  {
+    "id": "city-skyline-1",
+    "name": "City Skyline View",
+    "category": "urban",
+    "originalPrompt": {
+      "positive": "Professional headshot background: city skyline view, Modern city skyline background, urban environment, city setting, modern architecture, metropolitan backdrop, natural lighting, dynamic atmosphere, blue and gray and white color palette, architectural photography, interior design, professional environment, high resolution, perfect lighting, commercial quality, depth of field, professional backdrop",
+      "negative": "poor lighting, amateur photography, cluttered, unprofessional, blurry, low quality, distorted",
+      "style": "urban",
+      "technical": "professional_background"
+    },
+    "marketingPrompt": {
+      "hero": "Professional headshot background: city skyline view - perfect setting for business portraits",
+      "showcase": "Premium backdrop option: city skyline view for sophisticated professional headshots",
+      "category": "urban environment: city skyline view for professional photography"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with city skyline view background, natural lighting, confident smile, Modern city skyline background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with city skyline view background, natural lighting, professional expression, Modern city skyline background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with city skyline view background, natural lighting, approachable look, Modern city skyline background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with city skyline view background, natural lighting, executive presence, Modern city skyline background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with city skyline view background, studio lighting, confident smile, Modern city skyline background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with city skyline view background, studio lighting, professional expression, Modern city skyline background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with city skyline view background, studio lighting, approachable look, Modern city skyline background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with city skyline view background, studio lighting, executive presence, Modern city skyline background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with city skyline view background, soft lighting, confident smile, Modern city skyline background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with city skyline view background, soft lighting, professional expression, Modern city skyline background, background photography"
+      }
+    ]
+  },
+  {
+    "id": "brick-wall-1",
+    "name": "Exposed Brick Wall",
+    "category": "urban",
+    "originalPrompt": {
+      "positive": "Professional headshot background: exposed brick wall, Industrial exposed brick wall background, urban environment, city setting, modern architecture, metropolitan backdrop, natural lighting, industrial atmosphere, red and brown color palette, architectural photography, interior design, professional environment, high resolution, perfect lighting, commercial quality, depth of field, professional backdrop",
+      "negative": "poor lighting, amateur photography, cluttered, unprofessional, blurry, low quality, distorted",
+      "style": "urban",
+      "technical": "professional_background"
+    },
+    "marketingPrompt": {
+      "hero": "Professional headshot background: exposed brick wall - perfect setting for business portraits",
+      "showcase": "Premium backdrop option: exposed brick wall for sophisticated professional headshots",
+      "category": "urban environment: exposed brick wall for professional photography"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with exposed brick wall background, natural lighting, confident smile, Industrial exposed brick wall background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with exposed brick wall background, natural lighting, professional expression, Industrial exposed brick wall background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with exposed brick wall background, natural lighting, approachable look, Industrial exposed brick wall background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with exposed brick wall background, natural lighting, executive presence, Industrial exposed brick wall background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with exposed brick wall background, studio lighting, confident smile, Industrial exposed brick wall background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with exposed brick wall background, studio lighting, professional expression, Industrial exposed brick wall background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with exposed brick wall background, studio lighting, approachable look, Industrial exposed brick wall background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with exposed brick wall background, studio lighting, executive presence, Industrial exposed brick wall background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with exposed brick wall background, soft lighting, confident smile, Industrial exposed brick wall background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with exposed brick wall background, soft lighting, professional expression, Industrial exposed brick wall background, background photography"
+      }
+    ]
+  },
+  {
+    "id": "concrete-wall-1",
+    "name": "Modern Concrete Wall",
+    "category": "urban",
+    "originalPrompt": {
+      "positive": "Professional headshot background: modern concrete wall, Clean concrete wall with natural lighting, urban environment, city setting, modern architecture, metropolitan backdrop, natural lighting, modern atmosphere, gray color palette, architectural photography, interior design, professional environment, high resolution, perfect lighting, commercial quality, depth of field, professional backdrop",
+      "negative": "poor lighting, amateur photography, cluttered, unprofessional, blurry, low quality, distorted",
+      "style": "urban",
+      "technical": "professional_background"
+    },
+    "marketingPrompt": {
+      "hero": "Professional headshot background: modern concrete wall - perfect setting for business portraits",
+      "showcase": "Premium backdrop option: modern concrete wall for sophisticated professional headshots",
+      "category": "urban environment: modern concrete wall for professional photography"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with modern concrete wall background, natural lighting, confident smile, Clean concrete wall with natural lighting, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with modern concrete wall background, natural lighting, professional expression, Clean concrete wall with natural lighting, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with modern concrete wall background, natural lighting, approachable look, Clean concrete wall with natural lighting, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with modern concrete wall background, natural lighting, executive presence, Clean concrete wall with natural lighting, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with modern concrete wall background, studio lighting, confident smile, Clean concrete wall with natural lighting, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with modern concrete wall background, studio lighting, professional expression, Clean concrete wall with natural lighting, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with modern concrete wall background, studio lighting, approachable look, Clean concrete wall with natural lighting, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with modern concrete wall background, studio lighting, executive presence, Clean concrete wall with natural lighting, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with modern concrete wall background, soft lighting, confident smile, Clean concrete wall with natural lighting, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with modern concrete wall background, soft lighting, professional expression, Clean concrete wall with natural lighting, background photography"
+      }
+    ]
+  },
+  {
+    "id": "glass-building-1",
+    "name": "Glass Building Facade",
+    "category": "urban",
+    "originalPrompt": {
+      "positive": "Professional headshot background: glass building facade, Modern glass building exterior, urban environment, city setting, modern architecture, metropolitan backdrop, bright lighting, corporate atmosphere, blue and white and glass color palette, architectural photography, interior design, professional environment, high resolution, perfect lighting, commercial quality, depth of field, professional backdrop",
+      "negative": "poor lighting, amateur photography, cluttered, unprofessional, blurry, low quality, distorted",
+      "style": "urban",
+      "technical": "professional_background"
+    },
+    "marketingPrompt": {
+      "hero": "Professional headshot background: glass building facade - perfect setting for business portraits",
+      "showcase": "Premium backdrop option: glass building facade for sophisticated professional headshots",
+      "category": "urban environment: glass building facade for professional photography"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with glass building facade background, natural lighting, confident smile, Modern glass building exterior, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with glass building facade background, natural lighting, professional expression, Modern glass building exterior, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with glass building facade background, natural lighting, approachable look, Modern glass building exterior, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with glass building facade background, natural lighting, executive presence, Modern glass building exterior, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with glass building facade background, studio lighting, confident smile, Modern glass building exterior, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with glass building facade background, studio lighting, professional expression, Modern glass building exterior, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with glass building facade background, studio lighting, approachable look, Modern glass building exterior, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with glass building facade background, studio lighting, executive presence, Modern glass building exterior, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with glass building facade background, soft lighting, confident smile, Modern glass building exterior, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with glass building facade background, soft lighting, professional expression, Modern glass building exterior, background photography"
+      }
+    ]
+  },
+  {
+    "id": "bookshelf-1",
+    "name": "Classic Bookshelf",
+    "category": "library",
+    "originalPrompt": {
+      "positive": "Professional headshot background: classic bookshelf, Traditional bookshelf with leather-bound books, academic library, scholarly setting, intellectual environment, bookshelf background, warm lighting, scholarly atmosphere, brown and gold and dark-wood color palette, architectural photography, interior design, professional environment, high resolution, perfect lighting, commercial quality, depth of field, professional backdrop",
+      "negative": "poor lighting, amateur photography, cluttered, unprofessional, blurry, low quality, distorted",
+      "style": "library",
+      "technical": "professional_background"
+    },
+    "marketingPrompt": {
+      "hero": "Professional headshot background: classic bookshelf - perfect setting for business portraits",
+      "showcase": "Premium backdrop option: classic bookshelf for sophisticated professional headshots",
+      "category": "library environment: classic bookshelf for professional photography"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with classic bookshelf background, natural lighting, confident smile, Traditional bookshelf with leather-bound books, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with classic bookshelf background, natural lighting, professional expression, Traditional bookshelf with leather-bound books, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with classic bookshelf background, natural lighting, approachable look, Traditional bookshelf with leather-bound books, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with classic bookshelf background, natural lighting, executive presence, Traditional bookshelf with leather-bound books, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with classic bookshelf background, studio lighting, confident smile, Traditional bookshelf with leather-bound books, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with classic bookshelf background, studio lighting, professional expression, Traditional bookshelf with leather-bound books, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with classic bookshelf background, studio lighting, approachable look, Traditional bookshelf with leather-bound books, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with classic bookshelf background, studio lighting, executive presence, Traditional bookshelf with leather-bound books, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with classic bookshelf background, soft lighting, confident smile, Traditional bookshelf with leather-bound books, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with classic bookshelf background, soft lighting, professional expression, Traditional bookshelf with leather-bound books, background photography"
+      }
+    ]
+  },
+  {
+    "id": "modern-library-1",
+    "name": "Modern Library",
+    "category": "library",
+    "originalPrompt": {
+      "positive": "Professional headshot background: modern library, Contemporary library with clean lines, academic library, scholarly setting, intellectual environment, bookshelf background, bright lighting, contemporary atmosphere, white and wood and blue color palette, architectural photography, interior design, professional environment, high resolution, perfect lighting, commercial quality, depth of field, professional backdrop",
+      "negative": "poor lighting, amateur photography, cluttered, unprofessional, blurry, low quality, distorted",
+      "style": "library",
+      "technical": "professional_background"
+    },
+    "marketingPrompt": {
+      "hero": "Professional headshot background: modern library - perfect setting for business portraits",
+      "showcase": "Premium backdrop option: modern library for sophisticated professional headshots",
+      "category": "library environment: modern library for professional photography"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with modern library background, natural lighting, confident smile, Contemporary library with clean lines, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with modern library background, natural lighting, professional expression, Contemporary library with clean lines, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with modern library background, natural lighting, approachable look, Contemporary library with clean lines, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with modern library background, natural lighting, executive presence, Contemporary library with clean lines, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with modern library background, studio lighting, confident smile, Contemporary library with clean lines, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with modern library background, studio lighting, professional expression, Contemporary library with clean lines, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with modern library background, studio lighting, approachable look, Contemporary library with clean lines, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with modern library background, studio lighting, executive presence, Contemporary library with clean lines, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with modern library background, soft lighting, confident smile, Contemporary library with clean lines, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with modern library background, soft lighting, professional expression, Contemporary library with clean lines, background photography"
+      }
+    ]
+  },
+  {
+    "id": "university-hall-1",
+    "name": "University Hall",
+    "category": "library",
+    "originalPrompt": {
+      "positive": "Professional headshot background: university hall, Prestigious university lecture hall, academic library, scholarly setting, intellectual environment, bookshelf background, natural lighting, prestigious atmosphere, wood and gold and green color palette, architectural photography, interior design, professional environment, high resolution, perfect lighting, commercial quality, depth of field, professional backdrop",
+      "negative": "poor lighting, amateur photography, cluttered, unprofessional, blurry, low quality, distorted",
+      "style": "library",
+      "technical": "professional_background"
+    },
+    "marketingPrompt": {
+      "hero": "Professional headshot background: university hall - perfect setting for business portraits",
+      "showcase": "Premium backdrop option: university hall for sophisticated professional headshots",
+      "category": "library environment: university hall for professional photography"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with university hall background, natural lighting, confident smile, Prestigious university lecture hall, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with university hall background, natural lighting, professional expression, Prestigious university lecture hall, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with university hall background, natural lighting, approachable look, Prestigious university lecture hall, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with university hall background, natural lighting, executive presence, Prestigious university lecture hall, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with university hall background, studio lighting, confident smile, Prestigious university lecture hall, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with university hall background, studio lighting, professional expression, Prestigious university lecture hall, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with university hall background, studio lighting, approachable look, Prestigious university lecture hall, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with university hall background, studio lighting, executive presence, Prestigious university lecture hall, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with university hall background, soft lighting, confident smile, Prestigious university lecture hall, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with university hall background, soft lighting, professional expression, Prestigious university lecture hall, background photography"
+      }
+    ]
+  },
+  {
+    "id": "medical-office-1",
+    "name": "Medical Office",
+    "category": "medical",
+    "originalPrompt": {
+      "positive": "Professional headshot background: medical office, Clean medical office consultation room, healthcare facility, clinical setting, medical environment, hospital interior, bright lighting, clinical atmosphere, white and blue and gray color palette, architectural photography, interior design, professional environment, high resolution, perfect lighting, commercial quality, depth of field, professional backdrop",
+      "negative": "poor lighting, amateur photography, cluttered, unprofessional, blurry, low quality, distorted",
+      "style": "medical",
+      "technical": "professional_background"
+    },
+    "marketingPrompt": {
+      "hero": "Professional headshot background: medical office - perfect setting for business portraits",
+      "showcase": "Premium backdrop option: medical office for sophisticated professional headshots",
+      "category": "medical environment: medical office for professional photography"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with medical office background, natural lighting, confident smile, Clean medical office consultation room, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with medical office background, natural lighting, professional expression, Clean medical office consultation room, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with medical office background, natural lighting, approachable look, Clean medical office consultation room, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with medical office background, natural lighting, executive presence, Clean medical office consultation room, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with medical office background, studio lighting, confident smile, Clean medical office consultation room, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with medical office background, studio lighting, professional expression, Clean medical office consultation room, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with medical office background, studio lighting, approachable look, Clean medical office consultation room, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with medical office background, studio lighting, executive presence, Clean medical office consultation room, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with medical office background, soft lighting, confident smile, Clean medical office consultation room, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with medical office background, soft lighting, professional expression, Clean medical office consultation room, background photography"
+      }
+    ]
+  },
+  {
+    "id": "hospital-hallway-1",
+    "name": "Hospital Corridor",
+    "category": "medical",
+    "originalPrompt": {
+      "positive": "Professional headshot background: hospital corridor, Modern hospital hallway background, healthcare facility, clinical setting, medical environment, hospital interior, bright lighting, professional atmosphere, white and blue color palette, architectural photography, interior design, professional environment, high resolution, perfect lighting, commercial quality, depth of field, professional backdrop",
+      "negative": "poor lighting, amateur photography, cluttered, unprofessional, blurry, low quality, distorted",
+      "style": "medical",
+      "technical": "professional_background"
+    },
+    "marketingPrompt": {
+      "hero": "Professional headshot background: hospital corridor - perfect setting for business portraits",
+      "showcase": "Premium backdrop option: hospital corridor for sophisticated professional headshots",
+      "category": "medical environment: hospital corridor for professional photography"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with hospital corridor background, natural lighting, confident smile, Modern hospital hallway background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with hospital corridor background, natural lighting, professional expression, Modern hospital hallway background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with hospital corridor background, natural lighting, approachable look, Modern hospital hallway background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with hospital corridor background, natural lighting, executive presence, Modern hospital hallway background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with hospital corridor background, studio lighting, confident smile, Modern hospital hallway background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with hospital corridor background, studio lighting, professional expression, Modern hospital hallway background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with hospital corridor background, studio lighting, approachable look, Modern hospital hallway background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with hospital corridor background, studio lighting, executive presence, Modern hospital hallway background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with hospital corridor background, soft lighting, confident smile, Modern hospital hallway background, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with hospital corridor background, soft lighting, professional expression, Modern hospital hallway background, background photography"
+      }
+    ]
+  },
+  {
+    "id": "lab-background-1",
+    "name": "Research Laboratory",
+    "category": "medical",
+    "originalPrompt": {
+      "positive": "Professional headshot background: research laboratory, High-tech research laboratory setting, healthcare facility, clinical setting, medical environment, hospital interior, bright lighting, scientific atmosphere, white and blue and silver color palette, architectural photography, interior design, professional environment, high resolution, perfect lighting, commercial quality, depth of field, professional backdrop",
+      "negative": "poor lighting, amateur photography, cluttered, unprofessional, blurry, low quality, distorted",
+      "style": "medical",
+      "technical": "professional_background"
+    },
+    "marketingPrompt": {
+      "hero": "Professional headshot background: research laboratory - perfect setting for business portraits",
+      "showcase": "Premium backdrop option: research laboratory for sophisticated professional headshots",
+      "category": "medical environment: research laboratory for professional photography"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with research laboratory background, natural lighting, confident smile, High-tech research laboratory setting, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with research laboratory background, natural lighting, professional expression, High-tech research laboratory setting, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with research laboratory background, natural lighting, approachable look, High-tech research laboratory setting, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with research laboratory background, natural lighting, executive presence, High-tech research laboratory setting, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with research laboratory background, studio lighting, confident smile, High-tech research laboratory setting, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with research laboratory background, studio lighting, professional expression, High-tech research laboratory setting, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with research laboratory background, studio lighting, approachable look, High-tech research laboratory setting, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with research laboratory background, studio lighting, executive presence, High-tech research laboratory setting, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with research laboratory background, soft lighting, confident smile, High-tech research laboratory setting, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with research laboratory background, soft lighting, professional expression, High-tech research laboratory setting, background photography"
+      }
+    ]
+  },
+  {
+    "id": "server-room-1",
+    "name": "Data Center",
+    "category": "tech",
+    "originalPrompt": {
+      "positive": "Professional headshot background: data center, Modern data center with server racks, technology office, innovation hub, modern workspace, tech company interior, cool lighting, technical atmosphere, blue and black and silver color palette, architectural photography, interior design, professional environment, high resolution, perfect lighting, commercial quality, depth of field, professional backdrop",
+      "negative": "poor lighting, amateur photography, cluttered, unprofessional, blurry, low quality, distorted",
+      "style": "tech",
+      "technical": "professional_background"
+    },
+    "marketingPrompt": {
+      "hero": "Professional headshot background: data center - perfect setting for business portraits",
+      "showcase": "Premium backdrop option: data center for sophisticated professional headshots",
+      "category": "tech environment: data center for professional photography"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with data center background, natural lighting, confident smile, Modern data center with server racks, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with data center background, natural lighting, professional expression, Modern data center with server racks, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with data center background, natural lighting, approachable look, Modern data center with server racks, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with data center background, natural lighting, executive presence, Modern data center with server racks, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with data center background, studio lighting, confident smile, Modern data center with server racks, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with data center background, studio lighting, professional expression, Modern data center with server racks, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with data center background, studio lighting, approachable look, Modern data center with server racks, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with data center background, studio lighting, executive presence, Modern data center with server racks, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with data center background, soft lighting, confident smile, Modern data center with server racks, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with data center background, soft lighting, professional expression, Modern data center with server racks, background photography"
+      }
+    ]
+  },
+  {
+    "id": "tech-office-1",
+    "name": "Tech Startup Office",
+    "category": "tech",
+    "originalPrompt": {
+      "positive": "Professional headshot background: tech startup office, Modern tech office with multiple monitors, technology office, innovation hub, modern workspace, tech company interior, bright lighting, innovative atmosphere, white and blue and black color palette, architectural photography, interior design, professional environment, high resolution, perfect lighting, commercial quality, depth of field, professional backdrop",
+      "negative": "poor lighting, amateur photography, cluttered, unprofessional, blurry, low quality, distorted",
+      "style": "tech",
+      "technical": "professional_background"
+    },
+    "marketingPrompt": {
+      "hero": "Professional headshot background: tech startup office - perfect setting for business portraits",
+      "showcase": "Premium backdrop option: tech startup office for sophisticated professional headshots",
+      "category": "tech environment: tech startup office for professional photography"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with tech startup office background, natural lighting, confident smile, Modern tech office with multiple monitors, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with tech startup office background, natural lighting, professional expression, Modern tech office with multiple monitors, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with tech startup office background, natural lighting, approachable look, Modern tech office with multiple monitors, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with tech startup office background, natural lighting, executive presence, Modern tech office with multiple monitors, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with tech startup office background, studio lighting, confident smile, Modern tech office with multiple monitors, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with tech startup office background, studio lighting, professional expression, Modern tech office with multiple monitors, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with tech startup office background, studio lighting, approachable look, Modern tech office with multiple monitors, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with tech startup office background, studio lighting, executive presence, Modern tech office with multiple monitors, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with tech startup office background, soft lighting, confident smile, Modern tech office with multiple monitors, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with tech startup office background, soft lighting, professional expression, Modern tech office with multiple monitors, background photography"
+      }
+    ]
+  },
+  {
+    "id": "coworking-space-1",
+    "name": "Coworking Space",
+    "category": "tech",
+    "originalPrompt": {
+      "positive": "Professional headshot background: coworking space, Modern coworking space with open layout, technology office, innovation hub, modern workspace, tech company interior, natural lighting, collaborative atmosphere, white and wood and green color palette, architectural photography, interior design, professional environment, high resolution, perfect lighting, commercial quality, depth of field, professional backdrop",
+      "negative": "poor lighting, amateur photography, cluttered, unprofessional, blurry, low quality, distorted",
+      "style": "tech",
+      "technical": "professional_background"
+    },
+    "marketingPrompt": {
+      "hero": "Professional headshot background: coworking space - perfect setting for business portraits",
+      "showcase": "Premium backdrop option: coworking space for sophisticated professional headshots",
+      "category": "tech environment: coworking space for professional photography"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with coworking space background, natural lighting, confident smile, Modern coworking space with open layout, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with coworking space background, natural lighting, professional expression, Modern coworking space with open layout, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with coworking space background, natural lighting, approachable look, Modern coworking space with open layout, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with coworking space background, natural lighting, executive presence, Modern coworking space with open layout, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with coworking space background, studio lighting, confident smile, Modern coworking space with open layout, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with coworking space background, studio lighting, professional expression, Modern coworking space with open layout, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with coworking space background, studio lighting, approachable look, Modern coworking space with open layout, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with coworking space background, studio lighting, executive presence, Modern coworking space with open layout, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with coworking space background, soft lighting, confident smile, Modern coworking space with open layout, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with coworking space background, soft lighting, professional expression, Modern coworking space with open layout, background photography"
+      }
+    ]
+  },
+  {
+    "id": "art-gallery-1",
+    "name": "Art Gallery",
+    "category": "creative",
+    "originalPrompt": {
+      "positive": "Professional headshot background: art gallery, Contemporary art gallery with white walls, creative studio, artistic workspace, contemporary design, creative environment, soft lighting, artistic atmosphere, white and black color palette, architectural photography, interior design, professional environment, high resolution, perfect lighting, commercial quality, depth of field, professional backdrop",
+      "negative": "poor lighting, amateur photography, cluttered, unprofessional, blurry, low quality, distorted",
+      "style": "creative",
+      "technical": "professional_background"
+    },
+    "marketingPrompt": {
+      "hero": "Professional headshot background: art gallery - perfect setting for business portraits",
+      "showcase": "Premium backdrop option: art gallery for sophisticated professional headshots",
+      "category": "creative environment: art gallery for professional photography"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with art gallery background, natural lighting, confident smile, Contemporary art gallery with white walls, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with art gallery background, natural lighting, professional expression, Contemporary art gallery with white walls, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with art gallery background, natural lighting, approachable look, Contemporary art gallery with white walls, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with art gallery background, natural lighting, executive presence, Contemporary art gallery with white walls, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with art gallery background, studio lighting, confident smile, Contemporary art gallery with white walls, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with art gallery background, studio lighting, professional expression, Contemporary art gallery with white walls, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with art gallery background, studio lighting, approachable look, Contemporary art gallery with white walls, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with art gallery background, studio lighting, executive presence, Contemporary art gallery with white walls, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with art gallery background, soft lighting, confident smile, Contemporary art gallery with white walls, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with art gallery background, soft lighting, professional expression, Contemporary art gallery with white walls, background photography"
+      }
+    ]
+  },
+  {
+    "id": "design-studio-1",
+    "name": "Design Studio",
+    "category": "creative",
+    "originalPrompt": {
+      "positive": "Professional headshot background: design studio, Creative design studio with drafting table, creative studio, artistic workspace, contemporary design, creative environment, natural lighting, creative atmosphere, white and wood and colorful color palette, architectural photography, interior design, professional environment, high resolution, perfect lighting, commercial quality, depth of field, professional backdrop",
+      "negative": "poor lighting, amateur photography, cluttered, unprofessional, blurry, low quality, distorted",
+      "style": "creative",
+      "technical": "professional_background"
+    },
+    "marketingPrompt": {
+      "hero": "Professional headshot background: design studio - perfect setting for business portraits",
+      "showcase": "Premium backdrop option: design studio for sophisticated professional headshots",
+      "category": "creative environment: design studio for professional photography"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with design studio background, natural lighting, confident smile, Creative design studio with drafting table, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with design studio background, natural lighting, professional expression, Creative design studio with drafting table, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with design studio background, natural lighting, approachable look, Creative design studio with drafting table, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with design studio background, natural lighting, executive presence, Creative design studio with drafting table, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with design studio background, studio lighting, confident smile, Creative design studio with drafting table, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with design studio background, studio lighting, professional expression, Creative design studio with drafting table, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with design studio background, studio lighting, approachable look, Creative design studio with drafting table, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with design studio background, studio lighting, executive presence, Creative design studio with drafting table, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with design studio background, soft lighting, confident smile, Creative design studio with drafting table, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with design studio background, soft lighting, professional expression, Creative design studio with drafting table, background photography"
+      }
+    ]
+  },
+  {
+    "id": "photography-studio-1",
+    "name": "Photography Studio",
+    "category": "creative",
+    "originalPrompt": {
+      "positive": "Professional headshot background: photography studio, Professional photography studio setup, creative studio, artistic workspace, contemporary design, creative environment, controlled lighting, professional atmosphere, black and white and gray color palette, architectural photography, interior design, professional environment, high resolution, perfect lighting, commercial quality, depth of field, professional backdrop",
+      "negative": "poor lighting, amateur photography, cluttered, unprofessional, blurry, low quality, distorted",
+      "style": "creative",
+      "technical": "professional_background"
+    },
+    "marketingPrompt": {
+      "hero": "Professional headshot background: photography studio - perfect setting for business portraits",
+      "showcase": "Premium backdrop option: photography studio for sophisticated professional headshots",
+      "category": "creative environment: photography studio for professional photography"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with photography studio background, natural lighting, confident smile, Professional photography studio setup, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with photography studio background, natural lighting, professional expression, Professional photography studio setup, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with photography studio background, natural lighting, approachable look, Professional photography studio setup, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with photography studio background, natural lighting, executive presence, Professional photography studio setup, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with photography studio background, studio lighting, confident smile, Professional photography studio setup, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with photography studio background, studio lighting, professional expression, Professional photography studio setup, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with photography studio background, studio lighting, approachable look, Professional photography studio setup, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with photography studio background, studio lighting, executive presence, Professional photography studio setup, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with photography studio background, soft lighting, confident smile, Professional photography studio setup, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with photography studio background, soft lighting, professional expression, Professional photography studio setup, background photography"
+      }
+    ]
+  },
+  {
+    "id": "luxury-office-1",
+    "name": "Luxury Executive Office",
+    "category": "luxury",
+    "originalPrompt": {
+      "positive": "Professional headshot background: luxury executive office, High-end executive office with marble and gold, luxury setting, high-end interior, executive environment, premium space, warm lighting, luxurious atmosphere, marble and gold and dark-wood color palette, architectural photography, interior design, professional environment, high resolution, perfect lighting, commercial quality, depth of field, professional backdrop",
+      "negative": "poor lighting, amateur photography, cluttered, unprofessional, blurry, low quality, distorted",
+      "style": "luxury",
+      "technical": "professional_background"
+    },
+    "marketingPrompt": {
+      "hero": "Professional headshot background: luxury executive office - perfect setting for business portraits",
+      "showcase": "Premium backdrop option: luxury executive office for sophisticated professional headshots",
+      "category": "luxury environment: luxury executive office for professional photography"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with luxury executive office background, natural lighting, confident smile, High-end executive office with marble and gold, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with luxury executive office background, natural lighting, professional expression, High-end executive office with marble and gold, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with luxury executive office background, natural lighting, approachable look, High-end executive office with marble and gold, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with luxury executive office background, natural lighting, executive presence, High-end executive office with marble and gold, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with luxury executive office background, studio lighting, confident smile, High-end executive office with marble and gold, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with luxury executive office background, studio lighting, professional expression, High-end executive office with marble and gold, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with luxury executive office background, studio lighting, approachable look, High-end executive office with marble and gold, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with luxury executive office background, studio lighting, executive presence, High-end executive office with marble and gold, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with luxury executive office background, soft lighting, confident smile, High-end executive office with marble and gold, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with luxury executive office background, soft lighting, professional expression, High-end executive office with marble and gold, background photography"
+      }
+    ]
+  },
+  {
+    "id": "penthouse-office-1",
+    "name": "Penthouse Office",
+    "category": "luxury",
+    "originalPrompt": {
+      "positive": "Professional headshot background: penthouse office, Exclusive penthouse office with city views, luxury setting, high-end interior, executive environment, premium space, natural lighting, exclusive atmosphere, black and gold and glass color palette, architectural photography, interior design, professional environment, high resolution, perfect lighting, commercial quality, depth of field, professional backdrop",
+      "negative": "poor lighting, amateur photography, cluttered, unprofessional, blurry, low quality, distorted",
+      "style": "luxury",
+      "technical": "professional_background"
+    },
+    "marketingPrompt": {
+      "hero": "Professional headshot background: penthouse office - perfect setting for business portraits",
+      "showcase": "Premium backdrop option: penthouse office for sophisticated professional headshots",
+      "category": "luxury environment: penthouse office for professional photography"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with penthouse office background, natural lighting, confident smile, Exclusive penthouse office with city views, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with penthouse office background, natural lighting, professional expression, Exclusive penthouse office with city views, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with penthouse office background, natural lighting, approachable look, Exclusive penthouse office with city views, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with penthouse office background, natural lighting, executive presence, Exclusive penthouse office with city views, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with penthouse office background, studio lighting, confident smile, Exclusive penthouse office with city views, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with penthouse office background, studio lighting, professional expression, Exclusive penthouse office with city views, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with penthouse office background, studio lighting, approachable look, Exclusive penthouse office with city views, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with penthouse office background, studio lighting, executive presence, Exclusive penthouse office with city views, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with penthouse office background, soft lighting, confident smile, Exclusive penthouse office with city views, background photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "Professional headshot with penthouse office background, soft lighting, professional expression, Exclusive penthouse office with city views, background photography"
+      }
+    ]
+  }
+]

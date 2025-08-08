@@ -1,0 +1,1742 @@
+[
+  {
+    "id": "navy-business-suit-1",
+    "name": "Classic Navy Business Suit",
+    "category": "formal",
+    "originalPrompt": {
+      "positive": "Professional headshot showcasing classic navy business suit, Traditional navy suit with white dress shirt and tie, formal business attire, executive presence, corporate photography, high-end business portrait, featuring navy and white colors, studio lighting, professional photography, high resolution, clean background, fashion photography, commercial quality, perfect fit, professional styling, LinkedIn profile style, corporate headshot",
+      "negative": "casual clothes, unprofessional, messy, poor lighting, amateur photography, blurry, low quality, distorted, cartoon, illustration",
+      "style": "formal",
+      "technical": "high_quality_headshot"
+    },
+    "marketingPrompt": {
+      "hero": "Professional business headshot featuring classic navy business suit, perfect for LinkedIn profiles and corporate websites",
+      "showcase": "Showcase of classic navy business suit - professional attire for modern business professionals",
+      "category": "formal professional style: classic navy business suit for confident business presence"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring classic navy business suit, natural lighting, confident smile, Traditional navy suit with white dress shirt and tie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring classic navy business suit, natural lighting, professional expression, Traditional navy suit with white dress shirt and tie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring classic navy business suit, natural lighting, approachable look, Traditional navy suit with white dress shirt and tie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring classic navy business suit, natural lighting, executive presence, Traditional navy suit with white dress shirt and tie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring classic navy business suit, studio lighting, confident smile, Traditional navy suit with white dress shirt and tie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring classic navy business suit, studio lighting, professional expression, Traditional navy suit with white dress shirt and tie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring classic navy business suit, studio lighting, approachable look, Traditional navy suit with white dress shirt and tie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring classic navy business suit, studio lighting, executive presence, Traditional navy suit with white dress shirt and tie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring classic navy business suit, soft lighting, confident smile, Traditional navy suit with white dress shirt and tie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring classic navy business suit, soft lighting, professional expression, Traditional navy suit with white dress shirt and tie, professional photography"
+      }
+    ]
+  },
+  {
+    "id": "charcoal-suit-1",
+    "name": "Charcoal Gray Suit",
+    "category": "formal",
+    "originalPrompt": {
+      "positive": "Professional headshot showcasing charcoal gray suit, Professional charcoal suit with light blue shirt, formal business attire, executive presence, corporate photography, high-end business portrait, featuring charcoal and light-blue colors, studio lighting, professional photography, high resolution, clean background, fashion photography, commercial quality, perfect fit, professional styling, LinkedIn profile style, corporate headshot",
+      "negative": "casual clothes, unprofessional, messy, poor lighting, amateur photography, blurry, low quality, distorted, cartoon, illustration",
+      "style": "formal",
+      "technical": "high_quality_headshot"
+    },
+    "marketingPrompt": {
+      "hero": "Professional business headshot featuring charcoal gray suit, perfect for LinkedIn profiles and corporate websites",
+      "showcase": "Showcase of charcoal gray suit - professional attire for modern business professionals",
+      "category": "formal professional style: charcoal gray suit for confident business presence"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring charcoal gray suit, natural lighting, confident smile, Professional charcoal suit with light blue shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring charcoal gray suit, natural lighting, professional expression, Professional charcoal suit with light blue shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring charcoal gray suit, natural lighting, approachable look, Professional charcoal suit with light blue shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring charcoal gray suit, natural lighting, executive presence, Professional charcoal suit with light blue shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring charcoal gray suit, studio lighting, confident smile, Professional charcoal suit with light blue shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring charcoal gray suit, studio lighting, professional expression, Professional charcoal suit with light blue shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring charcoal gray suit, studio lighting, approachable look, Professional charcoal suit with light blue shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring charcoal gray suit, studio lighting, executive presence, Professional charcoal suit with light blue shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring charcoal gray suit, soft lighting, confident smile, Professional charcoal suit with light blue shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring charcoal gray suit, soft lighting, professional expression, Professional charcoal suit with light blue shirt, professional photography"
+      }
+    ]
+  },
+  {
+    "id": "black-suit-1",
+    "name": "Classic Black Suit",
+    "category": "formal",
+    "originalPrompt": {
+      "positive": "Professional headshot showcasing classic black suit, Elegant black suit with crisp white shirt, formal business attire, executive presence, corporate photography, high-end business portrait, featuring black and white colors, studio lighting, professional photography, high resolution, clean background, fashion photography, commercial quality, perfect fit, professional styling, LinkedIn profile style, corporate headshot",
+      "negative": "casual clothes, unprofessional, messy, poor lighting, amateur photography, blurry, low quality, distorted, cartoon, illustration",
+      "style": "formal",
+      "technical": "high_quality_headshot"
+    },
+    "marketingPrompt": {
+      "hero": "Professional business headshot featuring classic black suit, perfect for LinkedIn profiles and corporate websites",
+      "showcase": "Showcase of classic black suit - professional attire for modern business professionals",
+      "category": "formal professional style: classic black suit for confident business presence"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring classic black suit, natural lighting, confident smile, Elegant black suit with crisp white shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring classic black suit, natural lighting, professional expression, Elegant black suit with crisp white shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring classic black suit, natural lighting, approachable look, Elegant black suit with crisp white shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring classic black suit, natural lighting, executive presence, Elegant black suit with crisp white shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring classic black suit, studio lighting, confident smile, Elegant black suit with crisp white shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring classic black suit, studio lighting, professional expression, Elegant black suit with crisp white shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring classic black suit, studio lighting, approachable look, Elegant black suit with crisp white shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring classic black suit, studio lighting, executive presence, Elegant black suit with crisp white shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring classic black suit, soft lighting, confident smile, Elegant black suit with crisp white shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring classic black suit, soft lighting, professional expression, Elegant black suit with crisp white shirt, professional photography"
+      }
+    ]
+  },
+  {
+    "id": "dark-blue-suit-1",
+    "name": "Dark Blue Pinstripe Suit",
+    "category": "formal",
+    "originalPrompt": {
+      "positive": "Professional headshot showcasing dark blue pinstripe suit, Sophisticated dark blue suit with subtle pinstripes, formal business attire, executive presence, corporate photography, high-end business portrait, featuring dark-blue and white colors, studio lighting, professional photography, high resolution, clean background, fashion photography, commercial quality, perfect fit, professional styling, LinkedIn profile style, corporate headshot",
+      "negative": "casual clothes, unprofessional, messy, poor lighting, amateur photography, blurry, low quality, distorted, cartoon, illustration",
+      "style": "formal",
+      "technical": "high_quality_headshot"
+    },
+    "marketingPrompt": {
+      "hero": "Professional business headshot featuring dark blue pinstripe suit, perfect for LinkedIn profiles and corporate websites",
+      "showcase": "Showcase of dark blue pinstripe suit - professional attire for modern business professionals",
+      "category": "formal professional style: dark blue pinstripe suit for confident business presence"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring dark blue pinstripe suit, natural lighting, confident smile, Sophisticated dark blue suit with subtle pinstripes, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring dark blue pinstripe suit, natural lighting, professional expression, Sophisticated dark blue suit with subtle pinstripes, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring dark blue pinstripe suit, natural lighting, approachable look, Sophisticated dark blue suit with subtle pinstripes, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring dark blue pinstripe suit, natural lighting, executive presence, Sophisticated dark blue suit with subtle pinstripes, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring dark blue pinstripe suit, studio lighting, confident smile, Sophisticated dark blue suit with subtle pinstripes, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring dark blue pinstripe suit, studio lighting, professional expression, Sophisticated dark blue suit with subtle pinstripes, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring dark blue pinstripe suit, studio lighting, approachable look, Sophisticated dark blue suit with subtle pinstripes, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring dark blue pinstripe suit, studio lighting, executive presence, Sophisticated dark blue suit with subtle pinstripes, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring dark blue pinstripe suit, soft lighting, confident smile, Sophisticated dark blue suit with subtle pinstripes, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring dark blue pinstripe suit, soft lighting, professional expression, Sophisticated dark blue suit with subtle pinstripes, professional photography"
+      }
+    ]
+  },
+  {
+    "id": "burgundy-suit-1",
+    "name": "Burgundy Business Suit",
+    "category": "formal",
+    "originalPrompt": {
+      "positive": "Professional headshot showcasing burgundy business suit, Modern burgundy suit with cream shirt, formal business attire, executive presence, corporate photography, high-end business portrait, featuring burgundy and cream colors, studio lighting, professional photography, high resolution, clean background, fashion photography, commercial quality, perfect fit, professional styling, LinkedIn profile style, corporate headshot",
+      "negative": "casual clothes, unprofessional, messy, poor lighting, amateur photography, blurry, low quality, distorted, cartoon, illustration",
+      "style": "formal",
+      "technical": "high_quality_headshot"
+    },
+    "marketingPrompt": {
+      "hero": "Professional business headshot featuring burgundy business suit, perfect for LinkedIn profiles and corporate websites",
+      "showcase": "Showcase of burgundy business suit - professional attire for modern business professionals",
+      "category": "formal professional style: burgundy business suit for confident business presence"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring burgundy business suit, natural lighting, confident smile, Modern burgundy suit with cream shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring burgundy business suit, natural lighting, professional expression, Modern burgundy suit with cream shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring burgundy business suit, natural lighting, approachable look, Modern burgundy suit with cream shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring burgundy business suit, natural lighting, executive presence, Modern burgundy suit with cream shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring burgundy business suit, studio lighting, confident smile, Modern burgundy suit with cream shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring burgundy business suit, studio lighting, professional expression, Modern burgundy suit with cream shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring burgundy business suit, studio lighting, approachable look, Modern burgundy suit with cream shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring burgundy business suit, studio lighting, executive presence, Modern burgundy suit with cream shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring burgundy business suit, soft lighting, confident smile, Modern burgundy suit with cream shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring burgundy business suit, soft lighting, professional expression, Modern burgundy suit with cream shirt, professional photography"
+      }
+    ]
+  },
+  {
+    "id": "navy-blazer-1",
+    "name": "Navy Business Blazer",
+    "category": "business",
+    "originalPrompt": {
+      "positive": "Professional headshot showcasing navy business blazer, Classic navy blazer with white shirt, professional business wear, confident expression, office-appropriate styling, commercial headshot, featuring navy and white colors, studio lighting, professional photography, high resolution, clean background, fashion photography, commercial quality, perfect fit, professional styling, LinkedIn profile style, corporate headshot",
+      "negative": "casual clothes, unprofessional, messy, poor lighting, amateur photography, blurry, low quality, distorted, cartoon, illustration",
+      "style": "business",
+      "technical": "high_quality_headshot"
+    },
+    "marketingPrompt": {
+      "hero": "Professional business headshot featuring navy business blazer, perfect for LinkedIn profiles and corporate websites",
+      "showcase": "Showcase of navy business blazer - professional attire for modern business professionals",
+      "category": "business professional style: navy business blazer for confident business presence"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy business blazer, natural lighting, confident smile, Classic navy blazer with white shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy business blazer, natural lighting, professional expression, Classic navy blazer with white shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy business blazer, natural lighting, approachable look, Classic navy blazer with white shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy business blazer, natural lighting, executive presence, Classic navy blazer with white shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy business blazer, studio lighting, confident smile, Classic navy blazer with white shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy business blazer, studio lighting, professional expression, Classic navy blazer with white shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy business blazer, studio lighting, approachable look, Classic navy blazer with white shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy business blazer, studio lighting, executive presence, Classic navy blazer with white shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy business blazer, soft lighting, confident smile, Classic navy blazer with white shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy business blazer, soft lighting, professional expression, Classic navy blazer with white shirt, professional photography"
+      }
+    ]
+  },
+  {
+    "id": "black-blazer-1",
+    "name": "Black Professional Blazer",
+    "category": "business",
+    "originalPrompt": {
+      "positive": "Professional headshot showcasing black professional blazer, Sharp black blazer with light gray shirt, professional business wear, confident expression, office-appropriate styling, commercial headshot, featuring black and light-gray colors, studio lighting, professional photography, high resolution, clean background, fashion photography, commercial quality, perfect fit, professional styling, LinkedIn profile style, corporate headshot",
+      "negative": "casual clothes, unprofessional, messy, poor lighting, amateur photography, blurry, low quality, distorted, cartoon, illustration",
+      "style": "business",
+      "technical": "high_quality_headshot"
+    },
+    "marketingPrompt": {
+      "hero": "Professional business headshot featuring black professional blazer, perfect for LinkedIn profiles and corporate websites",
+      "showcase": "Showcase of black professional blazer - professional attire for modern business professionals",
+      "category": "business professional style: black professional blazer for confident business presence"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring black professional blazer, natural lighting, confident smile, Sharp black blazer with light gray shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring black professional blazer, natural lighting, professional expression, Sharp black blazer with light gray shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring black professional blazer, natural lighting, approachable look, Sharp black blazer with light gray shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring black professional blazer, natural lighting, executive presence, Sharp black blazer with light gray shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring black professional blazer, studio lighting, confident smile, Sharp black blazer with light gray shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring black professional blazer, studio lighting, professional expression, Sharp black blazer with light gray shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring black professional blazer, studio lighting, approachable look, Sharp black blazer with light gray shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring black professional blazer, studio lighting, executive presence, Sharp black blazer with light gray shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring black professional blazer, soft lighting, confident smile, Sharp black blazer with light gray shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring black professional blazer, soft lighting, professional expression, Sharp black blazer with light gray shirt, professional photography"
+      }
+    ]
+  },
+  {
+    "id": "gray-blazer-1",
+    "name": "Light Gray Blazer",
+    "category": "business",
+    "originalPrompt": {
+      "positive": "Professional headshot showcasing light gray blazer, Modern light gray blazer with navy shirt, professional business wear, confident expression, office-appropriate styling, commercial headshot, featuring light-gray and navy colors, studio lighting, professional photography, high resolution, clean background, fashion photography, commercial quality, perfect fit, professional styling, LinkedIn profile style, corporate headshot",
+      "negative": "casual clothes, unprofessional, messy, poor lighting, amateur photography, blurry, low quality, distorted, cartoon, illustration",
+      "style": "business",
+      "technical": "high_quality_headshot"
+    },
+    "marketingPrompt": {
+      "hero": "Professional business headshot featuring light gray blazer, perfect for LinkedIn profiles and corporate websites",
+      "showcase": "Showcase of light gray blazer - professional attire for modern business professionals",
+      "category": "business professional style: light gray blazer for confident business presence"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring light gray blazer, natural lighting, confident smile, Modern light gray blazer with navy shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring light gray blazer, natural lighting, professional expression, Modern light gray blazer with navy shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring light gray blazer, natural lighting, approachable look, Modern light gray blazer with navy shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring light gray blazer, natural lighting, executive presence, Modern light gray blazer with navy shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring light gray blazer, studio lighting, confident smile, Modern light gray blazer with navy shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring light gray blazer, studio lighting, professional expression, Modern light gray blazer with navy shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring light gray blazer, studio lighting, approachable look, Modern light gray blazer with navy shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring light gray blazer, studio lighting, executive presence, Modern light gray blazer with navy shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring light gray blazer, soft lighting, confident smile, Modern light gray blazer with navy shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring light gray blazer, soft lighting, professional expression, Modern light gray blazer with navy shirt, professional photography"
+      }
+    ]
+  },
+  {
+    "id": "tweed-blazer-1",
+    "name": "Tweed Professor Blazer",
+    "category": "business",
+    "originalPrompt": {
+      "positive": "Professional headshot showcasing tweed professor blazer, Distinguished tweed blazer with brown tones, professional business wear, confident expression, office-appropriate styling, commercial headshot, featuring brown and cream colors, studio lighting, professional photography, high resolution, clean background, fashion photography, commercial quality, perfect fit, professional styling, LinkedIn profile style, corporate headshot",
+      "negative": "casual clothes, unprofessional, messy, poor lighting, amateur photography, blurry, low quality, distorted, cartoon, illustration",
+      "style": "business",
+      "technical": "high_quality_headshot"
+    },
+    "marketingPrompt": {
+      "hero": "Professional business headshot featuring tweed professor blazer, perfect for LinkedIn profiles and corporate websites",
+      "showcase": "Showcase of tweed professor blazer - professional attire for modern business professionals",
+      "category": "business professional style: tweed professor blazer for confident business presence"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring tweed professor blazer, natural lighting, confident smile, Distinguished tweed blazer with brown tones, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring tweed professor blazer, natural lighting, professional expression, Distinguished tweed blazer with brown tones, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring tweed professor blazer, natural lighting, approachable look, Distinguished tweed blazer with brown tones, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring tweed professor blazer, natural lighting, executive presence, Distinguished tweed blazer with brown tones, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring tweed professor blazer, studio lighting, confident smile, Distinguished tweed blazer with brown tones, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring tweed professor blazer, studio lighting, professional expression, Distinguished tweed blazer with brown tones, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring tweed professor blazer, studio lighting, approachable look, Distinguished tweed blazer with brown tones, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring tweed professor blazer, studio lighting, executive presence, Distinguished tweed blazer with brown tones, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring tweed professor blazer, soft lighting, confident smile, Distinguished tweed blazer with brown tones, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring tweed professor blazer, soft lighting, professional expression, Distinguished tweed blazer with brown tones, professional photography"
+      }
+    ]
+  },
+  {
+    "id": "white-dress-shirt-1",
+    "name": "Crisp White Dress Shirt",
+    "category": "business",
+    "originalPrompt": {
+      "positive": "Professional headshot showcasing crisp white dress shirt, Clean white dress shirt with collar, professional business wear, confident expression, office-appropriate styling, commercial headshot, featuring white colors, studio lighting, professional photography, high resolution, clean background, fashion photography, commercial quality, perfect fit, professional styling, LinkedIn profile style, corporate headshot",
+      "negative": "casual clothes, unprofessional, messy, poor lighting, amateur photography, blurry, low quality, distorted, cartoon, illustration",
+      "style": "business",
+      "technical": "high_quality_headshot"
+    },
+    "marketingPrompt": {
+      "hero": "Professional business headshot featuring crisp white dress shirt, perfect for LinkedIn profiles and corporate websites",
+      "showcase": "Showcase of crisp white dress shirt - professional attire for modern business professionals",
+      "category": "business professional style: crisp white dress shirt for confident business presence"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring crisp white dress shirt, natural lighting, confident smile, Clean white dress shirt with collar, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring crisp white dress shirt, natural lighting, professional expression, Clean white dress shirt with collar, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring crisp white dress shirt, natural lighting, approachable look, Clean white dress shirt with collar, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring crisp white dress shirt, natural lighting, executive presence, Clean white dress shirt with collar, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring crisp white dress shirt, studio lighting, confident smile, Clean white dress shirt with collar, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring crisp white dress shirt, studio lighting, professional expression, Clean white dress shirt with collar, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring crisp white dress shirt, studio lighting, approachable look, Clean white dress shirt with collar, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring crisp white dress shirt, studio lighting, executive presence, Clean white dress shirt with collar, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring crisp white dress shirt, soft lighting, confident smile, Clean white dress shirt with collar, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring crisp white dress shirt, soft lighting, professional expression, Clean white dress shirt with collar, professional photography"
+      }
+    ]
+  },
+  {
+    "id": "light-blue-shirt-1",
+    "name": "Light Blue Dress Shirt",
+    "category": "business",
+    "originalPrompt": {
+      "positive": "Professional headshot showcasing light blue dress shirt, Professional light blue button-down shirt, professional business wear, confident expression, office-appropriate styling, commercial headshot, featuring light-blue colors, studio lighting, professional photography, high resolution, clean background, fashion photography, commercial quality, perfect fit, professional styling, LinkedIn profile style, corporate headshot",
+      "negative": "casual clothes, unprofessional, messy, poor lighting, amateur photography, blurry, low quality, distorted, cartoon, illustration",
+      "style": "business",
+      "technical": "high_quality_headshot"
+    },
+    "marketingPrompt": {
+      "hero": "Professional business headshot featuring light blue dress shirt, perfect for LinkedIn profiles and corporate websites",
+      "showcase": "Showcase of light blue dress shirt - professional attire for modern business professionals",
+      "category": "business professional style: light blue dress shirt for confident business presence"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring light blue dress shirt, natural lighting, confident smile, Professional light blue button-down shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring light blue dress shirt, natural lighting, professional expression, Professional light blue button-down shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring light blue dress shirt, natural lighting, approachable look, Professional light blue button-down shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring light blue dress shirt, natural lighting, executive presence, Professional light blue button-down shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring light blue dress shirt, studio lighting, confident smile, Professional light blue button-down shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring light blue dress shirt, studio lighting, professional expression, Professional light blue button-down shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring light blue dress shirt, studio lighting, approachable look, Professional light blue button-down shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring light blue dress shirt, studio lighting, executive presence, Professional light blue button-down shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring light blue dress shirt, soft lighting, confident smile, Professional light blue button-down shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring light blue dress shirt, soft lighting, professional expression, Professional light blue button-down shirt, professional photography"
+      }
+    ]
+  },
+  {
+    "id": "pink-blouse-1",
+    "name": "Soft Pink Blouse",
+    "category": "business",
+    "originalPrompt": {
+      "positive": "Professional headshot showcasing soft pink blouse, Elegant soft pink professional blouse, professional business wear, confident expression, office-appropriate styling, commercial headshot, featuring soft-pink colors, feminine styling, professional female fashion, studio lighting, professional photography, high resolution, clean background, fashion photography, commercial quality, perfect fit, professional styling, LinkedIn profile style, corporate headshot",
+      "negative": "casual clothes, unprofessional, messy, poor lighting, amateur photography, blurry, low quality, distorted, cartoon, illustration",
+      "style": "business",
+      "technical": "high_quality_headshot"
+    },
+    "marketingPrompt": {
+      "hero": "Professional business headshot featuring soft pink blouse, perfect for LinkedIn profiles and corporate websites",
+      "showcase": "Showcase of soft pink blouse - professional attire for modern business professionals",
+      "category": "business professional style: soft pink blouse for confident business presence"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring soft pink blouse, natural lighting, confident smile, Elegant soft pink professional blouse, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring soft pink blouse, natural lighting, professional expression, Elegant soft pink professional blouse, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring soft pink blouse, natural lighting, approachable look, Elegant soft pink professional blouse, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring soft pink blouse, natural lighting, executive presence, Elegant soft pink professional blouse, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring soft pink blouse, studio lighting, confident smile, Elegant soft pink professional blouse, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring soft pink blouse, studio lighting, professional expression, Elegant soft pink professional blouse, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring soft pink blouse, studio lighting, approachable look, Elegant soft pink professional blouse, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring soft pink blouse, studio lighting, executive presence, Elegant soft pink professional blouse, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring soft pink blouse, soft lighting, confident smile, Elegant soft pink professional blouse, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring soft pink blouse, soft lighting, professional expression, Elegant soft pink professional blouse, professional photography"
+      }
+    ]
+  },
+  {
+    "id": "striped-shirt-1",
+    "name": "Navy Striped Shirt",
+    "category": "business",
+    "originalPrompt": {
+      "positive": "Professional headshot showcasing navy striped shirt, Navy and white striped professional shirt, professional business wear, confident expression, office-appropriate styling, commercial headshot, featuring navy and white colors, studio lighting, professional photography, high resolution, clean background, fashion photography, commercial quality, perfect fit, professional styling, LinkedIn profile style, corporate headshot",
+      "negative": "casual clothes, unprofessional, messy, poor lighting, amateur photography, blurry, low quality, distorted, cartoon, illustration",
+      "style": "business",
+      "technical": "high_quality_headshot"
+    },
+    "marketingPrompt": {
+      "hero": "Professional business headshot featuring navy striped shirt, perfect for LinkedIn profiles and corporate websites",
+      "showcase": "Showcase of navy striped shirt - professional attire for modern business professionals",
+      "category": "business professional style: navy striped shirt for confident business presence"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy striped shirt, natural lighting, confident smile, Navy and white striped professional shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy striped shirt, natural lighting, professional expression, Navy and white striped professional shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy striped shirt, natural lighting, approachable look, Navy and white striped professional shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy striped shirt, natural lighting, executive presence, Navy and white striped professional shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy striped shirt, studio lighting, confident smile, Navy and white striped professional shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy striped shirt, studio lighting, professional expression, Navy and white striped professional shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy striped shirt, studio lighting, approachable look, Navy and white striped professional shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy striped shirt, studio lighting, executive presence, Navy and white striped professional shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy striped shirt, soft lighting, confident smile, Navy and white striped professional shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy striped shirt, soft lighting, professional expression, Navy and white striped professional shirt, professional photography"
+      }
+    ]
+  },
+  {
+    "id": "polo-shirt-1",
+    "name": "Navy Polo Shirt",
+    "category": "smart_casual",
+    "originalPrompt": {
+      "positive": "Professional headshot showcasing navy polo shirt, Clean navy polo shirt, smart casual attire, approachable professional, modern business casual, contemporary portrait, featuring navy colors, studio lighting, professional photography, high resolution, clean background, fashion photography, commercial quality, perfect fit, professional styling, LinkedIn profile style, corporate headshot",
+      "negative": "casual clothes, unprofessional, messy, poor lighting, amateur photography, blurry, low quality, distorted, cartoon, illustration",
+      "style": "smart_casual",
+      "technical": "high_quality_headshot"
+    },
+    "marketingPrompt": {
+      "hero": "Professional business headshot featuring navy polo shirt, perfect for LinkedIn profiles and corporate websites",
+      "showcase": "Showcase of navy polo shirt - professional attire for modern business professionals",
+      "category": "smart_casual professional style: navy polo shirt for confident business presence"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy polo shirt, natural lighting, confident smile, Clean navy polo shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy polo shirt, natural lighting, professional expression, Clean navy polo shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy polo shirt, natural lighting, approachable look, Clean navy polo shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy polo shirt, natural lighting, executive presence, Clean navy polo shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy polo shirt, studio lighting, confident smile, Clean navy polo shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy polo shirt, studio lighting, professional expression, Clean navy polo shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy polo shirt, studio lighting, approachable look, Clean navy polo shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy polo shirt, studio lighting, executive presence, Clean navy polo shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy polo shirt, soft lighting, confident smile, Clean navy polo shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy polo shirt, soft lighting, professional expression, Clean navy polo shirt, professional photography"
+      }
+    ]
+  },
+  {
+    "id": "henley-shirt-1",
+    "name": "Gray Henley Shirt",
+    "category": "smart_casual",
+    "originalPrompt": {
+      "positive": "Professional headshot showcasing gray henley shirt, Comfortable gray henley with buttons, smart casual attire, approachable professional, modern business casual, contemporary portrait, featuring gray colors, studio lighting, professional photography, high resolution, clean background, fashion photography, commercial quality, perfect fit, professional styling, LinkedIn profile style, corporate headshot",
+      "negative": "casual clothes, unprofessional, messy, poor lighting, amateur photography, blurry, low quality, distorted, cartoon, illustration",
+      "style": "smart_casual",
+      "technical": "high_quality_headshot"
+    },
+    "marketingPrompt": {
+      "hero": "Professional business headshot featuring gray henley shirt, perfect for LinkedIn profiles and corporate websites",
+      "showcase": "Showcase of gray henley shirt - professional attire for modern business professionals",
+      "category": "smart_casual professional style: gray henley shirt for confident business presence"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring gray henley shirt, natural lighting, confident smile, Comfortable gray henley with buttons, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring gray henley shirt, natural lighting, professional expression, Comfortable gray henley with buttons, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring gray henley shirt, natural lighting, approachable look, Comfortable gray henley with buttons, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring gray henley shirt, natural lighting, executive presence, Comfortable gray henley with buttons, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring gray henley shirt, studio lighting, confident smile, Comfortable gray henley with buttons, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring gray henley shirt, studio lighting, professional expression, Comfortable gray henley with buttons, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring gray henley shirt, studio lighting, approachable look, Comfortable gray henley with buttons, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring gray henley shirt, studio lighting, executive presence, Comfortable gray henley with buttons, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring gray henley shirt, soft lighting, confident smile, Comfortable gray henley with buttons, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring gray henley shirt, soft lighting, professional expression, Comfortable gray henley with buttons, professional photography"
+      }
+    ]
+  },
+  {
+    "id": "v-neck-sweater-1",
+    "name": "Charcoal V-Neck Sweater",
+    "category": "smart_casual",
+    "originalPrompt": {
+      "positive": "Professional headshot showcasing charcoal v-neck sweater, Warm charcoal v-neck sweater, smart casual attire, approachable professional, modern business casual, contemporary portrait, featuring charcoal colors, studio lighting, professional photography, high resolution, clean background, fashion photography, commercial quality, perfect fit, professional styling, LinkedIn profile style, corporate headshot",
+      "negative": "casual clothes, unprofessional, messy, poor lighting, amateur photography, blurry, low quality, distorted, cartoon, illustration",
+      "style": "smart_casual",
+      "technical": "high_quality_headshot"
+    },
+    "marketingPrompt": {
+      "hero": "Professional business headshot featuring charcoal v-neck sweater, perfect for LinkedIn profiles and corporate websites",
+      "showcase": "Showcase of charcoal v-neck sweater - professional attire for modern business professionals",
+      "category": "smart_casual professional style: charcoal v-neck sweater for confident business presence"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring charcoal v-neck sweater, natural lighting, confident smile, Warm charcoal v-neck sweater, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring charcoal v-neck sweater, natural lighting, professional expression, Warm charcoal v-neck sweater, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring charcoal v-neck sweater, natural lighting, approachable look, Warm charcoal v-neck sweater, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring charcoal v-neck sweater, natural lighting, executive presence, Warm charcoal v-neck sweater, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring charcoal v-neck sweater, studio lighting, confident smile, Warm charcoal v-neck sweater, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring charcoal v-neck sweater, studio lighting, professional expression, Warm charcoal v-neck sweater, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring charcoal v-neck sweater, studio lighting, approachable look, Warm charcoal v-neck sweater, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring charcoal v-neck sweater, studio lighting, executive presence, Warm charcoal v-neck sweater, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring charcoal v-neck sweater, soft lighting, confident smile, Warm charcoal v-neck sweater, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring charcoal v-neck sweater, soft lighting, professional expression, Warm charcoal v-neck sweater, professional photography"
+      }
+    ]
+  },
+  {
+    "id": "cardigan-1",
+    "name": "Navy Cardigan",
+    "category": "smart_casual",
+    "originalPrompt": {
+      "positive": "Professional headshot showcasing navy cardigan, Professional navy cardigan over white shirt, smart casual attire, approachable professional, modern business casual, contemporary portrait, featuring navy and white colors, studio lighting, professional photography, high resolution, clean background, fashion photography, commercial quality, perfect fit, professional styling, LinkedIn profile style, corporate headshot",
+      "negative": "casual clothes, unprofessional, messy, poor lighting, amateur photography, blurry, low quality, distorted, cartoon, illustration",
+      "style": "smart_casual",
+      "technical": "high_quality_headshot"
+    },
+    "marketingPrompt": {
+      "hero": "Professional business headshot featuring navy cardigan, perfect for LinkedIn profiles and corporate websites",
+      "showcase": "Showcase of navy cardigan - professional attire for modern business professionals",
+      "category": "smart_casual professional style: navy cardigan for confident business presence"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy cardigan, natural lighting, confident smile, Professional navy cardigan over white shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy cardigan, natural lighting, professional expression, Professional navy cardigan over white shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy cardigan, natural lighting, approachable look, Professional navy cardigan over white shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy cardigan, natural lighting, executive presence, Professional navy cardigan over white shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy cardigan, studio lighting, confident smile, Professional navy cardigan over white shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy cardigan, studio lighting, professional expression, Professional navy cardigan over white shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy cardigan, studio lighting, approachable look, Professional navy cardigan over white shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy cardigan, studio lighting, executive presence, Professional navy cardigan over white shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy cardigan, soft lighting, confident smile, Professional navy cardigan over white shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy cardigan, soft lighting, professional expression, Professional navy cardigan over white shirt, professional photography"
+      }
+    ]
+  },
+  {
+    "id": "turtleneck-black-1",
+    "name": "Black Turtleneck",
+    "category": "creative",
+    "originalPrompt": {
+      "positive": "Professional headshot showcasing black turtleneck, Classic black turtleneck sweater, creative professional style, artistic expression, innovative fashion, contemporary portrait photography, featuring black colors, studio lighting, professional photography, high resolution, clean background, fashion photography, commercial quality, perfect fit, professional styling, LinkedIn profile style, corporate headshot",
+      "negative": "casual clothes, unprofessional, messy, poor lighting, amateur photography, blurry, low quality, distorted, cartoon, illustration",
+      "style": "creative",
+      "technical": "high_quality_headshot"
+    },
+    "marketingPrompt": {
+      "hero": "Professional business headshot featuring black turtleneck, perfect for LinkedIn profiles and corporate websites",
+      "showcase": "Showcase of black turtleneck - professional attire for modern business professionals",
+      "category": "creative professional style: black turtleneck for confident business presence"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring black turtleneck, natural lighting, confident smile, Classic black turtleneck sweater, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring black turtleneck, natural lighting, professional expression, Classic black turtleneck sweater, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring black turtleneck, natural lighting, approachable look, Classic black turtleneck sweater, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring black turtleneck, natural lighting, executive presence, Classic black turtleneck sweater, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring black turtleneck, studio lighting, confident smile, Classic black turtleneck sweater, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring black turtleneck, studio lighting, professional expression, Classic black turtleneck sweater, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring black turtleneck, studio lighting, approachable look, Classic black turtleneck sweater, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring black turtleneck, studio lighting, executive presence, Classic black turtleneck sweater, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring black turtleneck, soft lighting, confident smile, Classic black turtleneck sweater, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring black turtleneck, soft lighting, professional expression, Classic black turtleneck sweater, professional photography"
+      }
+    ]
+  },
+  {
+    "id": "denim-shirt-1",
+    "name": "Chambray Denim Shirt",
+    "category": "creative",
+    "originalPrompt": {
+      "positive": "Professional headshot showcasing chambray denim shirt, Light blue chambray denim shirt, creative professional style, artistic expression, innovative fashion, contemporary portrait photography, featuring light-blue colors, studio lighting, professional photography, high resolution, clean background, fashion photography, commercial quality, perfect fit, professional styling, LinkedIn profile style, corporate headshot",
+      "negative": "casual clothes, unprofessional, messy, poor lighting, amateur photography, blurry, low quality, distorted, cartoon, illustration",
+      "style": "creative",
+      "technical": "high_quality_headshot"
+    },
+    "marketingPrompt": {
+      "hero": "Professional business headshot featuring chambray denim shirt, perfect for LinkedIn profiles and corporate websites",
+      "showcase": "Showcase of chambray denim shirt - professional attire for modern business professionals",
+      "category": "creative professional style: chambray denim shirt for confident business presence"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring chambray denim shirt, natural lighting, confident smile, Light blue chambray denim shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring chambray denim shirt, natural lighting, professional expression, Light blue chambray denim shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring chambray denim shirt, natural lighting, approachable look, Light blue chambray denim shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring chambray denim shirt, natural lighting, executive presence, Light blue chambray denim shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring chambray denim shirt, studio lighting, confident smile, Light blue chambray denim shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring chambray denim shirt, studio lighting, professional expression, Light blue chambray denim shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring chambray denim shirt, studio lighting, approachable look, Light blue chambray denim shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring chambray denim shirt, studio lighting, executive presence, Light blue chambray denim shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring chambray denim shirt, soft lighting, confident smile, Light blue chambray denim shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring chambray denim shirt, soft lighting, professional expression, Light blue chambray denim shirt, professional photography"
+      }
+    ]
+  },
+  {
+    "id": "patterned-shirt-1",
+    "name": "Geometric Pattern Shirt",
+    "category": "creative",
+    "originalPrompt": {
+      "positive": "Professional headshot showcasing geometric pattern shirt, Modern geometric patterned shirt, creative professional style, artistic expression, innovative fashion, contemporary portrait photography, featuring multi colors, studio lighting, professional photography, high resolution, clean background, fashion photography, commercial quality, perfect fit, professional styling, LinkedIn profile style, corporate headshot",
+      "negative": "casual clothes, unprofessional, messy, poor lighting, amateur photography, blurry, low quality, distorted, cartoon, illustration",
+      "style": "creative",
+      "technical": "high_quality_headshot"
+    },
+    "marketingPrompt": {
+      "hero": "Professional business headshot featuring geometric pattern shirt, perfect for LinkedIn profiles and corporate websites",
+      "showcase": "Showcase of geometric pattern shirt - professional attire for modern business professionals",
+      "category": "creative professional style: geometric pattern shirt for confident business presence"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring geometric pattern shirt, natural lighting, confident smile, Modern geometric patterned shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring geometric pattern shirt, natural lighting, professional expression, Modern geometric patterned shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring geometric pattern shirt, natural lighting, approachable look, Modern geometric patterned shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring geometric pattern shirt, natural lighting, executive presence, Modern geometric patterned shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring geometric pattern shirt, studio lighting, confident smile, Modern geometric patterned shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring geometric pattern shirt, studio lighting, professional expression, Modern geometric patterned shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring geometric pattern shirt, studio lighting, approachable look, Modern geometric patterned shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring geometric pattern shirt, studio lighting, executive presence, Modern geometric patterned shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring geometric pattern shirt, soft lighting, confident smile, Modern geometric patterned shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring geometric pattern shirt, soft lighting, professional expression, Modern geometric patterned shirt, professional photography"
+      }
+    ]
+  },
+  {
+    "id": "white-coat-1",
+    "name": "White Lab Coat",
+    "category": "medical",
+    "originalPrompt": {
+      "positive": "Professional headshot showcasing white lab coat, Professional white lab coat over blue scrubs, medical professional attire, healthcare setting, trustworthy appearance, clinical photography, featuring white and blue colors, studio lighting, professional photography, high resolution, clean background, fashion photography, commercial quality, perfect fit, professional styling, LinkedIn profile style, corporate headshot",
+      "negative": "casual clothes, unprofessional, messy, poor lighting, amateur photography, blurry, low quality, distorted, cartoon, illustration",
+      "style": "medical",
+      "technical": "high_quality_headshot"
+    },
+    "marketingPrompt": {
+      "hero": "Professional business headshot featuring white lab coat, perfect for LinkedIn profiles and corporate websites",
+      "showcase": "Showcase of white lab coat - professional attire for modern business professionals",
+      "category": "medical professional style: white lab coat for confident business presence"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring white lab coat, natural lighting, confident smile, Professional white lab coat over blue scrubs, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring white lab coat, natural lighting, professional expression, Professional white lab coat over blue scrubs, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring white lab coat, natural lighting, approachable look, Professional white lab coat over blue scrubs, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring white lab coat, natural lighting, executive presence, Professional white lab coat over blue scrubs, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring white lab coat, studio lighting, confident smile, Professional white lab coat over blue scrubs, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring white lab coat, studio lighting, professional expression, Professional white lab coat over blue scrubs, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring white lab coat, studio lighting, approachable look, Professional white lab coat over blue scrubs, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring white lab coat, studio lighting, executive presence, Professional white lab coat over blue scrubs, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring white lab coat, soft lighting, confident smile, Professional white lab coat over blue scrubs, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring white lab coat, soft lighting, professional expression, Professional white lab coat over blue scrubs, professional photography"
+      }
+    ]
+  },
+  {
+    "id": "scrubs-blue-1",
+    "name": "Navy Scrubs",
+    "category": "medical",
+    "originalPrompt": {
+      "positive": "Professional headshot showcasing navy scrubs, Professional navy medical scrubs, medical professional attire, healthcare setting, trustworthy appearance, clinical photography, featuring navy colors, studio lighting, professional photography, high resolution, clean background, fashion photography, commercial quality, perfect fit, professional styling, LinkedIn profile style, corporate headshot",
+      "negative": "casual clothes, unprofessional, messy, poor lighting, amateur photography, blurry, low quality, distorted, cartoon, illustration",
+      "style": "medical",
+      "technical": "high_quality_headshot"
+    },
+    "marketingPrompt": {
+      "hero": "Professional business headshot featuring navy scrubs, perfect for LinkedIn profiles and corporate websites",
+      "showcase": "Showcase of navy scrubs - professional attire for modern business professionals",
+      "category": "medical professional style: navy scrubs for confident business presence"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy scrubs, natural lighting, confident smile, Professional navy medical scrubs, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy scrubs, natural lighting, professional expression, Professional navy medical scrubs, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy scrubs, natural lighting, approachable look, Professional navy medical scrubs, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy scrubs, natural lighting, executive presence, Professional navy medical scrubs, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy scrubs, studio lighting, confident smile, Professional navy medical scrubs, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy scrubs, studio lighting, professional expression, Professional navy medical scrubs, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy scrubs, studio lighting, approachable look, Professional navy medical scrubs, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy scrubs, studio lighting, executive presence, Professional navy medical scrubs, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy scrubs, soft lighting, confident smile, Professional navy medical scrubs, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy scrubs, soft lighting, professional expression, Professional navy medical scrubs, professional photography"
+      }
+    ]
+  },
+  {
+    "id": "scrubs-green-1",
+    "name": "Forest Green Scrubs",
+    "category": "medical",
+    "originalPrompt": {
+      "positive": "Professional headshot showcasing forest green scrubs, Forest green medical scrubs, medical professional attire, healthcare setting, trustworthy appearance, clinical photography, featuring forest-green colors, studio lighting, professional photography, high resolution, clean background, fashion photography, commercial quality, perfect fit, professional styling, LinkedIn profile style, corporate headshot",
+      "negative": "casual clothes, unprofessional, messy, poor lighting, amateur photography, blurry, low quality, distorted, cartoon, illustration",
+      "style": "medical",
+      "technical": "high_quality_headshot"
+    },
+    "marketingPrompt": {
+      "hero": "Professional business headshot featuring forest green scrubs, perfect for LinkedIn profiles and corporate websites",
+      "showcase": "Showcase of forest green scrubs - professional attire for modern business professionals",
+      "category": "medical professional style: forest green scrubs for confident business presence"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring forest green scrubs, natural lighting, confident smile, Forest green medical scrubs, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring forest green scrubs, natural lighting, professional expression, Forest green medical scrubs, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring forest green scrubs, natural lighting, approachable look, Forest green medical scrubs, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring forest green scrubs, natural lighting, executive presence, Forest green medical scrubs, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring forest green scrubs, studio lighting, confident smile, Forest green medical scrubs, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring forest green scrubs, studio lighting, professional expression, Forest green medical scrubs, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring forest green scrubs, studio lighting, approachable look, Forest green medical scrubs, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring forest green scrubs, studio lighting, executive presence, Forest green medical scrubs, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring forest green scrubs, soft lighting, confident smile, Forest green medical scrubs, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring forest green scrubs, soft lighting, professional expression, Forest green medical scrubs, professional photography"
+      }
+    ]
+  },
+  {
+    "id": "hoodie-gray-1",
+    "name": "Gray Tech Hoodie",
+    "category": "tech",
+    "originalPrompt": {
+      "positive": "Professional headshot showcasing gray tech hoodie, Clean gray hoodie for tech professionals, tech industry style, modern professional, startup culture, contemporary business portrait, featuring gray colors, studio lighting, professional photography, high resolution, clean background, fashion photography, commercial quality, perfect fit, professional styling, LinkedIn profile style, corporate headshot",
+      "negative": "casual clothes, unprofessional, messy, poor lighting, amateur photography, blurry, low quality, distorted, cartoon, illustration",
+      "style": "tech",
+      "technical": "high_quality_headshot"
+    },
+    "marketingPrompt": {
+      "hero": "Professional business headshot featuring gray tech hoodie, perfect for LinkedIn profiles and corporate websites",
+      "showcase": "Showcase of gray tech hoodie - professional attire for modern business professionals",
+      "category": "tech professional style: gray tech hoodie for confident business presence"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring gray tech hoodie, natural lighting, confident smile, Clean gray hoodie for tech professionals, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring gray tech hoodie, natural lighting, professional expression, Clean gray hoodie for tech professionals, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring gray tech hoodie, natural lighting, approachable look, Clean gray hoodie for tech professionals, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring gray tech hoodie, natural lighting, executive presence, Clean gray hoodie for tech professionals, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring gray tech hoodie, studio lighting, confident smile, Clean gray hoodie for tech professionals, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring gray tech hoodie, studio lighting, professional expression, Clean gray hoodie for tech professionals, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring gray tech hoodie, studio lighting, approachable look, Clean gray hoodie for tech professionals, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring gray tech hoodie, studio lighting, executive presence, Clean gray hoodie for tech professionals, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring gray tech hoodie, soft lighting, confident smile, Clean gray hoodie for tech professionals, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring gray tech hoodie, soft lighting, professional expression, Clean gray hoodie for tech professionals, professional photography"
+      }
+    ]
+  },
+  {
+    "id": "zip-hoodie-1",
+    "name": "Navy Zip Hoodie",
+    "category": "tech",
+    "originalPrompt": {
+      "positive": "Professional headshot showcasing navy zip hoodie, Professional navy zip-up hoodie, tech industry style, modern professional, startup culture, contemporary business portrait, featuring navy colors, studio lighting, professional photography, high resolution, clean background, fashion photography, commercial quality, perfect fit, professional styling, LinkedIn profile style, corporate headshot",
+      "negative": "casual clothes, unprofessional, messy, poor lighting, amateur photography, blurry, low quality, distorted, cartoon, illustration",
+      "style": "tech",
+      "technical": "high_quality_headshot"
+    },
+    "marketingPrompt": {
+      "hero": "Professional business headshot featuring navy zip hoodie, perfect for LinkedIn profiles and corporate websites",
+      "showcase": "Showcase of navy zip hoodie - professional attire for modern business professionals",
+      "category": "tech professional style: navy zip hoodie for confident business presence"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy zip hoodie, natural lighting, confident smile, Professional navy zip-up hoodie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy zip hoodie, natural lighting, professional expression, Professional navy zip-up hoodie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy zip hoodie, natural lighting, approachable look, Professional navy zip-up hoodie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy zip hoodie, natural lighting, executive presence, Professional navy zip-up hoodie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy zip hoodie, studio lighting, confident smile, Professional navy zip-up hoodie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy zip hoodie, studio lighting, professional expression, Professional navy zip-up hoodie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy zip hoodie, studio lighting, approachable look, Professional navy zip-up hoodie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy zip hoodie, studio lighting, executive presence, Professional navy zip-up hoodie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy zip hoodie, soft lighting, confident smile, Professional navy zip-up hoodie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy zip hoodie, soft lighting, professional expression, Professional navy zip-up hoodie, professional photography"
+      }
+    ]
+  },
+  {
+    "id": "tech-tshirt-1",
+    "name": "Premium Tech T-Shirt",
+    "category": "tech",
+    "originalPrompt": {
+      "positive": "Professional headshot showcasing premium tech t-shirt, High-quality plain tech t-shirt, tech industry style, modern professional, startup culture, contemporary business portrait, featuring black and white and gray colors, studio lighting, professional photography, high resolution, clean background, fashion photography, commercial quality, perfect fit, professional styling, LinkedIn profile style, corporate headshot",
+      "negative": "casual clothes, unprofessional, messy, poor lighting, amateur photography, blurry, low quality, distorted, cartoon, illustration",
+      "style": "tech",
+      "technical": "high_quality_headshot"
+    },
+    "marketingPrompt": {
+      "hero": "Professional business headshot featuring premium tech t-shirt, perfect for LinkedIn profiles and corporate websites",
+      "showcase": "Showcase of premium tech t-shirt - professional attire for modern business professionals",
+      "category": "tech professional style: premium tech t-shirt for confident business presence"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring premium tech t-shirt, natural lighting, confident smile, High-quality plain tech t-shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring premium tech t-shirt, natural lighting, professional expression, High-quality plain tech t-shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring premium tech t-shirt, natural lighting, approachable look, High-quality plain tech t-shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring premium tech t-shirt, natural lighting, executive presence, High-quality plain tech t-shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring premium tech t-shirt, studio lighting, confident smile, High-quality plain tech t-shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring premium tech t-shirt, studio lighting, professional expression, High-quality plain tech t-shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring premium tech t-shirt, studio lighting, approachable look, High-quality plain tech t-shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring premium tech t-shirt, studio lighting, executive presence, High-quality plain tech t-shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring premium tech t-shirt, soft lighting, confident smile, High-quality plain tech t-shirt, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring premium tech t-shirt, soft lighting, professional expression, High-quality plain tech t-shirt, professional photography"
+      }
+    ]
+  },
+  {
+    "id": "pinstripe-suit-1",
+    "name": "Navy Pinstripe Suit",
+    "category": "legal",
+    "originalPrompt": {
+      "positive": "Professional headshot showcasing navy pinstripe suit, Traditional navy pinstripe suit with red tie, legal professional attire, authoritative presence, law firm standard, formal business photography, featuring navy and white and red colors, studio lighting, professional photography, high resolution, clean background, fashion photography, commercial quality, perfect fit, professional styling, LinkedIn profile style, corporate headshot",
+      "negative": "casual clothes, unprofessional, messy, poor lighting, amateur photography, blurry, low quality, distorted, cartoon, illustration",
+      "style": "legal",
+      "technical": "high_quality_headshot"
+    },
+    "marketingPrompt": {
+      "hero": "Professional business headshot featuring navy pinstripe suit, perfect for LinkedIn profiles and corporate websites",
+      "showcase": "Showcase of navy pinstripe suit - professional attire for modern business professionals",
+      "category": "legal professional style: navy pinstripe suit for confident business presence"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy pinstripe suit, natural lighting, confident smile, Traditional navy pinstripe suit with red tie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy pinstripe suit, natural lighting, professional expression, Traditional navy pinstripe suit with red tie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy pinstripe suit, natural lighting, approachable look, Traditional navy pinstripe suit with red tie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy pinstripe suit, natural lighting, executive presence, Traditional navy pinstripe suit with red tie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy pinstripe suit, studio lighting, confident smile, Traditional navy pinstripe suit with red tie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy pinstripe suit, studio lighting, professional expression, Traditional navy pinstripe suit with red tie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy pinstripe suit, studio lighting, approachable look, Traditional navy pinstripe suit with red tie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy pinstripe suit, studio lighting, executive presence, Traditional navy pinstripe suit with red tie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy pinstripe suit, soft lighting, confident smile, Traditional navy pinstripe suit with red tie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring navy pinstripe suit, soft lighting, professional expression, Traditional navy pinstripe suit with red tie, professional photography"
+      }
+    ]
+  },
+  {
+    "id": "three-piece-1",
+    "name": "Charcoal Three-Piece Suit",
+    "category": "legal",
+    "originalPrompt": {
+      "positive": "Professional headshot showcasing charcoal three-piece suit, Formal charcoal three-piece suit with vest, legal professional attire, authoritative presence, law firm standard, formal business photography, featuring charcoal and white colors, studio lighting, professional photography, high resolution, clean background, fashion photography, commercial quality, perfect fit, professional styling, LinkedIn profile style, corporate headshot",
+      "negative": "casual clothes, unprofessional, messy, poor lighting, amateur photography, blurry, low quality, distorted, cartoon, illustration",
+      "style": "legal",
+      "technical": "high_quality_headshot"
+    },
+    "marketingPrompt": {
+      "hero": "Professional business headshot featuring charcoal three-piece suit, perfect for LinkedIn profiles and corporate websites",
+      "showcase": "Showcase of charcoal three-piece suit - professional attire for modern business professionals",
+      "category": "legal professional style: charcoal three-piece suit for confident business presence"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring charcoal three-piece suit, natural lighting, confident smile, Formal charcoal three-piece suit with vest, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring charcoal three-piece suit, natural lighting, professional expression, Formal charcoal three-piece suit with vest, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring charcoal three-piece suit, natural lighting, approachable look, Formal charcoal three-piece suit with vest, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring charcoal three-piece suit, natural lighting, executive presence, Formal charcoal three-piece suit with vest, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring charcoal three-piece suit, studio lighting, confident smile, Formal charcoal three-piece suit with vest, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring charcoal three-piece suit, studio lighting, professional expression, Formal charcoal three-piece suit with vest, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring charcoal three-piece suit, studio lighting, approachable look, Formal charcoal three-piece suit with vest, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring charcoal three-piece suit, studio lighting, executive presence, Formal charcoal three-piece suit with vest, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring charcoal three-piece suit, soft lighting, confident smile, Formal charcoal three-piece suit with vest, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring charcoal three-piece suit, soft lighting, professional expression, Formal charcoal three-piece suit with vest, professional photography"
+      }
+    ]
+  },
+  {
+    "id": "executive-navy-1",
+    "name": "Executive Navy Suit",
+    "category": "executive",
+    "originalPrompt": {
+      "positive": "Professional headshot showcasing executive navy suit, Premium navy executive suit with silk tie, executive leadership style, C-suite presence, premium business attire, luxury corporate photography, featuring navy and white and gold colors, studio lighting, professional photography, high resolution, clean background, fashion photography, commercial quality, perfect fit, professional styling, LinkedIn profile style, corporate headshot",
+      "negative": "casual clothes, unprofessional, messy, poor lighting, amateur photography, blurry, low quality, distorted, cartoon, illustration",
+      "style": "executive",
+      "technical": "high_quality_headshot"
+    },
+    "marketingPrompt": {
+      "hero": "Professional business headshot featuring executive navy suit, perfect for LinkedIn profiles and corporate websites",
+      "showcase": "Showcase of executive navy suit - professional attire for modern business professionals",
+      "category": "executive professional style: executive navy suit for confident business presence"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring executive navy suit, natural lighting, confident smile, Premium navy executive suit with silk tie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring executive navy suit, natural lighting, professional expression, Premium navy executive suit with silk tie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring executive navy suit, natural lighting, approachable look, Premium navy executive suit with silk tie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring executive navy suit, natural lighting, executive presence, Premium navy executive suit with silk tie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring executive navy suit, studio lighting, confident smile, Premium navy executive suit with silk tie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring executive navy suit, studio lighting, professional expression, Premium navy executive suit with silk tie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring executive navy suit, studio lighting, approachable look, Premium navy executive suit with silk tie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring executive navy suit, studio lighting, executive presence, Premium navy executive suit with silk tie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring executive navy suit, soft lighting, confident smile, Premium navy executive suit with silk tie, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring executive navy suit, soft lighting, professional expression, Premium navy executive suit with silk tie, professional photography"
+      }
+    ]
+  },
+  {
+    "id": "ceo-black-1",
+    "name": "CEO Black Suit",
+    "category": "executive",
+    "originalPrompt": {
+      "positive": "Professional headshot showcasing ceo black suit, High-end black suit for C-suite executives, executive leadership style, C-suite presence, premium business attire, luxury corporate photography, featuring black and white colors, studio lighting, professional photography, high resolution, clean background, fashion photography, commercial quality, perfect fit, professional styling, LinkedIn profile style, corporate headshot",
+      "negative": "casual clothes, unprofessional, messy, poor lighting, amateur photography, blurry, low quality, distorted, cartoon, illustration",
+      "style": "executive",
+      "technical": "high_quality_headshot"
+    },
+    "marketingPrompt": {
+      "hero": "Professional business headshot featuring ceo black suit, perfect for LinkedIn profiles and corporate websites",
+      "showcase": "Showcase of ceo black suit - professional attire for modern business professionals",
+      "category": "executive professional style: ceo black suit for confident business presence"
+    },
+    "variationPrompts": [
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring ceo black suit, natural lighting, confident smile, High-end black suit for C-suite executives, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring ceo black suit, natural lighting, professional expression, High-end black suit for C-suite executives, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring ceo black suit, natural lighting, approachable look, High-end black suit for C-suite executives, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring ceo black suit, natural lighting, executive presence, High-end black suit for C-suite executives, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring ceo black suit, studio lighting, confident smile, High-end black suit for C-suite executives, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring ceo black suit, studio lighting, professional expression, High-end black suit for C-suite executives, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring ceo black suit, studio lighting, approachable look, High-end black suit for C-suite executives, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring ceo black suit, studio lighting, executive presence, High-end black suit for C-suite executives, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring ceo black suit, soft lighting, confident smile, High-end black suit for C-suite executives, professional photography"
+      },
+      {
+        "style": "professional",
+        "prompt": "professional headshot featuring ceo black suit, soft lighting, professional expression, High-end black suit for C-suite executives, professional photography"
+      }
+    ]
+  }
+]
