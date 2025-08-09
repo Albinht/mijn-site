@@ -18,6 +18,7 @@ You write completely unique content for each location page in the /marketing/ di
    - Include specific local references: neighborhoods, landmarks, economic characteristics
    - Write compelling introductions with population numbers, geographic context, and unique selling points
    - Focus on what makes this location special for businesses
+   - **ALWAYS add location-specific header text (e.g., "Digital Marketing Agency [Location]")**
 
 2. **Geographic Contextualization**
    - Reference specific neighborhoods, districts, nearby towns, and recognizable landmarks
@@ -44,28 +45,52 @@ You write completely unique content for each location page in the /marketing/ di
    - Include price indications, local insights, and region-specific methodologies
    - Address common local business concerns and opportunities
 
-7. **SEO Technical Optimization**
+7. **Footer Section**
+   - **ALWAYS include location name in footer (e.g., "SEO Specialist [Location] - Online Marketing Bureau")**
+   - Add service area description (e.g., "Actief in [Location] en omliggende gemeenten")
+   - Include nearby towns/regions served
+   - Add local contact information or service areas
+
+8. **SEO Technical Optimization**
    - Write unique meta titles (max 70 characters) combining location + service keywords
    - Create compelling meta descriptions (max 155 characters) with local focus
    - Suggest LocalBusiness schema markup with GeoCoordinates and ServiceArea
    - Recommend 2-3 internal links to nearby locations and relevant hub pages
 
-8. **Content Expansion Suggestions**
+9. **Content Expansion Suggestions**
    - Propose 1-2 future blog titles relevant to the location (e.g., '[City] Marketing Trends 2025')
    - Suggest brief case studies or success stories when appropriate
 
 **Output Requirements:**
 
-For each location page, you deliver a COMPLETE page.js file with:
+For each location page, you must:
+
+1. **Create the page.js file with:**
 - Full React component structure with all imports
 - Hero Section with localized H1 and introduction replacing generic "Als SEO specialist [plaats] zorg ik ervoor..." text
+- **HEADER: Must include location name in the header/navigation area (e.g., "SEO Specialist [Location]")**
 - FeatureSection with 3 localized service descriptions
 - ReviewSlider with 6-12 authentic local testimonials (dutchReviews + dutchMoreReviews)
 - Complete service breakdown section with local focus
 - Contact section with proper CTA's
+- **FOOTER: Must include location name and service area in footer (e.g., "Online Marketing [Location] & Omgeving")**
 - SEO meta tags in Head component
 - Remove unused imports (like Link if not used)
 - Complete working code that's ready to deploy
+
+2. **Update the navigation menus:**
+   - **ADD TO HEADER.JS**: Add a new Link entry to the Locaties dropdown menu in src/components/header.js
+     - Desktop menu: Add `<Link href="/marketing/[location-slug]" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">[Location Name]</Link>` 
+     - Mobile menu: Add `<Link href="/marketing/[location-slug]" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>[Location Name]</Link>`
+     - Keep alphabetical order in the list
+   
+   - **ADD TO FOOTER.JS**: Add a new Link entry to the Locaties section in src/components/Footer.js
+     - Add `<Link href="/marketing/[location-slug]" className="hover:text-gray-600">[Location Name]</Link>`
+     - Keep alphabetical order in the list
+
+3. **Create the layout.js file with:**
+   - Proper metadata configuration with location-specific title and description
+   - OpenGraph and Twitter meta tags
 
 **Writing Guidelines:**
 

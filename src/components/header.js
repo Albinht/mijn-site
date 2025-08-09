@@ -182,6 +182,30 @@ export default function Header() {
                     </div>
                   </div>
                   
+                  {/* New premium locations */}
+                  <div className="col-span-2 border-t border-gray-200 mt-2 pt-2">
+                    <div className="grid grid-cols-2 gap-1">
+                      <Link href="/marketing/beek" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Beek</Link>
+                      <Link href="/marketing/blaricum" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Blaricum</Link>
+                      <Link href="/marketing/eemnes" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Eemnes</Link>
+                      <Link href="/marketing/gulpen-wittem" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Gulpen-Wittem</Link>
+                      <Link href="/marketing/harlingen" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Harlingen</Link>
+                      <Link href="/marketing/hilvarenbeek" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Hilvarenbeek</Link>
+                      <Link href="/marketing/landsmeer" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Landsmeer</Link>
+                      <Link href="/marketing/laren" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Laren</Link>
+                      <Link href="/marketing/lopik" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Lopik</Link>
+                      <Link href="/marketing/montfoort" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Montfoort</Link>
+                      <Link href="/marketing/oostzaan" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Oostzaan</Link>
+                      <Link href="/marketing/ouder-amstel" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Ouder-Amstel</Link>
+                      <Link href="/marketing/oudewater" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Oudewater</Link>
+                      <Link href="/marketing/renswoude" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Renswoude</Link>
+                      <Link href="/marketing/uitgeest" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Uitgeest</Link>
+                      <Link href="/marketing/vaals" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Vaals</Link>
+                      <Link href="/marketing/westervoort" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Westervoort</Link>
+                      <Link href="/marketing/zoeterwoude" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Zoeterwoude</Link>
+                    </div>
+                  </div>
+                  
                   {/* Existing locations */}
                   <div className="col-span-2 border-t border-gray-200 mt-2 pt-2">
                     <div className="grid grid-cols-2 gap-1">
@@ -328,16 +352,34 @@ export default function Header() {
                     <Link href="/marketing/zwartebroek" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Zwartebroek</Link>
                   </div>
                   
+                  {/* New premium locations */}
+                  <div className="border-t border-gray-200 mt-2 pt-2">
+                    <Link href="/marketing/laren" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Laren</Link>
+                    <Link href="/marketing/lopik" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Lopik</Link>
+                    <Link href="/marketing/montfoort" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Montfoort</Link>
+                    <Link href="/marketing/oostzaan" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Oostzaan</Link>
+                    <Link href="/marketing/ouder-amstel" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Ouder-Amstel</Link>
+                    <Link href="/marketing/oudewater" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Oudewater</Link>
+                    <Link href="/marketing/renswoude" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Renswoude</Link>
+                    <Link href="/marketing/vaals" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Vaals</Link>
+                    <Link href="/marketing/zoeterwoude" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Zoeterwoude</Link>
+                  </div>
+                  
                   {/* Existing locations */}
                   <div className="border-t border-gray-200 mt-2 pt-2">
                     <Link href="/marketing/amersfoort" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Amersfoort</Link>
                     <Link href="/marketing/barneveld" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Barneveld</Link>
                     <Link href="/marketing/bennekom" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Bennekom</Link>
+                    <Link href="/marketing/blaricum" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Blaricum</Link>
                     <Link href="/marketing/ede" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Ede</Link>
+                    <Link href="/marketing/eemnes" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Eemnes</Link>
+                    <Link href="/marketing/landsmeer" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Landsmeer</Link>
                     <Link href="/marketing/leusden" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Leusden</Link>
                     <Link href="/marketing/lunteren" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Lunteren</Link>
                     <Link href="/marketing/nijkerk" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Nijkerk</Link>
                     <Link href="/marketing/putten" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Putten</Link>
+                    <Link href="/marketing/scherpenzeel" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Scherpenzeel</Link>
+                    <Link href="/marketing/uitgeest" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Uitgeest</Link>
                   </div>
                 </div>
               )}
