@@ -124,44 +124,76 @@ export default function Header() {
               </svg>
             </button>
             {isLocationsOpen && (
-              <div className="absolute mt-2 w-56 bg-white border border-gray-200 rounded-md shadow-lg z-10 max-h-80 overflow-y-auto">
-                <div className="grid grid-cols-1 gap-1 p-2">
-                  <Link href="/marketing-voorthuizen" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Voorthuizen</Link>
-                  <Link href="/marketing-kootwijkerbroek" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Kootwijkerbroek</Link>
-                  <Link href="/marketing-garderen" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Garderen</Link>
-                  <Link href="/marketing-stroe" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Stroe</Link>
-                  <Link href="/marketing-terschuur" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Terschuur</Link>
-                  <Link href="/marketing-zwartebroek" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Zwartebroek</Link>
-                  <Link href="/marketing-kootwijk" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Kootwijk</Link>
-                  <Link href="/marketing-achterveld" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Achterveld</Link>
-                  <Link href="/marketing-de-glind" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">De Glind</Link>
-                  <Link href="/marketing-essen" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Essen</Link>
-                  <Link href="/marketing-harselaar" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Harselaar</Link>
-                  <Link href="/marketing-hooglanderveen" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Hooglanderveen</Link>
-                  <Link href="/marketing-hoevelaken" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Hoevelaken</Link>
-                  <Link href="/marketing-putten" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Putten</Link>
-                  <Link href="/marketing-nijkerk" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Nijkerk</Link>
-                  <Link href="/marketing-woudenberg" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Woudenberg</Link>
-                  <Link href="/marketing-scherpenzeel" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Scherpenzeel</Link>
-                  <Link href="/marketing-otterlo" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Otterlo</Link>
-                  <Link href="/marketing-harskamp" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Harskamp</Link>
+              <div className="absolute mt-2 w-64 bg-white border border-gray-200 rounded-md shadow-lg z-10 max-h-80 overflow-y-auto">
+                <div className="grid grid-cols-2 gap-1 p-2">
+                  {/* New locations */}
+                  <Link href="/marketing/aalst" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Aalst</Link>
+                  <Link href="/marketing/aalten" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Aalten</Link>
+                  <Link href="/marketing/aam" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Aam</Link>
+                  <Link href="/marketing/achter-drempt" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Achter-Drempt</Link>
+                  <Link href="/marketing/achterhoek" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Achterhoek</Link>
+                  <Link href="/marketing/acquoy" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Acquoy</Link>
+                  <Link href="/marketing/aerdenburg" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Aerdenburg</Link>
+                  <Link href="/marketing/aerdt" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Aerdt</Link>
+                  <Link href="/marketing/afferden" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Afferden</Link>
+                  <Link href="/marketing/alem" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Alem</Link>
+                  <Link href="/marketing/almen" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Almen</Link>
+                  <Link href="/marketing/alphen" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Alphen</Link>
+                  <Link href="/marketing/altforst" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Altforst</Link>
+                  <Link href="/marketing/alverna" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Alverna</Link>
+                  <Link href="/marketing/ammerzoden" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Ammerzoden</Link>
+                  <Link href="/marketing/ampsen" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Ampsen</Link>
+                  <Link href="/marketing/andelst" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Andelst</Link>
+                  <Link href="/marketing/angeren" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Angeren</Link>
+                  <Link href="/marketing/angerlo" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Angerlo</Link>
+                  <Link href="/marketing/apeldoorn" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Apeldoorn</Link>
+                  <Link href="/marketing/aperloo" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Aperloo</Link>
+                  <Link href="/marketing/appel" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Appel</Link>
+                  <Link href="/marketing/appeltern" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Appeltern</Link>
+                  <Link href="/marketing/appen" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Appen</Link>
+                  <Link href="/marketing/armhoede" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Armhoede</Link>
+                  <Link href="/marketing/arnhem" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Arnhem</Link>
+                  <Link href="/marketing/asch" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Asch</Link>
+                  <Link href="/marketing/asperen" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Asperen</Link>
+                  <Link href="/marketing/assel" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Assel</Link>
+                  <Link href="/marketing/avest" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Avest</Link>
+                  <Link href="/marketing/azewijn" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Azewijn</Link>
                   
-                  {/* Bestaande locaties */}
-                  <div className="border-t border-gray-200 mt-2 pt-2">
-                    <Link href="/marketing-amersfoort" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Amersfoort</Link>
-                    <Link href="/marketing-harselaar" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Harselaar</Link>
-                    <Link href="/marketing-hooglanderveen" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Hooglanderveen</Link>
-                    <Link href="/marketing-hoevelaken" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Hoevelaken</Link>
-                    <Link href="/marketing-putten" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Putten</Link>
-                    <Link href="/marketing-nijkerk" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Nijkerk</Link>
-                    <Link href="/marketing-woudenberg" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Woudenberg</Link>
-                    <Link href="/marketing-scherpenzeel" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Scherpenzeel</Link>
-                    <Link href="/marketing-otterlo" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Otterlo</Link>
-                    <Link href="/marketing-harskamp" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Harskamp</Link>
-                    <Link href="/marketing-barneveld" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Barneveld</Link>
-                    <Link href="/marketing-ede" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Ede</Link>
-                    <Link href="/marketing-veenendaal" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Veenendaal</Link>
-                    <Link href="/marketing-wageningen" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Wageningen</Link>
+                  {/* Additional new locations */}
+                  <div className="col-span-2 border-t border-gray-200 mt-2 pt-2">
+                    <div className="grid grid-cols-2 gap-1">
+                      <Link href="/marketing/achterveld" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Achterveld</Link>
+                      <Link href="/marketing/de-glind" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">De Glind</Link>
+                      <Link href="/marketing/essen" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Essen</Link>
+                      <Link href="/marketing/garderen" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Garderen</Link>
+                      <Link href="/marketing/harselaar" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Harselaar</Link>
+                      <Link href="/marketing/harskamp" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Harskamp</Link>
+                      <Link href="/marketing/hoevelaken" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Hoevelaken</Link>
+                      <Link href="/marketing/hooglanderveen" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Hooglanderveen</Link>
+                      <Link href="/marketing/kootwijk" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Kootwijk</Link>
+                      <Link href="/marketing/kootwijkerbroek" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Kootwijkerbroek</Link>
+                      <Link href="/marketing/otterlo" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Otterlo</Link>
+                      <Link href="/marketing/scherpenzeel" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Scherpenzeel</Link>
+                      <Link href="/marketing/stroe" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Stroe</Link>
+                      <Link href="/marketing/terschuur" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Terschuur</Link>
+                      <Link href="/marketing/voorthuizen" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Voorthuizen</Link>
+                      <Link href="/marketing/woudenberg" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Woudenberg</Link>
+                      <Link href="/marketing/zwartebroek" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Zwartebroek</Link>
+                    </div>
+                  </div>
+                  
+                  {/* Existing locations */}
+                  <div className="col-span-2 border-t border-gray-200 mt-2 pt-2">
+                    <div className="grid grid-cols-2 gap-1">
+                      <Link href="/marketing/amersfoort" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Amersfoort</Link>
+                      <Link href="/marketing/barneveld" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Barneveld</Link>
+                      <Link href="/marketing/bennekom" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Bennekom</Link>
+                      <Link href="/marketing/ede" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Ede</Link>
+                      <Link href="/marketing/leusden" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Leusden</Link>
+                      <Link href="/marketing/lunteren" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Lunteren</Link>
+                      <Link href="/marketing/nijkerk" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Nijkerk</Link>
+                      <Link href="/marketing/putten" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Putten</Link>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -242,34 +274,70 @@ export default function Header() {
               </button>
               {isLocationsOpen && (
                 <div className="ml-4 mt-2 space-y-2 max-h-60 overflow-y-auto">
-                  <Link href="/marketing-voorthuizen" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Voorthuizen</Link>
-                  <Link href="/marketing-kootwijkerbroek" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Kootwijkerbroek</Link>
-                  <Link href="/marketing-garderen" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Garderen</Link>
-                  <Link href="/marketing-stroe" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Stroe</Link>
-                  <Link href="/marketing-terschuur" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Terschuur</Link>
-                  <Link href="/marketing-zwartebroek" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Zwartebroek</Link>
-                  <Link href="/marketing-kootwijk" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Kootwijk</Link>
-                  <Link href="/marketing-achterveld" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Achterveld</Link>
-                  <Link href="/marketing-de-glind" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>De Glind</Link>
-                  <Link href="/marketing-essen" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Essen</Link>
-                  <Link href="/marketing-harselaar" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Harselaar</Link>
-                  <Link href="/marketing-hooglanderveen" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Hooglanderveen</Link>
-                  <Link href="/marketing-hoevelaken" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Hoevelaken</Link>
-                  <Link href="/marketing-putten" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Putten</Link>
-                  <Link href="/marketing-nijkerk" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Nijkerk</Link>
-                  <Link href="/marketing-woudenberg" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Woudenberg</Link>
-                  <Link href="/marketing-scherpenzeel" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Scherpenzeel</Link>
-                  <Link href="/marketing-otterlo" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Otterlo</Link>
-                  <Link href="/marketing-harskamp" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Harskamp</Link>
+                  {/* New locations */}
+                  <Link href="/marketing/aalst" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Aalst</Link>
+                  <Link href="/marketing/aalten" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Aalten</Link>
+                  <Link href="/marketing/aam" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Aam</Link>
+                  <Link href="/marketing/achter-drempt" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Achter-Drempt</Link>
+                  <Link href="/marketing/achterhoek" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Achterhoek</Link>
+                  <Link href="/marketing/acquoy" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Acquoy</Link>
+                  <Link href="/marketing/aerdenburg" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Aerdenburg</Link>
+                  <Link href="/marketing/aerdt" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Aerdt</Link>
+                  <Link href="/marketing/afferden" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Afferden</Link>
+                  <Link href="/marketing/alem" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Alem</Link>
+                  <Link href="/marketing/almen" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Almen</Link>
+                  <Link href="/marketing/alphen" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Alphen</Link>
+                  <Link href="/marketing/altforst" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Altforst</Link>
+                  <Link href="/marketing/alverna" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Alverna</Link>
+                  <Link href="/marketing/ammerzoden" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Ammerzoden</Link>
+                  <Link href="/marketing/ampsen" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Ampsen</Link>
+                  <Link href="/marketing/andelst" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Andelst</Link>
+                  <Link href="/marketing/angeren" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Angeren</Link>
+                  <Link href="/marketing/angerlo" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Angerlo</Link>
+                  <Link href="/marketing/apeldoorn" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Apeldoorn</Link>
+                  <Link href="/marketing/aperloo" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Aperloo</Link>
+                  <Link href="/marketing/appel" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Appel</Link>
+                  <Link href="/marketing/appeltern" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Appeltern</Link>
+                  <Link href="/marketing/appen" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Appen</Link>
+                  <Link href="/marketing/armhoede" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Armhoede</Link>
+                  <Link href="/marketing/arnhem" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Arnhem</Link>
+                  <Link href="/marketing/asch" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Asch</Link>
+                  <Link href="/marketing/asperen" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Asperen</Link>
+                  <Link href="/marketing/assel" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Assel</Link>
+                  <Link href="/marketing/avest" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Avest</Link>
+                  <Link href="/marketing/azewijn" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Azewijn</Link>
                   
-                  {/* Bestaande locaties */}
+                  {/* Additional new locations */}
                   <div className="border-t border-gray-200 mt-2 pt-2">
-                    <Link href="/marketing-amersfoort" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Amersfoort</Link>
-                    <Link href="/marketing-barneveld" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Barneveld</Link>
-                    <Link href="/marketing-bennekom" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Bennekom</Link>
-                    <Link href="/marketing-ede" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Ede</Link>
-                    <Link href="/marketing-leusden" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Leusden</Link>
-                    <Link href="/marketing-lunteren" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Lunteren</Link>
+                    <Link href="/marketing/achterveld" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Achterveld</Link>
+                    <Link href="/marketing/de-glind" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>De Glind</Link>
+                    <Link href="/marketing/essen" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Essen</Link>
+                    <Link href="/marketing/garderen" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Garderen</Link>
+                    <Link href="/marketing/harselaar" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Harselaar</Link>
+                    <Link href="/marketing/harskamp" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Harskamp</Link>
+                    <Link href="/marketing/hoevelaken" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Hoevelaken</Link>
+                    <Link href="/marketing/hooglanderveen" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Hooglanderveen</Link>
+                    <Link href="/marketing/kootwijk" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Kootwijk</Link>
+                    <Link href="/marketing/kootwijkerbroek" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Kootwijkerbroek</Link>
+                    <Link href="/marketing/otterlo" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Otterlo</Link>
+                    <Link href="/marketing/scherpenzeel" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Scherpenzeel</Link>
+                    <Link href="/marketing/stroe" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Stroe</Link>
+                    <Link href="/marketing/terschuur" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Terschuur</Link>
+                    <Link href="/marketing/voorthuizen" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Voorthuizen</Link>
+                    <Link href="/marketing/woudenberg" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Woudenberg</Link>
+                    <Link href="/marketing/zwartebroek" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Zwartebroek</Link>
+                  </div>
+                  
+                  {/* Existing locations */}
+                  <div className="border-t border-gray-200 mt-2 pt-2">
+                    <Link href="/marketing/amersfoort" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Amersfoort</Link>
+                    <Link href="/marketing/barneveld" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Barneveld</Link>
+                    <Link href="/marketing/bennekom" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Bennekom</Link>
+                    <Link href="/marketing/ede" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Ede</Link>
+                    <Link href="/marketing/leusden" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Leusden</Link>
+                    <Link href="/marketing/lunteren" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Lunteren</Link>
+                    <Link href="/marketing/nijkerk" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Nijkerk</Link>
+                    <Link href="/marketing/putten" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Putten</Link>
                   </div>
                 </div>
               )}

@@ -2,7 +2,6 @@
 
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
 import graphImage from '../../../assets/graph.png'
 import avatarImage from '../../../assets/avatar.png'
 import masterSeoImage from '../../../assets/Master_seo fundamentals.png'
@@ -13,22 +12,22 @@ import ReviewSlider from '../../../components/ReviewSlider'
 import FeatureSection from '../../../components/FeatureSection'
 
 export default function MarketingBarneveld() {
-  // Lokale Barneveld reviews
+  // Lokale Barneveld reviews - kippenstad en industrieel hart van de Gelderse Vallei
   const dutchReviews = [
-    { name: 'Bakkerij van der Berg', rating: 5, text: 'Dankzij Albin staan we nu #1 in Google voor "bakkerij Barneveld". Veel meer klanten sinds de lokale SEO optimalisatie!' },
-    { name: 'Garage Hendriks', rating: 5, text: 'Onze Google Ads campagne draait perfect. We krijgen elke week nieuwe klanten uit Barneveld en omgeving. Top service!' },
-    { name: 'Restaurant De Gouden Leeuw', rating: 5, text: 'Sinds we met Albin werken hebben we 3x zoveel reserveringen. Onze nieuwe website ziet er professioneel uit en converteert goed.' },
-    { name: 'Kapsalon Mooi Haar', rating: 5, text: 'Lokale SEO heeft ons bedrijf getransformeerd. We staan nu bovenaan bij "kapper Barneveld" en hebben een volle agenda.' },
-    { name: 'Installatiebedrijf Jansen', rating: 5, text: 'Google Ads campagne loopt fantastisch. We krijgen kwalitatieve leads uit heel de regio. Investering heeft zich al terugverdiend.' },
-    { name: 'Tandartspraktijk Smile', rating: 4.5, text: 'Professionele aanpak en snelle resultaten. Onze online zichtbaarheid in Barneveld is enorm verbeterd.' },
+    { name: 'Pluimveebedrijf Harselaar', rating: 5, text: 'Als pluimveehouder in Harselaar Zuid krijgen we nu veel meer B2B aanvragen. Perfect voor onze exportmarkt naar heel Europa!' },
+    { name: 'Restaurant Aan de Brink', rating: 5, text: 'Ons restaurant aan de historische Brink is nu altijd vol. Toeristen vinden ons makkelijk dankzij de lokale SEO strategie.' },
+    { name: 'Meubelzaak Voorthuizen', rating: 5, text: 'Vanuit onze showroom bij de A30 trekken we nu klanten uit heel Midden-Nederland. Google Ads werkt uitstekend voor ons!' },
+    { name: 'Kapsalon Norschoten', rating: 5, text: 'In de wijk Norschoten is veel concurrentie, maar we staan nu bovenaan. Agenda zit vol met klanten uit heel Barneveld-Noord.' },
+    { name: 'Installateur De Burgt', rating: 5, text: 'Voor spoedklussen in De Burgt en Veller worden we nu als eerste gevonden. De investering betaalt zich dubbel terug.' },
+    { name: 'Tandarts Eilanden-Oost', rating: 4.5, text: 'Onze praktijk in de nieuwbouwwijk Eilanden-Oost groeit snel dankzij de online marketing. Veel jonge gezinnen als nieuwe patiënten!' },
   ]
   const dutchMoreReviews = [
-    { name: 'Bouwbedrijf Sterk', rating: 5, text: 'Van pagina 3 naar positie #1 in 4 maanden tijd. De lokale SEO strategie werkt echt voor bouwbedrijven in Barneveld.' },
-    { name: 'Schoonheidssalon Pure', rating: 5, text: 'Onze omzet is verdubbeld sinds de website optimalisatie. Veel meer boekingen via Google uit de hele regio.' },
-    { name: 'Fietsenwinkel Snel', rating: 4.5, text: 'Dankzij de lokale marketing strategie hebben we veel meer klanten uit Ede, Amersfoort en omgeving.' },
-    { name: 'Advocatenkantoor Recht', rating: 5, text: 'Excellente service en resultaten. We krijgen nu regelmatig nieuwe cliënten via onze verbeterde online aanwezigheid.' },
-    { name: 'Tuincentrum Groen', rating: 5, text: 'Google Ads voor tuinartikelen loopt perfect. Vooral in het voorjaar veel extra klanten uit heel Barneveld.' },
-    { name: 'Dierenarts Zorgzaam', rating: 4.5, text: 'Lokale SEO heeft ons geholpen om de #1 dierenarts van Barneveld te worden op Google. Zeer tevreden!' },
+    { name: 'Transportbedrijf A1 Corridor', rating: 5, text: 'Gelegen aan de A1 bereiken we nu logistieke klanten uit heel Nederland. De B2B marketing strategie werkt perfect!' },
+    { name: 'Beauty Centrum Kallenbroek', rating: 5, text: 'In winkelcentrum Kallenbroek hebben we veel concurrentie, maar staan nu bovenaan. Omzet is verdubbeld!' },
+    { name: 'Fietsspecialist Kootwijkerbroek', rating: 4.5, text: 'Vanuit onze vestiging in Kootwijkerbroek bereiken we nu heel Noord-Barneveld. Vooral e-bikes lopen goed.' },
+    { name: 'Advocatenkantoor Vellerselaar', rating: 5, text: 'Voor ons kantoor in bedrijvenpark Harselaar was professionele uitstraling cruciaal. Nu structureel nieuwe zakelijke cliënten.' },
+    { name: 'Tuincentrum De Glind', rating: 5, text: 'Nabij jeugddorp De Glind trekken we nu klanten uit de hele regio. Seizoensacties worden perfect gevonden via Google.' },
+    { name: 'Dierenarts Garderen', rating: 4.5, text: 'Onze kliniek bij natuurgebied Garderen wordt nu gevonden door heel Barneveld-Oost. Top resultaten!' },
   ]
 
   return (
@@ -52,21 +51,21 @@ export default function MarketingBarneveld() {
               <span className="bg-[#F7D8FA] px-2 rounded italic">Marketing Barneveld</span>
             </h1>
             <p className="mt-6 text-lg text-gray-700">
-              <strong>Op zoek naar het beste marketing bureau in Barneveld?</strong><br />
-              Als <b>SEO specialist in Barneveld</b> help ik bedrijven aan meer lokale klanten met bewezen SEO & marketing strategieën.
+              <strong>Groei jouw bedrijf in de kippenstad van Nederland!</strong><br />
+              Met 60.000+ inwoners, een bloeiende pluimveesector en strategische ligging aan de A1/A30 is Barneveld hét ondernemershart van de Gelderse Vallei. Als <b>SEO specialist in Barneveld</b> ken ik de lokale markt - van agrarische bedrijven tot moderne dienstverleners.
             </p>
             <ul className="mt-6 space-y-2 text-gray-800">
-              <li>✓ Lokale SEO Barneveld: #1 in Google</li>
-              <li>✓ Google Ads Barneveld: direct meer aanvragen</li>
-              <li>✓ Marketing strategie speciaal voor Barneveld</li>
-              <li>✓ <b>SEO Barneveld</b> voor MKB, ZZP & lokale bedrijven</li>
-              <li>✓ Conversiegerichte websites</li>
+              <li>✓ Lokale SEO voor bedrijven rond het centrum en bedrijvenpark Harselaar</li>
+              <li>✓ Google Ads gericht op Barneveld, Voorthuizen & Kootwijkerbroek</li>
+              <li>✓ Specialisatie in agrarische sector & B2B marketing</li>
+              <li>✓ <b>SEO Barneveld</b> met kennis van de pluimveemarkt</li>
+              <li>✓ Bereik klanten van Ede tot Amersfoort via de A1 corridor</li>
             </ul>
             <div className="mt-8 flex items-center gap-4">
               <Button onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}>
                 Gratis SEO Consult <span>→</span>
               </Button>
-              <Button variant="secondary" as={Link} href="/work-with-me">
+              <Button variant="secondary" onClick={() => window.location.href='/work-with-me'}>
                 Meer over SEO in Barneveld
               </Button>
             </div>
@@ -216,9 +215,15 @@ export default function MarketingBarneveld() {
               </div>
             </div>
             <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Actief in Barneveld &amp; Regio</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Actief in heel Barneveld & Gelderse Vallei</h3>
+              <p className="text-gray-600 mb-2">
+                <strong>Barneveld wijken:</strong> Centrum • Norschoten • Veller • De Burgt • Eilanden • Oldenbarneveld • Kallenbroek
+              </p>
+              <p className="text-gray-600 mb-2">
+                <strong>Kernen:</strong> Voorthuizen • Kootwijkerbroek • Garderen • Stroe • Kootwijk • De Glind • Terschuur • Zwartebroek
+              </p>
               <p className="text-gray-600">
-                Ede • Amersfoort • Leusden • Nijkerk • Bennekom • Lunteren • Voorthuizen • Kootwijkerbroek
+                <strong>Regio:</strong> Ede • Nijkerk • Putten • Scherpenzeel • Lunteren • Otterlo • Harskamp
               </p>
             </div>
           </div>

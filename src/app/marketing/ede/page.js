@@ -2,7 +2,6 @@
 
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
 import graphImage from '../../../assets/graph.png'
 import avatarImage from '../../../assets/avatar.png'
 import masterSeoImage from '../../../assets/Master_seo fundamentals.png'
@@ -66,7 +65,7 @@ export default function MarketingEde() {
               <Button onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}>
                 Gratis groeigesprek plannen <span>→</span>
               </Button>
-              <Button variant="secondary" as={Link} href="/work-with-me">
+              <Button variant="secondary" onClick={() => window.location.href='/work-with-me'}>
                 Bekijk resultaten in Ede
               </Button>
             </div>

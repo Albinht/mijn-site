@@ -2,7 +2,6 @@
 
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
 import graphImage from '../../../assets/graph.png'
 import avatarImage from '../../../assets/avatar.png'
 import masterSeoImage from '../../../assets/Master_seo fundamentals.png'
@@ -13,22 +12,22 @@ import ReviewSlider from '../../../components/ReviewSlider'
 import FeatureSection from '../../../components/FeatureSection'
 
 export default function MarketingPutten() {
-  // Lokale Putten reviews
+  // Lokale Putten reviews - historisch dorp op de Veluwe
   const dutchReviews = [
-    { name: 'Boerderij Puttense Hoeve', rating: 5, text: 'Dankzij Albin staan we nu #1 in Google voor "boerderij Putten". Veel meer bezoekers sinds de lokale SEO optimalisatie!' },
-    { name: 'Garage Putten Service', rating: 5, text: 'Onze Google Ads campagne draait perfect. We krijgen elke week nieuwe klanten uit Putten en omgeving. Top service!' },
-    { name: 'Restaurant De Puttense Kamer', rating: 5, text: 'Sinds we met Albin werken hebben we 3x zoveel reserveringen. Onze nieuwe website ziet er professioneel uit en converteert goed.' },
-    { name: 'Kapsalon Puttense Stijl', rating: 5, text: 'Lokale SEO heeft ons bedrijf getransformeerd. We staan nu bovenaan bij "kapper Putten" en hebben een volle agenda.' },
-    { name: 'Installatiebedrijf Putten Tech', rating: 5, text: 'Google Ads campagne loopt fantastisch. We krijgen kwalitatieve leads uit heel de regio. Investering heeft zich al terugverdiend.' },
-    { name: 'Tandartspraktijk Putten', rating: 4.5, text: 'Professionele aanpak en snelle resultaten. Onze online zichtbaarheid in Putten is enorm verbeterd.' },
+    { name: 'Restaurant Oude Kerk', rating: 5, text: 'Ons restaurant bij de historische Oude Kerk krijgt nu veel meer toeristen. Perfect voor onze locatie in het centrum van Putten!' },
+    { name: 'Garage Strand Nulde', rating: 5, text: 'Door onze ligging bij recreatiegebied Strand Nulde krijgen we nu veel meer klanten. Google Ads werkt perfect voor seizoenswerk!' },
+    { name: 'Kapsalon Putter Eng', rating: 5, text: 'In de wijk Putter Eng hebben we nu de beste online vindbaarheid. Agenda zit vol met klanten uit heel Putten.' },
+    { name: 'Fysiotherapie Sportpark', rating: 5, text: 'Onze praktijk bij Sportpark Putter Eng wordt nu gevonden door sporters uit heel Noord-Veluwe. Top resultaten!' },
+    { name: 'Installateur Husselerveld', rating: 5, text: 'Voor spoedklussen in Husselerveld en Bijsteren worden we nu als eerste gevonden. Investering betaalt zich dubbel terug.' },
+    { name: 'Tandarts Centrum Putten', rating: 4.5, text: 'Onze praktijk aan de Voorthuizerstraat groeit gestaag. We krijgen nu ook patiënten uit Ermelo en Nijkerk.' },
   ]
   const dutchMoreReviews = [
-    { name: 'Bouwbedrijf Putten BV', rating: 5, text: 'Van pagina 3 naar positie #1 in 4 maanden tijd. De lokale SEO strategie werkt echt voor bouwbedrijven in Putten.' },
-    { name: 'Schoonheidssalon Putten', rating: 5, text: 'Onze omzet is verdubbeld sinds de website optimalisatie. Veel meer boekingen via Google uit de hele regio.' },
-    { name: 'Fietsenwinkel Puttense Wielen', rating: 4.5, text: 'Dankzij de lokale marketing strategie hebben we veel meer klanten uit Nijkerk, Zwartebroek en omgeving.' },
-    { name: 'Advocatenkantoor Putten', rating: 5, text: 'Excellente service en resultaten. We krijgen nu regelmatig nieuwe cliënten via onze verbeterde online aanwezigheid.' },
-    { name: 'Tuincentrum Puttense Groen', rating: 5, text: 'Google Ads voor tuinartikelen loopt perfect. Vooral in het voorjaar veel extra klanten uit heel Putten.' },
-    { name: 'Dierenarts Putten', rating: 4.5, text: 'Lokale SEO heeft ons geholpen om de #1 dierenarts van Putten te worden op Google. Zeer tevreden!' },
+    { name: 'Bouwbedrijf Arler Eng', rating: 5, text: 'Vanuit bedrijventerrein Arler Eng bereiken we nu bouwprojecten in heel Noord-Veluwe. Perfecte B2B strategie!' },
+    { name: 'Beauty Salon Waterfront', rating: 5, text: 'Bij de jachthaven Putten hebben we een unieke locatie. Nu worden we ook online perfect gevonden!' },
+    { name: 'Fietsverhuur Veluwe Route', rating: 4.5, text: 'Als fietsverhuur langs de Veluwe fietsroutes krijgen we nu veel meer toeristen. Vooral in het weekend druk!' },
+    { name: 'Notariskantoor Putten', rating: 5, text: 'Voor ons kantoor aan de Kerkstraat was professionele uitstraling online cruciaal. Nu structureel nieuwe cliënten.' },
+    { name: 'Tuincentrum Sprielderweg', rating: 5, text: 'Langs de Sprielderweg richting Garderen trekken we nu klanten uit de hele regio. Seizoensacties lopen perfect!' },
+    { name: 'Dierenarts Veluwe Noord', rating: 4.5, text: 'Onze kliniek wordt nu gevonden door heel Putten en omliggende dorpen. De lokale SEO werkt uitstekend!' },
   ]
 
   return (
@@ -52,14 +51,15 @@ export default function MarketingPutten() {
               <span className="bg-[#F7D8FA] px-2 rounded italic">Marketing Putten</span>
             </h1>
             <p className="mt-6 text-lg text-gray-700">
-              <strong>Op zoek naar het beste marketing bureau in Putten?</strong><br />
-              Als <b>SEO specialist in Putten</b> help ik bedrijven aan meer lokale klanten met bewezen SEO & marketing strategieën.
+              <strong>Groei jouw bedrijf in het hart van de Veluwe!</strong><br />
+              Met 25.000+ inwoners, gelegen tussen bossen en water, is Putten een perfecte mix van natuur, recreatie en ondernemerschap. Als <b>SEO specialist in Putten</b> ken ik de lokale markt - van toeristische bedrijven tot ambachtelijke ondernemers.
             </p>
             <ul className="mt-6 space-y-2 text-gray-800">
-              <li>✓ Lokale SEO voor Putten bedrijven</li>
-              <li>✓ Google Ads campagnes die converteren</li>
-              <li>✓ Professionele websites & online marketing</li>
-              <li>✓ Meer klanten uit Putten en omgeving</li>
+              <li>✓ Lokale SEO voor bedrijven rond het centrum en Strand Nulde</li>
+              <li>✓ Google Ads gericht op Putten, Ermelo & Nijkerk</li>
+              <li>✓ Specialisatie in recreatie, toerisme & lokale dienstverleners</li>
+              <li>✓ Bereik Veluwe toeristen en lokale inwoners</li>
+              <li>✓ Bekend met de Puttense markt sinds 2020</li>
             </ul>
             <div className="mt-8 flex items-center gap-4">
               <Button as="a" href="tel:+31648728828" className="text-sm px-4 py-2">
@@ -88,7 +88,11 @@ export default function MarketingPutten() {
         </div>
 
         {/* REVIEWS SECTIE */}
-        <ReviewSlider reviews={dutchReviews} moreReviews={dutchMoreReviews} />
+        <ReviewSlider 
+          customReviews={dutchReviews} 
+          customMoreReviews={dutchMoreReviews}
+          title="Putten groeit online met <span class='bg-[#F7D8FA] px-2 rounded italic'>lokale marketing</span>"
+        />
 
         {/* DIENSTEN SECTIE */}
         <section className="py-16">

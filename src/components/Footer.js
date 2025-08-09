@@ -170,25 +170,34 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <Link 
-                  href="/marketing-barneveld" 
+                  href="/marketing/aalst" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
                   style={{ color: 'rgb(0, 0, 0)' }}
                 >
-                  Barneveld
+                  Aalst
                 </Link>
               </li>
               <li>
                 <Link 
-                  href="/marketing-ede" 
+                  href="/marketing/aalten" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
                   style={{ color: 'rgb(0, 0, 0)' }}
                 >
-                  Ede
+                  Aalten
                 </Link>
               </li>
               <li>
                 <Link 
-                  href="/marketing-amersfoort" 
+                  href="/marketing/achterhoek" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Achterhoek
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/amersfoort" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
                   style={{ color: 'rgb(0, 0, 0)' }}
                 >
@@ -197,38 +206,101 @@ const Footer = () => {
               </li>
               <li>
                 <Link 
-                  href="/marketing-leusden" 
+                  href="/marketing/apeldoorn" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
                   style={{ color: 'rgb(0, 0, 0)' }}
                 >
-                  Leusden
+                  Apeldoorn
                 </Link>
               </li>
               <li>
                 <Link 
-                  href="/marketing-nijkerk" 
+                  href="/marketing/arnhem" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
                   style={{ color: 'rgb(0, 0, 0)' }}
                 >
-                  Nijkerk
+                  Arnhem
                 </Link>
               </li>
               <li>
                 <Link 
-                  href="/marketing-bennekom" 
+                  href="/marketing/barneveld" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
                   style={{ color: 'rgb(0, 0, 0)' }}
                 >
-                  Bennekom
+                  Barneveld
                 </Link>
               </li>
               <li>
                 <Link 
-                  href="/marketing-lunteren" 
+                  href="/marketing/ede" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
                   style={{ color: 'rgb(0, 0, 0)' }}
                 >
-                  Lunteren
+                  Ede
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/acquoy" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Acquoy
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/alem" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Alem
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/almen" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Almen
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/alphen" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Alphen
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/andelst" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Andelst
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/asperen" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Asperen
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/azewijn" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Azewijn
                 </Link>
               </li>
             </ul>

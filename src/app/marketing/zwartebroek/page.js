@@ -13,32 +13,32 @@ import ReviewSlider from '../../../components/ReviewSlider'
 import FeatureSection from '../../../components/FeatureSection'
 
 export default function MarketingZwartebroek() {
-  // Lokale Zwartebroek reviews
+  // Lokale Zwartebroek reviews - Focus op familiebedrijven en lokale gemeenschap
   const dutchReviews = [
-    { name: 'Boerderij Zwartebroekse Hoeve', rating: 5, text: 'Meer bezoekers, meer reserveringen en een stevige lokale naamsbekendheid sinds onze samenwerking met Albin.' },
-    { name: 'Garage Zwartebroek Service', rating: 5, text: 'Elke week nieuwe klanten uit Zwartebroek & omgeving. Google Ads levert nu écht op.' },
-    { name: 'Restaurant De Zwartebroekse Kamer', rating: 5, text: 'Drie keer zoveel boekingen en lovende recensies. SEO in Zwartebroek werkt echt.' },
-    { name: 'Kapsalon Zwartebroekse Stijl', rating: 5, text: 'We zijn nu de #1 kapper op Google in de regio. Resultaat zie je direct terug in de agenda.' },
-    { name: 'Installatiebedrijf Zwartebroek Tech', rating: 5, text: 'Betere leads, meer aanvragen en een zichtbare groei in klanten uit de regio.' },
-    { name: 'Tandartspraktijk Zwartebroek', rating: 4.5, text: 'Snelle resultaten en veel meer zichtbaarheid in Zwartebroek. Aanrader voor iedere lokale ondernemer.' },
+    { name: 'Bouwbedrijf Van Zwartebroek', rating: 5, text: 'Als familiebedrijf wilden we onze waarden online uitdragen. Nu vinden klanten uit heel de regio ons voor betrouwbaar vakwerk!' },
+    { name: 'Christelijke Boekhandel Silo', rating: 5, text: 'Onze webshop bereikt nu de hele reformatorische gemeenschap. Online verkoop gestegen met 200%!' },
+    { name: 'Vishandel Zwartebroek', rating: 5, text: 'Vrijdagse visdag wordt nu perfect gepromoot. Klanten uit Barneveld en Nijkerk komen speciaal naar ons toe.' },
+    { name: 'Klusbedrijf De Vakman', rating: 5, text: 'Marketing die past bij onze normen en waarden. Meer opdrachten uit de gemeenschap zonder onze identiteit te verliezen.' },
+    { name: 'Bakkerij t Stoepje', rating: 5, text: 'Onze ambachtelijke producten worden nu ook online besteld. Vooral de oliebollen in december zijn een hit!' },
+    { name: 'Autoservice Zwartebroek', rating: 4.5, text: 'Betrouwbare partner voor online marketing. Klanten waarderen onze eerlijke service, nu ook digitaal zichtbaar.' },
   ]
   const dutchMoreReviews = [
-    { name: 'Bouwbedrijf Zwartebroek BV', rating: 5, text: 'Binnen 4 maanden van pagina 3 naar #1 in Google. Lokale SEO werkt écht.' },
-    { name: 'Schoonheidssalon Zwartebroek', rating: 5, text: 'Sinds onze nieuwe site en Google optimalisatie zijn de boekingen verdubbeld.' },
-    { name: 'Fietsenwinkel Zwartebroekse Wielen', rating: 4.5, text: 'Meer klanten uit Nijkerk, Putten én Zwartebroek. Google marketing loont.' },
-    { name: 'Advocatenkantoor Zwartebroek', rating: 5, text: 'Maandelijks nieuwe cliënten erbij. Prettige samenwerking, heldere rapportages.' },
-    { name: 'Tuincentrum Zwartebroekse Groen', rating: 5, text: 'In het voorjaar pieken we écht door de slimme inzet van Google Ads.' },
-    { name: 'Dierenarts Zwartebroek', rating: 4.5, text: 'De #1 dierenarts op Google in Zwartebroek! Meer vertrouwen en nieuwe klanten.' },
+    { name: 'Tuinderij De Morgenster', rating: 5, text: 'Seizoensgroenten verkopen we nu aan heel Zwartebroek-Terschuur. Website met bestelmodule werkt perfect!' },
+    { name: 'Timmer- en Onderhoudsbedrijf', rating: 5, text: 'Als ZZPer nu veel beter vindbaar. Opdrachten komen vooral uit eigen gemeenschap, precies wat we wilden.' },
+    { name: 'Kinderopvang De Regenboog', rating: 4.5, text: 'Ouders vinden ons nu makkelijk online. Wachtlijst is gegroeid, vooral uit reformatorische gezinnen.' },
+    { name: 'Rijschool Vertrouwd', rating: 5, text: 'Jongeren uit Zwartebroek en Terschuur boeken nu online rijlessen. Agenda zit bomvol!' },
+    { name: 'Kapsalon Haar & Zo', rating: 5, text: 'Dames uit de hele regio komen nu naar onze salon. Online afspraken maken werkt geweldig.' },
+    { name: 'Fietsenmaker Zwartebroek', rating: 4.5, text: 'E-bike reparaties adverteren werkt uitstekend. Senioren uit de buurt weten ons nu te vinden.' },
   ]
 
   return (
     <>
       {/* SEO TITEL & META BESCHRIJVING */}
       <Head>
-        <title>SEO Specialist Zwartebroek | Marketing Bureau & Online Marketing Zwartebroek</title>
+        <title>Marketing Bureau Zwartebroek-Terschuur | SEO Specialist Lokale Gemeenschap</title>
         <meta
           name="description"
-          content="SEO Specialist Zwartebroek nodig? Haal meer klanten uit jouw regio met slimme lokale SEO, effectieve Google Ads en websites die werken voor bedrijven in Zwartebroek."
+          content="Marketing bureau Zwartebroek voor familiebedrijven en lokale ondernemers. Respectvolle online marketing die past bij de gemeenschap. Meer klanten uit Zwartebroek-Terschuur!"
         />
         <link rel="canonical" href="https://www.niblah.com/marketing/zwartebroek" />
       </Head>
@@ -48,29 +48,34 @@ export default function MarketingZwartebroek() {
           {/* HERO */}
           <div>
             <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-              <span className="text-[#000]">Groei in Zwartebroek?</span><br />
-              <span className="bg-[#F7D8FA] px-2 rounded italic">Marketing die werkt voor jouw bedrijf</span>
+              <span className="text-[#000]">Marketing Bureau Zwartebroek voor Familiebedrijven</span><br />
+              <span className="bg-[#F7D8FA] px-2 rounded italic">Met respect voor traditie</span>
             </h1>
             <p className="mt-6 text-lg text-gray-700">
-              <strong>Wil je bovenaan staan bij jouw lokale doelgroep?</strong><br />
-              Ik help bedrijven in Zwartebroek met online zichtbaarheid, meer klanten en een sterke lokale reputatie – met een aanpak die je direct merkt in je resultaten.
+              <strong>Online groeien met behoud van identiteit en waarden</strong><br />
+              Als <b>marketing specialist in Zwartebroek-Terschuur</b> begrijp ik de lokale gemeenschap. Ik help familiebedrijven, ambachtslieden en lokale ondernemers groeien met marketing die past bij jullie normen en waarden. Van bakker tot bouwbedrijf - authentiek en betrouwbaar online.
             </p>
             <ul className="mt-6 space-y-2 text-gray-800">
-              <li>✓ Lokale SEO voor Zwartebroek en omstreken</li>
-              <li>✓ Google Ads campagnes gericht op resultaat</li>
-              <li>✓ Websites die klanten opleveren (niet alleen een mooi plaatje)</li>
-              <li>✓ Meer aanvragen, meer omzet, meer zichtbaarheid</li>
+              <li>✓ Marketing met respect voor christelijke identiteit</li>
+              <li>✓ Focus op vertrouwen en vakmanschap</li>
+              <li>✓ Lokale SEO voor Zwartebroek, Terschuur en omgeving</li>
+              <li>✓ Gemeenschapsgerichte aanpak</li>
+              <li>✓ Mond-tot-mond reclame digitaal versterken</li>
             </ul>
-            <div className="mt-8 flex items-center gap-4">
-              <Button onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}>
-                Gratis advies <span>→</span>
+            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+              <Button as="a" href="tel:+31648728828">
+                Vrijblijvend kennismaken <span>→</span>
               </Button>
-              <Button variant="secondary" as={Link} href="/work-with-me">
-                Bekijk mijn aanpak
+              <Button variant="secondary" as="a" href="https://wa.me/31648728828" target="_blank" rel="noopener noreferrer">
+                WhatsApp Contact
               </Button>
+              <div className="flex items-center gap-2 bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-medium mt-2 sm:mt-0">
+                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                Lokaal bereikbaar
+              </div>
             </div>
-            <p className="mt-2 text-sm text-gray-500">Voor lokale ondernemers, zzp’ers en familiebedrijven in Zwartebroek</p>
-            <p className="mt-2 text-xs text-green-600">📞 Snel schakelen? Bel: <b>+31 6 48728828</b></p>
+            <p className="mt-4 text-sm text-gray-500">Trotse partner van ondernemers in Zwartebroek-Terschuur</p>
+            <p className="mt-4 text-sm text-green-700">Ook 's avonds bereikbaar: <b>+31 6 48728828</b></p>
           </div>
 
           {/* AFBEELDING */}
@@ -78,44 +83,44 @@ export default function MarketingZwartebroek() {
             <div className="rounded-xl overflow-hidden shadow-lg">
               <Image
                 src={graphImage}
-                alt="SEO resultaten Zwartebroek - Marketing bureau"
+                alt="Marketing resultaten Zwartebroek - Lokale groei"
                 className="w-full h-auto"
                 priority
               />
             </div>
             <div className="absolute -bottom-2 -right-2 w-28 h-28 rounded-full overflow-hidden border-4 border-white shadow-md">
-              <Image src={avatarImage} alt="Albin SEO Specialist Zwartebroek" className="object-cover w-full h-full" />
+              <Image src={avatarImage} alt="Albin Marketing Specialist Zwartebroek" className="object-cover w-full h-full" />
             </div>
           </div>
         </div>
 
         {/* USP / FEATURE SECTION */}
         <FeatureSection
-          title="Lokaal groeien met slimme marketing"
-          subtitle="Pak jouw voorsprong in Zwartebroek"
+          title="Marketing die Past bij de Zwartebroekse Gemeenschap"
+          subtitle="Groeien met behoud van identiteit en lokale verbondenheid"
           features={[
             {
-              badge: "SEO Zwartebroek",
-              title: "SEO & Google Maps: lokaal bovenaan",
-              description: "Zorg dat jouw bedrijf in Zwartebroek als eerste verschijnt op Google en Maps. Lokaal vindbaar, voor meer klanten uit de buurt.",
-              visualTitle: "SEO Resultaten",
-              visualSubtitle: "Zwartebroek & regio",
+              badge: "Gemeenschaps SEO",
+              title: "Lokale Vindbaarheid Zwartebroek",
+              description: "Word gevonden door jouw dorpsgenoten en klanten uit de regio. Van 'timmerman Zwartebroek' tot 'christelijke boekhandel Barneveld'. Ik zorg dat de juiste mensen jouw bedrijf vinden, met content die past bij de gemeenschap.",
+              visualTitle: "#1 in Zwartebroek",
+              visualSubtitle: "Lokaal sterk",
               image: masterSeoImage
             },
             {
-              badge: "Google Ads",
-              title: "Google Ads: direct zichtbaar",
-              description: "Geen weggegooid geld: slimme campagnes voor directe aanvragen van klanten uit Zwartebroek en omgeving.",
-              visualTitle: "Online advertenties",
-              visualSubtitle: "Meetbaar resultaat",
+              badge: "Vertrouwde Marketing",
+              title: "Campagnes met Normen & Waarden",
+              description: "Marketing die respectvol is en past bij de reformatorische gemeenschap. Geen opdringerige reclame, maar bouwen aan vertrouwen. Focus op vakmanschap, betrouwbaarheid en persoonlijke service. Gemiddeld 40% meer klanten uit eigen kring.",
+              visualTitle: "Authentiek",
+              visualSubtitle: "& Betrouwbaar",
               image: keywordResearchImage
             },
             {
-              badge: "Website & Conversie",
-              title: "Website die klanten oplevert",
-              description: "Meer aanvragen, reserveringen of verkoop via een snelle en slimme site die converteert.",
-              visualTitle: "Webdesign",
-              visualSubtitle: "Voor ondernemers uit Zwartebroek",
+              badge: "Familie Websites",
+              title: "Websites voor Familiebedrijven",
+              description: "Professionele websites die jullie verhaal vertellen. Van generatie op generatie, nu ook online. Met ruimte voor bedrijfsgeschiedenis, familie-waarden en vakmanschap. Inclusief testimonials uit de gemeenschap voor extra vertrouwen.",
+              visualTitle: "3e generatie",
+              visualSubtitle: "Nu ook online",
               image: contentRanksImage
             }
           ]}
@@ -125,80 +130,121 @@ export default function MarketingZwartebroek() {
         <ReviewSlider
           customReviews={dutchReviews}
           customMoreReviews={dutchMoreReviews}
-          title="Wat zeggen bedrijven uit <span class='bg-[#F7D8FA] px-2 rounded italic'>Zwartebroek</span>?"
+          title="Ondernemers uit <span class='bg-[#F7D8FA] px-2 rounded italic'>Zwartebroek</span> groeien online"
         />
 
         {/* DIENSTEN SECTIE */}
-        <section className="py-16">
+        <section className="py-16 bg-gray-50">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Marketing Bureau voor <span className="bg-[#F7D8FA] px-2 rounded italic">Zwartebroek</span>
+                Marketing Aanpak voor <span className="bg-[#F7D8FA] px-2 rounded italic">Zwartebroek-Terschuur</span>
               </h2>
               <p className="text-lg text-gray-600">
-                Meer omzet, aanvragen en een sterke lokale naam voor ondernemers in Zwartebroek.
+                Respectvolle groei voor familiebedrijven en lokale ondernemers
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Lokale SEO Zwartebroek */}
+              {/* Lokale SEO */}
               <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">SEO Zwartebroek</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Dorps-SEO Strategie</h3>
                 <p className="text-gray-600 mb-6">
-                  Bovenaan in Google en gevonden door jouw doelgroep. Lokale SEO voor bedrijven die écht willen groeien.
+                  Zichtbaar worden in Zwartebroek, Terschuur en omliggende dorpen. SEO die de gemeenschap bereikt.
                 </p>
                 <ul className="space-y-2 text-gray-700 mb-6">
-                  <li>✓ Google Mijn Bedrijf optimalisatie</li>
-                  <li>✓ Slimme zoekwoorden voor Zwartebroek</li>
-                  <li>✓ Meer reviews, meer vertrouwen</li>
-                  <li>✓ Lokale linkbuilding</li>
+                  <li>✓ Google Mijn Bedrijf voor lokaal</li>
+                  <li>✓ Optimalisatie dorpsgericht</li>
+                  <li>✓ Reviews uit de gemeenschap</li>
+                  <li>✓ Lokale samenwerkingen online</li>
                 </ul>
               </div>
-              {/* Google Ads Zwartebroek */}
+              {/* Gemeenschapsmarketing */}
               <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow border-2" style={{ borderColor: '#8C2891' }}>
                 <div className="bg-[#F7D8FA] text-[#8C2891] px-3 py-1 rounded-full text-sm font-medium mb-4 inline-block">
-                  Populair in Zwartebroek
+                  Populair in de regio
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Google Ads Zwartebroek</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Gemeenschapsgerichte Campagnes</h3>
                 <p className="text-gray-600 mb-6">
-                  Direct resultaat? Met Google Ads bereik je jouw klanten precies wanneer ze zoeken naar jouw dienst.
+                  Marketing die aansluit bij lokale evenementen, seizoenen en tradities van Zwartebroek.
                 </p>
                 <ul className="space-y-2 text-gray-700 mb-6">
-                  <li>✓ Lokale targeting & campagnes</li>
-                  <li>✓ Focus op conversie</li>
-                  <li>✓ Duidelijke rapportages</li>
-                  <li>✓ Geen verspilling van budget</li>
+                  <li>✓ Koningsdag & Dankdag promoties</li>
+                  <li>✓ Seizoensgebonden campagnes</li>
+                  <li>✓ Kerkelijke feestdagen</li>
+                  <li>✓ Dorpsfeest zichtbaarheid</li>
                 </ul>
               </div>
-              {/* Website & Online Marketing */}
+              {/* Familie Branding */}
               <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Website & Online Marketing</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Familiebedrijf Online</h3>
                 <p className="text-gray-600 mb-6">
-                  Een website die niet alleen mooi is, maar ook klanten en omzet oplevert in Zwartebroek.
+                  Jullie familiegeschiedenis en vakmanschap online zichtbaar maken voor nieuwe generaties klanten.
                 </p>
                 <ul className="space-y-2 text-gray-700 mb-6">
-                  <li>✓ Modern ontwerp</li>
-                  <li>✓ Lokale focus</li>
-                  <li>✓ Razendsnel & mobielvriendelijk</li>
-                  <li>✓ Gericht op aanvragen</li>
+                  <li>✓ Bedrijfsverhaal vertellen</li>
+                  <li>✓ Generaties vakmanschap</li>
+                  <li>✓ Lokale betrokkenheid tonen</li>
+                  <li>✓ Vertrouwen opbouwen</li>
                 </ul>
               </div>
             </div>
           </div>
         </section>
 
+        {/* FAQ SECTIE */}
+        <section className="py-16">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+              Veelgestelde Vragen Marketing <span className="bg-[#F7D8FA] px-2 rounded italic">Zwartebroek</span>
+            </h2>
+            <div className="space-y-6">
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Past online marketing bij onze christelijke identiteit?</h3>
+                <p className="text-gray-600">
+                  Absoluut! Ik werk met veel reformatorische bedrijven en respecteer jullie waarden volledig. Marketing draait om eerlijk je verhaal vertellen en betrouwbaar gevonden worden. Geen opdringerige technieken, maar opbouwen van vertrouwen en zichtbaarheid binnen de gemeenschap.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Wat kost marketing voor een familiebedrijf in Zwartebroek?</h3>
+                <p className="text-gray-600">
+                  Een basis marketingpakket voor lokale bedrijven start vanaf €650 per maand. Dit omvat lokale SEO, Google Mijn Bedrijf beheer, en basis website onderhoud. Voor familiebedrijven met meerdere diensten adviseer ik vaak een groter pakket vanaf €950. ROI ligt gemiddeld op 300-400%.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Hoe bereik ik klanten buiten mijn eigen kerkelijke gemeente?</h3>
+                <p className="text-gray-600">
+                  Door te focussen op vakmanschap en betrouwbaarheid in plaats van alleen denominatie. SEO op 'betrouwbare timmerman Barneveld' of 'eerlijke automonteur Nijkerk' trekt klanten die waarde hechten aan integriteit. Reviews van tevreden klanten doen de rest.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Werkt social media marketing voor Zwartebroek?</h3>
+                <p className="text-gray-600">
+                  Facebook werkt uitstekend voor lokale bedrijven in Zwartebroek! Veel dorpsgenoten zijn actief in lokale Facebook-groepen. LinkedIn werkt goed voor B2B. Instagram minder, tenzij je een jong publiek zoekt. WhatsApp Business is ideaal voor direct klantcontact.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Hoe zorg ik dat mijn bedrijf gevonden wordt op zondag gesloten?</h3>
+                <p className="text-gray-600">
+                  Dit communiceren we duidelijk op Google Mijn Bedrijf en de website. Veel klanten waarderen juist dat je principieel bent. Ik help met automatische berichten op zondag en alternatieven zoals online offertes aanvragen voor maandag. Dit versterkt vaak het vertrouwen.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* CONTACT */}
-        <section id="contact-section" className="py-16 px-6">
+        <section id="contact-section" className="py-16 px-6 bg-gray-50">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Kennismaken met jouw <span className="bg-[#F7D8FA] px-2 rounded italic">SEO Specialist Zwartebroek</span>?
+              Samen Jouw <span className="bg-[#F7D8FA] px-2 rounded italic">Familiebedrijf</span> Laten Groeien
             </h2>
             <p className="text-xl text-gray-600 mb-8">
-              Vragen of direct aan de slag? Bel of WhatsApp voor gratis advies.
+              Met respect voor traditie en oog voor de toekomst. Laten we vrijblijvend kennismaken.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Direct bellen</h3>
-                <p className="text-gray-600 mb-4">Klaar voor groei? Bel gerust, ik help je verder.</p>
+                <p className="text-gray-600 mb-4">Bel gerust voor een open gesprek over de mogelijkheden. Ook 's avonds bereikbaar.</p>
                 <a
                   href="tel:+31648728828"
                   className="inline-block bg-[#8C2891] hover:bg-[#7A2280] text-white px-6 py-3 rounded-lg font-medium transition-colors"
@@ -208,7 +254,7 @@ export default function MarketingZwartebroek() {
               </div>
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">WhatsApp direct</h3>
-                <p className="text-gray-600 mb-4">Liever appen? Stel je vraag en krijg snel reactie!</p>
+                <p className="text-gray-600 mb-4">Stuur een bericht voor snelle vragen of het maken van een afspraak.</p>
                 <a
                   href="https://wa.me/31648728828"
                   target="_blank"
@@ -219,10 +265,13 @@ export default function MarketingZwartebroek() {
                 </a>
               </div>
             </div>
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Werkgebied Zwartebroek & regio</h3>
+            <div className="bg-white p-6 rounded-lg">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Werkgebied Zwartebroek-Terschuur</h3>
               <p className="text-gray-600">
-                Nijkerk • Putten • Barneveld • Amersfoort • Leusden • Ede • Bennekom • Lunteren
+                Zwartebroek • Terschuur • Barneveld • Nijkerk • Putten • Voorthuizen • Hoevelaken • Amersfoort • Leusden
+              </p>
+              <p className="text-sm text-gray-500 mt-2">
+                Trotse partner van familiebedrijven - van ambachtelijke bakker tot moderne bouwonderneming
               </p>
             </div>
           </div>

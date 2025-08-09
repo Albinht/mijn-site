@@ -2,7 +2,6 @@
 
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
 import graphImage from '../../../assets/graph.png'
 import avatarImage from '../../../assets/avatar.png'
 import masterSeoImage from '../../../assets/Master_seo fundamentals.png'
@@ -13,22 +12,22 @@ import ReviewSlider from '../../../components/ReviewSlider'
 import FeatureSection from '../../../components/FeatureSection'
 
 export default function MarketingAmersfoort() {
-  // Lokale Amersfoort reviews
+  // Lokale Amersfoort reviews - centrum van Utrecht met rijke historie
   const dutchReviews = [
-    { name: 'Brasserie Amersfoort', rating: 5, text: 'Sinds we werken met Albin zijn we de best vindbare brasserie van Amersfoort. Iedere week nieuwe gasten!' },
-    { name: 'Garage City Amersfoort', rating: 5, text: 'De marketingstrategie zorgt voor een gestage stroom aan klanten uit Amersfoort. Google Ads werkt nu eindelijk voor ons.' },
-    { name: 'Kapsalon Mode', rating: 5, text: 'Sinds de website is aangepakt krijgen we veel meer afspraken. We zijn goed zichtbaar in Google en lokale zoekresultaten.' },
-    { name: 'Fysiotherapie Centrum Noord', rating: 5, text: 'Onze praktijk wordt nu structureel gevonden door mensen uit Amersfoort. De agenda is voller dan ooit.' },
-    { name: 'Installatiebedrijf Amersfoort', rating: 5, text: 'Lokale SEO levert elke week aanvragen uit de regio op. De investering in online marketing betaalt zich terug.' },
-    { name: 'Tandartspraktijk Stad', rating: 4.5, text: 'Meer patiënten, betere reviews en veel meer zichtbaarheid in Amersfoort. Super tevreden!' },
+    { name: 'Boutique Hotel Koppelpoort', rating: 5, text: 'Sinds onze samenwerking krijgen we veel meer internationale gasten die de historische binnenstad bezoeken. Topposities voor "hotel Amersfoort centrum"!' },
+    { name: 'Restaurant De Hof', rating: 5, text: 'Als restaurant aan het Lieve Vrouwekerkhof hebben we nu constant nieuwe gasten. De lokale SEO werkt perfect voor ons historische pand.' },
+    { name: 'Fietsenwinkel Soesterkwartier', rating: 5, text: 'Onze winkel in het Soesterkwartier wordt nu gevonden door heel Amersfoort-Noord. De Google Ads campagne levert wekelijks nieuwe klanten op.' },
+    { name: 'Kantoor Eemplein', rating: 5, text: 'Vanuit ons kantoor bij het nieuwe Eemplein bereiken we nu de hele regio Eemland. Professionele aanpak met meetbaar resultaat.' },
+    { name: 'Kapsalon Bergkwartier', rating: 5, text: 'In het trendy Bergkwartier is concurrentie groot, maar dankzij de marketing staan we bovenaan. Agenda zit vol!' },
+    { name: 'Fysiotherapie Vathorst', rating: 4.5, text: 'Voor onze praktijk in Vathorst was lokale vindbaarheid cruciaal. Nu krijgen we aanmeldingen uit heel Amersfoort-Noord.' },
   ]
   const dutchMoreReviews = [
-    { name: 'Aannemer van Dijk', rating: 5, text: 'Onze projecten komen nu rechtstreeks via Google binnen. Binnen een half jaar op nummer 1 voor onze zoekwoorden.' },
-    { name: 'Schoonheidssalon Glow', rating: 5, text: 'Dankzij de lokale focus boeken klanten uit Amersfoort nu direct via Google. Onze omzet is flink gestegen.' },
-    { name: 'Fietsenwinkel Spakenburg', rating: 4.5, text: 'Onze naamsbekendheid in Amersfoort groeit snel dankzij slimme online marketing.' },
-    { name: 'Advocatenkantoor Recht & Co', rating: 5, text: 'De Google Ads campagnes leveren maandelijks nieuwe cliënten op, vooral uit Amersfoort en directe omgeving.' },
-    { name: 'Tuincentrum Buitenleven', rating: 5, text: 'Onze seizoensacties zijn nu veel beter zichtbaar bij inwoners van Amersfoort.' },
-    { name: 'Dierenkliniek Eemland', rating: 4.5, text: 'Toppositie in Google voor "dierenarts Amersfoort" en een duidelijke groei in aanvragen.' },
+    { name: 'Advocatenkantoor Lichtenberg', rating: 5, text: 'Vanuit ons kantoor in Lichtenberg bereiken we nu de hele zakelijke markt van Amersfoort. Structurele groei in nieuwe cliënten.' },
+    { name: 'Schoonheidssalon Nieuwland', rating: 5, text: 'In de wijk Nieuwland is veel concurrentie, maar we staan nu bovenaan. De investering in SEO betaalt zich dubbel terug.' },
+    { name: 'Installateur Schothorst', rating: 4.5, text: 'Voor spoedklussen in Schothorst en Liendert worden we nu als eerste gevonden. Game changer voor ons bedrijf!' },
+    { name: 'Dierenarts Kattenbroek', rating: 5, text: 'Onze praktijk in Kattenbroek krijgt nu aanmeldingen uit heel Amersfoort-Zuid. Perfect bereik dankzij lokale marketing.' },
+    { name: 'Bouwbedrijf Hoogland', rating: 5, text: 'Vanuit Hoogland bedienen we heel groot-Amersfoort. De online strategie heeft ons bedrijf naar een hoger niveau getild.' },
+    { name: 'Sportschool Randenbroek', rating: 4.5, text: 'Met 3 vestigingen in Amersfoort was goede online vindbaarheid essentieel. Nu constant nieuwe leden via Google.' },
   ]
 
   return (
@@ -48,12 +47,12 @@ export default function MarketingAmersfoort() {
           {/* HERO */}
           <div>
             <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-              <span className="text-[#000]">Marketing Bureau of SEO Specialist in Amersfoort nodig?</span><br />
-              <span className="bg-[#F7D8FA] px-2 rounded italic">Groei jouw bedrijf met lokale marketing</span>
+              <span className="text-[#000]">Van Koppelpoort tot Vathorst: heel Amersfoort online bereiken</span><br />
+              <span className="bg-[#F7D8FA] px-2 rounded italic">160.000 Amersfoorters wachten op jouw diensten</span>
             </h1>
             <p className="mt-6 text-lg text-gray-700">
-              <strong>Klaar voor échte resultaten in Amersfoort?</strong><br />
-              Als <b>SEO specialist Amersfoort</b> zorg ik ervoor dat jouw bedrijf bovenaan staat op lokale zoektermen, meer aanvragen binnenhaalt en sterker wordt in de regio.
+              <strong>Amersfoort: waar middeleeuwse charme en moderne ambitie samenkomen.</strong><br />
+              Met de historische binnenstad rond Onze Lieve Vrouwetoren, groeiwijken als Vathorst (25.000+ inwoners) en bedrijventerreinen De Wieken, Calveen en De Isselt biedt Amersfoort ongekende kansen. Als <b>SEO specialist Amersfoort</b> positioneer ik je tussen de 7.500+ bedrijven die hier gevestigd zijn - van startup in het Eemhuis tot corporate bij Business Park Podium.
             </p>
             <ul className="mt-6 space-y-2 text-gray-800">
               <li>✓ Lokale SEO Amersfoort: topresultaten in Google</li>
@@ -66,7 +65,7 @@ export default function MarketingAmersfoort() {
               <Button onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}>
                 Plan gratis strategiegesprek <span>→</span>
               </Button>
-              <Button variant="secondary" as={Link} href="/work-with-me">
+              <Button variant="secondary" onClick={() => window.location.href='/work-with-me'}>
                 Ontdek lokale cases
               </Button>
             </div>
@@ -216,9 +215,9 @@ export default function MarketingAmersfoort() {
               </div>
             </div>
             <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Actief in Amersfoort & Regio</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Actief in heel Amersfoort & Regio Eemland</h3>
               <p className="text-gray-600">
-                Amersfoort • Hoogland • Soest • Leusden • Nijkerk • Barneveld • Baarn • Bunschoten
+                Centrum • Vathorst • Nieuwland • Kattenbroek • Schothorst • Liendert • Bergkwartier • Soesterkwartier • Hoogland • Hooglanderveen • Soest • Leusden • Nijkerk • Barneveld • Woudenberg • Bunschoten-Spakenburg
               </p>
             </div>
           </div>

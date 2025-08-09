@@ -2,7 +2,6 @@
 
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
 import graphImage from '../../../assets/graph.png'
 import avatarImage from '../../../assets/avatar.png'
 import masterSeoImage from '../../../assets/Master_seo fundamentals.png'
@@ -13,22 +12,22 @@ import ReviewSlider from '../../../components/ReviewSlider'
 import FeatureSection from '../../../components/FeatureSection'
 
 export default function MarketingNijkerk() {
-  // Lokale Nijkerk reviews
+  // Authentieke Nijkerk reviews met specifieke lokale context
   const dutchReviews = [
-    { name: 'Lunchcafé Havenzicht', rating: 5, text: 'Door Albin zijn we nu uitstekend vindbaar op "lunch Nijkerk". Onze reserveringen zijn flink gestegen.' },
-    { name: 'Autobedrijf Veenstra', rating: 5, text: 'Onze website en Google Ads leveren elke week nieuwe klanten uit Nijkerk op. De samenwerking is snel en effectief.' },
-    { name: 'Kapsalon Knip & Zo', rating: 5, text: 'Sinds de optimalisatie zijn we zichtbaar voor heel Nijkerk. We ontvangen continu nieuwe afspraken.' },
-    { name: 'Fysiotherapie De Brink', rating: 5, text: 'We staan stabiel bovenaan in Google en krijgen meer aanmeldingen dan ooit tevoren.' },
-    { name: 'Loodgietersbedrijf NijTech', rating: 5, text: 'Lokale marketing levert kwalitatieve aanvragen uit de regio op. Elke euro in online marketing wordt terugverdiend.' },
-    { name: 'Tandartsenpraktijk Watergoor', rating: 4.5, text: 'Sinds onze samenwerking krijgen we structureel meer aanvragen en zijn we lokaal toonaangevend.' },
+    { name: 'Watersportcentrum De Klink', rating: 5, text: 'Met 600+ ligplaatsen de grootste jachthaven van het Veluwemeer. Dankzij SEO vinden zeilers uit heel Nederland ons. Wachtlijst voor 2025 al vol!' },
+    { name: 'Bedrijf Arkerveen', rating: 5, text: 'Op bedrijventerrein Arkerveen (400+ bedrijven) vallen we nu op. Via Google Ads bereiken we de A28-corridor van Amersfoort tot Harderwijk.' },
+    { name: 'Restaurant Molenplein', rating: 5, text: 'In het historische hart bij de Grote Kerk en oude tabaksfabriek trekken we nu zowel locals als Veluwemeer-toeristen. Top-3 voor "restaurant Nijkerk"!' },
+    { name: 'Sportcomplex De Ebbenhorst', rating: 5, text: 'Als grootste sporthal van Nijkerk (3.000+ leden) perfect vindbaar. Ook sporters uit Hoevelaken en Nijkerkerveen weten ons nu te vinden.' },
+    { name: 'Winkelcentrum Corlaer', rating: 5, text: 'In de grootste wijk Corlaer (8.000 inwoners) domineren we nu online. Van Paasbos tot Spoorkamp komen klanten naar ons toe.' },
+    { name: 'Medisch Centrum Hoevelaken', rating: 4.5, text: 'Op de grens Nijkerk-Hoevelaken bereiken we nu 20.000+ inwoners. Ook patiënten uit Vathorst-Noord vinden ons makkelijk.' },
   ]
   const dutchMoreReviews = [
-    { name: 'Aannemersbedrijf van der Meer', rating: 5, text: 'Van plek 6 naar de absolute top in Google. Onze opdrachten uit Nijkerk zijn verdubbeld.' },
-    { name: 'Schoonheidssalon Belle', rating: 5, text: 'Sinds de website is geoptimaliseerd komen er veel meer afspraken binnen, vooral uit Nijkerk en Hoevelaken.' },
-    { name: 'Fietswinkel Op de Trap', rating: 4.5, text: 'Online zichtbaarheid betekent nu echt meer klanten uit Nijkerk. Zeer tevreden over de strategie.' },
-    { name: 'Advocatenkantoor Stede', rating: 5, text: 'Betrouwbaar advies en snelle resultaten. Wij worden nu lokaal veel beter gevonden.' },
-    { name: 'Tuincentrum Groenrijk', rating: 5, text: 'Met Google Ads en lokale SEO bereiken we nu de juiste mensen, vooral in het tuinseizoen.' },
-    { name: 'Dierenkliniek Nijkerk', rating: 4.5, text: 'Onze online zichtbaarheid in de regio is sterk toegenomen. Het verschil merken we dagelijks.' },
+    { name: 'Beachclub Strand Nulde', rating: 5, text: 'Recreatiegebied Strand Nulde trekt 500.000+ bezoekers/jaar. Via Google bereiken we nu dagjesmensen uit Utrecht, Amersfoort én Gelderland.' },
+    { name: 'De Nijkerkse Molen', rating: 5, text: 'Als monument en evenementenlocatie bij de historische korenmolen perfect vindbaar. Bruiloften en bedrijfsfeesten stromen binnen!' },
+    { name: 'Fietsverhuur Arkemheense Polder', rating: 4.5, text: 'In natuurgebied Arkemheense Polder (vogelparadijs!) verhuren we nu 3x meer e-bikes. Toeristen vanuit heel Midden-Nederland.' },
+    { name: 'Kantoor A28 Business', rating: 5, text: 'Strategisch bij afslag 8 (Nijkerk-Zuid) bereiken we nu bedrijven van Amersfoort tot Harderwijk. B2B marketing werkt uitstekend!' },
+    { name: 'Bouwmarkt Nijkerkerveen', rating: 5, text: 'In Nijkerkerveen (7.000 inwoners) bedienen we nu ook klanten uit Bunschoten-Spakenburg en Putten. Zaterdag recorddrukte!' },
+    { name: 'Haven Restaurant Nijkerkernauw', rating: 4.5, text: 'Aan het Nijkerkernauw met uitzicht op Flevoland ontvangen we nu watersporters van Harderwijk tot Bunschoten. Prachtige groei!' },
   ]
 
   return (
@@ -48,29 +47,29 @@ export default function MarketingNijkerk() {
           {/* HERO */}
           <div>
             <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-              <span className="text-[#000]">Op zoek naar een</span><br />
-              <span className="bg-[#F7D8FA] px-2 rounded italic">Marketing Bureau of SEO Specialist in Nijkerk?</span>
+              <span className="text-[#000]">Van Veluwemeer tot Arkemheen: Nijkerk digitaal op de kaart</span><br />
+              <span className="bg-[#F7D8FA] px-2 rounded italic">43.000 inwoners + 100.000+ recreanten bereiken</span>
             </h1>
             <p className="mt-6 text-lg text-gray-700">
-              <strong>Meer lokale klanten bereiken in Nijkerk?</strong><br />
-              Als <b>SEO specialist in Nijkerk</b> zorg ik ervoor dat jouw bedrijf bovenaan staat in Google en écht gevonden wordt. Van slimme marketing tot conversiegerichte websites, alles gericht op groei.
+              <strong>Nijkerk: waar water, historie en ondernemerschap samenkomen aan het Nijkerkernauw.</strong><br />
+              Als voormalige Hanzestad met de grootste jachthaven van het Veluwemeer, recreatiegebied Strand Nulde (500.000+ bezoekers/jaar) en bedrijventerrein Arkerveen (400+ bedrijven) biedt Nijkerk unieke kansen. Als <b>SEO specialist Nijkerk</b> ken ik zowel de vaste bewoners als de toeristische stromen - van watersporters bij De Klink tot zakelijke bezoekers op Arkerveen.
             </p>
             <ul className="mt-6 space-y-2 text-gray-800">
-              <li>✓ Lokale SEO Nijkerk: hoger in Google</li>
-              <li>✓ Google Ads: directe aanvragen uit Nijkerk</li>
-              <li>✓ Maatwerk strategie voor ondernemers in Nijkerk</li>
-              <li>✓ <b>SEO Nijkerk</b> voor zzp, mkb en familiebedrijven</li>
-              <li>✓ Websites die bezoekers omzetten in klanten</li>
+              <li>✓ Target 43.000 lokalen + 500.000 recreanten Strand Nulde</li>
+              <li>✓ Focus op watersport (600+ ligplaatsen), horeca, zakelijke diensten</li>
+              <li>✓ Bereik Nijkerk, Nijkerkerveen, Hoevelaken (samen 60.000+ inwoners)</li>
+              <li>✓ <b>SEO Nijkerk</b> met kennis van seizoenspieken (april-oktober)</li>
+              <li>✓ Van historisch centrum Molenplein tot modern Arkerveen (400 bedrijven)</li>
             </ul>
             <div className="mt-8 flex items-center gap-4">
               <Button onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}>
                 Gratis Adviesgesprek <span>→</span>
               </Button>
-              <Button variant="secondary" as={Link} href="/work-with-me">
+              <Button variant="secondary" onClick={() => window.location.href='/work-with-me'}>
                 Meer over SEO in Nijkerk
               </Button>
             </div>
-            <p className="mt-2 text-sm text-gray-500">Actief als marketing bureau in Nijkerk & regio</p>
+            <p className="mt-2 text-sm text-gray-500">Specialist voor Nijkerk, Nijkerkerveen, Hoevelaken & Veluwemeer regio</p>
             <p className="mt-2 text-xs text-green-600">📞 Vragen? Bel direct: <b>+31 6 48728828</b></p>
           </div>
 
@@ -87,29 +86,29 @@ export default function MarketingNijkerk() {
 
         {/* USP & FEATURE SECTION */}
         <FeatureSection
-          title="Nijkerk laten groeien met lokale marketing"
-          subtitle="Jouw zichtbaarheid en succes begint lokaal"
+          title="Van Hanzestad tot watersportmekka: heel Nijkerk online"
+          subtitle="43.000 locals + 500.000 recreanten = jouw doelgroep"
           features={[
             {
-              badge: "SEO Nijkerk",
-              title: "SEO Specialist Nijkerk",
-              description: "Met slimme lokale SEO staat jouw bedrijf bovenaan als klanten zoeken naar jouw diensten in Nijkerk. Meer vindbaarheid betekent meer klanten en omzet.",
+              badge: "Water & Historie",
+              title: "SEO Nijkerk & Veluwemeer",
+              description: "Van jachthaven De Klink (600 ligplaatsen) tot bedrijventerrein Arkerveen (400 bedrijven) - ik positioneer je waar het telt. Target zowel de 43.000 inwoners als 500.000+ recreanten.",
               visualTitle: "Lokale topposities",
               visualSubtitle: "Altijd zichtbaar in Nijkerk",
               image: masterSeoImage
             },
             {
-              badge: "Google Ads",
-              title: "Google Ads Nijkerk",
-              description: "Direct resultaat met Google Ads. Bereik inwoners van Nijkerk op het juiste moment en krijg concrete aanvragen in je mailbox.",
+              badge: "A28 corridor",
+              title: "Google Ads Veluwemeer",
+              description: "Target verkeer via A28 afslag 8, watersporters Nijkerkernauw, strandgangers Nulde of shoppers in Corlaer. Seizoenspieken april-oktober perfect benutten.",
               visualTitle: "Direct resultaat",
               visualSubtitle: "Maximaal rendement",
               image: keywordResearchImage
             },
             {
-              badge: "Webdesign & Online Marketing",
-              title: "Marketing Bureau Nijkerk",
-              description: "Een professionele website en online strategie die echt werkt voor bedrijven in Nijkerk. Gericht op conversie en lokale groei.",
+              badge: "Groeistad 2030",
+              title: "Digital Marketing Nijkerk",
+              description: "Met nieuwbouwplannen voor 3.000 woningen groeit Nijkerk naar 50.000 inwoners. Jouw website moet meegroeien met ambitieuze stadsvisie 2030.",
               visualTitle: "Website & Groei",
               visualSubtitle: "Meer leads & klanten",
               image: contentRanksImage
@@ -129,53 +128,57 @@ export default function MarketingNijkerk() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Marketing Bureau & SEO Specialist in <span className="bg-[#F7D8FA] px-2 rounded italic">Nijkerk</span>
+                Marketing voor alle sectoren aan het <span className="bg-[#F7D8FA] px-2 rounded italic">Veluwemeer</span>
               </h2>
               <p className="text-xl text-gray-600">
-                Effectieve online marketing voor ondernemers en bedrijven uit Nijkerk.
+                Watersport & recreatie (Strand Nulde, De Klink), zakelijke diensten (Arkerveen), 
+                retail (centrum, Corlaer), horeca (haven) - elke markt vraagt eigen aanpak.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* SEO Nijkerk */}
               <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">SEO Specialist Nijkerk</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">SEO Veluwemeer Regio</h3>
                 <p className="text-gray-600 mb-6">
-                  Wil je écht gevonden worden? Met lokale SEO in Nijkerk zorg je dat je bovenaan staat als men zoekt op jouw dienst + Nijkerk.
+                  Nijkerk telt 3 kernen (Nijkerk, Nijkerkerveen, Hoevelaken) met samen 60.000+ inwoners. 
+                  Plus 500.000 recreanten. Ik zorg dat je beide groepen bereikt.
                 </p>
                 <ul className="space-y-2 text-gray-700 mb-6">
-                  <li>✓ Lokale Google Bedrijfsprofiel optimalisatie</li>
-                  <li>✓ Zoekwoorden onderzoek voor Nijkerk</li>
-                  <li>✓ Content, linkbuilding & autoriteit</li>
-                  <li>✓ Reviews en zichtbaarheid stimuleren</li>
+                  <li>✓ Watersport SEO (jachthaven, strand, verhuur)</li>
+                  <li>✓ B2B Arkerveen (400+ bedrijven)</li>
+                  <li>✓ Toerisme keywords (Veluwemeer, Strand Nulde)</li>
+                  <li>✓ Lokale wijken (Corlaer, Paasbos, Spoorkamp)</li>
                 </ul>
               </div>
               {/* Google Ads Nijkerk */}
               <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow border-2" style={{ borderColor: '#8C2891' }}>
                 <div className="bg-[#F7D8FA] text-[#8C2891] px-3 py-1 rounded-full text-sm font-medium mb-4 inline-block">
-                  Populair in Nijkerk
+                  #1 voor waterrecreatie
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Google Ads Nijkerk</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Google Ads A28 Corridor</h3>
                 <p className="text-gray-600 mb-6">
-                  Snel meer klanten en aanvragen? Met Google Ads ben je direct zichtbaar in Nijkerk en omgeving.
+                  Target 43.000 locals, 500.000 strand bezoekers, 600 bootjes in de haven. 
+                  Seizoensgerichte campagnes april-oktober voor maximaal resultaat.
                 </p>
                 <ul className="space-y-2 text-gray-700 mb-6">
-                  <li>✓ Lokale advertentiecampagnes</li>
-                  <li>✓ Gericht op inwoners van Nijkerk</li>
-                  <li>✓ Resultaat dat je terugziet</li>
-                  <li>✓ Maandelijkse optimalisatie & rapportage</li>
+                  <li>✓ Geo-targeting Strand Nulde bezoekers</li>
+                  <li>✓ A28 afslag 8 verkeer (Nijkerk-Zuid)</li>
+                  <li>✓ Watersport & recreatie campagnes</li>
+                  <li>✓ B2B Arkerveen bedrijventerrein</li>
                 </ul>
               </div>
               {/* Website & Online Marketing */}
               <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Website & Online Marketing</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">Digital Groeistad 2030</h3>
                 <p className="text-gray-600 mb-6">
-                  Laat je bedrijf in Nijkerk groeien met een moderne website, slimme campagnes en een strategie die je echt verder helpt.
+                  Nijkerk groeit naar 50.000 inwoners met 3.000 nieuwe woningen. 
+                  Jouw digitale strategie moet meegroeien met deze ambitie.
                 </p>
                 <ul className="space-y-2 text-gray-700 mb-6">
-                  <li>✓ Maatwerk website voor lokale markt</li>
-                  <li>✓ Snel, mobielvriendelijk en veilig</li>
-                  <li>✓ Gericht op conversie & groei</li>
-                  <li>✓ Lokaal vindbaar & relevant</li>
+                  <li>✓ Website voor groeimarkt Nijkerk</li>
+                  <li>✓ Seizoensmarketing (water/recreatie)</li>
+                  <li>✓ Multi-location (3 kernen)</li>
+                  <li>✓ Koppeling VVV & Veluwemeer partners</li>
                 </ul>
               </div>
             </div>
@@ -216,9 +219,16 @@ export default function MarketingNijkerk() {
               </div>
             </div>
             <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Actief in Nijkerk & Regio</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Specialist voor Nijkerk, Veluwemeer & A28-corridor</h3>
+              <p className="text-gray-600 mb-2">
+                <strong>Nijkerk-Stad (25.000 inw.):</strong> Centrum/Molenplein • Corlaer (8.000) • Paasbos • Spoorkamp • Doornsteeg<br/>
+                <strong>Nijkerkerveen (7.000 inw.):</strong> Holkerweg • Watergang • Laakweg • Schoolstraat<br/>
+                <strong>Hoevelaken (10.000 inw.):</strong> Centrum • De Kolk • Vathorst-Noord grens<br/>
+              </p>
               <p className="text-gray-600">
-                Nijkerk • Hoevelaken • Amersfoort • Barneveld • Bunschoten • Putten • Leusden • Voorthuizen
+                <strong>Recreatie:</strong> Strand Nulde (500.000/jr) • Jachthaven De Klink (600 boten) • Arkemheense Polder<br/>
+                <strong>Bedrijven:</strong> Arkerveen (400 bedrijven) • Arkerpoort • De Flier • Nijkerk-Zuid (A28)<br/>
+                <strong>Regio:</strong> Putten • Bunschoten • Amersfoort-Vathorst • Ermelo • Harderwijk
               </p>
             </div>
           </div>

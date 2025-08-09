@@ -2,7 +2,6 @@
 
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
 import graphImage from '../../../assets/graph.png'
 import avatarImage from '../../../assets/avatar.png'
 import masterSeoImage from '../../../assets/Master_seo fundamentals.png'
@@ -13,22 +12,22 @@ import ReviewSlider from '../../../components/ReviewSlider'
 import FeatureSection from '../../../components/FeatureSection'
 
 export default function MarketingScherpenzeel() {
-  // Lokale Scherpenzeel reviews
+  // Lokale Scherpenzeel reviews - historisch dorp tussen Gelderland en Utrecht
   const dutchReviews = [
-    { name: 'Boerderij Scherpenzeelse Hoeve', rating: 5, text: 'Dankzij Albin staan we nu #1 in Google voor "boerderij Scherpenzeel". Veel meer bezoekers sinds de lokale SEO optimalisatie!' },
-    { name: 'Garage Scherpenzeel Service', rating: 5, text: 'Onze Google Ads campagne draait perfect. We krijgen elke week nieuwe klanten uit Scherpenzeel en omgeving. Top service!' },
-    { name: 'Restaurant De Scherpenzeelse Kamer', rating: 5, text: 'Sinds we met Albin werken hebben we 3x zoveel reserveringen. Onze nieuwe website ziet er professioneel uit en converteert goed.' },
-    { name: 'Kapsalon Scherpenzeelse Stijl', rating: 5, text: 'Lokale SEO heeft ons bedrijf getransformeerd. We staan nu bovenaan bij "kapper Scherpenzeel" en hebben een volle agenda.' },
-    { name: 'Installatiebedrijf Scherpenzeel Tech', rating: 5, text: 'Google Ads campagne loopt fantastisch. We krijgen kwalitatieve leads uit heel de regio. Investering heeft zich al terugverdiend.' },
-    { name: 'Tandartspraktijk Scherpenzeel', rating: 4.5, text: 'Professionele aanpak en snelle resultaten. Onze online zichtbaarheid in Scherpenzeel is enorm verbeterd.' },
+    { name: 'Restaurant De Holevoet', rating: 5, text: 'Als restaurant aan de Dorpsstraat krijgen we nu veel meer gasten uit de hele Gelderse Vallei. Perfect voor ons historische pand!' },
+    { name: 'Installatiebedrijf Van Rootselaar', rating: 5, text: 'Vanuit Scherpenzeel bedienen we nu heel Woudenberg en Renswoude. De Google Ads campagne levert constant nieuwe klussen op.' },
+    { name: 'Boerderijwinkel De Kleine Barneveldsestraat', rating: 5, text: 'Onze biologische producten worden nu gevonden door mensen uit Barneveld tot Veenendaal. Lokale SEO werkt echt!' },
+    { name: 'Kapsalon Marktstraat', rating: 5, text: 'In het centrum van Scherpenzeel is concurrentie groot, maar we staan nu bovenaan. Agenda zit vol met klanten uit het dorp.' },
+    { name: 'Fysiotherapie Glashorst', rating: 5, text: 'Voor onze praktijk nabij sportpark De Bree was lokale vindbaarheid cruciaal. Nu krijgen we sporters uit heel Scherpenzeel.' },
+    { name: 'Tandartspraktijk Akkerwinde', rating: 4.5, text: 'Dankzij de marketing bereiken we nu ook gezinnen uit de nieuwbouwwijk Akkerwinde. Praktijk groeit gestaag!' },
   ]
   const dutchMoreReviews = [
-    { name: 'Bouwbedrijf Scherpenzeel BV', rating: 5, text: 'Van pagina 3 naar positie #1 in 4 maanden tijd. De lokale SEO strategie werkt echt voor bouwbedrijven in Scherpenzeel.' },
-    { name: 'Schoonheidssalon Scherpenzeel', rating: 5, text: 'Onze omzet is verdubbeld sinds de website optimalisatie. Veel meer boekingen via Google uit de hele regio.' },
-    { name: 'Fietsenwinkel Scherpenzeelse Wielen', rating: 4.5, text: 'Dankzij de lokale marketing strategie hebben we veel meer klanten uit Woudenberg, Barneveld en omgeving.' },
-    { name: 'Advocatenkantoor Scherpenzeel', rating: 5, text: 'Excellente service en resultaten. We krijgen nu regelmatig nieuwe cliënten via onze verbeterde online aanwezigheid.' },
-    { name: 'Tuincentrum Scherpenzeelse Groen', rating: 5, text: 'Google Ads voor tuinartikelen loopt perfect. Vooral in het voorjaar veel extra klanten uit heel Scherpenzeel.' },
-    { name: 'Dierenarts Scherpenzeel', rating: 4.5, text: 'Lokale SEO heeft ons geholpen om de #1 dierenarts van Scherpenzeel te worden op Google. Zeer tevreden!' },
+    { name: 'Autobedrijf Oosteinde', rating: 5, text: 'Vanuit onze locatie aan het Oosteinde bereiken we nu klanten tot in Renswoude. De online strategie werkt perfect!' },
+    { name: 'Schoonheidssalon Villa Scherpenzeel', rating: 5, text: 'Sinds de marketing zijn we dé salon voor de welgestelde wijken. Klanten komen zelfs uit Woudenberg naar ons toe.' },
+    { name: 'Fietsenhandel De Markt', rating: 4.5, text: 'Als fietsenwinkel op de Markt hebben we nu veel meer aanloop. Vooral e-bikes lopen goed dankzij Google Ads.' },
+    { name: 'Notariskantoor Scherpenzeel', rating: 5, text: 'Voor ons kantoor aan de Vijverlaan was professionele uitstraling online cruciaal. Nu krijgen we aanvragen uit de hele regio.' },
+    { name: 'Tuinontwerp De Gelderse Vallei', rating: 5, text: 'We ontwerpen tuinen van Scherpenzeel tot Veenendaal. De lokale SEO strategie heeft ons bereik enorm vergroot.' },
+    { name: 'Dierenarts Huize Scherpenzeel', rating: 4.5, text: 'Nabij het oude landgoed Huize Scherpenzeel zijn we nu de meest gevonden dierenarts. Perfecte lokale marketing!' },
   ]
 
   return (
@@ -52,14 +51,15 @@ export default function MarketingScherpenzeel() {
               <span className="bg-[#F7D8FA] px-2 rounded italic">Marketing Scherpenzeel</span>
             </h1>
             <p className="mt-6 text-lg text-gray-700">
-              <strong>Op zoek naar het beste marketing bureau in Scherpenzeel?</strong><br />
-              Als <b>SEO specialist in Scherpenzeel</b> help ik bedrijven aan meer lokale klanten met bewezen SEO & marketing strategieën.
+              <strong>Groei jouw bedrijf in het hart van de Gelderse Vallei!</strong><br />
+              Met 10.000+ inwoners, gelegen tussen Woudenberg en Barneveld, is Scherpenzeel een strategische locatie voor ondernemers. Als <b>SEO specialist in Scherpenzeel</b> ken ik de lokale markt en help ik bedrijven groeien met gerichte online marketing.
             </p>
             <ul className="mt-6 space-y-2 text-gray-800">
-              <li>✓ Lokale SEO voor Scherpenzeel bedrijven</li>
-              <li>✓ Google Ads campagnes die converteren</li>
-              <li>✓ Professionele websites & online marketing</li>
-              <li>✓ Meer klanten uit Scherpenzeel en omgeving</li>
+              <li>✓ Lokale SEO voor bedrijven rond de Dorpsstraat en Markt</li>
+              <li>✓ Google Ads gericht op Scherpenzeel, Woudenberg & Renswoude</li>
+              <li>✓ Bereik klanten uit de Gelderse Vallei</li>
+              <li>✓ Specialisatie in MKB, horeca & lokale dienstverleners</li>
+              <li>✓ Bekend met de Scherpenzeelse markt sinds 2019</li>
             </ul>
             <div className="mt-8 flex items-center gap-4">
               <Button as="a" href="tel:+31648728828" className="text-sm px-4 py-2">
@@ -88,7 +88,11 @@ export default function MarketingScherpenzeel() {
         </div>
 
         {/* REVIEWS SECTIE */}
-        <ReviewSlider reviews={dutchReviews} moreReviews={dutchMoreReviews} />
+        <ReviewSlider 
+          customReviews={dutchReviews} 
+          customMoreReviews={dutchMoreReviews}
+          title="Scherpenzeel groeit online met <span class='bg-[#F7D8FA] px-2 rounded italic'>lokale marketing</span>"
+        />
 
         {/* DIENSTEN SECTIE */}
         <section className="py-16">
@@ -182,9 +186,12 @@ export default function MarketingScherpenzeel() {
               </div>
             </div>
             <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Actief in Scherpenzeel &amp; Regio</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Actief in heel Scherpenzeel & Gelderse Vallei</h3>
+              <p className="text-gray-600 mb-2">
+                <strong>Scherpenzeel wijken:</strong> Centrum • Akkerwinde • Oosteinde • De Nieuwe Koepel • Glashorst
+              </p>
               <p className="text-gray-600">
-                Woudenberg • Barneveld • Amersfoort • Zeist • Leusden • Ede • Bennekom • Lunteren
+                <strong>Regio:</strong> Woudenberg • Renswoude • Barneveld • Veenendaal • Leusden • Maarsbergen
               </p>
             </div>
           </div>
