@@ -54,7 +54,7 @@ export async function POST(request) {
     };
     
     // Get webhook URL from settings or use default
-    let webhookUrl = process.env.WEBHOOK_URL || 'https://n8n-n8n.42giwj.easypanel.host/webhook-test/2f67b999-ee19-471a-9911-054d76177650';
+    let webhookUrl = process.env.WEBHOOK_URL || 'https://n8n-n8n.42giwj.easypanel.host/webhook/2f67b999-ee19-471a-9911-054d76177650';
     
     try {
       const webhookSetting = await prisma.setting.findUnique({
@@ -68,13 +68,20 @@ export async function POST(request) {
     }
     
     try {
+      // Add timeout of 120 seconds for n8n webhook processing
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 120000); // 120 seconds timeout
+      
       const webhookResponse = await fetch(webhookUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(webhookPayload)
+        body: JSON.stringify(webhookPayload),
+        signal: controller.signal
       });
+      
+      clearTimeout(timeoutId);
       
       const webhookResult = await webhookResponse.text();
       
@@ -89,7 +96,32 @@ export async function POST(request) {
         }
       });
       
-      if (!webhookResponse.ok) {
+      if (webhookResponse.ok) {
+        // Parse the response and update article with generated content
+        try {
+          const responseData = JSON.parse(webhookResult);
+          const generatedContent = responseData.Blogpost || responseData.content || webhookResult;
+          
+          // Update article with generated content and set status to PUBLISHED
+          await prisma.article.update({
+            where: { id: article.id },
+            data: { 
+              content: generatedContent,
+              status: 'PUBLISHED'
+            }
+          });
+        } catch (parseError) {
+          console.log('Could not parse webhook response, using as plain text');
+          // If response is not JSON, use it as plain text
+          await prisma.article.update({
+            where: { id: article.id },
+            data: { 
+              content: webhookResult,
+              status: 'PUBLISHED'
+            }
+          });
+        }
+      } else {
         // Update article status to DRAFT if webhook fails
         await prisma.article.update({
           where: { id: article.id },

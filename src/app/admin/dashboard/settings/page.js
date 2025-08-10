@@ -22,7 +22,7 @@ export default function SettingsPage() {
     weeklyReports: true,
     securityAlerts: true,
     apiKey: 'sk_live_****************',
-    webhookUrl: 'https://n8n-n8n.42giwj.easypanel.host/webhook-test/',
+    webhookUrl: 'https://n8n-n8n.42giwj.easypanel.host/webhook/2f67b999-ee19-471a-9911-054d76177650',
     maxLoginAttempts: 3,
     sessionTimeout: 24
   });
