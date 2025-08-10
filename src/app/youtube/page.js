@@ -12,9 +12,33 @@ import n8nOpenRouterImage from '../../assets/n8n open router.webp'
 import klaviyoImage from '../../assets/klaviyo.png'
 import apifyVideoImage from '../../assets/Apify video.jpg'
 import shopifyTranslateAiImage from '../../assets/SCR-20250806-pnlp.png'
+import gscAutoIndexerImage from '../../assets/indexing.png'
+import credentialsImage from '../../assets/credentials.jpeg'
 
 // Blog posts data - easily add new posts here (sorted newest to oldest)
 const blogPosts = [
+  {
+    id: 12,
+    slug: "google-api-credentials-setup",
+    title: "How to Set Up Google API Credentials for N8N Automation - Complete Guide",
+    excerpt: "Learn the complete process of setting up Google API credentials for automation workflows. From Google Cloud Console configuration to OAuth setup, consent screen management, and N8N integration - everything you need for secure, reliable API access.",
+    publishDate: "2025-08-10",
+    readTime: "18 min read",
+    category: "API Setup",
+    thumbnail: credentialsImage,
+    tags: ["Google API", "OAuth", "N8N", "Automation", "Google Cloud", "API Credentials", "Setup", "Tutorial"]
+  },
+  {
+    id: 11,
+    slug: "google-search-console-auto-indexer",
+    title: "Automate Google Search Console Indexing with n8n - Complete Tutorial",
+    excerpt: "Learn how to build a complete automated indexing system for Google Search Console using n8n workflow automation. Stop manually submitting URLs and let automation handle the indexing process with smart conditional logic, error handling, and performance optimization.",
+    publishDate: "2025-08-10",
+    readTime: "25 min read",
+    category: "SEO Automation",
+    thumbnail: gscAutoIndexerImage,
+    tags: ["N8N", "Google Search Console", "SEO", "Automation", "Indexing", "Workflow", "API", "OAuth"]
+  },
   {
     id: 10,
     slug: "translate-your-shopify-store-automatically-with-ai-n8n-google-sheets",
