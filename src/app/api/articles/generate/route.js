@@ -36,26 +36,47 @@ export async function POST(request) {
     // Hardcoded webhook URL
     const webhookUrl = 'https://n8n-n8n.42giwj.easypanel.host/webhook/2f67b999-ee19-471a-9911-054d76177650';
     
-    // Simple payload - just the topic
+    // Payload with callback URL for n8n to send results back
+    const callbackUrl = process.env.VERCEL_URL 
+      ? `https://${process.env.VERCEL_URL}/api/webhooks/callback`
+      : 'https://mijn-site.vercel.app/api/webhooks/callback';
+    
     const webhookPayload = {
       topic: body.topic,
-      articleId: article.id
+      articleId: article.id,
+      timestamp: new Date().toISOString(),
+      callbackUrl: callbackUrl
     };
     
-    console.log('Sending to webhook:', webhookUrl);
-    console.log('Payload:', webhookPayload);
+    console.log('================== WEBHOOK CALL ==================');
+    console.log('Time:', new Date().toISOString());
+    console.log('Webhook URL:', webhookUrl);
+    console.log('Payload being sent:', JSON.stringify(webhookPayload, null, 2));
+    console.log('Article ID:', article.id);
+    console.log('Topic:', body.topic);
+    console.log('==================================================');
     
-    // Send to webhook - fire and forget
+    // Add timeout to prevent hanging
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
+    
+    // Send to webhook with timeout
     fetch(webhookUrl, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
       },
-      body: JSON.stringify(webhookPayload)
+      body: JSON.stringify(webhookPayload),
+      signal: controller.signal
     })
     .then(async (response) => {
+      clearTimeout(timeoutId);
       const text = await response.text();
-      console.log('Webhook response:', response.status, text);
+      console.log('================== WEBHOOK RESPONSE ==================');
+      console.log('Status:', response.status);
+      console.log('Response body:', text);
+      console.log('=====================================================');
       
       // Update article with response
       if (response.ok && text) {
@@ -66,6 +87,7 @@ export async function POST(request) {
             status: 'PUBLISHED'
           }
         });
+        console.log('Article updated successfully');
       } else {
         await prisma.article.update({
           where: { id: article.id },
@@ -74,15 +96,27 @@ export async function POST(request) {
             content: `Webhook returned status ${response.status}`
           }
         });
+        console.log('Article marked as DRAFT due to webhook status:', response.status);
       }
     })
     .catch(async (error) => {
-      console.error('Webhook error:', error);
+      clearTimeout(timeoutId);
+      console.error('================== WEBHOOK ERROR ==================');
+      console.error('Error type:', error.name);
+      console.error('Error message:', error.message);
+      console.error('Full error:', error);
+      console.error('==================================================');
+      
+      let errorMessage = error.message;
+      if (error.name === 'AbortError') {
+        errorMessage = 'Webhook timeout after 5 seconds';
+      }
+      
       await prisma.article.update({
         where: { id: article.id },
         data: { 
           status: 'DRAFT',
-          content: `Webhook error: ${error.message}`
+          content: `Webhook error: ${errorMessage}`
         }
       }).catch(console.error);
     });

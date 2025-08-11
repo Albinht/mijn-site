@@ -77,8 +77,26 @@ export default function ArticlesPage() {
     <div className="space-y-6">
       {/* Header */}
       <div className="bg-white rounded-lg border border-gray-200 p-6">
-        <h1 className="text-2xl font-bold text-gray-900">Article Generation</h1>
-        <p className="text-gray-600 mt-2">Generate articles by sending topics to the webhook</p>
+        <div className="flex justify-between items-start">
+          <div>
+            <h1 className="text-2xl font-bold text-gray-900">Article Generation</h1>
+            <p className="text-gray-600 mt-2">Generate articles by sending topics to the webhook</p>
+          </div>
+          <button
+            onClick={async () => {
+              const response = await fetch('/api/webhooks/test-n8n', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ topic: 'Test from UI' })
+              });
+              const data = await response.json();
+              alert(data.message || 'Check console for details');
+            }}
+            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+          >
+            Test n8n Connection
+          </button>
+        </div>
       </div>
 
       {/* Form Selector Tabs */}
