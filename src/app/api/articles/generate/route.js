@@ -78,9 +78,9 @@ export async function POST(request) {
     }
     
     try {
-      // Add timeout of 10 seconds for n8n webhook processing (n8n should respond quickly)
+      // Add timeout of 30 seconds for n8n webhook processing
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 seconds timeout
+      const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 seconds timeout
       
       console.log('Sending webhook to:', webhookUrl);
       console.log('Payload:', JSON.stringify(webhookPayload, null, 2));
@@ -102,16 +102,16 @@ export async function POST(request) {
       console.log('Webhook response status:', webhookResponse.status);
       console.log('Webhook response:', webhookResult.substring(0, 500)); // First 500 chars
       
-      // Log webhook attempt
-      await prisma.webhookLog.create({
+      // Log webhook attempt (don't wait for it)
+      prisma.webhookLog.create({
         data: {
           url: webhookUrl,
           payload: webhookPayload,
-          response: { text: webhookResult },
+          response: { text: webhookResult?.substring(0, 1000) || 'No response' },
           statusCode: webhookResponse.status,
           success: webhookResponse.ok
         }
-      });
+      }).catch(err => console.error('Failed to log webhook:', err));
       
       if (webhookResponse.ok) {
         console.log('Webhook returned OK, processing response...');
@@ -187,7 +187,7 @@ export async function POST(request) {
       
       let errorMessage = 'Unknown webhook error';
       if (webhookError.name === 'AbortError') {
-        errorMessage = 'Webhook timeout - n8n did not respond within 10 seconds';
+        errorMessage = 'Webhook timeout - n8n did not respond within 30 seconds';
       } else if (webhookError.message.includes('fetch failed')) {
         errorMessage = 'Could not connect to webhook URL';
       } else {
