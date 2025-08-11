@@ -1,16 +1,40 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useArticles, useGenerateArticle } from '@/hooks/useApi';
 import { mutate } from 'swr';
 
 export default function ArticlesPage() {
+  const [activeForm, setActiveForm] = useState('shipsquared');
   const [formData, setFormData] = useState({ topic: '' });
   const [error, setError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
+  const [showWebhookSettings, setShowWebhookSettings] = useState(false);
+  
+  // Webhook configurations for each form
+  const [webhooks, setWebhooks] = useState({
+    shipsquared: '',
+    jillrocket: '',
+    biafinance: ''
+  });
   
   const { articles, isLoading, isError, mutate: mutateArticles } = useArticles({ limit: 10 });
   const { generateArticle, isGenerating } = useGenerateArticle();
+
+  // Load webhooks from localStorage or settings
+  useEffect(() => {
+    const savedWebhooks = localStorage.getItem('articleWebhooks');
+    if (savedWebhooks) {
+      setWebhooks(JSON.parse(savedWebhooks));
+    }
+  }, []);
+
+  // Save webhooks to localStorage
+  const saveWebhooks = () => {
+    localStorage.setItem('articleWebhooks', JSON.stringify(webhooks));
+    setSuccessMessage('Webhook settings saved successfully!');
+    setTimeout(() => setSuccessMessage(''), 3000);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,14 +44,23 @@ export default function ArticlesPage() {
       return;
     }
 
+    if (!webhooks[activeForm]) {
+      setError(`Please configure webhook for ${activeForm === 'shipsquared' ? 'SHIPSQUARED' : activeForm === 'jillrocket' ? 'Jillrocket.nl' : 'Bia-finance.nl'}`);
+      return;
+    }
+
     setError('');
     setSuccessMessage('');
 
     try {
-      const result = await generateArticle(formData.topic);
+      const result = await generateArticle({
+        topic: formData.topic,
+        source: activeForm,
+        webhook: webhooks[activeForm]
+      });
       
       if (result.success) {
-        setSuccessMessage('Article generation started successfully!');
+        setSuccessMessage(`Article generation started successfully for ${activeForm === 'shipsquared' ? 'SHIPSQUARED' : activeForm === 'jillrocket' ? 'Jillrocket.nl' : 'Bia-finance.nl'}!`);
         setFormData({ topic: '' });
         // Refresh articles list
         mutateArticles();
@@ -42,6 +75,10 @@ export default function ArticlesPage() {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     setError('');
+  };
+
+  const handleWebhookChange = (form, value) => {
+    setWebhooks({ ...webhooks, [form]: value });
   };
 
   const getStatusBadge = (status) => {
@@ -62,64 +99,162 @@ export default function ArticlesPage() {
     });
   };
 
+  const forms = [
+    { id: 'shipsquared', name: 'SHIPSQUARED', color: 'bg-gray-900' },
+    { id: 'jillrocket', name: 'Jillrocket.nl', color: 'bg-purple-600' },
+    { id: 'biafinance', name: 'Bia-finance.nl', color: 'bg-blue-600' }
+  ];
+
   return (
     <div className="space-y-6">
-      {/* SHIPSQUARED Branding */}
-      <div className="text-center py-4">
-        <h1 className="text-4xl font-bold text-gray-900 tracking-wider">SHIPSQUARED</h1>
+      {/* Header with Settings Button */}
+      <div className="flex items-center justify-between">
+        <h1 className="text-3xl font-bold text-gray-900">Article Generation</h1>
+        <button
+          onClick={() => setShowWebhookSettings(!showWebhookSettings)}
+          className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors flex items-center gap-2"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          Webhook Settings
+        </button>
+      </div>
+
+      {/* Webhook Settings Panel */}
+      {showWebhookSettings && (
+        <div className="bg-white rounded-lg border border-gray-200 p-6">
+          <h2 className="text-lg font-semibold text-gray-900 mb-4">Webhook Configuration</h2>
+          <div className="space-y-4">
+            {forms.map((form) => (
+              <div key={form.id}>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  {form.name} Webhook URL
+                </label>
+                <input
+                  type="url"
+                  value={webhooks[form.id]}
+                  onChange={(e) => handleWebhookChange(form.id, e.target.value)}
+                  placeholder={`https://n8n-webhook-url-for-${form.id}...`}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                />
+              </div>
+            ))}
+            <button
+              onClick={saveWebhooks}
+              className="px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
+            >
+              Save Webhook Settings
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Form Selector Tabs */}
+      <div className="flex space-x-2 bg-gray-100 p-1 rounded-lg">
+        {forms.map((form) => (
+          <button
+            key={form.id}
+            onClick={() => setActiveForm(form.id)}
+            className={`flex-1 px-4 py-2 rounded-md font-medium transition-colors ${
+              activeForm === form.id
+                ? `${form.color} text-white`
+                : 'text-gray-600 hover:text-gray-900 hover:bg-white'
+            }`}
+          >
+            {form.name}
+          </button>
+        ))}
       </div>
       
-      {/* Generate Article Form */}
-      <div className="bg-white rounded-lg border border-gray-200 p-6">
-        <h2 className="text-lg font-semibold text-gray-900 mb-4">Generate New Article</h2>
-        
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label htmlFor="topic" className="block text-sm font-medium text-gray-700 mb-2">
-              Article Topic
-            </label>
-            <input
-              type="text"
-              id="topic"
-              name="topic"
-              value={formData.topic}
-              onChange={handleChange}
-              placeholder="Enter a topic for the article..."
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              disabled={isGenerating}
-            />
-          </div>
-
-          {error && (
-            <div className="bg-red-50 border border-red-200 rounded-lg p-3">
-              <p className="text-sm text-red-800">{error}</p>
-            </div>
-          )}
-
-          {successMessage && (
-            <div className="bg-green-50 border border-green-200 rounded-lg p-3">
-              <p className="text-sm text-green-800">{successMessage}</p>
-            </div>
-          )}
-
-          <button
-            type="submit"
-            disabled={isGenerating}
-            className="w-full px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+      {/* Generate Article Forms */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {forms.map((form) => (
+          <div
+            key={form.id}
+            className={`bg-white rounded-lg border-2 transition-all ${
+              activeForm === form.id ? 'border-gray-900 shadow-lg' : 'border-gray-200 opacity-60'
+            }`}
           >
-            {isGenerating ? (
-              <span className="flex items-center justify-center">
-                <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                </svg>
-                Generating Article...
-              </span>
-            ) : (
-              'Generate Article'
-            )}
-          </button>
-        </form>
+            <div className={`${form.color} text-white p-4 rounded-t-lg`}>
+              <h2 className="text-lg font-bold text-center">{form.name}</h2>
+            </div>
+            
+            <div className="p-6">
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label htmlFor={`topic-${form.id}`} className="block text-sm font-medium text-gray-700 mb-2">
+                    Article Topic
+                  </label>
+                  <input
+                    type="text"
+                    id={`topic-${form.id}`}
+                    name="topic"
+                    value={activeForm === form.id ? formData.topic : ''}
+                    onChange={handleChange}
+                    placeholder="Enter a topic..."
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    disabled={isGenerating || activeForm !== form.id}
+                  />
+                </div>
+
+                {activeForm === form.id && (
+                  <>
+                    {!webhooks[form.id] && (
+                      <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3">
+                        <p className="text-sm text-yellow-800">
+                          ⚠️ Please configure webhook in settings
+                        </p>
+                      </div>
+                    )}
+
+                    {error && (
+                      <div className="bg-red-50 border border-red-200 rounded-lg p-3">
+                        <p className="text-sm text-red-800">{error}</p>
+                      </div>
+                    )}
+
+                    {successMessage && (
+                      <div className="bg-green-50 border border-green-200 rounded-lg p-3">
+                        <p className="text-sm text-green-800">{successMessage}</p>
+                      </div>
+                    )}
+                  </>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={isGenerating || activeForm !== form.id || !webhooks[form.id]}
+                  className={`w-full px-4 py-2 ${form.color} text-white rounded-lg hover:opacity-90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed`}
+                >
+                  {isGenerating && activeForm === form.id ? (
+                    <span className="flex items-center justify-center">
+                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Generating...
+                    </span>
+                  ) : (
+                    'Generate Article'
+                  )}
+                </button>
+              </form>
+
+              {/* Webhook Status Indicator */}
+              <div className="mt-4 pt-4 border-t border-gray-100">
+                <div className="flex items-center justify-between text-xs">
+                  <span className="text-gray-500">Webhook:</span>
+                  <span className={`flex items-center ${webhooks[form.id] ? 'text-green-600' : 'text-red-600'}`}>
+                    <span className={`w-2 h-2 rounded-full mr-1 ${webhooks[form.id] ? 'bg-green-600' : 'bg-red-600'}`}></span>
+                    {webhooks[form.id] ? 'Configured' : 'Not configured'}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
 
       {/* Articles List */}
@@ -143,9 +278,22 @@ export default function ArticlesPage() {
               <div key={article.id} className="px-6 py-4 hover:bg-gray-50 transition-colors">
                 <div className="flex items-center justify-between">
                   <div className="flex-1">
-                    <h3 className="text-sm font-medium text-gray-900">
-                      {article.title}
-                    </h3>
+                    <div className="flex items-center gap-2">
+                      <h3 className="text-sm font-medium text-gray-900">
+                        {article.title}
+                      </h3>
+                      {article.source && (
+                        <span className={`text-xs px-2 py-1 rounded-full ${
+                          article.source === 'shipsquared' ? 'bg-gray-100 text-gray-700' :
+                          article.source === 'jillrocket' ? 'bg-purple-100 text-purple-700' :
+                          'bg-blue-100 text-blue-700'
+                        }`}>
+                          {article.source === 'shipsquared' ? 'SHIPSQUARED' :
+                           article.source === 'jillrocket' ? 'Jillrocket' :
+                           'Bia-finance'}
+                        </span>
+                      )}
+                    </div>
                     <p className="text-sm text-gray-500 mt-1">
                       Topic: {article.topic}
                     </p>

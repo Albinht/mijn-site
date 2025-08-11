@@ -118,7 +118,13 @@ export function useGenerateArticle() {
   );
   
   return {
-    generateArticle: (topic) => trigger({ body: { topic } }),
+    generateArticle: (data) => {
+      // Support both old format (string) and new format (object)
+      const body = typeof data === 'string' 
+        ? { topic: data }
+        : data;
+      return trigger({ body });
+    },
     isGenerating: isMutating
   };
 }

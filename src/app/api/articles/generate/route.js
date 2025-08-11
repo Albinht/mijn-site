@@ -29,7 +29,8 @@ export async function POST(request) {
       content: validatedData.content || '',
       status: 'PROCESSING',
       slug: generateSlug(validatedData.title || validatedData.topic),
-      views: 0
+      views: 0,
+      source: body.source || 'shipsquared' // Store the source of the article
     };
     
     // Only add authorId if we have a valid session with userId
@@ -46,22 +47,25 @@ export async function POST(request) {
       articleId: article.id,
       topic: article.topic,
       timestamp: new Date().toISOString(),
-      source: 'admin_dashboard',
+      source: body.source || 'shipsquared',
       userId: user.userId
     };
     
-    // Get webhook URL from settings or use default
-    let webhookUrl = process.env.WEBHOOK_URL || 'https://n8n-n8n.42giwj.easypanel.host/webhook/2f67b999-ee19-471a-9911-054d76177650';
+    // Get webhook URL from request or settings or use default
+    let webhookUrl = body.webhook || process.env.WEBHOOK_URL || 'https://n8n-n8n.42giwj.easypanel.host/webhook/2f67b999-ee19-471a-9911-054d76177650';
     
-    try {
-      const webhookSetting = await prisma.setting.findUnique({
-        where: { key: 'webhookUrl' }
-      });
-      if (webhookSetting?.value) {
-        webhookUrl = webhookSetting.value;
+    // Only check settings if webhook not provided in request
+    if (!body.webhook) {
+      try {
+        const webhookSetting = await prisma.setting.findUnique({
+          where: { key: 'webhookUrl' }
+        });
+        if (webhookSetting?.value) {
+          webhookUrl = webhookSetting.value;
+        }
+      } catch (error) {
+        console.log('Using default webhook URL');
       }
-    } catch (error) {
-      console.log('Using default webhook URL');
     }
     
     try {
