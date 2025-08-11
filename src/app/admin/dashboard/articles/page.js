@@ -16,6 +16,7 @@ export default function ArticlesPage() {
   const [webhookHealth, setWebhookHealth] = useState({});
   const [showManualForm, setShowManualForm] = useState(false);
   const [manualContent, setManualContent] = useState('');
+  const [useSimpleGeneration, setUseSimpleGeneration] = useState(false);
   
   // Webhook configurations for each form
   const [webhooks, setWebhooks] = useState({
