@@ -16,11 +16,11 @@ export default function ArticlesPage() {
   const [webhookHealth, setWebhookHealth] = useState({});
   const [showManualForm, setShowManualForm] = useState(false);
   const [manualContent, setManualContent] = useState('');
-  const [useSimpleGeneration, setUseSimpleGeneration] = useState(false);
+  const [useSimpleGeneration, setUseSimpleGeneration] = useState(true); // Default to simple generation due to webhook issues
   
-  // Webhook configurations for each form
+  // Webhook configurations for each form - Start with simple generation by default
   const [webhooks, setWebhooks] = useState({
-    shipsquared: 'https://n8n-n8n.42giwj.easypanel.host/webhook/2f67b999-ee19-471a-9911-054d76177650',
+    shipsquared: '', // Temporarily disable webhook due to timeout issues
     jillrocket: '',
     biafinance: ''
   });
@@ -96,9 +96,9 @@ export default function ArticlesPage() {
       return;
     }
 
-    // Allow manual submission or webhook
-    if (!webhooks[activeForm] && !showManualForm) {
-      setError(`Please configure webhook for ${activeForm === 'shipsquared' ? 'SHIPSQUARED' : activeForm === 'jillrocket' ? 'Jillrocket.nl' : 'Bia-finance.nl'} or use manual mode`);
+    // Allow manual submission, simple generation, or webhook
+    if (!webhooks[activeForm] && !showManualForm && !useSimpleGeneration) {
+      setError(`Please configure webhook for ${activeForm === 'shipsquared' ? 'SHIPSQUARED' : activeForm === 'jillrocket' ? 'Jillrocket.nl' : 'Bia-finance.nl'} or use template/manual mode`);
       return;
     }
 
@@ -140,10 +140,12 @@ export default function ArticlesPage() {
         // Refresh articles list
         setTimeout(() => mutateArticles(), 1000);
       } else {
-        setError('Failed to generate article');
+        console.error('Article generation failed:', result);
+        setError(result.error?.message || 'Failed to generate article');
       }
     } catch (err) {
-      setError(err.info?.error?.message || 'An error occurred while generating the article');
+      console.error('Article generation error:', err);
+      setError(err.info?.error?.message || err.message || 'An error occurred while generating the article');
     }
   };
 
