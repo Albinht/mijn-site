@@ -205,6 +205,11 @@ export default function ArticlesPage() {
           message: `❌ Webhook test failed: ${data.data?.message || 'Unknown error'}`,
           details: data.data
         });
+        // Auto-enable simple generation if webhook fails with timeout
+        if (data.data?.message?.includes('timeout') || data.data?.error?.includes('timeout')) {
+          setUseSimpleGeneration(true);
+          setSuccessMessage('Webhook is not responding. Switched to template generation mode.');
+        }
       }
     } catch (error) {
       setTestResult({
@@ -444,6 +449,10 @@ export default function ArticlesPage() {
                       </svg>
                       Generating...
                     </span>
+                  ) : useSimpleGeneration && activeForm === form.id ? (
+                    'Generate Template'
+                  ) : showManualForm && activeForm === form.id ? (
+                    'Create Article'
                   ) : (
                     'Generate Article'
                   )}
