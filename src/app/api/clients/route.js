@@ -40,28 +40,7 @@ export async function GET(request) {
       );
     }
     
-    // If database is not configured, return mock data
-    if (!isDatabaseConfigured()) {
-      return NextResponse.json({
-        success: true,
-        data: {
-          clients: [
-            {
-              id: '1',
-              companyName: 'Example Company',
-              contactName: 'John Doe',
-              email: 'john@example.com',
-              status: 'ACTIVE',
-              createdAt: new Date().toISOString(),
-              _count: { tasks: 0, checklists: 0 }
-            }
-          ],
-          total: 1,
-          limit: 20,
-          offset: 0
-        }
-      });
-    }
+    // Try to get real data from database
     
     // Parse query params
     const { searchParams } = new URL(request.url);

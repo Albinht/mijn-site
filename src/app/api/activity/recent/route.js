@@ -16,12 +16,7 @@ export async function GET(request) {
       );
     }
     
-    // If database is not configured, return empty activities
-    if (!isDatabaseConfigured()) {
-      return NextResponse.json(
-        formatResponse([])
-      );
-    }
+    // Try to get activities from database
     
     const { searchParams } = new URL(request.url);
     const limit = parseInt(searchParams.get('limit')) || 10;
