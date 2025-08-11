@@ -110,45 +110,84 @@ export async function POST(request) {
     
     // Create new page
     const pageData = {
-      ...validatedData,
+      title: validatedData.title,
       slug,
+      content: validatedData.content || '',
+      metaTitle: validatedData.metaTitle || validatedData.title,
+      metaDescription: validatedData.metaDescription || '',
+      type: validatedData.type.toUpperCase(), // Ensure uppercase
+      status: validatedData.status || 'DRAFT',
       views: 0
     };
     
-    // Only add authorId if we have a valid user with userId
-    if (user.userId) {
-      pageData.authorId = user.userId;
+    // Only add authorId if we have a real user ID (not hardcoded)
+    if (user.userId && user.userId !== 'hardcoded-user-id') {
+      // Check if user exists in database
+      const userExists = await prisma.user.findUnique({
+        where: { id: user.userId }
+      });
+      
+      if (userExists) {
+        pageData.authorId = user.userId;
+      }
     }
     
     const page = await prisma.page.create({
       data: pageData
     });
     
-    // Log activity (only if we have a valid user)
-    if (user.userId) {
-      await prisma.activityLog.create({
-        data: {
-          userId: user.userId,
-          action: 'CREATE_PAGE',
-          entity: 'page',
-          entityId: page.id,
-          metadata: { title: page.title, type: page.type },
-          ipAddress: request.headers.get('x-forwarded-for') || 'unknown'
-        }
-      });
+    // Log activity (only if we have a valid user in database)
+    if (user.userId && user.userId !== 'hardcoded-user-id') {
+      try {
+        await prisma.activityLog.create({
+          data: {
+            userId: user.userId,
+            action: 'CREATE_PAGE',
+            entity: 'page',
+            entityId: page.id,
+            metadata: { title: page.title, type: page.type },
+            ipAddress: request.headers.get('x-forwarded-for') || 'unknown'
+          }
+        });
+      } catch (logError) {
+        // Don't fail the request if activity logging fails
+        console.error('Failed to log activity:', logError);
+      }
     }
     
     return NextResponse.json(formatResponse(page), { status: 201 });
   } catch (error) {
     console.error('Error creating content:', error);
+    
     if (error.name === 'ZodError') {
       return NextResponse.json(
-        formatError('Invalid input data', 400),
+        formatError('Invalid input data: ' + error.errors.map(e => e.message).join(', '), 400),
         { status: 400 }
       );
     }
+    
+    // Prisma specific errors
+    if (error.code === 'P2002') {
+      return NextResponse.json(
+        formatError('A page with this slug already exists', 409),
+        { status: 409 }
+      );
+    }
+    
+    if (error.code === 'P2003') {
+      return NextResponse.json(
+        formatError('Invalid foreign key reference', 400),
+        { status: 400 }
+      );
+    }
+    
+    // Return more detailed error in development
+    const errorMessage = process.env.NODE_ENV === 'development' 
+      ? `Failed to create content: ${error.message}` 
+      : 'Failed to create content';
+    
     return NextResponse.json(
-      formatError('Failed to create content'),
+      formatError(errorMessage),
       { status: 500 }
     );
   }
