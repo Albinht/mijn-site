@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 import { formatResponse, formatError } from '@/lib/utils';
-import { verifySession } from '@/lib/auth-db';
+import { verifyAuth, isDatabaseConfigured } from '@/lib/auth-utils';
 import { z } from 'zod';
 
 // Validation schemas
@@ -27,6 +27,42 @@ const querySchema = z.object({
 // GET /api/clients - List all clients
 export async function GET(request) {
   try {
+    // Verify authentication
+    const user = await verifyAuth(request);
+    if (!user) {
+      return NextResponse.json(
+        { 
+          success: false,
+          error: 'Authentication required',
+          code: 'UNAUTHORIZED'
+        },
+        { status: 401 }
+      );
+    }
+    
+    // If database is not configured, return mock data
+    if (!isDatabaseConfigured()) {
+      return NextResponse.json({
+        success: true,
+        data: {
+          clients: [
+            {
+              id: '1',
+              companyName: 'Example Company',
+              contactName: 'John Doe',
+              email: 'john@example.com',
+              status: 'ACTIVE',
+              createdAt: new Date().toISOString(),
+              _count: { tasks: 0, checklists: 0 }
+            }
+          ],
+          total: 1,
+          limit: 20,
+          offset: 0
+        }
+      });
+    }
+    
     // Parse query params
     const { searchParams } = new URL(request.url);
     const query = querySchema.parse(Object.fromEntries(searchParams));
@@ -107,16 +143,26 @@ export async function GET(request) {
 // POST /api/clients - Create new client
 export async function POST(request) {
   try {
-    // Skip auth in development
-    let session = { userId: 'dev-user' };
-    if (process.env.NODE_ENV === 'production') {
-      session = await verifySession(request);
-      if (!session) {
-        return NextResponse.json(
-          formatError('Unauthorized', 401),
-          { status: 401 }
-        );
-      }
+    // Verify authentication
+    const user = await verifyAuth(request);
+    if (!user) {
+      return NextResponse.json(
+        { 
+          success: false,
+          error: 'Authentication required',
+          code: 'UNAUTHORIZED'
+        },
+        { status: 401 }
+      );
+    }
+    
+    // If database is not configured, return error
+    if (!isDatabaseConfigured()) {
+      return NextResponse.json({
+        success: false,
+        error: 'Database not configured. Cannot create clients without database.',
+        code: 'DATABASE_ERROR'
+      }, { status: 503 });
     }
     
     const body = await request.json();

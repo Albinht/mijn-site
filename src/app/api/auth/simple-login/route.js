@@ -1,12 +1,19 @@
 import { NextResponse } from 'next/server';
 import bcrypt from 'bcryptjs';
+import { SignJWT } from 'jose';
+
+// Get JWT secret
+const secret = new TextEncoder().encode(
+  process.env.JWT_SECRET || 'your-super-secret-jwt-key-change-this-in-production-niblah-2025'
+);
 
 // Hardcoded credentials for production without database
 const HARDCODED_USER = {
   username: 'Niblah',
   // This is the hash for 'Jukovic91!' - verified working
   passwordHash: '$2b$10$YbEeErjuBsbO/Tl4qfhPk.pURuAJF1XUCIHwc.Q3RG1GRK7fPNJj.',
-  email: 'admin@admin.nl'
+  email: 'admin@admin.nl',
+  id: 'hardcoded-user-id'
 };
 
 export async function POST(request) {
@@ -39,8 +46,18 @@ export async function POST(request) {
       );
     }
     
-    // Create a simple token (not secure, just for testing)
-    const token = Buffer.from(`${username}:${Date.now()}`).toString('base64');
+    // Create a proper JWT token
+    const token = await new SignJWT({ 
+      userId: HARDCODED_USER.id,
+      username: HARDCODED_USER.username,
+      email: HARDCODED_USER.email,
+      isAdmin: true,
+      loginTime: Date.now()
+    })
+      .setProtectedHeader({ alg: 'HS256' })
+      .setIssuedAt()
+      .setExpirationTime('24h')
+      .sign(secret);
     
     const response = NextResponse.json(
       { 

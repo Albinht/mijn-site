@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { jwtVerify } from 'jose';
 
 const secret = new TextEncoder().encode(
-  process.env.JWT_SECRET || 'your-secret-key-change-in-production'
+  process.env.JWT_SECRET || 'your-super-secret-jwt-key-change-this-in-production-niblah-2025'
 );
 
 async function verifyToken(token) {

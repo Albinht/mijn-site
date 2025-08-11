@@ -1,14 +1,22 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
 import SwrProvider from '@/components/providers/SwrProvider';
+import { AuthProvider, useAuth } from '@/components/providers/AuthProvider';
 
-export default function DashboardLayout({ children }) {
+function DashboardContent({ children }) {
   const router = useRouter();
   const pathname = usePathname();
   const [isLoggingOut, setIsLoggingOut] = useState(false);
+  const { user, isAuthenticated, isLoading } = useAuth();
+
+  useEffect(() => {
+    if (!isLoading && !isAuthenticated) {
+      router.push('/admin/login');
+    }
+  }, [isLoading, isAuthenticated, router]);
 
   const handleLogout = async () => {
     setIsLoggingOut(true);
@@ -20,6 +28,21 @@ export default function DashboardLayout({ children }) {
       setIsLoggingOut(false);
     }
   };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900 mx-auto"></div>
+          <p className="mt-4 text-gray-600">Loading...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!isAuthenticated) {
+    return null;
+  }
 
   const navItems = [
     { href: '/admin/dashboard', label: 'Overview', icon: '📊' },
@@ -72,8 +95,8 @@ export default function DashboardLayout({ children }) {
           <div className="px-4 py-4 border-t border-gray-200">
             <div className="flex items-center justify-between px-3">
               <div>
-                <p className="text-sm font-medium text-gray-900">Niblah</p>
-                <p className="text-xs text-gray-500">Administrator</p>
+                <p className="text-sm font-medium text-gray-900">{user?.username || 'Niblah'}</p>
+                <p className="text-xs text-gray-500">{user?.role || 'Administrator'}</p>
               </div>
               <button
                 onClick={handleLogout}
@@ -123,5 +146,13 @@ export default function DashboardLayout({ children }) {
         </main>
       </div>
     </div>
+  );
+}
+
+export default function DashboardLayout({ children }) {
+  return (
+    <AuthProvider>
+      <DashboardContent>{children}</DashboardContent>
+    </AuthProvider>
   );
 }
