@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 import { analyticsQuerySchema } from '@/lib/validations';
 import { formatResponse, formatError } from '@/lib/utils';
-import { verifySession } from '@/lib/auth-db';
+import { verifyAuth } from '@/lib/auth-utils';
 
 
 // GET /api/analytics/overview - Get analytics overview
@@ -10,8 +10,8 @@ export async function GET(request) {
   try {
     // Verify authentication (skip in development for testing)
     if (process.env.NODE_ENV === 'production') {
-      const session = await verifySession(request);
-      if (!session) {
+      const user = await verifyAuth(request);
+      if (!user) {
         return NextResponse.json(
           formatError('Unauthorized', 401),
           { status: 401 }

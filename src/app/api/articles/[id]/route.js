@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 import { updateArticleSchema } from '@/lib/validations';
 import { formatResponse, formatError } from '@/lib/utils';
-import { verifySession } from '@/lib/auth-db';
+import { verifyAuth } from '@/lib/auth-utils';
 
 
 // GET /api/articles/:id - Get article by ID
@@ -50,8 +50,8 @@ export async function GET(request, { params }) {
 export async function PUT(request, { params }) {
   try {
     // Verify authentication
-    const session = await verifySession(request);
-    if (!session) {
+    const user = await verifyAuth(request);
+    if (!user) {
       return NextResponse.json(
         formatError('Unauthorized', 401),
         { status: 401 }
@@ -104,7 +104,7 @@ export async function PUT(request, { params }) {
     // Log activity
     await prisma.activityLog.create({
       data: {
-        userId: session.userId,
+        userId: user.userId,
         action: 'UPDATE_ARTICLE',
         entityType: 'article',
         entityId: id,
@@ -134,8 +134,8 @@ export async function PUT(request, { params }) {
 export async function DELETE(request, { params }) {
   try {
     // Verify authentication
-    const session = await verifySession(request);
-    if (!session) {
+    const user = await verifyAuth(request);
+    if (!user) {
       return NextResponse.json(
         formatError('Unauthorized', 401),
         { status: 401 }
@@ -164,7 +164,7 @@ export async function DELETE(request, { params }) {
     // Log activity
     await prisma.activityLog.create({
       data: {
-        userId: session.userId,
+        userId: user.userId,
         action: 'DELETE_ARTICLE',
         entityType: 'article',
         entityId: id,

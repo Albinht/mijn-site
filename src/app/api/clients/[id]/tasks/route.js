@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 import { formatResponse, formatError } from '@/lib/utils';
-import { verifySession } from '@/lib/auth-db';
+import { verifyAuth } from '@/lib/auth-utils';
 import { z } from 'zod';
 
 const createTaskSchema = z.object({
@@ -59,16 +59,14 @@ export async function GET(request, { params }) {
 export async function POST(request, { params }) {
   try {
     const { id: clientId } = await params;
-    // Skip auth in development
-    let session = { userId: 'dev-user' };
-    if (process.env.NODE_ENV === 'production') {
-      session = await verifySession(request);
-      if (!session) {
-        return NextResponse.json(
-          formatError('Unauthorized', 401),
-          { status: 401 }
-        );
-      }
+    
+    // Verify authentication
+    const user = await verifyAuth(request);
+    if (!user) {
+      return NextResponse.json(
+        formatError('Unauthorized', 401),
+        { status: 401 }
+      );
     }
     
     const body = await request.json();

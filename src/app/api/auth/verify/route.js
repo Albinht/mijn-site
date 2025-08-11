@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { verifyAuth, isDatabaseConfigured } from '@/lib/auth-utils';
-import { verifySession } from '@/lib/auth-db';
+import { verifyAuth } from '@/lib/auth-utils';
 
 export async function GET(request) {
   try {
@@ -36,14 +36,14 @@ export async function GET(request) {
         const token = cookies['auth-token'];
         if (token) {
           try {
-            const session = await verifySession(token);
+            const user = await verifyAuth(token);
             if (session) {
               return NextResponse.json({ 
                 valid: true,
                 success: true,
                 authenticated: true,
                 user: {
-                  id: session.user.id,
+                  id: user.userId,
                   username: session.user.username,
                   email: session.user.email,
                   role: session.user.role

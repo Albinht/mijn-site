@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 import { formatResponse, formatError } from '@/lib/utils';
-import { verifySession } from '@/lib/auth-db';
+import { verifyAuth } from '@/lib/auth-utils';
 import { z } from 'zod';
 
 const updateClientSchema = z.object({
@@ -73,10 +73,10 @@ export async function PUT(request, { params }) {
   try {
     const { id } = await params;
     // Skip auth in development
-    let session = { userId: 'dev-user' };
+    const user = await verifyAuth(request);
     if (process.env.NODE_ENV === 'production') {
-      session = await verifySession(request);
-      if (!session) {
+      user = await verifyAuth(request);
+      if (!user) {
         return NextResponse.json(
           formatError('Unauthorized', 401),
           { status: 401 }
@@ -138,10 +138,10 @@ export async function DELETE(request, { params }) {
   try {
     const { id } = await params;
     // Skip auth in development
-    let session = { userId: 'dev-user' };
+    const user = await verifyAuth(request);
     if (process.env.NODE_ENV === 'production') {
-      session = await verifySession(request);
-      if (!session) {
+      user = await verifyAuth(request);
+      if (!user) {
         return NextResponse.json(
           formatError('Unauthorized', 401),
           { status: 401 }

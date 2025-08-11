@@ -1,15 +1,15 @@
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 import { formatResponse, formatError, getPaginationParams } from '@/lib/utils';
-import { verifySession } from '@/lib/auth-db';
+import { verifyAuth } from '@/lib/auth-utils';
 
 
 // GET /api/activity - Get activity logs
 export async function GET(request) {
   try {
     // Verify authentication
-    const session = await verifySession(request);
-    if (!session) {
+    const user = await verifyAuth(request);
+    if (!user) {
       return NextResponse.json(
         formatError('Unauthorized', 401),
         { status: 401 }

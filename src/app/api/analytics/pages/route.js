@@ -2,15 +2,15 @@ import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 import { analyticsQuerySchema } from '@/lib/validations';
 import { formatResponse, formatError } from '@/lib/utils';
-import { verifySession } from '@/lib/auth-db';
+import { verifyAuth } from '@/lib/auth-utils';
 
 
 // GET /api/analytics/pages - Get page-specific analytics
 export async function GET(request) {
   try {
     // Verify authentication
-    const session = await verifySession(request);
-    if (!session) {
+    const user = await verifyAuth(request);
+    if (!user) {
       return NextResponse.json(
         formatError('Unauthorized', 401),
         { status: 401 }

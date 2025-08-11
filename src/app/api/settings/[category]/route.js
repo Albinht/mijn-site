@@ -1,15 +1,15 @@
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 import { formatResponse, formatError } from '@/lib/utils';
-import { verifySession } from '@/lib/auth-db';
+import { verifyAuth } from '@/lib/auth-utils';
 
 
 // GET /api/settings/:category - Get settings for specific category
 export async function GET(request, { params }) {
   try {
     // Verify authentication
-    const session = await verifySession(request);
-    if (!session) {
+    const user = await verifyAuth(request);
+    if (!user) {
       return NextResponse.json(
         formatError('Unauthorized', 401),
         { status: 401 }
@@ -61,8 +61,8 @@ export async function GET(request, { params }) {
 export async function DELETE(request, { params }) {
   try {
     // Verify authentication
-    const session = await verifySession(request);
-    if (!session) {
+    const user = await verifyAuth(request);
+    if (!user) {
       return NextResponse.json(
         formatError('Unauthorized', 401),
         { status: 401 }
@@ -71,7 +71,7 @@ export async function DELETE(request, { params }) {
     
     // Check if user is admin
     const user = await prisma.user.findUnique({
-      where: { id: session.userId }
+      where: { id: user.userId }
     });
     
     if (user.role !== 'ADMIN') {
@@ -91,7 +91,7 @@ export async function DELETE(request, { params }) {
     // Log activity
     await prisma.activityLog.create({
       data: {
-        userId: session.userId,
+        userId: user.userId,
         action: 'DELETE_SETTINGS_CATEGORY',
         entityType: 'settings',
         entityId: category,

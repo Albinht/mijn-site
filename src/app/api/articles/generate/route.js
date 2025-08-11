@@ -2,17 +2,17 @@ import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 import { createArticleSchema } from '@/lib/validations';
 import { generateSlug, formatResponse, formatError } from '@/lib/utils';
-import { verifySession } from '@/lib/auth-db';
+import { verifyAuth } from '@/lib/auth-utils';
 
 
 // POST /api/articles/generate - Generate new article with webhook
 export async function POST(request) {
   try {
     // Verify authentication (skip in development for testing)
-    let session = { userId: 'dev-user' }; // Default for development
+    const user = await verifyAuth(request); // Default for development
     if (process.env.NODE_ENV === 'production') {
-      session = await verifySession(request);
-      if (!session) {
+      user = await verifyAuth(request);
+      if (!user) {
         return NextResponse.json(
           formatError('Unauthorized', 401),
           { status: 401 }
@@ -36,8 +36,8 @@ export async function POST(request) {
     };
     
     // Only add authorId if we have a valid session with userId
-    if (session.userId && session.userId !== 'dev-user') {
-      articleData.authorId = session.userId;
+    if (user.userId && user.userId) {
+      articleData.authorId = user.userId;
     }
     
     const article = await prisma.article.create({
@@ -50,7 +50,7 @@ export async function POST(request) {
       topic: article.topic,
       timestamp: new Date().toISOString(),
       source: 'admin_dashboard',
-      userId: session.userId
+      userId: user.userId
     };
     
     // Get webhook URL from settings or use default
@@ -150,10 +150,10 @@ export async function POST(request) {
     }
     
     // Log activity (only if we have a valid user)
-    if (session.userId && session.userId !== 'dev-user') {
+    if (user.userId && user.userId) {
       await prisma.activityLog.create({
         data: {
-          userId: session.userId,
+          userId: user.userId,
           action: 'GENERATE_ARTICLE',
           entity: 'article',
           entityId: article.id,

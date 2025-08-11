@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 import { updateSettingsSchema } from '@/lib/validations';
 import { formatResponse, formatError } from '@/lib/utils';
-import { verifySession } from '@/lib/auth-db';
+import { verifyAuth } from '@/lib/auth-utils';
 
 
 // GET /api/settings - Get all settings
@@ -10,8 +10,8 @@ export async function GET(request) {
   try {
     // Verify authentication (skip in development for testing)
     if (process.env.NODE_ENV === 'production') {
-      const session = await verifySession(request);
-      if (!session) {
+      const user = await verifyAuth(request);
+      if (!user) {
         return NextResponse.json(
           formatError('Unauthorized', 401),
           { status: 401 }
@@ -72,16 +72,13 @@ export async function GET(request) {
 // PUT /api/settings - Update settings
 export async function PUT(request) {
   try {
-    // Verify authentication (skip in development for testing)
-    let session = { user: { id: 'dev-user' } }; // Default for development
-    if (process.env.NODE_ENV === 'production') {
-      session = await verifySession(request);
-      if (!session) {
-        return NextResponse.json(
-          formatError('Unauthorized', 401),
-          { status: 401 }
-        );
-      }
+    // Verify authentication
+    const user = await verifyAuth(request);
+    if (!user) {
+      return NextResponse.json(
+        formatError('Unauthorized', 401),
+        { status: 401 }
+      );
     }
     
     const body = await request.json();
@@ -107,7 +104,7 @@ export async function PUT(request) {
             data: {
               value: setting.value,
               category: setting.category,
-              updatedBy: session.userId !== 'dev-user' ? session.userId : null,
+              updatedBy: user.userId !== 'dev-user' ? user.userId : null,
               updatedAt: new Date()
             }
           });
@@ -119,7 +116,7 @@ export async function PUT(request) {
               key: setting.key,
               value: setting.value,
               category: setting.category,
-              updatedBy: session.userId !== 'dev-user' ? session.userId : null
+              updatedBy: user.userId !== 'dev-user' ? user.userId : null
             }
           });
           results.push(created);
@@ -127,10 +124,10 @@ export async function PUT(request) {
       }
       
       // Log activity (only if we have a valid user)
-      if (session.userId && session.userId !== 'dev-user') {
+      if (user.userId && user.userId !== 'dev-user') {
         await tx.activityLog.create({
           data: {
-            userId: session.userId,
+            userId: user.userId,
             action: 'UPDATE_SETTINGS',
             entity: 'settings',
             entityId: 'batch',
