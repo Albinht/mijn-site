@@ -54,6 +54,12 @@ export async function POST(request) {
     // Get webhook URL from request or settings or use default
     let webhookUrl = body.webhook || process.env.WEBHOOK_URL || 'https://n8n-n8n.42giwj.easypanel.host/webhook/2f67b999-ee19-471a-9911-054d76177650';
     
+    console.log('=== WEBHOOK DEBUG ===');
+    console.log('Source:', body.source || 'shipsquared');
+    console.log('Webhook from request:', body.webhook ? 'YES' : 'NO');
+    console.log('Webhook URL being used:', webhookUrl);
+    console.log('Topic:', body.topic);
+    
     // Only check settings if webhook not provided in request
     if (!body.webhook) {
       try {
@@ -62,10 +68,13 @@ export async function POST(request) {
         });
         if (webhookSetting?.value) {
           webhookUrl = webhookSetting.value;
+          console.log('Using webhook from database settings');
         }
       } catch (error) {
         console.log('Using default webhook URL');
       }
+    } else {
+      console.log('Using webhook URL from request');
     }
     
     try {
@@ -73,10 +82,14 @@ export async function POST(request) {
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 120000); // 120 seconds timeout
       
+      console.log('Sending webhook to:', webhookUrl);
+      console.log('Payload:', JSON.stringify(webhookPayload, null, 2));
+      
       const webhookResponse = await fetch(webhookUrl, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'User-Agent': 'ArticleGenerator/1.0'
         },
         body: JSON.stringify(webhookPayload),
         signal: controller.signal
@@ -85,6 +98,9 @@ export async function POST(request) {
       clearTimeout(timeoutId);
       
       const webhookResult = await webhookResponse.text();
+      
+      console.log('Webhook response status:', webhookResponse.status);
+      console.log('Webhook response:', webhookResult.substring(0, 500)); // First 500 chars
       
       // Log webhook attempt
       await prisma.webhookLog.create({

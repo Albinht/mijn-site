@@ -10,6 +10,8 @@ export default function ArticlesPage() {
   const [error, setError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const [showWebhookSettings, setShowWebhookSettings] = useState(false);
+  const [testingWebhook, setTestingWebhook] = useState(null);
+  const [testResult, setTestResult] = useState(null);
   
   // Webhook configurations for each form
   const [webhooks, setWebhooks] = useState({
@@ -81,6 +83,52 @@ export default function ArticlesPage() {
     setWebhooks({ ...webhooks, [form]: value });
   };
 
+  const testWebhook = async (formId) => {
+    if (!webhooks[formId]) {
+      setError('Please enter a webhook URL first');
+      return;
+    }
+    
+    setTestingWebhook(formId);
+    setTestResult(null);
+    
+    try {
+      const response = await fetch('/api/webhooks/test', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          webhookUrl: webhooks[formId],
+          source: formId
+        })
+      });
+      
+      const data = await response.json();
+      
+      if (data.success && data.data.success) {
+        setTestResult({
+          success: true,
+          message: `✅ Webhook test successful! Response time: ${data.data.responseTime}`,
+          details: data.data
+        });
+      } else {
+        setTestResult({
+          success: false,
+          message: `❌ Webhook test failed: ${data.data?.message || 'Unknown error'}`,
+          details: data.data
+        });
+      }
+    } catch (error) {
+      setTestResult({
+        success: false,
+        message: `❌ Test failed: ${error.message}`,
+        details: null
+      });
+    } finally {
+      setTestingWebhook(null);
+      setTimeout(() => setTestResult(null), 10000); // Clear result after 10 seconds
+    }
+  };
+
   const getStatusBadge = (status) => {
     const badges = {
       'DRAFT': 'bg-gray-100 text-gray-800',
@@ -110,16 +158,27 @@ export default function ArticlesPage() {
       {/* Header with Settings Button */}
       <div className="flex items-center justify-between">
         <h1 className="text-3xl font-bold text-gray-900">Article Generation</h1>
-        <button
-          onClick={() => setShowWebhookSettings(!showWebhookSettings)}
-          className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors flex items-center gap-2"
-        >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-          </svg>
-          Webhook Settings
-        </button>
+        <div className="flex gap-2">
+          <a
+            href="/admin/dashboard/webhook-logs"
+            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            Webhook Logs
+          </a>
+          <button
+            onClick={() => setShowWebhookSettings(!showWebhookSettings)}
+            className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors flex items-center gap-2"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            Webhook Settings
+          </button>
+        </div>
       </div>
 
       {/* Webhook Settings Panel */}
@@ -132,13 +191,23 @@ export default function ArticlesPage() {
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   {form.name} Webhook URL
                 </label>
-                <input
-                  type="url"
-                  value={webhooks[form.id]}
-                  onChange={(e) => handleWebhookChange(form.id, e.target.value)}
-                  placeholder={`https://n8n-webhook-url-for-${form.id}...`}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                />
+                <div className="flex gap-2">
+                  <input
+                    type="url"
+                    value={webhooks[form.id]}
+                    onChange={(e) => handleWebhookChange(form.id, e.target.value)}
+                    placeholder={`https://n8n-webhook-url-for-${form.id}...`}
+                    className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => testWebhook(form.id)}
+                    disabled={!webhooks[form.id] || testingWebhook === form.id}
+                    className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  >
+                    {testingWebhook === form.id ? 'Testing...' : 'Test'}
+                  </button>
+                </div>
               </div>
             ))}
             <button
@@ -147,6 +216,23 @@ export default function ArticlesPage() {
             >
               Save Webhook Settings
             </button>
+            
+            {/* Test Result Display */}
+            {testResult && (
+              <div className={`mt-4 p-4 rounded-lg border ${testResult.success ? 'bg-green-50 border-green-200' : 'bg-red-50 border-red-200'}`}>
+                <p className={`text-sm font-medium ${testResult.success ? 'text-green-800' : 'text-red-800'}`}>
+                  {testResult.message}
+                </p>
+                {testResult.details && (
+                  <details className="mt-2">
+                    <summary className="text-xs text-gray-600 cursor-pointer">View details</summary>
+                    <pre className="mt-2 text-xs overflow-x-auto">
+                      {JSON.stringify(testResult.details, null, 2)}
+                    </pre>
+                  </details>
+                )}
+              </div>
+            )}
           </div>
         </div>
       )}
