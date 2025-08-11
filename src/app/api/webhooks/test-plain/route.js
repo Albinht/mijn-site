@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-// POST /api/webhooks/test-n8n - Test n8n webhook synchronously
+// POST /api/webhooks/test-plain - Test n8n webhook with plain text
 export async function POST(request) {
   try {
     const body = await request.json();
@@ -8,14 +8,9 @@ export async function POST(request) {
     
     const webhookUrl = 'https://n8n-n8n.42giwj.easypanel.host/webhook/2f67b999-ee19-471a-9911-054d76177650';
     
-    // Simple payload - JUST the topic
-    const payload = {
-      topic: topic
-    };
-    
-    console.log('Testing n8n webhook...');
+    console.log('Testing n8n webhook with PLAIN TEXT...');
     console.log('URL:', webhookUrl);
-    console.log('Payload:', JSON.stringify(payload, null, 2));
+    console.log('Topic being sent:', topic);
     
     const startTime = Date.now();
     
@@ -24,14 +19,14 @@ export async function POST(request) {
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 10000);
       
+      // Send JUST the topic as plain text
       const response = await fetch(webhookUrl, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-          'User-Agent': 'MijnSite/1.0'
+          'Content-Type': 'text/plain',
+          'Accept': '*/*'
         },
-        body: JSON.stringify(payload),
+        body: topic, // Just the topic string, no JSON
         signal: controller.signal
       });
       
@@ -54,8 +49,8 @@ export async function POST(request) {
         status: response.status,
         responseTime: responseTime + 'ms',
         responseBody: responseBody,
-        payload: payload,
-        message: response.ok ? 'Webhook received data successfully' : `Webhook returned status ${response.status}`
+        topicSent: topic,
+        message: response.ok ? 'Plain text sent successfully' : `Webhook returned status ${response.status}`
       });
       
     } catch (error) {
@@ -64,7 +59,7 @@ export async function POST(request) {
       
       let errorMessage = 'Unknown error';
       if (error.name === 'AbortError') {
-        errorMessage = 'Webhook timeout after 10 seconds - n8n is not responding';
+        errorMessage = 'Webhook timeout after 10 seconds';
       } else if (error.message.includes('fetch failed')) {
         errorMessage = 'Could not connect to webhook URL';
       } else {
@@ -76,8 +71,8 @@ export async function POST(request) {
         error: errorMessage,
         errorType: error.name,
         responseTime: responseTime + 'ms',
-        payload: payload,
-        message: `Webhook test failed: ${errorMessage}`
+        topicSent: topic,
+        message: `Plain text test failed: ${errorMessage}`
       });
     }
     

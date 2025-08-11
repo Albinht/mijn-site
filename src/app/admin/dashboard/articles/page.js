@@ -82,20 +82,36 @@ export default function ArticlesPage() {
             <h1 className="text-2xl font-bold text-gray-900">Article Generation</h1>
             <p className="text-gray-600 mt-2">Generate articles by sending topics to the webhook</p>
           </div>
-          <button
-            onClick={async () => {
-              const response = await fetch('/api/webhooks/test-n8n', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ topic: 'Test from UI' })
-              });
-              const data = await response.json();
-              alert(data.message || 'Check console for details');
-            }}
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
-          >
-            Test n8n Connection
-          </button>
+          <div className="flex gap-2">
+            <button
+              onClick={async () => {
+                const response = await fetch('/api/webhooks/test-n8n', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ topic: 'Test JSON format' })
+                });
+                const data = await response.json();
+                alert(`JSON Test: ${data.message}`);
+              }}
+              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+            >
+              Test JSON
+            </button>
+            <button
+              onClick={async () => {
+                const response = await fetch('/api/webhooks/test-plain', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ topic: 'Test plain text' })
+                });
+                const data = await response.json();
+                alert(`Plain Text Test: ${data.message}`);
+              }}
+              className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
+            >
+              Test Plain Text
+            </button>
+          </div>
         </div>
       </div>
 

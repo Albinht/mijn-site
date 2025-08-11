@@ -36,16 +36,9 @@ export async function POST(request) {
     // Hardcoded webhook URL
     const webhookUrl = 'https://n8n-n8n.42giwj.easypanel.host/webhook/2f67b999-ee19-471a-9911-054d76177650';
     
-    // Payload with callback URL for n8n to send results back
-    const callbackUrl = process.env.VERCEL_URL 
-      ? `https://${process.env.VERCEL_URL}/api/webhooks/callback`
-      : 'https://mijn-site.vercel.app/api/webhooks/callback';
-    
+    // Simple payload - JUST the topic
     const webhookPayload = {
-      topic: body.topic,
-      articleId: article.id,
-      timestamp: new Date().toISOString(),
-      callbackUrl: callbackUrl
+      topic: body.topic
     };
     
     console.log('================== WEBHOOK CALL ==================');

@@ -11,15 +11,15 @@ export async function POST(request) {
     console.log('Body:', JSON.stringify(body, null, 2));
     console.log('==================================================');
     
-    // Extract articleId and content from n8n response
-    const articleId = body.articleId;
-    const content = body.content || body.article || body.text || body.output;
+    // Extract topic and content from n8n response
+    const topic = body.topic;
+    const content = body.content || body.article || body.text || body.output || body.result;
     
-    if (!articleId) {
-      console.error('No articleId provided in callback');
+    if (!topic) {
+      console.error('No topic provided in callback');
       return NextResponse.json({
         success: false,
-        error: 'articleId is required'
+        error: 'topic is required'
       }, { status: 400 });
     }
     
@@ -31,22 +31,39 @@ export async function POST(request) {
       }, { status: 400 });
     }
     
-    // Update the article with the content from n8n
+    // Find and update the article by topic (most recent one with this topic)
     try {
-      const article = await prisma.article.update({
-        where: { id: articleId },
+      const article = await prisma.article.findFirst({
+        where: { 
+          topic: topic,
+          status: 'PROCESSING'
+        },
+        orderBy: { createdAt: 'desc' }
+      });
+      
+      if (!article) {
+        console.error('No processing article found for topic:', topic);
+        return NextResponse.json({
+          success: false,
+          error: 'No article found for this topic'
+        }, { status: 404 });
+      }
+      
+      const updated = await prisma.article.update({
+        where: { id: article.id },
         data: {
           content: content,
           status: 'PUBLISHED'
         }
       });
       
-      console.log('Article updated successfully:', articleId);
+      console.log('Article updated successfully:', article.id, 'for topic:', topic);
       
       return NextResponse.json({
         success: true,
         message: 'Article updated successfully',
-        articleId: articleId
+        articleId: article.id,
+        topic: topic
       });
       
     } catch (dbError) {
