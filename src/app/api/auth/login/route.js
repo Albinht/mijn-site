@@ -24,9 +24,23 @@ function getUserAgent(request) {
 export async function POST(request) {
   try {
     // Check if database is configured
-    if (!process.env.DATABASE_URL || process.env.DATABASE_URL === 'file:./dev.db') {
-      console.log('Database not configured, using simple auth fallback');
+    const dbUrl = process.env.DATABASE_URL;
+    const isProductionDb = dbUrl && dbUrl.includes('postgres') && !dbUrl.includes('file:');
+    
+    if (!isProductionDb) {
+      console.log('Using simple auth fallback - DB URL:', dbUrl ? 'exists but not postgres' : 'missing');
       // Redirect to simple auth if no database is configured
+      const simpleAuthModule = await import('../simple-login/route');
+      return simpleAuthModule.POST(request);
+    }
+    
+    // Test database connection before proceeding
+    try {
+      const { default: prisma } = await import('@/lib/prisma');
+      await prisma.$queryRaw`SELECT 1`;
+    } catch (dbError) {
+      console.error('Database connection failed:', dbError.message);
+      // Fallback to simple auth if database is not accessible
       const simpleAuthModule = await import('../simple-login/route');
       return simpleAuthModule.POST(request);
     }
