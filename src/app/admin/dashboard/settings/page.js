@@ -9,9 +9,9 @@ export default function SettingsPage() {
   const { updateSettings, isUpdating } = useUpdateSettings();
   
   const [settings, setSettings] = useState({
-    siteName: 'SAMAUTOMATION',
-    siteUrl: 'https://samautomation.nl',
-    adminEmail: 'admin@samautomation.nl',
+    siteName: '',
+    siteUrl: '',
+    adminEmail: '',
     timezone: 'Europe/Amsterdam',
     language: 'nl-NL',
     maintenanceMode: false,

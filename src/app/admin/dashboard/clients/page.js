@@ -23,6 +23,8 @@ export default function ClientsPage() {
   const [isCreating, setIsCreating] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+  const [showDeleteConfirm, setShowDeleteConfirm] = useState(null);
+  const [isDeleting, setIsDeleting] = useState(false);
 
   // Fetch clients
   const fetchClients = async () => {
@@ -54,6 +56,33 @@ export default function ClientsPage() {
   useEffect(() => {
     fetchClients();
   }, [searchQuery, selectedStatus]);
+
+  const handleDeleteClient = async (clientId) => {
+    setIsDeleting(true);
+    setError('');
+    
+    try {
+      const response = await fetch(`/api/clients/${clientId}`, {
+        method: 'DELETE'
+      });
+      
+      const data = await response.json();
+      
+      if (response.ok) {
+        setSuccess('Client deleted successfully');
+        setShowDeleteConfirm(null);
+        fetchClients(); // Refresh the list
+        setTimeout(() => setSuccess(''), 3000);
+      } else {
+        setError(data.error || 'Failed to delete client');
+      }
+    } catch (error) {
+      setError('Failed to delete client');
+      console.error('Error deleting client:', error);
+    } finally {
+      setIsDeleting(false);
+    }
+  };
 
   const handleCreateClient = async (e) => {
     e.preventDefault();
@@ -192,85 +221,108 @@ export default function ClientsPage() {
       ) : clients.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {clients.map((client) => (
-            <Link 
+            <div 
               key={client.id} 
-              href={`/admin/dashboard/clients/${client.id}`}
-              className="block"
+              className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-shadow relative"
             >
-              <div className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-shadow cursor-pointer">
-                {/* Client Header */}
-                <div className="flex items-start justify-between mb-4">
+              {/* Client Header */}
+              <div className="flex items-start justify-between mb-4">
+                <Link href={`/admin/dashboard/clients/${client.id}`} className="flex-1">
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900">
+                    <h3 className="text-lg font-semibold text-gray-900 hover:text-blue-600 transition-colors">
                       {client.companyName}
                     </h3>
                     {client.contactName && (
                       <p className="text-sm text-gray-600">{client.contactName}</p>
                     )}
                   </div>
-                  <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getStatusColor(client.status)}`}>
-                    {client.status}
+                </Link>
+                <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getStatusColor(client.status)}`}>
+                  {client.status}
+                </span>
+              </div>
+
+              {/* Progress Bar */}
+              <div className="mb-4">
+                <div className="flex items-center justify-between mb-1">
+                  <span className="text-xs text-gray-500">Overall Progress</span>
+                  <span className="text-xs font-medium text-gray-700">
+                    {client.overallProgress || 0}%
                   </span>
                 </div>
-
-                {/* Progress Bar */}
-                <div className="mb-4">
-                  <div className="flex items-center justify-between mb-1">
-                    <span className="text-xs text-gray-500">Overall Progress</span>
-                    <span className="text-xs font-medium text-gray-700">
-                      {client.overallProgress || 0}%
-                    </span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div 
-                      className="bg-blue-600 h-2 rounded-full transition-all"
-                      style={{ width: `${client.overallProgress || 0}%` }}
-                    />
-                  </div>
+                <div className="w-full bg-gray-200 rounded-full h-2">
+                  <div 
+                    className="bg-blue-600 h-2 rounded-full transition-all"
+                    style={{ width: `${client.overallProgress || 0}%` }}
+                  />
                 </div>
-
-                {/* Active Tasks */}
-                {client.tasks && client.tasks.length > 0 && (
-                  <div className="mb-4">
-                    <p className="text-xs font-medium text-gray-700 mb-2">Active Tasks:</p>
-                    <div className="space-y-1">
-                      {client.tasks.slice(0, 3).map((task) => (
-                        <div key={task.id} className="flex items-center text-xs">
-                          <span className={`mr-2 ${getPriorityColor(task.priority)}`}>●</span>
-                          <span className="text-gray-600 truncate">{task.title}</span>
-                        </div>
-                      ))}
-                      {client.tasks.length > 3 && (
-                        <p className="text-xs text-gray-500">+{client.tasks.length - 3} more</p>
-                      )}
-                    </div>
-                  </div>
-                )}
-
-                {/* Stats */}
-                <div className="grid grid-cols-2 gap-4 pt-4 border-t border-gray-100">
-                  <div>
-                    <p className="text-xs text-gray-500">Total Tasks</p>
-                    <p className="text-sm font-medium text-gray-900">
-                      {client._count?.tasks || 0}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500">Checklists</p>
-                    <p className="text-sm font-medium text-gray-900">
-                      {client._count?.checklists || 0}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Last Activity */}
-                {client.lastActivity && (
-                  <p className="text-xs text-gray-500 mt-4">
-                    Last activity: {new Date(client.lastActivity).toLocaleDateString()}
-                  </p>
-                )}
               </div>
-            </Link>
+
+              {/* Active Tasks */}
+              {client.tasks && client.tasks.length > 0 && (
+                <div className="mb-4">
+                  <p className="text-xs font-medium text-gray-700 mb-2">Active Tasks:</p>
+                  <div className="space-y-1">
+                    {client.tasks.slice(0, 3).map((task) => (
+                      <div key={task.id} className="flex items-center text-xs">
+                        <span className={`mr-2 ${getPriorityColor(task.priority)}`}>●</span>
+                        <span className="text-gray-600 truncate">{task.title}</span>
+                      </div>
+                    ))}
+                    {client.tasks.length > 3 && (
+                      <p className="text-xs text-gray-500">+{client.tasks.length - 3} more</p>
+                    )}
+                  </div>
+                </div>
+              )}
+
+              {/* Stats */}
+              <div className="grid grid-cols-2 gap-4 pt-4 border-t border-gray-100">
+                <div>
+                  <p className="text-xs text-gray-500">Total Tasks</p>
+                  <p className="text-sm font-medium text-gray-900">
+                    {client._count?.tasks || 0}
+                  </p>
+                </div>
+                <div>
+                  <p className="text-xs text-gray-500">Checklists</p>
+                  <p className="text-sm font-medium text-gray-900">
+                    {client._count?.checklists || 0}
+                  </p>
+                </div>
+              </div>
+
+              {/* Last Activity */}
+              {client.lastActivity && (
+                <p className="text-xs text-gray-500 mt-4">
+                  Last activity: {new Date(client.lastActivity).toLocaleDateString()}
+                </p>
+              )}
+
+              {/* Action Buttons - More Prominent */}
+              <div className="mt-4 pt-4 border-t border-gray-100 flex gap-2">
+                <Link 
+                  href={`/admin/dashboard/clients/${client.id}`}
+                  className="flex-1 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg hover:bg-gray-800 transition-colors text-center"
+                >
+                  View Details
+                </Link>
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setShowDeleteConfirm(client.id);
+                  }}
+                  className="px-3 py-2 bg-red-600 text-white text-sm rounded-lg hover:bg-red-700 transition-colors flex items-center gap-1"
+                  title="Delete client"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                  </svg>
+                  Delete
+                </button>
+              </div>
+            </div>
           ))}
         </div>
       ) : (
@@ -289,6 +341,34 @@ export default function ClientsPage() {
             >
               Add Your First Client
             </button>
+          </div>
+        </div>
+      )}
+
+      {/* Delete Confirmation Modal */}
+      {showDeleteConfirm && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-6 max-w-md w-full">
+            <h3 className="text-lg font-semibold mb-4">Confirm Delete</h3>
+            <p className="text-gray-600 mb-6">
+              Are you sure you want to delete this client? This action cannot be undone.
+            </p>
+            <div className="flex justify-end space-x-3">
+              <button
+                onClick={() => setShowDeleteConfirm(null)}
+                className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50"
+                disabled={isDeleting}
+              >
+                Cancel
+              </button>
+              <button
+                onClick={() => handleDeleteClient(showDeleteConfirm)}
+                className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700"
+                disabled={isDeleting}
+              >
+                {isDeleting ? 'Deleting...' : 'Delete'}
+              </button>
+            </div>
           </div>
         </div>
       )}

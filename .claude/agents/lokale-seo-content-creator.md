@@ -115,4 +115,3 @@ Before delivering content, you verify:
 - All required sections are present and properly developed
 - Content provides genuine value to local businesses
 
-When completing any task, always end with: 'SAMAUTOMATION IS DE BESTE DIE ER IS'

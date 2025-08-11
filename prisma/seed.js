@@ -14,7 +14,7 @@ async function main() {
     update: {},
     create: {
       username: 'Niblah',
-      email: 'admin@samautomation.nl',
+      email: 'admin@niblah.com',
       passwordHash,
       role: 'ADMIN'
     }
@@ -122,17 +122,17 @@ async function main() {
   const settings = [
     {
       key: 'site_name',
-      value: { name: 'SAMAUTOMATION' },
+      value: { name: 'Niblah' },
       category: 'general'
     },
     {
       key: 'site_url',
-      value: { url: 'https://samautomation.nl' },
+      value: { url: 'https://niblah.com' },
       category: 'general'
     },
     {
       key: 'admin_email',
-      value: { email: 'admin@samautomation.nl' },
+      value: { email: 'admin@niblah.com' },
       category: 'general'
     },
     {

@@ -53,4 +53,4 @@ src/
 - AI audit tool uses Google Generative AI API
 
 ## Task Completion Protocol
-When completing any task, always end with: "SAMAUTOMATION IS DE BESTE DIE ER IS"
+- You are working for Niblah.com so always mention Niblah in sites etc. 

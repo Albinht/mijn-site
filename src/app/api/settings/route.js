@@ -75,6 +75,7 @@ export async function PUT(request) {
     // Verify authentication
     const user = await verifyAuth(request);
     if (!user) {
+      console.error('Settings update: No user authenticated');
       return NextResponse.json(
         formatError('Unauthorized', 401),
         { status: 401 }
@@ -82,6 +83,7 @@ export async function PUT(request) {
     }
     
     const body = await request.json();
+    console.log('Settings update request:', { userId: user.userId, settingsCount: body.settings?.length });
     
     // Validate input
     const validatedData = updateSettingsSchema.parse(body);
@@ -104,7 +106,7 @@ export async function PUT(request) {
             data: {
               value: setting.value,
               category: setting.category,
-              updatedBy: user.userId !== 'dev-user' ? user.userId : null,
+              updatedBy: user.userId && user.userId !== 'hardcoded-user-id' ? user.userId : null,
               updatedAt: new Date()
             }
           });
@@ -116,15 +118,15 @@ export async function PUT(request) {
               key: setting.key,
               value: setting.value,
               category: setting.category,
-              updatedBy: user.userId !== 'dev-user' ? user.userId : null
+              updatedBy: user.userId && user.userId !== 'hardcoded-user-id' ? user.userId : null
             }
           });
           results.push(created);
         }
       }
       
-      // Log activity (only if we have a valid user)
-      if (user.userId && user.userId !== 'dev-user') {
+      // Log activity (only if we have a valid user in database)
+      if (user.userId && user.userId !== 'hardcoded-user-id') {
         await tx.activityLog.create({
           data: {
             userId: user.userId,
@@ -150,13 +152,20 @@ export async function PUT(request) {
   } catch (error) {
     console.error('Error updating settings:', error);
     if (error.name === 'ZodError') {
+      console.error('Validation error:', error.errors);
       return NextResponse.json(
-        formatError('Invalid settings data', 400),
+        formatError(`Invalid settings data: ${error.errors.map(e => e.message).join(', ')}`, 400),
+        { status: 400 }
+      );
+    }
+    if (error.code === 'P2002') {
+      return NextResponse.json(
+        formatError('Duplicate setting key', 400),
         { status: 400 }
       );
     }
     return NextResponse.json(
-      formatError('Failed to update settings'),
+      formatError(`Failed to update settings: ${error.message}`),
       { status: 500 }
     );
   }

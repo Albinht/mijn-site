@@ -15,13 +15,13 @@ export async function generateMetadata({ params }) {
     
     if (!page) {
       return {
-        title: 'Page Not Found - SAMAUTOMATION',
+        title: 'Page Not Found',
         description: 'The requested page could not be found.'
       };
     }
     
     return {
-      title: page.metaTitle || `${page.title} - SAMAUTOMATION`,
+      title: page.metaTitle || page.title,
       description: page.metaDescription || page.content?.substring(0, 160),
       openGraph: {
         title: page.metaTitle || page.title,
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }) {
   } catch (error) {
     console.error('Error generating metadata:', error);
     return {
-      title: 'SAMAUTOMATION',
+      title: 'Website',
       description: 'Digital Marketing Services'
     };
   }

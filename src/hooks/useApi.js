@@ -262,7 +262,7 @@ export function useUpdateSettings() {
       // Convert settings object to array format expected by API
       const settingsArray = Object.entries(settings).map(([key, value]) => ({
         key,
-        value,
+        value: value, // Keep original value type (will be stored as JSON)
         category: determineCategory(key)
       }));
       return trigger({ method: 'PUT', body: { settings: settingsArray } });

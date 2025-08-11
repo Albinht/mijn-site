@@ -212,7 +212,7 @@ async function importPages() {
           data: {
             ...page,
             status: 'PUBLISHED',
-            metaTitle: `${page.title} - SAMAUTOMATION`,
+            metaTitle: `${page.title} - Niblah`,
             metaDescription: `Professional ${page.title.toLowerCase()} to help your business grow online.`,
             views: Math.floor(Math.random() * 1000)
           }
