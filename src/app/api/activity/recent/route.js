@@ -1,21 +1,26 @@
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 import { formatResponse, formatError } from '@/lib/utils';
-import { verifySession } from '@/lib/auth-db';
+import { verifyAuth, isDatabaseConfigured } from '@/lib/auth-utils';
 
 
 // GET /api/activity/recent - Get recent activity for dashboard
 export async function GET(request) {
   try {
-    // Verify authentication (skip in development for testing)
-    if (process.env.NODE_ENV === 'production') {
-      const session = await verifySession(request);
-      if (!session) {
-        return NextResponse.json(
-          formatError('Unauthorized', 401),
-          { status: 401 }
-        );
-      }
+    // Verify authentication
+    const user = await verifyAuth(request);
+    if (!user) {
+      return NextResponse.json(
+        formatError('Unauthorized', 401),
+        { status: 401 }
+      );
+    }
+    
+    // If database is not configured, return empty activities
+    if (!isDatabaseConfigured()) {
+      return NextResponse.json(
+        formatResponse([])
+      );
     }
     
     const { searchParams } = new URL(request.url);

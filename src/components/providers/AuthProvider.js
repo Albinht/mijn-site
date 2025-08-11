@@ -29,12 +29,13 @@ export function AuthProvider({ children }) {
         setUser(data.user);
         return true;
       } else {
-        setUser(null);
+        // Don't set user to null immediately - let middleware handle redirects
+        // This prevents the refresh loop
         return false;
       }
     } catch (error) {
       console.error('Auth check failed:', error);
-      setUser(null);
+      // Don't set user to null immediately
       return false;
     } finally {
       setIsLoading(false);

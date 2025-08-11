@@ -35,7 +35,8 @@ export default function LoginPage() {
       const data = await response.json();
       
       if (response.ok) {
-        router.push('/admin/dashboard');
+        // Use window.location for more reliable redirect in production
+        window.location.href = '/admin/dashboard';
       } else {
         setError(data.error);
         if (data.remainingAttempts !== undefined) {

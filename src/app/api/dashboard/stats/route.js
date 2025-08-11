@@ -1,20 +1,43 @@
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 import { formatResponse, formatError } from '@/lib/utils';
-import { verifySession } from '@/lib/auth-db';
+import { verifyAuth, isDatabaseConfigured } from '@/lib/auth-utils';
 
 // GET /api/dashboard/stats - Get dashboard statistics
 export async function GET(request) {
   try {
-    // Verify authentication (skip in development for testing)
-    if (process.env.NODE_ENV === 'production') {
-      const session = await verifySession(request);
-      if (!session) {
-        return NextResponse.json(
-          formatError('Unauthorized', 401),
-          { status: 401 }
-        );
-      }
+    // Verify authentication
+    const user = await verifyAuth(request);
+    if (!user) {
+      return NextResponse.json(
+        formatError('Unauthorized', 401),
+        { status: 401 }
+      );
+    }
+    
+    // If database is not configured, return mock stats
+    if (!isDatabaseConfigured()) {
+      return NextResponse.json(
+        formatResponse({
+          content: {
+            articles: { total: 0, published: 0, thisWeek: 0 },
+            pages: { total: 0, published: 0, thisWeek: 0 }
+          },
+          analytics: {
+            totalViews: 0,
+            todayViews: 0,
+            uniqueVisitors: 0
+          },
+          activity: {
+            recentCount: 0,
+            todayCount: 0
+          },
+          users: {
+            total: 1,
+            active: 1
+          }
+        })
+      );
     }
     
     // Get various stats in parallel

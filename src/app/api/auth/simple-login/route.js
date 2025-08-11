@@ -74,13 +74,14 @@ export async function POST(request) {
       { status: 200 }
     );
     
-    // Set a simple auth cookie
+    // Set a simple auth cookie with better production settings
     response.cookies.set('auth-token', token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'strict',
+      sameSite: 'lax', // Changed from 'strict' to 'lax' for better compatibility
       maxAge: 86400, // 24 hours
-      path: '/'
+      path: '/',
+      domain: process.env.NODE_ENV === 'production' ? undefined : 'localhost' // Let browser handle domain in production
     });
     
     return response;
