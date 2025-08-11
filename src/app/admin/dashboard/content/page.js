@@ -365,12 +365,12 @@ export default function ContentPage() {
                       {new Date(item.updatedAt || item.lastModified).toLocaleDateString()}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                      <div className="flex items-center space-x-3">
+                      <div className="flex items-center space-x-2">
                         <Link
-                          href={item.slug ? `/${item.slug}` : '#'}
+                          href={item.slug ? (item.status === 'DRAFT' ? `/preview/${item.slug}` : `/${item.slug}`) : '#'}
                           target="_blank"
                           className="text-gray-600 hover:text-gray-900"
-                          title="View"
+                          title={item.status === 'DRAFT' ? 'Preview' : 'View'}
                         >
                           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -384,6 +384,33 @@ export default function ContentPage() {
                         >
                           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                          </svg>
+                        </button>
+                        <button
+                          onClick={async () => {
+                            const newStatus = item.status === 'PUBLISHED' ? 'DRAFT' : 'PUBLISHED';
+                            try {
+                              const response = await fetch(`/api/content/${item.id}`, {
+                                method: 'PUT',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ status: newStatus })
+                              });
+                              if (response.ok) {
+                                setSuccessMessage(`Status changed to ${newStatus}`);
+                                mutate();
+                              }
+                            } catch (error) {
+                              setErrorMessage('Failed to update status');
+                            }
+                          }}
+                          className={item.status === 'PUBLISHED' ? 'text-yellow-600 hover:text-yellow-900' : 'text-green-600 hover:text-green-900'}
+                          title={item.status === 'PUBLISHED' ? 'Unpublish' : 'Publish'}
+                        >
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            {item.status === 'PUBLISHED' ? 
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" /> :
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            }
                           </svg>
                         </button>
                         <button
