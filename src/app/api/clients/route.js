@@ -41,13 +41,13 @@ export async function GET(request) {
     }
     
     // Try to get real data from database
-    
-    // Parse query params
-    const { searchParams } = new URL(request.url);
-    const query = querySchema.parse(Object.fromEntries(searchParams));
-    
-    // Build where clause
-    const where = {};
+    try {
+      // Parse query params
+      const { searchParams } = new URL(request.url);
+      const query = querySchema.parse(Object.fromEntries(searchParams));
+      
+      // Build where clause
+      const where = {};
     
     if (query.search) {
       where.OR = [
@@ -110,6 +110,16 @@ export async function GET(request) {
       limit: query.limit,
       offset: query.offset
     }));
+    } catch (dbError) {
+      console.error('Database error fetching clients:', dbError);
+      // Return empty list if database fails
+      return NextResponse.json(formatResponse({
+        clients: [],
+        total: 0,
+        limit: 20,
+        offset: 0
+      }));
+    }
   } catch (error) {
     console.error('Error fetching clients:', error);
     return NextResponse.json(
@@ -135,20 +145,14 @@ export async function POST(request) {
       );
     }
     
-    // If database is not configured, return error
-    if (!isDatabaseConfigured()) {
-      return NextResponse.json({
-        success: false,
-        error: 'Database not configured. Cannot create clients without database.',
-        code: 'DATABASE_ERROR'
-      }, { status: 503 });
-    }
+    // Try to create client in database
     
     const body = await request.json();
     const validatedData = createClientSchema.parse(body);
     
-    // Create client with initial SEO checklist
-    const client = await prisma.client.create({
+    try {
+      // Create client with initial SEO checklist
+      const client = await prisma.client.create({
       data: {
         ...validatedData,
         checklists: {
@@ -183,6 +187,14 @@ export async function POST(request) {
     });
     
     return NextResponse.json(formatResponse(client));
+    } catch (dbError) {
+      console.error('Database error creating client:', dbError);
+      return NextResponse.json({
+        success: false,
+        error: 'Failed to create client. Please ensure database is properly configured.',
+        details: dbError.message
+      }, { status: 500 });
+    }
   } catch (error) {
     console.error('Error creating client:', error);
     if (error.name === 'ZodError') {
