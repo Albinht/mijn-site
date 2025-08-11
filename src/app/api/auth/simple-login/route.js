@@ -4,8 +4,8 @@ import bcrypt from 'bcryptjs';
 // Hardcoded credentials for production without database
 const HARDCODED_USER = {
   username: 'Niblah',
-  // This is the hash for 'Jukovic91!'
-  passwordHash: '$2a$10$Z6X7.qKmKlFJKpOhZ7kWaOGzFXh9CpPVhxRvZxcmHYj3S2PMXK5Oi',
+  // This is the hash for 'Jukovic91!' - verified working
+  passwordHash: '$2b$10$YbEeErjuBsbO/Tl4qfhPk.pURuAJF1XUCIHwc.Q3RG1GRK7fPNJj.',
   email: 'admin@admin.nl'
 };
 

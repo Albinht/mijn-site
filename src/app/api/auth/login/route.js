@@ -23,6 +23,14 @@ function getUserAgent(request) {
 
 export async function POST(request) {
   try {
+    // Check if database is configured
+    if (!process.env.DATABASE_URL || process.env.DATABASE_URL === 'file:./dev.db') {
+      console.log('Database not configured, using simple auth fallback');
+      // Redirect to simple auth if no database is configured
+      const simpleAuthModule = await import('../simple-login/route');
+      return simpleAuthModule.POST(request);
+    }
+    
     const clientIp = getClientIp(request);
     const userAgent = getUserAgent(request);
     
@@ -127,6 +135,18 @@ export async function POST(request) {
     return response;
   } catch (error) {
     console.error('Login error:', error);
+    
+    // If it's a database connection error, try simple auth
+    if (error.message?.includes('prisma') || error.message?.includes('database') || error.code === 'P1001') {
+      console.log('Database error, falling back to simple auth');
+      try {
+        const simpleAuthModule = await import('../simple-login/route');
+        return simpleAuthModule.POST(request);
+      } catch (fallbackError) {
+        console.error('Fallback auth also failed:', fallbackError);
+      }
+    }
+    
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }
