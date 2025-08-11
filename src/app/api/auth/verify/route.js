@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import { verifyAuth, isDatabaseConfigured } from '@/lib/auth-utils';
-import { verifyAuth } from '@/lib/auth-utils';
 
 export async function GET(request) {
   try {

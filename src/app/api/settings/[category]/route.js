@@ -70,11 +70,11 @@ export async function DELETE(request, { params }) {
     }
     
     // Check if user is admin
-    const user = await prisma.user.findUnique({
+    const userDetails = await prisma.user.findUnique({
       where: { id: user.userId }
     });
     
-    if (user.role !== 'ADMIN') {
+    if (!userDetails || userDetails.role !== 'ADMIN') {
       return NextResponse.json(
         formatError('Forbidden: Admin access required', 403),
         { status: 403 }

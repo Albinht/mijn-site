@@ -8,16 +8,13 @@ import { verifyAuth } from '@/lib/auth-utils';
 // POST /api/articles/generate - Generate new article with webhook
 export async function POST(request) {
   try {
-    // Verify authentication (skip in development for testing)
-    const user = await verifyAuth(request); // Default for development
-    if (process.env.NODE_ENV === 'production') {
-      user = await verifyAuth(request);
-      if (!user) {
-        return NextResponse.json(
-          formatError('Unauthorized', 401),
-          { status: 401 }
-        );
-      }
+    // Verify authentication
+    const user = await verifyAuth(request);
+    if (!user) {
+      return NextResponse.json(
+        formatError('Unauthorized', 401),
+        { status: 401 }
+      );
     }
     
     const body = await request.json();

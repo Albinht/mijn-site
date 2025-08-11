@@ -72,16 +72,14 @@ export async function GET(request, { params }) {
 export async function PUT(request, { params }) {
   try {
     const { id } = await params;
-    // Skip auth in development
+    
+    // Verify authentication
     const user = await verifyAuth(request);
-    if (process.env.NODE_ENV === 'production') {
-      user = await verifyAuth(request);
-      if (!user) {
-        return NextResponse.json(
-          formatError('Unauthorized', 401),
-          { status: 401 }
-        );
-      }
+    if (!user) {
+      return NextResponse.json(
+        formatError('Unauthorized', 401),
+        { status: 401 }
+      );
     }
     
     const body = await request.json();
@@ -137,16 +135,14 @@ export async function PUT(request, { params }) {
 export async function DELETE(request, { params }) {
   try {
     const { id } = await params;
-    // Skip auth in development
+    
+    // Verify authentication
     const user = await verifyAuth(request);
-    if (process.env.NODE_ENV === 'production') {
-      user = await verifyAuth(request);
-      if (!user) {
-        return NextResponse.json(
-          formatError('Unauthorized', 401),
-          { status: 401 }
-        );
-      }
+    if (!user) {
+      return NextResponse.json(
+        formatError('Unauthorized', 401),
+        { status: 401 }
+      );
     }
     
     // Check if client exists
