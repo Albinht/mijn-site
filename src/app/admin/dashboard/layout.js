@@ -10,6 +10,7 @@ function DashboardContent({ children }) {
   const router = useRouter();
   const pathname = usePathname();
   const [isLoggingOut, setIsLoggingOut] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { user, isAuthenticated, isLoading } = useAuth();
 
   // Remove the redirect loop - middleware handles this
@@ -38,19 +39,46 @@ function DashboardContent({ children }) {
     { href: '/admin/dashboard/settings', label: 'Settings', icon: '⚙️' },
   ];
 
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [pathname]);
+
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Sidebar */}
-      <div className="fixed inset-y-0 left-0 w-64 bg-white border-r border-gray-200">
+      {/* Menu Overlay - Show on all screen sizes when menu is open */}
+      {isMobileMenuOpen && (
+        <div 
+          className="fixed inset-0 z-40 bg-black bg-opacity-50"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
+
+      {/* Sidebar - Always collapsible with hamburger menu */}
+      <div className={`fixed inset-y-0 left-0 z-50 w-64 bg-white border-r border-gray-200 transform transition-transform duration-300 ease-in-out ${
+        isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+      }`}>
         <div className="flex flex-col h-full">
-          {/* Logo/Brand */}
+          {/* Logo/Brand with Mobile Close Button */}
           <div className="px-6 py-6 border-b border-gray-200">
-            <h1 className="text-xl font-bold text-gray-900">
-              ADMIN PANEL
-            </h1>
-            <p className="text-xs text-gray-500 mt-1 font-mono">
-              ADMIN SYSTEM
-            </p>
+            <div className="flex items-center justify-between">
+              <div>
+                <h1 className="text-xl font-bold text-gray-900">
+                  ADMIN PANEL
+                </h1>
+                <p className="text-xs text-gray-500 mt-1 font-mono">
+                  NIBLAH SYSTEM
+                </p>
+              </div>
+              <button
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
           </div>
 
           {/* Navigation */}
@@ -63,7 +91,7 @@ function DashboardContent({ children }) {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`flex items-center px-3 py-2.5 text-sm font-medium rounded-lg transition-all ${
+                  className={`flex items-center px-3 py-3 text-sm font-medium rounded-lg transition-all ${
                     isActive
                       ? 'bg-gray-900 text-white'
                       : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
@@ -86,7 +114,7 @@ function DashboardContent({ children }) {
               <button
                 onClick={handleLogout}
                 disabled={isLoggingOut}
-                className="text-sm text-gray-500 hover:text-gray-900 transition-colors disabled:opacity-50"
+                className="p-2 text-sm text-gray-500 hover:text-gray-900 transition-colors disabled:opacity-50"
                 title="Logout"
               >
                 {isLoggingOut ? '...' : '→'}
@@ -96,35 +124,46 @@ function DashboardContent({ children }) {
         </div>
       </div>
 
-      {/* Main Content Area */}
-      <div className="ml-64">
-        {/* Top Bar */}
+      {/* Main Content Area - No margin since sidebar is always collapsible */}
+      <div className="">
+        {/* Top Bar with Mobile Menu Button */}
         <header className="bg-white border-b border-gray-200">
-          <div className="px-8 py-4 flex items-center justify-between">
-            <div>
-              <h2 className="text-lg font-semibold text-gray-900">
-                {navItems.find(item => pathname.startsWith(item.href))?.label || 'Dashboard'}
-              </h2>
-              <p className="text-sm text-gray-500">
-                {new Date().toLocaleDateString('en-US', { 
-                  weekday: 'long', 
-                  year: 'numeric', 
-                  month: 'long', 
-                  day: 'numeric' 
-                })}
-              </p>
+          <div className="px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <div className="flex items-center">
+              <button
+                onClick={() => setIsMobileMenuOpen(true)}
+                className="p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 mr-3"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+              <div>
+                <h2 className="text-lg font-semibold text-gray-900">
+                  {navItems.find(item => pathname.startsWith(item.href))?.label || 'Dashboard'}
+                </h2>
+                <p className="text-xs sm:text-sm text-gray-500 hidden sm:block">
+                  {new Date().toLocaleDateString('en-US', { 
+                    weekday: 'long', 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                  })}
+                </p>
+              </div>
             </div>
             <div className="flex items-center space-x-3">
               <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                <span className="w-1.5 h-1.5 bg-green-400 rounded-full mr-1.5"></span>
-                Online
+                <span className="w-1.5 h-1.5 bg-green-400 rounded-full mr-1.5 animate-pulse"></span>
+                <span className="hidden sm:inline">Online</span>
+                <span className="sm:hidden">ON</span>
               </span>
             </div>
           </div>
         </header>
 
         {/* Page Content */}
-        <main className="p-8">
+        <main className="p-4 sm:p-6 lg:p-8">
           <SwrProvider>
             {children}
           </SwrProvider>

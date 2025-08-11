@@ -217,31 +217,31 @@ export default function ContentPage() {
   return (
     <div>
       {/* Header */}
-      <div className="mb-8 flex items-center justify-between">
+      <div className="mb-6 sm:mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1 sm:mb-2">
             Content Management
           </h1>
-          <p className="text-gray-600">
+          <p className="text-sm sm:text-base text-gray-600">
             Manage all your pages, blogs, and YouTube videos
           </p>
         </div>
-        <div className="flex space-x-2">
+        <div className="flex flex-wrap gap-2">
           <button 
             onClick={() => { setCreateType('page'); setShowCreateModal(true); }}
-            className="px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
+            className="px-3 py-2 text-sm sm:px-4 sm:text-base bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
           >
             + Create Page
           </button>
           <button 
             onClick={() => { setCreateType('blog'); setShowCreateModal(true); }}
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="px-3 py-2 text-sm sm:px-4 sm:text-base bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
           >
             + Create Blog
           </button>
           <button 
             onClick={() => { setCreateType('youtube'); setShowCreateModal(true); }}
-            className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+            className="px-3 py-2 text-sm sm:px-4 sm:text-base bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
           >
             + Add YouTube Video
           </button>
@@ -262,21 +262,21 @@ export default function ContentPage() {
       )}
 
       {/* Filters */}
-      <div className="mb-6 bg-white rounded-lg border border-gray-200 p-4">
-        <div className="flex flex-col md:flex-row gap-4">
+      <div className="mb-4 sm:mb-6 bg-white rounded-lg border border-gray-200 p-3 sm:p-4">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
           <div className="flex-1">
             <input
               type="text"
               placeholder="Search content..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500"
+              className="w-full px-3 py-2 text-sm sm:text-base sm:px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500"
             />
           </div>
           <select
             value={selectedType}
             onChange={(e) => setSelectedType(e.target.value)}
-            className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500"
+            className="px-3 py-2 text-sm sm:text-base sm:px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500"
           >
             <option value="all">All Types</option>
             <option value="MARKETING">Blog/Marketing</option>
@@ -288,7 +288,7 @@ export default function ContentPage() {
           <select
             value={selectedStatus}
             onChange={(e) => setSelectedStatus(e.target.value)}
-            className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500"
+            className="px-3 py-2 text-sm sm:text-base sm:px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500"
           >
             <option value="all">All Status</option>
             <option value="PUBLISHED">Published</option>
@@ -310,22 +310,22 @@ export default function ContentPage() {
             <table className="w-full">
               <thead className="bg-gray-50 border-b border-gray-200">
                 <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-3 sm:px-6 py-2 sm:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Title
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="hidden sm:table-cell px-3 sm:px-6 py-2 sm:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Type
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-3 sm:px-6 py-2 sm:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Status
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="hidden md:table-cell px-3 sm:px-6 py-2 sm:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Views
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="hidden lg:table-cell px-3 sm:px-6 py-2 sm:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Last Modified
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-3 sm:px-6 py-2 sm:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Actions
                   </th>
                 </tr>
@@ -333,38 +333,38 @@ export default function ContentPage() {
               <tbody className="divide-y divide-gray-200">
                 {pages.map((item) => (
                   <tr key={item.id} className="hover:bg-gray-50">
-                    <td className="px-6 py-4 whitespace-nowrap">
+                    <td className="px-3 sm:px-6 py-3 sm:py-4">
                       <div className="flex items-center">
-                        <span className="text-2xl mr-3">{getTypeIcon(item.type)}</span>
-                        <div>
-                          <div className="text-sm font-medium text-gray-900">
+                        <span className="text-lg sm:text-2xl mr-2 sm:mr-3">{getTypeIcon(item.type)}</span>
+                        <div className="min-w-0 flex-1">
+                          <div className="text-sm font-medium text-gray-900 truncate">
                             {item.title}
                           </div>
-                          <div className="text-sm text-gray-500">
+                          <div className="text-xs sm:text-sm text-gray-500 truncate">
                             /{item.slug}
                           </div>
                         </div>
                       </div>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
+                    <td className="hidden sm:table-cell px-3 sm:px-6 py-3 sm:py-4 whitespace-nowrap">
                       <span className="text-sm text-gray-900 capitalize">
                         {item.type === 'MARKETING' ? 'Blog' : 
                          item.type === 'TOOL' && item.content?.includes('youtube') ? 'YouTube' :
                          item.type?.toLowerCase() || 'page'}
                       </span>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
+                    <td className="px-3 sm:px-6 py-3 sm:py-4 whitespace-nowrap">
                       <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getStatusColor(item.status)}`}>
                         {item.status}
                       </span>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td className="hidden md:table-cell px-3 sm:px-6 py-3 sm:py-4 whitespace-nowrap text-sm text-gray-900">
                       {item.views?.toLocaleString() || 0}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    <td className="hidden lg:table-cell px-3 sm:px-6 py-3 sm:py-4 whitespace-nowrap text-sm text-gray-500">
                       {new Date(item.updatedAt || item.lastModified).toLocaleDateString()}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                    <td className="px-3 sm:px-6 py-3 sm:py-4 whitespace-nowrap text-sm font-medium">
                       <div className="flex items-center space-x-2">
                         <Link
                           href={item.slug ? (item.status === 'DRAFT' ? `/preview/${item.slug}` : `/${item.slug}`) : '#'}

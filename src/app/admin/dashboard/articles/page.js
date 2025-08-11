@@ -103,15 +103,15 @@ export default function ArticlesPage() {
   ];
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6">
       {/* Header */}
-      <div className="bg-white rounded-lg border border-gray-200 p-6">
-        <div className="flex justify-between items-start">
+      <div className="bg-white rounded-lg border border-gray-200 p-4 sm:p-6">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">Article Generation</h1>
-            <p className="text-gray-600 mt-2">Generate articles by sending topics to the webhook</p>
+            <h1 className="text-xl sm:text-2xl font-bold text-gray-900">Article Generation</h1>
+            <p className="text-sm sm:text-base text-gray-600 mt-1 sm:mt-2">Generate articles by sending topics to the webhook</p>
           </div>
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
             <button
               onClick={async () => {
                 const response = await fetch('/api/webhooks/test-n8n', {
@@ -122,7 +122,7 @@ export default function ArticlesPage() {
                 const data = await response.json();
                 alert(`JSON Test: ${data.message}`);
               }}
-              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+              className="px-3 py-2 text-sm sm:px-4 sm:text-base bg-blue-600 text-white rounded-lg hover:bg-blue-700"
             >
               Test JSON
             </button>
@@ -136,7 +136,7 @@ export default function ArticlesPage() {
                 const data = await response.json();
                 alert(`Plain Text Test: ${data.message}`);
               }}
-              className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
+              className="px-3 py-2 text-sm sm:px-4 sm:text-base bg-green-600 text-white rounded-lg hover:bg-green-700"
             >
               Test Plain Text
             </button>
@@ -145,12 +145,12 @@ export default function ArticlesPage() {
       </div>
 
       {/* Form Selector Tabs */}
-      <div className="flex space-x-2 bg-gray-100 p-1 rounded-lg">
+      <div className="flex flex-col sm:flex-row sm:space-x-2 space-y-2 sm:space-y-0 bg-gray-100 p-1 rounded-lg">
         {forms.map((form) => (
           <button
             key={form.id}
             onClick={() => setActiveForm(form.id)}
-            className={`flex-1 px-4 py-2 rounded-md font-medium transition-colors ${
+            className={`flex-1 px-3 py-2 text-sm sm:text-base sm:px-4 rounded-md font-medium transition-colors ${
               activeForm === form.id
                 ? `${form.color} text-white`
                 : 'text-gray-600 hover:text-gray-900 hover:bg-white'
@@ -162,7 +162,7 @@ export default function ArticlesPage() {
       </div>
 
       {/* Generation Forms */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
         {forms.map((form) => (
           <div
             key={form.id}
@@ -170,11 +170,11 @@ export default function ArticlesPage() {
               activeForm === form.id ? 'border-blue-500 shadow-lg' : 'border-gray-200'
             }`}
           >
-            <div className={`px-6 py-4 ${form.color} text-white rounded-t-lg`}>
-              <h3 className="font-semibold">{form.name}</h3>
+            <div className={`px-4 sm:px-6 py-3 sm:py-4 ${form.color} text-white rounded-t-lg`}>
+              <h3 className="text-sm sm:text-base font-semibold">{form.name}</h3>
             </div>
             
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label htmlFor={`topic-${form.id}`} className="block text-sm font-medium text-gray-700 mb-2">
@@ -187,7 +187,7 @@ export default function ArticlesPage() {
                     value={activeForm === form.id ? formData.topic : ''}
                     onChange={handleChange}
                     placeholder="Enter a topic..."
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="w-full px-3 py-2 text-sm sm:text-base sm:px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     disabled={isGenerating || activeForm !== form.id}
                   />
                 </div>
@@ -211,7 +211,7 @@ export default function ArticlesPage() {
                 <button
                   type="submit"
                   disabled={isGenerating || activeForm !== form.id}
-                  className={`w-full px-4 py-2 ${form.color} text-white rounded-lg hover:opacity-90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed`}
+                  className={`w-full px-3 py-2 text-sm sm:text-base sm:px-4 ${form.color} text-white rounded-lg hover:opacity-90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed`}
                 >
                   {isGenerating && activeForm === form.id ? (
                     <span className="flex items-center justify-center">
@@ -233,8 +233,8 @@ export default function ArticlesPage() {
 
       {/* Articles List */}
       <div className="bg-white rounded-lg border border-gray-200">
-        <div className="px-6 py-4 border-b border-gray-200 flex items-center justify-between">
-          <h2 className="text-lg font-semibold text-gray-900">Recent Articles</h2>
+        <div className="px-4 sm:px-6 py-3 sm:py-4 border-b border-gray-200 flex items-center justify-between">
+          <h2 className="text-base sm:text-lg font-semibold text-gray-900">Recent Articles</h2>
           <div className="flex items-center gap-2">
             {hasProcessingArticles && (
               <span className="flex items-center text-sm text-blue-600">
@@ -247,7 +247,7 @@ export default function ArticlesPage() {
             )}
             <button
               onClick={() => mutateArticles()}
-              className="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded hover:bg-gray-200 transition-colors"
+              className="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-gray-100 text-gray-700 rounded hover:bg-gray-200 transition-colors"
             >
               Refresh
             </button>
@@ -266,11 +266,11 @@ export default function ArticlesPage() {
         ) : articles && articles.length > 0 ? (
           <div className="divide-y divide-gray-200">
             {articles.map((article) => (
-              <div key={article.id} className="px-6 py-4 hover:bg-gray-50 transition-colors">
-                <div className="flex items-center justify-between">
+              <div key={article.id} className="px-4 sm:px-6 py-3 sm:py-4 hover:bg-gray-50 transition-colors">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                   <div className="flex-1">
-                    <div className="flex items-center gap-2">
-                      <h3 className="text-sm font-medium text-gray-900">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <h3 className="text-sm font-medium text-gray-900 break-words">
                         {article.title}
                       </h3>
                       {article.source && (
@@ -297,7 +297,7 @@ export default function ArticlesPage() {
                       </span>
                     </div>
                   </div>
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center space-x-2 sm:space-x-3">
                     <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
                       article.status === 'PUBLISHED' ? 'bg-green-100 text-green-800' :
                       article.status === 'PROCESSING' ? 'bg-blue-100 text-blue-800 animate-pulse' :
@@ -312,7 +312,7 @@ export default function ArticlesPage() {
                       )}
                       {article.status === 'PROCESSING' ? 'Generating...' : article.status}
                     </span>
-                    <button className="text-sm text-blue-600 hover:text-blue-800">
+                    <button className="text-xs sm:text-sm text-blue-600 hover:text-blue-800">
                       View
                     </button>
                   </div>
