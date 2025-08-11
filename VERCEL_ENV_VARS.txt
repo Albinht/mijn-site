@@ -1,0 +1,36 @@
+# Environment Variables for Vercel
+# Go to: https://vercel.com/dashboard → Your Project → Settings → Environment Variables
+# Add each of these variables:
+
+DATABASE_URL=postgres://postgres.nldfmlhrxzijgpuuaffq:9M6rTs8BMECX1zyj@aws-0-us-east-1.pooler.supabase.com:6543/postgres?sslmode=require&pgbouncer=true
+
+POSTGRES_URL=postgres://postgres.nldfmlhrxzijgpuuaffq:9M6rTs8BMECX1zyj@aws-0-us-east-1.pooler.supabase.com:6543/postgres?sslmode=require&supa=base-pooler.x
+
+POSTGRES_PRISMA_URL=postgres://postgres.nldfmlhrxzijgpuuaffq:9M6rTs8BMECX1zyj@aws-0-us-east-1.pooler.supabase.com:6543/postgres?sslmode=require&pgbouncer=true
+
+POSTGRES_URL_NON_POOLING=postgres://postgres.nldfmlhrxzijgpuuaffq:9M6rTs8BMECX1zyj@aws-0-us-east-1.pooler.supabase.com:5432/postgres?sslmode=require
+
+POSTGRES_USER=postgres
+
+POSTGRES_HOST=db.nldfmlhrxzijgpuuaffq.supabase.co
+
+POSTGRES_PASSWORD=9M6rTs8BMECX1zyj
+
+POSTGRES_DATABASE=postgres
+
+SUPABASE_URL=https://nldfmlhrxzijgpuuaffq.supabase.co
+
+NEXT_PUBLIC_SUPABASE_URL=https://nldfmlhrxzijgpuuaffq.supabase.co
+
+SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5sZGZtbGhyeHppamdwdXVhZmZxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ4OTI5NjQsImV4cCI6MjA3MDQ2ODk2NH0.VJE48UHvb25rcD8PfUATHjWR16W1TjOStX1EfDOty4U
+
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5sZGZtbGhyeHppamdwdXVhZmZxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ4OTI5NjQsImV4cCI6MjA3MDQ2ODk2NH0.VJE48UHvb25rcD8PfUATHjWR16W1TjOStX1EfDOty4U
+
+SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5sZGZtbGhyeHppamdwdXVhZmZxIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1NDg5Mjk2NCwiZXhwIjoyMDcwNDY4OTY0fQ.Fi0Mfn3WeBck0S7pWZ4Tv_SzPcexmmCS7RZwWxeMRH0
+
+SUPABASE_JWT_SECRET=TCXEp8oc16BlqjDHOm/PtcQ53wtFkOXuC9qyIupPau4GBLLv89qQNlcLFfXgpoMVLaU6A7TvbmFt8kXEczy15g==
+
+JWT_SECRET=your-super-secret-jwt-key-change-this-in-production-niblah-2025
+
+# Optional (if you have them):
+# GOOGLE_GENERATIVE_AI_API_KEY=your-google-ai-key-if-you-have-one

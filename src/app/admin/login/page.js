@@ -16,11 +16,21 @@ export default function LoginPage() {
     setError('');
     
     try {
-      const response = await fetch('/api/auth/login', {
+      // Try the regular login first, fallback to simple login if it fails
+      let response = await fetch('/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
+      
+      // If regular login fails with 500 (database error), try simple login
+      if (response.status === 500) {
+        response = await fetch('/api/auth/simple-login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        });
+      }
       
       const data = await response.json();
       
