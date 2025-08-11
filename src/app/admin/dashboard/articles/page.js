@@ -1,7 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useArticles, useGenerateArticle } from '@/hooks/useApi';
+import { useArticles } from '@/hooks/useApi';
+
+// Webhook URL constant
+const WEBHOOK_URL = 'https://n8n-n8n.42giwj.easypanel.host/webhook/2f67b999-ee19-471a-9911-054d76177650';
 
 export default function ArticlesPage() {
   const [activeForm, setActiveForm] = useState('shipsquared');
@@ -9,9 +12,9 @@ export default function ArticlesPage() {
   const [error, setError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const [hasProcessingArticles, setHasProcessingArticles] = useState(false);
+  const [isGenerating, setIsGenerating] = useState(false);
   
   const { articles, isLoading, isError, mutate: mutateArticles } = useArticles({ limit: 10 });
-  const { generateArticle, isGenerating } = useGenerateArticle();
   
   // Check for processing articles and setup polling
   useEffect(() => {
@@ -40,25 +43,51 @@ export default function ArticlesPage() {
 
     setError('');
     setSuccessMessage('');
+    setIsGenerating(true);
 
     try {
-      // Simple - just send topic to webhook
-      const result = await generateArticle({
-        topic: formData.topic,
-        source: activeForm
+      // Direct webhook integration - send data directly to n8n webhook
+      const response = await fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          form: activeForm.toUpperCase(),
+          topic: formData.topic,
+          timestamp: new Date().toISOString()
+        })
       });
       
-      if (result.success) {
-        setSuccessMessage('Article sent to webhook! It will appear here when ready.');
+      if (response.ok) {
+        setSuccessMessage('✅ Article sent to webhook successfully! It will appear here when ready.');
         setFormData({ topic: '' });
-        // Refresh articles list
+        // Refresh articles list after a short delay
         setTimeout(() => mutateArticles(), 2000);
       } else {
-        setError(result.error?.message || 'Failed to send to webhook');
+        // Handle different error status codes
+        if (response.status === 404) {
+          setError('Webhook endpoint not found. Please check the webhook URL.');
+        } else if (response.status === 500) {
+          setError('Webhook server error. The n8n service may be experiencing issues.');
+        } else if (response.status === 503) {
+          setError('Webhook service unavailable. Please try again later.');
+        } else {
+          setError(`Failed to send to webhook (Status: ${response.status})`);
+        }
       }
     } catch (err) {
-      console.error('Article generation error:', err);
-      setError(err.message || 'An error occurred');
+      console.error('Webhook error:', err);
+      // Handle network errors
+      if (err.name === 'TypeError' && err.message.includes('fetch')) {
+        setError('Network error: Unable to connect to webhook. Please check your connection.');
+      } else if (err.name === 'AbortError') {
+        setError('Request timeout: The webhook took too long to respond.');
+      } else {
+        setError(err.message || 'An unexpected error occurred');
+      }
+    } finally {
+      setIsGenerating(false);
     }
   };
 
