@@ -22,9 +22,9 @@ export async function POST(request) {
     try {
       const startTime = Date.now();
       
-      // Try with a 5 second timeout
+      // Try with a 60 second timeout for slow n8n workflows
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 5000);
+      const timeoutId = setTimeout(() => controller.abort(), 60000);
       
       const response = await fetch(webhookUrl, {
         method: 'POST',

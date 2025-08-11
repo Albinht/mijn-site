@@ -12,6 +12,7 @@ export default function ArticlesPage() {
   const [showWebhookSettings, setShowWebhookSettings] = useState(false);
   const [testingWebhook, setTestingWebhook] = useState(null);
   const [testResult, setTestResult] = useState(null);
+  const [hasProcessingArticles, setHasProcessingArticles] = useState(false);
   
   // Webhook configurations for each form
   const [webhooks, setWebhooks] = useState({
@@ -22,6 +23,23 @@ export default function ArticlesPage() {
   
   const { articles, isLoading, isError, mutate: mutateArticles } = useArticles({ limit: 10 });
   const { generateArticle, isGenerating } = useGenerateArticle();
+  
+  // Check for processing articles and setup polling
+  useEffect(() => {
+    if (articles) {
+      const processingExists = articles.some(article => article.status === 'PROCESSING');
+      setHasProcessingArticles(processingExists);
+      
+      // Poll for updates if there are processing articles
+      if (processingExists) {
+        const interval = setInterval(() => {
+          mutateArticles();
+        }, 5000); // Poll every 5 seconds
+        
+        return () => clearInterval(interval);
+      }
+    }
+  }, [articles, mutateArticles]);
 
   // Load webhooks from localStorage or settings
   useEffect(() => {
@@ -62,10 +80,14 @@ export default function ArticlesPage() {
       });
       
       if (result.success) {
-        setSuccessMessage(`Article generation started successfully for ${activeForm === 'shipsquared' ? 'SHIPSQUARED' : activeForm === 'jillrocket' ? 'Jillrocket.nl' : 'Bia-finance.nl'}!`);
+        if (result.data?.async) {
+          setSuccessMessage(`Article generation started! Your article will be ready shortly. The page will auto-refresh.`);
+        } else {
+          setSuccessMessage(`Article generated successfully for ${activeForm === 'shipsquared' ? 'SHIPSQUARED' : activeForm === 'jillrocket' ? 'Jillrocket.nl' : 'Bia-finance.nl'}!`);
+        }
         setFormData({ topic: '' });
         // Refresh articles list
-        mutateArticles();
+        setTimeout(() => mutateArticles(), 1000);
       } else {
         setError('Failed to generate article');
       }
@@ -345,8 +367,25 @@ export default function ArticlesPage() {
 
       {/* Articles List */}
       <div className="bg-white rounded-lg border border-gray-200">
-        <div className="px-6 py-4 border-b border-gray-200">
+        <div className="px-6 py-4 border-b border-gray-200 flex items-center justify-between">
           <h2 className="text-lg font-semibold text-gray-900">Recent Articles</h2>
+          <div className="flex items-center gap-2">
+            {hasProcessingArticles && (
+              <span className="flex items-center text-sm text-blue-600">
+                <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Auto-refreshing...
+              </span>
+            )}
+            <button
+              onClick={() => mutateArticles()}
+              className="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded hover:bg-gray-200 transition-colors"
+            >
+              Refresh
+            </button>
+          </div>
         </div>
         
         {isLoading ? (
@@ -417,4 +456,15 @@ export default function ArticlesPage() {
       </div>
     </div>
   );
+}
+
+// Helper functions
+function formatDate(date) {
+  return new Date(date).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit'
+  });
 }

@@ -113,7 +113,7 @@ export function useArticle(id) {
 
 export function useGenerateArticle() {
   const { trigger, isMutating } = useSWRMutation(
-    '/api/articles/generate',
+    '/api/articles/generate-async', // Use async endpoint to avoid timeouts
     mutationFetcher
   );
   

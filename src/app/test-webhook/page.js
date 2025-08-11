@@ -114,7 +114,7 @@ export default function TestWebhookPage() {
             <li>• This page tests the webhook directly without authentication</li>
             <li>• Check browser console (F12) for additional logs</li>
             <li>• Check server logs for backend debugging info</li>
-            <li>• Timeout is set to 5 seconds</li>
+            <li>• Timeout is set to 60 seconds for slow n8n workflows</li>
           </ul>
         </div>
       </div>
