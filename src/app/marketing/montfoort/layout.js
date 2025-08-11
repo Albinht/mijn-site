@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Montfoort | Marketing Bureau IJsselstreek',
     description: 'Marketing specialist voor historisch Montfoort. Expert in IJsselstreek marketing, toerisme en lokale MKB groei.',
-    url: 'https://www.samautomation.nl/marketing/montfoort',
+    url: 'https://www.niblah.nl/marketing/montfoort',
     siteName: 'SAM Automation Marketing',
     locale: 'nl_NL',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://www.samautomation.nl/marketing/montfoort',
+    canonical: 'https://www.niblah.nl/marketing/montfoort',
   },
   robots: {
     index: true,

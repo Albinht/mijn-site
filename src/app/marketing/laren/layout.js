@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'Luxury Marketing Specialist Laren | Premium Het Gooi Bureau',
     description: 'Exclusieve marketing voor luxury brands in Laren en Het Gooi. Specialist in high-net-worth targeting en premium positionering.',
-    url: 'https://www.samautomation.nl/marketing/laren',
+    url: 'https://www.niblah.nl/marketing/laren',
     siteName: 'SAM Automation Marketing',
     locale: 'nl_NL',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://www.samautomation.nl/marketing/laren',
+    canonical: 'https://www.Niblah.com/marketing/laren',
   },
   robots: {
     index: true,

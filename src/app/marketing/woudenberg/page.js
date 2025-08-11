@@ -36,7 +36,7 @@ export default function MarketingWoudenberg() {
           name="description"
           content="Marketing specialist Woudenberg met kennis van de Utrechtse Heuvelrug. Bereik klanten tussen Amersfoort en Veenendaal. ✓ Lokale SEO expert ✓ Toerisme marketing ✓ MKB groei specialist"
         />
-        <link rel="canonical" href="https://wwww.samautomation.nl/marketing/woudenberg" />
+        <link rel="canonical" href="https://wwww.niblah.nl/marketing/woudenberg" />
       </Head>
 
       <main className="min-h-screen bg-white text-gray-900 px-6 py-2 md:py-6">

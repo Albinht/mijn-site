@@ -36,7 +36,7 @@ export default function MarketingLopik() {
           name="description"
           content="Marketing specialist Lopik met expertise in het Groene Hart. Bereik klanten van IJsselstein tot Schoonhoven. ✓ Lokale SEO ✓ Google Ads ✓ Agrarische & MKB marketing expertise"
         />
-        <link rel="canonical" href="https://wwww.samautomation.nl/marketing/lopik" />
+        <link rel="canonical" href="https://wwww.niblah.nl/marketing/lopik" />
       </Head>
 
       <main className="min-h-screen bg-white text-gray-900 px-6 py-2 md:py-6">

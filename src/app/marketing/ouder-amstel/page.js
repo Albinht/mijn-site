@@ -36,7 +36,7 @@ export default function MarketingOuderAmstel() {
           name="description"
           content="Exclusieve marketing specialist voor Ouder-Amstel bedrijven. Bereik welgestelde klanten in Duivendrecht, Ouderkerk aan de Amstel en Amsterdam Zuidoost. ✓ Luxe markt expertise ✓ Premium resultaten"
         />
-        <link rel="canonical" href="https://wwww.samautomation.nl/marketing/ouder-amstel" />
+        <link rel="canonical" href="https://wwww.niblah.nl/marketing/ouder-amstel" />
       </Head>
 
       <main className="min-h-screen bg-white text-gray-900 px-6 py-2 md:py-6">

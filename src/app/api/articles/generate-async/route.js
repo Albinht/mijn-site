@@ -63,16 +63,21 @@ export async function POST(request) {
       async: true
     };
     
-    // Fire and forget - send webhook in background
+    // Fire and forget - send webhook in background with timeout
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 90000); // 90 seconds timeout
+    
     fetch(webhookUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'User-Agent': 'ArticleGenerator/1.0'
       },
-      body: JSON.stringify(webhookPayload)
+      body: JSON.stringify(webhookPayload),
+      signal: controller.signal
     })
     .then(async (response) => {
+      clearTimeout(timeoutId);
       const responseText = await response.text();
       console.log('Async webhook response:', response.status, responseText?.substring(0, 200));
       
@@ -120,25 +125,35 @@ export async function POST(request) {
       }
     })
     .catch(async (error) => {
+      clearTimeout(timeoutId);
       console.error('Async webhook error:', error);
+      
+      let errorMessage = 'Unknown webhook error';
+      if (error.name === 'AbortError') {
+        errorMessage = 'Webhook timeout - n8n did not respond within 90 seconds. The n8n service may be down or experiencing issues.';
+      } else if (error.message.includes('fetch failed')) {
+        errorMessage = 'Could not connect to webhook URL. Please check if n8n is running.';
+      } else {
+        errorMessage = error.message;
+      }
       
       // Log the error
       await prisma.webhookLog.create({
         data: {
           url: webhookUrl,
           payload: webhookPayload,
-          response: { error: error.message },
+          response: { error: errorMessage, details: error.message },
           statusCode: 0,
           success: false
         }
       }).catch(console.error);
       
-      // Update article to DRAFT
+      // Update article to DRAFT with clear error message
       await prisma.article.update({
         where: { id: article.id },
         data: { 
           status: 'DRAFT',
-          content: `Webhook error: ${error.message}`
+          content: `⚠️ Webhook Error: ${errorMessage}\n\nThe article could not be generated automatically. You can:\n1. Check if n8n is running and accessible\n2. Manually add content to this article\n3. Try generating again later`
         }
       }).catch(console.error);
     });

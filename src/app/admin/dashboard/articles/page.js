@@ -13,6 +13,9 @@ export default function ArticlesPage() {
   const [testingWebhook, setTestingWebhook] = useState(null);
   const [testResult, setTestResult] = useState(null);
   const [hasProcessingArticles, setHasProcessingArticles] = useState(false);
+  const [webhookHealth, setWebhookHealth] = useState({});
+  const [showManualForm, setShowManualForm] = useState(false);
+  const [manualContent, setManualContent] = useState('');
   
   // Webhook configurations for each form
   const [webhooks, setWebhooks] = useState({
@@ -47,7 +50,24 @@ export default function ArticlesPage() {
     if (savedWebhooks) {
       setWebhooks(JSON.parse(savedWebhooks));
     }
+    
+    // Check webhook health
+    checkWebhookHealth();
   }, []);
+  
+  const checkWebhookHealth = async () => {
+    for (const [key, url] of Object.entries(webhooks)) {
+      if (url) {
+        try {
+          const response = await fetch(`/api/webhooks/health?url=${encodeURIComponent(url)}`);
+          const data = await response.json();
+          setWebhookHealth(prev => ({ ...prev, [key]: data }));
+        } catch (error) {
+          setWebhookHealth(prev => ({ ...prev, [key]: { healthy: false, message: 'Health check failed' } }));
+        }
+      }
+    }
+  };
 
   // Save webhooks to localStorage
   const saveWebhooks = () => {
@@ -64,8 +84,9 @@ export default function ArticlesPage() {
       return;
     }
 
-    if (!webhooks[activeForm]) {
-      setError(`Please configure webhook for ${activeForm === 'shipsquared' ? 'SHIPSQUARED' : activeForm === 'jillrocket' ? 'Jillrocket.nl' : 'Bia-finance.nl'}`);
+    // Allow manual submission or webhook
+    if (!webhooks[activeForm] && !showManualForm) {
+      setError(`Please configure webhook for ${activeForm === 'shipsquared' ? 'SHIPSQUARED' : activeForm === 'jillrocket' ? 'Jillrocket.nl' : 'Bia-finance.nl'} or use manual mode`);
       return;
     }
 
@@ -73,11 +94,29 @@ export default function ArticlesPage() {
     setSuccessMessage('');
 
     try {
-      const result = await generateArticle({
-        topic: formData.topic,
-        source: activeForm,
-        webhook: webhooks[activeForm]
-      });
+      let result;
+      
+      if (showManualForm && manualContent) {
+        // Manual article creation
+        const response = await fetch('/api/articles/create-manual', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            topic: formData.topic,
+            content: manualContent,
+            source: activeForm,
+            status: 'PUBLISHED'
+          })
+        });
+        result = await response.json();
+      } else {
+        // Webhook generation
+        result = await generateArticle({
+          topic: formData.topic,
+          source: activeForm,
+          webhook: webhooks[activeForm]
+        });
+      }
       
       if (result.success) {
         if (result.data?.async) {
@@ -99,6 +138,34 @@ export default function ArticlesPage() {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     setError('');
+  };
+  
+  const handleRetry = async (article) => {
+    try {
+      // Find the webhook for the article's source
+      const webhook = webhooks[article.source] || webhooks.shipsquared;
+      
+      if (!webhook) {
+        setError('No webhook configured for retry');
+        return;
+      }
+      
+      // Retry with the original topic
+      const result = await generateArticle({
+        topic: article.topic,
+        source: article.source || 'shipsquared',
+        webhook: webhook
+      });
+      
+      if (result.success) {
+        setSuccessMessage('Retry started successfully');
+        setTimeout(() => mutateArticles(), 1000);
+      } else {
+        setError('Failed to retry article generation');
+      }
+    } catch (error) {
+      setError('Error retrying article: ' + error.message);
+    }
   };
 
   const handleWebhookChange = (form, value) => {
@@ -309,11 +376,44 @@ export default function ArticlesPage() {
 
                 {activeForm === form.id && (
                   <>
-                    {!webhooks[form.id] && (
+                    {!webhooks[form.id] && !showManualForm && (
                       <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3">
                         <p className="text-sm text-yellow-800">
-                          ⚠️ Please configure webhook in settings
+                          ⚠️ No webhook configured. <button 
+                            type="button"
+                            onClick={() => setShowManualForm(true)}
+                            className="underline font-medium"
+                          >
+                            Use manual mode instead
+                          </button>
                         </p>
+                      </div>
+                    )}
+                    
+                    {showManualForm && activeForm === form.id && (
+                      <div className="space-y-2">
+                        <div className="flex items-center justify-between">
+                          <label className="block text-sm font-medium text-gray-700">
+                            Manual Content
+                          </label>
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setShowManualForm(false);
+                              setManualContent('');
+                            }}
+                            className="text-sm text-blue-600 hover:text-blue-800"
+                          >
+                            Use webhook instead
+                          </button>
+                        </div>
+                        <textarea
+                          value={manualContent}
+                          onChange={(e) => setManualContent(e.target.value)}
+                          placeholder="Paste or write your article content here..."
+                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                          rows="6"
+                        />
                       </div>
                     )}
 
@@ -333,7 +433,7 @@ export default function ArticlesPage() {
 
                 <button
                   type="submit"
-                  disabled={isGenerating || activeForm !== form.id || !webhooks[form.id]}
+                  disabled={isGenerating || activeForm !== form.id || (!webhooks[form.id] && !showManualForm)}
                   className={`w-full px-4 py-2 ${form.color} text-white rounded-lg hover:opacity-90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed`}
                 >
                   {isGenerating && activeForm === form.id ? (
@@ -353,11 +453,28 @@ export default function ArticlesPage() {
               {/* Webhook Status Indicator */}
               <div className="mt-4 pt-4 border-t border-gray-100">
                 <div className="flex items-center justify-between text-xs">
-                  <span className="text-gray-500">Webhook:</span>
-                  <span className={`flex items-center ${webhooks[form.id] ? 'text-green-600' : 'text-red-600'}`}>
-                    <span className={`w-2 h-2 rounded-full mr-1 ${webhooks[form.id] ? 'bg-green-600' : 'bg-red-600'}`}></span>
-                    {webhooks[form.id] ? 'Configured' : 'Not configured'}
-                  </span>
+                  <span className="text-gray-500">Status:</span>
+                  {showManualForm && activeForm === form.id ? (
+                    <span className="flex items-center text-blue-600">
+                      <span className="w-2 h-2 rounded-full mr-1 bg-blue-600"></span>
+                      Manual Mode
+                    </span>
+                  ) : webhookHealth[form.id]?.healthy ? (
+                    <span className="flex items-center text-green-600">
+                      <span className="w-2 h-2 rounded-full mr-1 bg-green-600"></span>
+                      Webhook Active
+                    </span>
+                  ) : webhooks[form.id] ? (
+                    <span className="flex items-center text-yellow-600">
+                      <span className="w-2 h-2 rounded-full mr-1 bg-yellow-600 animate-pulse"></span>
+                      Webhook Down
+                    </span>
+                  ) : (
+                    <span className="flex items-center text-red-600">
+                      <span className="w-2 h-2 rounded-full mr-1 bg-red-600"></span>
+                      Not configured
+                    </span>
+                  )}
                 </div>
               </div>
             </div>
@@ -437,9 +554,28 @@ export default function ArticlesPage() {
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getStatusBadge(article.status)}`}>
-                      {article.status}
+                    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                      article.status === 'PUBLISHED' ? 'bg-green-100 text-green-800' :
+                      article.status === 'PROCESSING' ? 'bg-blue-100 text-blue-800 animate-pulse' :
+                      article.status === 'DRAFT' ? 'bg-yellow-100 text-yellow-800' :
+                      'bg-gray-100 text-gray-800'
+                    }`}>
+                      {article.status === 'PROCESSING' && (
+                        <svg className="animate-spin -ml-0.5 mr-1.5 h-3 w-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                      )}
+                      {article.status === 'PROCESSING' ? 'Generating...' : article.status}
                     </span>
+                    {article.status === 'DRAFT' && article.content?.includes('Webhook Error') && (
+                      <button 
+                        onClick={() => handleRetry(article)}
+                        className="text-sm text-orange-600 hover:text-orange-800"
+                      >
+                        Retry
+                      </button>
+                    )}
                     <button className="text-sm text-blue-600 hover:text-blue-800">
                       View
                     </button>

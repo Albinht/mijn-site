@@ -36,7 +36,7 @@ export default function MarketingMontfoort() {
           name="description"
           content="Marketing specialist Montfoort met expertise in historische stadsmarketing. Bereik klanten langs de Hollandse IJssel van IJsselstein tot Oudewater. ✓ Lokale SEO ✓ Toerisme marketing ✓ MKB groei"
         />
-        <link rel="canonical" href="https://wwww.samautomation.nl/marketing/montfoort" />
+        <link rel="canonical" href="https://wwww.niblah.nl/marketing/montfoort" />
       </Head>
 
       <main className="min-h-screen bg-white text-gray-900 px-6 py-2 md:py-6">

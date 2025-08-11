@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Ouder-Amstel | Premium Marketing Bureau',
     description: 'Exclusieve marketing voor welgestelde gemeente Ouder-Amstel. Bereik premium klanten in Duivendrecht en Ouderkerk.',
-    url: 'https://www.samautomation.nl/marketing/ouder-amstel',
+    url: 'https://www.niblah.nl/marketing/ouder-amstel',
     siteName: 'SAM Automation Marketing',
     locale: 'nl_NL',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://www.samautomation.nl/marketing/ouder-amstel',
+    canonical: 'https://www.niblah.nl/marketing/ouder-amstel',
   },
   robots: {
     index: true,

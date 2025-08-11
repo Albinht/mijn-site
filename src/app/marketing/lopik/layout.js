@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Lopik | Marketing Bureau Groene Hart',
     description: 'Marketing specialist voor Lopik bedrijven. Expert in Groene Hart marketing, agrarische sector en lokale MKB groei.',
-    url: 'https://www.samautomation.nl/marketing/lopik',
+    url: 'https://www.niblah.nl/marketing/lopik',
     siteName: 'SAM Automation Marketing',
     locale: 'nl_NL',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://www.samautomation.nl/marketing/lopik',
+    canonical: 'https://www.niblah.nl/marketing/lopik',
   },
   robots: {
     index: true,
