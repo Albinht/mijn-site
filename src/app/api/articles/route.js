@@ -2,11 +2,21 @@ import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 import { articleQuerySchema } from '@/lib/validations';
 import { formatResponse, formatError } from '@/lib/utils';
+import { verifyAuth } from '@/lib/auth-utils';
 
 
 // GET /api/articles - List all articles
 export async function GET(request) {
   try {
+    // Verify authentication
+    const user = await verifyAuth(request);
+    if (!user) {
+      return NextResponse.json(
+        formatError('Unauthorized', 401),
+        { status: 401 }
+      );
+    }
+    
     const { searchParams } = new URL(request.url);
     const params = Object.fromEntries(searchParams);
     

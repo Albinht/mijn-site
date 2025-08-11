@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 import { createContentSchema, contentQuerySchema } from '@/lib/validations';
 import { generateSlug, formatResponse, formatError } from '@/lib/utils';
-import { verifySession } from '@/lib/auth-db';
+import { verifyAuth } from '@/lib/auth-utils';
 
 
 // GET /api/content - List all content with filtering and pagination
@@ -79,16 +79,13 @@ export async function GET(request) {
 // POST /api/content - Create new content
 export async function POST(request) {
   try {
-    // Verify authentication (skip in development for testing)
-    let session = { userId: 'dev-user' }; // Default for development
-    if (process.env.NODE_ENV === 'production') {
-      session = await verifySession(request);
-      if (!session) {
-        return NextResponse.json(
-          formatError('Unauthorized', 401),
-          { status: 401 }
-        );
-      }
+    // Verify authentication
+    const user = await verifyAuth(request);
+    if (!user) {
+      return NextResponse.json(
+        formatError('Unauthorized', 401),
+        { status: 401 }
+      );
     }
     
     const body = await request.json();
@@ -118,9 +115,9 @@ export async function POST(request) {
       views: 0
     };
     
-    // Only add authorId if we have a valid session with userId
-    if (session.userId && session.userId !== 'dev-user') {
-      pageData.authorId = session.userId;
+    // Only add authorId if we have a valid user with userId
+    if (user.userId) {
+      pageData.authorId = user.userId;
     }
     
     const page = await prisma.page.create({
@@ -128,10 +125,10 @@ export async function POST(request) {
     });
     
     // Log activity (only if we have a valid user)
-    if (session.userId && session.userId !== 'dev-user') {
+    if (user.userId) {
       await prisma.activityLog.create({
         data: {
-          userId: session.userId,
+          userId: user.userId,
           action: 'CREATE_PAGE',
           entity: 'page',
           entityId: page.id,

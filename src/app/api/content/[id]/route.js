@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 import { updateContentSchema } from '@/lib/validations';
 import { formatResponse, formatError } from '@/lib/utils';
-import { verifySession } from '@/lib/auth-db';
+import { verifyAuth } from '@/lib/auth-utils';
 
 
 // GET /api/content/:id - Get single content item
@@ -42,17 +42,15 @@ export async function PUT(request, { params }) {
   try {
     const { id } = await params;
     
-    // Verify authentication (skip in development for testing)
-    let session = { userId: 'dev-user' }; // Default for development
-    if (process.env.NODE_ENV === 'production') {
-      session = await verifySession(request);
-      if (!session) {
-        return NextResponse.json(
-          formatError('Unauthorized', 401),
-          { status: 401 }
-        );
-      }
+    // Verify authentication
+    const user = await verifyAuth(request);
+    if (!user) {
+      return NextResponse.json(
+        formatError('Unauthorized', 401),
+        { status: 401 }
+      );
     }
+    
     const body = await request.json();
     
     // Validate input
@@ -80,10 +78,10 @@ export async function PUT(request, { params }) {
     });
     
     // Log activity (only if we have a valid user)
-    if (session.userId && session.userId !== 'dev-user') {
+    if (user.userId) {
       await prisma.activityLog.create({
         data: {
-          userId: session.userId,
+          userId: user.userId,
           action: 'UPDATE_PAGE',
           entity: 'page',
           entityId: id,
@@ -114,16 +112,13 @@ export async function DELETE(request, { params }) {
   try {
     const { id } = await params;
     
-    // Verify authentication (skip in development for testing)
-    let session = { userId: 'dev-user' }; // Default for development
-    if (process.env.NODE_ENV === 'production') {
-      session = await verifySession(request);
-      if (!session) {
-        return NextResponse.json(
-          formatError('Unauthorized', 401),
-          { status: 401 }
-        );
-      }
+    // Verify authentication
+    const user = await verifyAuth(request);
+    if (!user) {
+      return NextResponse.json(
+        formatError('Unauthorized', 401),
+        { status: 401 }
+      );
     }
     
     // Check if content exists
@@ -144,10 +139,10 @@ export async function DELETE(request, { params }) {
     });
     
     // Log activity (only if we have a valid user)
-    if (session.userId && session.userId !== 'dev-user') {
+    if (user.userId) {
       await prisma.activityLog.create({
         data: {
-          userId: session.userId,
+          userId: user.userId,
           action: 'DELETE_PAGE',
           entity: 'page',
           entityId: id,
