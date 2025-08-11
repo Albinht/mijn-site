@@ -19,7 +19,7 @@ export default function ArticlesPage() {
   
   // Webhook configurations for each form
   const [webhooks, setWebhooks] = useState({
-    shipsquared: '',
+    shipsquared: 'https://n8n-n8n.42giwj.easypanel.host/webhook/2f67b999-ee19-471a-9911-054d76177650',
     jillrocket: '',
     biafinance: ''
   });
@@ -48,7 +48,13 @@ export default function ArticlesPage() {
   useEffect(() => {
     const savedWebhooks = localStorage.getItem('articleWebhooks');
     if (savedWebhooks) {
-      setWebhooks(JSON.parse(savedWebhooks));
+      const parsed = JSON.parse(savedWebhooks);
+      // Keep hardcoded shipsquared webhook, only update others
+      setWebhooks({
+        shipsquared: 'https://n8n-n8n.42giwj.easypanel.host/webhook/2f67b999-ee19-471a-9911-054d76177650',
+        jillrocket: parsed.jillrocket || '',
+        biafinance: parsed.biafinance || ''
+      });
     }
     
     // Check webhook health
@@ -71,7 +77,12 @@ export default function ArticlesPage() {
 
   // Save webhooks to localStorage
   const saveWebhooks = () => {
-    localStorage.setItem('articleWebhooks', JSON.stringify(webhooks));
+    // Always keep shipsquared webhook hardcoded
+    const toSave = {
+      ...webhooks,
+      shipsquared: 'https://n8n-n8n.42giwj.easypanel.host/webhook/2f67b999-ee19-471a-9911-054d76177650'
+    };
+    localStorage.setItem('articleWebhooks', JSON.stringify(toSave));
     setSuccessMessage('Webhook settings saved successfully!');
     setTimeout(() => setSuccessMessage(''), 3000);
   };
@@ -289,9 +300,10 @@ export default function ArticlesPage() {
                   <input
                     type="url"
                     value={webhooks[form.id]}
-                    onChange={(e) => handleWebhookChange(form.id, e.target.value)}
+                    onChange={(e) => form.id !== 'shipsquared' && handleWebhookChange(form.id, e.target.value)}
                     placeholder={`https://n8n-webhook-url-for-${form.id}...`}
-                    className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    disabled={form.id === 'shipsquared'}
+                    className={`flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${form.id === 'shipsquared' ? 'bg-gray-100 cursor-not-allowed' : ''}`}
                   />
                   <button
                     type="button"
