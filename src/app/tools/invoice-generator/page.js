@@ -7,13 +7,14 @@ import jsPDF from 'jspdf'
 export default function InvoiceGenerator() {
   const [invoiceData, setInvoiceData] = useState({
     // Invoice details
+    invoiceTitle: 'INVOICE',
     invoiceNumber: '',
     date: new Date().toISOString().split('T')[0],
     dueDate: '',
     
     // Billing info
     billFrom: '',
-    billTo: '',
+    billTo: ''
     
     // Items
     items: [
@@ -128,7 +129,7 @@ export default function InvoiceGenerator() {
     // Header
     doc.setFontSize(24)
     doc.setFont(undefined, 'bold')
-    doc.text('FACTUUR', pageWidth - margin - 50, yPosition)
+    doc.text(invoiceData.invoiceTitle || 'INVOICE', pageWidth - margin - 50, yPosition)
     
     doc.setFontSize(12)
     doc.setFont(undefined, 'normal')
@@ -274,7 +275,8 @@ export default function InvoiceGenerator() {
     const companyData = {
       billFrom: invoiceData.billFrom,
       logo: invoiceData.logo,
-      currency: invoiceData.currency
+      currency: invoiceData.currency,
+      invoiceTitle: invoiceData.invoiceTitle
     }
     localStorage.setItem('invoiceCompanyData', JSON.stringify(companyData))
     alert('Bedrijfsgegevens opgeslagen!')
@@ -289,7 +291,8 @@ export default function InvoiceGenerator() {
           ...prev,
           billFrom: companyData.billFrom || '',
           logo: companyData.logo || null,
-          currency: companyData.currency || 'EUR'
+          currency: companyData.currency || 'EUR',
+          invoiceTitle: companyData.invoiceTitle || 'INVOICE'
         }))
         if (companyData.logo) {
           setLogoPreview(companyData.logo)
@@ -327,6 +330,7 @@ export default function InvoiceGenerator() {
 
   const resetForm = () => {
     setInvoiceData({
+      invoiceTitle: 'INVOICE',
       invoiceNumber: '',
       date: new Date().toISOString().split('T')[0],
       dueDate: '',
@@ -413,6 +417,18 @@ export default function InvoiceGenerator() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-4 sm:mb-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Invoice Title
+                  </label>
+                  <input
+                    type="text"
+                    value={invoiceData.invoiceTitle}
+                    onChange={(e) => updateInvoiceData('invoiceTitle', e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                    placeholder="INVOICE"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
                     Invoice Number
                   </label>
                   <input
@@ -423,6 +439,9 @@ export default function InvoiceGenerator() {
                     placeholder="#001"
                   />
                 </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-4 sm:mb-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Currency
@@ -437,6 +456,7 @@ export default function InvoiceGenerator() {
                     <option value="GBP">GBP (£)</option>
                   </select>
                 </div>
+                <div></div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-4 sm:mb-6">
@@ -691,7 +711,7 @@ export default function InvoiceGenerator() {
                       />
                     )}
                     <div>
-                      <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">INVOICE</h1>
+                      <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">{invoiceData.invoiceTitle || 'INVOICE'}</h1>
                       <p className="text-gray-600">
                         {invoiceData.invoiceNumber ? `#${invoiceData.invoiceNumber}` : '#'}
                       </p>
