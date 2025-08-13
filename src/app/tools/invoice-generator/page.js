@@ -119,13 +119,31 @@ export default function InvoiceGenerator() {
     // Add logo at the top (if available)
     if (logoPreview) {
       try {
-        // Set maximum dimensions while maintaining aspect ratio
-        const maxWidth = 40
-        const maxHeight = 40
+        // Create an image to get natural dimensions
+        const img = new Image()
+        img.src = logoPreview
         
-        // Use the maximum dimensions that fit
-        doc.addImage(logoPreview, 'JPEG', margin, yPosition, maxWidth, maxHeight)
-        yPosition += maxHeight + 10 // Move down after logo with some spacing
+        // Calculate dimensions maintaining aspect ratio
+        const maxSize = 40
+        let logoWidth = maxSize
+        let logoHeight = maxSize
+        
+        if (img.width && img.height) {
+          const aspectRatio = img.width / img.height
+          if (aspectRatio > 1) {
+            // Wider than tall
+            logoWidth = maxSize
+            logoHeight = maxSize / aspectRatio
+          } else {
+            // Taller than wide or square
+            logoHeight = maxSize
+            logoWidth = maxSize * aspectRatio
+          }
+        }
+        
+        // Add image with calculated dimensions
+        doc.addImage(logoPreview, 'JPEG', margin, yPosition, logoWidth, logoHeight)
+        yPosition += logoHeight + 10 // Move down after logo with some spacing
       } catch (error) {
         console.log('Logo could not be added to PDF')
       }
