@@ -113,48 +113,66 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Blueprints */}
+          {/* Tools */}
           <div>
             <div className="mb-4">
               <p className="text-[22px] font-medium leading-[130%] capitalize" style={{ color: '#8c2891' }}>
-                Blueprints
+                Tools
               </p>
             </div>
             <ul className="space-y-3">
               <li>
                 <Link 
-                  href="/blueprints/seo" 
+                  href="/tools/ai-marketing-audit" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
                   style={{ color: 'rgb(0, 0, 0)' }}
                 >
-                  SEO Blueprint
+                  AI Marketing Audit
                 </Link>
               </li>
               <li>
                 <Link 
-                  href="/blueprints/google-ads" 
+                  href="/tools/logo-animator" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
                   style={{ color: 'rgb(0, 0, 0)' }}
                 >
-                  Google Ads Blueprint
+                  Logo Animator
                 </Link>
               </li>
               <li>
                 <Link 
-                  href="/blueprints/klaviyo" 
+                  href="/tools/invoice-generator" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
                   style={{ color: 'rgb(0, 0, 0)' }}
                 >
-                  Klaviyo Blueprint
+                  Invoice Generator
                 </Link>
               </li>
               <li>
                 <Link 
-                  href="/blueprints/meta" 
+                  href="/tools/break-even-roas-calculator" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
                   style={{ color: 'rgb(0, 0, 0)' }}
                 >
-                  Meta Blueprint
+                  ROAS Calculator
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/tools/cpa-calculator" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  CPA Calculator
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/tools/tekens-tellen" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Tekens Tellen Tool
                 </Link>
               </li>
             </ul>

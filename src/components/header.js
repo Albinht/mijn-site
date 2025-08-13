@@ -97,6 +97,7 @@ export default function Header() {
               <div className="absolute mt-2 w-64 bg-white border border-gray-200 rounded-md shadow-lg z-10">
                 <Link href="/tools/ai-marketing-audit" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">AI Marketing Audit</Link>
                 <Link href="/tools/logo-animator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">🎨 Logo Animator</Link>
+                <Link href="/tools/invoice-generator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">📄 Invoice Generator</Link>
                 <Link href="/tools/break-even-roas-calculator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"> Break even ROAS Calculator</Link>
                 <Link href="/tools/cpa-calculator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">CPA Calculator</Link>
                 <Link href="/tools/tekens-tellen" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Tekens Tellen Tool</Link>
@@ -278,6 +279,7 @@ export default function Header() {
                 <div className="ml-4 mt-2 space-y-2">
                   <Link href="/tools/ai-marketing-audit" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>🤖 AI Marketing Audit</Link>
                   <Link href="/tools/logo-animator" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>🎨 Logo Animator</Link>
+                  <Link href="/tools/invoice-generator" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>📄 Invoice Generator</Link>
                   <Link href="/tools/break-even-roas-calculator" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>📊 ROAS Calculator</Link>
                   <Link href="/tools/cpa-calculator" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>💰 CPA Calculator</Link>
                   <Link href="/tools/tekens-tellen" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>📝 Tekens Tellen Tool</Link>
