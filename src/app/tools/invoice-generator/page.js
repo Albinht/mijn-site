@@ -14,7 +14,7 @@ export default function InvoiceGenerator() {
     
     // Billing info
     billFrom: '',
-    billTo: ''
+    billTo: '',
     
     // Items
     items: [
