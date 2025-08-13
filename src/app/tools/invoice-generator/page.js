@@ -153,23 +153,24 @@ export default function InvoiceGenerator() {
     doc.setFontSize(24)
     doc.setFont(undefined, 'bold')
     doc.text(invoiceData.invoiceTitle || 'INVOICE', margin, yPosition + 10)
+    yPosition += 20
     
-    // Invoice number on the right (aligned with title)
+    // Invoice number on the left (below title)
     doc.setFontSize(12)
     doc.setFont(undefined, 'normal')
-    doc.text(`#${invoiceData.invoiceNumber || ''}`, pageWidth - margin - 20, yPosition + 10)
-    
-    // Move down after title
-    yPosition += 20
+    doc.text(`#${invoiceData.invoiceNumber || ''}`, margin, yPosition)
+    yPosition += 10
 
-    // Date information - aligned to the right
+    // Date information - aligned to the left
     doc.setFontSize(10)
-    doc.text(`Datum: ${invoiceData.date}`, pageWidth - margin - 50, yPosition + 10)
+    doc.text(`Datum: ${invoiceData.date}`, margin, yPosition)
+    yPosition += 7
     if (invoiceData.dueDate) {
-      doc.text(`Vervaldatum: ${invoiceData.dueDate}`, pageWidth - margin - 50, yPosition + 17)
+      doc.text(`Vervaldatum: ${invoiceData.dueDate}`, margin, yPosition)
+      yPosition += 7
     }
     
-    yPosition += 30
+    yPosition += 15
 
     // Billing information
     doc.setFontSize(12)
@@ -224,24 +225,30 @@ export default function InvoiceGenerator() {
     
     // Totals section
     const totalsX = pageWidth - 100
+    const amountX = pageWidth - margin - 5
     doc.line(totalsX, yPosition, pageWidth - margin, yPosition)
     yPosition += 7
     
-    doc.text(`Subtotaal: ${getCurrencySymbol()} ${totals.subtotal.toFixed(2)}`, totalsX, yPosition)
+    // Subtotal - label left, amount right
+    doc.text('Subtotaal:', totalsX, yPosition)
+    doc.text(`${getCurrencySymbol()} ${totals.subtotal.toFixed(2)}`, amountX, yPosition, { align: 'right' })
     yPosition += 7
     
     if (invoiceData.discount > 0) {
-      doc.text(`Korting (${invoiceData.discount}%): -${getCurrencySymbol()} ${totals.discountAmount.toFixed(2)}`, totalsX, yPosition)
+      doc.text(`Korting (${invoiceData.discount}%):`, totalsX, yPosition)
+      doc.text(`-${getCurrencySymbol()} ${totals.discountAmount.toFixed(2)}`, amountX, yPosition, { align: 'right' })
       yPosition += 7
     }
     
     if (invoiceData.tax > 0) {
-      doc.text(`BTW (${invoiceData.tax}%): ${getCurrencySymbol()} ${totals.taxAmount.toFixed(2)}`, totalsX, yPosition)
+      doc.text(`BTW (${invoiceData.tax}%):`, totalsX, yPosition)
+      doc.text(`${getCurrencySymbol()} ${totals.taxAmount.toFixed(2)}`, amountX, yPosition, { align: 'right' })
       yPosition += 7
     }
     
     if (invoiceData.shipping > 0) {
-      doc.text(`Verzendkosten: ${getCurrencySymbol()} ${parseFloat(invoiceData.shipping).toFixed(2)}`, totalsX, yPosition)
+      doc.text('Verzendkosten:', totalsX, yPosition)
+      doc.text(`${getCurrencySymbol()} ${parseFloat(invoiceData.shipping).toFixed(2)}`, amountX, yPosition, { align: 'right' })
       yPosition += 7
     }
     
@@ -249,7 +256,8 @@ export default function InvoiceGenerator() {
     doc.setFont(undefined, 'bold')
     doc.line(totalsX, yPosition, pageWidth - margin, yPosition)
     yPosition += 7
-    doc.text(`Totaal: ${getCurrencySymbol()} ${totals.total.toFixed(2)}`, totalsX, yPosition)
+    doc.text('Totaal:', totalsX, yPosition)
+    doc.text(`${getCurrencySymbol()} ${totals.total.toFixed(2)}`, amountX, yPosition, { align: 'right' })
     
     // Notes
     if (invoiceData.notes) {
