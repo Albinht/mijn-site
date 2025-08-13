@@ -116,35 +116,42 @@ export default function InvoiceGenerator() {
       return y + (lines.length * 7)
     }
 
-    // Add logo if available
+    // Add logo at the top (if available)
     if (logoPreview) {
       try {
-        doc.addImage(logoPreview, 'JPEG', margin, yPosition, 40, 30)
-        yPosition += 40
+        // Set maximum dimensions while maintaining aspect ratio
+        const maxWidth = 40
+        const maxHeight = 40
+        
+        // Use the maximum dimensions that fit
+        doc.addImage(logoPreview, 'JPEG', margin, yPosition, maxWidth, maxHeight)
+        yPosition += maxHeight + 10 // Move down after logo with some spacing
       } catch (error) {
         console.log('Logo could not be added to PDF')
       }
     }
 
-    // Header
+    // Header - Title on the left (below logo if present)
     doc.setFontSize(24)
     doc.setFont(undefined, 'bold')
-    doc.text(invoiceData.invoiceTitle || 'INVOICE', pageWidth - margin - 50, yPosition)
+    doc.text(invoiceData.invoiceTitle || 'INVOICE', margin, yPosition + 10)
     
+    // Invoice number on the right (aligned with title)
     doc.setFontSize(12)
     doc.setFont(undefined, 'normal')
-    doc.text(`#${invoiceData.invoiceNumber || ''}`, pageWidth - margin - 50, yPosition + 10)
+    doc.text(`#${invoiceData.invoiceNumber || ''}`, pageWidth - margin - 20, yPosition + 10)
     
-    yPosition += 30
+    // Move down after title
+    yPosition += 20
 
-    // Date information
+    // Date information - aligned to the right
     doc.setFontSize(10)
-    doc.text(`Datum: ${invoiceData.date}`, pageWidth - margin - 60, yPosition)
+    doc.text(`Datum: ${invoiceData.date}`, pageWidth - margin - 50, yPosition + 10)
     if (invoiceData.dueDate) {
-      doc.text(`Vervaldatum: ${invoiceData.dueDate}`, pageWidth - margin - 60, yPosition + 7)
+      doc.text(`Vervaldatum: ${invoiceData.dueDate}`, pageWidth - margin - 50, yPosition + 17)
     }
     
-    yPosition += 20
+    yPosition += 30
 
     // Billing information
     doc.setFontSize(12)
