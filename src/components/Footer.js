@@ -141,6 +141,15 @@ const Footer = () => {
               </li>
               <li>
                 <Link 
+                  href="/tools/pdf-editor" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  PDF Editor
+                </Link>
+              </li>
+              <li>
+                <Link 
                   href="/tools/invoice-generator" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
                   style={{ color: 'rgb(0, 0, 0)' }}

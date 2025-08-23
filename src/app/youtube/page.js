@@ -14,9 +14,21 @@ import apifyVideoImage from '../../assets/Apify video.jpg'
 import shopifyTranslateAiImage from '../../assets/SCR-20250806-pnlp.png'
 import gscAutoIndexerImage from '../../assets/indexing.png'
 import credentialsImage from '../../assets/credentials.jpeg'
+import shopifyMultilanguageImage from '../../assets/SCR-20250806-pnlp.png'
 
 // Blog posts data - easily add new posts here (sorted newest to oldest)
 const blogPosts = [
+  {
+    id: 13,
+    slug: "automate-shopify-multi-language-for-free-no-translation-apps",
+    title: "UPDATED: Automate Shopify Multi Language for Free - no need for Shopify translation apps",
+    excerpt: "Discover how to automate multi-language support for your Shopify store without expensive translation apps. Learn advanced automation techniques using n8n, AI translation, and smart workflows to scale internationally with minimal manual work.",
+    publishDate: "2025-08-23",
+    readTime: "25 min read",
+    category: "Shopify Automation",
+    thumbnail: shopifyMultilanguageImage,
+    tags: ["Shopify", "Automation", "Translation", "n8n", "AI", "International", "E-commerce", "SEO"]
+  },
   {
     id: 12,
     slug: "google-api-credentials-setup",
