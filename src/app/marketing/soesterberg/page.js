@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import Header from '/Users/al/mijn-site/src/components/Header'
-import Footer from '/Users/al/mijn-site/src/components/Footer'
-import FeatureSection from '/Users/al/mijn-site/src/components/FeatureSection'
-import ReviewSlider from '/Users/al/mijn-site/src/components/ReviewSlider'
+import Header from '../../../components/header'
+import Footer from '../../../components/Footer'
+import FeatureSection from '../../../components/FeatureSection'
+import ReviewSlider from '../../../components/ReviewSlider'
 
 export default function SoesterbergMarketing() {
   const dutchReviews = [
