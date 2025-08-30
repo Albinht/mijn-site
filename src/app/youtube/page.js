@@ -15,9 +15,21 @@ import shopifyTranslateAiImage from '../../assets/SCR-20250806-pnlp.png'
 import gscAutoIndexerImage from '../../assets/indexing.png'
 import credentialsImage from '../../assets/credentials.jpeg'
 import shopifyMultilanguageImage from '../../assets/SCR-20250806-pnlp.png'
+import googleTrendsImage from '../../assets/maxresdefault.jpg'
 
 // Blog posts data - easily add new posts here (sorted newest to oldest)
 const blogPosts = [
+  {
+    id: 14,
+    slug: "automated-google-trends-scanner-to-find-winning-niches",
+    title: "Automated Google Trends Scanner To Find Winning Niches - 24/7 Opportunity Detection",
+    excerpt: "Discover how to build an automated AI system that scans Google Trends 24/7 and identifies profitable eCommerce opportunities while you sleep. Complete n8n workflow template included with AI trend analysis and business opportunity scoring.",
+    publishDate: "2025-08-28",
+    readTime: "22 min read",
+    category: "Business Automation",
+    thumbnail: googleTrendsImage,
+    tags: ["Google Trends", "Automation", "n8n", "AI", "E-commerce", "Business", "Market Research"]
+  },
   {
     id: 13,
     slug: "automate-shopify-multi-language-for-free-no-translation-apps",
