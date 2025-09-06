@@ -262,7 +262,7 @@ export default function HTMLValidator() {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-blue-800">
             <div className="space-y-2">
-              <p>• <strong>DOCTYPE Declaration:</strong> Always include <!DOCTYPE html></p>
+              <p>• <strong>DOCTYPE Declaration:</strong> Always include &lt;!DOCTYPE html&gt;</p>
               <p>• <strong>Semantic HTML:</strong> Use appropriate HTML elements for content</p>
               <p>• <strong>Alt Attributes:</strong> Include alt text for all images</p>
               <p>• <strong>Form Labels:</strong> Associate labels with form controls</p>

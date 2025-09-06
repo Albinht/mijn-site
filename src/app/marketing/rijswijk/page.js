@@ -1,9 +1,6 @@
 import Head from 'next/head'
-import Header from '../../../components/header'
-import Hero from '../../../components/Hero'
 import FeatureSection from '../../../components/FeatureSection'
 import ReviewSlider from '../../../components/ReviewSlider'
-import Footer from '../../../components/Footer'
 import ContactForm from '../../../components/ContactForm'
 
 const dutchReviews = [
@@ -144,21 +141,6 @@ export default function RijswijkPage() {
         <link rel="canonical" href="https://niblah.com/marketing/rijswijk" />
       </Head>
       
-      <Header location="Rijswijk" />
-      
-      <Hero 
-        title="Digital Marketing Agency Rijswijk"
-        subtitle="Jouw B2B marketing partner in de Den Haag regio"
-        description="Rijswijk, strategisch gelegen in het hart van de Den Haag regio met circa 54.000 inwoners, vormt een belangrijke schakel tussen de regering, internationale organisaties en het Nederlandse bedrijfsleven. Deze moderne gemeente herbergt een unieke mix van overheidsorganisaties, multinationals, professionele dienstverleners en internationale bedrijven die profiteren van de nabijheid van het regeringscentrum. Als specialist in B2B digitale marketing voor de government en business sector begrijp ik hoe bedrijven in Rijswijk zichtbaar kunnen worden voor hun professionele doelgroepen. Van consultancy firms tot IT-bedrijven - ik help jouw bedrijf groeien door strategische marketing die aansluit bij de professionele standaarden van deze dynamische business community."
-        ctaText="Versterk je B2B positie"
-        ctaLink="#contact"
-      />
-
-      <FeatureSection 
-        features={features}
-        title="Online Marketing Diensten Rijswijk"
-        subtitle="Gespecialiseerd in B2B en government marketing"
-      />
 
       <ReviewSlider reviews={dutchReviews.concat(dutchMoreReviews)} />
 
@@ -225,11 +207,6 @@ export default function RijswijkPage() {
         subtitle="Klaar om zichtbaarder te worden voor government en international business? Neem contact op voor een professionele analyse van je huidige B2B marketing positie."
       />
 
-      <Footer 
-        location="Rijswijk"
-        serviceArea="Actief in Rijswijk en omliggende gemeenten"
-        areas={["Den Haag", "Delft", "Voorburg", "Leidschendam", "Wassenaar"]}
-      />
     </>
   )
 }

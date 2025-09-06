@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import HeroSection from '../../../components/HeroSection'
 import FeatureSection from '../../../components/FeatureSection'
 import ReviewSlider from '../../../components/ReviewSlider'
 
@@ -132,15 +131,6 @@ export default function WestlandPage() {
         </script>
       </Head>
 
-      <HeroSection
-        title="SEO Specialist Westland"
-        subtitle="Digital Marketing Agency Westland"
-        description="Het Westland staat bekend als het glastuinbouwcentrum van Europa met meer dan 268.000 inwoners verspreid over Naaldwijk, Wateringen, De Lier, Monster en Honselersdijk. In dit unieke gebied waar innovatie en traditie samenkomen, helpen we bedrijven uit de glastuinbouw, agro-industrie en logistiek sector om online te groeien. Van internationale exporteurs tot lokale tuincentra - onze SEO expertise zorgt ervoor dat uw bedrijf vindbaar is voor de juiste doelgroep."
-        ctaText="Vraag SEO Advies Aan"
-        ctaLink="/contact"
-        imageSrc="/assets/hero-seo.jpg"
-        imageAlt="SEO Specialist Westland - Online Marketing"
-      />
 
       <FeatureSection
         title="Waarom Kiezen Voor SEO in Westland?"

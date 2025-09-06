@@ -1,7 +1,6 @@
 import Head from 'next/head'
-import HeroSection from '../../../components/hero-section'
-import FeatureSection from '../../../components/feature-section'
-import ReviewSlider from '../../../components/review-slider'
+import FeatureSection from '../../../components/FeatureSection'
+import ReviewSlider from '../../../components/ReviewSlider'
 import ContactForm from '../../../components/ContactForm'
 
 const dutchReviews = [
@@ -166,14 +165,24 @@ export default function DenBoschPage() {
       </Head>
 
       <div className="min-h-screen bg-white">
-        <HeroSection 
-          title="Digital Marketing Agency Den Bosch"
-          subtitle="SEO Specialist & Online Marketing Bureau Noord-Brabant"
-          description="Versterk jouw online aanwezigheid in 's-Hertogenbosch en heel Noord-Brabant. Van het historische centrum met de imposante Sint-Jan tot de moderne bedrijventerreinen - wij zorgen dat jouw bedrijf vindbaar is waar het ertoe doet. Met 155.000+ inwoners, een rijke geschiedenis en als economisch centrum van Brabant biedt Den Bosch enorme kansen voor ondernemers die weten hoe ze online zichtbaar moeten zijn."
-          ctaText="Gratis SEO-Analyse Den Bosch"
-          ctaLink="#contact"
-          imageAlt="SEO specialist Den Bosch - Online marketing Noord-Brabant"
-        />
+        <section className="py-20 bg-gradient-to-r from-blue-50 to-indigo-50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center">
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                Digital Marketing Agency Den Bosch
+              </h1>
+              <p className="text-xl text-gray-600 mb-4">
+                SEO Specialist & Online Marketing Bureau Noord-Brabant
+              </p>
+              <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+                Versterk jouw online aanwezigheid in 's-Hertogenbosch en heel Noord-Brabant. Van het historische centrum met de imposante Sint-Jan tot de moderne bedrijventerreinen - wij zorgen dat jouw bedrijf vindbaar is waar het ertoe doet. Met 155.000+ inwoners, een rijke geschiedenis en als economisch centrum van Brabant biedt Den Bosch enorme kansen voor ondernemers die weten hoe ze online zichtbaar moeten zijn.
+              </p>
+              <a href="#contact" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                Gratis SEO-Analyse Den Bosch
+              </a>
+            </div>
+          </div>
+        </section>
 
         <FeatureSection 
           features={features}

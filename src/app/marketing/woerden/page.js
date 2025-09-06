@@ -1,9 +1,6 @@
 import Head from 'next/head'
-import Header from '../../../components/header'
-import Hero from '../../../components/Hero'
 import FeatureSection from '../../../components/FeatureSection'
 import ReviewSlider from '../../../components/ReviewSlider'
-import Footer from '../../../components/Footer'
 import ContactForm from '../../../components/ContactForm'
 
 const dutchReviews = [
@@ -144,21 +141,6 @@ export default function WoerdenPage() {
         <link rel="canonical" href="https://niblah.com/marketing/woerden" />
       </Head>
       
-      <Header location="Woerden" />
-      
-      <Hero 
-        title="Digital Marketing Agency Woerden"
-        subtitle="Jouw online marketing partner in het Groene Hart"
-        description="Woerden, de historische kaasstad met circa 52.000 inwoners in het hart van het groene polderlandschap, belichaamt de authentieke Nederlandse agrarische cultuur en vakmanschap. Strategisch gelegen tussen Utrecht, Alphen aan den Rijn en Gouda, biedt deze gemeente unieke kansen voor bedrijven die lokale traditie willen combineren met moderne marketing en directe verkoop. Als specialist in digitale marketing voor het Groene Hart begrijp ik hoe agrarische bedrijven, streekproducenten en lokale dienstverleners kunnen groeien door slim in te spelen op de groeiende vraag naar authenticiteit, kwaliteit en herkomst. Van kaasboerderijen tot tuincentra - ik help jouw bedrijf bloeien in dit unieke gebied waar traditioneel vakmanschap en moderne consumentenwensen elkaar perfect ontmoeten."
-        ctaText="Groei mee met het Groene Hart"
-        ctaLink="#contact"
-      />
-
-      <FeatureSection 
-        features={features}
-        title="Online Marketing Diensten Woerden"
-        subtitle="Gespecialiseerd in agrarische en streekproducten marketing"
-      />
 
       <ReviewSlider reviews={dutchReviews.concat(dutchMoreReviews)} />
 
@@ -225,11 +207,6 @@ export default function WoerdenPage() {
         subtitle="Klaar om je agrarische of lokale bedrijf te laten groeien? Neem contact op voor een vrijblijvende analyse van je mogelijkheden in het Groene Hart."
       />
 
-      <Footer 
-        location="Woerden"
-        serviceArea="Actief in Woerden en omliggende gemeenten"
-        areas={["Utrecht", "Alphen aan den Rijn", "Gouda", "Nieuwkoop", "Montfoort"]}
-      />
     </>
   )
 }

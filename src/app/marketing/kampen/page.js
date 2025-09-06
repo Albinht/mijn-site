@@ -1,9 +1,6 @@
 import Head from 'next/head'
-import Header from '../../../components/header'
-import Hero from '../../../components/Hero'
 import FeatureSection from '../../../components/FeatureSection'
 import ReviewSlider from '../../../components/ReviewSlider'
-import Footer from '../../../components/Footer'
 import ContactForm from '../../../components/ContactForm'
 
 const dutchReviews = [
@@ -144,21 +141,6 @@ export default function KampenPage() {
         <link rel="canonical" href="https://niblah.com/marketing/kampen" />
       </Head>
       
-      <Header location="Kampen" />
-      
-      <Hero 
-        title="Digital Marketing Agency Kampen"
-        subtitle="Jouw online marketing partner aan de IJssel"
-        description="Kampen, de prachtige Hanzestad met circa 54.000 inwoners aan de IJssel, staat symbool voor de rijke Nederlandse handelsgeschiedenis en architectonische schoonheid. Met haar imposante stadsgezicht, historische binnenstad en strategische ligging tussen Zwolle en het IJsselmeer biedt deze gemeente unieke kansen voor bedrijven die traditie willen combineren met moderne groei. Als specialist in digitale marketing voor historische steden begrijp ik hoe bedrijven in Kampen kunnen profiteren van zowel de sterke cultuurtoeristische aantrekkingskracht als de gunstige ligging aan de IJssel. Van monumentenrestaurateurs tot moderne dienstverleners - ik help jouw bedrijf groeien door slim in te spelen op de authentieke charme en rijke geschiedenis van deze bijzondere Hanzestad waar verleden en toekomst harmonieus samenvloeien."
-        ctaText="Zet koers naar groei"
-        ctaLink="#contact"
-      />
-
-      <FeatureSection 
-        features={features}
-        title="Online Marketing Diensten Kampen"
-        subtitle="Gespecialiseerd in historische en culturele marketing"
-      />
 
       <ReviewSlider reviews={dutchReviews.concat(dutchMoreReviews)} />
 
@@ -225,11 +207,6 @@ export default function KampenPage() {
         subtitle="Klaar om te profiteren van Kampen's unieke historie en ligging? Neem contact op voor een vrijblijvende analyse van je groeimogelijkheden."
       />
 
-      <Footer 
-        location="Kampen"
-        serviceArea="Actief in Kampen en omliggende gemeenten"
-        areas={["Zwolle", "Dronten", "Elburg", "Oldebroek", "Hattem"]}
-      />
     </>
   )
 }

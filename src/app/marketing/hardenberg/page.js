@@ -1,9 +1,6 @@
 import Head from 'next/head'
-import Header from '../../../components/header'
-import Hero from '../../../components/Hero'
 import FeatureSection from '../../../components/FeatureSection'
 import ReviewSlider from '../../../components/ReviewSlider'
-import Footer from '../../../components/Footer'
 import ContactForm from '../../../components/ContactForm'
 
 const dutchReviews = [
@@ -144,21 +141,6 @@ export default function HardenbergPage() {
         <link rel="canonical" href="https://niblah.com/marketing/hardenberg" />
       </Head>
       
-      <Header location="Hardenberg" />
-      
-      <Hero 
-        title="Digital Marketing Agency Hardenberg"
-        subtitle="Jouw online marketing partner in het hart van Oost-Nederland"
-        description="Hardenberg, strategisch gelegen in de Vechtstreek met circa 60.000 inwoners, biedt unieke kansen voor bedrijven die zowel de lokale markt als het grensgebied met Duitsland willen bedienen. Als specialist in digitale marketing voor de regio Hardenberg-Ommen begrijp ik hoe bedrijven profiteren van de mix tussen natuurtoerisme rond De Weerribben-Wieden, industriële ontwikkeling en grenshandel. Van lokale dienstverleners tot toeristische ondernemingen - ik help jouw bedrijf groeien door slimme online strategieën die aansluiten bij de economische diversiteit van deze regio tussen natuur en industrie."
-        ctaText="Start je groei in Hardenberg"
-        ctaLink="#contact"
-      />
-
-      <FeatureSection 
-        features={features}
-        title="Online Marketing Diensten Hardenberg"
-        subtitle="Gespecialiseerd in de Oost-Nederlandse markt"
-      />
 
       <ReviewSlider reviews={dutchReviews.concat(dutchMoreReviews)} />
 
@@ -225,11 +207,6 @@ export default function HardenbergPage() {
         subtitle="Klaar om meer klanten te bereiken in Oost-Nederland? Neem contact op voor een vrijblijvende analyse van je huidige online positie."
       />
 
-      <Footer 
-        location="Hardenberg"
-        serviceArea="Actief in Hardenberg en omliggende gemeenten"
-        areas={["Ommen", "Gramsbergen", "Dedemsvaart", "Coevorden", "Mariënberg"]}
-      />
     </>
   )
 }

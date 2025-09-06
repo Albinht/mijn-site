@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import HeroSection from '../../../components/HeroSection'
 import FeatureSection from '../../../components/FeatureSection'
 import ReviewSlider from '../../../components/ReviewSlider'
 
@@ -132,15 +131,6 @@ export default function HengeloPage() {
         </script>
       </Head>
 
-      <HeroSection
-        title="SEO Specialist Hengelo"
-        subtitle="Digital Marketing Agency Hengelo"
-        description="Hengelo, met 81.000 inwoners het industriële hart van Twente, combineert technologische innovatie met ondernemingszin. Van het bruisende stadscentrum tot de moderne bedrijventerreinen rond de TU Twente - deze dynamische stad biedt uitstekende kansen voor lokale ondernemers. Wij helpen bedrijven in Hengelo om online te groeien, van traditionele industrie tot moderne dienstverlening en tech startups."
-        ctaText="Vraag SEO Advies Aan"
-        ctaLink="/contact"
-        imageSrc="/assets/hero-seo.jpg"
-        imageAlt="SEO Specialist Hengelo - Online Marketing"
-      />
 
       <FeatureSection
         title="Waarom Kiezen Voor SEO in Hengelo?"

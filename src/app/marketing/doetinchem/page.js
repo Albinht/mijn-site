@@ -1,9 +1,6 @@
 import Head from 'next/head'
-import Header from '../../../components/header'
-import Hero from '../../../components/Hero'
 import FeatureSection from '../../../components/FeatureSection'
 import ReviewSlider from '../../../components/ReviewSlider'
-import Footer from '../../../components/Footer'
 import ContactForm from '../../../components/ContactForm'
 
 const dutchReviews = [
@@ -144,21 +141,6 @@ export default function DoetinchemPage() {
         <link rel="canonical" href="https://niblah.com/marketing/doetinchem" />
       </Head>
       
-      <Header location="Doetinchem" />
-      
-      <Hero 
-        title="Digital Marketing Agency Doetinchem"
-        subtitle="Jouw online marketing partner in de Achterhoek"
-        description="Doetinchem, de levendige hoofdstad van de Achterhoek met circa 58.000 inwoners, verenigt de charme van traditionele Nederlandse waarden met moderne ondernemingszin. Gelegen in het prachtige oosten van Gelderland, nabij de Duitse grens, biedt deze stad unieke kansen voor bedrijven die lokale authenticiteit willen combineren met groei en innovatie. Als specialist in digitale marketing voor de Achterhoek begrijp ik hoe bedrijven in Doetinchem kunnen groeien door respect te tonen voor lokale tradities terwijl ze moderne marketing technieken omarmen. Van ambachtelijke familiebedrijven tot innovatieve startups - ik help jouw bedrijf bloeien in deze unieke regio waar vakmanschap, gemeenschapszin en ondernemerschap hand in hand gaan."
-        ctaText="Start je groei in Doetinchem"
-        ctaLink="#contact"
-      />
-
-      <FeatureSection 
-        features={features}
-        title="Online Marketing Diensten Doetinchem"
-        subtitle="Gespecialiseerd in de Achterhoekse markt"
-      />
 
       <ReviewSlider reviews={dutchReviews.concat(dutchMoreReviews)} />
 
@@ -225,11 +207,6 @@ export default function DoetinchemPage() {
         subtitle="Klaar om meer klanten te bereiken in Doetinchem en omgeving? Neem contact op voor een vrijblijvende analyse van je huidige positie in de Achterhoek."
       />
 
-      <Footer 
-        location="Doetinchem"
-        serviceArea="Actief in Doetinchem en omliggende gemeenten"
-        areas={["Winterswijk", "Groenlo", "Zelhem", "Terborg", "Gaanderen"]}
-      />
     </>
   )
 }

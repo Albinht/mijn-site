@@ -1,7 +1,6 @@
 import Head from 'next/head'
-import HeroSection from '../../../components/hero-section'
-import FeatureSection from '../../../components/feature-section'
-import ReviewSlider from '../../../components/review-slider'
+import FeatureSection from '../../../components/FeatureSection'
+import ReviewSlider from '../../../components/ReviewSlider'
 import ContactForm from '../../../components/ContactForm'
 
 const dutchReviews = [
@@ -162,14 +161,24 @@ export default function EnschedePage() {
       </Head>
 
       <div className="min-h-screen bg-white">
-        <HeroSection 
-          title="Digital Marketing Agency Enschede"
-          subtitle="SEO Specialist & Online Marketing Bureau Twente"
-          description="Versterk jouw online aanwezigheid in Enschede en heel Twente. Van het innovatieve Kennispark tot het historische centrum - wij zorgen dat jouw bedrijf vindbaar is waar het ertoe doet. Met 160.000+ inwoners en een bloeiende tech-sector biedt Enschede enorme kansen voor ondernemers die weten hoe ze online zichtbaar moeten zijn."
-          ctaText="Gratis SEO-Analyse Enschede"
-          ctaLink="#contact"
-          imageAlt="SEO specialist Enschede - Online marketing Twente"
-        />
+        <section className="py-20 bg-gradient-to-r from-blue-50 to-indigo-50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center">
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                Digital Marketing Agency Enschede
+              </h1>
+              <p className="text-xl text-gray-600 mb-4">
+                SEO Specialist & Online Marketing Bureau Twente
+              </p>
+              <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+                Versterk jouw online aanwezigheid in Enschede en heel Twente. Van het innovatieve Kennispark tot het historische centrum - wij zorgen dat jouw bedrijf vindbaar is waar het ertoe doet. Met 160.000+ inwoners en een bloeiende tech-sector biedt Enschede enorme kansen voor ondernemers die weten hoe ze online zichtbaar moeten zijn.
+              </p>
+              <a href="#contact" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                Gratis SEO-Analyse Enschede
+              </a>
+            </div>
+          </div>
+        </section>
 
         <FeatureSection 
           features={features}

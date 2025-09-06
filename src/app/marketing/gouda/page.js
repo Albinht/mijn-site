@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import HeroSection from '../../../components/HeroSection'
 import FeatureSection from '../../../components/FeatureSection'
 import ReviewSlider from '../../../components/ReviewSlider'
 
@@ -114,15 +113,6 @@ export default function GoudaPage() {
         </script>
       </Head>
 
-      <HeroSection
-        title="SEO Specialist Gouda"
-        subtitle="Digital Marketing Agency Gouda"
-        description="Gouda, de historische kaasstad met 75.000 inwoners in het hart van het Groene Hart, combineert rijke historie met moderne ondernemingszin. Van de iconische Markt met het historische stadhuis tot de moderne bedrijventerreinen - deze charmante stad trekt zowel toeristen als lokale klanten. Wij helpen Goudse ondernemers om online te groeien en te profiteren van zowel lokale vraag als toeristische interesse."
-        ctaText="Vraag SEO Advies Aan"
-        ctaLink="/contact"
-        imageSrc="/assets/hero-seo.jpg"
-        imageAlt="SEO Specialist Gouda - Online Marketing"
-      />
 
       <FeatureSection
         title="Waarom Kiezen Voor SEO in Gouda?"

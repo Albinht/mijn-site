@@ -1,9 +1,6 @@
 import Head from 'next/head'
-import Header from '../../../components/header'
-import Hero from '../../../components/Hero'
 import FeatureSection from '../../../components/FeatureSection'
 import ReviewSlider from '../../../components/ReviewSlider'
-import Footer from '../../../components/Footer'
 import ContactForm from '../../../components/ContactForm'
 
 const dutchReviews = [
@@ -144,21 +141,6 @@ export default function OosterhoutPage() {
         <link rel="canonical" href="https://niblah.com/marketing/oosterhout" />
       </Head>
       
-      <Header location="Oosterhout" />
-      
-      <Hero 
-        title="Digital Marketing Agency Oosterhout"
-        subtitle="Jouw online marketing partner in het hart van Noord-Brabant"
-        description="Oosterhout, strategisch gelegen in het kloppende hart van Noord-Brabant met circa 55.000 inwoners, biedt bedrijven het beste van twee werelden: de rust en persoonlijke service van een middelgrote gemeente, gecombineerd met directe toegang tot de grote markten van Breda, Tilburg en Den Bosch. Deze unieke positie tussen belangrijke Brabantse steden maakt Oosterhout een ideale uitvalsbasis voor ondernemers die willen groeien zonder de nadelen van grootstedelijke drukte. Als specialist in digitale marketing voor Noord-Brabant begrijp ik hoe bedrijven in Oosterhout kunnen profiteren van hun strategische ligging en de warme Brabantse ondernemingscultuur. Van lokale dienstverleners tot regionale spelers - ik help jouw bedrijf groeien door slim in te spelen op zowel lokale betrokkenheid als regionale ambitie."
-        ctaText="Groei mee met Brabant"
-        ctaLink="#contact"
-      />
-
-      <FeatureSection 
-        features={features}
-        title="Online Marketing Diensten Oosterhout"
-        subtitle="Gespecialiseerd in regionale groei Noord-Brabant"
-      />
 
       <ReviewSlider reviews={dutchReviews.concat(dutchMoreReviews)} />
 
@@ -225,11 +207,6 @@ export default function OosterhoutPage() {
         subtitle="Klaar om te groeien vanuit Oosterhout naar heel Noord-Brabant? Neem contact op voor een vrijblijvende analyse van je regionale groeimogelijkheden."
       />
 
-      <Footer 
-        location="Oosterhout"
-        serviceArea="Actief in Oosterhout en omliggende gemeenten"
-        areas={["Breda", "Tilburg", "Waalwijk", "Dongen", "Kaatsheuvel"]}
-      />
     </>
   )
 }

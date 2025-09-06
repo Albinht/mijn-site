@@ -1,9 +1,6 @@
 import Head from 'next/head'
-import Header from '../../../components/header'
-import Hero from '../../../components/Hero'
 import FeatureSection from '../../../components/FeatureSection'
 import ReviewSlider from '../../../components/ReviewSlider'
-import Footer from '../../../components/Footer'
 import ContactForm from '../../../components/ContactForm'
 
 const dutchReviews = [
@@ -144,21 +141,6 @@ export default function HoogeveenPage() {
         <link rel="canonical" href="https://niblah.com/marketing/hoogeveen" />
       </Head>
       
-      <Header location="Hoogeveen" />
-      
-      <Hero 
-        title="Digital Marketing Agency Hoogeveen"
-        subtitle="Jouw online marketing partner in het hart van Drenthe"
-        description="Hoogeveen, het economische centrum van Zuidwest-Drenthe met circa 55.000 inwoners, verenigt de rust en natuurschoon van het Drentse landschap met moderne voorzieningen en ondernemingszin. Gelegen te midden van uitgestrekte natuurgebieden, bossen en agrarisch land, biedt deze stad unieke kansen voor bedrijven die authentiek Drenthe willen combineren met groei en innovatie. Als specialist in digitale marketing voor Drenthe begrijp ik hoe bedrijven kunnen profiteren van zowel de sterke agrarische economie als het groeiende natuurtoerisme. Van landbouwgerelateerde diensten tot natuurgerichte recreatie - ik help jouw bedrijf groeien door strategieën die aansluiten bij de rust, kwaliteit en natuurverbondenheid die Drenthe zo bijzonder maken."
-        ctaText="Groei mee met Drenthe"
-        ctaLink="#contact"
-      />
-
-      <FeatureSection 
-        features={features}
-        title="Online Marketing Diensten Hoogeveen"
-        subtitle="Gespecialiseerd in agrarische en toeristische markten"
-      />
 
       <ReviewSlider reviews={dutchReviews.concat(dutchMoreReviews)} />
 
@@ -225,11 +207,6 @@ export default function HoogeveenPage() {
         subtitle="Klaar om meer klanten te bereiken in het hart van Drenthe? Neem contact op voor een vrijblijvende analyse van je mogelijkheden in de agrarische en toeristische sector."
       />
 
-      <Footer 
-        location="Hoogeveen"
-        serviceArea="Actief in Hoogeveen en omliggende gemeenten"
-        areas={["Meppel", "Coevorden", "Emmen", "De Wijk", "Ruinerwold"]}
-      />
     </>
   )
 }

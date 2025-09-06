@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import HeroSection from '../../../components/HeroSection'
 import FeatureSection from '../../../components/FeatureSection'
 import ReviewSlider from '../../../components/ReviewSlider'
 
@@ -114,15 +113,6 @@ export default function RoosendaalPage() {
         </script>
       </Head>
 
-      <HeroSection
-        title="SEO Specialist Roosendaal"
-        subtitle="Digital Marketing Agency Roosendaal"
-        description="Roosendaal, met 77.000 inwoners strategisch gelegen aan de Belgische grens, is het hart van West-Brabant en een belangrijke schakel tussen Nederland en België. Van het bruisende stadscentrum tot de moderne bedrijventerreinen aan de A17 - deze grensstad biedt unieke kansen voor ondernemers die zowel Nederlandse als Belgische klanten willen bereiken. Wij helpen lokale bedrijven om online te groeien en te profiteren van deze grensoverschrijdende mogelijkheden."
-        ctaText="Vraag SEO Advies Aan"
-        ctaLink="/contact"
-        imageSrc="/assets/hero-seo.jpg"
-        imageAlt="SEO Specialist Roosendaal - Online Marketing"
-      />
 
       <FeatureSection
         title="Waarom Kiezen Voor SEO in Roosendaal?"

@@ -1,9 +1,6 @@
 import Head from 'next/head'
-import Header from '../../../components/header'
-import Hero from '../../../components/Hero'
 import FeatureSection from '../../../components/FeatureSection'
 import ReviewSlider from '../../../components/ReviewSlider'
-import Footer from '../../../components/Footer'
 import ContactForm from '../../../components/ContactForm'
 
 const dutchReviews = [
@@ -144,21 +141,6 @@ export default function DenHelderPage() {
         <link rel="canonical" href="https://niblah.com/marketing/den-helder" />
       </Head>
       
-      <Header location="Den Helder" />
-      
-      <Hero 
-        title="Digital Marketing Agency Den Helder"
-        subtitle="Jouw online marketing partner aan de Noordzeekust"
-        description="Den Helder, Nederlands belangrijkste marinehaven met circa 56.000 inwoners, staat symbool voor de unieke combinatie van maritieme kracht, militaire trots en kustschoonheid. Als thuisbasis van de Koninklijke Marine en poort naar het UNESCO Werelderfgoed Waddenzee biedt deze stad aan de noordpunt van Noord-Holland uitzonderlijke kansen voor bedrijven in maritime sectoren, defensie-gerelateerde industrie en kusttoerisme. Als specialist in digitale marketing voor de maritime en kusteconomie begrijp ik hoe bedrijven in Den Helder kunnen groeien door slim in te spelen op de strategische havenfunctie, marine aanwezigheid en doorlopende stroom Texel-gangers. Van scheepsbouw tot strandtentjes - ik help jouw bedrijf varen op de digitale golven van deze unieke Nederlandse havenstad."
-        ctaText="Zet koers naar groei"
-        ctaLink="#contact"
-      />
-
-      <FeatureSection 
-        features={features}
-        title="Online Marketing Diensten Den Helder"
-        subtitle="Gespecialiseerd in maritieme en kusteconomie"
-      />
 
       <ReviewSlider reviews={dutchReviews.concat(dutchMoreReviews)} />
 
@@ -225,11 +207,6 @@ export default function DenHelderPage() {
         subtitle="Klaar om meer klanten te bereiken in de maritime en kusteconomie? Neem contact op voor een vrijblijvende analyse van je digitale koers."
       />
 
-      <Footer 
-        location="Den Helder"
-        serviceArea="Actief in Den Helder en omliggende gemeenten"
-        areas={["Texel", "Schagen", "Anna Paulowna", "Wieringen", "Hollands Kroon"]}
-      />
     </>
   )
 }

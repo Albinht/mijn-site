@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import HeroSection from '../../../components/HeroSection'
 import FeatureSection from '../../../components/FeatureSection'
 import ReviewSlider from '../../../components/ReviewSlider'
 
@@ -114,15 +113,6 @@ export default function SchiedamPage() {
         </script>
       </Head>
 
-      <HeroSection
-        title="SEO Specialist Schiedam"
-        subtitle="Digital Marketing Agency Schiedam"
-        description="Schiedam, met 75.000 inwoners gelegen tussen Rotterdam en de Maasvlakte, is een bruisende havenstad met rijke maritieme traditie. Van het historische centrum met zijn iconische molens tot de moderne haven- en industriegebieden - deze strategische ligging biedt unieke kansen voor lokale ondernemers. Wij helpen bedrijven in Schiedam om online te groeien, van maritieme dienstverlening tot lokale retail en horeca."
-        ctaText="Vraag SEO Advies Aan"
-        ctaLink="/contact"
-        imageSrc="/assets/hero-seo.jpg"
-        imageAlt="SEO Specialist Schiedam - Online Marketing"
-      />
 
       <FeatureSection
         title="Waarom Kiezen Voor SEO in Schiedam?"

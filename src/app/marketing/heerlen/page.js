@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import HeroSection from '../../../components/HeroSection'
 import FeatureSection from '../../../components/FeatureSection'
 import ReviewSlider from '../../../components/ReviewSlider'
 
@@ -132,15 +131,6 @@ export default function HeerlenPage() {
         </script>
       </Head>
 
-      <HeroSection
-        title="SEO Specialist Heerlen"
-        subtitle="Digital Marketing Agency Heerlen"
-        description="Heerlen, met 86.000 inwoners het hart van Parkstad Limburg, biedt unieke mogelijkheden voor lokale ondernemers. Als voormalige mijnbouwstad heeft Heerlen zich ontwikkeld tot een modern centrum voor dienstverlening, handel en technologie. Van het drukke stadscentrum tot de innovatieve bedrijventerreinen - wij helpen lokale bedrijven om online te groeien en meer klanten te bereiken in Zuid-Limburg en daarbuiten."
-        ctaText="Vraag SEO Advies Aan"
-        ctaLink="/contact"
-        imageSrc="/assets/hero-seo.jpg"
-        imageAlt="SEO Specialist Heerlen - Online Marketing"
-      />
 
       <FeatureSection
         title="Waarom Kiezen Voor SEO in Heerlen?"

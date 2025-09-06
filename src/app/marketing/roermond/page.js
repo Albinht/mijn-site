@@ -1,9 +1,6 @@
 import Head from 'next/head'
-import Header from '../../../components/header'
-import Hero from '../../../components/Hero'
 import FeatureSection from '../../../components/FeatureSection'
 import ReviewSlider from '../../../components/ReviewSlider'
-import Footer from '../../../components/Footer'
 import ContactForm from '../../../components/ContactForm'
 
 const dutchReviews = [
@@ -144,21 +141,6 @@ export default function RoermondPage() {
         <link rel="canonical" href="https://niblah.com/marketing/roermond" />
       </Head>
       
-      <Header location="Roermond" />
-      
-      <Hero 
-        title="Digital Marketing Agency Roermond"
-        subtitle="Jouw online marketing partner aan de Maas"
-        description="Roermond, de internationale shopping hoofdstad van Limburg met circa 58.000 inwoners, trekt jaarlijks miljoenen bezoekers naar het wereldberoemde Designer Outlet en historische binnenstad. Gelegen strategisch aan de Duitse grens biedt deze stad unieke kansen voor bedrijven die zowel Nederlandse als internationale klanten willen bereiken. Als specialist in grensoverschrijdende digitale marketing begrijp ik hoe bedrijven in Roermond kunnen profiteren van de sterke retail sector, internationale toerisme en Duitse grenshandel. Van outlet retailers tot lokale restaurants - ik help jouw bedrijf groeien door slimme marketing die inspeelt op de kosmopolitische aard van deze bruisende handelsstad aan de Maas."
-        ctaText="Start je groei in Roermond"
-        ctaLink="#contact"
-      />
-
-      <FeatureSection 
-        features={features}
-        title="Online Marketing Diensten Roermond"
-        subtitle="Gespecialiseerd in internationale handel en retail"
-      />
 
       <ReviewSlider reviews={dutchReviews.concat(dutchMoreReviews)} />
 
@@ -225,11 +207,6 @@ export default function RoermondPage() {
         subtitle="Klaar om meer Nederlandse én Duitse klanten te bereiken? Neem contact op voor een vrijblijvende analyse van je huidige internationale positie."
       />
 
-      <Footer 
-        location="Roermond"
-        serviceArea="Actief in Roermond en omliggende gemeenten"
-        areas={["Venlo", "Weert", "Sittard", "Maasbracht", "Stevensweert"]}
-      />
     </>
   )
 }
