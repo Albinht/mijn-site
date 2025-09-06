@@ -173,6 +173,7 @@ export default function Header() {
                       <Link href="/marketing/essen" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Essen</Link>
                       <Link href="/marketing/garderen" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Garderen</Link>
                       <Link href="/marketing/groningen" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Groningen</Link>
+                      <Link href="/marketing/harderwijk" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Harderwijk</Link>
                       <Link href="/marketing/harselaar" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Harselaar</Link>
                       <Link href="/marketing/harskamp" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Harskamp</Link>
                       <Link href="/marketing/hoevelaken" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Hoevelaken</Link>
@@ -228,6 +229,7 @@ export default function Header() {
                       <Link href="/marketing/hilvarenbeek" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Hilvarenbeek</Link>
                       <Link href="/marketing/landsmeer" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Landsmeer</Link>
                       <Link href="/marketing/laren" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Laren</Link>
+                      <Link href="/marketing/leiden" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Leiden</Link>
                       <Link href="/marketing/lopik" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Lopik</Link>
                       <Link href="/marketing/montfoort" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Montfoort</Link>
                       <Link href="/marketing/nijmegen" className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded">Nijmegen</Link>
@@ -425,6 +427,7 @@ export default function Header() {
                     <Link href="/marketing/essen" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Essen</Link>
                     <Link href="/marketing/garderen" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Garderen</Link>
                     <Link href="/marketing/groningen" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Groningen</Link>
+                    <Link href="/marketing/harderwijk" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Harderwijk</Link>
                     <Link href="/marketing/harselaar" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Harselaar</Link>
                     <Link href="/marketing/harskamp" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Harskamp</Link>
                     <Link href="/marketing/hoevelaken" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Hoevelaken</Link>
@@ -470,6 +473,7 @@ export default function Header() {
                   {/* New premium locations */}
                   <div className="border-t border-gray-200 mt-2 pt-2">
                     <Link href="/marketing/laren" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Laren</Link>
+                    <Link href="/marketing/leiden" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Leiden</Link>
                     <Link href="/marketing/lopik" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Lopik</Link>
                     <Link href="/marketing/montfoort" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Montfoort</Link>
                     <Link href="/marketing/nijmegen" className="block text-gray-600" onClick={() => setIsMobileMenuOpen(false)}>Nijmegen</Link>

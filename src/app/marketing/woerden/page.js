@@ -1,6 +1,15 @@
+'use client'
+
 import Head from 'next/head'
-import FeatureSection from '../../../components/FeatureSection'
+import Image from 'next/image'
+import graphImage from '../../../assets/graph.png'
+import avatarImage from '../../../assets/avatar.png'
+import masterSeoImage from '../../../assets/Master_seo fundamentals.png'
+import keywordResearchImage from '../../../assets/Keyword_research.png'
+import contentRanksImage from '../../../assets/content that ranks.png'
+import Button from '../../../components/Button'
 import ReviewSlider from '../../../components/ReviewSlider'
+import FeatureSection from '../../../components/FeatureSection'
 import ContactForm from '../../../components/ContactForm'
 
 const dutchReviews = [
@@ -140,9 +149,87 @@ export default function WoerdenPage() {
         <meta name="keywords" content="SEO Woerden, online marketing Woerden, SEO specialist Groene Hart, marketing bureau Woerden" />
         <link rel="canonical" href="https://niblah.com/marketing/woerden" />
       </Head>
-      
 
-      <ReviewSlider reviews={dutchReviews.concat(dutchMoreReviews)} />
+      <main className="min-h-screen bg-white text-gray-900 px-6 py-2 md:py-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          {/* HERO */}
+          <div>
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+              <span className="text-[#000]">Digital Marketing Bureau Woerden: Hart van het Groene Hart</span><br />
+              <span className="bg-[#F7D8FA] px-2 rounded italic">Agrarische traditie ontmoet digitale innovatie</span>
+            </h1>
+            <p className="mt-6 text-lg text-gray-700">
+              <strong>Woerden: waar authentieke Nederlandse agrarische cultuur en moderne ondernemerschap samenkomen in het hart van het Groene Hart.</strong><br />
+              Met 52.000+ inwoners, strategische ligging tussen Utrecht, Alphen en Gouda, en sterke agrarische traditie biedt Woerden unieke kansen voor lokale ondernemers. Als <b>SEO specialist Woerden</b> help ik bedrijven groeien in deze prachtige stad waar kwaliteit en herkomst voorop staan.
+            </p>
+            <ul className="mt-6 space-y-2 text-gray-800">
+              <li>✓ Lokale SEO Woerden: topresultaten in Google</li>
+              <li>✓ Google Ads: direct aanvragen uit Woerden</li>
+              <li>✓ Speciaal voor agrarische bedrijven en lokale dienstverleners</li>
+              <li>✓ <b>SEO Woerden</b> met meetbaar resultaat</li>
+              <li>✓ Websites die bezoekers omzetten naar klanten</li>
+            </ul>
+            <div className="mt-8 flex items-center gap-4">
+              <Button onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}>
+                Plan gratis strategiegesprek <span>→</span>
+              </Button>
+              <Button variant="secondary" onClick={() => window.location.href='/work-with-me'}>
+                Ontdek lokale cases
+              </Button>
+            </div>
+            <p className="mt-2 text-sm text-gray-500">Werkzaam in Woerden & Groene Hart</p>
+            <p className="mt-2 text-xs text-green-600">📞 Direct contact? Bel <b>+31 6 48728828</b></p>
+          </div>
+
+          {/* IMAGE */}
+          <div className="relative">
+            <div className="rounded-xl overflow-hidden shadow-lg">
+              <Image src={graphImage} alt="SEO Specialist Woerden - Resultaten" className="w-full h-auto" priority />
+            </div>
+            <div className="absolute -bottom-2 -right-2 w-28 h-28 rounded-full overflow-hidden border-4 border-white shadow-md">
+              <Image src={avatarImage} alt="Albin SEO Specialist Woerden" className="object-cover w-full h-full" />
+            </div>
+          </div>
+        </div>
+
+        {/* USP & FEATURE SECTION */}
+        <FeatureSection
+          title="Meer klanten in Woerden met slimme marketing"
+          subtitle="Lokale vindbaarheid en conversie voor agrarische bedrijven"
+          features={[
+            {
+              badge: "SEO Woerden",
+              title: "SEO Specialist Woerden",
+              description: "Wil je echt groeien in het Groene Hart? Ik zorg dat je lokaal wordt gevonden op relevante zoektermen en structureel nieuwe klanten aantrekt.",
+              visualTitle: "Lokaal bovenaan",
+              visualSubtitle: "Altijd zichtbaar",
+              image: masterSeoImage
+            },
+            {
+              badge: "Google Ads",
+              title: "Google Ads Woerden",
+              description: "Direct aanvragen van inwoners uit Woerden en omgeving. Je adverteert gericht en ziet direct resultaat in je agenda.",
+              visualTitle: "Direct resultaat",
+              visualSubtitle: "Maximaal bereik",
+              image: keywordResearchImage
+            },
+            {
+              badge: "Webdesign & Online Marketing",
+              title: "Marketing Bureau Woerden",
+              description: "Professionele, snelle websites die zorgen voor meer aanvragen en omzet. Volledig geoptimaliseerd voor de agrarische markt.",
+              visualTitle: "Website & Groei",
+              visualSubtitle: "Meer aanvragen",
+              image: contentRanksImage
+            }
+          ]}
+        />
+
+        {/* LOKALE KLANTREVIEWS */}
+        <ReviewSlider
+          customReviews={dutchReviews}
+          customMoreReviews={dutchMoreReviews}
+          title="Woerden groeit met <span class='bg-[#F7D8FA] px-2 rounded italic'>SEO & Marketing</span> door Albin"
+        />
 
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -202,11 +289,48 @@ export default function WoerdenPage() {
         </div>
       </section>
 
-      <ContactForm 
-        title="Start je Groei in het Groene Hart"
-        subtitle="Klaar om je agrarische of lokale bedrijf te laten groeien? Neem contact op voor een vrijblijvende analyse van je mogelijkheden in het Groene Hart."
-      />
-
+        {/* CONTACT */}
+        <section id="contact-section" className="py-16 px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Gratis kennismaken met jouw <span className="bg-[#F7D8FA] px-2 rounded italic">SEO Specialist Woerden</span>?
+            </h2>
+            <p className="text-xl text-gray-600 mb-8">
+              Ontdek hoe ik jouw bedrijf kan laten groeien in Woerden – altijd eerlijk advies en snelle reactie.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Direct bellen</h3>
+                <p className="text-gray-600 mb-4">Meer weten? Bel vrijblijvend voor een gratis strategiegesprek.</p>
+                <a
+                  href="tel:+31648728828"
+                  className="inline-block bg-[#8C2891] hover:bg-[#7A2280] text-white px-6 py-3 rounded-lg font-medium transition-colors"
+                >
+                  📞 +31 6 48728828
+                </a>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">WhatsApp direct</h3>
+                <p className="text-gray-600 mb-4">Snel schakelen? Stuur direct een WhatsApp voor snel contact.</p>
+                <a
+                  href="https://wa.me/31648728828"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+                >
+                  💬 WhatsApp
+                </a>
+              </div>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">SEO Specialist Woerden - Online Marketing Woerden & Groene Hart</h3>
+              <p className="text-gray-600">
+                Woerden Centrum • Het Groene Hart • En natuurlijk ook actief in: Utrecht • Gouda • Alphen aan den Rijn • Bodegraven • Nieuwegein
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
     </>
   )
 }

@@ -1,7 +1,15 @@
+'use client'
+
 import Head from 'next/head'
-import FeatureSection from '../../../components/FeatureSection'
+import Image from 'next/image'
+import graphImage from '../../../assets/graph.png'
+import avatarImage from '../../../assets/avatar.png'
+import masterSeoImage from '../../../assets/Master_seo fundamentals.png'
+import keywordResearchImage from '../../../assets/Keyword_research.png'
+import contentRanksImage from '../../../assets/content that ranks.png'
+import Button from '../../../components/Button'
 import ReviewSlider from '../../../components/ReviewSlider'
-import ContactForm from '../../../components/ContactForm'
+import FeatureSection from '../../../components/FeatureSection'
 
 const dutchReviews = [
   {
@@ -81,22 +89,7 @@ const dutchMoreReviews = [
   }
 ]
 
-export default function DenHelderPage() {
-  const features = [
-    {
-      title: "Maritieme SEO Den Helder",
-      description: "Gespecialiseerde SEO voor maritieme bedrijven in Den Helder en omgeving. We zorgen dat je bedrijf gevonden wordt door rederijen, scheepswerven, offshore bedrijven en maritime dienstverleners. Perfect voor bedrijven die de strategische haven- en marinefunctie van Den Helder willen benutten."
-    },
-    {
-      title: "Kusttoerisme Marketing",
-      description: "Marketing voor toeristische bedrijven aan de Noord-Hollandse kust. Van hotels tot restaurants, van watersportscholen tot excursieboot - we helpen je profiteren van bezoekers die naar Den Helder komen voor kust, cultuur en de oversteek naar Texel."
-    },
-    {
-      title: "Marine & Defense Marketing",
-      description: "Specialistische marketing voor bedrijven die samenwerken met de Koninklijke Marine en defensie gerelateerde organisaties. Van leveranciers tot dienstverleners - we begrijpen de unieke B2B dynamiek van de marine sector in Den Helder."
-    }
-  ]
-
+export default function MarketingDenHelder() {
   const faqItems = [
     {
       question: "Waarom SEO specialist Den Helder kiezen?",
@@ -134,79 +127,157 @@ export default function DenHelderPage() {
 
   return (
     <>
+      {/* SEO TITLE & META DESCRIPTION */}
       <Head>
-        <title>SEO Specialist Den Helder | Online Marketing Bureau Noord-Holland Kust</title>
-        <meta name="description" content="SEO specialist in Den Helder en Noord-Holland kust. Verhoog je online zichtbaarheid voor maritieme, marine en toeristische bedrijven aan de Noordzee." />
-        <meta name="keywords" content="SEO Den Helder, online marketing Den Helder, SEO specialist Noord-Holland, marketing bureau Den Helder" />
-        <link rel="canonical" href="https://niblah.com/marketing/den-helder" />
+        <title>SEO Specialist Den Helder | Marketing Bureau & Online Marketing Den Helder</title>
+        <meta
+          name="description"
+          content="SEO Specialist Den Helder inschakelen? Kies voor hét marketing bureau in Den Helder. Meer klanten en zichtbaarheid met maritime SEO, Google Ads en een moderne website."
+        />
+        <link rel="canonical" href="https://www.niblah.com/marketing/den-helder" />
       </Head>
-      
 
-      <ReviewSlider reviews={dutchReviews.concat(dutchMoreReviews)} />
+      <main className="min-h-screen bg-white text-gray-900 px-6 py-2 md:py-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          {/* HERO */}
+          <div>
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+              <span className="text-[#000]">Digital Marketing Bureau Den Helder: Maritieme Metropool</span><br />
+              <span className="bg-[#F7D8FA] px-2 rounded italic">Waar zee, marine en toerisme samenkomen</span>
+            </h1>
+            <p className="mt-6 text-lg text-gray-700">
+              <strong>Den Helder: Nederland's noordelijkste stad waar maritime historie, Koninklijke Marine en kusttoerisme een unieke economie vormen.</strong><br />
+              Met 56.000+ inwoners, als thuisbasis van de marine, poort naar Texel en belangrijke Noordzeehaven biedt Den Helder uitstekende kansen voor maritieme bedrijven en kustondernemers. Als <b>SEO specialist Den Helder</b> help ik bedrijven groeien in deze strategische havenstad waar traditie en innovatie elkaar ontmoeten.
+            </p>
+            <ul className="mt-6 space-y-2 text-gray-800">
+              <li>✓ Maritime SEO Den Helder: topresultaten voor scheepvaart</li>
+              <li>✓ Google Ads: direct klanten uit marine en toerisme</li>
+              <li>✓ Speciaal voor rederijen, hotels en kustwinkels in Den Helder</li>
+              <li>✓ <b>SEO Den Helder</b> met meetbaar maritiem resultaat</li>
+              <li>✓ Websites die bezoekers omzetten naar boekingen</li>
+            </ul>
+            <div className="mt-8 flex items-center gap-4">
+              <Button onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}>
+                Plan gratis strategiegesprek <span>→</span>
+              </Button>
+              <Button variant="secondary" onClick={() => window.location.href='/work-with-me'}>
+                Ontdek maritime cases
+              </Button>
+            </div>
+            <p className="mt-2 text-sm text-gray-500">Werkzaam in Den Helder & Noord-Holland Noord</p>
+            <p className="mt-2 text-xs text-green-600">📞 Direct contact? Bel <b>+31 6 48728828</b></p>
+          </div>
 
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-8 text-gray-900">
-              Waarom Bedrijven in Den Helder Kiezen voor Niblah
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-4 text-gray-900">Maritime Expertise</h3>
-                <p className="text-gray-700">
-                  Diepgaande kennis van de maritime industrie en scheepvaartsector. We begrijpen hoe rederijen, 
-                  scheepswerven en maritime dienstverleners online zoeken en opereren in internationale markten.
-                </p>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-4 text-gray-900">Defense & Marine Sector</h3>
-                <p className="text-gray-700">
-                  Specialistische ervaring met marketing voor de defensie sector en marine gerelateerde bedrijven. 
-                  Begrip van procurement processen, security requirements en B2B dynamics in de defense industrie.
-                </p>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-4 text-gray-900">Kusttoerisme Kennis</h3>
-                <p className="text-gray-700">
-                  Ervaring met toerisme marketing voor kusttbestemmingen. Van Texel-transitverkeer tot maritieme 
-                  cultuurtoerisme - we weten hoe je profiteert van de unieke ligging aan zee en Waddenzee.
-                </p>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-4 text-gray-900">Strategische Havenligging</h3>
-                <p className="text-gray-700">
-                  Begrip van de strategische waarde van Den Helder als noordelijke haven. We helpen bedrijven 
-                  profiteren van maritime logistiek, offshore wind sector en internationale scheepvaartroutes.
-                </p>
-              </div>
+          {/* IMAGE */}
+          <div className="relative">
+            <div className="rounded-xl overflow-hidden shadow-lg">
+              <Image src={graphImage} alt="SEO Specialist Den Helder - Maritime Resultaten" className="w-full h-auto" priority />
+            </div>
+            <div className="absolute -bottom-2 -right-2 w-28 h-28 rounded-full overflow-hidden border-4 border-white shadow-md">
+              <Image src={avatarImage} alt="Albin SEO Specialist Den Helder" className="object-cover w-full h-full" />
             </div>
           </div>
         </div>
-      </section>
 
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
+        {/* USP & FEATURE SECTION */}
+        <FeatureSection
+          title="Meer klanten in Den Helder met maritime marketing"
+          subtitle="Kustlocatie vindbaarheid en conversie voor zee en marine"
+          features={[
+            {
+              badge: "Maritime SEO",
+              title: "SEO Specialist Den Helder",
+              description: "Wil je echt groeien in de maritime sector? Ik zorg dat je bedrijf wordt gevonden door rederijen, marine leveranciers en internationale scheepvaart.",
+              visualTitle: "Maritime zichtbaar",
+              visualSubtitle: "Internationale reach",
+              image: masterSeoImage
+            },
+            {
+              badge: "Kusttoerisme Ads",
+              title: "Google Ads Den Helder",
+              description: "Direct boekingen van Texel-bezoekers en kusttoeristen. Je adverteert gericht op transitverkeer en marine evenementen.",
+              visualTitle: "Direct boekingen",
+              visualSubtitle: "Maximaal kustbereik",
+              image: keywordResearchImage
+            },
+            {
+              badge: "Marine & Webdesign",
+              title: "Marketing Bureau Den Helder",
+              description: "Professionele, maritime websites die zorgen voor meer opdrachten uit scheepvaart en defensie. Volledig geoptimaliseerd voor B2B en toerisme.",
+              visualTitle: "Website & Maritime Groei",
+              visualSubtitle: "Meer opdrachten",
+              image: contentRanksImage
+            }
+          ]}
+        />
+
+        {/* LOKALE KLANTREVIEWS */}
+        <ReviewSlider
+          customReviews={dutchReviews}
+          customMoreReviews={dutchMoreReviews}
+          title="Den Helder groeit met <span class='bg-[#F7D8FA] px-2 rounded italic'>Maritime SEO & Marketing</span> door Albin"
+        />
+
+
+        {/* VEELGESTELDE VRAGEN */}
+        <section className="py-16 bg-gray-50">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
               Veelgestelde Vragen SEO Den Helder
             </h2>
             <div className="space-y-6">
               {faqItems.map((item, index) => (
-                <div key={index} className="bg-gray-50 rounded-lg p-6">
+                <div key={index} className="bg-white rounded-lg p-6 shadow-md">
                   <h3 className="text-lg font-semibold mb-3 text-gray-900">{item.question}</h3>
                   <p className="text-gray-700">{item.answer}</p>
                 </div>
               ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <ContactForm 
-        title="Zet Koers naar Online Groei"
-        subtitle="Klaar om meer klanten te bereiken in de maritime en kusteconomie? Neem contact op voor een vrijblijvende analyse van je digitale koers."
-      />
-
+        {/* CONTACT */}
+        <section id="contact-section" className="py-16 px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Gratis kennismaken met jouw <span className="bg-[#F7D8FA] px-2 rounded italic">SEO Specialist Den Helder</span>?
+            </h2>
+            <p className="text-xl text-gray-600 mb-8">
+              Ontdek hoe ik jouw maritime bedrijf kan laten groeien in Den Helder – altijd eerlijk advies en snelle reactie.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Direct bellen</h3>
+                <p className="text-gray-600 mb-4">Meer weten? Bel vrijblijvend voor een gratis strategiegesprek.</p>
+                <a
+                  href="tel:+31648728828"
+                  className="inline-block bg-[#8C2891] hover:bg-[#7A2280] text-white px-6 py-3 rounded-lg font-medium transition-colors"
+                >
+                  📞 +31 6 48728828
+                </a>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">WhatsApp direct</h3>
+                <p className="text-gray-600 mb-4">Snel schakelen? Stuur direct een WhatsApp voor snel contact.</p>
+                <a
+                  href="https://wa.me/31648728828"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+                >
+                  💬 WhatsApp
+                </a>
+              </div>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">SEO Specialist Den Helder - Online Marketing Den Helder & Noord-Holland Noord</h3>
+              <p className="text-gray-600">
+                Den Helder Centrum • Haven & Marine • Texel Gateway • En natuurlijk ook actief in: Alkmaar • Hoorn • Enkhuizen • Schagen • Heerhugowaard • Heel Noord-Holland Noord
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
     </>
   )
 }

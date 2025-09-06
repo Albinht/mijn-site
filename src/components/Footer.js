@@ -350,6 +350,15 @@ const Footer = () => {
               </li>
               <li>
                 <Link 
+                  href="/marketing/harderwijk" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Harderwijk
+                </Link>
+              </li>
+              <li>
+                <Link 
                   href="/marketing/gulpen-wittem" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
                   style={{ color: 'rgb(0, 0, 0)' }}

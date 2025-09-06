@@ -1,7 +1,14 @@
-import Head from 'next/head'
-import FeatureSection from '../../../components/FeatureSection'
+'use client'
+
+import Image from 'next/image'
+import graphImage from '../../../assets/graph.png'
+import avatarImage from '../../../assets/avatar.png'
+import masterSeoImage from '../../../assets/Master_seo fundamentals.png'
+import keywordResearchImage from '../../../assets/Keyword_research.png'
+import contentRanksImage from '../../../assets/content that ranks.png'
+import Button from '../../../components/Button'
 import ReviewSlider from '../../../components/ReviewSlider'
-import ContactForm from '../../../components/ContactForm'
+import FeatureSection from '../../../components/FeatureSection'
 
 const dutchReviews = [
   {
@@ -81,22 +88,7 @@ const dutchMoreReviews = [
   }
 ]
 
-export default function KampenPage() {
-  const features = [
-    {
-      title: "Historische Marketing Kampen",
-      description: "Gespecialiseerde marketing voor bedrijven die profiteren van Kampen's rijke Hanzegeschiedenis. Van monumentenrestauratie tot cultureel toerisme - we helpen je zichtbaar worden voor klanten die authentieke Nederlandse geschiedenis waarderen en zoeken naar kwaliteit met traditie."
-    },
-    {
-      title: "IJsselstreek SEO",
-      description: "Regionale SEO strategie voor bedrijven langs de IJssel tussen Kampen en Deventer. We zorgen dat je bedrijf gevonden wordt door klanten in heel de IJsselstreek, van watersport tot zakelijke dienstverlening aan de rivier."
-    },
-    {
-      title: "Cultuurtoerisme Marketing",
-      description: "Marketing voor bedrijven die culturele en historische toeristen bedienen. Van hotels tot gidsen, van restaurants tot winkels - we helpen je profiteren van bezoekers die Kampen's Hanzesteden charme komen ontdekken."
-    }
-  ]
-
+export default function MarketingKampen() {
   const faqItems = [
     {
       question: "Waarom SEO specialist Kampen kiezen?",
@@ -133,17 +125,88 @@ export default function KampenPage() {
   ]
 
   return (
-    <>
-      <Head>
-        <title>SEO Specialist Kampen | Online Marketing Bureau Overijssel</title>
-        <meta name="description" content="SEO specialist in Kampen en Overijssel. Verhoog je online zichtbaarheid voor historische stad aan de IJssel. Lokale expertise voor traditionele en moderne bedrijven." />
-        <meta name="keywords" content="SEO Kampen, online marketing Kampen, SEO specialist Overijssel, marketing bureau Kampen" />
-        <link rel="canonical" href="https://niblah.com/marketing/kampen" />
-      </Head>
-      
+    <main className="min-h-screen bg-white text-gray-900 px-6 py-2 md:py-6">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        {/* HERO */}
+        <div>
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+            <span className="text-[#000]">SEO Specialist Kampen: Hanzestad aan de IJssel</span><br />
+            <span className="bg-[#F7D8FA] px-2 rounded italic">Waar geschiedenis en moderne marketing samenkomen</span>
+          </h1>
+          <p className="mt-6 text-lg text-gray-700">
+            <strong>Kampen: eeuwenoude Hanzestad met 54.000 inwoners aan de IJssel, waar traditie en innovatie elkaar versterken.</strong><br />
+            Als historische handelsstad combineert Kampen rijk cultureel erfgoed met moderne ondernemingszin. Gelegen aan de monding van de IJssel biedt Kampen unieke kansen voor bedrijven die authentiek vakmanschap waarderen. Als <b>SEO specialist Kampen</b> help ik ondernemers groeien in deze karakteristieke stad waar kwaliteit, geschiedenis en persoonlijke service voorop staan.
+          </p>
+          <ul className="mt-6 space-y-2 text-gray-800">
+            <li>✓ Lokale SEO Kampen: topresultaten voor Hanzestad</li>
+            <li>✓ Google Ads: direct klanten uit IJsselstreek</li>
+            <li>✓ Cultuurtoerisme marketing voor historische bedrijven</li>
+            <li>✓ <b>SEO Kampen</b> met meetbare groei</li>
+            <li>✓ Websites die bezoekers omzetten naar klanten</li>
+          </ul>
+          <div className="mt-8 flex items-center gap-4">
+            <Button onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}>
+              Plan gratis strategiegesprek <span>→</span>
+            </Button>
+            <Button variant="secondary" onClick={() => window.location.href='/work-with-me'}>
+              Ontdek historische cases
+            </Button>
+          </div>
+          <p className="mt-2 text-sm text-gray-500">Werkzaam in Kampen & IJsselstreek</p>
+          <p className="mt-2 text-xs text-green-600">📞 Direct contact? Bel <b>+31 6 48728828</b></p>
+        </div>
 
-      <ReviewSlider reviews={dutchReviews.concat(dutchMoreReviews)} />
+        {/* IMAGE */}
+        <div className="relative">
+          <div className="rounded-xl overflow-hidden shadow-lg">
+            <Image src={graphImage} alt="SEO Specialist Kampen - Resultaten" className="w-full h-auto" priority />
+          </div>
+          <div className="absolute -bottom-2 -right-2 w-28 h-28 rounded-full overflow-hidden border-4 border-white shadow-md">
+            <Image src={avatarImage} alt="Albin SEO Specialist Kampen" className="object-cover w-full h-full" />
+          </div>
+        </div>
+      </div>
 
+      {/* USP & FEATURE SECTION */}
+      <FeatureSection
+        title="Meer klanten in Kampen met historische marketing expertise"
+        subtitle="Hanzestad charme ontmoet digitale groei"
+        features={[
+          {
+            badge: "SEO Kampen",
+            title: "SEO Specialist Kampen",
+            description: "Wil je groeien in deze historische IJsselstad? Ik zorg dat je lokaal wordt gevonden door klanten die authentiek vakmanschap en kwaliteit waarderen.",
+            visualTitle: "Hanzestad bovenaan",
+            visualSubtitle: "Altijd zichtbaar",
+            image: masterSeoImage
+          },
+          {
+            badge: "Google Ads",
+            title: "Google Ads Kampen",
+            description: "Direct aanvragen van cultuurtoeristen en lokale klanten. Je adverteert gericht en ziet direct resultaat in je agenda uit heel de IJsselstreek.",
+            visualTitle: "Direct resultaat",
+            visualSubtitle: "Maximaal bereik",
+            image: keywordResearchImage
+          },
+          {
+            badge: "Cultuurtoerisme Marketing",
+            title: "Historische Marketing Bureau",
+            description: "Professionele websites die Kampen's rijke historie inzetten voor meer klanten. Volledig geoptimaliseerd voor cultuurtoerisme en lokale bedrijven.",
+            visualTitle: "Historie & Groei",
+            visualSubtitle: "Meer aanvragen",
+            image: contentRanksImage
+          }
+        ]}
+      />
+
+      {/* LOKALE KLANTREVIEWS */}
+      <ReviewSlider
+        customReviews={dutchReviews}
+        customMoreReviews={dutchMoreReviews}
+        title="Kampen groeit met <span class='bg-[#F7D8FA] px-2 rounded italic'>SEO & Marketing</span> door Albin"
+      />
+
+      {/* WAAROM KAMPEN SECTION */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
@@ -184,6 +247,7 @@ export default function KampenPage() {
         </div>
       </section>
 
+      {/* FAQ SECTION */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
@@ -202,11 +266,47 @@ export default function KampenPage() {
         </div>
       </section>
 
-      <ContactForm 
-        title="Zet Koers naar Online Groei in Kampen"
-        subtitle="Klaar om te profiteren van Kampen's unieke historie en ligging? Neem contact op voor een vrijblijvende analyse van je groeimogelijkheden."
-      />
-
-    </>
+      {/* CONTACT */}
+      <section id="contact-section" className="py-16 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Gratis kennismaken met jouw <span className="bg-[#F7D8FA] px-2 rounded italic">SEO Specialist Kampen</span>?
+          </h2>
+          <p className="text-xl text-gray-600 mb-8">
+            Ontdek hoe ik jouw bedrijf kan laten groeien in de Hanzestad – altijd eerlijk advies en snelle reactie.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Direct bellen</h3>
+              <p className="text-gray-600 mb-4">Meer weten? Bel vrijblijvend voor een gratis strategiegesprek.</p>
+              <a
+                href="tel:+31648728828"
+                className="inline-block bg-[#8C2891] hover:bg-[#7A2280] text-white px-6 py-3 rounded-lg font-medium transition-colors"
+              >
+                📞 +31 6 48728828
+              </a>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">WhatsApp direct</h3>
+              <p className="text-gray-600 mb-4">Snel schakelen? Stuur direct een WhatsApp voor snel contact.</p>
+              <a
+                href="https://wa.me/31648728828"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+              >
+                💬 WhatsApp
+              </a>
+            </div>
+          </div>
+          <div className="bg-gray-50 p-6 rounded-lg">
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">SEO Specialist Kampen - Online Marketing Kampen & Omgeving</h3>
+            <p className="text-gray-600">
+              Kampen Binnenstad • IJsselkade • Historisch Centrum • En natuurlijk ook actief in: Zwolle • Deventer • Apeldoorn • IJsselmuiden • Dronten • IJsselstreek
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
   )
 }

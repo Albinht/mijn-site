@@ -1,7 +1,15 @@
+'use client'
+
 import Head from 'next/head'
-import FeatureSection from '../../../components/FeatureSection'
+import Image from 'next/image'
+import graphImage from '../../../assets/graph.png'
+import avatarImage from '../../../assets/avatar.png'
+import masterSeoImage from '../../../assets/Master_seo fundamentals.png'
+import keywordResearchImage from '../../../assets/Keyword_research.png'
+import contentRanksImage from '../../../assets/content that ranks.png'
+import Button from '../../../components/Button'
 import ReviewSlider from '../../../components/ReviewSlider'
-import ContactForm from '../../../components/ContactForm'
+import FeatureSection from '../../../components/FeatureSection'
 
 const dutchReviews = [
   {
@@ -140,9 +148,87 @@ export default function RoermondPage() {
         <meta name="keywords" content="SEO Roermond, online marketing Roermond, SEO specialist Limburg, marketing bureau Roermond" />
         <link rel="canonical" href="https://niblah.com/marketing/roermond" />
       </Head>
-      
 
-      <ReviewSlider reviews={dutchReviews.concat(dutchMoreReviews)} />
+      <main className="min-h-screen bg-white text-gray-900 px-6 py-2 md:py-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          {/* HERO */}
+          <div>
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+              <span className="text-[#000]">Digital Marketing Bureau Roermond: Internationale Grensstad</span><br />
+              <span className="bg-[#F7D8FA] px-2 rounded italic">Nederlandse en Duitse klanten bereiken</span>
+            </h1>
+            <p className="mt-6 text-lg text-gray-700">
+              <strong>Roermond: waar Nederlandse ondernemerschap en Duitse markt samenkomen in een unieke internationale handelsstad.</strong><br />
+              Met 58.000+ inwoners, het beroemde Designer Outlet, en miljoenen internationale bezoekers jaarlijks biedt Roermond ongeëvenaarde kansen voor lokale ondernemers. Als <b>SEO specialist Roermond</b> help ik bedrijven groeien in deze dynamische grensstad waar kwaliteit en internationale uitstraling voorop staan.
+            </p>
+            <ul className="mt-6 space-y-2 text-gray-800">
+              <li>✓ Lokale SEO Roermond: topresultaten in Google</li>
+              <li>✓ Google Ads: direct aanvragen uit Nederland én Duitsland</li>
+              <li>✓ Speciaal voor retail, horeca en internationale handel</li>
+              <li>✓ <b>SEO Roermond</b> met meetbaar resultaat</li>
+              <li>✓ Meertalige websites voor internationale klanten</li>
+            </ul>
+            <div className="mt-8 flex items-center gap-4">
+              <Button onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}>
+                Plan gratis strategiegesprek <span>→</span>
+              </Button>
+              <Button variant="secondary" onClick={() => window.location.href='/work-with-me'}>
+                Ontdek internationale cases
+              </Button>
+            </div>
+            <p className="mt-2 text-sm text-gray-500">Werkzaam in Roermond & Midden-Limburg</p>
+            <p className="mt-2 text-xs text-green-600">📞 Direct contact? Bel <b>+31 6 48728828</b></p>
+          </div>
+
+          {/* IMAGE */}
+          <div className="relative">
+            <div className="rounded-xl overflow-hidden shadow-lg">
+              <Image src={graphImage} alt="SEO Specialist Roermond - Resultaten" className="w-full h-auto" priority />
+            </div>
+            <div className="absolute -bottom-2 -right-2 w-28 h-28 rounded-full overflow-hidden border-4 border-white shadow-md">
+              <Image src={avatarImage} alt="Albin SEO Specialist Roermond" className="object-cover w-full h-full" />
+            </div>
+          </div>
+        </div>
+
+        {/* USP & FEATURE SECTION */}
+        <FeatureSection
+          title="Meer klanten in Roermond met internationale marketing"
+          subtitle="Lokale vindbaarheid en internationale conversie"
+          features={[
+            {
+              badge: "SEO Roermond",
+              title: "SEO Specialist Roermond",
+              description: "Wil je echt groeien in de internationale markt? Ik zorg dat je lokaal en internationaal wordt gevonden en structureel nieuwe klanten aantrekt.",
+              visualTitle: "Internationaal bovenaan",
+              visualSubtitle: "Altijd zichtbaar",
+              image: masterSeoImage
+            },
+            {
+              badge: "Google Ads",
+              title: "Google Ads Roermond",
+              description: "Direct aanvragen van Nederlandse en Duitse klanten. Je adverteert gericht en ziet direct resultaat in je agenda.",
+              visualTitle: "Direct resultaat",
+              visualSubtitle: "Maximaal bereik",
+              image: keywordResearchImage
+            },
+            {
+              badge: "Webdesign & Online Marketing",
+              title: "Marketing Bureau Roermond",
+              description: "Professionele, meertalige websites die zorgen voor meer aanvragen en omzet. Volledig geoptimaliseerd voor de internationale markt.",
+              visualTitle: "Website & Groei",
+              visualSubtitle: "Meer aanvragen",
+              image: contentRanksImage
+            }
+          ]}
+        />
+
+        {/* LOKALE KLANTREVIEWS */}
+        <ReviewSlider
+          customReviews={dutchReviews}
+          customMoreReviews={dutchMoreReviews}
+          title="Roermond groeit met <span class='bg-[#F7D8FA] px-2 rounded italic'>Internationale SEO & Marketing</span> door Albin"
+        />
 
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -202,11 +288,48 @@ export default function RoermondPage() {
         </div>
       </section>
 
-      <ContactForm 
-        title="Start je Online Groei in Roermond"
-        subtitle="Klaar om meer Nederlandse én Duitse klanten te bereiken? Neem contact op voor een vrijblijvende analyse van je huidige internationale positie."
-      />
-
+        {/* CONTACT */}
+        <section id="contact-section" className="py-16 px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Gratis kennismaken met jouw <span className="bg-[#F7D8FA] px-2 rounded italic">SEO Specialist Roermond</span>?
+            </h2>
+            <p className="text-xl text-gray-600 mb-8">
+              Ontdek hoe ik jouw bedrijf kan laten groeien in Roermond – altijd eerlijk advies en snelle reactie.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Direct bellen</h3>
+                <p className="text-gray-600 mb-4">Meer weten? Bel vrijblijvend voor een gratis strategiegesprek.</p>
+                <a
+                  href="tel:+31648728828"
+                  className="inline-block bg-[#8C2891] hover:bg-[#7A2280] text-white px-6 py-3 rounded-lg font-medium transition-colors"
+                >
+                  📞 +31 6 48728828
+                </a>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">WhatsApp direct</h3>
+                <p className="text-gray-600 mb-4">Snel schakelen? Stuur direct een WhatsApp voor snel contact.</p>
+                <a
+                  href="https://wa.me/31648728828"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+                >
+                  💬 WhatsApp
+                </a>
+              </div>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">SEO Specialist Roermond - Online Marketing Roermond & Midden-Limburg</h3>
+              <p className="text-gray-600">
+                Roermond Centrum • Designer Outlet • En natuurlijk ook actief in: Venlo • Sittard • Weert • Echt-Susteren • Midden-Limburg regio
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
     </>
   )
 }
