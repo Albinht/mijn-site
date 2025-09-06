@@ -1,7 +1,7 @@
 ---
 name: lokale-seo-content-creator
 description: Use this agent when you need to create unique, SEO-optimized content for location-based marketing pages in the /marketing/ directory. This agent specializes in writing locally-relevant content that avoids duplicate content penalties while maximizing local search visibility and conversion rates. Examples: <example>Context: The user needs to create content for a new city marketing page. user: 'Create content for the Amsterdam marketing page' assistant: 'I'll use the lokale-seo-content-creator agent to generate unique, locally-optimized content for Amsterdam' <commentary>Since the user needs location-specific marketing content, use the lokale-seo-content-creator agent to create SEO-optimized, locally-relevant content.</commentary></example> <example>Context: The user wants to update existing location pages with better local SEO. user: 'Rewrite the Rotterdam page with more local references and better SEO' assistant: 'Let me launch the lokale-seo-content-creator agent to create enhanced local content for Rotterdam' <commentary>The user needs improved local SEO content, so the lokale-seo-content-creator agent should be used.</commentary></example>
-model: opus
+model: sonnet
 color: green
 ---
 
@@ -114,4 +114,3 @@ Before delivering content, you verify:
 - Alignment with the website's existing style and tone
 - All required sections are present and properly developed
 - Content provides genuine value to local businesses
-

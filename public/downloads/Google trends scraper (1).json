@@ -1,0 +1,256 @@
+{
+  "name": "Google trends scraper",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 8
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        368,
+        -16
+      ],
+      "id": "eaf95fb2-9b7a-41c3-9b04-b3417b0433ae",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        640,
+        -16
+      ],
+      "id": "16bd897a-f27b-4eaa-96f7-8fbd48397ac0",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "jsCode": "// n8n Google Trends Parser\n// Input: $input.first().json.data.markdown\n\n/**\n * Extract trend information from a single table row\n */\nfunction extractTrendFromLine(line) {\n  // Skip lines that don't contain trend data\n  if (!line.includes('searches') || !line.includes('Active')) {\n    return null;\n  }\n\n  try {\n    // Split by | to get table columns\n    const columns = line.split('|').map(col => col.trim());\n    \n    // Find the main trend column (usually contains the search term and volume)\n    const mainColumn = columns.find(col => \n      col.includes('searches') && col.includes('Active')\n    );\n    \n    if (!mainColumn) return null;\n\n    // Extract search term (first line before search volume)\n    const searchTermMatch = mainColumn.match(/^([^<\\n]+?)(?:\\n|<br>)/);\n    const searchTerm = searchTermMatch ? searchTermMatch[1].trim() : null;\n    \n    // Extract search volume\n    const volumeMatch = mainColumn.match(/(\\d+K?\\+?)\\s*searches/);\n    const searchVolume = volumeMatch ? volumeMatch[1] : null;\n    \n    // Extract growth percentage\n    const growthMatch = mainColumn.match(/(\\d+)%/);\n    const growthPercentage = growthMatch ? parseInt(growthMatch[1]) : null;\n    \n    // Extract time information\n    const timeMatch = mainColumn.match(/(yesterday|\\d+[hd]\\s*ago|\\d+\\s*(?:minutes?|hours?|days?)\\s*ago)/);\n    const timeAgo = timeMatch ? timeMatch[1] : null;\n    \n    // Extract related terms from breakdown column\n    const breakdownColumn = columns.find(col => \n      col.includes('Search term') || col.includes('Explore')\n    );\n    \n    const relatedTerms = extractRelatedTerms(breakdownColumn);\n\n    // Only return if we have at least a search term\n    if (!searchTerm) return null;\n\n    return {\n      searchTerm: searchTerm,\n      searchVolume: searchVolume,\n      growthPercentage: growthPercentage,\n      timeAgo: timeAgo,\n      status: 'Active',\n      relatedTerms: relatedTerms,\n      country: 'Netherlands',\n      volumeNumeric: parseVolumeToNumber(searchVolume)\n    };\n    \n  } catch (error) {\n    console.warn('Error parsing trend line:', error);\n    return null;\n  }\n}\n\n/**\n * Extract related search terms from the breakdown column\n */\nfunction extractRelatedTerms(breakdownText) {\n  if (!breakdownText) return [];\n  \n  const terms = [];\n  \n  // Find all text that appears before \"Search term\"\n  const termMatches = breakdownText.match(/([^<\\n]+?)(?=\\n[^<\\n]+?\\nSearch term)/g);\n  \n  if (termMatches) {\n    termMatches.forEach(match => {\n      const cleanTerm = match.trim();\n      if (cleanTerm && !terms.includes(cleanTerm)) {\n        terms.push(cleanTerm);\n      }\n    });\n  }\n  \n  return terms;\n}\n\n/**\n * Convert volume string to number for comparison\n */\nfunction parseVolumeToNumber(volume) {\n  if (!volume) return 0;\n  \n  const match = volume.match(/(\\d+)([KM]?)/);\n  if (!match) return 0;\n  \n  let num = parseInt(match[1]);\n  const unit = match[2];\n  \n  if (unit === 'K') num *= 1000;\n  if (unit === 'M') num *= 1000000;\n  \n  return num;\n}\n\n// Main execution for n8n\nconst markdownContent = $input.first().json.data.markdown;\nconst trends = [];\n\nif (!markdownContent) {\n  // Return empty array if no markdown content\n  return [];\n}\n\n// Split content into lines for processing\nconst lines = markdownContent.split('\\n');\n\n// Find the table data section\nconst tableStartIndex = lines.findIndex(line => \n  line.includes('Search trends') && line.includes('Search volume')\n);\n\nif (tableStartIndex === -1) {\n  console.warn('Could not find trends table in the data');\n  return [];\n}\n\n// Process each line after the table header\nfor (let i = tableStartIndex + 1; i < lines.length; i++) {\n  const line = lines[i].trim();\n  \n  // Skip empty lines and table separators\n  if (!line || line.startsWith('|---') || line === '|  |') {\n    continue;\n  }\n  \n  // Parse trend data from table rows\n  const trendData = extractTrendFromLine(line);\n  if (trendData) {\n    trends.push({\n      json: trendData\n    });\n  }\n}\n\n// Sort by volume (highest first)\ntrends.sort((a, b) => b.json.volumeNumeric - a.json.volumeNumeric);\n\n// Return the array of trend objects for n8n\nreturn trends;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        944,
+        -16
+      ],
+      "id": "b5dd389c-ac44-4066-aea5-37d9115775d5",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=",
+        "options": {
+          "systemMessage": "="
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        1440,
+        0
+      ],
+      "id": "d2c52076-1cb3-43c4-b05d-bced59a1b8ef",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": "openai/gpt-4o",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        1424,
+        240
+      ],
+      "id": "c0553c37-ceee-4ed0-8cfe-912477b109ce",
+      "name": "OpenRouter Chat Model",
+      "credentials": {
+        "openRouterApi": {
+          "id": "SBBDKxve9I4HBbAC",
+          "name": "OpenRouter account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1200,
+        -16
+      ],
+      "id": "19bef363-ac73-4d56-bcf6-9f96eb69ef35",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "jsCode": "// n8n Function Node - Parse AI Analysis and Filter Opportunities\n// This parser handles both \"NO BUSINESS\" outputs and viable opportunities\n\n// Get the AI response and input data from previous nodes\nlet aiResponse = '';\nlet searchTerm = '';\nlet searchVolume = 0;\nlet country = '';\nlet timeDetected = '';\n\n// Try different possible paths to get the AI response\ntry {\n  // Common paths for AI response\n  aiResponse = $input.first().json.response || \n               $input.first().json.text || \n               $input.first().json.message || \n               $input.first().json.output ||\n               $input.first().json.content ||\n               '';\n  \n  // Get original input data - might be from the same node or need to look back\n  searchTerm = $input.first().json.searchTerm || \n               $node[\"Google Trends Data\"]?.json?.searchTerm || \n               $input.first().json.search_term || \n               '';\n  \n  searchVolume = $input.first().json.searchVolume || \n                 $node[\"Google Trends Data\"]?.json?.searchVolume || \n                 $input.first().json.search_volume || \n                 0;\n  \n  country = $input.first().json.country || \n            $node[\"Google Trends Data\"]?.json?.country || \n            '';\n  \n  timeDetected = $input.first().json.timeAgo || \n                 $input.first().json.timeDetected ||\n                 $node[\"Google Trends Data\"]?.json?.timeAgo || \n                 '';\n} catch (error) {\n  // If there's an error getting data, log it\n  console.log('Error getting input data:', error);\n}\n\n// Validate we have an AI response\nif (!aiResponse || aiResponse === '') {\n  return [{\n    json: {\n      status: 'ERROR',\n      error: 'No AI response found',\n      message: 'Could not find AI response in input data',\n      inputReceived: $input.first().json\n    }\n  }];\n}\n\n// Check if this is a NO BUSINESS response\nfunction isNoBusiness(text) {\n  return text.includes('NO BUSINESS') || \n         text.includes('❌ NO BUSINESS') ||\n         text.includes('❌NO BUSINESS');\n}\n\n// Extract NO BUSINESS details\nfunction parseNoBusinessResponse(text) {\n  const reasonMatch = text.match(/Reason:\\s*(.+?)(?:\\n|$)/i);\n  const categoryMatch = text.match(/Category:\\s*(.+?)(?:\\n|$)/i);\n  \n  return {\n    status: 'NO_BUSINESS',\n    viable: false,\n    reason: reasonMatch ? reasonMatch[1].trim() : 'Not viable for eCommerce',\n    category: categoryMatch ? categoryMatch[1].trim() : 'Unknown',\n    searchTerm: searchTerm,\n    searchVolume: searchVolume,\n    country: country,\n    timeDetected: timeDetected,\n    opportunityScore: 0,\n    monetizationModel: 'None',\n    products: [],\n    actionPlan: [],\n    warnings: [],\n    proTip: null\n  };\n}\n\n// Extract opportunity score\nfunction extractOpportunityScore(text) {\n  const scorePatterns = [\n    /OPPORTUNITY SCORE:\\s*(\\d+)\\/10/i,\n    /🎯\\s*OPPORTUNITY SCORE:\\s*(\\d+)\\/10/i,\n    /Score.*?(\\d+)\\/10/i,\n    /\\b(\\d+)\\/10\\b/,\n    /Opportunity Score.*?(\\d+)/i\n  ];\n  \n  for (const pattern of scorePatterns) {\n    const match = text.match(pattern);\n    if (match && match[1]) {\n      return parseInt(match[1]);\n    }\n  }\n  return 0;\n}\n\n// Extract monetization model\nfunction extractMonetizationModel(text) {\n  const modelPattern = /💰\\s*MONETIZATION MODEL:\\s*(.+?)(?:\\n|\\*\\*|$)/i;\n  const match = text.match(modelPattern);\n  if (match && match[1]) {\n    return match[1].trim().replace(/\\*/g, '');\n  }\n  \n  // Try alternative pattern\n  const altPattern = /MONETIZATION MODEL:\\s*(.+?)(?:\\n|\\*\\*|$)/i;\n  const altMatch = text.match(altPattern);\n  if (altMatch && altMatch[1]) {\n    return altMatch[1].trim().replace(/\\*/g, '');\n  }\n  \n  return 'Not specified';\n}\n\n// Extract products\nfunction extractProducts(text) {\n  const products = [];\n  \n  // Look for the TOP PRODUCTS section\n  const patterns = [\n    /📦\\s*TOP PRODUCTS:(.+?)(?:🚀|QUICK ACTION|$)/si,\n    /TOP PRODUCTS:(.+?)(?:QUICK ACTION|PRO TIP|WATCH OUT|$)/si\n  ];\n  \n  let productSection = '';\n  for (const pattern of patterns) {\n    const match = text.match(pattern);\n    if (match) {\n      productSection = match[1];\n      break;\n    }\n  }\n  \n  if (productSection) {\n    const lines = productSection.split('\\n').filter(line => line.trim());\n    \n    lines.forEach(line => {\n      // Remove numbering, bullets, and markdown\n      const cleanLine = line\n        .replace(/^\\d+\\.\\s*/, '')\n        .replace(/^[•\\-\\*]\\s*/, '')\n        .replace(/\\*\\*/g, '')\n        .replace(/\\[/, '')\n        .replace(/\\]/, '')\n        .trim();\n      \n      if (cleanLine && cleanLine.length > 3) {\n        // Parse product line (format: Product - $price - supplier)\n        const parts = cleanLine.split('-').map(p => p.trim());\n        if (parts[0]) {\n          products.push({\n            name: parts[0],\n            price: parts[1] || 'Price TBD',\n            supplier: parts[2] || 'Various'\n          });\n        }\n      }\n    });\n  }\n  \n  return products.slice(0, 5);\n}\n\n// Extract action plan\nfunction extractActionPlan(text) {\n  const actionPlan = [];\n  \n  const patterns = [\n    /🚀\\s*QUICK ACTION PLAN:(.+?)(?:⚠️|WATCH OUT|$)/si,\n    /QUICK ACTION PLAN:(.+?)(?:WATCH OUT|PRO TIP|$)/si\n  ];\n  \n  let actionSection = '';\n  for (const pattern of patterns) {\n    const match = text.match(pattern);\n    if (match) {\n      actionSection = match[1];\n      break;\n    }\n  }\n  \n  if (actionSection) {\n    const lines = actionSection.split('\\n').filter(line => line.trim());\n    \n    lines.forEach(line => {\n      const cleanLine = line\n        .replace(/^[\\d•\\-\\*]\\.\\s*/, '')\n        .replace(/\\[/, '')\n        .replace(/\\]/, '')\n        .replace(/\\*\\*/g, '')\n        .trim();\n      \n      if (cleanLine && cleanLine.length > 3) {\n        actionPlan.push(cleanLine);\n      }\n    });\n  }\n  \n  return actionPlan.slice(0, 5);\n}\n\n// Extract warnings\nfunction extractWarnings(text) {\n  const warnings = [];\n  \n  const patterns = [\n    /⚠️\\s*WATCH OUT FOR:(.+?)(?:💡|PRO TIP|$)/si,\n    /WATCH OUT FOR:(.+?)(?:PRO TIP|$)/si\n  ];\n  \n  let warningSection = '';\n  for (const pattern of patterns) {\n    const match = text.match(pattern);\n    if (match) {\n      warningSection = match[1];\n      break;\n    }\n  }\n  \n  if (warningSection) {\n    const lines = warningSection.split('\\n').filter(line => line.trim());\n    \n    lines.forEach(line => {\n      const cleanLine = line\n        .replace(/^[\\d•\\-\\*]\\.\\s*/, '')\n        .replace(/\\[/, '')\n        .replace(/\\]/, '')\n        .replace(/\\*\\*/g, '')\n        .trim();\n      \n      if (cleanLine && cleanLine.length > 3) {\n        warnings.push(cleanLine);\n      }\n    });\n  }\n  \n  return warnings;\n}\n\n// Extract pro tip\nfunction extractProTip(text) {\n  const patterns = [\n    /💡\\s*PRO TIP:(.+?)(?:\\n\\n|---|\\*\\*|$)/si,\n    /PRO TIP:(.+?)(?:\\n\\n|---|\\*\\*|$)/si\n  ];\n  \n  for (const pattern of patterns) {\n    const match = text.match(pattern);\n    if (match) {\n      return match[1]\n        .replace(/\\*\\*/g, '')\n        .replace(/\\[/, '')\n        .replace(/\\]/, '')\n        .trim();\n    }\n  }\n  return null;\n}\n\n// Main parsing logic\nlet result;\n\ntry {\n  if (isNoBusiness(aiResponse)) {\n    // Handle NO BUSINESS response\n    result = parseNoBusinessResponse(aiResponse);\n  } else {\n    // Parse viable opportunity\n    const opportunityScore = extractOpportunityScore(aiResponse);\n    \n    // Double-check: if score is 3 or below, mark as NO BUSINESS\n    if (opportunityScore <= 3) {\n      result = {\n        status: 'NO_BUSINESS',\n        viable: false,\n        reason: 'Opportunity score too low (3/10 or below)',\n        category: 'Low Score',\n        searchTerm: searchTerm,\n        searchVolume: searchVolume,\n        country: country,\n        timeDetected: timeDetected,\n        opportunityScore: opportunityScore,\n        monetizationModel: 'None',\n        products: [],\n        actionPlan: [],\n        warnings: [],\n        proTip: null\n      };\n    } else {\n      // Parse as viable opportunity\n      const products = extractProducts(aiResponse);\n      const actionPlan = extractActionPlan(aiResponse);\n      const warnings = extractWarnings(aiResponse);\n      \n      result = {\n        status: 'OPPORTUNITY',\n        viable: true,\n        searchTerm: searchTerm,\n        searchVolume: searchVolume,\n        country: country,\n        timeDetected: timeDetected,\n        opportunityScore: opportunityScore,\n        opportunityLevel: opportunityScore >= 8 ? 'HIGH' : opportunityScore >= 6 ? 'MEDIUM' : 'LOW',\n        monetizationModel: extractMonetizationModel(aiResponse),\n        products: products,\n        productCount: products.length,\n        actionPlan: actionPlan,\n        warnings: warnings,\n        proTip: extractProTip(aiResponse),\n        timestamp: new Date().toISOString()\n      };\n    }\n  }\n\n  // Add metadata\n  result.metadata = {\n    parsed: true,\n    parserVersion: '1.1',\n    responseLength: aiResponse.length,\n    hasProducts: result.products && result.products.length > 0,\n    hasActionPlan: result.actionPlan && result.actionPlan.length > 0,\n    requiresAction: result.viable && result.opportunityScore >= 6\n  };\n\n  // Create summary for quick reference\n  if (result.viable) {\n    result.summary = `${result.searchTerm} - Score: ${result.opportunityScore}/10 - ${result.monetizationModel} - ${result.productCount} products identified`;\n  } else {\n    result.summary = `${result.searchTerm} - NO BUSINESS - ${result.reason}`;\n  }\n\n} catch (error) {\n  // If parsing fails, return error with debug info\n  result = {\n    status: 'PARSE_ERROR',\n    error: error.message,\n    searchTerm: searchTerm,\n    aiResponsePreview: aiResponse.substring(0, 200),\n    viable: false\n  };\n}\n\n// Return array with single object (n8n format)\nreturn [{\n  json: result\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1792,
+        0
+      ],
+      "id": "abe91246-386d-46d4-a962-0ce2758290e0",
+      "name": "Code1"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2000,
+        0
+      ],
+      "id": "af06096d-bae0-4816-8d71-3a9d5df496c7",
+      "name": "Append or update row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "4PKst3Su4MLlYgc3",
+          "name": "Niblah"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenRouter Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "Append or update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append or update row in sheet": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "a4af989d-211a-4e79-a3cd-c9a7f4032b20",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "2626a98ec6d0a56a7dcacf771aa7b7219ea1b3c21ece498aa93687b6d68baeb7"
+  },
+  "id": "YSVSFP3X1hBEn0hN",
+  "tags": []
+}

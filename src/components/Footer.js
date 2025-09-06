@@ -206,6 +206,24 @@ const Footer = () => {
               </li>
               <li>
                 <Link 
+                  href="/marketing/almelo" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Almelo
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/assen" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Assen
+                </Link>
+              </li>
+              <li>
+                <Link 
                   href="/marketing/aalten" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
                   style={{ color: 'rgb(0, 0, 0)' }}
@@ -269,6 +287,51 @@ const Footer = () => {
               </li>
               <li>
                 <Link 
+                  href="/marketing/den-helder" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Den Helder
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/doetinchem" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Doetinchem
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/dokkum" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Dokkum
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/den-haag" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Den Haag
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/eindhoven" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Eindhoven
+                </Link>
+              </li>
+              <li>
+                <Link 
                   href="/marketing/ede" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
                   style={{ color: 'rgb(0, 0, 0)' }}
@@ -278,11 +341,83 @@ const Footer = () => {
               </li>
               <li>
                 <Link 
+                  href="/marketing/groningen" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Groningen
+                </Link>
+              </li>
+              <li>
+                <Link 
                   href="/marketing/gulpen-wittem" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
                   style={{ color: 'rgb(0, 0, 0)' }}
                 >
                   Gulpen-Wittem
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/hardenberg" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Hardenberg
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/harderwijk" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Harderwijk
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/heerenveen" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Heerenveen
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/hoogeveen" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Hoogeveen
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/hoorn" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Hoorn
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/houten" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Houten
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/heusden" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Heusden
                 </Link>
               </li>
               <li>
@@ -301,6 +436,24 @@ const Footer = () => {
                   style={{ color: 'rgb(0, 0, 0)' }}
                 >
                   Hilvarenbeek
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/kampen" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Kampen
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/katwijk" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Katwijk
                 </Link>
               </li>
               <li>
@@ -337,6 +490,15 @@ const Footer = () => {
                   style={{ color: 'rgb(0, 0, 0)' }}
                 >
                   Almen
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/almere" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Almere
                 </Link>
               </li>
               <li>
@@ -413,6 +575,15 @@ const Footer = () => {
               </li>
               <li>
                 <Link 
+                  href="/marketing/rotterdam" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Rotterdam
+                </Link>
+              </li>
+              <li>
+                <Link 
                   href="/marketing/lopik" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
                   style={{ color: 'rgb(0, 0, 0)' }}
@@ -440,6 +611,15 @@ const Footer = () => {
               </li>
               <li>
                 <Link 
+                  href="/marketing/nijmegen" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Nijmegen
+                </Link>
+              </li>
+              <li>
+                <Link 
                   href="/marketing/laren" 
                   className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
                   style={{ color: 'rgb(0, 0, 0)' }}
@@ -454,6 +634,15 @@ const Footer = () => {
                   style={{ color: 'rgb(0, 0, 0)' }}
                 >
                   Uitgeest
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/utrecht" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Utrecht
                 </Link>
               </li>
               <li>
@@ -508,6 +697,357 @@ const Footer = () => {
                   style={{ color: 'rgb(0, 0, 0)' }}
                 >
                   Eemnes
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/schiermonnikoog" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Schiermonnikoog
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/schijndel" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Schijndel
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/schin-op-geul" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Schin op Geul
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/schoonebeek" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Schoonebeek
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/schoonhoven" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Schoonhoven
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/sevenum" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Sevenum
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/sint-anthonis" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Sint-Anthonis
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/sint-michielsgestel" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Sint-Michielsgestel
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/sint-oedenrode" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Sint-Oedenrode
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/sittard" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Sittard
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/sliedrecht" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Sliedrecht
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/sluis" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Sluis
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/sneek" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Sneek
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/soest" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Soest
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/soesterberg" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Soesterberg
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/tilburg" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Tilburg
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/breda" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Breda
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/delft" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Delft
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/deventer" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Deventer
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/dordrecht" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Dordrecht
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/emmen" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Emmen
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/haarlem" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Haarlem
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/leeuwarden" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Leeuwarden
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/leiden" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Leiden
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/middelburg" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Middelburg
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/nieuwegein" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Nieuwegein
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/oosterhout" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Oosterhout
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/rijswijk" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Rijswijk
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/roermond" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Roermond
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/maastricht" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Maastricht
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/veenendaal" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Veenendaal
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/velsen" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Velsen
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/venlo" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Venlo
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/waalwijk" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Waalwijk
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/weert" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Weert
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/woerden" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Woerden
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/zaanstad" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Zaanstad
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/zeist" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Zeist
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/marketing/zwolle" 
+                  className="text-[18px] leading-[130%] capitalize hover:opacity-80 transition-opacity"
+                  style={{ color: 'rgb(0, 0, 0)' }}
+                >
+                  Zwolle
                 </Link>
               </li>
             </ul>

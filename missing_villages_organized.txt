@@ -1,0 +1,308 @@
+MISSING VILLAGES ORGANIZED BY PRIORITY
+==================================================
+
+BATCH 1 - MAJOR CITIES:
+Rotterdam -> rotterdam
+Den Haag -> den-haag
+Utrecht -> utrecht
+Eindhoven -> eindhoven
+Groningen -> groningen
+Tilburg -> tilburg
+Almere -> almere
+Nijmegen -> nijmegen
+Breda -> breda
+Haarlem -> haarlem
+Zaanstad -> zaanstad
+Enschede -> enschede
+Den Bosch -> den-bosch
+Zwolle -> zwolle
+Leiden -> leiden
+Leeuwarden -> leeuwarden
+Maastricht -> maastricht
+Dordrecht -> dordrecht
+Alkmaar -> alkmaar
+Delft -> delft
+Emmen -> emmen
+Deventer -> deventer
+Venlo -> venlo
+Helmond -> helmond
+Purmerend -> purmerend
+Amstelveen -> amstelveen
+Oss -> oss
+Hilversum -> hilversum
+
+BATCH 2 - MEDIUM CITIES:
+Haarlemmermeer -> haarlemmermeer
+Alphen aan den Rijn -> alphen-aan-den-rijn
+Land van Cuijk -> land-van-cuijk
+Sittard-Geleen -> sittard-geleen
+Hoeksche Waard -> hoeksche-waard
+Dijk en Waard -> dijk-en-waard
+Súdwest-Fryslân -> súdwest-fryslân
+Lelystad -> lelystad
+Meierijstad -> meierijstad
+Leidschendam-Voorburg -> leidschendam-voorburg
+Vlaardingen -> vlaardingen
+Voorne aan Zee -> voorne-aan-zee
+Bergen op Zoom -> bergen-op-zoom
+Capelle aan den IJssel -> capelle-aan-den-ijssel
+Stichtse Vecht -> stichtse-vecht
+Lansingerland -> lansingerland
+Westerkwartier -> westerkwartier
+Vijfheerenlanden -> vijfheerenlanden
+Midden-Groningen -> midden-groningen
+Gooise Meren -> gooise-meren
+Pijnacker-Nootdorp -> pijnacker-nootdorp
+Krimpenerwaard -> krimpenerwaard
+Smallingerland -> smallingerland
+West Betuwe -> west-betuwe
+De Fryske Marren -> de-fryske-marren
+Goeree-Overflakkee -> goeree-overflakkee
+Utrechtse Heuvelrug -> utrechtse-heuvelrug
+Noordoostpolder -> noordoostpolder
+Hollands Kroon -> hollands-kroon
+Achtkarspelen -> achtkarspelen
+Alblasserdam -> alblasserdam
+Albrandswaard -> albrandswaard
+Alkmaar-Noord -> alkmaar-noord
+Ambt Delden -> ambt-delden
+Annerveenschekanaal -> annerveenschekanaal
+Apeldoorn-Noord -> apeldoorn-noord
+Augustinusga -> augustinusga
+Barger-Compascuum -> barger-compascuum
+Barneveld-Zuid -> barneveld-zuid
+Beek en Donk -> beek-en-donk
+Beetsterzwaag -> beetsterzwaag
+Bellingwolde -> bellingwolde
+Bergambacht -> bergambacht
+Berg en Dal -> berg-en-dal
+Bergen aan Zee -> bergen-aan-zee
+Bergentheim -> bergentheim
+Bergschenhoek -> bergschenhoek
+Berkel en Rodenrijs -> berkel-en-rodenrijs
+Berkel-Enschot -> berkel-enschot
+Berkenwoude -> berkenwoude
+Berschenhoek -> berschenhoek
+Biddinghuizen -> biddinghuizen
+Bleskensgraaf -> bleskensgraaf
+Blitterswijck -> blitterswijck
+Bloemendaal -> bloemendaal
+Boelenslaan -> boelenslaan
+Boesingheliede -> boesingheliede
+Achtkarspelen -> achtkarspelen
+Westerwolde -> westerwolde
+Albrandswaard -> albrandswaard
+Weststellingwerf -> weststellingwerf
+Eijsden-Margraten -> eijsden-margraten
+Borger-Odoorn -> borger-odoorn
+Aa en Hunze -> aa-en-hunze
+Ooststellingwerf -> ooststellingwerf
+Voorschoten -> voorschoten
+Neder-Betuwe -> neder-betuwe
+Steenbergen -> steenbergen
+Nuenen, Gerwen en Nederwetten -> nuenen,-gerwen-en-nederwetten
+Haaksbergen -> haaksbergen
+Loon op Zand -> loon-op-zand
+Wijk bij Duurstede -> wijk-bij-duurstede
+Bloemendaal -> bloemendaal
+Zwartewaterland -> zwartewaterland
+Reimerswaal -> reimerswaal
+Stede Broec -> stede-broec
+Woensdrecht -> woensdrecht
+Geertruidenberg -> geertruidenberg
+Cranendonck -> cranendonck
+West Maas en Waal -> west-maas-en-waal
+Drechterland -> drechterland
+Alblasserdam -> alblasserdam
+Midden-Delfland -> midden-delfland
+Dantumadiel -> dantumadiel
+Hardinxveld-Giessendam -> hardinxveld-giessendam
+Son en Breugel -> son-en-breugel
+Heeze-Leende -> heeze-leende
+Valkenburg aan de Geul -> valkenburg-aan-de-geul
+Reusel-De Mierden -> reusel-de-mierden
+Bergen (Limburg) -> bergen-limburg
+Alphen-Chaam -> alphen-chaam
+Mook en Middelaar -> mook-en-middelaar
+Noord-Beveland -> noord-beveland
+Baarle-Nassau -> baarle-nassau
+Terschelling -> terschelling
+
+BATCH 3 - SMALL TOWNS/VILLAGES:
+Zoetermeer -> zoetermeer
+Westland -> westland
+Nissewaard -> nissewaard
+Heerlen -> heerlen
+Hengelo -> hengelo
+Schiedam -> schiedam
+Roosendaal -> roosendaal
+Gouda -> gouda
+Hoorn -> hoorn
+Almelo -> almelo
+Assen -> assen
+Veenendaal -> veenendaal
+Velsen -> velsen
+Katwijk -> katwijk
+Nieuwegein -> nieuwegein
+Zeist -> zeist
+Hardenberg -> hardenberg
+Roermond -> roermond
+Rijswijk -> rijswijk
+Doetinchem -> doetinchem
+Maashorst -> maashorst
+Altena -> altena
+Oosterhout -> oosterhout
+Hoogeveen -> hoogeveen
+Den Helder -> den-helder
+Kampen -> kampen
+Woerden -> woerden
+Heerenveen -> heerenveen
+Weert -> weert
+Waalwijk -> waalwijk
+Houten -> houten
+Middelburg -> middelburg
+Harderwijk -> harderwijk
+Zutphen -> zutphen
+Overbetuwe -> overbetuwe
+Zuidplas -> zuidplas
+Akersloot -> akersloot
+Akkrum -> akkrum
+Almkerk -> almkerk
+Alteveer -> alteveer
+Andel -> andel
+Andijk -> andijk
+Anjum -> anjum
+Anloo -> anloo
+Annen -> annen
+Appelscha -> appelscha
+Appingedam -> appingedam
+Arkel -> arkel
+Arnemuiden -> arnemuiden
+Arriën -> arriën
+Arum -> arum
+Assendelft -> assendelft
+Asten -> asten
+Axel -> axel
+Baambrugge -> baambrugge
+Baarn -> baarn
+Baarlo -> baarlo
+Bakel -> bakel
+Bakkeveen -> bakkeveen
+Balgoij -> balgoij
+Balk -> balk
+Balkbrug -> balkbrug
+Ballum -> ballum
+Baneheide -> baneheide
+Bant -> bant
+Barchem -> barchem
+Bargerveen -> bargerveen
+Baron -> baron
+Bathmen -> bathmen
+Bavel -> bavel
+Bedum -> bedum
+Beesd -> beesd
+Beilen -> beilen
+Beinsdorp -> beinsdorp
+Beesel -> beesel
+Bennebroek -> bennebroek
+Benneveld -> benneveld
+Bentelo -> bentelo
+Benthuizen -> benthuizen
+Bergeijk -> bergeijk
+Bergen -> bergen
+Bergharen -> bergharen
+Berghem -> berghem
+Berltsum -> berltsum
+Bertem -> bertem
+Best -> best
+Beugen -> beugen
+Beuningen -> beuningen
+Beusichem -> beusichem
+Beverwijk -> beverwijk
+Bierum -> bierum
+Biezelinge -> biezelinge
+Bilthoven -> bilthoven
+Bingelrade -> bingelrade
+Birdaard -> birdaard
+Bladel -> bladel
+Blankenham -> blankenham
+Blije -> blije
+Blijham -> blijham
+Bodegraven -> bodegraven
+Boekel -> boekel
+Boerakker -> boerakker
+Drimmelen -> drimmelen
+Ermelo -> ermelo
+Buren -> buren
+Leiderdorp -> leiderdorp
+Veendam -> veendam
+Heemstede -> heemstede
+Dongen -> dongen
+Wassenaar -> wassenaar
+Brunssum -> brunssum
+Hulst -> hulst
+Tholen -> tholen
+Beuningen -> beuningen
+Dinkelland -> dinkelland
+Maasdriel -> maasdriel
+Oegstgeest -> oegstgeest
+Voorst -> voorst
+Wierden -> wierden
+Baarn -> baarn
+Duiven -> duiven
+Borne -> borne
+De Wolden -> de-wolden
+Wijdemeren -> wijdemeren
+Stein -> stein
+Maasgouw -> maasgouw
+Goirle -> goirle
+Oldebroek -> oldebroek
+Heiloo -> heiloo
+Zeewolde -> zeewolde
+Rucphen -> rucphen
+Elburg -> elburg
+Koggenland -> koggenland
+Lisse -> lisse
+Losser -> losser
+Laarbeek -> laarbeek
+Borsele -> borsele
+Zundert -> zundert
+Hillegom -> hillegom
+Bunschoten -> bunschoten
+Veere -> veere
+Brummen -> brummen
+Bladel -> bladel
+Roerdalen -> roerdalen
+Rhenen -> rhenen
+Eersel -> eersel
+Westerveld -> westerveld
+Druten -> druten
+Oirschot -> oirschot
+Heerde -> heerde
+Bergeijk -> bergeijk
+Ommen -> ommen
+Olst-Wijhe -> olst-wijhe
+Enkhuizen -> enkhuizen
+Meerssen -> meerssen
+Staphorst -> staphorst
+Waalre -> waalre
+Gennep -> gennep
+Waterland -> waterland
+Nederweert -> nederweert
+Asten -> asten
+Zandvoort -> zandvoort
+Heumen -> heumen
+Wormerland -> wormerland
+Texel -> texel
+Beesel -> beesel
+Kapelle -> kapelle
+Hattem -> hattem
+Voerendaal -> voerendaal
+Opmeer -> opmeer
+Pekela -> pekela
+Boekel -> boekel
+Doesburg -> doesburg
+Simpelveld -> simpelveld
+Ameland -> ameland
+Rozendaal -> rozendaal
+Vlieland -> vlieland
