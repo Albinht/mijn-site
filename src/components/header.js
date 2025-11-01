@@ -94,14 +94,46 @@ export default function Header() {
               </svg>
             </button>
             {isToolsOpen && (
-              <div className="absolute mt-2 w-64 bg-white border border-gray-200 rounded-md shadow-lg z-10">
-                <Link href="/tools/ai-marketing-audit" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">AI Marketing Audit</Link>
-                <Link href="/tools/logo-animator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">🎨 Logo Animator</Link>
-                <Link href="/tools/pdf-editor" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">📑 PDF Editor</Link>
-                <Link href="/tools/invoice-generator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">📄 Invoice Generator</Link>
-                <Link href="/tools/break-even-roas-calculator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"> Break even ROAS Calculator</Link>
-                <Link href="/tools/cpa-calculator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">CPA Calculator</Link>
-                <Link href="/tools/tekens-tellen" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Tekens Tellen Tool</Link>
+              <div className="absolute mt-2 w-80 bg-white border border-gray-200 rounded-md shadow-lg z-10 max-h-96 overflow-y-auto">
+                <div className="py-1">
+                  {/* SEO Tools Section */}
+                  <div className="px-4 py-2 text-xs font-semibold text-gray-500 uppercase">SEO Tools</div>
+                  <Link href="/tools/tekens-tellen" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">📝 Tekens Tellen</Link>
+                  <Link href="/tools/meta-description-generator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">📄 Meta Description Generator</Link>
+                  <Link href="/tools/keyword-suggestion-tool" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">🔍 Keyword Suggestie Tool</Link>
+                  <Link href="/tools/rich-snippet-validator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">⭐ Rich Snippet Validator</Link>
+                  <Link href="/tools/url-slug-generator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">🔗 URL Slug Generator</Link>
+                  <Link href="/tools/anchor-text-generator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">🎯 Anchor Text Generator</Link>
+                  <Link href="/tools/page-title-enhancer" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">✨ Page Title Enhancer</Link>
+                  <Link href="/tools/bulk-meta-description-checker" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">📊 Bulk Meta Checker</Link>
+                  <Link href="/tools/bulk-title-tag-checker" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">📊 Bulk Title Checker</Link>
+                  
+                  <div className="border-t border-gray-200 my-1"></div>
+                  
+                  {/* Technical SEO Tools */}
+                  <div className="px-4 py-2 text-xs font-semibold text-gray-500 uppercase">Technische SEO</div>
+                  <Link href="/tools/html-validator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">🔧 HTML Validator</Link>
+                  <Link href="/tools/ttfb-checker" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">⚡ TTFB Checker</Link>
+                  <Link href="/tools/responsive-design-checker" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">📱 Responsive Checker</Link>
+                  <Link href="/tools/social-media-meta-validator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">📲 Social Meta Validator</Link>
+                  
+                  <div className="border-t border-gray-200 my-1"></div>
+                  
+                  {/* Marketing Tools */}
+                  <div className="px-4 py-2 text-xs font-semibold text-gray-500 uppercase">Marketing Tools</div>
+                  <Link href="/tools/ai-marketing-audit" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">🤖 AI Marketing Audit</Link>
+                  <Link href="/tools/break-even-roas-calculator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">💰 ROAS Calculator</Link>
+                  <Link href="/tools/cpa-calculator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">💵 CPA Calculator</Link>
+                  
+                  <div className="border-t border-gray-200 my-1"></div>
+                  
+                  {/* Design & Content Tools */}
+                  <div className="px-4 py-2 text-xs font-semibold text-gray-500 uppercase">Design & Content</div>
+                  <Link href="/tools/logo-animator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">🎨 Logo Animator</Link>
+                  <Link href="/tools/ai-headshots" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">📸 AI Headshots</Link>
+                  <Link href="/tools/pdf-editor" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">📑 PDF Editor</Link>
+                  <Link href="/tools/invoice-generator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">📄 Invoice Generator</Link>
+                </div>
               </div>
             )}
           </div>

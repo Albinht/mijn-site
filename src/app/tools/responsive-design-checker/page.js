@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import Button from '../../../components/Button'
 
 const DEVICE_PRESETS = {
@@ -292,6 +293,55 @@ export default function ResponsiveDesignChecker() {
           </div>
         </div>
       )}
+
+      {/* SEO Content Sections - Dutch */}
+      <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
+        <h2 className="text-2xl font-bold text-gray-900 mb-6">Responsive Website Checker voor Mobile-First SEO</h2>
+        
+        <div className="prose max-w-none text-gray-700 space-y-4">
+          <p>
+            Een responsive design checker test hoe je website zich aanpast aan verschillende schermformaten. Met Google's mobile-first indexing is een responsive website geen luxe meer maar een noodzaak voor goede SEO. Deze responsive website checker toont precies hoe je site eruitziet op mobiele apparaten, tablets en desktops, en identificeert problemen die je rankings kunnen schaden.
+          </p>
+
+          <p>
+            Wanneer je een responsive checker gebruikt, test je niet alleen de layout maar ook mobiele UX elementen. Zijn buttons groot genoeg om te tikken? Is tekst leesbaar zonder zoomen? Laadt je site snel op mobiel? De responsive design checker hierboven simuleert populaire apparaten zoals iPhone, Samsung Galaxy en iPad om deze vragen te beantwoorden.
+          </p>
+
+          <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-4">Mobile SERP Simulator en Preview</h3>
+          
+          <p>
+            De mobile serp simulator functionaliteit toont hoe je site verschijnt in Google's mobiele zoekresultaten. Dit is cruciaal omdat meer dan 60% van alle zoekopdrachten nu vanaf mobiele apparaten komt. Een slechte mobiele ervaring leidt tot hogere bounce rates, wat je rankings schaadt. Test regelmatig met deze responsive website checker om problemen vroeg op te vangen.
+          </p>
+
+          <p>
+            Gebruik ook onze <Link href="/tools/ttfb-checker" className="text-blue-600 hover:underline">TTFB checker</Link> en <Link href="/tools/html-validator" className="text-blue-600 hover:underline">HTML validator</Link> voor complete technische SEO.
+          </p>
+        </div>
+      </div>
+
+      <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
+        <h2 className="text-2xl font-bold text-gray-900 mb-6">Responsive Design Checker: Veelvoorkomende Problemen</h2>
+        
+        <div className="prose max-w-none text-gray-700 space-y-4">
+          <p>
+            Deze responsive checker identificeert de meest voorkomende responsive design problemen. Te kleine tap targets zijn het nummer één probleem—buttons en links moeten minimaal 44x44 pixels zijn voor touch. Content die breder is dan de viewport veroorzaakt horizontaal scrollen, wat Google penaliseert. Tekst die te klein is om te lezen zonder zoomen frustreert gebruikers en verhoogt bounce rates.
+          </p>
+
+          <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-4">Mobile-First Index Optimalisatie</h3>
+          
+          <p>
+            Google's mobile-first index betekent dat ze primair je mobiele versie indexeren en ranken, zelfs voor desktop zoekresultaten. Als je responsive website checker serieuze mobiele problemen toont, schaadt dat je rankings voor alle apparaten. Zorg dat je mobiele versie dezelfde content, structured data en meta tags heeft als desktop.
+          </p>
+
+          <p>
+            Test niet alleen populaire apparaten maar ook je custom breakpoints. Als je responsive design checker goed scoort op iPhone maar slecht op iPad landscape mode, heb je een gap in je media queries. Test alle orientaties (portrait en landscape) om een volledig beeld te krijgen.
+          </p>
+
+          <p>
+            Optimaliseer ook je <Link href="/tools/meta-description-generator" className="text-blue-600 hover:underline">meta descriptions</Link> en <Link href="/tools/page-title-enhancer" className="text-blue-600 hover:underline">page titles</Link> voor mobile.
+          </p>
+        </div>
+      </div>
 
       {/* Information Section */}
       <div className="bg-white rounded-lg shadow-lg p-8 mb-8">

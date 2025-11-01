@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { CheckCircleIcon, ExclamationTriangleIcon, XCircleIcon, ShareIcon } from '@heroicons/react/24/outline';
 
 export default function SocialMediaMetaValidator() {
@@ -277,6 +278,25 @@ export default function SocialMediaMetaValidator() {
             )}
           </div>
         )}
+
+        {/* SEO Content - Dutch */}
+        <div className="mt-12 bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Open Graph Checker en Twitter Card Validator</h2>
+          
+          <div className="prose max-w-none text-gray-700 space-y-4">
+            <p>
+              Deze open graph checker valideert je social media meta tags voor Facebook, LinkedIn en Twitter. Een opengraph tester is essentieel omdat verkeerde meta tags leiden tot lelijke social shares zonder afbeelding of met verkeerde tekst. De twitter card validator controleert specifiek of je Twitter Cards correct zijn geïmplementeerd voor optimale presentatie wanneer mensen je links delen.
+            </p>
+
+            <p>
+              Open Graph meta tags bepalen hoe je content eruitziet wanneer gedeeld op social media. De open graph checker hierboven test alle vereiste og:tags zoals og:title, og:description, og:image en og:url. Voor Twitter gebruik je twitter:card, twitter:title en twitter:image tags. Test beide met deze social meta validator voordat je content gaat promoten—een missing of invalid tag kan je click-through rate drastisch verlagen.
+            </p>
+
+            <p>
+              Optimaliseer ook je <Link href="/tools/meta-description-generator" className="text-blue-600 hover:underline">meta descriptions</Link> en <Link href="/tools/rich-snippet-validator" className="text-blue-600 hover:underline">schema markup</Link> voor complete SEO.
+            </p>
+          </div>
+        </div>
 
         {/* Info Section */}
         <div className="mt-8 bg-blue-50 rounded-lg p-6">

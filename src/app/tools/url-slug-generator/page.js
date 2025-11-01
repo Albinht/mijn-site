@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { ClipboardIcon, CheckIcon, LinkIcon } from '@heroicons/react/24/outline';
 
 export default function URLSlugGenerator() {
@@ -268,6 +269,99 @@ export default function URLSlugGenerator() {
             </div>
           </div>
         )}
+
+        {/* SEO Content Sections - Dutch */}
+        <div className="mt-12 bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">SEO-Vriendelijke URL Slugs Maken</h2>
+          
+          <div className="prose max-w-none text-gray-700 space-y-4">
+            <p>
+              Een URL slug is het deel van je webadres dat komt na je domeinnaam en beschrijft de specifieke pagina. Een goede slug generator helpt je SEO-vriendelijke URLs te maken die zowel zoekmachines als gebruikers begrijpen. URLs zijn een ranking factor voor Google, dus het optimaliseren van je slugs kan direct je rankings verbeteren.
+            </p>
+
+            <p>
+              Deze slug generator tool maakt automatisch schone URLs van je pagina titels. Het verwijdert speciale karakters, zet alles om naar kleine letters, vervangt spaties door hyphens en zorgt dat je URL slug leesbaar blijft. Een goede URL slug is kort, descriptief en bevat je belangrijkste zoekwoord.
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-4">Waarom URL Slugs Belangrijk Zijn voor SEO</h3>
+            
+            <p>
+              Google gebruikt je URL structuur om te begrijpen waar je pagina over gaat. Een descriptieve slug zoals "seo-vriendelijke-urls" is veel beter dan "page?id=123". Gebruikers zien je URL in de zoekresultaten en een duidelijke, leesbare URL slug krijgt meer clicks dan een cryptische code.
+            </p>
+
+            <p>
+              De SEO slug tool hierboven genereert automatisch meerdere variaties. De standaard versie is meestal het beste: lowercase, hyphens tussen woorden, geen stop words, en beknopt. Als je URL slug generator "remove stop words" aan heeft staan, worden woorden zoals "de", "het", "van" verwijderd om de URL korter te houden zonder betekenis te verliezen.
+            </p>
+
+            <p>
+              Optimaliseer ook je <Link href="/tools/meta-description-generator" className="text-blue-600 hover:underline">meta descriptions</Link> en <Link href="/tools/keyword-suggestion-tool" className="text-blue-600 hover:underline">zoekwoorden</Link> voor complete on-page SEO.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-8 bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Slug Generator Best Practices</h2>
+          
+          <div className="prose max-w-none text-gray-700 space-y-4">
+            <p>
+              Bij het gebruik van een slug generator zijn er een paar belangrijke regels. Houd je URL slugs onder de 60 karakters wanneer mogelijk. Google toont ongeveer 50-60 karakters in de zoekresultaten, dus langere slugs worden afgekort. Gebruik altijd hyphens (-) in plaats van underscores (_) omdat Google hyphens ziet als word separators.
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-4">Keywords in URL Slugs</h3>
+            
+            <p>
+              Plaats je belangrijkste zoekwoord aan het begin van je SEO slug. Als je pagina gaat over "WordPress SEO tips", maak dan je slug "wordpress-seo-tips" in plaats van "tips-voor-wordpress-seo". Google geeft meer gewicht aan woorden die eerder in de URL staan. Maar stop niet meerdere keywords in één slug, dat ziet eruit als spam.
+            </p>
+
+            <p>
+              Stop words (lidwoorden, voorzetsels) kunnen meestal veilig worden verwijderd. "beste-wordpress-seo-plugins" kan worden ingekort tot "beste-wordpress-seo-plugins" zonder betekenisverlies. Maar als de stop word essentieel is voor begrijpelijkheid, houd hem dan. Leesbaarheid gaat boven kortheid.
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-4">URL Slugs na Publicatie Wijzigen</h3>
+            
+            <p>
+              Verander je URL slug niet nadat een pagina geïndexeerd is, tenzij absoluut noodzakelijk. Elke URL wijziging vereist een 301 redirect om link juice te behouden en broken links te voorkomen. Als je moet wijzigen, gebruik dan deze slug generator om een betere versie te maken, implementeer de redirect, en monitor je rankings.
+            </p>
+
+            <p>
+              Test ook je <Link href="/tools/rich-snippet-validator" className="text-blue-600 hover:underline">schema markup</Link> en <Link href="/tools/page-title-enhancer" className="text-blue-600 hover:underline">page titles</Link> naast je URL optimalisatie.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-8 bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Veelgestelde Vragen</h2>
+          
+          <div className="space-y-6">
+            <div className="border-b border-gray-200 pb-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Wat is een URL slug precies?</h3>
+              <p className="text-gray-700">
+                Een URL slug is het laatste deel van een webadres dat de specifieke pagina identificeert. In "example.com/seo-tips" is "seo-tips" de slug. Het wordt automatisch gegenereerd uit je pagina titel maar kan handmatig worden aangepast met een slug generator tool voor betere SEO.
+              </p>
+            </div>
+
+            <div className="border-b border-gray-200 pb-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Moet ik hyphens of underscores gebruiken in slugs?</h3>
+              <p className="text-gray-700">
+                Gebruik altijd hyphens (-) in je SEO slug, niet underscores (_). Google behandelt hyphens als word separators maar ziet underscores als deel van een enkel woord. "seo-tips" wordt gelezen als "seo tips" terwijl "seo_tips" wordt gezien als "seotips". Alle goede slug generators gebruiken standaard hyphens.
+              </p>
+            </div>
+
+            <div className="border-b border-gray-200 pb-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Hoe lang mag een URL slug zijn?</h3>
+              <p className="text-gray-700">
+                Idealiter onder de 60 karakters. Google toont ongeveer 50-60 karakters in zoekresultaten, dus langere slugs worden afgekort. Focus op je belangrijkste 3-5 woorden. Een slug generator helpt automatisch te lange URLs inkorten door stop words te verwijderen en alleen essentiële termen te behouden.
+              </p>
+            </div>
+
+            <div className="pb-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Moet ik keywords in mijn URL slug zetten?</h3>
+              <p className="text-gray-700">
+                Ja, plaats je hoofdkeyword in de URL slug, bij voorkeur aan het begin. Dit helpt Google begrijpen waar je pagina over gaat en kan je rankings verbeteren. Maar forceer het niet—de slug moet natuurlijk leesbaar blijven. Gebruik een slug generator om automatisch keyword-rijke maar leesbare URLs te maken.
+              </p>
+            </div>
+          </div>
+        </div>
 
         {/* Info Section */}
         <div className="bg-blue-50 rounded-lg p-6">

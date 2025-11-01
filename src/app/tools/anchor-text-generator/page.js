@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import Button from '../../../components/Button'
 
 const ANCHOR_TEXT_TYPES = {
@@ -422,6 +423,25 @@ export default function AnchorTextGenerator() {
               </li>
             </ul>
           </div>
+        </div>
+      </div>
+
+      {/* Additional SEO Content */}
+      <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
+        <h2 className="text-2xl font-bold text-gray-900 mb-6">Anchor Text Generator voor Link Building</h2>
+        
+        <div className="prose max-w-none text-gray-700 space-y-4">
+          <p>
+            Deze anchor text generator helpt je een natuurlijk link profiel te bouwen. Door meerdere anchor text variaties te creëren vermijd je over-optimalisatie en Google penalties. Of je nu backlinks opbouwt, interne links optimaliseert, of guest posts schrijft—diverse anchor texts zijn essentieel voor succesvolle link building.
+          </p>
+
+          <p>
+            De tool genereert verschillende anchor text types: exact match voor precisie, partial match voor relevantie, branded voor natuurlijkheid, en generic voor diversiteit. Gebruik deze anchor text generator om je complete link strategie te plannen voordat je begint met outreach. Mix low-risk anchors (branded, generic) met medium-risk (partial match) en beperk high-risk (exact match) anchors tot 5-10%.
+          </p>
+
+          <p>
+            Optimaliseer ook je <Link href="/tools/keyword-suggestion-tool" className="text-blue-600 hover:underline">keyword research</Link> en <Link href="/tools/url-slug-generator" className="text-blue-600 hover:underline">URL slugs</Link> voor complete SEO strategie.
+          </p>
         </div>
       </div>
 

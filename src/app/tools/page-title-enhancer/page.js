@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import Button from '../../../components/Button'
 
 const TITLE_FORMULAS = [
@@ -508,6 +509,25 @@ export default function PageTitleEnhancer() {
               <li>• 1-2 keywords per title</li>
             </ul>
           </div>
+        </div>
+      </div>
+
+      {/* SEO Content Section */}
+      <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
+        <h2 className="text-2xl font-bold text-gray-900 mb-6">Page Title Enhancer voor SEO en CTR</h2>
+        
+        <div className="prose max-w-none text-gray-700 space-y-4">
+          <p>
+            Deze page title enhancer genereert SEO-geoptimaliseerde page titles die zowel hoog ranken als clicks genereren. Je page title (title tag) is één van de belangrijkste ranking factors—Google gebruikt het om te begrijpen waar je pagina over gaat. Maar een titel moet ook aantrekkelijk zijn voor gebruikers omdat het de eerste tekst is die ze zien in zoekresultaten.
+          </p>
+
+          <p>
+            De tool hierboven gebruikt bewezen title formules zoals "Nummer + Bijvoeglijk Naamwoord + Keyword + Belofte" en "Hoe + Actie + Gewenst Resultaat". Deze patronen combineren SEO met psychologie: cijfers trekken aandacht, power words wekken emotie, en een duidelijke belofte verhoogt click-through rates. Test verschillende variaties met deze page title enhancer en kies de titel met de hoogste score.
+          </p>
+
+          <p>
+            Optimaliseer ook je <Link href="/tools/meta-description-generator" className="text-blue-600 hover:underline">meta descriptions</Link> en <Link href="/tools/url-slug-generator" className="text-blue-600 hover:underline">URL slugs</Link> voor complete on-page SEO.
+          </p>
         </div>
       </div>
 

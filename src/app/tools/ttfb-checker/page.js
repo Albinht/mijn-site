@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { ClockIcon, CheckCircleIcon, ExclamationTriangleIcon, XCircleIcon } from '@heroicons/react/24/outline';
 
 export default function TTFBChecker() {
@@ -269,6 +270,103 @@ export default function TTFBChecker() {
             )}
           </div>
         )}
+
+        {/* SEO Content Sections - Dutch */}
+        <div className="mt-12 bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Wat is TTFB en Waarom Is Het Belangrijk voor SEO?</h2>
+          
+          <div className="prose max-w-none text-gray-700 space-y-4">
+            <p>
+              TTFB (Time To First Byte) is de tijd die je server nodig heeft om de eerste byte van data naar de browser te sturen nadat een verzoek is gedaan. Het is een cruciale performance metric die direct invloed heeft op je pagina laadsnelheid en daarmee op je Google rankings. Een lage TTFB zorgt voor snellere websites en betere gebruikerservaring.
+            </p>
+
+            <p>
+              Wanneer je een TTFB test uitvoert met onze TTFB checker, meet je eigenlijk hoe snel je server reageert. Dit omvat DNS lookup tijd, verbindingstijd, SSL handshake en de tijd die je server nodig heeft om de request te verwerken. Google gebruikt TTFB als een van de Core Web Vitals signalen voor rankings.
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-4">TTFB Check Uitvoeren en Interpreteren</h3>
+            
+            <p>
+              Met een TTFB checker zie je direct waar vertragingen optreden. Een goede TTFB ligt onder de 200ms, acceptabel is 200-500ms, en alles boven de 1000ms is problematisch voor SEO. Als je TTFB test resultaten slecht zijn, kan dit verschillende oorzaken hebben: trage hosting, inefficiënte database queries, geen caching, of te veel server-side processing.
+            </p>
+
+            <p>
+              De TTFB check tool hierboven splitst de totale tijd op in verschillende componenten. DNS lookup tijd toont hoe snel je domeinnaam wordt vertaald naar een IP-adres. Connection time is de tijd om verbinding te maken met de server. Server time is de daadwerkelijke verwerkingstijd van je server. Door deze op te splitsen zie je precies waar optimalisatie nodig is.
+            </p>
+
+            <p>
+              Check ook je <Link href="/tools/html-validator" className="text-blue-600 hover:underline">HTML validatie</Link> en <Link href="/tools/responsive-design-checker" className="text-blue-600 hover:underline">responsive design</Link> voor complete website performance.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-8 bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">TTFB Verbeteren: Praktische Tips</h2>
+          
+          <div className="prose max-w-none text-gray-700 space-y-4">
+            <p>
+              Na je TTFB test wil je natuurlijk weten hoe je de score verbetert. De meest impactvolle verbetering is meestal betere hosting. Gedeelde hosting heeft vaak trage TTFB omdat je server resources deelt met honderden andere sites. Upgrade naar een VPS of dedicated server als je TTFB check consistent slechte resultaten toont.
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-4">Server-Side Optimalisaties</h3>
+            
+            <p>
+              Implementeer server-side caching om dynamische content niet elke keer opnieuw te genereren. Voor WordPress gebruik je plugins zoals WP Rocket of W3 Total Cache. Voor custom applicaties implementeer je Redis of Memcached. Caching kan je TTFB met 50-80% verbeteren volgens onze TTFB checker metingen.
+            </p>
+
+            <p>
+              Database optimalisatie is essentieel. Trage database queries kunnen je TTFB naar boven duwen. Gebruik database indexen, optimaliseer queries, en implementeer query caching. Als je TTFB test hoge server time toont, ligt het probleem vaak in de database.
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-4">CDN en DNS Optimalisatie</h3>
+            
+            <p>
+              Een Content Delivery Network (CDN) zoals Cloudflare kan je TTFB drastisch verbeteren, vooral voor internationale bezoekers. De CDN serveert content vanaf servers dichtbij de gebruiker. Als je TTFB check hoge DNS lookup tijd toont, overweeg dan een snellere DNS provider zoals Cloudflare DNS of Google DNS.
+            </p>
+
+            <p>
+              Monitor regelmatig je TTFB met deze checker om degradatie vroeg op te sporen. Als je nieuwe plugins installeert, extra scripts toevoegt, of je database groeit, kan je TTFB verslechteren. Wekelijkse TTFB tests helpen problemen vroeg identificeren.
+            </p>
+
+            <p>
+              Optimaliseer ook je <Link href="/tools/meta-description-generator" className="text-blue-600 hover:underline">meta descriptions</Link> en <Link href="/tools/keyword-suggestion-tool" className="text-blue-600 hover:underline">zoekwoorden</Link> naast je technische SEO.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-8 bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Veelgestelde Vragen over TTFB</h2>
+          
+          <div className="space-y-6">
+            <div className="border-b border-gray-200 pb-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Wat is een goede TTFB score?</h3>
+              <p className="text-gray-700">
+                Een uitstekende TTFB ligt onder de 200ms. Google beschouwt 200-500ms als acceptabel, maar alles onder de 200ms geeft je een competitief voordeel. Boven de 1000ms is problematisch en moet je direct aanpakken. Gebruik onze TTFB checker om je score te meten en te monitoren.
+              </p>
+            </div>
+
+            <div className="border-b border-gray-200 pb-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Hoe vaak moet ik een TTFB test doen?</h3>
+              <p className="text-gray-700">
+                Test je TTFB wekelijks als baseline, en na elke grote website wijziging. Als je nieuwe plugins installeert, hosting wijzigt, of grote content updates doet, voer dan een TTFB check uit om te verifiëren dat de performance niet verslechterd is.
+              </p>
+            </div>
+
+            <div className="border-b border-gray-200 pb-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Beïnvloedt TTFB mijn Google rankings?</h3>
+              <p className="text-gray-700">
+                Ja, indirect. TTFB is onderdeel van je overall page speed, wat een confirmed ranking factor is. Google's Core Web Vitals waarderen snelle sites, en TTFB is de basis daarvan. Sites met lage TTFB laden sneller, hebben lagere bounce rates en betere user engagement—allemaal ranking signalen.
+              </p>
+            </div>
+
+            <div className="pb-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Wat veroorzaakt een hoge TTFB?</h3>
+              <p className="text-gray-700">
+                De meest voorkomende oorzaken zijn trage hosting, geen server-side caching, inefficiënte database queries, te veel server-side processing, trage DNS resolution, en gebrek aan CDN. Gebruik deze TTFB test tool om te identificeren welk component het traagst is, dan weet je waar je moet optimaliseren.
+              </p>
+            </div>
+          </div>
+        </div>
 
         {/* Info Section */}
         <div className="mt-8 bg-blue-50 rounded-lg p-6">

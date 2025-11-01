@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { MagnifyingGlassIcon, SparklesIcon, ClipboardIcon, CheckIcon } from '@heroicons/react/24/outline';
 
 export default function KeywordSuggestionTool() {
@@ -295,6 +296,103 @@ export default function KeywordSuggestionTool() {
             )}
           </div>
         )}
+
+        {/* SEO Content Sections - Dutch */}
+        <div className="mt-12 bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Zoekwoorden Generator voor Nederlandse SEO</h2>
+          
+          <div className="prose max-w-none text-gray-700 space-y-4">
+            <p>
+              Een keyword suggestion tool helpt je relevante zoekwoorden vinden voor je content strategie. Deze zoekwoorden generator analyseert je basis keyword en suggereert gerelateerde termen die je doelgroep zoekt. Of je nu een keyword checker nodig hebt voor bestaande content of nieuwe zoekwoorden wilt ontdekken, deze gratis zoekwoorden tool geeft je de data die je nodig hebt.
+            </p>
+
+            <p>
+              De keyword suggestie tool hierboven genereert automatisch verschillende categorieën keywords: long-tail variaties, vraag-gebaseerde zoekwoorden, commerciële termen, en informatieve queries. Elk keyword komt met search intent classificatie (informational, navigational, transactional, commercial) en competition level (low, medium, high) zodat je weet welke keywords het makkelijkst te ranken zijn.
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-4">Keyword Checker en Analyse</h3>
+            
+            <p>
+              Na het genereren van keywords wil je ze analyseren. Een goede keyword checker evalueert niet alleen zoekvolume maar ook ranking difficulty en user intent. Long-tail keywords (3-5 woorden) hebben vaak lager zoekvolume maar hogere conversion rates omdat ze specifieker zijn. "WordPress SEO tips voor beginners" is makkelijker te ranken dan alleen "SEO".
+            </p>
+
+            <p>
+              Deze keyword suggestion tool toont ook content ideeën voor elk keyword. Gebruik deze suggesties om je content plan te maken. Als de tool "WordPress SEO plugin" suggereert met content idee "Vergelijking van top 10 plugins", heb je meteen een artikel onderwerp. Combineer meerdere gerelateerde keywords in één uitgebreid artikel voor betere rankings.
+            </p>
+
+            <p>
+              Gebruik ook onze <Link href="/tools/meta-description-generator" className="text-blue-600 hover:underline">meta description generator</Link> en <Link href="/tools/url-slug-generator" className="text-blue-600 hover:underline">URL slug generator</Link> om je keywords te verwerken in je on-page SEO.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-8 bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Gratis Zoekwoorden Tool Effectief Gebruiken</h2>
+          
+          <div className="prose max-w-none text-gray-700 space-y-4">
+            <p>
+              Deze gratis zoekwoorden tool is krachtig, maar je moet de resultaten strategisch gebruiken. Start met je hoofd-keyword in de keyword suggestion tool. Als je een webshop hebt die hardloopschoenen verkoopt, begin dan met "hardloopschoenen" en laat de zoekwoorden generator werk doen. Je krijgt suggesties zoals "beste hardloopschoenen voor beginners", "hardloopschoenen heren sale", "neutrale hardloopschoenen".
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-4">Keyword Suggest Tool voor Content Planning</h3>
+            
+            <p>
+              Groepeer de gegenereerde keywords in clusters. Alle keywords over "hardloopschoenen voor beginners" kun je in één uitgebreid artikel verwerken. Keywords over "hardloopschoenen onderhoud" vormen een andere cluster. Deze keyword wrapper strategie zorgt dat je niet tientallen dunne pagina's maakt die tegen elkaar concurreren.
+            </p>
+
+            <p>
+              Let op search intent bij elke keyword. Informationale keywords (hoe, wat, waarom) zijn goed voor blog content. Transactionele keywords (kopen, bestellen, prijs) zijn voor product/service pagina's. Commerciële keywords (beste, top 10, review) werken voor vergelijkingscontent. De keyword checker tool markeert de intent zodat je weet welk content type te maken.
+            </p>
+
+            <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-4">Zoekwoorden Tool en Concurrentie Analyse</h3>
+            
+            <p>
+              De competition indicator in deze keyword suggestion tools toont hoe moeilijk het is om te ranken. Low competition keywords zijn ideaal om mee te starten. Als je een nieuwe site hebt, target eerst low competition long-tail keywords. Zodra je autoriteit opbouwt, ga je na medium en high competition keywords.
+            </p>
+
+            <p>
+              Exporteer je keyword lijst als CSV om verder te analyseren in spreadsheets. Sorteer op competition, search intent, of keyword lengte. Prioriteer keywords waar je al content voor hebt en optimaliseer die eerst. Voor nieuwe content, kies low-hanging fruit: low competition keywords met duidelijke search intent.
+            </p>
+
+            <p>
+              Optimaliseer je content verder met onze <Link href="/tools/anchor-text-generator" className="text-blue-600 hover:underline">anchor text generator</Link> en <Link href="/tools/rich-snippet-validator" className="text-blue-600 hover:underline">schema markup validator</Link>.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-8 bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Veelgestelde Vragen</h2>
+          
+          <div className="space-y-6">
+            <div className="border-b border-gray-200 pb-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Wat is het verschil tussen een keyword generator en keyword checker?</h3>
+              <p className="text-gray-700">
+                Een keyword suggestion tool of zoekwoorden generator creëert nieuwe keyword ideeën gebaseerd op je input. Een keyword checker analyseert bestaande keywords op metrics zoals zoekvolume, competition en ranking difficulty. Deze tool combineert beide: genereert keywords én checkt ze meteen op relevantie en competition.
+              </p>
+            </div>
+
+            <div className="border-b border-gray-200 pb-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Hoe vaak moet ik keyword research doen?</h3>
+              <p className="text-gray-700">
+                Gebruik een gratis zoekwoorden tool minimaal elk kwartaal om nieuwe trends en keywords te identificeren. Na grote Google updates, als je nieuwe producten lanceert, of wanneer je SEO traffic daalt, doe dan nieuwe keyword research met de keyword suggestion tool. Search intent en zoekvolumes veranderen continu.
+              </p>
+            </div>
+
+            <div className="border-b border-gray-200 pb-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Moet ik me focussen op high volume keywords?</h3>
+              <p className="text-gray-700">
+                Niet per se. Deze keyword suggest tool toont ook competition levels. Een keyword met lager zoekvolume maar low competition converteert vaak beter dan een high volume keyword met extreme competition. Long-tail keywords uit de zoekwoorden generator hebben vaak hogere conversion rates omdat ze specifieker zijn.
+              </p>
+            </div>
+
+            <div className="pb-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Hoe implementeer ik keywords in mijn content?</h3>
+              <p className="text-gray-700">
+                Nadat je keywords gevonden hebt met deze gratis zoekwoorden tool, gebruik je ze natuurlijk in je content. Plaats het hoofdkeyword in de H1, URL, meta description en eerste alinea. Verwerk gerelateerde keywords uit de keyword checker in H2 subkoppen en door de content. Vermijd keyword stuffing—focus op natuurlijke, leesbare tekst.
+              </p>
+            </div>
+          </div>
+        </div>
 
         {/* Info Section */}
         <div className="mt-8 bg-blue-50 rounded-lg p-6">

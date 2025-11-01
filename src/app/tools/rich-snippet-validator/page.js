@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import Button from '../../../components/Button'
 
 const SCHEMA_TYPES = {
@@ -452,6 +453,116 @@ export default function RichSnippetValidator() {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* SEO Content Sections - Dutch */}
+      <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
+        <h2 className="text-2xl font-bold text-gray-900 mb-6">Rich Snippets Testen voor Hogere Click-Through Rates</h2>
+        
+        <div className="prose max-w-none text-gray-700 space-y-4">
+          <p>
+            Rich snippets zijn de uitgebreide zoekresultaten die je in Google ziet met extra informatie naast de titel en beschrijving. Denk aan productbeoordelingen met sterren, bereidingstijden bij recepten, evenementdata, of uitklapbare FAQ-secties. Deze opvallende elementen komen van structured data die je aan je website toevoegt met schema markup.
+          </p>
+
+          <p>
+            Een rich snippet validator helpt je checken of je schema markup correct is geïmplementeerd voordat Google je pagina's crawlt. Dit is belangrijk omdat zelfs kleine fouten kunnen voorkomen dat je rich snippets verschijnen, wat je waardevolle clicks en zichtbaarheid kost in de zoekresultaten.
+          </p>
+
+          <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-4">Waarom Je Een Rich Snippet Tester Nodig Hebt</h3>
+          
+          <p>
+            Voordat je een pagina publiceert met structured data, moet je het testen met een rich snippet checker. Google's Rich Results Test kan basisfouten detecteren, maar je wilt er zeker van zijn dat je schema markup best practices volgt. Onze rich snippets tester valideert je markup en toont precies hoe het eruit zal zien in de zoekresultaten.
+          </p>
+
+          <p>
+            Veelgemaakte fouten zijn ontbrekende verplichte velden, incorrecte datatypes, of verkeerde schema types. Als je bijvoorbeeld een product markeert maar vergeet de prijs of beschikbaarheid toe te voegen, toont Google je product rich snippet niet. Een grondige rich snippets checker vangt deze problemen op voordat ze een issue worden.
+          </p>
+
+          <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-4">Schema Markup Generator vs Validator</h3>
+          
+          <p>
+            Een schema markup generator maakt de structured data code voor je aan, terwijl een validator bestaande markup controleert op fouten. Je kunt een structured data generator gebruiken om snel JSON-LD code te maken voor artikelen of producten, en daarna onze rich snippet validator gebruiken om te verifiëren dat alles correct werkt.
+          </p>
+
+          <p>
+            De meest voorkomende schema types zijn Article, Product, Recipe, Event, LocalBusiness en FAQ. Elk type heeft verplichte en aanbevolen velden. Een FAQ schema generator heeft bijvoorbeeld vragen en antwoorden nodig in een specifiek format, terwijl product schema naam, afbeelding en aanbod-informatie vereist.
+          </p>
+
+          <p>
+            Check ook je <Link href="/tools/meta-description-generator" className="text-blue-600 hover:underline">meta descriptions</Link> en <Link href="/tools/keyword-suggestion-tool" className="text-blue-600 hover:underline">zoekwoorden</Link> om je complete SEO te optimaliseren naast je rich snippets.
+          </p>
+        </div>
+      </div>
+
+      <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
+        <h2 className="text-2xl font-bold text-gray-900 mb-6">Schema Markup Implementeren Die Echt Werkt</h2>
+        
+        <div className="prose max-w-none text-gray-700 space-y-4">
+          <p>
+            Schema markup komt in drie formaten: JSON-LD, Microdata en RDFa. Google raadt JSON-LD aan omdat het makkelijker te implementeren en onderhouden is. Je voegt het toe aan de head-sectie van je pagina zonder je HTML-structuur aan te passen. De meeste schema tester tools, inclusief de onze, ondersteunen alle drie de formaten.
+          </p>
+
+          <p>
+            Begin met de schema types die bij je content passen. E-commerce sites profiteren van Product en Review schema. Blogs moeten Article schema implementeren. Lokale bedrijven hebben LocalBusiness schema nodig met accurate NAP-informatie. Receptsites hebben uiteraard Recipe schema nodig. Gebruik een structured data generator om de initiële opzet te versnellen, en valideer daarna met een rich snippet testing tool.
+          </p>
+
+          <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-4">FAQ Schema Generator en Structured Data</h3>
+          
+          <p>
+            FAQ schema creëert die uitklapbare vraag-en-antwoord boxen in zoekresultaten. Je hebt ze vast gezien, ze nemen grote delen van het scherm in op mobiel. Dat is krachtige zichtbaarheid. Een FAQ schema generator structureert je vragen en antwoorden op een manier die Google begrijpt, maar je moet het testen met een rich snippets tool om de juiste formatting te garanderen.
+          </p>
+
+          <p>
+            Bij het maken van FAQ structured data heeft elke vraag een name en acceptedAnswer property nodig. Dupliceer geen vragen, en zorg dat antwoorden daadwerkelijk de gestelde vraag beantwoorden. Google kan FAQ rich snippets afwijzen als ze manipulatie vermoeden of als antwoorden promotioneel zijn in plaats van informatief.
+          </p>
+
+          <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-4">Schema Markup Testen en Troubleshooten</h3>
+          
+          <p>
+            Na implementatie gebruik je meerdere rich snippet validators om je werk te controleren. Start met onze schema tester, verifieer daarna met Google's Rich Results Test. Check zowel desktop als mobiele previews. Soms ziet schema er perfect uit maar triggert het geen rich snippets omdat Google's criteria streng zijn.
+          </p>
+
+          <p>
+            Als je structured data valideert maar rich snippets niet verschijnen na een paar weken, check Google Search Console op manual actions of structured data problemen. Je hebt misschien te veel schema types op één pagina, conflicterende data, of content die niet matcht met je markup claims. Een grondige rich text tester helpt deze mismatches identificeren.
+          </p>
+
+          <p>
+            Vergeet ook niet je <Link href="/tools/html-validator" className="text-blue-600 hover:underline">HTML te valideren</Link> want ongeldige HTML kan je schema markup breken.
+          </p>
+        </div>
+      </div>
+
+      <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
+        <h2 className="text-2xl font-bold text-gray-900 mb-6">Geavanceerde Schema Markup Strategieën</h2>
+        
+        <div className="prose max-w-none text-gray-700 space-y-4">
+          <p>
+            Naast basis implementatie kun je meerdere schema types combineren voor betere resultaten. Een blogpost over een recept kan zowel Article als Recipe schema bevatten. Een productreview pagina profiteert van Product, Review en AggregateRating schema samen. Zorg er alleen voor dat elk schema type accuraat de pagina-inhoud representeert.
+          </p>
+
+          <p>
+            Monitor je rich snippet prestaties in Google Search Console. Het Performance rapport toont welke pagina's rich results krijgen en hun click-through rates. Als bepaalde pagina's onderpresteren ondanks schema markup, draai ze opnieuw door een rich snippets checker om mogelijke verbeteringen te identificeren.
+          </p>
+
+          <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-4">Veelgemaakte Schema Markup Fouten</h3>
+          
+          <ul className="list-disc pl-6 space-y-2">
+            <li>Schema markup gebruiken voor content die niet op de pagina staat</li>
+            <li>Verborgen content markeren of nep-reviews toevoegen</li>
+            <li>Vergeten om schema bij te werken als pagina-inhoud verandert</li>
+            <li>Het verkeerde schema type gebruiken voor je content</li>
+            <li>Markup niet testen met een rich snippet validator voor publicatie</li>
+            <li>Verplichte velden negeren of incorrecte data formats gebruiken</li>
+          </ul>
+
+          <p>
+            Regelmatige validatie met een structured data generator en tester helpt deze problemen vroeg op te vangen. Schema markup is geen set-it-and-forget-it. Als je content update, update dan ook je structured data. Verouderde informatie in je schema kan manual actions van Google triggeren.
+          </p>
+
+          <p>
+            Optimaliseer ook je <Link href="/tools/page-title-enhancer" className="text-blue-600 hover:underline">page titles</Link> en <Link href="/tools/url-slug-generator" className="text-blue-600 hover:underline">URL slugs</Link> voor complete on-page SEO.
+          </p>
         </div>
       </div>
 
