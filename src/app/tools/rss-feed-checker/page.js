@@ -9,6 +9,25 @@ export default function RSSFeedChecker() {
   const [results, setResults] = useState(null);
   const [isChecking, setIsChecking] = useState(false);
 
+  const handleCheck = async () => {
+    if (!feedUrl.trim()) return;
+    setIsChecking(true);
+    try {
+      // Mock validation for now - can be replaced with actual API call
+      const mockResults = {
+        valid: true,
+        feedType: 'RSS 2.0',
+        itemCount: 10,
+        lastUpdated: new Date().toISOString(),
+      };
+      setResults(mockResults);
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setIsChecking(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-red-50 py-12 px-4">
       <div className="max-w-6xl mx-auto">
