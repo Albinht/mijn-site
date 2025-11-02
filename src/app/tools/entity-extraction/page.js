@@ -294,7 +294,7 @@ export default function EntityExtraction() {
             <div className="border-b border-gray-200 pb-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Hoeveel entities moet mijn content hebben?</h3>
               <p className="text-gray-700">
-                Quality over quantity. Een 1000-woord artikel heeft typisch 10-20 betekenisvolle entities. Te weinig (<5) en je content is vague, generic. Te veel (>50) en je risk name-dropping zonder depth. Focus op relevant entities—als je schrijft over "WordPress SEO", mention "WordPress.org", "Yoast SEO", "Matt Mullenweg", "plugins" is natural. Random entities zoals "McDonald's", "Taylor Swift" without context is spam. Use entity extraction om je current entity density te checken.
+                Quality over quantity. Een 1000-woord artikel heeft typisch 10-20 betekenisvolle entities. Te weinig ({'<'}5) en je content is vague, generic. Te veel ({'>'}50) en je risk name-dropping zonder depth. Focus op relevant entities—als je schrijft over "WordPress SEO", mention "WordPress.org", "Yoast SEO", "Matt Mullenweg", "plugins" is natural. Random entities zoals "McDonald's", "Taylor Swift" without context is spam. Use entity extraction om je current entity density te checken.
               </p>
             </div>
 
