@@ -96,6 +96,41 @@ export default function Header() {
             {isToolsOpen && (
               <div className="absolute mt-2 w-80 bg-white border border-gray-200 rounded-md shadow-lg z-10 max-h-96 overflow-y-auto">
                 <div className="py-1">
+                  {/* AI Content Tools */}
+                  <div className="px-4 py-2 text-xs font-semibold text-gray-500 uppercase">AI Content Tools</div>
+                  <Link href="/tools/ai-content-expansion" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">🤖 AI Content Expansion</Link>
+                  <Link href="/tools/content-repurposing" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">♻️ Content Repurposing</Link>
+                  <Link href="/tools/topic-cluster-builder" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">🗂️ Topic Cluster Builder</Link>
+                  <Link href="/tools/entity-extraction" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">🏷️ Entity Extraction</Link>
+                  <Link href="/tools/content-summarizer" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">📋 Content Summarizer</Link>
+                  <Link href="/tools/user-intent-predictor" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">🎯 User Intent Predictor</Link>
+                  
+                  <div className="border-t border-gray-200 my-1"></div>
+                  
+                  {/* SEO Analysis Tools */}
+                  <div className="px-4 py-2 text-xs font-semibold text-gray-500 uppercase">SEO Analysis</div>
+                  <Link href="/tools/faq-creator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">❓ FAQ Creator</Link>
+                  <Link href="/tools/serp-simulator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">🔍 SERP Simulator</Link>
+                  <Link href="/tools/hreflang-tester" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">🌍 Hreflang Tester</Link>
+                  <Link href="/tools/rss-feed-checker" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">📡 RSS Feed Checker</Link>
+                  <Link href="/tools/interne-links-checker" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">🔗 Internal Links Checker</Link>
+                  <Link href="/tools/zoekwoorddichtheid" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">📊 Keyword Density</Link>
+                  
+                  <div className="border-t border-gray-200 my-1"></div>
+                  
+                  {/* Bulk Checkers */}
+                  <div className="px-4 py-2 text-xs font-semibold text-gray-500 uppercase">Bulk Checkers</div>
+                  <Link href="/tools/bulk-link-checker" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">🔗 Bulk Link Checker</Link>
+                  <Link href="/tools/bulk-redirect-checker" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">↪️ Bulk Redirect Checker</Link>
+                  <Link href="/tools/bulk-robots-validator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">🤖 Bulk Robots Validator</Link>
+                  <Link href="/tools/bulk-canonical-checker" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">📑 Bulk Canonical Checker</Link>
+                  <Link href="/tools/bulk-alt-checker" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">🖼️ Bulk Alt Checker</Link>
+                  <Link href="/tools/bulk-noindex-checker" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">🚫 Bulk Noindex Checker</Link>
+                  <Link href="/tools/bulk-ssl-checker" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">🔒 Bulk SSL Checker</Link>
+                  <Link href="/tools/bulk-external-link-checker" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">🌐 Bulk External Link Checker</Link>
+                  
+                  <div className="border-t border-gray-200 my-1"></div>
+                  
                   {/* SEO Tools Section */}
                   <div className="px-4 py-2 text-xs font-semibold text-gray-500 uppercase">SEO Tools</div>
                   <Link href="/tools/tekens-tellen" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">📝 Tekens Tellen</Link>
@@ -105,8 +140,6 @@ export default function Header() {
                   <Link href="/tools/url-slug-generator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">🔗 URL Slug Generator</Link>
                   <Link href="/tools/anchor-text-generator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">🎯 Anchor Text Generator</Link>
                   <Link href="/tools/page-title-enhancer" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">✨ Page Title Enhancer</Link>
-                  <Link href="/tools/bulk-meta-description-checker" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">📊 Bulk Meta Checker</Link>
-                  <Link href="/tools/bulk-title-tag-checker" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">📊 Bulk Title Checker</Link>
                   
                   <div className="border-t border-gray-200 my-1"></div>
                   
