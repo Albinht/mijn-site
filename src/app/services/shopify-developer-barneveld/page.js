@@ -2,9 +2,6 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import masterSeoImage from '../../../assets/Master_seo fundamentals.png'
-import keywordResearchImage from '../../../assets/Keyword_research.png'
-import contentRanksImage from '../../../assets/content that ranks.png'
 import Button from '../../../components/Button'
 import FeatureSection from '../../../components/FeatureSection'
 import ReviewSlider from '../../../components/ReviewSlider'
@@ -227,6 +224,7 @@ export default function ShopifyDeveloperBarneveld() {
                 as="a" 
                 href="#contact-form" 
                 variant="cta"
+                className="!text-base !px-5 md:!px-6 !py-2.5 md:!py-3"
                 onClick={(e) => {
                   e.preventDefault();
                   document.getElementById('contact-form')?.scrollIntoView({ 
@@ -277,7 +275,7 @@ export default function ShopifyDeveloperBarneveld() {
               <div className="relative z-10 flex justify-center md:justify-end items-end p-4 md:p-6 rounded-[5px]">
                 <div className="rounded-tl-[15px] rounded-tr-[15px] md:rounded-tr-[0px] md:rounded-tl-[15px] rounded-br-[0px] rounded-bl-[0px] overflow-hidden shadow-lg bg-transparent w-full max-w-xs sm:max-w-sm md:max-w-full translate-y-4 md:translate-y-0">
                   <Image
-                    src="/downloads/Shopify%20developer.png"
+                    src="/downloads/shopify-developer.png"
                     alt="Shopify developer portret"
                     className="w-full h-auto"
                     width={800}
@@ -303,7 +301,7 @@ export default function ShopifyDeveloperBarneveld() {
             description: "Van concept tot lancering - complete Shopify webshop ontwikkeling. Custom themes, unieke functionaliteiten en optimale performance. Shopify website laten bouwen in Barneveld door experts.",
             visualTitle: "Webshop Development",
             visualSubtitle: "Volledig op maat",
-            image: "/shopify website laten maken.webp"
+            image: "/shopify-website-laten-maken.webp"
           },
           {
             badge: "API Integraties",
@@ -311,7 +309,7 @@ export default function ShopifyDeveloperBarneveld() {
             description: "Maak je processen automatisch met koppelingen met uw webshop, hierdoor bespaart u tijd en moeite!",
             visualTitle: "App Development",
             visualSubtitle: "Custom solutions",
-            image: "/Shopify API Integraties.jpeg"
+            image: "/shopify-api-integraties.jpeg"
           },
           {
             badge: "Migratie",
@@ -319,7 +317,7 @@ export default function ShopifyDeveloperBarneveld() {
             description: "Bekend om de gebruiksvriendelijke interface, snelle laadtijden en e-commerce applicaties, is Shopify het platform als u uw e-commerce project duurzaam en winstgevend wilt opschalen. Nog niet op Shopify? Laat uw Shopify migratie in Barneveld verzorgen door Niblah.",
             visualTitle: "System Integraties",
             visualSubtitle: "Alles connected",
-            image: "/Shopify migratie.webp"
+            image: "/shopify-migratie.webp"
           }
         ]}
         backgroundClass="bg-transparent"
@@ -583,7 +581,7 @@ export default function ShopifyDeveloperBarneveld() {
               </a>
               <div className="w-full h-40 rounded-[5px] flex items-center justify-center">
                 <Image
-                  src="/website laten maken.png"
+                  src="/website-laten-maken.png"
                   alt="Webshop Development"
                   width={400}
                   height={200}
@@ -671,7 +669,7 @@ export default function ShopifyDeveloperBarneveld() {
             <div className="bg-[#EEF0F8] rounded-lg p-6 flex flex-col">
               <div className="mb-4">
                 <Image
-                  src="/samen sta je sterker.png"
+                  src="/samen-sta-je-sterker.png"
                   alt="Sluit je aan bij de tevreden klanten"
                   width={150}
                   height={80}
@@ -693,7 +691,7 @@ export default function ShopifyDeveloperBarneveld() {
             >
               <div className="mb-4">
                 <Image
-                  src="/chat met Niblah.png"
+                  src="/chat-met-niblah.png"
                   alt="Chat met Niblah"
                   width={72}
                   height={72}
@@ -718,7 +716,7 @@ export default function ShopifyDeveloperBarneveld() {
             >
               <div className="mb-4">
                 <Image
-                  src="/volg op twitta.png"
+                  src="/volg-op-twitta.png"
                   alt="Volg op Twitter"
                   width={72}
                   height={72}
@@ -743,7 +741,7 @@ export default function ShopifyDeveloperBarneveld() {
             >
               <div className="mb-4">
                 <Image
-                  src="/andere diensten.png"
+                  src="/andere-diensten.png"
                   alt="Andere diensten"
                   width={72}
                   height={72}
@@ -766,7 +764,7 @@ export default function ShopifyDeveloperBarneveld() {
             >
               <div className="mb-4">
                 <Image
-                  src="/youtube kanaal.png"
+                  src="/youtube-kanaal.png"
                   alt="YouTube kanaal"
                   width={72}
                   height={72}
@@ -796,7 +794,7 @@ export default function ShopifyDeveloperBarneveld() {
             >
               <div className="mb-4">
                 <Image
-                  src="/gratis consult.png"
+                  src="/gratis-consult.png"
                   alt="Gratis consult"
                   width={72}
                   height={72}

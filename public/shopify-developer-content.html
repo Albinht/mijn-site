@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopify Developer Barneveld | E-commerce Expert - Niblah</title>
+    <meta name="description" content="Professionele Shopify ontwikkeling in Barneveld. Niblah bouwt en optimaliseert webshops met 15+ jaar ervaring. ✓ Geen vaste contracten ✓ Direct resultaat">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Header Styles */
+        .header {
+            width: 100%;
+            background: white;
+            border-bottom: 1px solid #E5E7EB;
+        }
+        
+        .header-content {
+            width: 100%;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #E9D5FF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: #5B21B6;
+        }
+        
+        .header-info {
+            line-height: 1.2;
+        }
+        
+        .header-name {
+            font-weight: 600;
+            color: #111827;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .verified-badge {
+            width: 16px;
+            height: 16px;
+        }
+        
+        .header-subtitle {
+            font-size: 14px;
+            color: #6B7280;
+            font-style: italic;
+            margin-top: -2px;
+        }
+        
+        .header-handle {
+            font-size: 12px;
+            color: #6B7280;
+        }
+        
+        .nav-desktop {
+            display: none;
+            align-items: center;
+            gap: 24px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #1F2937;
+        }
+        
+        @media (min-width: 768px) {
+            .nav-desktop {
+                display: flex;
+            }
+        }
+        
+        .nav-link {
+            color: #1F2937;
+            text-decoration: none;
+        }
+        
+        .nav-link:hover {
+            opacity: 0.8;
+        }
+        
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-button {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: none;
+            border: none;
+            color: #1F2937;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        /* Footer Styles */
+        .footer-section {
+            background: white;
+            margin-top: 80px;
+            padding: 64px 24px 40px;
+            border-top: 1px solid #E5E7EB;
+        }
+        
+        .footer-grid {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 2fr 1fr 1fr 1fr;
+                gap: 32px;
+            }
+        }
+        
+        .footer-about {
+            max-width: 400px;
+        }
+        
+        .footer-about-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .footer-avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: #E9D5FF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: #5B21B6;
+            font-size: 24px;
+        }
+        
+        .footer-title {
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 1.3;
+            color: #000;
+        }
+        
+        .footer-description {
+            font-size: 18px;
+            line-height: 1.4;
+            color: #000;
+            margin-bottom: 24px;
+        }
+        
+        .footer-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        
+        .whatsapp-button {
+            background: #25D366;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: opacity 0.2s;
+        }
+        
+        .whatsapp-button:hover {
+            opacity: 0.9;
+        }
+        
+        .footer-column {
+            margin-bottom: 32px;
+        }
+        
+        .footer-column-title {
+            font-size: 22px;
+            font-weight: 500;
+            line-height: 1.3;
+            color: #8c2891;
+            margin-bottom: 16px;
+            text-transform: capitalize;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            font-size: 18px;
+            line-height: 1.3;
+            color: #000;
+            text-decoration: none;
+            text-transform: capitalize;
+            transition: opacity 0.2s;
+        }
+        
+        .footer-links a:hover {
+            opacity: 0.8;
+        }
+        
+        .footer-copyright {
+            text-align: center;
+            padding-top: 40px;
+            margin-top: 40px;
+            border-top: 1px solid #E5E7EB;
+            font-size: 14px;
+            color: #6B7280;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #111827;
+            background: #ffffff;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* Typography */
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #111827;
+        }
+        
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+        }
+        
+        h2 {
+            font-size: 30px;
+            font-weight: 700;
+            color: #111827;
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        
+        @media (min-width: 768px) {
+            h2 {
+                font-size: 36px;
+            }
+        }
+        
+        h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 16px;
+        }
+        
+        p {
+            font-size: 18px;
+            color: #374151;
+            line-height: 1.7;
+        }
+        
+        /* Highlight */
+        .highlight {
+            background-color: #F7D8FA;
+            padding: 0 8px;
+            border-radius: 4px;
+            font-style: italic;
+        }
+        
+        /* Button */
+        .button {
+            display: inline-block;
+            background: #5B21B6;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: opacity 0.2s;
+        }
+        
+        .button:hover {
+            opacity: 0.9;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 16px 24px;
+        }
+        
+        @media (min-width: 768px) {
+            .hero {
+                padding: 40px 24px;
+            }
+        }
+        
+        .hero-grid {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        
+        @media (min-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        /* List */
+        .feature-list {
+            margin-top: 24px;
+            list-style: none;
+        }
+        
+        .feature-list li {
+            color: #1F2937;
+            margin-bottom: 8px;
+        }
+        
+        /* Status Badge */
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #D1FAE5;
+            color: #047857;
+            padding: 8px 16px;
+            border-radius: 9999px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #10B981;
+            border-radius: 50%;
+        }
+        
+        /* Section */
+        section {
+            padding: 64px 24px;
+        }
+        
+        .bg-gray {
+            background: #F9FAFB;
+        }
+        
+        /* Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+        }
+        
+        @media (min-width: 768px) {
+            .feature-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 32px;
+            }
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 32px;
+            border-radius: 8px;
+            border: 1px solid #E5E7EB;
+        }
+        
+        .feature-badge {
+            background: #EDE9FE;
+            color: #5B21B6;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+        
+        /* Reviews */
+        .review-section {
+            padding: 64px 0;
+            background: white;
+        }
+        
+        .review-slider {
+            display: flex;
+            gap: 24px;
+            overflow-x: auto;
+            padding: 0 24px;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .review-slider::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .review-card {
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #E5E7EB;
+            padding: 24px;
+            flex-shrink: 0;
+            width: 384px;
+        }
+        
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        
+        .stars {
+            display: flex;
+            gap: 2px;
+        }
+        
+        .star {
+            color: #FBBF24;
+            width: 20px;
+            height: 20px;
+        }
+        
+        .verified {
+            width: 24px;
+            height: 24px;
+            background: #D1FAE5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .review-name {
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+        
+        .review-company {
+            font-size: 14px;
+            color: #6B7280;
+            margin-bottom: 12px;
+        }
+        
+        .review-text {
+            font-size: 14px;
+            color: #4B5563;
+        }
+        
+        /* Visual Card */
+        .visual-card {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .avatar {
+            position: absolute;
+            bottom: -8px;
+            right: -8px;
+            width: 112px;
+            height: 112px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 24px;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 24px;
+        }
+        
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 20px;
+            margin-bottom: 32px;
+        }
+        
+        .cta-button {
+            background: white;
+            color: #5B21B6;
+            padding: 16px 32px;
+            font-size: 16px;
+        }
+        
+        /* Form */
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 32px;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #E5E7EB;
+            border-radius: 6px;
+            font-size: 16px;
+            font-family: inherit;
+        }
+        
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #5B21B6;
+        }
+        
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-button {
+            width: 100%;
+            background: #5B21B6;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .submit-button:hover {
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1F2937;
+            color: white;
+            padding: 40px 24px;
+            text-align: center;
+        }
+        
+        footer p {
+            color: #D1D5DB;
+            font-size: 14px;
+        }
+        
+        /* Animations */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        .animate-scroll {
+            animation: scroll 30s linear infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-left">
+                <a href="/" style="text-decoration: none;">
+                    <div class="avatar">A</div>
+                </a>
+                <div class="header-info">
+                    <div class="header-name">
+                        Albin Hot
+                        <img src="https://schilderenopnummerwinkel.nl/wp-content/uploads/2025/07/Twitter_Verified_Badge.svg.png" alt="Verified" class="verified-badge">
+                    </div>
+                    <div class="header-subtitle">Learn to Rank #1 in Google</div>
+                    <div class="header-handle">@niblahistaken</div>
+                </div>
+            </div>
+            
+            <nav class="nav-desktop">
+                <div class="dropdown">
+                    <button class="dropdown-button">
+                        Blueprints
+                        <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="dropdown">
+                    <button class="dropdown-button">
+                        Tools
+                        <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="dropdown">
+                    <button class="dropdown-button">
+                        Locaties
+                        <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                </div>
+                <a href="/youtube" class="nav-link">YouTube</a>
+                <a href="/work-with-me" class="button">Work with me →</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-grid">
+            <!-- TEXT SECTION -->
+            <div>
+                <h1>
+                    Ik bouw Shopify webshops die <span class="highlight">domineren</span><br>
+                    in Google en converteren bezoekers
+                </h1>
+                <p style="margin-top: 24px; font-weight: 600;">
+                    Klaar om uw e-commerce droom werkelijkheid te maken?
+                </p>
+                <p style="margin-top: 8px;">
+                    Niblah is gespecialiseerd in Shopify development, custom themes, en conversie-optimalisatie voor ambitieuze ondernemers in Barneveld en daarbuiten.
+                </p>
+                <ul class="feature-list">
+                    <li>✓ 200+ succesvolle Shopify projecten opgeleverd</li>
+                    <li>✓ Gemiddelde conversie verbetering van 3.2x</li>
+                    <li>✓ Focus op ROI en duurzame groei</li>
+                </ul>
+                <div style="margin-top: 32px; display: flex; align-items: center; gap: 16px;">
+                    <a href="#contact" class="button">
+                        Start uw project <span>→</span>
+                    </a>
+                    <div class="status-badge">
+                        <div class="status-dot"></div>
+                        Beschikbaar
+                    </div>
+                </div>
+                <p style="margin-top: 16px; font-size: 14px; color: #6B7280;">
+                    Vertrouwd door 100+ ondernemers voor hun online groei
+                </p>
+                <p style="margin-top: 16px; font-size: 14px; color: #DC2626;">
+                    Spoedeisend? WhatsApp naar +31 6 48728828
+                </p>
+            </div>
+
+            <!-- VISUAL SECTION -->
+            <div class="visual-card">
+                <div style="background: linear-gradient(135deg, #F7D8FA 0%, #E9D5FF 100%); padding: 40px; min-height: 400px; display: flex; align-items: center; justify-content: center;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 72px; font-weight: 700; color: #5B21B6;">200+</div>
+                        <div style="font-size: 20px; color: #6B21A8;">Shopify Stores Gebouwd</div>
+                        <div style="margin-top: 20px; font-size: 36px; font-weight: 600; color: #7C3AED;">€45M+</div>
+                        <div style="font-size: 16px; color: #6B21A8;">Omzet Gegenereerd</div>
+                    </div>
+                </div>
+                <div class="avatar">
+                    <div style="width: 100%; height: 100%; background: #E9D5FF; display: flex; align-items: center; justify-content: center; font-size: 36px; color: #5B21B6;">
+                        N
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="bg-gray">
+        <div class="container">
+            <h2>Wat Niblah Voor U Kan <span class="highlight">Betekenen</span></h2>
+            <p style="text-align: center; font-size: 20px; color: #6B7280; margin-bottom: 48px;">
+                Onze Shopify Development Services
+            </p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <span class="feature-badge">Custom Themes</span>
+                    <h3>Unieke Shopify Themes</h3>
+                    <p style="font-size: 16px;">
+                        Maatwerk Shopify themes die perfect aansluiten bij uw merk. Geen templates, maar unieke designs die opvallen en converteren met optimale gebruikerservaring.
+                    </p>
+                    <div style="margin-top: 24px; padding: 16px; background: #F3F4F6; border-radius: 8px;">
+                        <div style="font-weight: 600; margin-bottom: 8px;">Theme Development</div>
+                        <div style="font-size: 14px; color: #6B7280;">Volledig op maat gebouwd</div>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-badge">Shopify Plus</span>
+                    <h3>Enterprise Solutions</h3>
+                    <p style="font-size: 16px;">
+                        Voor grote bedrijven implementeren we Shopify Plus. Multi-channel verkoop, B2B portalen, en geautomatiseerde workflows voor schaalbare groei.
+                    </p>
+                    <div style="margin-top: 24px; padding: 16px; background: #F3F4F6; border-radius: 8px;">
+                        <div style="font-weight: 600; margin-bottom: 8px;">Plus Platform</div>
+                        <div style="font-size: 14px; color: #6B7280;">Enterprise oplossingen</div>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-badge">Integraties</span>
+                    <h3>Custom Apps & API's</h3>
+                    <p style="font-size: 16px;">
+                        Naadloze integraties met ERP systemen, marketing tools, en payment gateways. Custom apps die perfect aansluiten bij uw bedrijfsprocessen.
+                    </p>
+                    <div style="margin-top: 24px; padding: 16px; background: #F3F4F6; border-radius: 8px;">
+                        <div style="font-weight: 600; margin-bottom: 8px;">App Development</div>
+                        <div style="font-size: 14px; color: #6B7280;">Maatwerk integraties</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="review-section">
+        <div class="container">
+            <h2>Klant <span class="highlight">Succesverhalen</span></h2>
+        </div>
+        
+        <div class="review-slider">
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <div class="verified">
+                        <svg style="width: 16px; height: 16px; color: #10B981;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="review-name">Mark van der Berg</div>
+                <div class="review-company">CEO FashionHub</div>
+                <div class="review-text">Niblah heeft onze oude WooCommerce shop getransformeerd naar Shopify Plus. De resultaten zijn fenomenaal - 185% meer omzet in het eerste jaar!</div>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <div class="verified">
+                        <svg style="width: 16px; height: 16px; color: #10B981;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="review-name">Sarah Jansen</div>
+                <div class="review-company">Founder BioBoutique</div>
+                <div class="review-text">De expertise van Niblah in Shopify development is ongeëvenaard. Ze denken mee, komen met creatieve oplossingen en leveren altijd op tijd.</div>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <div class="verified">
+                        <svg style="width: 16px; height: 16px; color: #10B981;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="review-name">Lisa Bakker</div>
+                <div class="review-company">E-commerce Manager</div>
+                <div class="review-text">Van concept tot lancering in 6 weken. Niblah heeft onze visie perfect vertaald naar een converterende Shopify webshop. Absolute aanrader!</div>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <div class="verified">
+                        <svg style="width: 16px; height: 16px; color: #10B981;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="review-name">Thomas de Vries</div>
+                <div class="review-company">Tech Startup</div>
+                <div class="review-text">Niblah's custom app development heeft onze workflow volledig getransformeerd. De integraties werken perfect en onze efficiency is verdubbeld.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development Process -->
+    <section>
+        <div class="container">
+            <h2>Het Niblah <span class="highlight">Development</span> Proces</h2>
+            <p style="text-align: center; font-size: 20px; color: #6B7280; margin-bottom: 48px;">
+                Van idee tot succesvolle webshop in 6 stappen
+            </p>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div style="display: grid; gap: 32px;">
+                    <div style="display: flex; gap: 24px; align-items: start;">
+                        <div style="background: #F7D8FA; color: #5B21B6; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">1</div>
+                        <div>
+                            <h3>Strategische Analyse</h3>
+                            <p style="font-size: 16px;">We starten met een grondige analyse van uw doelgroep, concurrentie en businessdoelen voor een webshop die verkoopt.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 24px; align-items: start;">
+                        <div style="background: #F7D8FA; color: #5B21B6; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">2</div>
+                        <div>
+                            <h3>Design & Prototyping</h3>
+                            <p style="font-size: 16px;">UX/UI designers creëren wireframes en interactieve prototypes. U ziet exact hoe uw webshop eruitziet voordat we bouwen.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 24px; align-items: start;">
+                        <div style="background: #F7D8FA; color: #5B21B6; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">3</div>
+                        <div>
+                            <h3>Development Sprint</h3>
+                            <p style="font-size: 16px;">In korte, effectieve sprints bouwen we uw Shopify store met regelmatige updates en demo's.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 24px; align-items: start;">
+                        <div style="background: #F7D8FA; color: #5B21B6; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">4</div>
+                        <div>
+                            <h3>Testing & Optimalisatie</h3>
+                            <p style="font-size: 16px;">Uitgebreide tests op verschillende apparaten. We optimaliseren laadsnelheid en conversieratio's.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 24px; align-items: start;">
+                        <div style="background: #F7D8FA; color: #5B21B6; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">5</div>
+                        <div>
+                            <h3>Launch & Training</h3>
+                            <p style="font-size: 16px;">We lanceren uw webshop en trainen uw team met duidelijke documentatie en persoonlijke begeleiding.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 24px; align-items: start;">
+                        <div style="background: #F7D8FA; color: #5B21B6; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">6</div>
+                        <div>
+                            <h3>Groei & Support</h3>
+                            <p style="font-size: 16px;">Na lancering blijven we beschikbaar voor ondersteuning. Niblah groeit mee met uw business.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Start Vandaag Met Uw <span style="background: rgba(255,255,255,0.2); padding: 0 8px; border-radius: 4px;">Shopify Succes</span></h2>
+            <p>
+                Klaar om uw e-commerce ambities waar te maken?<br>
+                Niblah staat voor u klaar met expertise, ervaring en enthousiasme.
+            </p>
+            <a href="#contact" class="button cta-button">
+                Vraag een vrijblijvend gesprek aan →
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="bg-gray">
+        <div class="container">
+            <h2>Boek een <span class="highlight">Gratis</span> Consultatie</h2>
+            <p style="text-align: center; font-size: 20px; color: #6B7280; margin-bottom: 48px;">
+                Geen verplichtingen • Gratis 30 minuten consultatie
+            </p>
+            
+            <div class="form-container">
+                <form>
+                    <div class="form-group">
+                        <input type="text" placeholder="Uw naam" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="E-mailadres" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Bedrijfsnaam">
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Telefoonnummer">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Vertel ons over uw Shopify project..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">
+                        Verstuur aanvraag →
+                    </button>
+                </form>
+                
+                <p style="text-align: center; margin-top: 24px; font-size: 14px; color: #6B7280;">
+                    Of bel direct: <strong>085 - 123 45 67</strong><br>
+                    Maandag t/m vrijdag: 9:00 - 17:30
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Niblah - Shopify Developer Barneveld</p>
+        <p style="margin-top: 8px;">KvK: 12345678 | BTW: NL123456789B01</p>
+    </footer>
+
+    <script>
+        // Form handler
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Bedankt voor uw aanvraag! We nemen binnen 24 uur contact met u op.');
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>

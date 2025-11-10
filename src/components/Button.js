@@ -16,7 +16,7 @@ const Button = ({ as: Component = 'button', children, className = '', variant = 
   if (variant === 'cta') {
     return (
       <Component
-        className={`inline-flex items-center justify-center font-poppins font-medium text-white text-sm md:text-base px-6 md:px-8 py-3 md:py-4 rounded-[9px] bg-[#1795FF] hover:bg-[#0f7dd4] transition-shadow duration-200 shadow-[0_10px_20px_rgba(23,149,255,0.35)] border border-[#0D94D1] ${className}`}
+        className={`inline-flex items-center justify-center font-poppins font-medium text-white text-sm px-4 md:px-5 py-2 md:py-2.5 rounded-[9px] bg-[#1795FF] hover:bg-[#0f7dd4] transition-shadow duration-200 shadow-[0_10px_20px_rgba(23,149,255,0.35)] border border-[#0D94D1] ${className}`}
         {...props}
       >
         {children}

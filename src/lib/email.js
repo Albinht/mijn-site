@@ -1,0 +1,190 @@
+import nodemailer from 'nodemailer'
+
+// SMTP Transporter configuratie - Same as working blog downloads
+export const createTransporter = () => {
+  // Hardcoded config that works (same as blog downloads)
+  const config = {
+    host: 'mail.zxcs.nl',
+    port: 465,
+    secure: true,
+    auth: {
+      user: 'albin@niblah.com',
+      pass: 'QajTfezc29SuGdSCGGM7'
+    },
+    debug: true,
+    logger: true
+  }
+  
+  console.log('🔧 SMTP Config (hardcoded - same as blog downloads):', {
+    host: config.host,
+    port: config.port,
+    secure: config.secure,
+    user: config.auth.user,
+    hasPassword: !!config.auth.pass
+  })
+  
+  return nodemailer.createTransport(config)
+}
+
+// Email template voor contact formulier
+export const createContactEmailHTML = ({ name, firstName, lastName, email, phone, company, message }) => {
+  return `
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8">
+        <style>
+          body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+          }
+          .header {
+            background: linear-gradient(135deg, #8C2891 0%, #6B1F6F 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px 10px 0 0;
+            text-align: center;
+          }
+          .header h1 {
+            margin: 0;
+            font-size: 24px;
+          }
+          .content {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 0 0 10px 10px;
+          }
+          .field {
+            margin-bottom: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #8C2891;
+          }
+          .field-label {
+            font-weight: bold;
+            color: #8C2891;
+            margin-bottom: 5px;
+            font-size: 12px;
+            text-transform: uppercase;
+          }
+          .field-value {
+            color: #333;
+            font-size: 16px;
+          }
+          .message-box {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #e0e0e0;
+            margin-top: 10px;
+            white-space: pre-wrap;
+          }
+          .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            font-size: 12px;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="header">
+          <h1>📬 Nieuw Contactformulier Bericht</h1>
+        </div>
+        <div class="content">
+          <p style="font-size: 16px; margin-bottom: 20px;">Je hebt een nieuw bericht ontvangen via het contactformulier op Niblah.com:</p>
+          
+          <div class="field">
+            <div class="field-label">Naam</div>
+            <div class="field-value">${firstName} ${lastName}</div>
+          </div>
+
+          <div class="field">
+            <div class="field-label">Bedrijfsnaam</div>
+            <div class="field-value">${company}</div>
+          </div>
+
+          <div class="field">
+            <div class="field-label">E-mail</div>
+            <div class="field-value"><a href="mailto:${email}">${email}</a></div>
+          </div>
+
+          ${phone ? `
+          <div class="field">
+            <div class="field-label">Telefoonnummer</div>
+            <div class="field-value"><a href="tel:${phone}">${phone}</a></div>
+          </div>
+          ` : ''}
+
+          <div class="field">
+            <div class="field-label">Opmerkingen</div>
+            <div class="message-box">${message}</div>
+          </div>
+
+          <div class="footer">
+            <p>Dit bericht is verzonden via het contactformulier op Niblah.com</p>
+            <p>Ontvangen op: ${new Date().toLocaleString('nl-NL')}</p>
+          </div>
+        </div>
+      </body>
+    </html>
+  `
+}
+
+// Plain text versie (fallback)
+export const createContactEmailText = ({ name, firstName, lastName, email, phone, company, message }) => {
+  return `
+Nieuw Contactformulier Bericht - Niblah.com
+
+Naam: ${firstName} ${lastName}
+Bedrijf: ${company}
+E-mail: ${email}
+${phone ? `Telefoon: ${phone}` : ''}
+
+Opmerkingen:
+${message}
+
+---
+Ontvangen op: ${new Date().toLocaleString('nl-NL')}
+  `.trim()
+}
+
+// Verzend email functie
+export const sendContactEmail = async ({ name, firstName, lastName, email, phone, company, message }) => {
+  const transporter = createTransporter()
+
+  const fullName = name || `${firstName} ${lastName}`
+
+  const mailOptions = {
+    from: 'albin@niblah.com',
+    to: 'albin@niblah.com',
+    replyTo: email,
+    subject: `Nieuw contactformulier: ${fullName} - ${company}`,
+    text: createContactEmailText({ name: fullName, firstName, lastName, email, phone, company, message }),
+    html: createContactEmailHTML({ name: fullName, firstName, lastName, email, phone, company, message }),
+  }
+
+  try {
+    console.log('📧 Sending email to:', mailOptions.to)
+    console.log('📧 Subject:', mailOptions.subject)
+    
+    const info = await transporter.sendMail(mailOptions)
+    console.log('✅ Email succesvol verzonden!')
+    console.log('✅ Message ID:', info.messageId)
+    console.log('✅ Response:', info.response)
+    
+    return { success: true, messageId: info.messageId }
+  } catch (error) {
+    console.error('❌ Email verzenden GEFAALD!')
+    console.error('❌ Error name:', error.name)
+    console.error('❌ Error message:', error.message)
+    console.error('❌ Error code:', error.code)
+    console.error('❌ Full error:', error)
+    throw error
+  }
+}

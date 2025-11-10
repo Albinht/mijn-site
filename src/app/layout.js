@@ -7,6 +7,7 @@ import { Geist, Geist_Mono } from 'next/font/google'
 // Componenten
 import Header from '../components/header.js'
 import Footer from '../components/Footer.js'
+import ConditionalContactForm from '../components/ConditionalContactForm.js'
 import GoogleAnalytics from '../components/GoogleAnalytics.js'
 
 // Fonts activeren
@@ -72,6 +73,7 @@ export default function RootLayout({ children }) {
         <GoogleAnalytics />
         <Header />
         {children}
+        <ConditionalContactForm />
         <Footer />
       </body>
     </html>
