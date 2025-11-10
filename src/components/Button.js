@@ -1,11 +1,22 @@
 import React from 'react';
 
-const Button = ({ as: Component = 'button', children, className, variant = 'primary', ...props }) => {
+const Button = ({ as: Component = 'button', children, className = '', variant = 'primary', ...props }) => {
   // Secondary button style
   if (variant === 'secondary') {
     return (
       <Component
         className={`inline-flex items-center justify-center gap-x-[10px] bg-white text-black border border-gray-300 rounded-[5px] font-poppins font-bold text-xs md:text-sm px-4 md:px-5 py-3 transition hover:bg-gray-100 shadow-sm leading-tight text-center ${className}`}
+        {...props}
+      >
+        {children}
+      </Component>
+    );
+  }
+
+  if (variant === 'cta') {
+    return (
+      <Component
+        className={`inline-flex items-center justify-center font-poppins font-medium text-white text-sm md:text-base px-6 md:px-8 py-3 md:py-4 rounded-[9px] bg-[#1795FF] hover:bg-[#0f7dd4] transition-shadow duration-200 shadow-[0_10px_20px_rgba(23,149,255,0.35)] border border-[#0D94D1] ${className}`}
         {...props}
       >
         {children}
