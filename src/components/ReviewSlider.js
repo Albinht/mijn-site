@@ -80,10 +80,17 @@ const StarIcon = ({ filled }) => (
 const ReviewCard = ({ review }) => (
   <div className="bg-white rounded-lg border border-gray-200 p-6 flex-shrink-0 w-96 mx-3">
     <div className="flex items-center justify-between mb-4">
-      <div className="flex items-center">
-        {[...Array(5)].map((_, i) => (
-          <StarIcon key={i} filled={i < review.rating} />
-        ))}
+      <div className="flex items-center gap-2">
+        <img 
+          src="https://cdn.prod.website-files.com/665db68ff17df1564b5c9bab/665ec5915c58db2dcff692b7_Group%20568.svg" 
+          alt="Verified"
+          className="w-5 h-5"
+        />
+        <div className="flex items-center">
+          {[...Array(5)].map((_, i) => (
+            <StarIcon key={i} filled={i < review.rating} />
+          ))}
+        </div>
       </div>
       <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
         <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">

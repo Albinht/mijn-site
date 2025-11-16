@@ -2,12 +2,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import avatarImage from '../assets/avatar.png'
 import graphImage from '../assets/graph.png'
-import masterSeoImage from '../assets/Master_seo fundamentals.png'
-import keywordResearchImage from '../assets/Keyword_research.png'
-import contentRanksImage from '../assets/content that ranks.png'
 import Button from '../components/Button'
-import FeatureSection from '../components/FeatureSection'
+import HeroButton from '../components/HeroButton'
 import ReviewSlider from '../components/ReviewSlider'
+import LeadForm from '../components/LeadForm'
+import ImageCarousel from '../components/ImageCarousel'
+import ReviewPricing from '../components/ReviewPricing'
+import GoogleReviewBar from '../components/GoogleReviewBar'
 
 export const metadata = {
   title: 'Digital Marketing Services | Niblah - SEO, Google Ads & More',
@@ -172,114 +173,472 @@ const ServiceReviewSlider = () => {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-4 md:py-10 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          
-          {/* TEXT SECTION */}
-          <div>
-            <h1 className="text-4xl md:text-4xl font-bold leading-tight text-gray-900">
-              I help businesses <span className="bg-[#F7D8FA] px-2 rounded italic">dominate</span><br />
-              Google and scale profitably
-            </h1>
-            <p className="mt-6 text-lg text-gray-700">
-              <strong>Ready to transform your digital presence into a revenue machine?</strong><br />
-              I specialize in SEO, Google Ads, and conversion optimization that delivers measurable results for ambitious businesses.
-            </p>
-            <ul className="mt-6 space-y-2 text-gray-800">
-              <li>✓ Proven strategies that have scaled 100+ businesses</li>
-              <li>✓ Data-driven approach with transparent reporting</li>
-              <li>✓ Focus on ROI and sustainable growth</li>
-            </ul>
-            <div className="mt-8 flex items-center gap-4">
-              <Button as={Link} href="/work-with-me" className="text-sm px-4 py-2">
-                Work with me <span>→</span>
-              </Button>
-              <div className="flex items-center gap-2 bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-medium">
-                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                Available
-              </div>
-            </div>
-            <p className="mt-4 text-sm text-gray-500">Trusted by 100+ businesses to drive their growth</p> 
-            <p className="mt-4 text-sm text-red-600">Urgent questions? Send me a WhatsApp on +31 6 48728828</p>
-          </div>
+      <section className="py-20 md:py-32 px-6 bg-white">
+        <div className="max-w-5xl mx-auto text-center">
+          <h1 className="text-5xl md:text-6xl font-bold leading-tight text-gray-900 mb-6">
+            Online marketing uitbesteden?<br />30+ jaar aan ervaring gebundeld in een familie
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto">
+            Wil je samenwerken met een klein team dat doelgericht aan de slag gaat om jouw wensen te realiseren? Klik dan op de knop hieronder en kijk of je bedrijf in aanmerking komt!
+          </p>
+          <HeroButton href="/contact">
+            Start uw project
+          </HeroButton>
+        </div>
+      </section>
 
-          {/* IMAGE SECTION */}
-          <div className="relative">
-            <div className="rounded-xl overflow-hidden shadow-lg">
-              <Image
-                src={graphImage}
-                alt="Marketing growth results"
-                className="w-full h-auto"
-                priority
+      {/* 4-Column Feature Section */}
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+        {/* Column 1 - Development & Websites */}
+        <div className="bg-[#D4A574] p-6 md:p-8 lg:p-10 flex flex-col">
+          <h2 className="font-bold text-black mb-4 md:mb-6" style={{ fontSize: '24px' }}>
+            Development & Websites
+          </h2>
+          
+          <div className="flex-grow flex items-center justify-center my-4 md:my-6">
+            <div className="w-full h-48 md:h-56 flex items-center justify-center p-4">
+              <Image 
+                src="/web dev services.png" 
+                alt="Website Development" 
+                width={200}
+                height={200}
+                className="object-contain max-h-full"
               />
             </div>
-            <div className="absolute -bottom-2 -right-2 w-28 h-28 rounded-full overflow-hidden border-4 border-white shadow-md">
-              <Image
-                src={avatarImage}
-                alt="Albin Hot"
-                className="object-cover w-full h-full"
+          </div>
+          
+          <p className="text-black mb-4 md:mb-6 text-xs md:text-sm">
+            Shopify & WordPress development, custom thema's, platform migraties, integraties en app ontwikkeling voor uw online succes.
+          </p>
+          
+          <Link 
+            href="/services/web-development"
+            className="inline-flex items-center justify-center gap-2 font-semibold text-black text-[10px] md:text-xs px-3 md:px-5 py-2 md:py-2.5 rounded-full bg-transparent hover:bg-black/10 transition-all duration-200 border-2 border-black"
+          >
+            Bekijk development services
+          </Link>
+        </div>
+
+        {/* Column 2 - SEO Services */}
+        <div className="bg-[#E8C88E] p-6 md:p-8 lg:p-10 flex flex-col">
+          <h2 className="font-bold text-black mb-4 md:mb-6" style={{ fontSize: '24px' }}>
+            SEO Services
+          </h2>
+          
+          <div className="flex-grow flex items-center justify-center my-4 md:my-6">
+            <div className="w-full h-48 md:h-56 flex items-center justify-center p-4">
+              <Image 
+                src="/SEO ICON.png" 
+                alt="SEO Services" 
+                width={200}
+                height={200}
+                className="object-contain max-h-full"
               />
+            </div>
+          </div>
+          
+          <p className="text-black mb-4 md:mb-6 text-xs md:text-sm">
+            Technische SEO, linkbuilding, content optimalisatie, local SEO en complete SEO audits voor hogere rankings en meer traffic.
+          </p>
+          
+          <Link 
+            href="/services/seo"
+            className="inline-flex items-center justify-center gap-2 font-semibold text-black text-[10px] md:text-xs px-3 md:px-5 py-2 md:py-2.5 rounded-full bg-transparent hover:bg-black/10 transition-all duration-200 border-2 border-black"
+          >
+            Bekijk SEO services
+          </Link>
+        </div>
+
+        {/* Column 3 - Google Ads (SEA) */}
+        <div className="bg-[#B8C5D6] p-6 md:p-8 lg:p-10 flex flex-col">
+          <h2 className="font-bold text-black mb-4 md:mb-6" style={{ fontSize: '24px' }}>
+            Google Ads (SEA)
+          </h2>
+          
+          <div className="flex-grow flex items-center justify-center my-4 md:my-6">
+            <div className="w-full h-48 md:h-56 flex items-center justify-center p-4">
+              <Image 
+                src="/SEA icon.png" 
+                alt="Google Ads (SEA)" 
+                width={200}
+                height={200}
+                className="object-contain max-h-full"
+              />
+            </div>
+          </div>
+          
+          <p className="text-black mb-4 md:mb-6 text-xs md:text-sm">
+            Search campagnes, Shopping Ads, Display advertising, remarketing en campagne optimalisatie voor maximale ROI en conversies.
+          </p>
+          
+          <Link 
+            href="/services/google-ads"
+            className="inline-flex items-center justify-center gap-2 font-semibold text-black text-[10px] md:text-xs px-3 md:px-5 py-2 md:py-2.5 rounded-full bg-transparent hover:bg-black/10 transition-all duration-200 border-2 border-black"
+          >
+            Bekijk Google Ads services
+          </Link>
+        </div>
+
+        {/* Column 4 - Marketing Automation */}
+        <div className="bg-[#E5E5E5] p-6 md:p-8 lg:p-10 flex flex-col">
+          <h2 className="font-bold text-black mb-4 md:mb-6" style={{ fontSize: '24px' }}>
+            Marketing Automation
+          </h2>
+          
+          <div className="flex-grow flex items-center justify-center my-4 md:my-6">
+            <div className="w-full h-48 md:h-56 flex items-center justify-center p-4">
+              <Image 
+                src="/marketing automation.png" 
+                alt="Marketing Automation" 
+                width={200}
+                height={200}
+                className="object-contain max-h-full"
+              />
+            </div>
+          </div>
+          
+          <p className="text-black mb-4 md:mb-6 text-xs md:text-sm">
+            Email marketing met Klaviyo, marketing automations, CRM integraties, analytics en rapportage voor slimme klantcommunicatie.
+          </p>
+          
+          <Link 
+            href="/services/email-marketing"
+            className="inline-flex items-center justify-center gap-2 font-semibold text-black text-[10px] md:text-xs px-3 md:px-5 py-2 md:py-2.5 rounded-full bg-transparent hover:bg-black/10 transition-all duration-200 border-2 border-black"
+          >
+            Bekijk automation services
+          </Link>
+        </div>
+      </section>
+
+      {/* Stats Section - Dark */}
+      <section className="bg-[#331300] py-16 md:py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left - Main Text */}
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                Ontdek waarom we de beste keuze zijn
+              </h2>
+              <p className="text-lg text-gray-300 leading-relaxed">
+                Het marketing bureau dat meer traffic, hogere conversies en meetbare resultaten levert voor jouw online succes.
+              </p>
+            </div>
+
+            {/* Right - Stats Grid */}
+            <div className="grid grid-cols-2 gap-8">
+              {/* Stat 1 */}
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                  Tot 300% meer
+                </h3>
+                <p className="text-sm text-gray-400">
+                  organisch verkeer bij onze klanten
+                </p>
+              </div>
+
+              {/* Stat 2 */}
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                  30+ jaar ervaring
+                </h3>
+                <p className="text-sm text-gray-400">
+                  gebundeld in een familie
+                </p>
+              </div>
+
+              {/* Stat 3 */}
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                  100+ bedrijven
+                </h3>
+                <p className="text-sm text-gray-400">
+                  geholpen met online groei
+                </p>
+              </div>
+
+              {/* Stat 4 */}
+              <div>
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                  Persoonlijke aanpak
+                </h3>
+                <p className="text-sm text-gray-400">
+                  klein team, grote resultaten
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* WHAT I CAN DO FOR YOU SECTION */}
-      <FeatureSection 
-        title="What I Can Do For You"
-        subtitle="My Services"
-        features={[
-          {
-            badge: "SEO",
-            title: "Dominate Google Search Results",
-            description: "Get your business to #1 in Google with proven SEO strategies. I'll optimize your website for maximum organic traffic and qualified leads that convert into customers.",
-            visualTitle: "SEO Growth",
-            visualSubtitle: "Rank higher, earn more",
-            image: masterSeoImage
-          },
-          {
-            badge: "Google Ads",
-            title: "Profitable Paid Advertising",
-            description: "Scale your business with Google Ads campaigns that deliver consistent ROI. I'll set up, optimize, and manage your ads to maximize your return on investment.",
-            visualTitle: "Paid Ads",
-            visualSubtitle: "Scale profitably",
-            image: keywordResearchImage
-          },
-          {
-            badge: "Growth",
-            title: "Complete Digital Marketing",
-            description: "Transform your business with a comprehensive digital marketing strategy. From SEO to paid ads to conversion optimization - I'll help you grow sustainably.",
-            visualTitle: "Full Service",
-            visualSubtitle: "End-to-end growth",
-            image: contentRanksImage
-          }
-        ]}
-      />
+      {/* Services Section */}
+      <section className="bg-white py-16 md:py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-bold text-center text-gray-900 mb-12">
+            Onze marketing services voor jouw online succes
+          </h2>
 
-      {/* Client Reviews */}
-      <ServiceReviewSlider />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Card 1 - Development & Websites */}
+            <div className="flex flex-col">
+              <div className="bg-[#D4A574] rounded-2xl p-4 mb-4 h-32 flex items-center justify-center">
+                <Image 
+                  src="/web dev services.png" 
+                  alt="Website Development" 
+                  width={100}
+                  height={100}
+                  className="object-contain"
+                />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">
+                Is jouw website klaar voor meer conversies?
+              </h3>
+              <p className="text-sm text-gray-600 mb-4 flex-grow">
+                Een moderne, snelle website is de basis van online succes. Wij bouwen Shopify en WordPress websites die converteren en schalen met jouw groei.
+              </p>
+              <Link 
+                href="/services/web-development"
+                className="inline-flex items-center gap-2 text-gray-900 text-sm font-semibold group hover:underline"
+              >
+                <span>Bekijk development</span>
+                <span className="flex items-center justify-center w-7 h-7 bg-[#1795FF] rounded-full text-sm text-white group-hover:translate-x-2 transition-transform duration-200">
+                  →
+                </span>
+              </Link>
+            </div>
 
-      {/* Calendly Embed Section */}
-      <section className="py-16 px-6 bg-gray-50">
-        <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">Book a <span className="bg-[#F7D8FA] px-2 rounded italic">Free</span> consultation</h2>
-          <p className="text-xl text-gray-600 mb-8">
-          No commitment required • Free 30-minute consultation          </p>
-          
-          {/* Calendly Embed */}
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <iframe
-              src="https://calendly.com/niblah/30min" // Replace with your actual Calendly link
-              width="100%"
-              height="600"
-              frameBorder="0"
-              title="Schedule a consultation"
-              className="rounded-lg"
-            ></iframe>
+            {/* Card 2 - SEO Services */}
+            <div className="flex flex-col">
+              <div className="bg-[#E8C88E] rounded-2xl p-4 mb-4 h-32 flex items-center justify-center">
+                <Image 
+                  src="/SEO ICON.png" 
+                  alt="SEO Services" 
+                  width={100}
+                  height={100}
+                  className="object-contain"
+                />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">
+                Wil je hoger ranken in Google?
+              </h3>
+              <p className="text-sm text-gray-600 mb-4 flex-grow">
+                Met onze SEO diensten bereik je hogere rankings, meer organisch verkeer en nieuwe klanten. Technische SEO, linkbuilding en content optimalisatie.
+              </p>
+              <Link 
+                href="/services/seo"
+                className="inline-flex items-center gap-2 text-gray-900 text-sm font-semibold group hover:underline"
+              >
+                <span>Ontdek SEO services</span>
+                <span className="flex items-center justify-center w-7 h-7 bg-[#1795FF] rounded-full text-sm text-white group-hover:translate-x-2 transition-transform duration-200">
+                  →
+                </span>
+              </Link>
+            </div>
+
+            {/* Card 3 - Google Ads */}
+            <div className="flex flex-col">
+              <div className="bg-[#B8C5D6] rounded-2xl p-4 mb-4 h-32 flex items-center justify-center">
+                <Image 
+                  src="/SEA icon.png" 
+                  alt="Google Ads" 
+                  width={100}
+                  height={100}
+                  className="object-contain"
+                />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">
+                Directe resultaten met Google Ads
+              </h3>
+              <p className="text-sm text-gray-600 mb-4 flex-grow">
+                Bereik je doelgroep op het juiste moment. Wij optimaliseren campagnes voor maximale ROI en conversies met Search, Shopping en Display Ads.
+              </p>
+              <Link 
+                href="/services/google-ads"
+                className="inline-flex items-center gap-2 text-gray-900 text-sm font-semibold group hover:underline"
+              >
+                <span>Start met Google Ads</span>
+                <span className="flex items-center justify-center w-7 h-7 bg-[#1795FF] rounded-full text-sm text-white group-hover:translate-x-2 transition-transform duration-200">
+                  →
+                </span>
+              </Link>
+            </div>
+
+            {/* Card 4 - Marketing Automation */}
+            <div className="flex flex-col">
+              <div className="bg-[#E5E5E5] rounded-2xl p-4 mb-4 h-32 flex items-center justify-center">
+                <Image 
+                  src="/marketing automation.png" 
+                  alt="Marketing Automation" 
+                  width={100}
+                  height={100}
+                  className="object-contain"
+                />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">
+                Automatiseer je marketing en groei
+              </h3>
+              <p className="text-sm text-gray-600 mb-4 flex-grow">
+                Verstuur gepersonaliseerde campagnes via email met Klaviyo. Verhoog je omzet en klantloyaliteit met slimme marketing automations.
+              </p>
+              <Link 
+                href="/services/email-marketing"
+                className="inline-flex items-center gap-2 text-gray-900 text-sm font-semibold group hover:underline"
+              >
+                <span>Bekijk automation</span>
+                <span className="flex items-center justify-center w-7 h-7 bg-[#1795FF] rounded-full text-sm text-white group-hover:translate-x-2 transition-transform duration-200">
+                  →
+                </span>
+              </Link>
+            </div>
           </div>
-          
+        </div>
+      </section>
+
+      {/* Gratis Consult Section */}
+      <section className="bg-white py-8 md:py-12 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Image - First on mobile, right on desktop */}
+            <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden order-first md:order-last mx-auto w-full max-w-md md:max-w-none">
+              <Image 
+                src="/gratis-consult.png"
+                alt="Gratis SEO Consult"
+                fill
+                className="object-cover"
+              />
+            </div>
+
+            {/* Text Content - Second on mobile, left on desktop */}
+            <div className="order-last md:order-first">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Boek een gratis consult en bekijk wat wij voor jou kunnen betekenen
+              </h2>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                Een van onze specialisten helpt je graag verder om jouw online doelen te bereiken. We nemen de tijd om jouw situatie te bespreken en concrete stappen te bepalen.
+              </p>
+              <Link 
+                href="/contact"
+                className="inline-flex items-center gap-2 text-gray-900 text-base font-semibold group hover:underline"
+              >
+                <span>Plan je gratis consult</span>
+                <span className="flex items-center justify-center w-8 h-8 bg-[#1795FF] rounded-full text-lg text-white group-hover:translate-x-2 transition-transform duration-200">
+                  →
+                </span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Reviews Section */}
+      <GoogleReviewBar />
+
+      {/* Lead Form Section */}
+      <section className="bg-gray-50 py-16 md:py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-[2fr_1fr] gap-12 items-start">
+            {/* Left - Text Content */}
+            <div>
+              {/* Top Pills */}
+              <div className="flex items-center gap-0 mb-8">
+                <button className="px-3 md:px-6 py-1.5 md:py-2.5 bg-[#241C15] text-white font-semibold rounded-l-full border-2 border-[#241C15] text-xs md:text-base whitespace-nowrap">
+                  Probeer het gratis
+                </button>
+                <button className="px-3 md:px-6 py-1.5 md:py-2.5 bg-white text-gray-900 font-normal rounded-r-full border-2 border-[#241C15] border-l-0 text-xs md:text-base">
+                  <span className="font-semibold">Bespaar 25%</span> <span className="hidden sm:inline">t.o.v. grote bureaus</span><span className="sm:hidden">vs bureaus</span>
+                </button>
+              </div>
+
+              {/* Title */}
+              <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                Maak gratis kennis met onze <span className="relative inline-block">
+                  marketingdiensten
+                  <span className="absolute bottom-0 left-0 w-full h-3 bg-[#FFD43B] -z-10"></span>
+                </span>
+              </h2>
+
+              {/* Description */}
+              <p className="text-lg text-gray-900 mb-8 leading-relaxed">
+                Kom erachter waarom klanten massaal hun marketingbureaus ontslaan en kiezen voor een boutique bureau dat in staat is allround service te bieden met een direct contactpersoon. Weet met wie je te maken hebt.
+              </p>
+              
+              {/* Features Grid - 2 columns */}
+              <div className="grid grid-cols-2 gap-x-8 gap-y-4 mb-10">
+                {/* Left Column */}
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-[#1795FF] rounded-full flex items-center justify-center mt-0.5">
+                      <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <span className="text-base text-gray-900">Direct contact met je specialist</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-[#1795FF] rounded-full flex items-center justify-center mt-0.5">
+                      <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <span className="text-base text-gray-900">30+ jaar ervaring in één team</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-[#1795FF] rounded-full flex items-center justify-center mt-0.5">
+                      <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <span className="text-base text-gray-900">Allround service onder één dak</span>
+                  </div>
+                </div>
+
+                {/* Right Column */}
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-[#1795FF] rounded-full flex items-center justify-center mt-0.5">
+                      <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <span className="text-base text-gray-900">Geen lange wachttijden</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-[#1795FF] rounded-full flex items-center justify-center mt-0.5">
+                      <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <span className="text-base text-gray-900">Transparante rapportages</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-[#1795FF] rounded-full flex items-center justify-center mt-0.5">
+                      <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <span className="text-base text-gray-900">Persoonlijke aanpak</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Ontdek onze diensten button */}
+              <div className="flex items-center gap-3">
+                <span className="text-lg font-normal text-gray-900">Ontdek onze diensten</span>
+                <Link 
+                  href="/services"
+                  className="flex items-center justify-center w-10 h-10 bg-[#1795FF] rounded-full hover:bg-[#0f7dd4] transition-colors"
+                >
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+
+            {/* Right - Lead Form */}
+            <LeadForm />
+          </div>
         </div>
       </section>
     </main>

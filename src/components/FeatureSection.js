@@ -15,10 +15,10 @@ const FeatureSection = ({
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-block bg-[#D9EDFF] text-gray-800 px-4 py-2 rounded-[5px] text-sm font-medium mb-4">
+          <div className="inline-block bg-[#D9EDFF] text-gray-800 px-4 py-2 rounded-[5px] text-xs font-medium mb-4">
             {subtitle}
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
             {title}
           </h2>
         </div>
@@ -34,13 +34,13 @@ const FeatureSection = ({
             >
               {/* Text Content */}
               <div className={index % 2 === 1 ? 'md:col-start-2' : ''}>
-                <div className="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-[5px] text-sm font-medium mb-4">
+                <div className="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-[5px] text-xs font-medium mb-4">
                   {feature.badge}
                 </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">
                   {feature.title}
                 </h3>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                <p className="text-base text-gray-600 leading-relaxed mb-6">
                   {feature.description}
                 </p>
                 <a 

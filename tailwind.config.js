@@ -4,11 +4,20 @@ module.exports = {
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/templates/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
       fontFamily: {
         sans: ['var(--font-poppins)'],
+        serif: ['var(--font-merriweather)', 'Georgia', 'Times New Roman', 'serif'],
+      },
+      colors: {
+        brand: {
+          primary: '#F7D8FA',
+          secondary: '#D9EDFF',
+          accent: '#0059FF',
+        },
       },
       animation: {
         scroll: 'scroll 40s linear infinite',
@@ -25,13 +34,15 @@ module.exports = {
             color: theme('colors.gray.800'),
             maxWidth: 'none',
             h1: {
+              fontFamily: 'var(--font-merriweather), Georgia, Times New Roman, serif',
               color: theme('colors.gray.900'),
-              fontWeight: '800',
+              fontWeight: '700',
               marginTop: '2.5rem',
               marginBottom: '1.25rem',
               lineHeight: 1.2,
             },
             h2: {
+              fontFamily: 'var(--font-merriweather), Georgia, Times New Roman, serif',
               color: theme('colors.gray.900'),
               fontWeight: '700',
               fontSize: '1.5rem',
@@ -43,8 +54,9 @@ module.exports = {
               },
             },
             h3: {
+              fontFamily: 'var(--font-merriweather), Georgia, Times New Roman, serif',
               color: theme('colors.gray.800'),
-              fontWeight: '600',
+              fontWeight: '700',
               fontSize: '1.25rem',
               marginTop: '2rem',
               marginBottom: '0.75rem',

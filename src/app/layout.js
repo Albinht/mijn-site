@@ -1,11 +1,11 @@
 import './globals.css'
 
 // Fonts
-import { Poppins } from 'next/font/google'
+import { Poppins, Merriweather } from 'next/font/google'
 import { Geist, Geist_Mono } from 'next/font/google'
 
 // Componenten
-import Header from '../components/header.js'
+import Header from '../components/HeaderNew.js'
 import Footer from '../components/Footer.js'
 import ConditionalContactForm from '../components/ConditionalContactForm.js'
 import GoogleAnalytics from '../components/GoogleAnalytics.js'
@@ -13,8 +13,14 @@ import GoogleAnalytics from '../components/GoogleAnalytics.js'
 // Fonts activeren
 const poppins = Poppins({
   subsets: ['latin'],
-  weight: ['400', '600', '700'],
+  weight: ['400'],
   variable: '--font-poppins',
+})
+
+const merriweather = Merriweather({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-merriweather',
 })
 
 const geistSans = Geist({
@@ -66,7 +72,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable}`}>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${merriweather.variable}`}>
       <head>
       </head>
       <body suppressHydrationWarning={true} className="font-sans">

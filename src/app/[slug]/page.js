@@ -52,17 +52,18 @@ export default async function DynamicPage({ params }) {
     });
     
     if (!page) {
-      notFound();
+      return notFound();
     }
     
-    // Increment view count
-    await prisma.page.update({
+    // Increment view count (don't await to avoid blocking)
+    prisma.page.update({
       where: { id: page.id },
       data: { views: { increment: 1 } }
-    });
+    }).catch(err => console.error('Error updating views:', err));
+    
   } catch (error) {
     console.error('Error fetching page:', error);
-    notFound();
+    return notFound();
   }
   
   // Render different layouts based on page type
