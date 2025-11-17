@@ -1,26 +1,26 @@
 'use client';
 
 const reviewsRow1 = [
-  { name: 'Marcel B.', text: 'Uitstekende SEO resultaten! Binnen 3 maanden #1 positie bereikt.', rating: 5 },
-  { name: 'Marlon V.', text: 'Professionele Google Ads aanpak, omzet 180% gestegen!', rating: 5 },
-  { name: 'Gerlinde K.', text: 'Zeer tevreden met de persoonlijke begeleiding en resultaten.', rating: 5 },
-  { name: 'Patrick S.', text: 'Website optimalisatie heeft wonderen gedaan voor conversie.', rating: 5 },
-  { name: 'Linda M.', text: 'Rankings verbeterd en hele marketing proces geoptimaliseerd.', rating: 5 },
-  { name: 'Sophie D.', text: 'Van pagina 3 naar top 3 voor al onze hoofdtermen!', rating: 5 },
+  { name: 'Marcel B.', company: 'E-commerce Eigenaar', text: 'Uitstekende SEO resultaten! Binnen 3 maanden #1 positie bereikt.', rating: 5 },
+  { name: 'Marlon V.', company: 'Marketing Manager', text: 'Professionele Google Ads aanpak, omzet 180% gestegen!', rating: 5 },
+  { name: 'Gerlinde K.', company: 'Bedrijfseigenaar', text: 'Zeer tevreden met de persoonlijke begeleiding en resultaten.', rating: 5 },
+  { name: 'Patrick S.', company: 'CEO Tech Startup', text: 'Website optimalisatie heeft wonderen gedaan voor conversie.', rating: 5 },
+  { name: 'Linda M.', company: 'Online Retailer', text: 'Rankings verbeterd en hele marketing proces geoptimaliseerd.', rating: 5 },
+  { name: 'Sophie D.', company: 'MKB Eigenaar', text: 'Van pagina 3 naar top 3 voor al onze hoofdtermen!', rating: 5 },
 ];
 
 const reviewsRow2 = [
-  { name: 'Tom W.', text: 'Elke nieuwe blog post rankt perfect dankzij hun strategie.', rating: 5 },
-  { name: 'Emma R.', text: 'Na 2 maanden al duidelijk meer bezoekers en aanvragen.', rating: 5 },
-  { name: 'David E.', text: 'Technische SEO audit bracht cruciale verbeteringen aan het licht.', rating: 5 },
-  { name: 'Sarah M.', text: '2 jaar samenwerking, proactief en deskundig. Top service!', rating: 5 },
-  { name: 'Mike O.', text: 'SEO en Google Ads combinatie bracht ons naar een hoger niveau.', rating: 5 },
-  { name: 'Anna K.', text: 'Content strategie werkt perfect. Meer traffic en conversies!', rating: 5 },
+  { name: 'Tom W.', company: 'Content Creator', text: 'Elke nieuwe blog post rankt perfect dankzij hun strategie.', rating: 5 },
+  { name: 'Emma R.', company: 'Webshop Eigenaar', text: 'Na 2 maanden al duidelijk meer bezoekers en aanvragen.', rating: 5 },
+  { name: 'David E.', company: 'IT Directeur', text: 'Technische SEO audit bracht cruciale verbeteringen aan het licht.', rating: 5 },
+  { name: 'Sarah M.', company: 'B2B Manager', text: '2 jaar samenwerking, proactief en deskundig. Top service!', rating: 5 },
+  { name: 'Mike O.', company: 'Digital Marketeer', text: 'SEO en Google Ads combinatie bracht ons naar een hoger niveau.', rating: 5 },
+  { name: 'Anna K.', company: 'Fitness Studio', text: 'Content strategie werkt perfect. Meer traffic en conversies!', rating: 5 },
 ];
 
 const GoogleReviewCard = ({ review }) => (
-  <div className="flex-shrink-0 bg-white rounded-lg border border-gray-200 p-3 mx-2 w-80">
-    <div className="flex items-center gap-2 mb-2">
+  <div className="flex-shrink-0 bg-white rounded-lg border-2 border-black p-6 mx-3 w-96 shadow-[4px_4px_0_0_#000]">
+    <div className="flex items-center gap-2 mb-4">
       {/* Google G Logo */}
       <div className="w-5 h-5 flex-shrink-0">
         <svg viewBox="0 0 24 24" fill="none">
@@ -33,14 +33,15 @@ const GoogleReviewCard = ({ review }) => (
       {/* Stars */}
       <div className="flex">
         {[...Array(5)].map((_, i) => (
-          <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+          <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
           </svg>
         ))}
       </div>
     </div>
-    <p className="text-sm text-gray-700 mb-2">{review.text}</p>
-    <p className="text-xs text-gray-500 font-medium">{review.name}</p>
+    <h3 className="font-bold text-lg mb-1">{review.name}</h3>
+    <p className="text-sm text-gray-500 mb-3">{review.company}</p>
+    <p className="text-sm text-gray-600">{review.text}</p>
   </div>
 );
 

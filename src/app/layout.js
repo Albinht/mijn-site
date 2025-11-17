@@ -9,6 +9,7 @@ import Header from '../components/HeaderNew.js'
 import Footer from '../components/Footer.js'
 import ConditionalContactForm from '../components/ConditionalContactForm.js'
 import GoogleAnalytics from '../components/GoogleAnalytics.js'
+import FloatingChatButton from '../components/FloatingChatButton.js'
 
 // Fonts activeren
 const poppins = Poppins({
@@ -81,6 +82,7 @@ export default function RootLayout({ children }) {
         {children}
         <ConditionalContactForm />
         <Footer />
+        <FloatingChatButton />
       </body>
     </html>
   )

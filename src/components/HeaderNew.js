@@ -104,7 +104,7 @@ export default function HeaderNew() {
                           <h2 className="text-xl font-bold text-gray-900">Diensten en Services</h2>
                           <Link href="/services" className="text-sm font-medium text-gray-600 hover:text-gray-900 flex items-center gap-2">
                             Bekijk alles
-                            <span className="w-6 h-6 bg-[#FFD43B] rounded-full flex items-center justify-center text-black">→</span>
+                            <span className="w-6 h-6 bg-[#1795FF] rounded-full flex items-center justify-center text-white">→</span>
                           </Link>
                         </div>
                         
@@ -254,6 +254,358 @@ export default function HeaderNew() {
                 )}
               </div>
 
+              {/* Shopify */}
+              <div 
+                className="relative"
+                onMouseEnter={() => handleMouseEnter('shopify')}
+                onMouseLeave={handleMouseLeave}
+              >
+                <button className="px-3 py-2 text-sm font-semibold text-[#101828] hover:text-[#101828]/80 flex items-center gap-1">
+                  Shopify
+                  <svg className={`w-3.5 h-3.5 transition-transform ${activeDropdown === 'shopify' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                
+                {activeDropdown === 'shopify' && (
+                  <div className="fixed left-6 top-[6.5rem] w-full max-w-5xl bg-white border border-gray-200 rounded-2xl shadow-2xl z-50">
+                    <div className="flex">
+                      {/* Main Content - 3/4 */}
+                      <div className="flex-1 p-8">
+                        <div className="flex justify-between items-center mb-6">
+                          <div className="flex items-center gap-3">
+                            <img src="/blog.png" alt="Shopify" className="w-8 h-8" />
+                            <h2 className="text-xl font-bold text-gray-900">Shopify Services</h2>
+                          </div>
+                          <Link href="/services/web-development" className="text-sm font-medium text-gray-600 hover:text-gray-900 flex items-center gap-2">
+                            Bekijk alles
+                            <span className="w-6 h-6 bg-[#1795FF] rounded-full flex items-center justify-center text-white">→</span>
+                          </Link>
+                        </div>
+                        
+                        <div className="grid grid-cols-3 gap-x-8 gap-y-6">
+                          {/* Shopify Webshop */}
+                          <Link href="/shopify/webshop-laten-maken" className="flex gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group">
+                            <div className="flex-shrink-0">
+                              <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                              </svg>
+                            </div>
+                            <div>
+                              <div className="font-semibold text-gray-900 group-hover:text-[#1795FF]">Shopify Webshop</div>
+                              <div className="text-sm text-gray-600">Laat je webshop bouwen</div>
+                            </div>
+                          </Link>
+
+                          {/* Shopify Maatwerk */}
+                          <Link href="/shopify/maatwerk" className="flex gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group">
+                            <div className="flex-shrink-0">
+                              <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                              </svg>
+                            </div>
+                            <div>
+                              <div className="font-semibold text-gray-900 group-hover:text-[#1795FF]">Shopify Maatwerk</div>
+                              <div className="text-sm text-gray-600">Custom apps en functies</div>
+                            </div>
+                          </Link>
+
+                          {/* Shopify Thema */}
+                          <Link href="/shopify/thema" className="flex gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group">
+                            <div className="flex-shrink-0">
+                              <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                              </svg>
+                            </div>
+                            <div>
+                              <div className="font-semibold text-gray-900 group-hover:text-[#1795FF]">Shopify Thema</div>
+                              <div className="text-sm text-gray-600">Snel starten met themes</div>
+                            </div>
+                          </Link>
+
+                          {/* Shopify Marketing */}
+                          <Link href="/shopify/marketing" className="flex gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group">
+                            <div className="flex-shrink-0">
+                              <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                              </svg>
+                            </div>
+                            <div>
+                              <div className="font-semibold text-gray-900 group-hover:text-[#1795FF]">Shopify Marketing</div>
+                              <div className="text-sm text-gray-600">Groei je webshop omzet</div>
+                            </div>
+                          </Link>
+
+                          {/* Shopify Migratie */}
+                          <Link href="/shopify/migratie" className="flex gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group">
+                            <div className="flex-shrink-0">
+                              <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                              </svg>
+                            </div>
+                            <div>
+                              <div className="font-semibold text-gray-900 group-hover:text-[#1795FF]">Shopify Migratie</div>
+                              <div className="text-sm text-gray-600">Verhuis naar Shopify</div>
+                            </div>
+                          </Link>
+
+                          {/* Shopify Koppelingen */}
+                          <Link href="/services/shopify-koppelingen" className="flex gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group">
+                            <div className="flex-shrink-0">
+                              <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                              </svg>
+                            </div>
+                            <div>
+                              <div className="font-semibold text-gray-900 group-hover:text-[#1795FF]">Shopify Koppelingen</div>
+                              <div className="text-sm text-gray-600">Automatiseer je processen</div>
+                            </div>
+                          </Link>
+
+                          {/* Shopify Partner */}
+                          <Link href="/services/shopify-partner" className="flex gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group">
+                            <div className="flex-shrink-0">
+                              <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                              </svg>
+                            </div>
+                            <div>
+                              <div className="font-semibold text-gray-900 group-hover:text-[#1795FF]">Shopify Partner</div>
+                              <div className="text-sm text-gray-600">Officiële partner expertise</div>
+                            </div>
+                          </Link>
+
+                          {/* Shopify Developer */}
+                          <Link href="/services/shopify-developer" className="flex gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group">
+                            <div className="flex-shrink-0">
+                              <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                              </svg>
+                            </div>
+                            <div>
+                              <div className="font-semibold text-gray-900 group-hover:text-[#1795FF]">Shopify Developer</div>
+                              <div className="text-sm text-gray-600">Expert development team</div>
+                            </div>
+                          </Link>
+
+                          {/* Web Development */}
+                          <Link href="/services/web-development" className="flex gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group">
+                            <div className="flex-shrink-0">
+                              <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                              </svg>
+                            </div>
+                            <div>
+                              <div className="font-semibold text-gray-900 group-hover:text-[#1795FF]">Alle Services</div>
+                              <div className="text-sm text-gray-600">Bekijk het volledige overzicht</div>
+                            </div>
+                          </Link>
+                        </div>
+                      </div>
+
+                      {/* Sidebar - 1/4 */}
+                      <div className="w-64 bg-gray-50 p-6 rounded-r-2xl border-l border-gray-200">
+                        <div className="mb-6">
+                          <h3 className="text-sm font-semibold text-gray-900 mb-4">Populaire diensten</h3>
+                          <div className="space-y-2">
+                            <Link href="/shopify/webshop-laten-maken" className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">Complete webshop</Link>
+                            <Link href="/shopify/maatwerk" className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">Maatwerk development</Link>
+                            <Link href="/shopify/thema" className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">Thema setup</Link>
+                            <Link href="/shopify/marketing" className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">Marketing groei</Link>
+                          </div>
+                        </div>
+
+                        <div>
+                          <h3 className="text-sm font-semibold text-gray-900 mb-4">Shopify expertise</h3>
+                          <div className="space-y-2">
+                            <Link href="/services/shopify-partner" className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">Officiële Partner</Link>
+                            <Link href="/services/shopify-developer" className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">Certified Developers</Link>
+                            <Link href="/services/shopify-koppelingen" className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">API Integraties</Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* WordPress */}
+              <div 
+                className="relative"
+                onMouseEnter={() => handleMouseEnter('wordpress')}
+                onMouseLeave={handleMouseLeave}
+              >
+                <button className="px-3 py-2 text-sm font-semibold text-[#101828] hover:text-[#101828]/80 flex items-center gap-1">
+                  WordPress
+                  <svg className={`w-3.5 h-3.5 transition-transform ${activeDropdown === 'wordpress' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                
+                {activeDropdown === 'wordpress' && (
+                  <div className="fixed left-6 top-[6.5rem] w-full max-w-5xl bg-white border border-gray-200 rounded-2xl shadow-2xl z-50">
+                    <div className="flex">
+                      {/* Main Content - 3/4 */}
+                      <div className="flex-1 p-8">
+                        <div className="flex justify-between items-center mb-6">
+                          <div className="flex items-center gap-3">
+                            <img src="/wp dev.png" alt="WordPress" className="w-8 h-8" />
+                            <h2 className="text-xl font-bold text-gray-900">WordPress Services</h2>
+                          </div>
+                          <Link href="/services/web-development" className="text-sm font-medium text-gray-600 hover:text-gray-900 flex items-center gap-2">
+                            Bekijk alles
+                            <span className="w-6 h-6 bg-[#1795FF] rounded-full flex items-center justify-center text-white">→</span>
+                          </Link>
+                        </div>
+                        
+                        <div className="grid grid-cols-3 gap-x-8 gap-y-6">
+                          {/* WordPress Website */}
+                          <Link href="/wordpress/website-laten-maken" className="flex gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group">
+                            <div className="flex-shrink-0">
+                              <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                              </svg>
+                            </div>
+                            <div>
+                              <div className="font-semibold text-gray-900 group-hover:text-[#1795FF]">WordPress Website</div>
+                              <div className="text-sm text-gray-600">Laat je website bouwen</div>
+                            </div>
+                          </Link>
+
+                          {/* WordPress Maatwerk */}
+                          <Link href="/wordpress/maatwerk" className="flex gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group">
+                            <div className="flex-shrink-0">
+                              <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                              </svg>
+                            </div>
+                            <div>
+                              <div className="font-semibold text-gray-900 group-hover:text-[#1795FF]">WordPress Maatwerk</div>
+                              <div className="text-sm text-gray-600">Custom plugins en functies</div>
+                            </div>
+                          </Link>
+
+                          {/* WordPress Thema */}
+                          <Link href="/wordpress/thema" className="flex gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group">
+                            <div className="flex-shrink-0">
+                              <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                              </svg>
+                            </div>
+                            <div>
+                              <div className="font-semibold text-gray-900 group-hover:text-[#1795FF]">WordPress Thema</div>
+                              <div className="text-sm text-gray-600">Snel starten met themes</div>
+                            </div>
+                          </Link>
+
+                          {/* WordPress Marketing */}
+                          <Link href="/wordpress/marketing" className="flex gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group">
+                            <div className="flex-shrink-0">
+                              <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                              </svg>
+                            </div>
+                            <div>
+                              <div className="font-semibold text-gray-900 group-hover:text-[#1795FF]">WordPress Marketing</div>
+                              <div className="text-sm text-gray-600">SEO en content groei</div>
+                            </div>
+                          </Link>
+
+                          {/* WordPress Migratie */}
+                          <Link href="/wordpress/migratie" className="flex gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group">
+                            <div className="flex-shrink-0">
+                              <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                              </svg>
+                            </div>
+                            <div>
+                              <div className="font-semibold text-gray-900 group-hover:text-[#1795FF]">WordPress Migratie</div>
+                              <div className="text-sm text-gray-600">Verhuis naar WordPress</div>
+                            </div>
+                          </Link>
+
+                          {/* WordPress Koppelingen */}
+                          <Link href="/wordpress/koppelingen" className="flex gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group">
+                            <div className="flex-shrink-0">
+                              <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                              </svg>
+                            </div>
+                            <div>
+                              <div className="font-semibold text-gray-900 group-hover:text-[#1795FF]">WordPress Koppelingen</div>
+                              <div className="text-sm text-gray-600">API integraties</div>
+                            </div>
+                          </Link>
+
+                          {/* WordPress Partner */}
+                          <Link href="/wordpress/partner" className="flex gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group">
+                            <div className="flex-shrink-0">
+                              <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                              </svg>
+                            </div>
+                            <div>
+                              <div className="font-semibold text-gray-900 group-hover:text-[#1795FF]">WordPress Expert Agency</div>
+                              <div className="text-sm text-gray-600">30+ jaar expertise</div>
+                            </div>
+                          </Link>
+
+                          {/* WordPress Developer */}
+                          <Link href="/wordpress/developer" className="flex gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group">
+                            <div className="flex-shrink-0">
+                              <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                              </svg>
+                            </div>
+                            <div>
+                              <div className="font-semibold text-gray-900 group-hover:text-[#1795FF]">WordPress Developer</div>
+                              <div className="text-sm text-gray-600">Expert development team</div>
+                            </div>
+                          </Link>
+
+                          {/* Web Development */}
+                          <Link href="/services/web-development" className="flex gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group">
+                            <div className="flex-shrink-0">
+                              <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                              </svg>
+                            </div>
+                            <div>
+                              <div className="font-semibold text-gray-900 group-hover:text-[#1795FF]">Alle Services</div>
+                              <div className="text-sm text-gray-600">Bekijk het volledige overzicht</div>
+                            </div>
+                          </Link>
+                        </div>
+                      </div>
+
+                      {/* Sidebar - 1/4 */}
+                      <div className="w-64 bg-gray-50 p-6 rounded-r-2xl border-l border-gray-200">
+                        <div className="mb-6">
+                          <h3 className="text-sm font-semibold text-gray-900 mb-4">Populaire diensten</h3>
+                          <div className="space-y-2">
+                            <Link href="/wordpress/website-laten-maken" className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">Complete website</Link>
+                            <Link href="/wordpress/maatwerk" className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">Maatwerk development</Link>
+                            <Link href="/wordpress/thema" className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">Thema setup</Link>
+                            <Link href="/wordpress/marketing" className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">Marketing & SEO</Link>
+                          </div>
+                        </div>
+
+                        <div>
+                          <h3 className="text-sm font-semibold text-gray-900 mb-4">WordPress expertise</h3>
+                          <div className="space-y-2">
+                            <Link href="/wordpress/partner" className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">Expert Agency</Link>
+                            <Link href="/wordpress/developer" className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">Experienced Developers</Link>
+                            <Link href="/wordpress/koppelingen" className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">API Integraties</Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+
               {/* Locaties */}
               <div 
                 className="relative"
@@ -324,7 +676,7 @@ export default function HeaderNew() {
                           <h2 className="text-xl font-bold text-gray-900">Resources</h2>
                           <Link href="/resources" className="text-sm font-medium text-gray-600 hover:text-gray-900 flex items-center gap-2">
                             Bekijk alle resources
-                            <span className="w-6 h-6 bg-[#FFD43B] rounded-full flex items-center justify-center text-black">→</span>
+                            <span className="w-6 h-6 bg-[#1795FF] rounded-full flex items-center justify-center text-white">→</span>
                           </Link>
                         </div>
 
@@ -645,6 +997,179 @@ export default function HeaderNew() {
 
                       <Link href="/services" className="block ml-4 px-3 py-2 text-sm font-medium text-[#1795FF] hover:underline" onClick={() => setIsMobileMenuOpen(false)}>
                         Bekijk alle services →
+                      </Link>
+                    </div>
+                  )}
+                </div>
+
+                {/* Shopify */}
+                <div>
+                  <button 
+                    onClick={() => toggleMobileSubMenu('shopify')}
+                    className="flex items-center justify-between w-full px-4 py-3 text-base font-semibold text-[#101828] hover:bg-gray-50 rounded-lg"
+                  >
+                    <span>Shopify</span>
+                    <svg className={`w-5 h-5 transition-transform ${mobileSubMenu === 'shopify' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  {mobileSubMenu === 'shopify' && (
+                    <div className="ml-2 mt-2 space-y-3 pb-3">
+                      <div className="pl-4 border-l-2 border-gray-200">
+                        <div className="flex items-center gap-2 mb-2">
+                          <img src="/blog.png" alt="Shopify" className="w-5 h-5" />
+                          <h4 className="text-xs font-semibold text-gray-900">Shopify Webshops</h4>
+                        </div>
+                        <div className="space-y-1">
+                          <Link href="/shopify/webshop-laten-maken" className="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>
+                            <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                            </svg>
+                            Shopify Webshop
+                          </Link>
+                          <Link href="/shopify/maatwerk" className="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>
+                            <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Shopify Maatwerk
+                          </Link>
+                          <Link href="/shopify/thema" className="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>
+                            <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                            </svg>
+                            Shopify Thema
+                          </Link>
+                          <Link href="/shopify/marketing" className="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>
+                            <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                            </svg>
+                            Shopify Marketing
+                          </Link>
+                          <Link href="/shopify/migratie" className="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>
+                            <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                            </svg>
+                            Shopify Migratie
+                          </Link>
+                        </div>
+                      </div>
+                      
+                      <div className="pl-4 border-l-2 border-gray-200">
+                        <div className="flex items-center gap-2 mb-2">
+                          <img src="/blog.png" alt="Shopify" className="w-5 h-5" />
+                          <h4 className="text-xs font-semibold text-gray-900">Shopify Expertise</h4>
+                        </div>
+                        <div className="space-y-1">
+                          <Link href="/services/shopify-koppelingen" className="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>
+                            <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                            </svg>
+                            Shopify Koppelingen
+                          </Link>
+                          <Link href="/services/shopify-partner" className="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>
+                            <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                            </svg>
+                            Shopify Partner
+                          </Link>
+                          <Link href="/services/shopify-developer" className="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>
+                            <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                            </svg>
+                            Shopify Developer
+                          </Link>
+                        </div>
+                      </div>
+
+                      <Link href="/services/web-development" className="block ml-4 px-3 py-2 text-sm font-medium text-[#1795FF] hover:underline" onClick={() => setIsMobileMenuOpen(false)}>
+                        Bekijk alle Shopify services →
+                      </Link>
+                    </div>
+                  )}
+                </div>
+
+                {/* WordPress */}
+                <div>
+                  <button 
+                    onClick={() => toggleMobileSubMenu('wordpress')}
+                    className="flex items-center justify-between w-full px-4 py-3 text-base font-semibold text-[#101828] hover:bg-gray-50 rounded-lg"
+                  >
+                    <span>WordPress</span>
+                    <svg className={`w-5 h-5 transition-transform ${mobileSubMenu === 'wordpress' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  {mobileSubMenu === 'wordpress' && (
+                    <div className="ml-2 mt-2 space-y-3 pb-3">
+                      <div className="pl-4 border-l-2 border-gray-200">
+                        <div className="flex items-center gap-2 mb-2">
+                          <img src="/wp dev.png" alt="WordPress" className="w-5 h-5" />
+                          <h4 className="text-xs font-semibold text-gray-900">WordPress Websites</h4>
+                        </div>
+                        <div className="space-y-1">
+                          <Link href="/wordpress/website-laten-maken" className="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>
+                            <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                            </svg>
+                            WordPress Website
+                          </Link>
+                          <Link href="/wordpress/maatwerk" className="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>
+                            <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            WordPress Maatwerk
+                          </Link>
+                          <Link href="/wordpress/thema" className="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>
+                            <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                            </svg>
+                            WordPress Thema
+                          </Link>
+                          <Link href="/wordpress/marketing" className="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>
+                            <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                            </svg>
+                            WordPress Marketing
+                          </Link>
+                          <Link href="/wordpress/migratie" className="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>
+                            <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                            </svg>
+                            WordPress Migratie
+                          </Link>
+                        </div>
+                      </div>
+                      
+                      <div className="pl-4 border-l-2 border-gray-200">
+                        <div className="flex items-center gap-2 mb-2">
+                          <img src="/wp dev.png" alt="WordPress" className="w-5 h-5" />
+                          <h4 className="text-xs font-semibold text-gray-900">WordPress Expertise</h4>
+                        </div>
+                        <div className="space-y-1">
+                          <Link href="/wordpress/koppelingen" className="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>
+                            <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                            </svg>
+                            WordPress Koppelingen
+                          </Link>
+                          <Link href="/wordpress/partner" className="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>
+                            <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                            </svg>
+                            WordPress Expert Agency
+                          </Link>
+                          <Link href="/wordpress/developer" className="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>
+                            <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                            </svg>
+                            WordPress Developer
+                          </Link>
+                        </div>
+                      </div>
+                      <Link href="/services/web-development" className="block ml-4 px-3 py-2 text-sm font-medium text-[#1795FF] hover:underline" onClick={() => setIsMobileMenuOpen(false)}>
+                        Bekijk alle WordPress services →
                       </Link>
                     </div>
                   )}
