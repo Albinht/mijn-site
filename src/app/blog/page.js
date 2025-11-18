@@ -5,8 +5,8 @@ import avatarImage from '../../assets/avatar.png'
 import LeadForm from '@/components/LeadForm'
 
 export const metadata = {
-  title: 'The Niblah Blog - SEO en Marketing Tips | Niblah',
-  description: 'Expand your SEO and marketing knowledge with detailed tutorials and case studies from the Niblah experts.',
+  title: 'De Niblah Blog - SEO en Marketing Tips | Niblah',
+  description: 'Vergroot je SEO en marketing kennis met gedetailleerde tutorials en praktijkvoorbeelden van de Niblah experts.',
 }
 
 // Category mapping based on topic
@@ -76,10 +76,10 @@ export default async function BlogPage() {
       <section className="bg-[#1795FF] py-20 px-6">
         <div className="max-w-5xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            The Niblah Blog
+            De Niblah Blog
           </h1>
           <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
-            Expand your SEO and marketing knowledge with detailed tutorials and case studies.
+            Vergroot je SEO en marketing kennis met gedetailleerde tutorials en praktijkvoorbeelden.
           </p>
         </div>
       </section>

@@ -28,7 +28,7 @@ export default function ArticleContent({ content }) {
         return `<h4 class="text-xl font-bold text-gray-900 mt-5 mb-3">${text}</h4>`
       } else if (line.startsWith('**') && line.endsWith('**')) {
         const text = line.replace(/\*\*/g, '')
-        return `<p class="font-bold text-gray-900 mt-4 mb-2">${text}</p>`
+        return `<p class="text-lg font-extrabold text-black mt-4 mb-2">${text}</p>`
       } else if (line.startsWith('- ') || line.startsWith('• ')) {
         const text = line.replace(/^- |^• /, '')
         return `<li class="ml-6 mb-1.5">${text}</li>`
@@ -43,7 +43,8 @@ export default function ArticleContent({ content }) {
 
   return (
     <div 
-      className="prose prose-lg max-w-none"
+      className="prose prose-lg max-w-none [&_p]:break-words [&_li]:break-words"
+      style={{ overflowWrap: 'break-word', wordWrap: 'break-word' }}
       dangerouslySetInnerHTML={{ __html: formatContent(content) }}
     />
   )
