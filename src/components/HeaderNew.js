@@ -101,7 +101,10 @@ export default function HeaderNew() {
                       {/* Main Content - 3/4 */}
                       <div className="flex-1 p-8">
                         <div className="flex justify-between items-center mb-6">
-                          <h2 className="text-xl font-bold text-gray-900">Diensten en Services</h2>
+                          <div className="flex items-center gap-3">
+                            <img src="/web dev services.png" alt="Web Development Services" className="w-8 h-8" />
+                            <h2 className="text-xl font-bold text-gray-900">Diensten en Services</h2>
+                          </div>
                           <Link href="/services" className="text-sm font-medium text-gray-600 hover:text-gray-900 flex items-center gap-2">
                             Bekijk alles
                             <span className="w-6 h-6 bg-[#1795FF] rounded-full flex items-center justify-center text-white">→</span>
@@ -673,7 +676,10 @@ export default function HeaderNew() {
                       {/* Main Content - 3/4 */}
                       <div className="flex-1 p-8">
                         <div className="flex justify-between items-center mb-6">
-                          <h2 className="text-xl font-bold text-gray-900">Resources</h2>
+                          <div className="flex items-center gap-3">
+                            <img src="/andere-diensten.png" alt="Resources" className="w-8 h-8" />
+                            <h2 className="text-xl font-bold text-gray-900">Resources</h2>
+                          </div>
                           <Link href="/resources" className="text-sm font-medium text-gray-600 hover:text-gray-900 flex items-center gap-2">
                             Bekijk alle resources
                             <span className="w-6 h-6 bg-[#1795FF] rounded-full flex items-center justify-center text-white">→</span>
@@ -949,7 +955,10 @@ export default function HeaderNew() {
                   {mobileSubMenu === 'diensten' && (
                     <div className="ml-2 mt-2 space-y-3 pb-3">
                       <div className="pl-4 border-l-2 border-gray-200">
-                        <h4 className="text-xs font-semibold text-gray-900 mb-2">Marketing Services</h4>
+                        <div className="flex items-center gap-2 mb-2">
+                          <img src="/web dev services.png" alt="Web Development Services" className="w-5 h-5" />
+                          <h4 className="text-xs font-semibold text-gray-900">Marketing Services</h4>
+                        </div>
                         <div className="space-y-1">
                           <Link href="/services/seo" className="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>
                             <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1238,7 +1247,10 @@ export default function HeaderNew() {
                   {mobileSubMenu === 'resources' && (
                     <div className="ml-2 mt-2 space-y-3 pb-3">
                       <div className="pl-4 border-l-2 border-gray-200">
-                        <h4 className="text-xs font-semibold text-gray-900 mb-2">Leer met Niblah</h4>
+                        <div className="flex items-center gap-2 mb-2">
+                          <img src="/andere-diensten.png" alt="Resources" className="w-5 h-5" />
+                          <h4 className="text-xs font-semibold text-gray-900">Leer met Niblah</h4>
+                        </div>
                         <div className="space-y-1">
                           <Link href="/resources/ecommerce" className="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>
                             <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -279,10 +279,10 @@ export default function Home() {
           </p>
           
           <Link 
-            href="/services/google-ads"
+            href="/services/sea"
             className="inline-flex items-center justify-center gap-2 font-semibold text-black text-[10px] md:text-xs px-3 md:px-5 py-2 md:py-2.5 rounded-full bg-transparent transition-all duration-200 border-2 border-black hover:translate-y-0.5 hover:shadow-[0_2px_0_0_#000] shadow-[0_4px_0_0_#000]"
           >
-            Bekijk Google Ads services
+            Bekijk SEA services
           </Link>
         </div>
 
@@ -459,10 +459,10 @@ export default function Home() {
                 Bereik je doelgroep op het juiste moment. Wij optimaliseren campagnes voor maximale ROI en conversies met Search, Shopping en Display Ads.
               </p>
               <Link 
-                href="/services/google-ads"
+                href="/services/sea"
                 className="inline-flex items-center gap-2 text-gray-900 text-sm font-semibold group hover:underline"
               >
-                <span>Start met Google Ads</span>
+                <span>Bekijk SEA services</span>
                 <span className="flex items-center justify-center w-7 h-7 bg-[#1795FF] rounded-full text-sm text-white group-hover:translate-x-2 transition-transform duration-200">
                   →
                 </span>
