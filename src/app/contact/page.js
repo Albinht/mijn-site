@@ -21,8 +21,8 @@ export default function ContactPage() {
                 <div>
                   <h3 className="text-sm font-bold text-gray-500 uppercase mb-2">Adres</h3>
                   <p className="text-gray-900">
-                    Staverden 24<br />
-                    3772DZ Barneveld
+                    Raadhuisplein 17<br />
+                    3771ER Barneveld
                   </p>
                 </div>
                 
