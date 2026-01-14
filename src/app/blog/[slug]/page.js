@@ -6,10 +6,13 @@ import prisma from '@/lib/prisma'
 import avatarImage from '../../../assets/avatar.png'
 import TableOfContents from './TableOfContents'
 import ArticleContent from './ArticleContent'
+import LocaleSwitcher from '../LocaleSwitcher'
 
 const supportedLocales = ['en', 'de', 'sv', 'da', 'fr', 'it', 'nl']
 const defaultLocale = 'en'
 const localeCookieName = 'niblah-locale'
+
+export const dynamic = 'force-dynamic'
 
 const localeAliases = {
   'en-us': 'en',
@@ -273,15 +276,18 @@ export default async function BlogArticlePage({ params }) {
       <section className="bg-[#1795FF] py-12 px-6">
         <div className="max-w-7xl mx-auto">
           {/* Back to Blog */}
-          <Link 
-            href="/blog"
-            className="inline-flex items-center gap-2 text-white/80 hover:text-white mb-8 group"
-          >
-            <svg className="w-5 h-5 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            {ui.backToBlog}
-          </Link>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+            <Link 
+              href="/blog"
+              className="inline-flex items-center gap-2 text-white/80 hover:text-white group"
+            >
+              <svg className="w-5 h-5 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              {ui.backToBlog}
+            </Link>
+            <LocaleSwitcher locale={locale} variant="dark" />
+          </div>
           
           {/* Category Badge */}
           <div className="mb-4">
@@ -501,20 +507,4 @@ export default async function BlogArticlePage({ params }) {
       )}
     </div>
   )
-}
-
-export async function generateStaticParams() {
-  try {
-    const articles = await prisma.article.findMany({
-      where: { status: 'PUBLISHED' },
-      select: { slug: true }
-    })
-    
-    return articles.map((article) => ({
-      slug: article.slug
-    }))
-  } catch (error) {
-    console.error('Error generating static params:', error)
-    return []
-  }
 }
