@@ -1,24 +1,15 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import avatarImage from '../assets/avatar.png'
-import graphImage from '../assets/graph.png'
-import Button from '../components/Button'
 import HeroButton from '../components/HeroButton'
-import ReviewSlider from '../components/ReviewSlider'
 import LeadForm from '../components/LeadForm'
-import ImageCarousel from '../components/ImageCarousel'
-import ReviewPricing from '../components/ReviewPricing'
 import GoogleReviewBar from '../components/GoogleReviewBar'
+import { getServerLocale } from '@/lib/locale'
+import { getHomeCopy } from '@/i18n/home'
 
-export const metadata = {
-  title: 'Online marketing uitbesteden? 30+ jaar aan ervaring in een familie! | Niblah',
-  description: 'Boutique marketing bureau met persoonlijke service. Direct contact met je specialist, geen lange wachttijden. Allround service: SEO, Google Ads, websites & marketing automation. Bespaar 25% t.o.v. grote bureaus.',
-  keywords: 'online marketing uitbesteden, marketing bureau, SEO specialist, Google Ads specialist, website ontwikkeling, marketing automation, boutique marketing bureau, persoonlijke service',
-  openGraph: {
-    title: 'Online marketing uitbesteden? 30+ jaar ervaring in een familie | Niblah',
-    description: 'Boutique marketing bureau met persoonlijke service. Direct contact met je specialist. Allround service: SEO, Google Ads, websites & marketing automation.',
-    images: ['/avatar.png'],
-  },
+export async function generateMetadata() {
+  const locale = await getServerLocale()
+  const copy = getHomeCopy(locale)
+  return copy.metadata
 }
 
 // Service reviews data
@@ -176,20 +167,23 @@ const ServiceReviewSlider = () => {
   );
 };
 
-export default function Home() {
+export default async function Home() {
+  const locale = await getServerLocale()
+  const copy = getHomeCopy(locale)
+
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
       <section className="py-20 md:py-32 px-6 bg-white">
         <div className="max-w-5xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold leading-tight text-gray-900 mb-6">
-            Online marketing uitbesteden?<br />30+ jaar aan ervaring gebundeld in een familie
+            {copy.hero.titleLine1}<br />{copy.hero.titleLine2}
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto">
-            Wil je samenwerken met een klein team dat doelgericht aan de slag gaat om jouw wensen te realiseren? Klik dan op de knop hieronder en kijk of je bedrijf in aanmerking komt!
+            {copy.hero.subtitle}
           </p>
           <HeroButton href="/contact">
-            Start uw project
+            {copy.hero.cta}
           </HeroButton>
         </div>
       </section>
@@ -199,14 +193,14 @@ export default function Home() {
         {/* Column 1 - Development & Websites */}
         <div className="bg-[#D4A574] p-6 md:p-8 lg:p-10 flex flex-col">
           <h2 className="font-bold text-black mb-4 md:mb-6" style={{ fontSize: '24px' }}>
-            Development & Websites
+            {copy.featureColumns[0].title}
           </h2>
           
           <div className="flex-grow flex items-center justify-center my-4 md:my-6">
             <div className="w-full h-48 md:h-56 flex items-center justify-center p-4">
               <Image 
                 src="/web dev services.png" 
-                alt="Website Development" 
+                alt={copy.featureColumns[0].imageAlt}
                 width={200}
                 height={200}
                 className="object-contain max-h-full"
@@ -215,28 +209,28 @@ export default function Home() {
           </div>
           
           <p className="text-black mb-4 md:mb-6 text-xs md:text-sm">
-            Shopify & WordPress development, custom thema's, platform migraties, integraties en app ontwikkeling voor uw online succes.
+            {copy.featureColumns[0].description}
           </p>
           
           <Link 
             href="/services/web-development"
             className="inline-flex items-center justify-center gap-2 font-semibold text-black text-[10px] md:text-xs px-3 md:px-5 py-2 md:py-2.5 rounded-full bg-transparent transition-all duration-200 border-2 border-black hover:translate-y-0.5 hover:shadow-[0_2px_0_0_#000] shadow-[0_4px_0_0_#000]"
           >
-            Bekijk development services
+            {copy.featureColumns[0].button}
           </Link>
         </div>
 
         {/* Column 2 - SEO Services */}
         <div className="bg-[#E8C88E] p-6 md:p-8 lg:p-10 flex flex-col">
           <h2 className="font-bold text-black mb-4 md:mb-6" style={{ fontSize: '24px' }}>
-            SEO Services
+            {copy.featureColumns[1].title}
           </h2>
           
           <div className="flex-grow flex items-center justify-center my-4 md:my-6">
             <div className="w-full h-48 md:h-56 flex items-center justify-center p-4">
               <Image 
                 src="/SEO ICON.png" 
-                alt="SEO Services" 
+                alt={copy.featureColumns[1].imageAlt}
                 width={200}
                 height={200}
                 className="object-contain max-h-full"
@@ -245,28 +239,28 @@ export default function Home() {
           </div>
           
           <p className="text-black mb-4 md:mb-6 text-xs md:text-sm">
-            Technische SEO, linkbuilding, content optimalisatie, local SEO en complete SEO audits voor hogere rankings en meer traffic.
+            {copy.featureColumns[1].description}
           </p>
           
           <Link 
             href="/services/seo"
             className="inline-flex items-center justify-center gap-2 font-semibold text-black text-[10px] md:text-xs px-3 md:px-5 py-2 md:py-2.5 rounded-full bg-transparent transition-all duration-200 border-2 border-black hover:translate-y-0.5 hover:shadow-[0_2px_0_0_#000] shadow-[0_4px_0_0_#000]"
           >
-            Bekijk SEO services
+            {copy.featureColumns[1].button}
           </Link>
         </div>
 
         {/* Column 3 - Google Ads (SEA) */}
         <div className="bg-[#B8C5D6] p-6 md:p-8 lg:p-10 flex flex-col">
           <h2 className="font-bold text-black mb-4 md:mb-6" style={{ fontSize: '24px' }}>
-            Google Ads (SEA)
+            {copy.featureColumns[2].title}
           </h2>
           
           <div className="flex-grow flex items-center justify-center my-4 md:my-6">
             <div className="w-full h-48 md:h-56 flex items-center justify-center p-4">
               <Image 
                 src="/SEA icon.png" 
-                alt="Google Ads (SEA)" 
+                alt={copy.featureColumns[2].imageAlt}
                 width={200}
                 height={200}
                 className="object-contain max-h-full"
@@ -275,28 +269,28 @@ export default function Home() {
           </div>
           
           <p className="text-black mb-4 md:mb-6 text-xs md:text-sm">
-            Search campagnes, Shopping Ads, Display advertising, remarketing en campagne optimalisatie voor maximale ROI en conversies.
+            {copy.featureColumns[2].description}
           </p>
           
           <Link 
             href="/services/sea"
             className="inline-flex items-center justify-center gap-2 font-semibold text-black text-[10px] md:text-xs px-3 md:px-5 py-2 md:py-2.5 rounded-full bg-transparent transition-all duration-200 border-2 border-black hover:translate-y-0.5 hover:shadow-[0_2px_0_0_#000] shadow-[0_4px_0_0_#000]"
           >
-            Bekijk SEA services
+            {copy.featureColumns[2].button}
           </Link>
         </div>
 
         {/* Column 4 - Marketing Automation */}
         <div className="bg-[#E5E5E5] p-6 md:p-8 lg:p-10 flex flex-col">
           <h2 className="font-bold text-black mb-4 md:mb-6" style={{ fontSize: '24px' }}>
-            Marketing Automation
+            {copy.featureColumns[3].title}
           </h2>
           
           <div className="flex-grow flex items-center justify-center my-4 md:my-6">
             <div className="w-full h-48 md:h-56 flex items-center justify-center p-4">
               <Image 
                 src="/marketing automation.png" 
-                alt="Marketing Automation" 
+                alt={copy.featureColumns[3].imageAlt}
                 width={200}
                 height={200}
                 className="object-contain max-h-full"
@@ -305,14 +299,14 @@ export default function Home() {
           </div>
           
           <p className="text-black mb-4 md:mb-6 text-xs md:text-sm">
-            Email marketing met Klaviyo, marketing automations, CRM integraties, analytics en rapportage voor slimme klantcommunicatie.
+            {copy.featureColumns[3].description}
           </p>
           
           <Link 
             href="/services/email-marketing"
             className="inline-flex items-center justify-center gap-2 font-semibold text-black text-[10px] md:text-xs px-3 md:px-5 py-2 md:py-2.5 rounded-full bg-transparent transition-all duration-200 border-2 border-black hover:translate-y-0.5 hover:shadow-[0_2px_0_0_#000] shadow-[0_4px_0_0_#000]"
           >
-            Bekijk automation services
+            {copy.featureColumns[3].button}
           </Link>
         </div>
       </section>
@@ -324,10 +318,10 @@ export default function Home() {
             {/* Left - Main Text */}
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Ontdek waarom we de beste keuze zijn
+                {copy.stats.heading}
               </h2>
               <p className="text-lg text-gray-300 leading-relaxed">
-                Het marketing bureau dat meer traffic, hogere conversies en meetbare resultaten levert voor jouw online succes.
+                {copy.stats.description}
               </p>
             </div>
 
@@ -336,40 +330,40 @@ export default function Home() {
               {/* Stat 1 */}
               <div>
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                  Tot 300% meer
+                  {copy.stats.items[0].value}
                 </h3>
                 <p className="text-sm text-gray-400">
-                  organisch verkeer bij onze klanten
+                  {copy.stats.items[0].label}
                 </p>
               </div>
 
               {/* Stat 2 */}
               <div>
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                  30+ jaar ervaring
+                  {copy.stats.items[1].value}
                 </h3>
                 <p className="text-sm text-gray-400">
-                  gebundeld in een familie
+                  {copy.stats.items[1].label}
                 </p>
               </div>
 
               {/* Stat 3 */}
               <div>
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                  100+ bedrijven
+                  {copy.stats.items[2].value}
                 </h3>
                 <p className="text-sm text-gray-400">
-                  geholpen met online groei
+                  {copy.stats.items[2].label}
                 </p>
               </div>
 
               {/* Stat 4 */}
               <div>
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                  Persoonlijke aanpak
+                  {copy.stats.items[3].value}
                 </h3>
                 <p className="text-sm text-gray-400">
-                  klein team, grote resultaten
+                  {copy.stats.items[3].label}
                 </p>
               </div>
             </div>
@@ -381,7 +375,7 @@ export default function Home() {
       <section className="bg-white py-16 md:py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold text-center text-gray-900 mb-12">
-            Onze marketing services voor jouw online succes
+            {copy.services.heading}
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -390,23 +384,23 @@ export default function Home() {
               <div className="bg-[#D4A574] rounded-2xl p-4 mb-4 h-32 flex items-center justify-center">
                 <Image 
                   src="/web dev services.png" 
-                  alt="Website Development" 
+                  alt={copy.services.cards[0].imageAlt}
                   width={100}
                   height={100}
                   className="object-contain"
                 />
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">
-                Is jouw website klaar voor meer conversies?
+                {copy.services.cards[0].title}
               </h3>
               <p className="text-sm text-gray-600 mb-4 flex-grow">
-                Een moderne, snelle website is de basis van online succes. Wij bouwen Shopify en WordPress websites die converteren en schalen met jouw groei.
+                {copy.services.cards[0].description}
               </p>
               <Link 
                 href="/services/web-development"
                 className="inline-flex items-center gap-2 text-gray-900 text-sm font-semibold group hover:underline"
               >
-                <span>Bekijk development</span>
+                <span>{copy.services.cards[0].linkLabel}</span>
                 <span className="flex items-center justify-center w-7 h-7 bg-[#1795FF] rounded-full text-sm text-white group-hover:translate-x-2 transition-transform duration-200">
                   →
                 </span>
@@ -418,23 +412,23 @@ export default function Home() {
               <div className="bg-[#E8C88E] rounded-2xl p-4 mb-4 h-32 flex items-center justify-center">
                 <Image 
                   src="/SEO ICON.png" 
-                  alt="SEO Services" 
+                  alt={copy.services.cards[1].imageAlt}
                   width={100}
                   height={100}
                   className="object-contain"
                 />
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">
-                Wil je hoger ranken in Google?
+                {copy.services.cards[1].title}
               </h3>
               <p className="text-sm text-gray-600 mb-4 flex-grow">
-                Met onze SEO diensten bereik je hogere rankings, meer organisch verkeer en nieuwe klanten. Technische SEO, linkbuilding en content optimalisatie.
+                {copy.services.cards[1].description}
               </p>
               <Link 
                 href="/services/seo"
                 className="inline-flex items-center gap-2 text-gray-900 text-sm font-semibold group hover:underline"
               >
-                <span>Ontdek SEO services</span>
+                <span>{copy.services.cards[1].linkLabel}</span>
                 <span className="flex items-center justify-center w-7 h-7 bg-[#1795FF] rounded-full text-sm text-white group-hover:translate-x-2 transition-transform duration-200">
                   →
                 </span>
@@ -446,23 +440,23 @@ export default function Home() {
               <div className="bg-[#B8C5D6] rounded-2xl p-4 mb-4 h-32 flex items-center justify-center">
                 <Image 
                   src="/SEA icon.png" 
-                  alt="Google Ads" 
+                  alt={copy.services.cards[2].imageAlt}
                   width={100}
                   height={100}
                   className="object-contain"
                 />
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">
-                Directe resultaten met Google Ads
+                {copy.services.cards[2].title}
               </h3>
               <p className="text-sm text-gray-600 mb-4 flex-grow">
-                Bereik je doelgroep op het juiste moment. Wij optimaliseren campagnes voor maximale ROI en conversies met Search, Shopping en Display Ads.
+                {copy.services.cards[2].description}
               </p>
               <Link 
                 href="/services/sea"
                 className="inline-flex items-center gap-2 text-gray-900 text-sm font-semibold group hover:underline"
               >
-                <span>Bekijk SEA services</span>
+                <span>{copy.services.cards[2].linkLabel}</span>
                 <span className="flex items-center justify-center w-7 h-7 bg-[#1795FF] rounded-full text-sm text-white group-hover:translate-x-2 transition-transform duration-200">
                   →
                 </span>
@@ -474,23 +468,23 @@ export default function Home() {
               <div className="bg-[#E5E5E5] rounded-2xl p-4 mb-4 h-32 flex items-center justify-center">
                 <Image 
                   src="/marketing automation.png" 
-                  alt="Marketing Automation" 
+                  alt={copy.services.cards[3].imageAlt}
                   width={100}
                   height={100}
                   className="object-contain"
                 />
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">
-                Automatiseer je marketing en groei
+                {copy.services.cards[3].title}
               </h3>
               <p className="text-sm text-gray-600 mb-4 flex-grow">
-                Verstuur gepersonaliseerde campagnes via email met Klaviyo. Verhoog je omzet en klantloyaliteit met slimme marketing automations.
+                {copy.services.cards[3].description}
               </p>
               <Link 
                 href="/services/email-marketing"
                 className="inline-flex items-center gap-2 text-gray-900 text-sm font-semibold group hover:underline"
               >
-                <span>Bekijk automation</span>
+                <span>{copy.services.cards[3].linkLabel}</span>
                 <span className="flex items-center justify-center w-7 h-7 bg-[#1795FF] rounded-full text-sm text-white group-hover:translate-x-2 transition-transform duration-200">
                   →
                 </span>
@@ -508,7 +502,7 @@ export default function Home() {
             <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden order-first md:order-last mx-auto w-full max-w-md md:max-w-none">
               <Image 
                 src="/gratis-consult.png"
-                alt="Gratis SEO Consult"
+                alt={copy.consult.imageAlt}
                 fill
                 className="object-cover"
               />
@@ -517,16 +511,16 @@ export default function Home() {
             {/* Text Content - Second on mobile, left on desktop */}
             <div className="order-last md:order-first">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Boek een gratis consult en bekijk wat wij voor jou kunnen betekenen
+                {copy.consult.title}
               </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Een van onze specialisten helpt je graag verder om jouw online doelen te bereiken. We nemen de tijd om jouw situatie te bespreken en concrete stappen te bepalen.
+                {copy.consult.description}
               </p>
               <Link 
                 href="/contact"
                 className="inline-flex items-center gap-2 text-gray-900 text-base font-semibold group hover:underline"
               >
-                <span>Plan je gratis consult</span>
+                <span>{copy.consult.linkLabel}</span>
                 <span className="flex items-center justify-center w-8 h-8 bg-[#1795FF] rounded-full text-lg text-white group-hover:translate-x-2 transition-transform duration-200">
                   →
                 </span>
@@ -548,88 +542,64 @@ export default function Home() {
               {/* Top Pills */}
               <div className="flex items-center gap-0 mb-8">
                 <button className="px-3 md:px-6 py-1.5 md:py-2.5 bg-[#241C15] text-white font-semibold rounded-l-full border-2 border-[#241C15] text-xs md:text-base whitespace-nowrap">
-                  Probeer het gratis
+                  {copy.leadSection.pills.primary}
                 </button>
                 <button className="px-3 md:px-6 py-1.5 md:py-2.5 bg-white text-gray-900 font-normal rounded-r-full border-2 border-[#241C15] border-l-0 text-xs md:text-base">
-                  <span className="font-semibold">Bespaar 25%</span> <span className="hidden sm:inline">t.o.v. grote bureaus</span><span className="sm:hidden">vs bureaus</span>
+                  <span className="font-semibold">{copy.leadSection.pills.secondaryBold}</span>{' '}
+                  <span className="hidden sm:inline">{copy.leadSection.pills.secondaryRest}</span>
+                  <span className="sm:hidden">{copy.leadSection.pills.secondaryShort}</span>
                 </button>
               </div>
 
               {/* Title */}
               <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Maak gratis kennis met onze <span className="relative inline-block">
-                  marketingdiensten
+                {copy.leadSection.title.prefix}{' '}
+                <span className="relative inline-block">
+                  {copy.leadSection.title.highlight}
                   <span className="absolute bottom-0 left-0 w-full h-3 bg-[#FFD43B] -z-10"></span>
                 </span>
+                {copy.leadSection.title.suffix ? ` ${copy.leadSection.title.suffix}` : ''}
               </h2>
 
               {/* Description */}
               <p className="text-lg text-gray-900 mb-8 leading-relaxed">
-                Kom erachter waarom klanten massaal hun marketingbureaus ontslaan en kiezen voor een boutique bureau dat in staat is allround service te bieden met een direct contactpersoon. Weet met wie je te maken hebt.
+                {copy.leadSection.description}
               </p>
               
               {/* Features Grid - 2 columns */}
               <div className="grid grid-cols-2 gap-x-8 gap-y-4 mb-10">
                 {/* Left Column */}
                 <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 bg-[#1795FF] rounded-full flex items-center justify-center mt-0.5">
-                      <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
+                  {copy.leadSection.featuresLeft.map((item) => (
+                    <div key={item} className="flex items-start gap-3">
+                      <div className="flex-shrink-0 w-6 h-6 bg-[#1795FF] rounded-full flex items-center justify-center mt-0.5">
+                        <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                      <span className="text-base text-gray-900">{item}</span>
                     </div>
-                    <span className="text-base text-gray-900">Direct contact met je specialist</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 bg-[#1795FF] rounded-full flex items-center justify-center mt-0.5">
-                      <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <span className="text-base text-gray-900">30+ jaar ervaring in één team</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 bg-[#1795FF] rounded-full flex items-center justify-center mt-0.5">
-                      <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <span className="text-base text-gray-900">Allround service onder één dak</span>
-                  </div>
+                  ))}
                 </div>
 
                 {/* Right Column */}
                 <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 bg-[#1795FF] rounded-full flex items-center justify-center mt-0.5">
-                      <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
+                  {copy.leadSection.featuresRight.map((item) => (
+                    <div key={item} className="flex items-start gap-3">
+                      <div className="flex-shrink-0 w-6 h-6 bg-[#1795FF] rounded-full flex items-center justify-center mt-0.5">
+                        <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                      <span className="text-base text-gray-900">{item}</span>
                     </div>
-                    <span className="text-base text-gray-900">Geen lange wachttijden</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 bg-[#1795FF] rounded-full flex items-center justify-center mt-0.5">
-                      <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <span className="text-base text-gray-900">Transparante rapportages</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 bg-[#1795FF] rounded-full flex items-center justify-center mt-0.5">
-                      <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <span className="text-base text-gray-900">Persoonlijke aanpak</span>
-                  </div>
+                  ))}
                 </div>
               </div>
 
               {/* Ontdek onze diensten button */}
               <div className="flex items-center gap-3">
-                <span className="text-lg font-normal text-gray-900">Ontdek onze diensten</span>
+                <span className="text-lg font-normal text-gray-900">{copy.leadSection.ctaLabel}</span>
                 <Link 
                   href="/services"
                   className="flex items-center justify-center w-10 h-10 bg-[#1795FF] rounded-full hover:bg-[#0f7dd4] transition-colors"

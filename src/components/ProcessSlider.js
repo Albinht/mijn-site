@@ -1,6 +1,8 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
+import useLocale from '@/hooks/useLocale'
+import { getProcessSliderCopy } from '@/i18n/process-slider'
 
 const ProcessSlider = ({ 
   title, 
@@ -9,6 +11,8 @@ const ProcessSlider = ({
   bgColor = 'bg-[#F5F5F5]',
   titleHighlight = 'bg-[#1795FF] text-white'
 }) => {
+  const { locale } = useLocale()
+  const copy = getProcessSliderCopy(locale)
   const [currentIndex, setCurrentIndex] = useState(0)
   const sliderRef = useRef(null)
   const [isDragging, setIsDragging] = useState(false)
@@ -130,7 +134,7 @@ const ProcessSlider = ({
           <button
             onClick={prevSlide}
             className="hidden lg:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 z-10 w-12 h-12 bg-white border-2 border-black rounded-full items-center justify-center hover:bg-[#FFE500] transition-colors shadow-[4px_4px_0_0_#000]"
-            aria-label="Vorige"
+            aria-label={copy.labels.previous}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -140,7 +144,7 @@ const ProcessSlider = ({
           <button
             onClick={nextSlide}
             className="hidden lg:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 z-10 w-12 h-12 bg-white border-2 border-black rounded-full items-center justify-center hover:bg-[#FFE500] transition-colors shadow-[4px_4px_0_0_#000]"
-            aria-label="Volgende"
+            aria-label={copy.labels.next}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -170,7 +174,7 @@ const ProcessSlider = ({
                       {step.description}
                     </p>
                     {step.showNext && index < steps.length - 1 && (
-                      <div className="text-[#1795FF] font-semibold">→ Volgende stap</div>
+                      <div className="text-[#1795FF] font-semibold">&#8594; {copy.labels.nextStep}</div>
                     )}
                   </div>
                 </div>
@@ -181,20 +185,20 @@ const ProcessSlider = ({
           {/* Mobile Navigation Arrows */}
           <div className="flex lg:hidden justify-center gap-4 mt-8">
             <button
-              onClick={prevSlide}
-              className="w-12 h-12 bg-white border-2 border-black rounded-full flex items-center justify-center hover:bg-[#FFE500] transition-colors shadow-[4px_4px_0_0_#000]"
-              aria-label="Vorige"
-            >
+            onClick={prevSlide}
+            className="w-12 h-12 bg-white border-2 border-black rounded-full flex items-center justify-center hover:bg-[#FFE500] transition-colors shadow-[4px_4px_0_0_#000]"
+            aria-label={copy.labels.previous}
+          >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
 
             <button
-              onClick={nextSlide}
-              className="w-12 h-12 bg-white border-2 border-black rounded-full flex items-center justify-center hover:bg-[#FFE500] transition-colors shadow-[4px_4px_0_0_#000]"
-              aria-label="Volgende"
-            >
+            onClick={nextSlide}
+            className="w-12 h-12 bg-white border-2 border-black rounded-full flex items-center justify-center hover:bg-[#FFE500] transition-colors shadow-[4px_4px_0_0_#000]"
+            aria-label={copy.labels.next}
+          >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>

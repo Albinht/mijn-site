@@ -1,6 +1,8 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
+import useLocale from '@/hooks/useLocale'
+import { getSEOBenefitsSliderCopy } from '@/i18n/services/seo-benefits-slider'
 
 const SEOBenefitsSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -9,33 +11,9 @@ const SEOBenefitsSlider = () => {
   const [startX, setStartX] = useState(0)
   const [scrollLeft, setScrollLeft] = useState(0)
 
-  const benefits = [
-    {
-      number: 1,
-      title: 'Regelmatig strategisch overleg',
-      description: 'Bij Niblah doen we meer dan alleen uitvoeren - we denken actief mee als strategische partner. Naast maandelijkse updates plannen we elk kwartaal een diepgaand overleg waarin we samen jouw SEO-strategie, behaalde resultaten en toekomstige doelstellingen grondig bespreken.'
-    },
-    {
-      number: 2,
-      title: 'Bewezen reverse funnel strategie',
-      description: 'In plaats van de traditionele customer journey gebruiken we een omgekeerde aanpak bij onze SEO-campagnes. Deze reverse funnel methodiek heeft zich keer op keer bewezen als effectiever voor langdurige resultaten in zoekmachineoptimalisatie.'
-    },
-    {
-      number: 3,
-      title: 'Complete openheid over resultaten',
-      description: 'Geen vaag gepraat of onduidelijke rapporten. Bij Niblah werk je met volledige transparantie. Log in wanneer je wilt om je SEO-resultaten te bekijken en ontvang maandelijks gedetailleerde analyses die exact laten zien wat je investering oplevert en welke vooruitgang we boeken.'
-    },
-    {
-      number: 4,
-      title: 'Vrijblijvend en zonder verplichtingen',
-      description: 'We richten ons op ondernemers die serieus willen groeien met SEO. Daarom werken we bij Niblah zonder langetermijncontracten. Mocht de samenwerking niet bevallen, dan kun je op elk moment stoppen zonder vervelende voorwaarden.'
-    },
-    {
-      number: 5,
-      title: 'Bewezen track record met tevreden opdrachtgevers',
-      description: 'Onze aanpak spreekt voor zich. Met een gemiddelde beoordeling van 4,9 sterren op basis van 143+ reviews tonen we aan dat we niet alleen resultaten leveren, maar ook uitstekende service bieden aan onze SEO-klanten.'
-    }
-  ]
+  const { locale } = useLocale()
+  const copy = getSEOBenefitsSliderCopy(locale)
+  const benefits = copy.items
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % benefits.length)
@@ -124,7 +102,8 @@ const SEOBenefitsSlider = () => {
     <section className="py-16 md:py-24 px-6 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
-          Waarom jouw zoekmachineoptimalisatie uitbesteden aan <span className="bg-[#FFE500] px-2 rounded">Niblah?</span>
+          {copy.title.prefix}{' '}
+          <span className="bg-[#FFE500] px-2 rounded">{copy.title.highlight}</span>
         </h2>
 
         <div className="relative">
@@ -132,7 +111,7 @@ const SEOBenefitsSlider = () => {
           <button
             onClick={prevSlide}
             className="hidden lg:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 z-10 w-12 h-12 bg-white border-2 border-black rounded-full items-center justify-center hover:bg-[#FFE500] transition-colors shadow-[4px_4px_0_0_#000]"
-            aria-label="Vorige"
+            aria-label={copy.aria.prev}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -142,7 +121,7 @@ const SEOBenefitsSlider = () => {
           <button
             onClick={nextSlide}
             className="hidden lg:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 z-10 w-12 h-12 bg-white border-2 border-black rounded-full items-center justify-center hover:bg-[#FFE500] transition-colors shadow-[4px_4px_0_0_#000]"
-            aria-label="Volgende"
+            aria-label={copy.aria.next}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -182,7 +161,7 @@ const SEOBenefitsSlider = () => {
             <button
               onClick={prevSlide}
               className="w-12 h-12 bg-white border-2 border-black rounded-full flex items-center justify-center hover:bg-[#FFE500] transition-colors shadow-[4px_4px_0_0_#000]"
-              aria-label="Vorige"
+              aria-label={copy.aria.prev}
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -192,7 +171,7 @@ const SEOBenefitsSlider = () => {
             <button
               onClick={nextSlide}
               className="w-12 h-12 bg-white border-2 border-black rounded-full flex items-center justify-center hover:bg-[#FFE500] transition-colors shadow-[4px_4px_0_0_#000]"
-              aria-label="Volgende"
+              aria-label={copy.aria.next}
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -209,7 +188,7 @@ const SEOBenefitsSlider = () => {
                 className={`w-2 h-2 rounded-full transition-all ${
                   index === currentIndex ? 'bg-[#1795FF] w-8' : 'bg-gray-300'
                 }`}
-                aria-label={`Ga naar slide ${index + 1}`}
+                aria-label={`${copy.aria.dot} ${index + 1}`}
               />
             ))}
           </div>

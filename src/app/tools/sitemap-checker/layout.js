@@ -1,14 +1,11 @@
-export const metadata = {
-  title: 'Sitemap Checker | XML Sitemap Validator Tool',
-  description: 'Gratis sitemap checker tool. Valideer XML sitemaps, controleer sitemap errors en optimaliseer je sitemap.xml voor betere indexering.',
-  openGraph: {
-    title: 'Sitemap Checker | XML Validator',
-    description: 'Gratis tool om XML sitemaps te checken en valideren voor betere SEO indexering.',
-    url: 'https://niblah.com/tools/sitemap-checker',
-    siteName: 'Niblah',
-    type: 'website',
-  },
-};
+import { getServerLocale } from '@/lib/locale';
+import { getSitemapCheckerCopy } from '@/i18n/tools/sitemap-checker';
+
+export async function generateMetadata() {
+  const locale = await getServerLocale();
+  const copy = getSitemapCheckerCopy(locale);
+  return copy.metadata;
+}
 
 export default function Layout({ children }) {
   return children;

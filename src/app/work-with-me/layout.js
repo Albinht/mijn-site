@@ -1,12 +1,10 @@
-export const metadata = {
-  title: 'Work With Me | Digital Marketing Services & Pricing - Niblah',
-  description: 'Ready to grow your business? Discover my digital marketing services, pricing packages, and book a consultation. SEO, Google Ads, and complete marketing solutions.',
-  keywords: 'work with digital marketing expert, marketing services pricing, SEO consultant, Google Ads management, marketing consultation, hire marketing expert',
-  openGraph: {
-    title: 'Work With Me | Digital Marketing Services & Pricing',
-    description: 'Ready to grow your business? Discover my digital marketing services, pricing packages, and book a consultation.',
-    images: ['/avatar.png'],
-  },
+import { getServerLocale } from '@/lib/locale'
+import { getWorkWithMeCopy } from '@/i18n/work-with-me'
+
+export async function generateMetadata() {
+  const locale = await getServerLocale()
+  const copy = getWorkWithMeCopy(locale)
+  return copy.metadata
 }
 
 export default function WorkWithMeLayout({ children }) {

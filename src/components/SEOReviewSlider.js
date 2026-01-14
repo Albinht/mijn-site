@@ -1,83 +1,13 @@
 'use client'
 
-const SEOReviewSlider = () => {
-  const seoReviews = [
-    {
-      name: 'Pieter Janssen',
-      company: 'E-commerce Manager',
-      rating: 5,
-      text: 'Na 4 maanden SEO met Niblah staan we eindelijk in de top 3 voor onze belangrijkste zoekwoorden. Traffic is met 186% gestegen!'
-    },
-    {
-      name: 'Linda Bakker',
-      company: 'Marketing Director',
-      rating: 5,
-      text: 'De transparantie en strategische aanpak van Niblah maken echt het verschil. Eindelijk een SEO-partner die resultaat levert.'
-    },
-    {
-      name: 'Mark de Vries',
-      company: 'Founder TechStart',
-      rating: 5,
-      text: 'Van pagina 3 naar positie 1 in 6 maanden. De technische optimalisaties en content strategie zijn onze game-changer geweest.'
-    },
-    {
-      name: 'Sarah Peters',
-      company: 'CEO Fashion Online',
-      rating: 5,
-      text: 'Organisch verkeer gestegen van 5K naar 42K bezoekers per maand. Niblah\'s SEO expertise spreekt voor zich!'
-    },
-    {
-      name: 'Tom Verhoeven',
-      company: 'Restaurant Eigenaar',
-      rating: 5,
-      text: 'Local SEO heeft ons restaurant op de kaart gezet. Dagelijks nieuwe reserveringen via Google. Fantastisch!'
-    },
-    {
-      name: 'Eva van Dam',
-      company: 'B2B Services',
-      rating: 5,
-      text: 'De linkbuilding strategie van Niblah is next level. Onze domain authority is enorm gegroeid en we ranken voor steeds meer keywords.'
-    }
-  ];
+import useLocale from '@/hooks/useLocale'
+import { getSEOReviewSliderCopy } from '@/i18n/services/seo-review-slider'
 
-  const moreSeoReviews = [
-    {
-      name: 'Joris Hendriks',
-      company: 'Webshop Eigenaar',
-      rating: 5,
-      text: 'Content optimalisatie heeft onze conversieratio met 127% verbeterd. Niet alleen meer traffic, maar ook betere traffic.'
-    },
-    {
-      name: 'Melissa de Groot',
-      company: 'Marketing Manager',
-      rating: 5,
-      text: 'De maandelijkse rapportages zijn super duidelijk. Je ziet precies wat je investering oplevert. Niblah denkt écht mee!'
-    },
-    {
-      name: 'David Mulder',
-      company: 'SaaS Founder',
-      rating: 5,
-      text: 'Van 0 naar 15K organische bezoekers in een jaar. De SEO strategie is perfect afgestemd op ons product en doelgroep.'
-    },
-    {
-      name: 'Sophie Koning',
-      company: 'E-learning Platform',
-      rating: 5,
-      text: 'Technical SEO audit en fixes hebben onze site speed verdubbeld. Rankings zijn sindsdien alleen maar omhoog gegaan.'
-    },
-    {
-      name: 'Lars van Leeuwen',
-      company: 'Advocatenkantoor',
-      rating: 5,
-      text: 'Local SEO pakket heeft ons kantoor veel meer zichtbaarheid gegeven. We staan nu nummer 1 in ons gebied!'
-    },
-    {
-      name: 'Anna Smit',
-      company: 'Online Marketeer',
-      rating: 5,
-      text: 'Eindelijk een SEO-partner die niet alleen kijkt naar rankings maar naar daadwerkelijke business groei. Top samenwerking!'
-    }
-  ];
+const SEOReviewSlider = () => {
+  const { locale } = useLocale()
+  const copy = getSEOReviewSliderCopy(locale)
+  const seoReviews = copy.reviews
+  const moreSeoReviews = copy.moreReviews
 
   const StarIcon = ({ filled }) => (
     <svg
@@ -121,10 +51,10 @@ const SEOReviewSlider = () => {
     <section className="bg-white py-16">
       <div className="max-w-7xl mx-auto px-6 mb-8">
         <div className="flex items-center gap-2 text-sm text-gray-900">
-          <span>Wij krijgen een</span>
-          <span className="font-bold text-lg">4.9</span>
-          <span>op Google uit</span>
-          <span className="font-bold">143 beoordelingen</span>
+          <span>{copy.summary.leading}</span>
+          <span className="font-bold text-lg">{copy.summary.rating}</span>
+          <span>{copy.summary.middle}</span>
+          <span className="font-bold">{copy.summary.count}</span>
         </div>
       </div>
 

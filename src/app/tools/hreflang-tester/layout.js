@@ -1,14 +1,11 @@
-export const metadata = {
-  title: 'Hreflang Tester | Hreflang Tag Validator',
-  description: 'Gratis hreflang tester. Valideer hreflang tags voor internationale SEO. Multi-language website checker tool.',
-  openGraph: {
-    title: 'Hreflang Tester | International SEO Tool',
-    description: 'Test hreflang implementation. Validate hreflang tags voor multi-language sites.',
-    url: 'https://niblah.com/tools/hreflang-tester',
-    siteName: 'Niblah',
-    type: 'website',
-  },
-};
+import { getServerLocale } from '@/lib/locale';
+import { getHreflangTesterCopy } from '@/i18n/tools/hreflang-tester';
+
+export async function generateMetadata() {
+  const locale = await getServerLocale();
+  const copy = getHreflangTesterCopy(locale);
+  return copy.metadata;
+}
 
 export default function Layout({ children }) {
   return children;

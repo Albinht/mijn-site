@@ -1,27 +1,25 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
+import useLocale from '@/hooks/useLocale'
+import { getSEOServicesSectionCopy } from '@/i18n/services/seo-services-section'
 
 const SEOServicesSection = () => {
-  const seoServices = [
-    { title: 'On-page optimalisatie (Gratis)', description: 'Content, meta tags en technische structuur perfect geoptimaliseerd', link: '/blog/on-page-seo-complete-gids' },
-    { title: 'Copywriting', description: 'SEO-geoptimaliseerde teksten die converteren en ranken', link: '/services/seo/copywriting' },
-    { title: 'Contentmarketing', description: 'Strategische content die autoriteit bouwt en traffic genereert', link: '/services/seo/contentmarketing' },
-    { title: 'Linkbuilding', description: 'Hoogwaardige backlinks van relevante en gezaghebbende websites', link: '/services/seo/linkbuilding' },
-    { title: 'Conversieoptimalisatie', description: 'Meer bezoekers omzetten naar betalende klanten', link: '/services/cro' },
-    { title: 'Technische SEO', description: 'Snelheid, crawlbaarheid en Core Web Vitals geoptimaliseerd', link: '/services/seo/technical-seo' },
-  ]
+  const { locale } = useLocale()
+  const copy = getSEOServicesSectionCopy(locale)
+  const seoServices = copy.services
 
   return (
     <section className="py-16 md:py-24 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            De SEO-werkzaamheden die je <span className="bg-[#1795FF] text-white px-2 rounded">uit handen kunt geven</span>
+            {copy.title.prefix}{' '}
+            <span className="bg-[#1795FF] text-white px-2 rounded">{copy.title.highlight}</span>
+            {copy.title.suffix ? ` ${copy.title.suffix}` : ''}
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Ben je graag zeker van goede resultaten en overweeg je jouw SEO uit te besteden? Je bepaalt zelf welke werkzaamheden je uit handen geeft.
+            {copy.intro}
           </p>
         </div>
 
@@ -37,7 +35,7 @@ const SEOServicesSection = () => {
                 </p>
                 {service.link && (
                   <div className="mt-4 flex items-center gap-2 text-[#1795FF] font-semibold text-sm group-hover:gap-3 transition-all">
-                    <span>Meer info</span>
+                    <span>{copy.linkLabel}</span>
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>

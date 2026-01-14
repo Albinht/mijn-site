@@ -1,7 +1,12 @@
-"use client";
+'use client';
+
 import { useState } from 'react';
+import useLocale from '@/hooks/useLocale';
+import { getLeadFormCopy } from '@/i18n/lead-form';
 
 export default function LeadForm() {
+  const { locale } = useLocale();
+  const copy = getLeadFormCopy(locale);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -41,11 +46,11 @@ export default function LeadForm() {
         setFormData({ name: '', email: '', phone: '', service: '', date: '', time: '' });
       } else {
         setStatus('error');
-        setErrorMessage(data.error || 'Er ging iets mis. Probeer het opnieuw.');
+        setErrorMessage(data.error || copy.error);
       }
     } catch (error) {
       setStatus('error');
-      setErrorMessage('Er ging iets mis. Probeer het opnieuw.');
+      setErrorMessage(copy.error);
       console.error('Form submission error:', error);
     }
   };
@@ -57,15 +62,15 @@ export default function LeadForm() {
           <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
             <span className="text-4xl text-[#1795FF]">✱</span>
           </div>
-          <h3 className="text-2xl font-bold text-gray-900 mb-2">Bedankt!</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mb-2">{copy.success.title}</h3>
           <p className="text-gray-600 mb-6">
-            We hebben je aanvraag ontvangen en nemen binnen 24 uur contact met je op. Je ontvangt ook een bevestigingsmail.
+            {copy.success.body}
           </p>
           <button
             onClick={() => setStatus('idle')}
             className="text-[#1795FF] hover:underline font-semibold"
           >
-            Nog een aanvraag indienen
+            {copy.success.reset}
           </button>
         </div>
       </div>
@@ -76,19 +81,19 @@ export default function LeadForm() {
     <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
       {/* Header */}
       <div className="bg-gray-50 px-6 py-4 border-b border-gray-200">
-        <h3 className="text-xl font-bold text-gray-900 mb-1">Gratis Consult</h3>
-        <p className="text-sm text-gray-600">Start met professionele marketing services</p>
+        <h3 className="text-xl font-bold text-gray-900 mb-1">{copy.header.title}</h3>
+        <p className="text-sm text-gray-600">{copy.header.subtitle}</p>
       </div>
 
       <form className="p-6 space-y-4" onSubmit={handleSubmit}>
         {/* Contact Information */}
         <div className="space-y-3">
-          <h4 className="text-sm font-semibold text-gray-900">Jouw Gegevens</h4>
+          <h4 className="text-sm font-semibold text-gray-900">{copy.sectionTitle}</h4>
           
           {/* Name */}
           <div>
             <label htmlFor="name" className="block text-xs font-medium text-gray-700 mb-1.5">
-              Volledige Naam *
+              {copy.fields.name}
             </label>
             <input
               type="text"
@@ -99,14 +104,14 @@ export default function LeadForm() {
               required
               disabled={status === 'loading'}
               className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1795FF] focus:border-transparent outline-none transition-all disabled:bg-gray-100 disabled:cursor-not-allowed"
-              placeholder="Voer je naam in"
+              placeholder={copy.placeholders.name}
             />
           </div>
 
           {/* Email */}
           <div>
             <label htmlFor="email" className="block text-xs font-medium text-gray-700 mb-1.5">
-              E-mailadres *
+              {copy.fields.email}
             </label>
             <input
               type="email"
@@ -117,14 +122,14 @@ export default function LeadForm() {
               required
               disabled={status === 'loading'}
               className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1795FF] focus:border-transparent outline-none transition-all disabled:bg-gray-100 disabled:cursor-not-allowed"
-              placeholder="jouw@email.com"
+              placeholder={copy.placeholders.email}
             />
           </div>
 
           {/* Phone */}
           <div>
             <label htmlFor="phone" className="block text-xs font-medium text-gray-700 mb-1.5">
-              Telefoonnummer
+              {copy.fields.phone}
             </label>
             <input
               type="tel"
@@ -134,14 +139,14 @@ export default function LeadForm() {
               onChange={handleChange}
               disabled={status === 'loading'}
               className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1795FF] focus:border-transparent outline-none transition-all disabled:bg-gray-100 disabled:cursor-not-allowed"
-              placeholder="+31 6 12345678"
+              placeholder={copy.placeholders.phone}
             />
           </div>
 
           {/* Service Interest */}
           <div>
             <label htmlFor="service" className="block text-xs font-medium text-gray-700 mb-1.5">
-              Waarin ben je geïnteresseerd? *
+              {copy.fields.service}
             </label>
             <select
               id="service"
@@ -152,12 +157,12 @@ export default function LeadForm() {
               disabled={status === 'loading'}
               className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1795FF] focus:border-transparent outline-none transition-all disabled:bg-gray-100 disabled:cursor-not-allowed bg-white"
             >
-              <option value="">Selecteer een service</option>
-              <option value="Development & Websites">Development & Websites</option>
-              <option value="SEO Services">SEO Services</option>
-              <option value="Google Ads (SEA)">Google Ads (SEA)</option>
-              <option value="Marketing Automation">Marketing Automation</option>
-              <option value="Anders">Anders / Weet ik nog niet</option>
+              <option value="">{copy.serviceOptions.placeholder}</option>
+              {copy.serviceOptions.options.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
             </select>
           </div>
 
@@ -166,7 +171,7 @@ export default function LeadForm() {
             {/* Date */}
             <div>
               <label htmlFor="date" className="block text-xs font-medium text-gray-700 mb-1.5">
-                Voorkeursdatum *
+                {copy.fields.date}
               </label>
               <input
                 type="date"
@@ -184,7 +189,7 @@ export default function LeadForm() {
             {/* Time */}
             <div>
               <label htmlFor="time" className="block text-xs font-medium text-gray-700 mb-1.5">
-                Voorkeurstijd *
+                {copy.fields.time}
               </label>
               <input
                 type="time"
@@ -205,7 +210,7 @@ export default function LeadForm() {
         {/* Error Message */}
         {status === 'error' && (
           <div className="bg-red-50 border border-red-200 text-red-600 px-3 py-2 rounded-lg text-xs">
-            {errorMessage}
+            {errorMessage || copy.error}
           </div>
         )}
 
@@ -221,15 +226,15 @@ export default function LeadForm() {
                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
               </svg>
-              Versturen...
+              {copy.submit.loading}
             </span>
           ) : (
-            'Plan Gratis Consult'
+            copy.submit.idle
           )}
         </button>
         
         <p className="text-xs text-gray-500 text-center">
-          *Gratis consult inclusief volledige strategiesessie. Geen creditcard vereist.
+          {copy.footnote}
         </p>
       </form>
     </div>

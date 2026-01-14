@@ -6,7 +6,6 @@ import prisma from '@/lib/prisma'
 import avatarImage from '../../../assets/avatar.png'
 import TableOfContents from './TableOfContents'
 import ArticleContent from './ArticleContent'
-import LocaleSwitcher from '../LocaleSwitcher'
 
 const supportedLocales = ['en', 'de', 'sv', 'da', 'fr', 'it', 'nl']
 const defaultLocale = 'en'
@@ -286,7 +285,6 @@ export default async function BlogArticlePage({ params }) {
               </svg>
               {ui.backToBlog}
             </Link>
-            <LocaleSwitcher locale={locale} variant="dark" />
           </div>
           
           {/* Category Badge */}

@@ -1,4 +1,5 @@
 import './globals.css'
+import { headers } from 'next/headers'
 
 // Fonts
 import { Poppins, Merriweather } from 'next/font/google'
@@ -10,6 +11,7 @@ import Footer from '../components/Footer.js'
 import ConditionalContactForm from '../components/ConditionalContactForm.js'
 import GoogleAnalytics from '../components/GoogleAnalytics.js'
 import FloatingChatButton from '../components/FloatingChatButton.js'
+import { defaultLocale, localeToHtmlLang, localeToOpenGraphLocale } from '@/lib/i18n'
 
 // Fonts activeren
 const poppins = Poppins({
@@ -34,8 +36,7 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 })
 
-// Metadata (optioneel aanpassen)
-export const metadata = {
+const baseMetadata = {
   title: 'Niblah - Digital Marketing Expert',
   description: 'Professional digital marketing services including SEO, Google Ads, and website optimization. Get your business found online and attract more customers.',
   keywords: 'digital marketing, SEO, Google Ads, website optimization, online marketing',
@@ -60,7 +61,6 @@ export const metadata = {
         alt: 'Niblah - Digital Marketing Expert',
       },
     ],
-    locale: 'en_US',
     type: 'website',
   },
   twitter: {
@@ -71,12 +71,35 @@ export const metadata = {
   },
 }
 
-export default function RootLayout({ children }) {
+export async function generateMetadata() {
+  const headerList = await headers()
+  const locale = headerList.get('x-locale') || defaultLocale
+
+  return {
+    ...baseMetadata,
+    openGraph: {
+      ...baseMetadata.openGraph,
+      locale: localeToOpenGraphLocale(locale),
+    },
+  }
+}
+
+export default async function RootLayout({ children }) {
+  const headerList = await headers()
+  const locale = headerList.get('x-locale') || defaultLocale
+  const htmlLang = localeToHtmlLang(locale)
+  const isExcluded = headerList.get('x-i18n-excluded') === '1'
+
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${merriweather.variable}`}>
+    <html lang={htmlLang} className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${merriweather.variable}`}>
       <head>
       </head>
-      <body suppressHydrationWarning={true} className="font-sans">
+      <body
+        suppressHydrationWarning={true}
+        className="font-sans"
+        data-locale={locale}
+        data-i18n-excluded={isExcluded ? 'true' : 'false'}
+      >
         <GoogleAnalytics />
         <Header />
         {children}

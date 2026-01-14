@@ -1,7 +1,9 @@
+import { buildLocalizedPath, defaultLocale, isLocaleExcludedPath, supportedLocales } from '@/lib/i18n'
+
 export default function sitemap() {
   const baseUrl = 'https://niblah.com'
   
-  return [
+  const entries = [
     // Homepage
     {
       url: baseUrl,
@@ -298,4 +300,23 @@ export default function sitemap() {
       priority: 0.5,
     },
   ]
+
+  const localizedEntries = entries.flatMap((entry) => {
+    const rawPath = entry.url.replace(baseUrl, '') || '/'
+    const path = rawPath === '' ? '/' : rawPath
+    if (isLocaleExcludedPath(path)) {
+      return [entry]
+    }
+
+    const extraLocales = supportedLocales
+      .filter((locale) => locale !== defaultLocale)
+      .map((locale) => ({
+        ...entry,
+        url: `${baseUrl}${buildLocalizedPath(path, locale)}`,
+      }))
+
+    return [entry, ...extraLocales]
+  })
+
+  return localizedEntries
 }
