@@ -3,17 +3,14 @@ import prisma from '@/lib/prisma';
 
 // Generate metadata for SEO
 export async function generateMetadata({ params }) {
-  const { slug } = await params;
+  const { slug } = params;
   
   try {
     const page = await prisma.page.findUnique({
-      where: { 
-        slug,
-        status: 'PUBLISHED'
-      }
+      where: { slug }
     });
     
-    if (!page) {
+    if (!page || page.status !== 'PUBLISHED') {
       return {
         title: 'Page Not Found',
         description: 'The requested page could not be found.'
@@ -39,19 +36,16 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function DynamicPage({ params }) {
-  const { slug } = await params;
+  const { slug } = params;
   
   let page;
   try {
     // Fetch page from database
     page = await prisma.page.findUnique({
-      where: { 
-        slug,
-        status: 'PUBLISHED'
-      }
+      where: { slug }
     });
     
-    if (!page) {
+    if (!page || page.status !== 'PUBLISHED') {
       return notFound();
     }
     

@@ -1,8 +1,25 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { headers } from 'next/headers'
 import prisma from '@/lib/prisma'
 import avatarImage from '../../assets/avatar.png'
 import LeadForm from '@/components/LeadForm'
+
+const supportedLocales = ['en', 'de', 'sv', 'da', 'fr', 'it', 'nl']
+const defaultLocale = 'en'
+const localeCookieName = 'niblah-locale'
+
+const localeAliases = {
+  'en-us': 'en',
+  'en_us': 'en',
+  'en-gb': 'en',
+  'de-de': 'de',
+  'sv-se': 'sv',
+  'da-dk': 'da',
+  'fr-fr': 'fr',
+  'it-it': 'it',
+  'nl-nl': 'nl',
+}
 
 export const metadata = {
   title: 'De Niblah Blog - SEO en Marketing Tips | Niblah',
@@ -35,7 +52,72 @@ function getCategoryData(topic, title) {
   return { category: 'GENERAL', color: 'bg-gray-200', textColor: 'text-gray-900' }
 }
 
-async function getBlogPosts() {
+function normalizeLocale(value) {
+  if (!value) return null
+  const normalized = value.toLowerCase().replace('_', '-')
+  if (supportedLocales.includes(normalized)) return normalized
+  return localeAliases[normalized] || normalized.split('-')[0]
+}
+
+function parseAcceptLanguage(value) {
+  if (!value) return []
+  return value
+    .split(',')
+    .map((entry) => {
+      const [lang, qValue] = entry.trim().split(';q=')
+      return { lang: normalizeLocale(lang), q: qValue ? Number(qValue) : 1 }
+    })
+    .filter((item) => item.lang)
+    .sort((a, b) => b.q - a.q)
+    .map((item) => item.lang)
+}
+
+function pickPreferredLocale({ cookieLocale, acceptLanguage }) {
+  if (cookieLocale && supportedLocales.includes(cookieLocale)) return cookieLocale
+  const accepted = parseAcceptLanguage(acceptLanguage)
+  const match = accepted.find((locale) => supportedLocales.includes(locale))
+  return match || defaultLocale
+}
+
+function getLocaleFromCookies(cookieHeader) {
+  if (!cookieHeader) return null
+  const cookies = Object.fromEntries(cookieHeader.split('; ').map((cookie) => cookie.split('=')))
+  return normalizeLocale(cookies[localeCookieName])
+}
+
+function localeToDateLocale(locale) {
+  const normalized = normalizeLocale(locale) || defaultLocale
+  if (normalized === 'en') return 'en-US'
+  if (normalized === 'nl') return 'nl-NL'
+  if (normalized === 'de') return 'de-DE'
+  if (normalized === 'sv') return 'sv-SE'
+  if (normalized === 'da') return 'da-DK'
+  if (normalized === 'fr') return 'fr-FR'
+  if (normalized === 'it') return 'it-IT'
+  return normalized
+}
+
+function pickTranslatedString(fallback, value) {
+  if (typeof value !== 'string') return fallback
+  const trimmed = value.trim()
+  return trimmed.length > 0 ? value : fallback
+}
+
+function getLocalizedArticle(article, locale) {
+  const normalized = normalizeLocale(locale) || defaultLocale
+  const translations = article?.translations && typeof article.translations === 'object' ? article.translations : null
+  const entry = translations?.[normalized] && typeof translations[normalized] === 'object' ? translations[normalized] : null
+
+  return {
+    title: pickTranslatedString(article.title, entry?.title),
+    topic: pickTranslatedString(article.topic, entry?.topic),
+    content: pickTranslatedString(article.content, entry?.content),
+    metaTitle: pickTranslatedString(null, entry?.metaTitle),
+    metaDescription: pickTranslatedString(null, entry?.metaDescription),
+  }
+}
+
+async function getBlogPosts(locale) {
   try {
     const articles = await prisma.article.findMany({
       where: {
@@ -48,9 +130,10 @@ async function getBlogPosts() {
     })
     
     return articles.map(article => {
-      const categoryData = getCategoryData(article.topic, article.title)
-      const excerpt = article.content?.substring(0, 200) || ''
-      const date = new Date(article.createdAt).toLocaleDateString('nl-NL', { 
+      const localized = getLocalizedArticle(article, locale)
+      const categoryData = getCategoryData(localized.topic, localized.title)
+      const excerpt = localized.content?.substring(0, 200) || ''
+      const date = new Date(article.createdAt).toLocaleDateString(localeToDateLocale(locale), { 
         year: 'numeric', 
         month: 'long', 
         day: 'numeric' 
@@ -58,7 +141,7 @@ async function getBlogPosts() {
       
       return {
         id: article.id,
-        title: article.title,
+        title: localized.title,
         excerpt: excerpt,
         slug: article.slug,
         category: categoryData.category,
@@ -75,7 +158,12 @@ async function getBlogPosts() {
 }
 
 export default async function BlogPage() {
-  const blogPosts = await getBlogPosts()
+  const headerList = await headers()
+  const locale = pickPreferredLocale({
+    cookieLocale: getLocaleFromCookies(headerList.get('cookie')),
+    acceptLanguage: headerList.get('accept-language'),
+  })
+  const blogPosts = await getBlogPosts(locale)
   
   return (
     <main className="min-h-screen bg-white">

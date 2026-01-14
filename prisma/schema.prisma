@@ -63,6 +63,7 @@ model Article {
   title       String
   topic       String
   content     String?
+  translations Json?
   slug        String        @unique
   status      ArticleStatus @default(DRAFT)
   source      String?       @default("shipsquared")
@@ -89,6 +90,7 @@ model Page {
   content         String?
   metaTitle       String?
   metaDescription String?
+  translations    Json?
   status          PageStatus @default(DRAFT)
   type            PageType
   authorId        String?

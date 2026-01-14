@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 
-export default function TableOfContents({ content }) {
+export default function TableOfContents({ content, title = 'Inhoud' }) {
   const [headings, setHeadings] = useState([])
   const [activeId, setActiveId] = useState('')
 
@@ -49,7 +49,7 @@ export default function TableOfContents({ content }) {
 
   return (
     <div className="sticky top-8">
-      <h3 className="text-sm font-bold text-gray-900 mb-4 uppercase">Inhoud</h3>
+      <h3 className="text-sm font-bold text-gray-900 mb-4 uppercase">{title}</h3>
       <nav className="space-y-2">
         {headings.map((heading) => (
           <a

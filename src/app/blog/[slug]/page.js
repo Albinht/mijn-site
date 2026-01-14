@@ -1,10 +1,27 @@
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
+import { headers } from 'next/headers'
 import prisma from '@/lib/prisma'
 import avatarImage from '../../../assets/avatar.png'
 import TableOfContents from './TableOfContents'
 import ArticleContent from './ArticleContent'
+
+const supportedLocales = ['en', 'de', 'sv', 'da', 'fr', 'it', 'nl']
+const defaultLocale = 'en'
+const localeCookieName = 'niblah-locale'
+
+const localeAliases = {
+  'en-us': 'en',
+  'en_us': 'en',
+  'en-gb': 'en',
+  'de-de': 'de',
+  'sv-se': 'sv',
+  'da-dk': 'da',
+  'fr-fr': 'fr',
+  'it-it': 'it',
+  'nl-nl': 'nl',
+}
 
 // Helper function to calculate reading time
 function calculateReadingTime(content) {
@@ -14,31 +31,167 @@ function calculateReadingTime(content) {
   return minutes
 }
 
+function normalizeLocale(value) {
+  if (!value) return null
+  const normalized = value.toLowerCase().replace('_', '-')
+  if (supportedLocales.includes(normalized)) return normalized
+  return localeAliases[normalized] || normalized.split('-')[0]
+}
+
+function parseAcceptLanguage(value) {
+  if (!value) return []
+  return value
+    .split(',')
+    .map((entry) => {
+      const [lang, qValue] = entry.trim().split(';q=')
+      return { lang: normalizeLocale(lang), q: qValue ? Number(qValue) : 1 }
+    })
+    .filter((item) => item.lang)
+    .sort((a, b) => b.q - a.q)
+    .map((item) => item.lang)
+}
+
+function pickPreferredLocale({ cookieLocale, acceptLanguage }) {
+  if (cookieLocale && supportedLocales.includes(cookieLocale)) return cookieLocale
+  const accepted = parseAcceptLanguage(acceptLanguage)
+  const match = accepted.find((locale) => supportedLocales.includes(locale))
+  return match || defaultLocale
+}
+
+function getLocaleFromCookies(cookieHeader) {
+  if (!cookieHeader) return null
+  const cookies = Object.fromEntries(cookieHeader.split('; ').map((cookie) => cookie.split('=')))
+  return normalizeLocale(cookies[localeCookieName])
+}
+
+function localeToDateLocale(locale) {
+  const normalized = normalizeLocale(locale) || defaultLocale
+  if (normalized === 'en') return 'en-US'
+  if (normalized === 'nl') return 'nl-NL'
+  if (normalized === 'de') return 'de-DE'
+  if (normalized === 'sv') return 'sv-SE'
+  if (normalized === 'da') return 'da-DK'
+  if (normalized === 'fr') return 'fr-FR'
+  if (normalized === 'it') return 'it-IT'
+  return normalized
+}
+
+async function getRequestLocale() {
+  const headerList = await headers()
+  return pickPreferredLocale({
+    cookieLocale: getLocaleFromCookies(headerList.get('cookie')),
+    acceptLanguage: headerList.get('accept-language'),
+  })
+}
+
+function pickTranslatedString(fallback, value) {
+  if (typeof value !== 'string') return fallback
+  const trimmed = value.trim()
+  return trimmed.length > 0 ? value : fallback
+}
+
+function getLocalizedArticle(article, locale) {
+  const normalized = normalizeLocale(locale) || defaultLocale
+  const translations = article?.translations && typeof article.translations === 'object' ? article.translations : null
+  const entry = translations?.[normalized] && typeof translations[normalized] === 'object' ? translations[normalized] : null
+
+  return {
+    title: pickTranslatedString(article.title, entry?.title),
+    topic: pickTranslatedString(article.topic, entry?.topic),
+    content: pickTranslatedString(article.content, entry?.content),
+    metaTitle: pickTranslatedString(null, entry?.metaTitle),
+    metaDescription: pickTranslatedString(null, entry?.metaDescription),
+  }
+}
+
+function getBlogArticleUiCopy(locale) {
+  const normalized = normalizeLocale(locale) || defaultLocale
+  const copy = {
+    en: {
+      backToBlog: 'Back to blog',
+      by: 'By',
+      readTime: 'min read',
+      tocTitle: 'Contents',
+      readMore: 'Read more',
+      keepLearning: 'Keep learning',
+    },
+    nl: {
+      backToBlog: 'Terug naar blog',
+      by: 'Door',
+      readTime: 'min leestijd',
+      tocTitle: 'Inhoud',
+      readMore: 'Lees verder',
+      keepLearning: 'Blijf leren',
+    },
+    de: {
+      backToBlog: 'Zurück zum Blog',
+      by: 'Von',
+      readTime: 'Min. Lesezeit',
+      tocTitle: 'Inhalt',
+      readMore: 'Weiterlesen',
+      keepLearning: 'Weiter lernen',
+    },
+    sv: {
+      backToBlog: 'Tillbaka till bloggen',
+      by: 'Av',
+      readTime: 'min lästid',
+      tocTitle: 'Innehåll',
+      readMore: 'Läs vidare',
+      keepLearning: 'Fortsätt lära',
+    },
+    da: {
+      backToBlog: 'Tilbage til blog',
+      by: 'Af',
+      readTime: 'min læsetid',
+      tocTitle: 'Indhold',
+      readMore: 'Læs videre',
+      keepLearning: 'Bliv ved med at lære',
+    },
+    fr: {
+      backToBlog: 'Retour au blog',
+      by: 'Par',
+      readTime: 'min de lecture',
+      tocTitle: 'Sommaire',
+      readMore: 'Lire la suite',
+      keepLearning: 'Continuer à apprendre',
+    },
+    it: {
+      backToBlog: 'Torna al blog',
+      by: 'Di',
+      readTime: 'min di lettura',
+      tocTitle: 'Indice',
+      readMore: 'Leggi anche',
+      keepLearning: 'Continua a imparare',
+    },
+  }
+
+  return copy[normalized] || copy.en
+}
+
 export async function generateMetadata({ params }) {
-  const { slug } = await params
+  const { slug } = params
+  const locale = await getRequestLocale()
   
   try {
     const article = await prisma.article.findUnique({
-      where: { 
-        slug,
-        status: 'PUBLISHED'
-      }
+      where: { slug }
     })
     
-    if (!article) {
+    if (!article || article.status !== 'PUBLISHED') {
       return {
-        title: 'Artikel Niet Gevonden | Niblah',
-        description: 'Dit artikel kon niet worden gevonden.'
+        title: `Article Not Found | Niblah`,
+        description: 'This article could not be found.'
       }
     }
     
-    const excerpt = article.content?.substring(0, 160) || ''
+    const localized = getLocalizedArticle(article, locale)
+    const excerpt = localized.metaDescription || localized.content?.substring(0, 160) || ''
     
     return {
-      title: `${article.title} | Niblah Blog`,
+      title: `${localized.metaTitle || localized.title} | Niblah Blog`,
       description: excerpt,
       openGraph: {
-        title: article.title,
+        title: localized.metaTitle || localized.title,
         description: excerpt,
         type: 'article',
         publishedTime: article.publishedAt || article.createdAt,
@@ -47,25 +200,24 @@ export async function generateMetadata({ params }) {
   } catch (error) {
     console.error('Error generating metadata:', error)
     return {
-      title: 'Niblah Blog',
+      title: `Niblah Blog`,
       description: 'SEO en Marketing Tips'
     }
   }
 }
 
 export default async function BlogArticlePage({ params }) {
-  const { slug } = await params
+  const { slug } = params
+  const locale = await getRequestLocale()
+  const ui = getBlogArticleUiCopy(locale)
   
   let article, recentArticles
   try {
     article = await prisma.article.findUnique({
-      where: { 
-        slug,
-        status: 'PUBLISHED'
-      }
+      where: { slug }
     })
     
-    if (!article) {
+    if (!article || article.status !== 'PUBLISHED') {
       return notFound()
     }
     
@@ -87,7 +239,8 @@ export default async function BlogArticlePage({ params }) {
         slug: true,
         topic: true,
         content: true,
-        createdAt: true
+        createdAt: true,
+        translations: true
       }
     })
     
@@ -101,13 +254,15 @@ export default async function BlogArticlePage({ params }) {
     return notFound()
   }
   
-  const publishDate = new Date(article.createdAt).toLocaleDateString('nl-NL', { 
+  const localizedArticle = getLocalizedArticle(article, locale)
+
+  const publishDate = new Date(article.createdAt).toLocaleDateString(localeToDateLocale(locale), { 
     year: 'numeric', 
     month: 'long', 
     day: 'numeric' 
   })
   
-  const readingTime = calculateReadingTime(article.content)
+  const readingTime = calculateReadingTime(localizedArticle.content)
   
   const leesVerderArticles = recentArticles.slice(0, 3)
   const blijfLerenArticles = recentArticles.slice(0, 6)
@@ -125,19 +280,19 @@ export default async function BlogArticlePage({ params }) {
             <svg className="w-5 h-5 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
-            Terug naar blog
+            {ui.backToBlog}
           </Link>
           
           {/* Category Badge */}
           <div className="mb-4">
             <span className="inline-block px-3 py-1 text-xs font-semibold text-white bg-white/20 rounded">
-              {article.topic?.toUpperCase() || 'ARTIKEL'}
+              {localizedArticle.topic?.toUpperCase() || 'ARTICLE'}
             </span>
           </div>
           
           {/* Title */}
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight max-w-4xl">
-            {article.title}
+            {localizedArticle.title}
           </h1>
           
           {/* Author & Meta */}
@@ -152,12 +307,12 @@ export default async function BlogArticlePage({ params }) {
                   className="object-cover"
                 />
               </div>
-              <span className="font-medium">By Albin Hot</span>
+              <span className="font-medium">{ui.by} Albin Hot</span>
             </div>
             <span>•</span>
             <span>{publishDate}</span>
             <span>•</span>
-            <span>{readingTime} min leestijd</span>
+            <span>{readingTime} {ui.readTime}</span>
           </div>
         </div>
       </section>
@@ -168,34 +323,37 @@ export default async function BlogArticlePage({ params }) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             {/* Left Column - Table of Contents (20%) */}
             <aside className="lg:col-span-2 hidden lg:block">
-              <TableOfContents content={article.content} />
+              <TableOfContents content={localizedArticle.content} title={ui.tocTitle} />
             </aside>
 
             {/* Middle Column - Content (60%) */}
             <article className="lg:col-span-7">
-              <ArticleContent content={article.content} />
+              <ArticleContent content={localizedArticle.content} />
 
               {/* Lees Verder Section */}
               {leesVerderArticles.length > 0 && (
                 <div className="mt-16 pt-12 border-t border-gray-200">
-                  <h2 className="text-2xl font-bold text-gray-900 mb-8">Lees verder</h2>
+                  <h2 className="text-2xl font-bold text-gray-900 mb-8">{ui.readMore}</h2>
                   <div className="space-y-6">
-                    {leesVerderArticles.map((relatedArticle) => (
-                      <Link 
-                        key={relatedArticle.id}
-                        href={`/blog/${relatedArticle.slug}`}
-                        className="block group"
-                      >
-                        <div className="border-l-4 border-[#1795FF] pl-4 hover:border-[#0f7dd4] transition-colors">
-                          <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#1795FF] mb-2">
-                            {relatedArticle.title}
-                          </h3>
-                          <p className="text-sm text-gray-600">
-                            {relatedArticle.content?.substring(0, 150)}...
-                          </p>
-                        </div>
-                      </Link>
-                    ))}
+                    {leesVerderArticles.map((relatedArticle) => {
+                      const localizedRelated = getLocalizedArticle(relatedArticle, locale)
+                      return (
+                        <Link 
+                          key={relatedArticle.id}
+                          href={`/blog/${relatedArticle.slug}`}
+                          className="block group"
+                        >
+                          <div className="border-l-4 border-[#1795FF] pl-4 hover:border-[#0f7dd4] transition-colors">
+                            <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#1795FF] mb-2">
+                              {localizedRelated.title}
+                            </h3>
+                            <p className="text-sm text-gray-600">
+                              {localizedRelated.content?.substring(0, 150)}...
+                            </p>
+                          </div>
+                        </Link>
+                      )
+                    })}
                   </div>
                 </div>
               )}
@@ -305,10 +463,11 @@ export default async function BlogArticlePage({ params }) {
       {blijfLerenArticles.length > 0 && (
         <section className="bg-gray-50 py-16 px-6">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">Blijf leren</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">{ui.keepLearning}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {blijfLerenArticles.map((relatedArticle) => {
-                const articleDate = new Date(relatedArticle.createdAt).toLocaleDateString('nl-NL', { 
+                const localizedRelated = getLocalizedArticle(relatedArticle, locale)
+                const articleDate = new Date(relatedArticle.createdAt).toLocaleDateString(localeToDateLocale(locale), { 
                   year: 'numeric', 
                   month: 'long', 
                   day: 'numeric' 
@@ -322,14 +481,14 @@ export default async function BlogArticlePage({ params }) {
                     <div className="p-6">
                       <div className="mb-3">
                         <span className="inline-block px-2 py-1 text-xs font-semibold text-[#1795FF] bg-blue-50 rounded">
-                          {relatedArticle.topic?.toUpperCase() || 'ARTIKEL'}
+                          {localizedRelated.topic?.toUpperCase() || 'ARTICLE'}
                         </span>
                       </div>
                       <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#1795FF] mb-2 line-clamp-2">
-                        {relatedArticle.title}
+                        {localizedRelated.title}
                       </h3>
                       <p className="text-sm text-gray-600 mb-4 line-clamp-2">
-                        {relatedArticle.content?.substring(0, 100)}...
+                        {localizedRelated.content?.substring(0, 100)}...
                       </p>
                       <p className="text-xs text-gray-500">{articleDate}</p>
                     </div>
