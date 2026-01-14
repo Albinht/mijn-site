@@ -1,14 +1,140 @@
 import Redis from 'ioredis';
 
-// Create Redis client
-const redis = new Redis({
-  host: process.env.REDIS_HOST || 'localhost',
-  port: process.env.REDIS_PORT || 6379,
+class InMemoryRedis {
+  constructor() {
+    this.store = new Map();
+  }
+
+  on() {
+    return this;
+  }
+
+  _isExpired(entry) {
+    if (!entry) return true;
+    if (!entry.expiresAt) return false;
+    return entry.expiresAt <= Date.now();
+  }
+
+  _getEntry(key) {
+    const entry = this.store.get(key);
+    if (!entry) return null;
+    if (this._isExpired(entry)) {
+      this.store.delete(key);
+      return null;
+    }
+    return entry;
+  }
+
+  async get(key) {
+    const entry = this._getEntry(key);
+    return entry ? entry.value : null;
+  }
+
+  async set(key, value) {
+    this.store.set(key, { value, expiresAt: null });
+    return 'OK';
+  }
+
+  async setex(key, ttlSeconds, value) {
+    const expiresAt = Date.now() + Number(ttlSeconds) * 1000;
+    this.store.set(key, { value, expiresAt });
+    return 'OK';
+  }
+
+  async del(...keys) {
+    let removed = 0;
+    keys.flat().forEach((key) => {
+      if (this.store.delete(key)) removed += 1;
+    });
+    return removed;
+  }
+
+  async keys(pattern = '*') {
+    const regex = new RegExp(`^${pattern.replace(/[.+?^${}()|[\]\\]/g, '\\$&').replace(/\*/g, '.*')}$`);
+    const matches = [];
+    for (const key of this.store.keys()) {
+      if (regex.test(key) && this._getEntry(key)) matches.push(key);
+    }
+    return matches;
+  }
+
+  async exists(key) {
+    return this._getEntry(key) ? 1 : 0;
+  }
+
+  async expire(key, ttlSeconds) {
+    const entry = this._getEntry(key);
+    if (!entry) return 0;
+    entry.expiresAt = Date.now() + Number(ttlSeconds) * 1000;
+    this.store.set(key, entry);
+    return 1;
+  }
+
+  async incr(key) {
+    const entry = this._getEntry(key);
+    const current = entry ? Number(entry.value) : 0;
+    const next = Number.isFinite(current) ? current + 1 : 1;
+    const expiresAt = entry ? entry.expiresAt : null;
+    this.store.set(key, { value: String(next), expiresAt });
+    return next;
+  }
+
+  async ttl(key) {
+    const entry = this._getEntry(key);
+    if (!entry) return -2;
+    if (!entry.expiresAt) return -1;
+    return Math.max(0, Math.ceil((entry.expiresAt - Date.now()) / 1000));
+  }
+
+  async flushdb() {
+    this.store.clear();
+    return 'OK';
+  }
+
+  async info() {
+    return 'in-memory';
+  }
+
+  async dbsize() {
+    return this.store.size;
+  }
+}
+
+const redisBaseOptions = {
   maxRetriesPerRequest: 3,
   retryStrategy: (times) => {
     const delay = Math.min(times * 50, 2000);
     return delay;
-  }
+  },
+};
+
+const redisUrl = process.env.REDIS_URL;
+const redisHost = process.env.REDIS_HOST;
+const redisPort = process.env.REDIS_PORT ? Number(process.env.REDIS_PORT) : 6379;
+const redisPassword = process.env.REDIS_PASSWORD;
+const hasRedisConfig = Boolean(redisUrl || redisHost || process.env.REDIS_PORT || redisPassword);
+const shouldUseRedis = hasRedisConfig || process.env.NODE_ENV !== 'production';
+
+// Create Redis client
+const redis = shouldUseRedis
+  ? (redisUrl
+      ? new Redis(redisUrl, redisBaseOptions)
+      : new Redis({
+          host: redisHost || 'localhost',
+          port: redisPort,
+          password: redisPassword || undefined,
+          ...redisBaseOptions,
+        }))
+  : new InMemoryRedis();
+
+let redisErrorLogged = false;
+redis.on('error', (error) => {
+  if (redisErrorLogged) return;
+  redisErrorLogged = true;
+  console.error('Redis error:', error?.message || error);
+});
+redis.on('ready', () => {
+  redisErrorLogged = false;
 });
 
 // Cache key prefixes
