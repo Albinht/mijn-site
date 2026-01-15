@@ -68,6 +68,7 @@ export function splitLocaleFromPath(pathname) {
 
 export function buildLocalizedPath(pathname, locale) {
   const normalizedPath = pathname && pathname !== '' ? pathname : '/';
+  if (isLocaleExcludedPath(normalizedPath)) return normalizedPath;
   if (locale === defaultLocale) return normalizedPath;
   return `/${locale}${normalizedPath === '/' ? '' : normalizedPath}`;
 }
@@ -77,6 +78,7 @@ export function isLocaleExcludedPath(pathname) {
   if (nonLocalizedPrefixes.some((prefix) => pathname.startsWith(prefix))) return true;
   if (pathname.startsWith('/marketing/')) return true;
   if (pathname.startsWith('/marketing-')) return true;
+  if (pathname.startsWith('/services/') && pathname.endsWith('-barneveld')) return true;
   return false;
 }
 
