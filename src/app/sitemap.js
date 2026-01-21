@@ -20,6 +20,12 @@ export default function sitemap() {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/resources`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/work-with-me`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
@@ -68,6 +74,32 @@ export default function sitemap() {
     {
       url: `${baseUrl}/tools/cpa-calculator`,
       lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+
+    // Resources
+    {
+      url: `${baseUrl}/resources/ecommerce`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/resources/content`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/resources/automation`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/resources/permanent-shopify-admin-api-key`,
+      lastModified: new Date('2026-01-21'),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
@@ -146,6 +178,12 @@ export default function sitemap() {
       lastModified: new Date('2025-07-28'),
       changeFrequency: 'monthly',
       priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/youtube/permanent-shopify-admin-api-key`,
+      lastModified: new Date('2026-01-21'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
     },
     
     // Local marketing pages

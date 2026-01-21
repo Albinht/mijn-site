@@ -20,6 +20,17 @@ import googleTrendsImage from '../../assets/maxresdefault.jpg'
 // Blog posts data - easily add new posts here (sorted newest to oldest)
 const blogPosts = [
   {
+    id: 15,
+    slug: "permanent-shopify-admin-api-key",
+    title: "Get a Permanent Shopify Admin API Key (Long‑Lived Access Token) – Step‑by‑Step",
+    excerpt: "Learn how to create a Shopify app, set your redirect URL with webhook.site, capture the OAuth code, and exchange it in Postman to get a long‑lived Admin API access token (often called a permanent admin key).",
+    publishDate: "2026-01-21",
+    readTime: "10 min read",
+    category: "Shopify API",
+    thumbnail: "/shopify-api-integraties.jpeg",
+    tags: ["Shopify", "Admin API", "OAuth", "Access Token", "Postman", "webhook.site"]
+  },
+  {
     id: 14,
     slug: "automated-google-trends-scanner-to-find-winning-niches",
     title: "Automated Google Trends Scanner To Find Winning Niches - 24/7 Opportunity Detection",
