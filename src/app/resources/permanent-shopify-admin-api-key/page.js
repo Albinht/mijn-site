@@ -11,6 +11,7 @@ const resource = {
   slug: 'permanent-shopify-admin-api-key',
   category: 'Shopify API',
   thumbnail: '/shopify-api-integraties.jpeg',
+  videoId: 'kDXRcev9d34',
 }
 
 export async function generateMetadata() {
@@ -55,8 +56,16 @@ export default async function ResourceArticlePage() {
 
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">{meta.title}</h1>
 
-              <div className="relative h-56 w-full rounded-xl overflow-hidden border border-gray-200 bg-gray-50">
-                <Image src={resource.thumbnail} alt={meta.title} fill className="object-cover" />
+              <div className="mb-8 relative w-full" style={{ paddingBottom: '56.25%' }}>
+                <iframe
+                  src={`https://www.youtube.com/embed/${resource.videoId}`}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                  className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
+                  title={meta.title}
+                />
               </div>
             </div>
 
@@ -118,4 +127,3 @@ export default async function ResourceArticlePage() {
     </main>
   )
 }
-
