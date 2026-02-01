@@ -6,12 +6,10 @@ const copy = {
     ctaPrimary: 'Start your project',
     ctaWhatsapp: 'Direct contact via WhatsApp',
     videoTestimonials: {
-      heading: 'Video reviews',
+      heading: 'Video reviews from our customers',
       playCta: 'Watch review',
       lazyNote: 'Recommended — real customer reviews.',
       badgeNew: 'New',
-      landscapeLabel: 'URKPDS: real customer review.',
-      portraitLabel: 'WhatsApp: customer review.',
     },
     headings: {
       services: 'Services',
@@ -43,12 +41,10 @@ const copy = {
     ctaPrimary: 'Start uw project',
     ctaWhatsapp: 'Direct contact via WhatsApp',
     videoTestimonials: {
-      heading: 'Video reviews',
+      heading: 'Video reviews van onze klanten',
       playCta: 'Bekijk review',
       lazyNote: 'Aanrader om te kijken — echte klantreviews.',
       badgeNew: 'Nieuw',
-      landscapeLabel: 'URKPDS vertelt z’n ervaring.',
-      portraitLabel: 'WhatsApp review van een klant.',
     },
     headings: {
       services: 'Diensten',
@@ -80,12 +76,10 @@ const copy = {
     ctaPrimary: 'Starte dein Projekt',
     ctaWhatsapp: 'Direkter Kontakt per WhatsApp',
     videoTestimonials: {
-      heading: 'Video-Reviews',
+      heading: 'Video-Reviews unserer Kunden',
       playCta: 'Review ansehen',
       lazyNote: 'Empfohlen — echte Kundenbewertungen.',
       badgeNew: 'Neu',
-      landscapeLabel: 'URKPDS: echte Kundenbewertung.',
-      portraitLabel: 'WhatsApp: Kundenbewertung.',
     },
     headings: {
       services: 'Services',
@@ -117,12 +111,10 @@ const copy = {
     ctaPrimary: 'Starta ditt projekt',
     ctaWhatsapp: 'Direkt kontakt via WhatsApp',
     videoTestimonials: {
-      heading: 'Videorecensioner',
+      heading: 'Videorecensioner från våra kunder',
       playCta: 'Se recensionen',
       lazyNote: 'Rekommenderas — riktiga kundrecensioner.',
       badgeNew: 'Ny',
-      landscapeLabel: 'URKPDS: kundrecension.',
-      portraitLabel: 'WhatsApp: kundrecension.',
     },
     headings: {
       services: 'Tjanster',
@@ -154,12 +146,10 @@ const copy = {
     ctaPrimary: 'Start dit projekt',
     ctaWhatsapp: 'Direkte kontakt via WhatsApp',
     videoTestimonials: {
-      heading: 'Videoreviews',
+      heading: 'Videoreviews fra vores kunder',
       playCta: 'Se anmeldelsen',
       lazyNote: 'Anbefalet — ægte kundeanmeldelser.',
       badgeNew: 'Ny',
-      landscapeLabel: 'URKPDS: kundeanmeldelse.',
-      portraitLabel: 'WhatsApp: kundeanmeldelse.',
     },
     headings: {
       services: 'Services',
@@ -191,12 +181,10 @@ const copy = {
     ctaPrimary: 'Lancez votre projet',
     ctaWhatsapp: 'Contact direct via WhatsApp',
     videoTestimonials: {
-      heading: 'Avis vidéo',
+      heading: 'Avis vidéo de nos clients',
       playCta: "Voir l'avis",
       lazyNote: 'Recommandé — de vrais avis clients.',
       badgeNew: 'Nouveau',
-      landscapeLabel: 'URKPDS : avis client.',
-      portraitLabel: 'WhatsApp : avis client.',
     },
     headings: {
       services: 'Services',
@@ -228,12 +216,10 @@ const copy = {
     ctaPrimary: 'Avvia il tuo progetto',
     ctaWhatsapp: 'Contatto diretto via WhatsApp',
     videoTestimonials: {
-      heading: 'Recensioni video',
+      heading: 'Recensioni video dei nostri clienti',
       playCta: 'Guarda la recensione',
       lazyNote: 'Consigliato — recensioni reali dei clienti.',
       badgeNew: 'Nuovo',
-      landscapeLabel: 'URKPDS: recensione cliente.',
-      portraitLabel: 'WhatsApp: recensione cliente.',
     },
     headings: {
       services: 'Servizi',

@@ -2,10 +2,13 @@
 
 import React, { useEffect, useMemo, useState } from 'react';
 
-const URKPDS_VIDEO_URL =
-  'https://schilderenopnummerwinkel.nl/wp-content/uploads/2026/02/urkpds.mp4';
+const URPKDS_VIDEO_URL =
+  'https://schilderenopnummerwinkel.nl/wp-content/uploads/2026/02/urpkds.mp4';
 const WHATSAPP_VIDEO_URL =
   'https://schilderenopnummerwinkel.nl/wp-content/uploads/2026/02/WhatsApp-Video-2026-01-23-at-14.35.34.mp4';
+
+const URPKDS_POSTER_URL = '/video-reviews/urpkds.jpg';
+const WHATSAPP_POSTER_URL = '/video-reviews/whatsapp.jpg';
 
 const PlayIcon = (props) => (
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
@@ -44,8 +47,6 @@ export default function FooterVideoTestimonials({
   playCta = 'Watch review',
   lazyNote = 'Recommended — real customer reviews.',
   badgeNew = 'New',
-  landscapeLabel = 'Customer review (landscape)',
-  portraitLabel = 'Customer review (portrait)',
 }) {
   const isLight = theme === 'light';
   const headingClassName = isLight ? 'text-gray-900' : 'text-white';
@@ -57,28 +58,24 @@ export default function FooterVideoTestimonials({
   const testimonials = useMemo(
     () => [
       {
-        id: 'urkpds',
-        src: URKPDS_VIDEO_URL,
-        title: landscapeLabel,
+        id: 'urpkds',
+        src: URPKDS_VIDEO_URL,
+        poster: URPKDS_POSTER_URL,
         badge: badgeNew,
         orientation: 'landscape',
-        cardClassName:
-          'bg-[radial-gradient(circle_at_top,rgba(23,149,255,0.35),rgba(0,0,0,0)_55%),linear-gradient(135deg,rgba(140,40,145,0.30),rgba(0,0,0,0)_60%)]',
         gridClassName: 'lg:col-span-2',
         mediaClassName: 'aspect-[4/3] sm:aspect-video lg:aspect-auto lg:h-[420px]',
       },
       {
         id: 'whatsapp',
         src: WHATSAPP_VIDEO_URL,
-        title: portraitLabel,
+        poster: WHATSAPP_POSTER_URL,
         orientation: 'portrait',
-        cardClassName:
-          'bg-[radial-gradient(circle_at_top,rgba(37,211,102,0.25),rgba(0,0,0,0)_55%),linear-gradient(135deg,rgba(23,149,255,0.25),rgba(0,0,0,0)_60%)]',
         gridClassName: 'lg:col-span-1',
         mediaClassName: 'aspect-[4/5] sm:aspect-[10/14] lg:aspect-auto lg:h-[420px]',
       },
     ],
-    [badgeNew, landscapeLabel, portraitLabel]
+    [badgeNew]
   );
 
   const [activeId, setActiveId] = useState(null);
@@ -95,7 +92,7 @@ export default function FooterVideoTestimonials({
 
   return (
     <>
-      <section>
+      <section className="max-w-7xl mx-auto">
         <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between mb-6">
           <div>
             <p className={`text-2xl md:text-3xl font-bold ${headingClassName}`}>{heading}</p>
@@ -110,10 +107,16 @@ export default function FooterVideoTestimonials({
               type="button"
               onClick={() => setActiveId(t.id)}
               className={`group relative overflow-hidden rounded-3xl border bg-black/20 text-left focus:outline-none focus:ring-2 ${cardClassName} ${t.gridClassName}`}
-              aria-label={`${playCta}: ${t.title}`}
+              aria-label={playCta}
             >
               <div className={`relative w-full ${t.mediaClassName}`}>
-                <div className={`absolute inset-0 ${t.cardClassName}`} aria-hidden="true" />
+                <img
+                  src={t.poster}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
                 <div
                   className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10"
                   aria-hidden="true"
@@ -129,7 +132,6 @@ export default function FooterVideoTestimonials({
                       )}
                       <div className="hidden sm:flex items-center gap-2">
                         <Stars />
-                        <span className="text-xs text-white/70">5.0</span>
                       </div>
                     </div>
 
@@ -139,10 +141,7 @@ export default function FooterVideoTestimonials({
                   </div>
 
                   <div>
-                    <p className="text-2xl md:text-3xl font-semibold text-white leading-tight max-w-[28ch]">
-                      {t.title}
-                    </p>
-                    <p className="mt-3 text-sm font-semibold text-white/80 group-hover:text-white transition-colors">
+                    <p className="text-3xl md:text-4xl font-semibold text-white leading-tight">
                       {playCta}
                     </p>
                   </div>

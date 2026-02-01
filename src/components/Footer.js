@@ -17,8 +17,6 @@ const Footer = async () => {
           playCta={copy.videoTestimonials.playCta}
           lazyNote={copy.videoTestimonials.lazyNote}
           badgeNew={copy.videoTestimonials.badgeNew}
-          landscapeLabel={copy.videoTestimonials.landscapeLabel}
-          portraitLabel={copy.videoTestimonials.portraitLabel}
         />
       </div>
 
