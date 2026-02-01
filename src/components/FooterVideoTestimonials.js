@@ -67,7 +67,7 @@ export default function FooterVideoTestimonials({
         cardClassName:
           'bg-[radial-gradient(circle_at_top,rgba(37,211,102,0.25),rgba(0,0,0,0)_55%),linear-gradient(135deg,rgba(23,149,255,0.25),rgba(0,0,0,0)_60%)]',
         gridClassName: 'lg:col-span-1',
-        mediaClassName: 'aspect-[9/16] sm:aspect-[10/14] lg:aspect-auto lg:h-[420px]',
+        mediaClassName: 'aspect-[4/5] sm:aspect-[10/14] lg:aspect-auto lg:h-[420px]',
       },
     ],
     [badgeNew, landscapeLabel, portraitLabel]
