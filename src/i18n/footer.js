@@ -5,6 +5,14 @@ const copy = {
     about: 'Specialist in digital marketing and SEO. We help companies grow with smart online strategies that deliver results.',
     ctaPrimary: 'Start your project',
     ctaWhatsapp: 'Direct contact via WhatsApp',
+    videoTestimonials: {
+      heading: 'Video testimonials',
+      playCta: 'Play video',
+      openCta: 'Open',
+      lazyNote: 'Loads only on click',
+      landscapeLabel: 'Testimonial (landscape)',
+      portraitLabel: 'Testimonial (portrait)',
+    },
     headings: {
       services: 'Services',
       tools: 'Tools',
@@ -34,6 +42,14 @@ const copy = {
     about: 'Specialist in digitale marketing en SEO. Wij helpen bedrijven groeien met slimme online strategieën die resultaten opleveren.',
     ctaPrimary: 'Start uw project',
     ctaWhatsapp: 'Direct contact via WhatsApp',
+    videoTestimonials: {
+      heading: 'Video testimonials',
+      playCta: 'Speel video af',
+      openCta: 'Open',
+      lazyNote: 'Laadt pas na klik',
+      landscapeLabel: 'Testimonial (horizontaal)',
+      portraitLabel: 'Testimonial (verticaal)',
+    },
     headings: {
       services: 'Diensten',
       tools: 'Tools',
@@ -63,6 +79,14 @@ const copy = {
     about: 'Spezialist fuer digitales Marketing und SEO. Wir helfen Unternehmen zu wachsen mit smarten Online-Strategien, die Ergebnisse liefern.',
     ctaPrimary: 'Starte dein Projekt',
     ctaWhatsapp: 'Direkter Kontakt per WhatsApp',
+    videoTestimonials: {
+      heading: 'Video-Testimonials',
+      playCta: 'Video abspielen',
+      openCta: 'Öffnen',
+      lazyNote: 'Lädt erst nach Klick',
+      landscapeLabel: 'Testimonial (quer)',
+      portraitLabel: 'Testimonial (hochkant)',
+    },
     headings: {
       services: 'Services',
       tools: 'Tools',
@@ -92,6 +116,14 @@ const copy = {
     about: 'Specialist pa digital marknadsforing och SEO. Vi hjalper foretag att vaxa med smarta strategier som ger resultat.',
     ctaPrimary: 'Starta ditt projekt',
     ctaWhatsapp: 'Direkt kontakt via WhatsApp',
+    videoTestimonials: {
+      heading: 'Videorecensioner',
+      playCta: 'Spela video',
+      openCta: 'Öppna',
+      lazyNote: 'Laddas först vid klick',
+      landscapeLabel: 'Testimonial (liggande)',
+      portraitLabel: 'Testimonial (stående)',
+    },
     headings: {
       services: 'Tjanster',
       tools: 'Verktyg',
@@ -121,6 +153,14 @@ const copy = {
     about: 'Specialist i digital marketing og SEO. Vi hjelper virksomheder med at vokse med smarte online strategier der giver resultater.',
     ctaPrimary: 'Start dit projekt',
     ctaWhatsapp: 'Direkte kontakt via WhatsApp',
+    videoTestimonials: {
+      heading: 'Video-udtalelser',
+      playCta: 'Afspil video',
+      openCta: 'Åbn',
+      lazyNote: 'Indlæses først ved klik',
+      landscapeLabel: 'Udtalelse (liggende)',
+      portraitLabel: 'Udtalelse (stående)',
+    },
     headings: {
       services: 'Services',
       tools: 'Vaerktojer',
@@ -150,6 +190,14 @@ const copy = {
     about: 'Specialiste en marketing digital et SEO. Nous aidons les entreprises a grandir avec des strategies en ligne efficaces.',
     ctaPrimary: 'Lancez votre projet',
     ctaWhatsapp: 'Contact direct via WhatsApp',
+    videoTestimonials: {
+      heading: 'Témoignages vidéo',
+      playCta: 'Lire la vidéo',
+      openCta: 'Ouvrir',
+      lazyNote: 'Charge uniquement au clic',
+      landscapeLabel: 'Témoignage (horizontal)',
+      portraitLabel: 'Témoignage (vertical)',
+    },
     headings: {
       services: 'Services',
       tools: 'Outils',
@@ -179,6 +227,14 @@ const copy = {
     about: 'Specialista in marketing digitale e SEO. Aiutiamo le aziende a crescere con strategie online intelligenti che portano risultati.',
     ctaPrimary: 'Avvia il tuo progetto',
     ctaWhatsapp: 'Contatto diretto via WhatsApp',
+    videoTestimonials: {
+      heading: 'Testimonianze video',
+      playCta: 'Riproduci video',
+      openCta: 'Apri',
+      lazyNote: 'Carica solo al clic',
+      landscapeLabel: 'Testimonianza (orizzontale)',
+      portraitLabel: 'Testimonianza (verticale)',
+    },
     headings: {
       services: 'Servizi',
       tools: 'Strumenti',

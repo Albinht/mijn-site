@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { getServerLocale } from '@/lib/locale';
 import { getFooterCopy } from '@/i18n/footer';
+import FooterVideoTestimonials from './FooterVideoTestimonials';
 
 const Footer = async () => {
   const locale = await getServerLocale();
@@ -240,8 +241,19 @@ const Footer = async () => {
           </div>
         </div>
 
+        <div className="w-full pb-10">
+          <FooterVideoTestimonials
+            heading={copy.videoTestimonials.heading}
+            playCta={copy.videoTestimonials.playCta}
+            openCta={copy.videoTestimonials.openCta}
+            lazyNote={copy.videoTestimonials.lazyNote}
+            landscapeLabel={copy.videoTestimonials.landscapeLabel}
+            portraitLabel={copy.videoTestimonials.portraitLabel}
+          />
+        </div>
+
         {/* Bottom Section - Copyright */}
-        <div className="w-full px-8 py-6 border-t border-gray-700">
+        <div className="w-full py-6 border-t border-gray-700">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
             <div>
               &copy; {new Date().getFullYear()} Niblah. {copy.rights}
