@@ -39,6 +39,7 @@ const CloseIcon = (props) => (
 );
 
 export default function FooterVideoTestimonials({
+  theme = 'dark',
   heading = 'Video reviews',
   playCta = 'Watch review',
   lazyNote = 'Recommended — real customer reviews.',
@@ -46,6 +47,13 @@ export default function FooterVideoTestimonials({
   landscapeLabel = 'Customer review (landscape)',
   portraitLabel = 'Customer review (portrait)',
 }) {
+  const isLight = theme === 'light';
+  const headingClassName = isLight ? 'text-gray-900' : 'text-white';
+  const noteClassName = isLight ? 'text-gray-600' : 'text-white/70';
+  const cardClassName = isLight
+    ? 'border-black/10 focus:ring-black/15 shadow-[0_18px_50px_rgba(0,0,0,0.12)]'
+    : 'border-white/10 focus:ring-white/25';
+
   const testimonials = useMemo(
     () => [
       {
@@ -90,8 +98,8 @@ export default function FooterVideoTestimonials({
       <section>
         <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between mb-6">
           <div>
-            <p className="text-2xl md:text-3xl font-bold text-white">{heading}</p>
-            <p className="text-sm text-white/70 mt-1">{lazyNote}</p>
+            <p className={`text-2xl md:text-3xl font-bold ${headingClassName}`}>{heading}</p>
+            <p className={`text-sm mt-1 ${noteClassName}`}>{lazyNote}</p>
           </div>
         </div>
 
@@ -101,7 +109,7 @@ export default function FooterVideoTestimonials({
               key={t.id}
               type="button"
               onClick={() => setActiveId(t.id)}
-              className={`group relative overflow-hidden rounded-3xl border border-white/10 bg-black/20 text-left focus:outline-none focus:ring-2 focus:ring-white/25 ${t.gridClassName}`}
+              className={`group relative overflow-hidden rounded-3xl border bg-black/20 text-left focus:outline-none focus:ring-2 ${cardClassName} ${t.gridClassName}`}
               aria-label={`${playCta}: ${t.title}`}
             >
               <div className={`relative w-full ${t.mediaClassName}`}>

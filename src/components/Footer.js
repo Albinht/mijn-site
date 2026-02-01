@@ -10,20 +10,21 @@ const Footer = async () => {
 
   return (
     <footer className="bg-gray-50 px-6 pt-12 pb-6">
-      <div className="bg-[#331300] rounded-[32px] overflow-hidden">
-        <div className="w-full px-8 pt-10 pb-8">
-          <FooterVideoTestimonials
-            heading={copy.videoTestimonials.heading}
-            playCta={copy.videoTestimonials.playCta}
-            lazyNote={copy.videoTestimonials.lazyNote}
-            badgeNew={copy.videoTestimonials.badgeNew}
-            landscapeLabel={copy.videoTestimonials.landscapeLabel}
-            portraitLabel={copy.videoTestimonials.portraitLabel}
-          />
-        </div>
+      <div className="w-full mb-10">
+        <FooterVideoTestimonials
+          theme="light"
+          heading={copy.videoTestimonials.heading}
+          playCta={copy.videoTestimonials.playCta}
+          lazyNote={copy.videoTestimonials.lazyNote}
+          badgeNew={copy.videoTestimonials.badgeNew}
+          landscapeLabel={copy.videoTestimonials.landscapeLabel}
+          portraitLabel={copy.videoTestimonials.portraitLabel}
+        />
+      </div>
 
+      <div className="bg-[#331300] rounded-[32px] overflow-hidden">
         {/* Content */}
-        <div className="w-full px-8 py-12 border-t border-white/10">
+        <div className="w-full px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           
           {/* About Niblah Section */}
