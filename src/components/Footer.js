@@ -11,8 +11,19 @@ const Footer = async () => {
   return (
     <footer className="bg-gray-50 px-6 pt-12 pb-6">
       <div className="bg-[#331300] rounded-[32px] overflow-hidden">
+        <div className="w-full px-8 pt-10 pb-8">
+          <FooterVideoTestimonials
+            heading={copy.videoTestimonials.heading}
+            playCta={copy.videoTestimonials.playCta}
+            lazyNote={copy.videoTestimonials.lazyNote}
+            badgeNew={copy.videoTestimonials.badgeNew}
+            landscapeLabel={copy.videoTestimonials.landscapeLabel}
+            portraitLabel={copy.videoTestimonials.portraitLabel}
+          />
+        </div>
+
         {/* Content */}
-        <div className="w-full px-8 py-12">
+        <div className="w-full px-8 py-12 border-t border-white/10">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           
           {/* About Niblah Section */}
@@ -241,19 +252,8 @@ const Footer = async () => {
           </div>
         </div>
 
-        <div className="w-full pb-10">
-          <FooterVideoTestimonials
-            heading={copy.videoTestimonials.heading}
-            playCta={copy.videoTestimonials.playCta}
-            openCta={copy.videoTestimonials.openCta}
-            lazyNote={copy.videoTestimonials.lazyNote}
-            landscapeLabel={copy.videoTestimonials.landscapeLabel}
-            portraitLabel={copy.videoTestimonials.portraitLabel}
-          />
-        </div>
-
         {/* Bottom Section - Copyright */}
-        <div className="w-full py-6 border-t border-gray-700">
+        <div className="w-full px-8 py-6 border-t border-gray-700">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
             <div>
               &copy; {new Date().getFullYear()} Niblah. {copy.rights}
