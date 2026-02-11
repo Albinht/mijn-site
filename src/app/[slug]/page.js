@@ -35,7 +35,7 @@ function getDynamicPageUiCopy(locale) {
   const copy = {
     en: {
       ctaTitle: 'Ready to Get Started?',
-      ctaSubtitle: \"Let's discuss how we can help grow your business\",
+      ctaSubtitle: "Let's discuss how we can help grow your business",
       ctaButton: 'Work with me',
     },
     nl: {
