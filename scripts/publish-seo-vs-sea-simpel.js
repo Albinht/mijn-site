@@ -37,148 +37,221 @@ const article = {
   slug: 'seo-vs-sea-verschil-en-combineren',
   topic: 'Marketing',
   status: 'PUBLISHED',
-  title: 'SEO vs SEA: the difference (and why you usually need both)',
+  title: 'SEO vs SEA: differences, costs, and how to combine them',
   content: `
 ## SEO vs SEA in one sentence
 
-SEO = earn organic clicks over time.
+SEO = earn organic demand over time.
 SEA = buy visibility now with ads (usually Google Ads).
 SEM = the combination of SEO + SEA.
 
-## What is SEO?
+## How they show up in Google (why this matters)
 
-SEO (Search Engine Optimization) is improving your site so you rank higher in the unpaid results.
+SEA shows as ads labeled "Sponsored" at the top (and sometimes the bottom) of the SERP.
+SEO shows as the organic listings below.
 
-You do this with 3 pillars:
+Both can be surrounded by SERP features: local packs, shopping blocks, AI answers, "People Also Ask", video carousels, and knowledge panels.
 
-- Technical SEO: indexing, speed, structure
-- Content: pages that match intent and answer questions
-- Authority: links and brand signals
+That is why "ranking #1" is not always the same as "getting most clicks".
 
-The big upside: results can compound. The big downside: it takes time.
+## What SEO is (and what it is not)
 
-## What is SEA?
+SEO (Search Engine Optimization) is improving your site so search engines can crawl it, understand it, and trust it enough to rank it for the right searches.
 
-SEA (Search Engine Advertising) is paying for ads in search engines.
+The 3 pillars:
 
-In practice, that usually means:
+- Technical SEO: indexation, speed, internal structure
+- Content: pages that match intent and answer questions better than competitors
+- Authority: trust signals (links, mentions, brand)
+
+SEO is not:
+
+- a one-time checklist
+- a guarantee of a specific ranking on a specific date
+
+The upside: results can compound. The downside: it takes time.
+
+## What SEA is (and how it actually works)
+
+SEA (Search Engine Advertising) is paying for ads in search engines. In practice:
 
 - Google Ads (Search, Shopping)
 - Microsoft Ads
 
-The big upside: you can start today and get clicks today. The big downside: once you stop paying, the traffic stops.
+You usually pay per click (CPC), or you optimize toward conversions (CPA/ROAS).
 
-## The real differences (practical)
+What controls outcomes:
 
-### 1. Time to results
+- keyword targeting (how broad or narrow you go)
+- ad quality and relevance (CTR and messaging)
+- landing page experience (speed, clarity, trust)
+- tracking quality (if you measure wrong, you optimize wrong)
+- budget and bids
+
+The upside: you can start today and get clicks today. The downside: once you stop paying, the traffic stops.
+
+## The real differences (practical, not theoretical)
+
+### 1) Time to results
 
 - SEA: fast feedback (days)
 - SEO: slower feedback (weeks to months)
 
-### 2. Cost model
+### 2) Cost model
 
-- SEA: you pay per click (CPC) or per conversion (CPA)
-- SEO: you pay in time, content, development, and sometimes links
+- SEA: cost per click or per conversion; traffic stops when you stop paying
+- SEO: cost in content, development, and authority; traffic can compound
 
-### 3. Control
+### 3) Control
 
 - SEA: high control (budgets, targeting, ads on/off)
 - SEO: less direct control (you influence, Google decides)
 
-### 4. Measurement
+### 4) Risk profile
 
-- SEA: usually easier to measure and test (campaign level)
-- SEO: harder attribution, but very valuable when it sticks
+- SEA: lower algorithm risk, higher budget dependency
+- SEO: higher algorithm/competition risk, lower marginal cost per click over time
 
-### 5. Compounding effect
+### 5) Measurement and testing
 
-- SEA: linear (spend more, get more)
-- SEO: compounding (good pages can keep bringing traffic)
+- SEA: best channel for fast testing (keywords, landing pages, messaging)
+- SEO: best channel for compounding and defensibility
 
 ## When SEO is the better move
 
-SEO is usually the best move when:
+SEO is usually the better move when:
 
-- You want sustainable demand
-- You can invest in content and site quality
-- Your customers research before they buy
-- You want to reduce cost per lead over time
+- customers research before buying (B2B, services, expensive products)
+- you want sustainable demand and lower CPL over time
+- you can invest in content and site quality
+- you want to build a moat against competitors
 
-Examples:
+Strong SEO page types:
 
-- Guides, comparisons, problem solving pages
-- Category pages for ecommerce
-- Local service pages
+- guides and tutorials (learn intent)
+- comparison pages (commercial intent)
+- category pages (ecommerce)
+- local service pages (local intent)
 
 ## When SEA is the better move
 
-SEA is usually the best move when:
+SEA is usually the better move when:
 
-- You need traffic now (launch, new offer)
-- You want to test keywords and landing pages fast
-- You have clear conversion tracking and a budget
-- You need strict control over volume
+- you need leads now (launch, seasonal push)
+- you have a clear offer and conversion tracking
+- you want strict control over volume
+- you want to test keywords fast before building SEO around them
 
-Examples:
+Strong SEA targets:
 
-- High intent keywords (buy, price, near me)
-- Remarketing and brand protection
-- Seasonal pushes
+- high intent queries (price, quote, demo, buy)
+- brand protection (your brand name)
+- remarketing and sequential intent
 
-## Why SEO and SEA work better together
+## The best strategy is usually both (how they reinforce each other)
 
-Here is the simple logic: SEA is speed, SEO is durability.
+SEA is speed. SEO is durability. Here are the practical synergies:
 
-Practical ways they reinforce each other:
+### 1) Use SEA to validate SEO targets
 
-- Test keyword conversion with SEA before you spend months on SEO.
-- Use winning ad copy for SEO titles and meta descriptions.
-- Improve landing pages with SEO, and lower CPC with better quality signals.
-- Capture more SERP real estate: ad + organic result.
-- Retarget visitors from SEO with SEA (high intent later).
-- Use SEO content to support SEA (better page depth and relevance).
+Before you spend months on SEO:
 
-## A simple combined playbook
+- run a small SEA test on 10-30 keywords
+- measure conversion rate and CPA
+- keep only the winners for deeper SEO investment
 
-### Week 1-2: foundation
+### 2) Use ad copy to improve organic CTR
 
-- Fix tracking: GA4 + Google Ads conversions + Search Console
-- Make 1-2 strong landing pages (fast, clear offer, strong CTA)
-- Clean up indexation basics (sitemap, robots, canonicals)
+Ads force you to write clear benefits. Reuse winning angles for:
 
-### Week 3-4: quick tests
+- title tags
+- meta descriptions
+- page headings
 
-- Run small SEA tests on 5-15 keywords
-- Track: CPC, CTR, conversion rate, CPA
-- Start SEO quick wins: update pages already ranking 4-20
+### 3) Use SEO to improve landing pages (and often reduce CPC)
 
-### Month 2-3: build what works
+Better landing pages help both channels:
 
-- Scale SEA winners (keywords + ads + landing pages)
-- Build an SEO cluster around proven topics
-- Add internal links from supporting pages to the main page
+- clearer content, faster pages, stronger trust
+- higher conversion rate
+- lower CPA (and often lower CPC)
 
-## KPI cheat sheet
+### 4) Own more SERP real estate
 
-### SEO
+Ad + organic listing can increase total CTR and helps defend against competitors bidding on your brand.
 
-- Impressions and clicks (Search Console)
-- Rankings (main keywords)
-- Conversions from organic sessions (GA4)
+### 5) Retarget SEO visitors with SEA
 
-### SEA
+SEO brings researchers. SEA can bring them back when they are ready to convert.
 
-- CTR, CPC
-- Conversion rate, CPA
-- ROAS (for ecommerce)
+### 6) Cover the full funnel
+
+SEO is great for awareness and education.
+SEA is great for high intent and demand capture.
+
+## A practical budget and KPI framework
+
+You do not need a perfect model. You need a simple one.
+
+### Step 1: define your primary goal
+
+- leads (calls/forms)
+- sales (ecommerce)
+
+### Step 2: calculate a rough breakeven CPA
+
+Example:
+
+- gross margin per sale: $300
+- target marketing percent of margin: 30%
+- breakeven CPA: about $90
+
+If SEA cannot hit breakeven, you either:
+
+- improve the landing page and offer
+- target different keywords
+- use SEO to lower acquisition cost over time
+
+### Step 3: choose what you optimize for
+
+- SEA: CPA / ROAS
+- SEO: conversions and revenue from organic, not just rankings
+
+## A 90-day combined playbook
+
+### Days 1-14: foundation
+
+- fix tracking: GA4 + conversion events + Search Console
+- separate brand vs non-brand in SEA
+- build or improve 1-2 landing pages (fast, clear, trust, CTA)
+- fix indexation blockers (sitemap, robots, canonicals)
+
+### Days 15-30: test and quick wins
+
+- SEA tests on 10-30 keywords
+- add negatives (remove irrelevant searches)
+- SEO quick wins: update pages ranking positions 4-20, improve internal linking
+
+### Days 31-60: scale what works
+
+- scale SEA winners (budgets, ads, landing page iterations)
+- build SEO clusters around proven topics
+- publish supporting pages and link them to the hub
+
+### Days 61-90: build defensibility
+
+- strengthen authority: links and brand signals
+- refresh top pages and improve E-E-A-T signals
+- create a repeatable monthly cadence
 
 ## Common mistakes
 
-- Expecting SEO to behave like SEA (fast).
-- Sending paid clicks to weak landing pages.
-- Measuring only clicks, not conversions.
-- Mixing brand and non-brand keywords in one bucket.
-- Chasing volume instead of intent.
+- running SEA without conversion tracking
+- sending paid clicks to weak landing pages
+- mixing brand and non-brand and losing clarity
+- choosing SEO keywords by volume only (ignore intent)
+- publishing content without internal links or a cluster plan
+- expecting SEO to be instant
 
 ## FAQ
 
@@ -197,155 +270,228 @@ Yes, but it is a rent model. The moment you stop paying, the traffic stops. Most
 
 ### Does running ads help SEO?
 
-Not directly as a ranking factor. But ads can help you learn which keywords convert and which landing pages need work.
+Not directly as a ranking factor. But ads can help you learn which keywords convert, which landing pages perform, and what messaging works.
 `.trim(),
   translations: {
     en: {
-      title: 'SEO vs SEA: the difference (and why you usually need both)',
+      title: 'SEO vs SEA: differences, costs, and how to combine them',
       topic: 'Marketing',
       metaTitle: 'SEO vs SEA | Differences and how to combine',
-      metaDescription: 'SEO is long-term organic growth, SEA is paid ads for immediate traffic. Learn the real differences, when to use each, and a simple playbook to combine them.',
+      metaDescription: 'SEO is long-term organic growth, SEA is paid ads for immediate traffic. Learn differences, cost models, when to use each, and a 90-day plan to combine them.',
       content: `
 ## SEO vs SEA in one sentence
 
-SEO = earn organic clicks over time.
+SEO = earn organic demand over time.
 SEA = buy visibility now with ads (usually Google Ads).
 SEM = the combination of SEO + SEA.
 
-## What is SEO?
+## How they show up in Google (why this matters)
 
-SEO (Search Engine Optimization) is improving your site so you rank higher in the unpaid results.
+SEA shows as ads labeled "Sponsored" at the top (and sometimes the bottom) of the SERP.
+SEO shows as the organic listings below.
 
-You do this with 3 pillars:
+Both can be surrounded by SERP features: local packs, shopping blocks, AI answers, "People Also Ask", video carousels, and knowledge panels.
 
-- Technical SEO: indexing, speed, structure
-- Content: pages that match intent and answer questions
-- Authority: links and brand signals
+That is why "ranking #1" is not always the same as "getting most clicks".
 
-The big upside: results can compound. The big downside: it takes time.
+## What SEO is (and what it is not)
 
-## What is SEA?
+SEO (Search Engine Optimization) is improving your site so search engines can crawl it, understand it, and trust it enough to rank it for the right searches.
 
-SEA (Search Engine Advertising) is paying for ads in search engines.
+The 3 pillars:
 
-In practice, that usually means:
+- Technical SEO: indexation, speed, internal structure
+- Content: pages that match intent and answer questions better than competitors
+- Authority: trust signals (links, mentions, brand)
+
+SEO is not:
+
+- a one-time checklist
+- a guarantee of a specific ranking on a specific date
+
+The upside: results can compound. The downside: it takes time.
+
+## What SEA is (and how it actually works)
+
+SEA (Search Engine Advertising) is paying for ads in search engines. In practice:
 
 - Google Ads (Search, Shopping)
 - Microsoft Ads
 
-The big upside: you can start today and get clicks today. The big downside: once you stop paying, the traffic stops.
+You usually pay per click (CPC), or you optimize toward conversions (CPA/ROAS).
 
-## The real differences (practical)
+What controls outcomes:
 
-### 1. Time to results
+- keyword targeting (how broad or narrow you go)
+- ad quality and relevance (CTR and messaging)
+- landing page experience (speed, clarity, trust)
+- tracking quality (if you measure wrong, you optimize wrong)
+- budget and bids
+
+The upside: you can start today and get clicks today. The downside: once you stop paying, the traffic stops.
+
+## The real differences (practical, not theoretical)
+
+### 1) Time to results
 
 - SEA: fast feedback (days)
 - SEO: slower feedback (weeks to months)
 
-### 2. Cost model
+### 2) Cost model
 
-- SEA: you pay per click (CPC) or per conversion (CPA)
-- SEO: you pay in time, content, development, and sometimes links
+- SEA: cost per click or per conversion; traffic stops when you stop paying
+- SEO: cost in content, development, and authority; traffic can compound
 
-### 3. Control
+### 3) Control
 
 - SEA: high control (budgets, targeting, ads on/off)
 - SEO: less direct control (you influence, Google decides)
 
-### 4. Measurement
+### 4) Risk profile
 
-- SEA: usually easier to measure and test (campaign level)
-- SEO: harder attribution, but very valuable when it sticks
+- SEA: lower algorithm risk, higher budget dependency
+- SEO: higher algorithm/competition risk, lower marginal cost per click over time
 
-### 5. Compounding effect
+### 5) Measurement and testing
 
-- SEA: linear (spend more, get more)
-- SEO: compounding (good pages can keep bringing traffic)
+- SEA: best channel for fast testing (keywords, landing pages, messaging)
+- SEO: best channel for compounding and defensibility
 
 ## When SEO is the better move
 
-SEO is usually the best move when:
+SEO is usually the better move when:
 
-- You want sustainable demand
-- You can invest in content and site quality
-- Your customers research before they buy
-- You want to reduce cost per lead over time
+- customers research before buying (B2B, services, expensive products)
+- you want sustainable demand and lower CPL over time
+- you can invest in content and site quality
+- you want to build a moat against competitors
 
-Examples:
+Strong SEO page types:
 
-- Guides, comparisons, problem solving pages
-- Category pages for ecommerce
-- Local service pages
+- guides and tutorials (learn intent)
+- comparison pages (commercial intent)
+- category pages (ecommerce)
+- local service pages (local intent)
 
 ## When SEA is the better move
 
-SEA is usually the best move when:
+SEA is usually the better move when:
 
-- You need traffic now (launch, new offer)
-- You want to test keywords and landing pages fast
-- You have clear conversion tracking and a budget
-- You need strict control over volume
+- you need leads now (launch, seasonal push)
+- you have a clear offer and conversion tracking
+- you want strict control over volume
+- you want to test keywords fast before building SEO around them
 
-Examples:
+Strong SEA targets:
 
-- High intent keywords (buy, price, near me)
-- Remarketing and brand protection
-- Seasonal pushes
+- high intent queries (price, quote, demo, buy)
+- brand protection (your brand name)
+- remarketing and sequential intent
 
-## Why SEO and SEA work better together
+## The best strategy is usually both (how they reinforce each other)
 
-Here is the simple logic: SEA is speed, SEO is durability.
+SEA is speed. SEO is durability. Here are the practical synergies:
 
-Practical ways they reinforce each other:
+### 1) Use SEA to validate SEO targets
 
-- Test keyword conversion with SEA before you spend months on SEO.
-- Use winning ad copy for SEO titles and meta descriptions.
-- Improve landing pages with SEO, and lower CPC with better quality signals.
-- Capture more SERP real estate: ad + organic result.
-- Retarget visitors from SEO with SEA (high intent later).
-- Use SEO content to support SEA (better page depth and relevance).
+Before you spend months on SEO:
 
-## A simple combined playbook
+- run a small SEA test on 10-30 keywords
+- measure conversion rate and CPA
+- keep only the winners for deeper SEO investment
 
-### Week 1-2: foundation
+### 2) Use ad copy to improve organic CTR
 
-- Fix tracking: GA4 + Google Ads conversions + Search Console
-- Make 1-2 strong landing pages (fast, clear offer, strong CTA)
-- Clean up indexation basics (sitemap, robots, canonicals)
+Ads force you to write clear benefits. Reuse winning angles for:
 
-### Week 3-4: quick tests
+- title tags
+- meta descriptions
+- page headings
 
-- Run small SEA tests on 5-15 keywords
-- Track: CPC, CTR, conversion rate, CPA
-- Start SEO quick wins: update pages already ranking 4-20
+### 3) Use SEO to improve landing pages (and often reduce CPC)
 
-### Month 2-3: build what works
+Better landing pages help both channels:
 
-- Scale SEA winners (keywords + ads + landing pages)
-- Build an SEO cluster around proven topics
-- Add internal links from supporting pages to the main page
+- clearer content, faster pages, stronger trust
+- higher conversion rate
+- lower CPA (and often lower CPC)
 
-## KPI cheat sheet
+### 4) Own more SERP real estate
 
-### SEO
+Ad + organic listing can increase total CTR and helps defend against competitors bidding on your brand.
 
-- Impressions and clicks (Search Console)
-- Rankings (main keywords)
-- Conversions from organic sessions (GA4)
+### 5) Retarget SEO visitors with SEA
 
-### SEA
+SEO brings researchers. SEA can bring them back when they are ready to convert.
 
-- CTR, CPC
-- Conversion rate, CPA
-- ROAS (for ecommerce)
+### 6) Cover the full funnel
+
+SEO is great for awareness and education.
+SEA is great for high intent and demand capture.
+
+## A practical budget and KPI framework
+
+You do not need a perfect model. You need a simple one.
+
+### Step 1: define your primary goal
+
+- leads (calls/forms)
+- sales (ecommerce)
+
+### Step 2: calculate a rough breakeven CPA
+
+Example:
+
+- gross margin per sale: $300
+- target marketing percent of margin: 30%
+- breakeven CPA: about $90
+
+If SEA cannot hit breakeven, you either:
+
+- improve the landing page and offer
+- target different keywords
+- use SEO to lower acquisition cost over time
+
+### Step 3: choose what you optimize for
+
+- SEA: CPA / ROAS
+- SEO: conversions and revenue from organic, not just rankings
+
+## A 90-day combined playbook
+
+### Days 1-14: foundation
+
+- fix tracking: GA4 + conversion events + Search Console
+- separate brand vs non-brand in SEA
+- build or improve 1-2 landing pages (fast, clear, trust, CTA)
+- fix indexation blockers (sitemap, robots, canonicals)
+
+### Days 15-30: test and quick wins
+
+- SEA tests on 10-30 keywords
+- add negatives (remove irrelevant searches)
+- SEO quick wins: update pages ranking positions 4-20, improve internal linking
+
+### Days 31-60: scale what works
+
+- scale SEA winners (budgets, ads, landing page iterations)
+- build SEO clusters around proven topics
+- publish supporting pages and link them to the hub
+
+### Days 61-90: build defensibility
+
+- strengthen authority: links and brand signals
+- refresh top pages and improve E-E-A-T signals
+- create a repeatable monthly cadence
 
 ## Common mistakes
 
-- Expecting SEO to behave like SEA (fast).
-- Sending paid clicks to weak landing pages.
-- Measuring only clicks, not conversions.
-- Mixing brand and non-brand keywords in one bucket.
-- Chasing volume instead of intent.
+- running SEA without conversion tracking
+- sending paid clicks to weak landing pages
+- mixing brand and non-brand and losing clarity
+- choosing SEO keywords by volume only (ignore intent)
+- publishing content without internal links or a cluster plan
+- expecting SEO to be instant
 
 ## FAQ
 
@@ -364,142 +510,228 @@ Yes, but it is a rent model. The moment you stop paying, the traffic stops. Most
 
 ### Does running ads help SEO?
 
-Not directly as a ranking factor. But ads can help you learn which keywords convert and which landing pages need work.
+Not directly as a ranking factor. But ads can help you learn which keywords convert, which landing pages perform, and what messaging works.
 `.trim(),
     },
     nl: {
-      title: 'SEO vs SEA: wat is het verschil (en waarom je vaak allebei nodig hebt)',
+      title: 'SEO vs SEA: verschillen, kosten en slim combineren',
       topic: 'Marketing',
       metaTitle: 'SEO vs SEA | Verschil en slim combineren',
-      metaDescription: 'SEO is organische groei op de lange termijn, SEA zijn betaalde advertenties voor directe zichtbaarheid. Leer het verschil en hoe je ze slim combineert.',
+      metaDescription: 'SEO is organische groei op de lange termijn, SEA zijn betaalde advertenties voor directe zichtbaarheid. Leer de verschillen, kostenmodellen en een 90-dagen plan om te combineren.',
       content: `
 ## SEO vs SEA in 1 zin
 
-SEO = organisch groeien (gratis klikken, kost tijd).
-SEA = direct zichtbaar zijn met advertenties (je betaalt per klik).
+SEO = organische vraag opbouwen over tijd.
+SEA = vraag inkopen nu met advertenties (meestal Google Ads).
 SEM = de combinatie van SEO + SEA.
 
-## Wat is SEO?
+## Hoe zie je het in Google (en waarom dat uitmaakt)
 
-SEO (Search Engine Optimization) is je website verbeteren zodat je hoger rankt in de niet-betaalde resultaten.
+SEA staat als "Sponsored" bovenaan (en soms onderaan) de resultaten.
+SEO staat als organische resultaten daaronder.
 
-Dit rust op 3 pijlers:
+Daaromheen zitten vaak extra SERP features: local pack, shopping, AI answers, People Also Ask, videos, knowledge panels.
 
-- Techniek: indexatie, snelheid, structuur
-- Content: paginas die intent matchen en vragen beantwoorden
-- Autoriteit: links en brand signalen
+Conclusie: "hoog staan" is niet altijd hetzelfde als "de meeste clicks pakken".
 
-Groot voordeel: het kan blijven doorwerken. Groot nadeel: het duurt even.
+## Wat is SEO (en wat is het niet)
 
-## Wat is SEA?
+SEO is je website verbeteren zodat zoekmachines je paginas kunnen crawlen, begrijpen en vertrouwen.
 
-SEA (Search Engine Advertising) is adverteren in zoekmachines.
+De 3 pijlers:
 
-In de praktijk:
+- Techniek: indexatie, snelheid, interne structuur
+- Content: paginas die intent matchen en beter helpen dan concurrenten
+- Autoriteit: vertrouwen via links, mentions en merk
+
+SEO is niet:
+
+- een eenmalige checklist
+- een garantie op positie X op datum Y
+
+Voordeel: het kan blijven doorwerken. Nadeel: het kost tijd.
+
+## Wat is SEA (en hoe het echt werkt)
+
+SEA is adverteren in zoekmachines. In de praktijk:
 
 - Google Ads (Search, Shopping)
 - Microsoft Ads
 
-Groot voordeel: je kunt vandaag starten en vandaag klikken krijgen. Groot nadeel: stop je met betalen, dan stopt de traffic.
+Je betaalt meestal per klik (CPC) of stuurt op conversies (CPA/ROAS).
+
+Wat resultaten bepaalt:
+
+- targeting (hoe breed/smal je gaat)
+- ad kwaliteit en relevantie (CTR + boodschap)
+- landing page experience (snel, duidelijk, vertrouwen)
+- tracking kwaliteit (fout meten = fout optimaliseren)
+- budget en biedingen
+
+Voordeel: vandaag starten, vandaag data. Nadeel: stop je met betalen, dan stopt het verkeer.
 
 ## De echte verschillen (praktisch)
 
-### 1. Tijd tot resultaat
+### 1) Tijd tot resultaat
 
-- SEA: snelle feedback (dagen)
+- SEA: snel (dagen)
 - SEO: langzamer (weken tot maanden)
 
-### 2. Kostenmodel
+### 2) Kostenmodel
 
-- SEA: je betaalt per klik (CPC) of per conversie (CPA)
-- SEO: je betaalt in tijd, content, development en soms links
+- SEA: kosten per klik/conversie; verkeer stopt als je stopt met betalen
+- SEO: kosten in content/development/autoriteit; verkeer kan compounding werken
 
-### 3. Controle
+### 3) Controle
 
 - SEA: veel controle (budget, targeting, aan/uit)
 - SEO: minder directe controle (jij beinvloedt, Google beslist)
 
-### 4. Meten
+### 4) Risico
 
-- SEA: vaak makkelijker testen en meten
-- SEO: lastiger attributie, maar extreem waardevol als het blijft plakken
+- SEA: minder algoritme risico, meer afhankelijk van budget
+- SEO: meer algoritme/competitie risico, maar lagere marginale kosten op termijn
 
-### 5. Compounding
+### 5) Meten en testen
 
-- SEA: lineair (meer budget = meer traffic)
-- SEO: compounding (goede paginas blijven traffic brengen)
+- SEA: beste kanaal voor snelle tests (keywords, landings, messaging)
+- SEO: beste kanaal voor compounding en duurzame zichtbaarheid
 
 ## Wanneer SEO de beste keuze is
 
-SEO is meestal de beste keuze als:
+SEO werkt vaak het best als:
 
-- Je duurzame vraag wil bouwen
-- Je wil investeren in content en kwaliteit
-- Klanten zich eerst orienteren
-- Je op termijn lagere kosten per lead wil
+- klanten zich orienteren voor aankoop (B2B, services, duurdere producten)
+- je duurzame vraag wil bouwen en CPL wil verlagen
+- je kunt investeren in content en kwaliteit
+- je een moat wil bouwen
+
+Sterke SEO paginatypes:
+
+- gidsen en how-to (learn intent)
+- vergelijking paginas (commercial intent)
+- categorie paginas (ecommerce)
+- lokale service paginas (local intent)
 
 ## Wanneer SEA de beste keuze is
 
-SEA is meestal de beste keuze als:
+SEA werkt vaak het best als:
 
-- Je nu leads nodig hebt (launch, nieuw aanbod)
-- Je snel wil testen (keywords, ads, landing pages)
-- Je goede conversie tracking hebt
-- Je volume strak wil sturen
+- je nu leads nodig hebt (launch, seizoen)
+- je aanbod helder is en conversies goed meet
+- je volume strak wil sturen
+- je keywords snel wil testen voor je SEO bouwt
 
-## Waarom SEO en SEA samen beter werken
+Sterke SEA targets:
 
-SEA = snelheid. SEO = duurzaamheid.
+- high intent (prijs, offerte, demo, kopen)
+- brand protection (je merknaam)
+- remarketing en sequential intent
 
-Zo versterken ze elkaar:
+## De beste strategie is meestal beide (zo versterken ze elkaar)
 
-- Test conversie met SEA voordat je maanden in SEO steekt.
-- Gebruik winnende ad copy voor SEO titles en meta descriptions.
-- Verbeter landing pages met SEO, en verlaag CPC via betere kwaliteit.
-- Pak meer SERP ruimte: advertentie + organisch resultaat.
-- Retarget SEO bezoekers met SEA (later meer intent).
+SEA is snelheid. SEO is duurzaamheid.
 
-## Simpel combinatie stappenplan
+### 1) SEA als keyword validator voor SEO
 
-### Week 1-2: basis
+Voor je maanden SEO werk doet:
 
-- Tracking goed: GA4 + Google Ads conversies + Search Console
-- 1-2 sterke landing pages (snel, duidelijk, sterke CTA)
-- Indexatie basics op orde (sitemap, robots, canonicals)
+- test 10-30 keywords met SEA
+- meet conversieratio en CPA
+- investeer SEO vooral in de winnaars
 
-### Week 3-4: snelle tests
+### 2) Ad copy als input voor organische CTR
 
-- Kleine SEA tests op 5-15 keywords
-- Meet: CPC, CTR, conversie rate, CPA
-- SEO quick wins: update paginas die al 4-20 ranken
+Winnende angles uit ads gebruik je voor:
 
-### Maand 2-3: bouwen wat werkt
+- title tags
+- meta descriptions
+- headings
 
-- Schaal SEA winners (keywords + ads + landing pages)
-- Bouw SEO clusters rond bewezen topics
-- Leg interne links (support -> main)
+### 3) SEO maakt landing pages beter (en vaak goedkoper)
 
-## KPI cheat sheet
+Betere landing pages:
 
-### SEO
+- verhogen conversieratio
+- verlagen CPA (en vaak ook CPC)
+- verbeteren ervaring voor de bezoeker
 
-- Impressions en clicks (Search Console)
-- Rankings (belangrijkste keywords)
-- Conversies vanuit organisch (GA4)
+### 4) Meer vastgoed in de SERP
 
-### SEA
+Ad + organisch resultaat kan je totale CTR verhogen en beschermt tegen concurrenten op je merknaam.
 
-- CTR, CPC
-- Conversie rate, CPA
-- ROAS (ecommerce)
+### 5) Retarget SEO bezoekers met SEA
+
+SEO brengt onderzoekers. SEA kan ze later terughalen als de intent hoger is.
+
+### 6) Full funnel dekking
+
+SEO voor awareness/educatie.
+SEA voor demand capture (high intent).
+
+## Budget en KPI framework (simpel)
+
+Je hoeft geen perfecte Excel. Je hebt een simpele logica nodig.
+
+### Stap 1: kies je primaire doel
+
+- leads (calls/forms)
+- sales (ecommerce)
+
+### Stap 2: bereken een ruwe breakeven CPA
+
+Voorbeeld:
+
+- marge per sale: EUR 300
+- marketing aandeel van marge: 30%
+- breakeven CPA: ongeveer EUR 90
+
+Als SEA niet richting breakeven komt:
+
+- verbeter landing page en aanbod
+- target andere keywords
+- gebruik SEO om kosten op termijn te verlagen
+
+### Stap 3: kies je KPI's
+
+- SEA: CPA/ROAS
+- SEO: conversies en omzet uit organisch (niet alleen rankings)
+
+## 90-dagen combinatie playbook
+
+### Dagen 1-14: basis
+
+- tracking goed: GA4 + conversies + Search Console
+- brand vs non-brand scheiden in SEA
+- 1-2 landing pages op orde (snel, duidelijk, vertrouwen, CTA)
+- indexatie blockers fixen (sitemap, robots, canonicals)
+
+### Dagen 15-30: testen + quick wins
+
+- SEA tests op 10-30 keywords
+- negatieve keywords toevoegen (ruis eruit)
+- SEO quick wins: update paginas op posities 4-20, interne links verbeteren
+
+### Dagen 31-60: schalen wat werkt
+
+- SEA winners opschalen (budget, ads, landings)
+- SEO clusters bouwen rond bewezen topics
+- supporting paginas publiceren en linken naar de hub
+
+### Dagen 61-90: defensibility bouwen
+
+- autoriteit versterken (links + brand signals)
+- top paginas refreshen en E-E-A-T signalen verbeteren
+- vaste maandelijkse cadence maken
 
 ## Veelgemaakte fouten
 
-- SEO behandelen alsof het SEA is (snel).
-- Paid clicks naar zwakke landing pages sturen.
-- Alleen clicks meten, niet conversies.
-- Brand en non-brand door elkaar.
-- Volume najagen in plaats van intent.
+- SEA draaien zonder conversie tracking
+- betaald verkeer naar zwakke paginas sturen
+- brand en non-brand mengen
+- SEO keywords kiezen op volume in plaats van intent
+- content publiceren zonder interne links/cluster plan
+- SEO verwachten binnen 2 weken
 
 ## FAQ
 
@@ -510,622 +742,247 @@ Kun je wachten: start met SEO basis en doe kleine SEA tests.
 
 ### Alleen SEO?
 
-Kan. Verwacht alleen een langzamere start.
+Kan, maar verwacht een langzamere start. Het werkt het best met consistente publicatie en sterke techniek.
 
 ### Alleen SEA?
 
-Kan. Maar het is huur: stop je met betalen, dan stopt de traffic.
+Kan, maar het is huur: stop je met betalen, dan stopt het verkeer.
 
 ### Helpen ads je SEO?
 
-Niet direct als ranking factor. Wel indirect: je leert welke keywords converteren en welke landing pages beter moeten.
+Niet direct als ranking factor. Wel indirect: je leert welke keywords converteren, welke landings werken en welke boodschap resoneert.
 `.trim(),
     },
     de: {
-      title: 'SEO vs SEA: was ist der Unterschied (und warum beides wichtig ist)',
+      title: 'SEO vs SEA: Unterschied und warum beides wichtig ist',
       topic: 'Marketing',
-      metaTitle: 'SEO vs SEA | Unterschied und kombinieren',
-      metaDescription: 'SEO ist organisches Wachstum langfristig, SEA sind bezahlte Ads fuer sofortige Sichtbarkeit. Hier sind die echten Unterschiede und ein einfacher Kombi-Plan.',
+      metaTitle: 'SEO vs SEA | Unterschiede und Kombination',
+      metaDescription: 'SEO ist langfristig, SEA liefert sofort Traffic. Hier sind Unterschiede, Einsatz und ein einfacher Kombi-Plan.',
       content: `
-## SEO vs SEA in einem Satz
+SEO und SEA haben das gleiche Ziel (Sichtbarkeit), aber unterschiedliche Mechanik.
 
-SEO = organische Klicks ueber Zeit.
-SEA = sofortige Sichtbarkeit mit Ads (meist Google Ads).
-SEM = die Kombination aus SEO + SEA.
+- SEO: organische Rankings, langfristig
+- SEA: bezahlte Ads, sofortige Sichtbarkeit
+- SEM: Kombination aus beidem
 
-## Was ist SEO?
+## Die echten Unterschiede
 
-SEO (Search Engine Optimization) heisst: Website verbessern, damit du in den unbezahlten Ergebnissen hoeher rankst.
+- Zeit: SEA schnell, SEO langsam aber stabil
+- Kosten: SEA pro Klick, SEO Zeit/Content/Technik
+- Kontrolle: SEA steuerbar, SEO indirekt
+- Messung: SEA einfacher, SEO braucht Geduld
 
-3 Saeulen:
+## Wann SEO besser ist
 
-- Technik: Indexierung, Speed, Struktur
-- Content: Seiten die Intent treffen
-- Autoritaet: Links und Brand Signale
+- Du willst nachhaltige Nachfrage
+- Du kannst Content und Technik investieren
+- Du willst langfristig niedrigere CPL
 
-Vorteil: kann sich aufbauen. Nachteil: dauert.
+## Wann SEA besser ist
 
-## Was ist SEA?
+- Du brauchst sofort Traffic
+- Du willst Keywords und Botschaften testen
+- Du hast sauberes Conversion Tracking
 
-SEA (Search Engine Advertising) heisst: Ads in Suchmaschinen schalten.
+## Warum die Kombination funktioniert
 
-In der Praxis:
+- SEA testet Keywords und Messages
+- SEO baut die dauerhafte Position
+- Ads koennen CTR fuer organische Snippets stutzen
 
-- Google Ads (Search, Shopping)
-- Microsoft Ads
+## Einfacher 90 Tage Plan
 
-Vorteil: du kannst heute starten und heute Klicks bekommen. Nachteil: ohne Budget ist es weg.
+- Tage 0-30: SEA Tests + SEO Basis fixen
+- Tage 31-60: Top Keywords in SEO umsetzen
+- Tage 61-90: Autoritaet und Content skalieren
 
-## Die echten Unterschiede (praktisch)
+## Fazit
 
-### 1. Zeit bis Ergebnis
-
-- SEA: schnell (Tage)
-- SEO: langsamer (Wochen bis Monate)
-
-### 2. Kostenmodell
-
-- SEA: zahlen pro Klick (CPC) oder pro Conversion (CPA)
-- SEO: zahlen in Zeit, Content, Entwicklung und manchmal Links
-
-### 3. Kontrolle
-
-- SEA: viel Kontrolle (Budgets, Targeting, an/aus)
-- SEO: weniger direkte Kontrolle (du beeinflusst, Google entscheidet)
-
-### 4. Messen
-
-- SEA: oft leichter testen und messen
-- SEO: Attribution schwieriger, aber extrem wertvoll wenn es bleibt
-
-### 5. Compounding
-
-- SEA: linear
-- SEO: compounding
-
-## Wann SEO die bessere Wahl ist
-
-SEO ist oft besser wenn:
-
-- du nachhaltige Nachfrage willst
-- du in Content und Qualitaet investieren kannst
-- Kunden zuerst recherchieren
-- du langfristig Kosten pro Lead senken willst
-
-## Wann SEA die bessere Wahl ist
-
-SEA ist oft besser wenn:
-
-- du sofort Traffic brauchst
-- du schnell testen willst (Keywords, Ads, Landing Pages)
-- Conversion Tracking sauber ist
-- du Volumen genau steuern willst
-
-## Warum SEO und SEA zusammen besser sind
-
-SEA = Speed. SEO = Dauer.
-
-So verstarken sie sich:
-
-- Keywords mit SEA testen, bevor du Monate in SEO steckst.
-- Beste Ad Copy fuer SEO Titles und Meta nutzen.
-- Landing Pages mit SEO verbessern und CPC senken.
-- Mehr SERP Flaeche: Ad + organisch.
-- SEO Besucher mit SEA retargeten.
-
-## Einfacher Kombi Plan
-
-### Woche 1-2: Basis
-
-- Tracking: GA4 + Google Ads Conversions + Search Console
-- 1-2 starke Landing Pages
-- Indexierung Basics (sitemap, robots, canonicals)
-
-### Woche 3-4: schnelle Tests
-
-- Kleine SEA Tests (5-15 Keywords)
-- Messen: CPC, CTR, Conversion Rate, CPA
-- SEO Quick Wins: Seiten updaten die 4-20 ranken
-
-### Monat 2-3: ausbauen
-
-- SEA Gewinner skalieren
-- SEO Cluster rund um bewiesene Topics bauen
-- Interne Links setzen
-
-## KPI Cheat Sheet
-
-### SEO
-
-- Impressions und Klicks (Search Console)
-- Rankings
-- Conversions aus organisch (GA4)
-
-### SEA
-
-- CTR, CPC
-- Conversion Rate, CPA
-- ROAS
-
-## Haeufige Fehler
-
-- SEO wie SEA erwarten (schnell).
-- Paid Klicks auf schlechte Landing Pages.
-- Nur Klicks messen, nicht Conversions.
-- Brand und non-brand mischen.
-- Volume jagen statt Intent.
+SEO ist Investition, SEA ist Mietvertrag. Zusammen liefern sie Speed und Stabilitaet.
 `.trim(),
     },
     sv: {
-      title: 'SEO vs SEA: skillnaden (och varfor bada ar viktiga)',
+      title: 'SEO vs SEA: skillnader och varfor bada behover',
       topic: 'Marketing',
-      metaTitle: 'SEO vs SEA | Skillnad och hur du kombinerar',
-      metaDescription: 'SEO ar organisk tillvaxt over tid, SEA ar betalda ads for direkt trafik. Har ar skillnaderna och en enkel plan for att kombinera dem.',
+      metaTitle: 'SEO vs SEA | Skillnader och kombination',
+      metaDescription: 'SEO ar langsiktigt, SEA ger snabb trafik. Skillnader, nar man anvander och en enkel plan.',
       content: `
-## SEO vs SEA i en mening
+SEO och SEA ger synlighet men pa olika satt.
 
-SEO = bygg organiska klick over tid.
-SEA = kop synlighet nu med ads (oftast Google Ads).
-SEM = kombinationen av SEO + SEA.
+- SEO: organiskt, langsiktigt
+- SEA: betalt, direkt
+- SEM: kombination
 
-## Vad ar SEO?
+## Skillnader
 
-SEO handlar om att forbattra din site sa att du rankar hogre i de obetalda resultaten.
+- Tid: SEA snabbt, SEO langsamt men stabilt
+- Kostnad: SEA per klick, SEO tid/tech/content
+- Kontroll: SEA mer styrbart
+- Matning: SEA enklare, SEO tar tid
 
-3 pelare:
+## Nar SEO passar
 
-- Teknik: indexering, hastighet, struktur
-- Content: sidor som matchar intent
-- Auktoritet: lankar och brand signaler
+- Langsiktig efterfragan
+- Vill bygga brand och auktoritet
 
-Fordel: kan byggas upp. Nackdel: tar tid.
+## Nar SEA passar
 
-## Vad ar SEA?
+- Snabb trafik
+- Testa keywords och budskap
 
-SEA ar annonsering i sokmotorer.
+## Tillsammans
 
-I praktiken:
+- SEA testar
+- SEO bygger
+- Data fran SEA styr SEO
 
-- Google Ads
-- Microsoft Ads
+## 90 dagars plan
 
-Fordel: du kan starta idag och fa klick idag. Nackdel: stoppar du budgeten, stoppar trafiken.
+- 0-30: SEA test + SEO basics
+- 31-60: Bygg sidor for vinnande keywords
+- 61-90: Skala content och auktoritet
 
-## Riktiga skillnader (praktiskt)
+## Slutsats
 
-### 1. Tid till resultat
-
-- SEA: snabbt (dagar)
-- SEO: langsammare (veckor till manader)
-
-### 2. Kostnadsmodell
-
-- SEA: betala per klick (CPC) eller per conversion (CPA)
-- SEO: betala i tid, content och utveckling
-
-### 3. Kontroll
-
-- SEA: mycket kontroll
-- SEO: mindre direkt kontroll
-
-### 4. Matning
-
-- SEA: ofta lattare att mata och testa
-- SEO: svarare attributering, men mycket varde nar det funkar
-
-### 5. Compounding
-
-- SEA: mer linjart
-- SEO: compounding
-
-## Nar SEO ar basta valet
-
-SEO ar ofta bast nar:
-
-- du vill ha stabil efterfragan
-- du kan investera i content och kvalitet
-- kunder researchar innan de koper
-
-## Nar SEA ar basta valet
-
-SEA ar ofta bast nar:
-
-- du behover trafik nu
-- du vill testa snabbt
-- du kan mata conversions
-
-## Varfor SEO och SEA funkar battre tillsammans
-
-SEA = speed. SEO = durability.
-
-Sa hjalper de varandra:
-
-- Testa keyword conversion med SEA innan du satsar stort pa SEO.
-- Anvand vinnande ad copy i SEO titles.
-- Forbattra landing pages med SEO och fa battre CPC.
-- Ta mer SERP plats: ad + organisk.
-- Retarget SEO besokare med SEA.
-
-## Enkel kombi plan
-
-### Vecka 1-2
-
-- Tracking: GA4 + Google Ads conversions + Search Console
-- 1-2 starka landing pages
-- Indexering basics
-
-### Vecka 3-4
-
-- Smala SEA tester (5-15 keywords)
-- Mata: CPC, CTR, conversion rate, CPA
-- SEO quick wins: uppdatera sidor som rankar 4-20
-
-### Manad 2-3
-
-- Skala SEA winners
-- Bygg SEO clusters runt bevisade topics
-- Lagg interna lankar
-
-## Vanliga misstag
-
-- Forvanta SEA fart fran SEO.
-- Skicka paid trafik till svaga landing pages.
-- Mata bara klick, inte conversions.
-- Jaga volume istallet for intent.
+SEO ar investering, SEA ar hyra. Kombinera for fart och stabilitet.
 `.trim(),
     },
     da: {
-      title: 'SEO vs SEA: forskellen (og hvorfor begge er vigtige)',
+      title: 'SEO vs SEA: forskel og hvorfor begge er vigtige',
       topic: 'Marketing',
-      metaTitle: 'SEO vs SEA | Forskel og hvordan du kombinerer',
-      metaDescription: 'SEO er organisk vaekst over tid, SEA er betalte ads for hurtig trafik. Her er forskellen og en simpel plan til at kombinere dem.',
+      metaTitle: 'SEO vs SEA | Forskel og kombination',
+      metaDescription: 'SEO er langsigtet, SEA giver hurtig trafik. Forskel, brug og en enkel plan.',
       content: `
-## SEO vs SEA i en saetning
+SEO og SEA giver synlighed men pa forskellige maader.
 
-SEO = byg organiske klik over tid.
-SEA = kob synlighed nu med ads (ofte Google Ads).
-SEM = kombinationen af SEO + SEA.
+- SEO: organisk, langsigtet
+- SEA: betalt, hurtigt
+- SEM: kombination
 
-## Hvad er SEO?
+## Forskelle
 
-SEO handler om at forbedre dit site sa du ranker hojere i de ikke-betalte resultater.
+- Tid: SEA hurtigt, SEO langsomt men stabilt
+- Pris: SEA per klik, SEO tid/teknik/content
+- Kontrol: SEA mere styrbar
+- Maaling: SEA nemmere, SEO tager tid
 
-3 sojler:
+## Naar SEO giver mest
 
-- Teknik: indeksering, hastighed, struktur
-- Content: sider der matcher intent
-- Autoritet: links og brand signaler
+- Langsigtet eftersporgsel
+- Opbygning af brand og autoritet
 
-Fordel: kan bygge sig op. Ulempe: tager tid.
+## Naar SEA giver mest
 
-## Hvad er SEA?
+- Hurtig trafik
+- Test af keywords og budskaber
 
-SEA er annoncering i sokemaskiner.
+## Sammen virker bedst
 
-I praksis:
+- SEA tester
+- SEO bygger
+- SEA data styrer SEO
 
-- Google Ads
-- Microsoft Ads
+## 90 dages plan
 
-Fordel: du kan starte i dag og fa klik i dag. Ulempe: stopper du budgettet, stopper trafikken.
+- 0-30: SEA test + SEO basics
+- 31-60: Byg sider for vindere
+- 61-90: Skaler content og autoritet
 
-## De rigtige forskelle (praktisk)
+## Konklusion
 
-### 1. Tid til resultat
-
-- SEA: hurtigt (dage)
-- SEO: langsommere (uger til maneder)
-
-### 2. Omkostningsmodel
-
-- SEA: betal per klik (CPC) eller per konvertering (CPA)
-- SEO: betal i tid, content og udvikling
-
-### 3. Kontrol
-
-- SEA: meget kontrol
-- SEO: mindre direkte kontrol
-
-### 4. Maltal
-
-- SEA: ofte lettere at teste og maale
-- SEO: svaerere attributering, men stort vaerdi nar det virker
-
-### 5. Compounding
-
-- SEA: mere lineart
-- SEO: compounding
-
-## Naar SEO er det bedste valg
-
-SEO er ofte bedst naar:
-
-- du vil have stabil eftersporgsel
-- du kan investere i content og kvalitet
-- kunder researchar for de kobber
-
-## Naar SEA er det bedste valg
-
-SEA er ofte bedst naar:
-
-- du skal have trafik nu
-- du vil teste hurtigt
-- du kan maale konverteringer
-
-## Hvorfor SEO og SEA virker bedre sammen
-
-SEA = speed. SEO = durability.
-
-Sa forstaerker de hinanden:
-
-- Test keyword conversion med SEA for du bruger maneder pa SEO.
-- Brug vindende ad copy i SEO titles.
-- Forbedr landing pages med SEO og fa bedre CPC.
-- Tag mere SERP plads: ad + organisk.
-- Retarget SEO besogende med SEA.
-
-## Simpel kombi plan
-
-### Uge 1-2
-
-- Tracking: GA4 + Google Ads conversions + Search Console
-- 1-2 staerke landing pages
-- Indeksering basics
-
-### Uge 3-4
-
-- Smaa SEA tests (5-15 keywords)
-- Mal: CPC, CTR, conversion rate, CPA
-- SEO quick wins: opdater sider der ranker 4-20
-
-### Maned 2-3
-
-- Skaler SEA winners
-- Byg SEO clusters omkring beviste topics
-- Tilfoj interne links
-
-## Typiske fejl
-
-- Forvente SEA fart fra SEO.
-- Sende paid trafik til svage landing pages.
-- Male kun klik, ikke konverteringer.
-- Jage volume i stedet for intent.
+SEO er investering, SEA er leje. Kombiner for fart og stabilitet.
 `.trim(),
     },
     fr: {
-      title: 'SEO vs SEA: la difference (et pourquoi les deux comptent)',
+      title: 'SEO vs SEA: differences et pourquoi les deux sont importants',
       topic: 'Marketing',
-      metaTitle: 'SEO vs SEA | Difference et comment combiner',
-      metaDescription: 'SEO = croissance organique long terme. SEA = ads payantes pour du trafic immediat. Voici les differences et un plan simple pour les combiner.',
+      metaTitle: 'SEO vs SEA | Differences et combinaison',
+      metaDescription: 'SEO long terme, SEA trafic immediat. Differences, usages et plan simple.',
       content: `
-## SEO vs SEA en une phrase
+SEO et SEA visent la visibilite, mais par des moyens differents.
 
-SEO = gagner des clics organiques avec le temps.
-SEA = acheter de la visibilite maintenant avec des ads (souvent Google Ads).
-SEM = la combinaison SEO + SEA.
+- SEO: organique, long terme
+- SEA: ads payantes, resultats immediats
+- SEM: combinaison
 
-## Qu est-ce que le SEO?
+## Differences cles
 
-Le SEO consiste a ameliorer ton site pour ranker plus haut dans les resultats non payants.
+- Temps: SEA rapide, SEO lent mais durable
+- Cout: SEA par clic, SEO par investissement
+- Controle: SEA plus controllable
+- Mesure: SEA plus simple, SEO plus lent
 
-3 piliers:
+## Quand SEO est meilleur
 
-- Technique: indexation, vitesse, structure
-- Content: pages qui matchent l intent
-- Autorite: liens et signaux de marque
+- Besoin d une croissance durable
+- Capacite a investir en contenu/technique
 
-Avantage: ca peut se construire. Inconvenient: ca prend du temps.
+## Quand SEA est meilleur
 
-## Qu est-ce que le SEA?
+- Besoin de trafic immediat
+- Tester keywords et messages
 
-Le SEA, c est la pub dans les moteurs de recherche.
+## Combinaison gagnante
 
-En pratique:
+- SEA teste
+- SEO construit
+- Les data SEA guident SEO
 
-- Google Ads
-- Microsoft Ads
+## Plan 90 jours
 
-Avantage: tu peux demarrer aujourd hui et avoir des clics aujourd hui. Inconvenient: sans budget, le trafic stoppe.
+- 0-30: SEA tests + bases SEO
+- 31-60: pages pour les keywords gagnants
+- 61-90: autorite et contenu a l echelle
 
-## Les vraies differences (pratique)
+## Conclusion
 
-### 1. Temps pour des resultats
-
-- SEA: rapide (jours)
-- SEO: plus lent (semaines a mois)
-
-### 2. Modele de cout
-
-- SEA: payer par clic (CPC) ou par conversion (CPA)
-- SEO: payer en temps, content, dev
-
-### 3. Controle
-
-- SEA: beaucoup de controle
-- SEO: moins de controle direct
-
-### 4. Mesure
-
-- SEA: plus facile a tester et mesurer
-- SEO: attribution plus dure, mais enorme valeur si ca tient
-
-### 5. Compounding
-
-- SEA: plus lineaire
-- SEO: compounding
-
-## Quand le SEO est le meilleur choix
-
-SEO est souvent meilleur si:
-
-- tu veux une demande stable
-- tu peux investir dans content et qualite
-- les clients comparent avant d acheter
-
-## Quand le SEA est le meilleur choix
-
-SEA est souvent meilleur si:
-
-- tu as besoin de trafic maintenant
-- tu veux tester vite
-- tu peux mesurer les conversions
-
-## Pourquoi SEO et SEA marchent mieux ensemble
-
-SEA = speed. SEO = durability.
-
-Exemples:
-
-- Tester la conversion avec SEA avant d investir des mois en SEO.
-- Reutiliser la meilleure ad copy pour les titles SEO.
-- Ameliorer les landing pages avec SEO et obtenir un meilleur CPC.
-- Prendre plus de place dans la SERP: ad + organique.
-- Retarget les visiteurs SEO via SEA.
-
-## Plan simple
-
-### Semaine 1-2
-
-- Tracking: GA4 + Google Ads conversions + Search Console
-- 1-2 landing pages fortes
-- Indexation basics
-
-### Semaine 3-4
-
-- Petits tests SEA (5-15 keywords)
-- Mesurer: CPC, CTR, conversion rate, CPA
-- Quick wins SEO: updater les pages 4-20
-
-### Mois 2-3
-
-- Scaler les winners SEA
-- Construire des clusters SEO autour des topics qui marchent
-- Ajouter des liens internes
-
-## Erreurs frequentes
-
-- Attendre la vitesse du SEA avec le SEO.
-- Envoyer le paid trafic vers de mauvaises landing pages.
-- Mesurer seulement les clics, pas les conversions.
-- Chasser le volume au lieu de l intent.
+SEO est investissement, SEA est location. Ensemble = vitesse et stabilite.
 `.trim(),
     },
     it: {
-      title: 'SEO vs SEA: differenza (e perche entrambi contano)',
+      title: 'SEO vs SEA: differenze e perche entrambi sono importanti',
       topic: 'Marketing',
-      metaTitle: 'SEO vs SEA | Differenza e come combinarli',
-      metaDescription: 'SEO = crescita organica nel lungo periodo. SEA = ads a pagamento per traffico immediato. Ecco differenze e un piano semplice per combinarli.',
+      metaTitle: 'SEO vs SEA | Differenze e combinazione',
+      metaDescription: 'SEO lungo termine, SEA traffico immediato. Differenze, uso e piano semplice.',
       content: `
-## SEO vs SEA in una frase
+SEO e SEA puntano alla visibilita, ma con meccaniche diverse.
 
-SEO = ottenere clic organici nel tempo.
-SEA = comprare visibilita ora con ads (di solito Google Ads).
-SEM = combinazione di SEO + SEA.
+- SEO: organico, lungo termine
+- SEA: ads a pagamento, risultati immediati
+- SEM: combinazione
 
-## Cos e SEO?
+## Differenze chiave
 
-SEO significa migliorare il sito per rankare piu in alto nei risultati non pagati.
+- Tempo: SEA veloce, SEO lento ma stabile
+- Costo: SEA per click, SEO investimento
+- Controllo: SEA piu controllabile
+- Misura: SEA piu semplice, SEO richiede tempo
 
-3 pilastri:
+## Quando SEO e meglio
 
-- Tecnica: indicizzazione, velocita, struttura
-- Content: pagine che matchano l intent
-- Autorita: link e segnali di brand
+- Crescita duratura
+- Investimento in contenuti/tecnica
 
-Vantaggio: puo crescere nel tempo. Svantaggio: richiede tempo.
+## Quando SEA e meglio
 
-## Cos e SEA?
+- Traffico immediato
+- Test di keyword e messaggi
 
-SEA e pubblicita nei motori di ricerca.
+## Insieme funziona meglio
 
-In pratica:
+- SEA testa
+- SEO costruisce
+- Dati SEA guidano SEO
 
-- Google Ads
-- Microsoft Ads
+## Piano 90 giorni
 
-Vantaggio: puoi iniziare oggi e avere clic oggi. Svantaggio: se smetti di pagare, il traffico si ferma.
+- 0-30: SEA test + basi SEO
+- 31-60: pagine per keyword vincenti
+- 61-90: scala contenuti e autorevolezza
 
-## Differenze reali (pratico)
+## Conclusione
 
-### 1. Tempo ai risultati
-
-- SEA: veloce (giorni)
-- SEO: piu lento (settimane a mesi)
-
-### 2. Modello di costo
-
-- SEA: paghi per clic (CPC) o per conversione (CPA)
-- SEO: paghi in tempo, content e sviluppo
-
-### 3. Controllo
-
-- SEA: molto controllo
-- SEO: meno controllo diretto
-
-### 4. Misurazione
-
-- SEA: piu facile testare e misurare
-- SEO: attribuzione piu difficile, ma grande valore se dura
-
-### 5. Compounding
-
-- SEA: piu lineare
-- SEO: compounding
-
-## Quando SEO e la scelta migliore
-
-SEO e spesso meglio se:
-
-- vuoi domanda stabile
-- puoi investire in content e qualita
-- i clienti fanno research prima di comprare
-
-## Quando SEA e la scelta migliore
-
-SEA e spesso meglio se:
-
-- ti serve traffico subito
-- vuoi testare velocemente
-- puoi misurare le conversioni
-
-## Perche SEO e SEA funzionano meglio insieme
-
-SEA = speed. SEO = durability.
-
-Esempi:
-
-- Testare conversione con SEA prima di investire mesi in SEO.
-- Usare la migliore ad copy per i title SEO.
-- Migliorare landing pages con SEO e ottenere CPC migliore.
-- Prendere piu spazio in SERP: ad + organico.
-- Retarget dei visitatori SEO con SEA.
-
-## Piano semplice
-
-### Settimana 1-2
-
-- Tracking: GA4 + Google Ads conversions + Search Console
-- 1-2 landing pages forti
-- Indexing basics
-
-### Settimana 3-4
-
-- Piccoli test SEA (5-15 keywords)
-- Misura: CPC, CTR, conversion rate, CPA
-- SEO quick wins: aggiorna pagine 4-20
-
-### Mese 2-3
-
-- Scala i winners SEA
-- Costruisci cluster SEO sui topics che funzionano
-- Aggiungi link interni
-
-## Errori comuni
-
-- Aspettarsi la velocita del SEA dal SEO.
-- Mandare paid traffic su landing pages deboli.
-- Misurare solo clic, non conversioni.
-- Inseguire volume invece di intent.
+SEO e investimento, SEA e affitto. Insieme danno velocita e stabilita.
 `.trim(),
     },
   },

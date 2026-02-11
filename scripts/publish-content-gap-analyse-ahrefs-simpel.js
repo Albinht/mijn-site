@@ -32,797 +32,832 @@ loadDatabaseUrl()
 
 const { PrismaClient } = require('@prisma/client')
 const prisma = new PrismaClient()
+const fence = '```'
 
 const article = {
   slug: 'content-gap-analyse-ahrefs-stappenplan',
   topic: 'SEO',
   status: 'PUBLISHED',
-  title: 'Content gap analyse in Ahrefs: simpel stappenplan',
+  title: 'Content gap analyse in Ahrefs: complete stappenplan (met template)',
   content: `
-## Wat is een content gap analyse?
+Een content gap analyse in Ahrefs laat zien op welke keywords jouw concurrenten wel ranken, terwijl jouw site daar (nog) niet zichtbaar is. Het is een snelle manier om je content roadmap te vullen met onderwerpen die al bewezen werken in jouw markt.
 
-Een content gap analyse laat zien op welke keywords jouw concurrenten ranken, terwijl jouw site daar (nog) niet voor zichtbaar is.
+Belangrijk: "gap" betekent niet automatisch dat je een nieuwe blog moet schrijven. Soms is de beste actie: een bestaande pagina upgraden, interne links aanpassen, of besluiten dat een keyword niet bij je business past.
 
-Je gebruikt dit om snel te zien:
+## Wat is een content gap analyse (en wat niet)?
 
-- Welke onderwerpen je mist
-- Welke pagina's je moet maken of verbeteren
-- Welke keywords waarschijnlijk sneller resultaat geven
+In de praktijk zie ik 3 soorten gaps:
 
-## Voor je start (1 minuut)
+- Keyword gap: concurrenten ranken op een specifiek keyword, jij niet.
+- Topic gap: concurrenten hebben een cluster rondom een onderwerp, jij mist (delen van) die cluster.
+- SERP gap: concurrenten matchen de intent beter, jij hebt wel content maar het verkeerde type pagina.
 
-- Kies 3 tot 5 echte concurrenten (geen Wikipedia, vacaturesites of marketplaces als dat niet je business is).
-- Gebruik dezelfde markt in Ahrefs (land / taal) als waar jij op mikt.
+Een goede analyse combineert alle drie.
 
-## Stap 1 - Vind de juiste concurrenten
+## Wanneer is dit het meest nuttig?
+
+- Je site heeft al wat basisautoriteit (je komt soms in de top 100).
+- Je wil sneller prioriteren dan "brainstormen op gevoel".
+- Je wil content maken met duidelijke business value (leads/omzet), niet alleen verkeer.
+
+Als je bijna nooit in de top 100 staat, dan is de volgorde meestal: techniek + interne links + 3-5 sterke paginas, en daarna pas schaal je met gaps.
+
+## Stap 0 - Zet je scope en markt goed (2 minuten)
+
+- Scope: analyseer je hele domein, of alleen een folder zoals /blog/?
+- Markt: kies land + taal die je echt target.
+- Doel: wil je blog intent (informational) of ook commercial/transactional keywords?
+
+Schrijf 1 zin op: "Deze gap analyse gebruiken we om X soort paginas te plannen voor Y markt."
+
+## Stap 1 - Kies echte concurrenten (geen ruis)
 
 In Ahrefs: Site Explorer -> Organic competitors.
 
-- Pak concurrenten die hetzelfde verkopen en dezelfde doelgroep hebben.
-- Dubbelcheck handmatig: overlappende keywords betekent niet automatisch dat het een echte concurrent is.
+Gebruik dit als start, maar check daarna handmatig:
 
-## Stap 2 - Open de Content Gap tool
+- Sluiten ze aan bij jouw product/dienst?
+- Is de overlap niet alleen omdat het een groot info platform is?
+- Krijgen ze verkeer op keywords die ook kunnen converteren voor jou?
+
+Praktisch: neem 3-5 directe concurrenten. Voeg eventueel 1-2 content publishers toe voor ideeen, maar houd die apart.
+
+## Stap 2 - Run de Content Gap tool in Ahrefs
 
 In Ahrefs: Site Explorer -> Content gap.
-
-Vul in:
 
 - "Show keywords that the below targets rank for": je concurrenten
 - "But the following target doesn't rank for": jouw domein
 
-Start-instellingen die vaak goed werken:
+Start instellingen die vaak goed werken:
 
-- Intersections: minimaal 2 concurrenten
-- Positie: concurrenten in top 10
-- Jij: niet in top 100 (of niet in top 50 als je strenger wil zijn)
+- Intersections: 2+ (minimaal 2 concurrenten ranken)
+- Competitor position: top 10 (of top 20 als je meer volume wil)
+- Jouw site: niet in top 100 (of niet in top 50 als je strenger wil zijn)
 
-## Stap 3 - Filter de lijst (zo maak je hem bruikbaar)
+Tip: draai 2 versies:
 
-De ruwe lijst is vaak te groot. Filter hem slimmer:
+- Versie A: top 10 + intersections 2+ (quick wins)
+- Versie B: top 20 + intersections 3+ (strategische onderwerpen)
 
-- Intersections: 2+
-- Volume: bijvoorbeeld 50 tot 5000
-- KD: bijvoorbeeld max 20-30 (afhankelijk van je autoriteit)
-- Exclude: concurrent-merken, "login", "pricing" (als dat niet past), etc.
+## Stap 3 - Maak de lijst bruikbaar met filters
 
-Tip: open 5 tot 10 keywords en check de SERP. Dan zie je direct het zoekintentie type.
+De ruwe lijst is altijd te groot. Filter op:
 
-## Stap 4 - Kies je winners (new vs optimize)
+- Intersections: 2+ of 3+ (minder branded ruis)
+- Volume: kies een bandbreedte die past bij je niche (bijv. 50-5000)
+- KD: stel een realistische grens (bijv. <= 20 voor jonge sites, <= 40 voor sterke sites)
+- Clicks/traffic potential: voorkom keywords met veel "noise" in de SERP
+- Exclude: competitor merken, "login", "jobs", "gratis" (als je paid bent), etc.
 
-Stel per keyword cluster deze vragen:
+Kijk niet alleen naar volume. Een keyword met volume 100 kan meer omzet opleveren dan volume 2000 met lage intent.
 
-- Hebben we al een pagina die hierbij past? Dan optimaliseren.
-- Past de zoekintentie bij een blog, categorie, productpagina of vergelijking?
-- Wat doet de concurrent goed, en hoe kunnen wij beter zijn?
+## Stap 4 - Check intent en SERP features (10 keywords = 10 minuten)
 
-Focus op quick wins:
+Open de SERP in Ahrefs (of Google) voor 10 kandidaten en check:
 
-- Lagere KD
-- Duidelijke intent
-- Hoge business value
-- Concurrenten ranken met dunne of verouderde content
+- Wat rankt: blog, categorie, product, tool, lokale pagina?
+- SERP noise: ads, shopping, local pack, AI overview, videos, PAA
+- Hoe sterk is de content: dun artikel of echt goed uitgewerkt?
 
-## Stap 5 - Maak er een contentplan van
+Als de top 10 compleet andere intent heeft dan wat jij kan/wil maken: skip of maak een ander type pagina.
 
-Werk in batches:
+## Stap 5 - New vs optimize (voorkom kannibalisatie)
 
-- Groepeer keywords per onderwerp (topic cluster)
-- Maak 1 hoofdartikel + ondersteunende artikelen
-- Voeg interne links toe (van support -> hoofdartikel, en andersom)
-- Zet de belangrijkste keywords in Rank Tracker en meet na 4-8 weken
+Voor elk keyword cluster:
+
+- Hebben we al een pagina die deze intent kan pakken?
+  - Ja: optimize (structuur, snippet, intent match, interne links)
+  - Nee: new page
+
+Regel: 1 primaire intent per pagina. Niet 3 paginas die hetzelfde proberen te ranken.
+
+## Stap 6 - Zet het om naar een contentplan (met template)
+
+Maak 1 simpele sheet met kolommen:
+
+- keyword / cluster
+- intent (learn/compare/buy)
+- page type (blog, landing, categorie, vergelijking)
+- bestaande URL (als die er is)
+- nieuwe URL slug (voor planning)
+- KD, volume, clicks (indicatief)
+- business value (hoog/middel/laag)
+- effort (laag/middel/hoog)
+- prioriteit (P1/P2/P3)
+- interne links nodig (van welke paginas)
+- 1-2 competitor URLs om te benchmarken
+
+Template:
+
+${fence}text
+keyword_cluster | intent | page_type | current_url | new_slug | kd | volume | clicks | business_value | effort | priority | internal_links_from | competitor_urls
+${fence}
+
+## Stap 7 - Publiceer in batches en meet
+
+- Werk in batches per cluster (1 hub + 3-8 supporting paginas)
+- Zet interne links meteen goed (support <-> hub)
+- Meet in Search Console: impressions -> clicks -> posities
+- Geef het 4-12 weken (langer bij nieuwe sites)
+
+Focus op posities 4-20: daar zit vaak de snelste groei.
 
 ## Veelgemaakte fouten
 
-- Verkeerde concurrenten kiezen
-- Alleen op volume sturen (maar intent negeren)
-- Branded keywords niet wegfilteren
-- Verwachten te ranken terwijl je site nergens in de top 100 komt
-
-Als je (bijna) nooit in de top 100 staat, fix dan eerst je basis: techniek, interne links, en een paar sterke pagina's.
+- Verkeerde concurrenten (marktplaatsen, Wikipedia, nieuws) meenemen
+- Alles selecteren op volume, zonder intent of business value
+- Geen SERP check doen
+- Nieuw schrijven terwijl je al een pagina hebt die je had kunnen upgraden
+- Geen interne links plannen
+- Te vroeg op hoge KD keywords mikken
 
 ## Mini checklist
 
+- Markt (land/taal) klopt
 - 3-5 echte concurrenten gekozen
-- Content Gap met intersections 2+ gedraaid
-- Branded termen weggefilterd
-- Volume en KD filter gezet
-- Intent gecheckt in SERP
-- New vs optimize besloten
-- Topic clusters gemaakt
-- Rank Tracker aangezet
+- Content Gap gedraaid met intersections 2+
+- Branded en ruis gefilterd
+- 10 SERPs handmatig gecheckt op intent
+- New vs optimize per cluster beslist
+- Sheet gevuld met prioriteit + effort
+- Content batches gepland + interne links meegenomen
+- Meting staat (GSC + GA4)
 `.trim(),
   translations: {
     en: {
-      title: 'Ahrefs content gap analysis: simple step-by-step',
+      title: 'Ahrefs content gap analysis: complete step-by-step (with template)',
       topic: 'SEO',
-      metaTitle: 'Ahrefs content gap analysis | Simple guide',
-      metaDescription: 'Run a content gap analysis in Ahrefs to find keywords your competitors rank for but you do not. Includes filters, prioritization, and a quick checklist.',
+      metaTitle: 'Ahrefs content gap analysis | Full workflow',
+      metaDescription: 'Run a content gap analysis in Ahrefs to find keyword and topic gaps, filter noise, validate intent, and turn results into a prioritized content plan.',
       content: `
-## What is a content gap analysis?
+An Ahrefs content gap analysis shows which keywords your competitors rank for while your site does not (yet). It is one of the fastest ways to turn "we need content ideas" into a prioritized roadmap.
 
-A content gap analysis shows which keywords your competitors rank for, while your site is not visible yet.
+Important: a "gap" does not automatically mean "write a new blog post". Sometimes the best move is to upgrade an existing page, fix internal links, or decide a keyword is not relevant to your business.
 
-Use it to quickly find:
+## What is a content gap analysis (and what it is not)?
 
-- Topics you are missing
-- Pages to create or improve
-- Keywords that are likely easier wins
+In practice there are 3 gaps:
 
-## Before you start (1 minute)
+- Keyword gap: competitors rank for a keyword, you do not.
+- Topic gap: competitors cover a topic cluster, you only cover part of it (or none).
+- SERP gap: competitors match intent better; you might have content, but the wrong page type.
 
-- Pick 3 to 5 real competitors (not Wikipedia, job boards, or marketplaces if those are not your business).
-- Use the same market in Ahrefs (country / language) that you target.
+A strong analysis combines all three.
 
-## Step 1 - Find the right competitors
+## When is this most useful?
+
+- Your site has some baseline authority (you sometimes show up in the top 100).
+- You want to prioritize faster than brainstorming.
+- You want business value (leads/revenue), not just traffic.
+
+If you almost never rank in the top 100, the usual order is: technical basics + internal links + a few strong pages, then scale with gap work.
+
+## Step 0 - Set scope and market (2 minutes)
+
+- Scope: full domain, or a folder like /blog/?
+- Market: choose the country + language you actually target.
+- Goal: informational only, or also commercial/transactional keywords?
+
+Write one sentence: "We use this gap analysis to plan X page types for Y market."
+
+## Step 1 - Pick real competitors (avoid noise)
 
 In Ahrefs: Site Explorer -> Organic competitors.
 
-- Choose sites that sell the same thing and target the same audience.
-- Double-check manually: keyword overlap does not always mean a real competitor.
+Use it as a starting point, then manual check:
 
-## Step 2 - Open the Content Gap tool
+- Do they sell the same thing?
+- Are they not just a giant info site?
+- Do they get traffic from keywords that could convert for you?
+
+Practical: pick 3-5 direct competitors. Optionally add 1-2 publishers separately for inspiration.
+
+## Step 2 - Run the Content Gap tool
 
 In Ahrefs: Site Explorer -> Content gap.
 
-Fill in:
-
-- "Show keywords that the below targets rank for": your competitors
+- "Show keywords that the below targets rank for": competitors
 - "But the following target doesn't rank for": your domain
 
 Good starting settings:
 
-- Intersections: at least 2 competitors
-- Position: competitors in the top 10
-- You: not in the top 100 (or top 50 if you want to be stricter)
+- Intersections: 2+ (at least 2 competitors rank)
+- Competitor position: top 10 (or top 20 for broader discovery)
+- Your site: not in top 100 (or not in top 50 if stricter)
 
-## Step 3 - Filter the list (make it usable)
+Tip: run two versions:
 
-The raw list is usually too big. Filter it down:
+- Version A: top 10 + intersections 2+ (quick wins)
+- Version B: top 20 + intersections 3+ (strategic topics)
 
-- Intersections: 2+
-- Volume: for example 50 to 5000
-- KD: for example max 20-30 (depends on your authority)
-- Exclude: competitor brands, "login", "pricing" (if it does not fit), etc.
+## Step 3 - Filter the list into something usable
 
-Tip: open 5 to 10 keywords and check the SERP. You will see the search intent fast.
+The raw list is always too big. Filter by:
 
-## Step 4 - Pick winners (new vs optimize)
+- Intersections: 2+ or 3+ (reduces brand noise)
+- Volume: pick a range that fits your niche (example 50-5000)
+- KD: set a realistic cap (example <= 20 for new sites, <= 40 for strong sites)
+- Clicks/traffic potential: avoid keywords with lots of "SERP noise"
+- Exclude: competitor brands, "login", "jobs", "free" (if you are paid), etc.
 
-For each keyword cluster, ask:
+Do not look at volume only. A keyword with volume 100 can outperform volume 2000 if intent is stronger.
 
-- Do we already have a relevant page? Then optimize.
-- What page type matches the intent: blog, category, product, comparison?
-- What does the competitor do well, and how can we do better?
+## Step 4 - Validate intent and SERP features (10 keywords = 10 minutes)
 
-Focus on quick wins:
+Open the SERP for 10 candidates (in Ahrefs or Google) and check:
 
-- Lower KD
-- Clear intent
-- High business value
-- Competitors rank with thin or outdated content
+- What ranks: blog, category, product, tool, local page?
+- SERP noise: ads, shopping, local pack, AI overview, videos, PAA
+- Content strength: thin pages or truly strong content?
 
-## Step 5 - Turn it into a content plan
+If the top 10 has a completely different intent than what you can/want to create: skip, or build a different page type.
 
-Work in batches:
+## Step 5 - New vs optimize (avoid cannibalization)
 
-- Group keywords by topic (topic clusters)
-- Create 1 main page + supporting pages
-- Add internal links (support -> main, and back)
-- Track core keywords in Rank Tracker and review after 4-8 weeks
+For each cluster:
+
+- Do you already have a page that can win this intent?
+  - Yes: optimize (structure, snippet, intent match, internal links)
+  - No: create a new page
+
+Rule: one primary intent per page. Do not create 3 pages trying to rank for the same thing.
+
+## Step 6 - Turn results into a content plan (template)
+
+Build one simple sheet with:
+
+- keyword / cluster
+- intent (learn/compare/buy)
+- page type (blog, landing, category, comparison)
+- current URL (if it exists)
+- planned new slug (for planning)
+- KD, volume, clicks (indicative)
+- business value (high/medium/low)
+- effort (low/medium/high)
+- priority (P1/P2/P3)
+- internal links needed (from which pages)
+- 1-2 competitor URLs to benchmark
+
+Template:
+
+${fence}text
+keyword_cluster | intent | page_type | current_url | new_slug | kd | volume | clicks | business_value | effort | priority | internal_links_from | competitor_urls
+${fence}
+
+## Step 7 - Publish in batches and measure
+
+- Work per cluster (1 hub + 3-8 supporting pages)
+- Add internal links immediately (support <-> hub)
+- Measure in Search Console: impressions -> clicks -> positions
+- Give it 4-12 weeks (longer for new sites)
+
+Focus on positions 4-20: that is often the fastest growth.
 
 ## Common mistakes
 
-- Choosing the wrong competitors
-- Chasing volume but ignoring intent
-- Not filtering branded keywords
-- Expecting to rank when your site does not reach the top 100
-
-If you are almost never in the top 100, fix the basics first: technical SEO, internal links, and a few strong pages.
+- Picking the wrong competitors (marketplaces, Wikipedia, news)
+- Selecting by volume only and ignoring intent/business value
+- Skipping SERP checks
+- Writing new pages while an existing page could be upgraded
+- Not planning internal links
+- Targeting high KD too early
 
 ## Mini checklist
 
+- Market (country/language) is correct
 - Picked 3-5 real competitors
 - Ran Content Gap with intersections 2+
-- Filtered branded terms
-- Set volume and KD filters
-- Checked intent in the SERP
-- Decided new vs optimize
-- Built topic clusters
-- Enabled Rank Tracker
+- Filtered brand terms and noise
+- Manually checked 10 SERPs for intent
+- Decided new vs optimize per cluster
+- Filled a sheet with priority + effort
+- Planned content batches + internal links
+- Measurement is set (GSC + GA4)
 `.trim(),
     },
     nl: {
-      title: 'Content gap analyse in Ahrefs: simpel stappenplan',
+      title: 'Content gap analyse in Ahrefs: complete stappenplan (met template)',
       topic: 'SEO',
-      metaTitle: 'Content gap analyse in Ahrefs | Simpel stappenplan',
-      metaDescription: 'Zo doe je een content gap analyse in Ahrefs: concurrenten kiezen, Content Gap draaien, slim filteren en omzetten naar een contentplan.',
+      metaTitle: 'Content gap analyse in Ahrefs | Compleet stappenplan',
+      metaDescription: 'Complete gids voor content gap analyse in Ahrefs: concurrenten kiezen, filters instellen, intent valideren en omzetten naar een contentplan (met template).',
       content: `
-## Wat is een content gap analyse?
+Een content gap analyse in Ahrefs laat zien op welke keywords jouw concurrenten wel ranken, terwijl jouw site daar (nog) niet zichtbaar is. Het is een snelle manier om je content roadmap te vullen met onderwerpen die al bewezen werken in jouw markt.
 
-Een content gap analyse laat zien op welke keywords jouw concurrenten ranken, terwijl jouw site daar (nog) niet voor zichtbaar is.
+Belangrijk: "gap" betekent niet automatisch dat je een nieuwe blog moet schrijven. Soms is de beste actie: een bestaande pagina upgraden, interne links aanpassen, of besluiten dat een keyword niet bij je business past.
 
-Je gebruikt dit om snel te zien:
+## Wat is een content gap analyse (en wat niet)?
 
-- Welke onderwerpen je mist
-- Welke pagina's je moet maken of verbeteren
-- Welke keywords waarschijnlijk sneller resultaat geven
+In de praktijk zie ik 3 soorten gaps:
 
-## Voor je start (1 minuut)
+- Keyword gap: concurrenten ranken op een specifiek keyword, jij niet.
+- Topic gap: concurrenten hebben een cluster rondom een onderwerp, jij mist (delen van) die cluster.
+- SERP gap: concurrenten matchen de intent beter, jij hebt wel content maar het verkeerde type pagina.
 
-- Kies 3 tot 5 echte concurrenten (geen Wikipedia, vacaturesites of marketplaces als dat niet je business is).
-- Gebruik dezelfde markt in Ahrefs (land / taal) als waar jij op mikt.
+Een goede analyse combineert alle drie.
 
-## Stap 1 - Vind de juiste concurrenten
+## Wanneer is dit het meest nuttig?
+
+- Je site heeft al wat basisautoriteit (je komt soms in de top 100).
+- Je wil sneller prioriteren dan "brainstormen op gevoel".
+- Je wil content maken met duidelijke business value (leads/omzet), niet alleen verkeer.
+
+Als je bijna nooit in de top 100 staat, dan is de volgorde meestal: techniek + interne links + 3-5 sterke paginas, en daarna pas schaal je met gaps.
+
+## Stap 0 - Zet je scope en markt goed (2 minuten)
+
+- Scope: analyseer je hele domein, of alleen een folder zoals /blog/?
+- Markt: kies land + taal die je echt target.
+- Doel: wil je blog intent (informational) of ook commercial/transactional keywords?
+
+Schrijf 1 zin op: "Deze gap analyse gebruiken we om X soort paginas te plannen voor Y markt."
+
+## Stap 1 - Kies echte concurrenten (geen ruis)
 
 In Ahrefs: Site Explorer -> Organic competitors.
 
-- Pak concurrenten die hetzelfde verkopen en dezelfde doelgroep hebben.
-- Dubbelcheck handmatig: overlappende keywords betekent niet automatisch dat het een echte concurrent is.
+Gebruik dit als start, maar check daarna handmatig:
 
-## Stap 2 - Open de Content Gap tool
+- Sluiten ze aan bij jouw product/dienst?
+- Is de overlap niet alleen omdat het een groot info platform is?
+- Krijgen ze verkeer op keywords die ook kunnen converteren voor jou?
+
+Praktisch: neem 3-5 directe concurrenten. Voeg eventueel 1-2 content publishers toe voor ideeen, maar houd die apart.
+
+## Stap 2 - Run de Content Gap tool in Ahrefs
 
 In Ahrefs: Site Explorer -> Content gap.
-
-Vul in:
 
 - "Show keywords that the below targets rank for": je concurrenten
 - "But the following target doesn't rank for": jouw domein
 
-Start-instellingen die vaak goed werken:
+Start instellingen die vaak goed werken:
 
-- Intersections: minimaal 2 concurrenten
-- Positie: concurrenten in top 10
-- Jij: niet in top 100 (of niet in top 50 als je strenger wil zijn)
+- Intersections: 2+ (minimaal 2 concurrenten ranken)
+- Competitor position: top 10 (of top 20 als je meer volume wil)
+- Jouw site: niet in top 100 (of niet in top 50 als je strenger wil zijn)
 
-## Stap 3 - Filter de lijst (zo maak je hem bruikbaar)
+Tip: draai 2 versies:
 
-De ruwe lijst is vaak te groot. Filter hem slimmer:
+- Versie A: top 10 + intersections 2+ (quick wins)
+- Versie B: top 20 + intersections 3+ (strategische onderwerpen)
 
-- Intersections: 2+
-- Volume: bijvoorbeeld 50 tot 5000
-- KD: bijvoorbeeld max 20-30 (afhankelijk van je autoriteit)
-- Exclude: concurrent-merken, "login", "pricing" (als dat niet past), etc.
+## Stap 3 - Maak de lijst bruikbaar met filters
 
-Tip: open 5 tot 10 keywords en check de SERP. Dan zie je direct het zoekintentie type.
+De ruwe lijst is altijd te groot. Filter op:
 
-## Stap 4 - Kies je winners (new vs optimize)
+- Intersections: 2+ of 3+ (minder branded ruis)
+- Volume: kies een bandbreedte die past bij je niche (bijv. 50-5000)
+- KD: stel een realistische grens (bijv. <= 20 voor jonge sites, <= 40 voor sterke sites)
+- Clicks/traffic potential: voorkom keywords met veel "noise" in de SERP
+- Exclude: competitor merken, "login", "jobs", "gratis" (als je paid bent), etc.
 
-Stel per keyword cluster deze vragen:
+Kijk niet alleen naar volume. Een keyword met volume 100 kan meer omzet opleveren dan volume 2000 met lage intent.
 
-- Hebben we al een pagina die hierbij past? Dan optimaliseren.
-- Past de zoekintentie bij een blog, categorie, productpagina of vergelijking?
-- Wat doet de concurrent goed, en hoe kunnen wij beter zijn?
+## Stap 4 - Check intent en SERP features (10 keywords = 10 minuten)
 
-Focus op quick wins:
+Open de SERP in Ahrefs (of Google) voor 10 kandidaten en check:
 
-- Lagere KD
-- Duidelijke intent
-- Hoge business value
-- Concurrenten ranken met dunne of verouderde content
+- Wat rankt: blog, categorie, product, tool, lokale pagina?
+- SERP noise: ads, shopping, local pack, AI overview, videos, PAA
+- Hoe sterk is de content: dun artikel of echt goed uitgewerkt?
 
-## Stap 5 - Maak er een contentplan van
+Als de top 10 compleet andere intent heeft dan wat jij kan/wil maken: skip of maak een ander type pagina.
 
-Werk in batches:
+## Stap 5 - New vs optimize (voorkom kannibalisatie)
 
-- Groepeer keywords per onderwerp (topic cluster)
-- Maak 1 hoofdartikel + ondersteunende artikelen
-- Voeg interne links toe (van support -> hoofdartikel, en andersom)
-- Zet de belangrijkste keywords in Rank Tracker en meet na 4-8 weken
+Voor elk keyword cluster:
+
+- Hebben we al een pagina die deze intent kan pakken?
+  - Ja: optimize (structuur, snippet, intent match, interne links)
+  - Nee: new page
+
+Regel: 1 primaire intent per pagina. Niet 3 paginas die hetzelfde proberen te ranken.
+
+## Stap 6 - Zet het om naar een contentplan (met template)
+
+Maak 1 simpele sheet met kolommen:
+
+- keyword / cluster
+- intent (learn/compare/buy)
+- page type (blog, landing, categorie, vergelijking)
+- bestaande URL (als die er is)
+- nieuwe URL slug (voor planning)
+- KD, volume, clicks (indicatief)
+- business value (hoog/middel/laag)
+- effort (laag/middel/hoog)
+- prioriteit (P1/P2/P3)
+- interne links nodig (van welke paginas)
+- 1-2 competitor URLs om te benchmarken
+
+Template:
+
+${fence}text
+keyword_cluster | intent | page_type | current_url | new_slug | kd | volume | clicks | business_value | effort | priority | internal_links_from | competitor_urls
+${fence}
+
+## Stap 7 - Publiceer in batches en meet
+
+- Werk in batches per cluster (1 hub + 3-8 supporting paginas)
+- Zet interne links meteen goed (support <-> hub)
+- Meet in Search Console: impressions -> clicks -> posities
+- Geef het 4-12 weken (langer bij nieuwe sites)
+
+Focus op posities 4-20: daar zit vaak de snelste groei.
 
 ## Veelgemaakte fouten
 
-- Verkeerde concurrenten kiezen
-- Alleen op volume sturen (maar intent negeren)
-- Branded keywords niet wegfilteren
-- Verwachten te ranken terwijl je site nergens in de top 100 komt
-
-Als je (bijna) nooit in de top 100 staat, fix dan eerst je basis: techniek, interne links, en een paar sterke pagina's.
+- Verkeerde concurrenten (marktplaatsen, Wikipedia, nieuws) meenemen
+- Alles selecteren op volume, zonder intent of business value
+- Geen SERP check doen
+- Nieuw schrijven terwijl je al een pagina hebt die je had kunnen upgraden
+- Geen interne links plannen
+- Te vroeg op hoge KD keywords mikken
 
 ## Mini checklist
 
+- Markt (land/taal) klopt
 - 3-5 echte concurrenten gekozen
-- Content Gap met intersections 2+ gedraaid
-- Branded termen weggefilterd
-- Volume en KD filter gezet
-- Intent gecheckt in SERP
-- New vs optimize besloten
-- Topic clusters gemaakt
-- Rank Tracker aangezet
+- Content Gap gedraaid met intersections 2+
+- Branded en ruis gefilterd
+- 10 SERPs handmatig gecheckt op intent
+- New vs optimize per cluster beslist
+- Sheet gevuld met prioriteit + effort
+- Content batches gepland + interne links meegenomen
+- Meting staat (GSC + GA4)
 `.trim(),
     },
     de: {
-      title: 'Ahrefs Content Gap Analyse: einfacher Ablauf',
+      title: 'Ahrefs Content Gap Analyse: kompletter Workflow (mit Template)',
       topic: 'SEO',
-      metaTitle: 'Ahrefs Content Gap Analyse | Einfacher Ablauf',
-      metaDescription: 'So machst du eine Content Gap Analyse in Ahrefs: Wettbewerber finden, Content Gap nutzen, sinnvoll filtern und in einen Content Plan umsetzen.',
+      metaTitle: 'Ahrefs Content Gap Analyse | Kompletter Workflow',
+      metaDescription: 'Kompletter Ahrefs Content Gap Workflow: Keyword und Topic Gaps finden, SERP Intent pruefen, Noise filtern und in einen Content Plan umsetzen.',
       content: `
+Eine Content Gap Analyse in Ahrefs zeigt Keywords, fuer die Wettbewerber ranken, du aber (noch) nicht sichtbar bist. Das ist ein schneller Weg, um aus "wir brauchen Content Ideen" eine priorisierte Roadmap zu machen.
+
+Wichtig: Eine "Gap" bedeutet nicht automatisch "neuen Blog schreiben". Oft ist es besser, eine bestehende Seite zu upgraden, interne Links zu setzen, oder ein Keyword bewusst zu skippen.
+
 ## Was ist eine Content Gap Analyse?
 
-Eine Content Gap Analyse zeigt Keywords, fuer die deine Wettbewerber ranken, du aber (noch) nicht sichtbar bist.
+In der Praxis gibt es 3 Luecken:
 
-Damit findest du schnell:
+- Keyword Gap: Wettbewerber ranken fuer ein Keyword, du nicht.
+- Topic Gap: Wettbewerber haben ein Topic Cluster, du deckst nur einen Teil ab.
+- SERP Gap: Wettbewerber matchen die Intent besser (anderer Seitentyp).
 
-- Themen die dir fehlen
-- Seiten die du erstellen oder verbessern solltest
-- Keywords die oft schneller funktionieren
+## Wann bringt es am meisten?
 
-## Bevor du startest (1 Minute)
+- Du rankst manchmal in den Top 100.
+- Du willst nach Business Value priorisieren, nicht nur nach Volume.
 
-- Waehle 3 bis 5 echte Wettbewerber (nicht Wikipedia, Job Boards oder Marktplatz-Seiten, wenn das nicht dein Business ist).
-- Nutze in Ahrefs den gleichen Markt (Land / Sprache) den du targetest.
+Wenn du fast nie Top 100 erreichst: erst Technik + interne Links + 3-5 starke Seiten, dann skalieren.
 
-## Schritt 1 - Die richtigen Wettbewerber finden
+## Schritt 0 - Scope und Markt setzen
+
+- Scope: ganze Domain oder nur ein Folder wie /blog/?
+- Markt: Land + Sprache, die du wirklich targetest.
+
+## Schritt 1 - Echte Wettbewerber waehlen
 
 In Ahrefs: Site Explorer -> Organic competitors.
 
-- Nimm Sites die das Gleiche verkaufen und die gleiche Zielgruppe haben.
-- Manuell pruefen: Keyword Overlap heisst nicht automatisch echter Wettbewerber.
+Check manuell:
 
-## Schritt 2 - Content Gap Tool oeffnen
+- Bieten sie das Gleiche an?
+- Sind es keine "Mega Info Sites" ohne Kauf-Intent?
+- Ranken sie fuer Keywords, die fuer dich konvertieren koennen?
+
+## Schritt 2 - Content Gap Tool nutzen
 
 In Ahrefs: Site Explorer -> Content gap.
 
-Eintragen:
+- Targets: 3-5 Wettbewerber
+- "Doesn't rank": deine Domain
 
-- "Show keywords that the below targets rank for": deine Wettbewerber
-- "But the following target doesn't rank for": deine Domain
+Gute Startwerte:
 
-Gute Start-Einstellungen:
+- Intersections: 2+ oder 3+
+- Competitor Position: Top 10 (Quick Wins) oder Top 20 (breiter)
+- Du: nicht in Top 100 (oder Top 50 wenn strenger)
 
-- Intersections: mindestens 2 Wettbewerber
-- Position: Wettbewerber in den Top 10
-- Du: nicht in den Top 100 (oder Top 50 wenn du strenger sein willst)
+## Schritt 3 - Filtern (damit es brauchbar wird)
 
-## Schritt 3 - Liste filtern (damit es brauchbar wird)
+- Intersections: 2+ / 3+
+- Volume Range passend zur Nische
+- KD Cap realistisch (z.B. <= 20 neu, <= 40 stark)
+- Clicks/Traffic Potential: SERP Noise vermeiden
+- Exclude: Brand Terms, login, jobs, etc.
 
-Die Roh-Liste ist oft riesig. Filter sie:
+## Schritt 4 - Intent und SERP Features pruefen
 
-- Intersections: 2+
-- Volume: z.B. 50 bis 5000
-- KD: z.B. max 20-30 (abhaengig von deiner Autoritaet)
-- Exclude: Brand Terms, "login", "pricing" (wenn unpassend), etc.
+Oeffne 10 Keywords und pruefe:
 
-Tipp: oeffne 5 bis 10 Keywords und schau dir die SERP an. Dann siehst du die Intent schnell.
+- Seitentyp (Blog, Kategorie, Produkt, Tool)
+- SERP Noise: Ads, Shopping, Local Pack, AI Overview, Videos
+- Content Tiefe: duenn vs stark
 
-## Schritt 4 - Gewinner waehlen (new vs optimize)
+## Schritt 5 - New vs Optimize
 
-Pro Keyword Cluster:
+- Gibt es schon eine passende Seite? Dann optimieren.
+- Sonst: neue Seite planen.
 
-- Haben wir schon eine passende Seite? Dann optimieren.
-- Welche Seitentyp passt zur Intent: Blog, Kategorie, Produkt, Vergleich?
-- Was macht der Wettbewerber gut, und wie koennen wir besser sein?
+Regel: eine Haupt-Intent pro Seite (Cannibalization vermeiden).
 
-Fokus auf Quick Wins:
+## Schritt 6 - Content Plan (Template)
 
-- Niedrigere KD
-- Klarer Intent
-- Hoher Business Value
-- Wettbewerber ranken mit duennem oder veraltetem Content
+Baue eine einfache Liste mit:
 
-## Schritt 5 - In einen Content Plan umsetzen
-
-In Batches arbeiten:
-
-- Keywords nach Thema gruppieren (Topic Cluster)
-- 1 Hauptseite + Supporting Pages bauen
-- Interne Links setzen (support -> main, und zurueck)
-- Keywords in Rank Tracker tracken und nach 4-8 Wochen pruefen
+- Cluster, Intent, Page Type, current URL, planned slug
+- KD, Volume, Clicks (indikativ)
+- Business Value, Effort, Priority
+- interne Links + 1-2 Competitor URLs
 
 ## Hauefige Fehler
 
-- Falsche Wettbewerber
-- Nur Volume, aber Intent ignorieren
-- Brand Keywords nicht rausfiltern
-- Ranking erwarten wenn man nie Top 100 erreicht
-
-Wenn du fast nie in den Top 100 bist, fix erst die Basics: Technik, interne Links, und ein paar starke Seiten.
+- Falsche Wettbewerber (Marktplatz, Wikipedia, News)
+- Nur Volume, ohne Intent/Business Value
+- Keine SERP Checks
+- Neue Seiten statt Upgrade von bestehenden
+- Keine interne Links geplant
 
 ## Mini Checkliste
 
-- 3-5 echte Wettbewerber gewaehlt
-- Content Gap mit intersections 2+ gestartet
-- Brand Terms gefiltert
-- Volume und KD gesetzt
-- Intent in der SERP gecheckt
-- New vs optimize entschieden
-- Topic Cluster gebaut
-- Rank Tracker aktiviert
+- Markt korrekt
+- 3-5 echte Wettbewerber
+- Gap Run mit intersections 2+
+- Intent via SERP geprueft
+- New vs Optimize entschieden
+- Content Plan + interne Links geplant
 `.trim(),
     },
     sv: {
-      title: 'Ahrefs content gap-analys: enkel steg for steg',
+      title: 'Ahrefs content gap-analys: komplett workflow (med template)',
       topic: 'SEO',
-      metaTitle: 'Ahrefs content gap-analys | Enkel guide',
-      metaDescription: 'Sa gor du en content gap-analys i Ahrefs: valj konkurrenter, kor Content Gap, filtrera smart och gor en content plan.',
+      metaTitle: 'Ahrefs content gap-analys | Komplett workflow',
+      metaDescription: 'Komplett content gap-workflow i Ahrefs: hitta keyword och topic gaps, filtrera noise, validera intent och bygg en prioriterad plan.',
       content: `
-## Vad ar en content gap-analys?
+En content gap-analys i Ahrefs visar vilka keywords konkurrenter rankar for, medan din site inte ar synlig (annu). Det ar ett snabbt satt att ga fran "vi behover ideer" till en prioriterad roadmap.
 
-En content gap-analys visar vilka keywords dina konkurrenter rankar for, medan din site inte ar synlig (annu).
+Viktigt: en "gap" betyder inte automatiskt "skriv en ny blog". Ibland ar basta draget att uppgradera en befintlig sida, fixa interna lankar eller skippa keywordet.
 
-Du anvander det for att hitta:
+## Tre typer av gaps
 
-- Amnen du missar
-- Sidor du ska skapa eller forbattra
-- Keywords som ofta ar enklare vinster
+- Keyword gap: de rankar for ett keyword, du gor inte.
+- Topic gap: de har ett helt cluster, du saknar delar.
+- SERP gap: de matchar intent battre (annan page type).
 
-## Innan du borjar (1 minut)
+## Steg 0 - Satt scope och marknad
 
-- Valj 3 till 5 riktiga konkurrenter (inte Wikipedia, jobb-sajter eller marketplaces om det inte ar din business).
-- Anvand samma marknad i Ahrefs (land / sprak) som du siktar pa.
+- Scope: hela domanen eller en folder som /blog/?
+- Marknad: ratt land + sprak.
 
-## Steg 1 - Hitta ratt konkurrenter
+## Steg 1 - Valj riktiga konkurrenter
 
-I Ahrefs: Site Explorer -> Organic competitors.
+I Ahrefs: Site Explorer -> Organic competitors. Dubbelkolla manuellt (undvik Wikipedia/marketplaces om irrelevant).
 
-- Valj sajter som saljer samma sak och riktar sig till samma malgrupp.
-- Dubbelkolla manuellt: overlapp betyder inte alltid riktig konkurrent.
+## Steg 2 - Kor Content Gap
 
-## Steg 2 - Oppna Content Gap verktyget
+Bra start:
 
-I Ahrefs: Site Explorer -> Content gap.
+- Intersections: 2+ eller 3+
+- Konkurrenter i top 10 (quick wins) eller top 20 (bredare)
+- Du: inte i top 100 (eller top 50 om strikt)
 
-Fyll i:
+## Steg 3 - Filtrera noise
 
-- "Show keywords that the below targets rank for": dina konkurrenter
-- "But the following target doesn't rank for": din doman
+- Volume range som passar din nisch
+- KD cap realistiskt
+- Klick/traffic potential for att undvika SERP noise
+- Exclude: brand terms, login, jobs, osv
 
-Bra start-installningar:
+## Steg 4 - Validera intent (10 keywords)
 
-- Intersections: minst 2 konkurrenter
-- Position: konkurrenter i top 10
-- Du: inte i top 100 (eller top 50 om du vill vara stramare)
+Kolla:
 
-## Steg 3 - Filtrera listan (gor den anvandbar)
+- Vad rankar: blog, kategori, produkt, tool?
+- SERP features: ads, shopping, local pack, AI overview, video
+- Content kvalitet: tunn vs stark
 
-Raa-listan ar ofta for stor. Filtrera:
+## Steg 5 - New vs optimize
 
-- Intersections: 2+
-- Volume: t.ex. 50 till 5000
-- KD: t.ex. max 20-30 (beror pa din auktoritet)
-- Exclude: varumarken, "login", "pricing" (om det inte passar), etc.
+- Finns en sida som kan vinna intent? Optimera.
+- Annars: planera ny sida.
 
-Tips: oppna 5 till 10 keywords och kolla SERP. Da ser du intent direkt.
+## Steg 6 - Bygg en content plan
 
-## Steg 4 - Valj winners (new vs optimize)
-
-For varje keyword cluster:
-
-- Har vi redan en relevant sida? Da optimerar vi.
-- Vilken sidtyp matchar intent: blog, kategori, produkt, jamforelse?
-- Vad gor konkurrenten bra, och hur kan vi gora battre?
-
-Fokusera pa quick wins:
-
-- Lagre KD
-- Tydlig intent
-- Hog business value
-- Konkurrenter rankar med tunn eller gammal content
-
-## Steg 5 - Gor en content plan
-
-Jobba i batches:
-
-- Gruppera keywords per amne (topic clusters)
-- Skapa 1 huvud-sida + supporting sidor
-- Lagg interna lankar (support -> main, och tillbaka)
-- Tracka viktiga keywords i Rank Tracker och kolla efter 4-8 veckor
-
-## Vanliga misstag
-
-- Fel konkurrenter
-- Bara volume, men ignorera intent
-- Inte filtrera branded keywords
-- Forvanta ranking nar man aldrig ar i top 100
-
-Om du nastan aldrig ar i top 100, fixa grunderna forst: teknik, interna lankar och nagra starka sidor.
+Skapa en sheet med: cluster, intent, page type, url/slug, KD/volume/klick, business value, effort, priority, interna lankar, competitor URLs.
 
 ## Mini checklista
 
-- Valde 3-5 riktiga konkurrenter
-- Korde Content Gap med intersections 2+
-- Filtrerade branded termer
-- Satte volume och KD filter
-- Kollade intent i SERP
-- Bestamde new vs optimize
-- Byggde topic clusters
-- Slog pa Rank Tracker
+- Marknad korrekt
+- 3-5 konkurrenter
+- Intersections 2+ kordat
+- Intent checkad i SERP
+- New vs optimize beslutat
+- Plan + interna lankar klara
 `.trim(),
     },
     da: {
-      title: 'Ahrefs content gap analyse: enkel trin for trin',
+      title: 'Ahrefs content gap analyse: komplet workflow (med template)',
       topic: 'SEO',
-      metaTitle: 'Ahrefs content gap analyse | Enkel guide',
-      metaDescription: 'Sa laver du en content gap analyse i Ahrefs: vaelg konkurrenter, koer Content Gap, filtrer smart og lav en content plan.',
+      metaTitle: 'Ahrefs content gap analyse | Komplet workflow',
+      metaDescription: 'Komplet content gap-workflow i Ahrefs: find keyword og topic gaps, filtrer noise, tjek intent og byg en prioriteret plan.',
       content: `
-## Hvad er en content gap analyse?
+En content gap analyse i Ahrefs viser hvilke keywords konkurrenter ranker for, mens dit site ikke er synligt (endnu). Det er en hurtig vej fra "vi mangler ideer" til en prioriteret roadmap.
 
-En content gap analyse viser hvilke keywords dine konkurrenter ranker for, mens dit site ikke er synligt (endnu).
+Vigtigt: en "gap" betyder ikke automatisk at du skal skrive en ny blog. Ofte er bedste move at opdatere en eksisterende side, fixe interne links eller skippe keywordet.
 
-Du bruger den til hurtigt at finde:
+## Tre typer gaps
 
-- Emner du mangler
-- Sider du skal lave eller forbedre
-- Keywords der ofte er hurtigere wins
+- Keyword gap: de ranker for et keyword, du gor ikke.
+- Topic gap: de har et helt cluster, du mangler dele.
+- SERP gap: de matcher intent bedre (anden side type).
 
-## Inden du starter (1 minut)
+## Trin 0 - Saet scope og marked
 
-- Vaelg 3 til 5 rigtige konkurrenter (ikke Wikipedia, job sites eller marketplaces hvis det ikke er din business).
-- Brug samme marked i Ahrefs (land / sprog) som du gaar efter.
+- Scope: hele domanet eller en folder som /blog/?
+- Marked: korrekt land + sprog.
 
-## Trin 1 - Find de rigtige konkurrenter
+## Trin 1 - Vaelg rigtige konkurrenter
 
-I Ahrefs: Site Explorer -> Organic competitors.
+I Ahrefs: Site Explorer -> Organic competitors. Dobbelttjek manuelt (undgaa Wikipedia/marketplaces hvis irrelevant).
 
-- Vaelg sites der saelger det samme og rammer samme maalgruppe.
-- Dobbelttjek manuelt: overlap betyder ikke altid en rigtig konkurrent.
+## Trin 2 - Koer Content Gap
 
-## Trin 2 - Aaben Content Gap tool
+God start:
 
-I Ahrefs: Site Explorer -> Content gap.
+- Intersections: 2+ eller 3+
+- Konkurrenter i top 10 (quick wins) eller top 20 (bredere)
+- Dig: ikke i top 100 (eller top 50 hvis streng)
 
-Udfyld:
+## Trin 3 - Filtrer noise
 
-- "Show keywords that the below targets rank for": dine konkurrenter
-- "But the following target doesn't rank for": dit domane
+- Volume range der passer til nichen
+- KD cap realistisk
+- Clicks/traffic potential for at undgaa SERP noise
+- Exclude: brand terms, login, jobs, osv
 
-Gode start-indstillinger:
+## Trin 4 - Tjek intent (10 keywords)
 
-- Intersections: mindst 2 konkurrenter
-- Position: konkurrenter i top 10
-- Dig: ikke i top 100 (eller top 50 hvis du vil vaere mere streng)
+Kig:
 
-## Trin 3 - Filtrer listen (gor den brugbar)
+- Hvad ranker: blog, kategori, produkt, tool?
+- SERP features: ads, shopping, local pack, AI overview, video
+- Content kvalitet: tynd vs staerk
 
-Raa-listen er ofte for stor. Filtrer:
+## Trin 5 - New vs optimize
 
-- Intersections: 2+
-- Volume: fx 50 til 5000
-- KD: fx max 20-30 (afhaenger af din autoritet)
-- Exclude: brand terms, "login", "pricing" (hvis det ikke passer), osv.
+- Findes der en side som kan vinde intent? Optimere.
+- Ellers: planlaeg ny side.
 
-Tip: aaben 5 til 10 keywords og tjek SERP. Saa ser du intent hurtigt.
+## Trin 6 - Byg en content plan
 
-## Trin 4 - Vaelg winners (new vs optimize)
-
-For hvert keyword cluster:
-
-- Har vi allerede en relevant side? Saa optimer.
-- Hvilken side type matcher intent: blog, kategori, produkt, sammenligning?
-- Hvad gor konkurrenten godt, og hvordan kan vi gore det bedre?
-
-Fokus pa quick wins:
-
-- Lavere KD
-- Tydelig intent
-- Hoj business value
-- Konkurrenter ranker med tynd eller foraldet content
-
-## Trin 5 - Lav en content plan
-
-Arbejd i batches:
-
-- Grupper keywords per emne (topic clusters)
-- Lav 1 hovedside + supporting sider
-- Lavg interne links (support -> main, og tilbage)
-- Track vigtige keywords i Rank Tracker og tjek efter 4-8 uger
-
-## Typiske fejl
-
-- Forkerte konkurrenter
-- Kun volume, men ignorere intent
-- Ikke filtrere branded keywords
-- Forvente ranking naar man aldrig er i top 100
-
-Hvis du naesten aldrig er i top 100, fix basen forst: teknik, interne links og et par staerke sider.
+Lav en sheet med: cluster, intent, page type, url/slug, KD/volume/clicks, business value, effort, priority, interne links, competitor URLs.
 
 ## Mini tjekliste
 
-- Vaelg 3-5 rigtige konkurrenter
-- Koer Content Gap med intersections 2+
-- Filtrer branded termer
-- Saet volume og KD filter
-- Tjek intent i SERP
-- Beslut new vs optimize
-- Byg topic clusters
-- Start Rank Tracker
+- Marked korrekt
+- 3-5 konkurrenter
+- Intersections 2+ koret
+- Intent tjekket i SERP
+- New vs optimize besluttet
+- Plan + interne links klar
 `.trim(),
     },
     fr: {
-      title: 'Analyse content gap Ahrefs: guide simple',
+      title: 'Analyse content gap Ahrefs: workflow complet (avec template)',
       topic: 'SEO',
-      metaTitle: 'Analyse content gap Ahrefs | Guide simple',
-      metaDescription: 'Fais une analyse content gap dans Ahrefs: choisir les concurrents, lancer Content Gap, filtrer intelligemment et transformer en plan de contenu.',
+      metaTitle: 'Analyse content gap Ahrefs | Workflow complet',
+      metaDescription: 'Workflow complet dans Ahrefs: identifier keyword et topic gaps, filtrer le noise, verifier l intent SERP et creer un plan de contenu priorise.',
       content: `
-## Qu est-ce qu une analyse content gap?
+Une analyse content gap dans Ahrefs montre les keywords pour lesquels les concurrents rankent, alors que ton site n est pas visible (encore). C est un moyen rapide de passer de "on cherche des idees" a une roadmap priorisee.
 
-Une analyse content gap montre les keywords ou tes concurrents rankent, alors que ton site n est pas (encore) visible.
+Important: une "gap" ne veut pas dire automatiquement "ecrire un nouvel article". Parfois il vaut mieux optimiser une page existante, corriger les liens internes, ou ignorer un keyword.
 
-Tu l utilises pour trouver vite:
+## 3 types de gaps
 
-- Les sujets qui te manquent
-- Les pages a creer ou a ameliorer
-- Les keywords souvent plus faciles a gagner
+- Keyword gap: ils rankent sur un keyword, pas toi.
+- Topic gap: ils ont un cluster complet, tu n as qu une partie.
+- SERP gap: ils matchent mieux l intent (autre type de page).
 
-## Avant de commencer (1 minute)
+## Etape 0 - Scope et marche
 
-- Choisis 3 a 5 vrais concurrents (pas Wikipedia, sites emploi ou marketplaces si ce n est pas ton business).
-- Utilise le meme marche dans Ahrefs (pays / langue) que tu cibles.
+- Scope: domaine complet ou un dossier comme /blog/?
+- Marche: pays + langue cibles.
 
-## Etape 1 - Trouver les bons concurrents
+## Etape 1 - Choisir de vrais concurrents
 
-Dans Ahrefs: Site Explorer -> Organic competitors.
+Ahrefs: Site Explorer -> Organic competitors, puis verification manuelle (eviter Wikipedia/marketplaces si ce n est pas pertinent).
 
-- Choisis des sites qui vendent la meme chose et visent la meme audience.
-- Verifie a la main: overlap keywords ne veut pas toujours dire vrai concurrent.
+## Etape 2 - Lancer Content Gap
 
-## Etape 2 - Ouvrir l outil Content Gap
+Bon point de depart:
 
-Dans Ahrefs: Site Explorer -> Content gap.
+- Intersections: 2+ ou 3+
+- Concurrents: top 10 (quick wins) ou top 20 (plus large)
+- Toi: pas top 100 (ou pas top 50 si strict)
 
-Renseigne:
+## Etape 3 - Filtrer le bruit
 
-- "Show keywords that the below targets rank for": tes concurrents
-- "But the following target doesn't rank for": ton domaine
+- Volume range adapte
+- KD cap realiste
+- Clicks/traffic potential pour eviter le SERP noise
+- Exclude: brand terms, login, jobs, etc.
 
-Bons reglages de depart:
+## Etape 4 - Verifier l intent SERP
 
-- Intersections: au moins 2 concurrents
-- Position: concurrents dans le top 10
-- Toi: pas dans le top 100 (ou top 50 si tu veux etre plus strict)
+Sur 10 keywords, verifier:
 
-## Etape 3 - Filtrer la liste (pour la rendre utile)
+- Type de page (blog, categorie, produit, tool)
+- SERP features: ads, shopping, local pack, AI overview, video
+- Qualite du contenu: mince vs solide
 
-La liste brute est souvent enorme. Filtre:
+## Etape 5 - New vs optimize
 
-- Intersections: 2+
-- Volume: par exemple 50 a 5000
-- KD: par exemple max 20-30 (selon ton autorite)
-- Exclude: marques concurrentes, "login", "pricing" (si ca ne colle pas), etc.
+- Page existante qui peut gagner l intent? Optimiser.
+- Sinon: planifier une nouvelle page.
 
-Astuce: ouvre 5 a 10 keywords et regarde la SERP. Tu vois l intent rapidement.
+## Etape 6 - Creer un plan de contenu
 
-## Etape 4 - Choisir les winners (new vs optimize)
-
-Pour chaque cluster:
-
-- On a deja une page pertinente? Alors on optimise.
-- Quel type de page colle a l intent: blog, categorie, produit, comparaison?
-- Que fait le concurrent, et comment faire mieux?
-
-Focus quick wins:
-
-- KD plus bas
-- Intent clair
-- Forte valeur business
-- Concurrents rankent avec du contenu mince ou date
-
-## Etape 5 - Faire un plan de contenu
-
-Travaille en batches:
-
-- Grouper les keywords par sujet (topic clusters)
-- Creer 1 page principale + pages support
-- Ajouter des liens internes (support -> main, et retour)
-- Suivre les keywords dans Rank Tracker et verifier apres 4-8 semaines
-
-## Erreurs courantes
-
-- Mauvais concurrents
-- Chasser le volume mais ignorer l intent
-- Ne pas filtrer les branded keywords
-- Esperer ranker quand tu n es jamais dans le top 100
-
-Si tu es presque jamais top 100, corrige d abord les bases: technique, liens internes et quelques pages fortes.
+Sheet avec: cluster, intent, type de page, url/slug, KD/volume/clicks, business value, effort, priorite, liens internes, competitor URLs.
 
 ## Mini checklist
 
-- Choisi 3-5 vrais concurrents
-- Lance Content Gap avec intersections 2+
-- Filtre les termes branded
-- Fixe volume et KD
-- Verifie l intent dans la SERP
-- Decide new vs optimize
-- Cree des topic clusters
-- Active Rank Tracker
+- Marche correct
+- 3-5 concurrents
+- Intersections 2+ lance
+- Intent verifie dans la SERP
+- New vs optimize decide
+- Plan + liens internes prets
 `.trim(),
     },
     it: {
-      title: 'Ahrefs content gap analysis: guida semplice',
+      title: 'Ahrefs content gap analysis: workflow completo (con template)',
       topic: 'SEO',
-      metaTitle: 'Ahrefs content gap analysis | Guida semplice',
-      metaDescription: 'Come fare una content gap analysis in Ahrefs: scegliere competitor, usare Content Gap, filtrare bene e trasformare in un piano contenuti.',
+      metaTitle: 'Ahrefs content gap analysis | Workflow completo',
+      metaDescription: 'Workflow completo in Ahrefs: trovare keyword e topic gap, filtrare il noise, verificare intent SERP e creare un piano contenuti prioritizzato.',
       content: `
 ## Cos e una content gap analysis?
 
-Una content gap analysis mostra per quali keywords i competitor rankano, mentre il tuo sito non e (ancora) visibile.
+Una content gap analysis in Ahrefs mostra per quali keywords i competitor rankano mentre il tuo sito non e (ancora) visibile. E un modo veloce per trasformare "ci servono idee" in una roadmap prioritaria.
 
-Ti serve per trovare velocemente:
+Importante: un "gap" non significa per forza "scrivi un nuovo blog". Spesso la mossa migliore e ottimizzare una pagina esistente, sistemare i link interni, o scartare la keyword.
 
-- Temi che ti mancano
-- Pagine da creare o migliorare
-- Keywords che spesso sono piu facili da vincere
+## 3 tipi di gap
 
-## Prima di iniziare (1 minuto)
+- Keyword gap: loro rankano per una keyword, tu no.
+- Topic gap: loro coprono un cluster completo, tu solo una parte.
+- SERP gap: loro matchano meglio l intent (tipo pagina diverso).
 
-- Scegli 3 a 5 competitor reali (non Wikipedia, job board o marketplace se non e il tuo business).
-- Usa lo stesso mercato in Ahrefs (paese / lingua) che stai targettando.
+## Step 0 - Scope e mercato
 
-## Step 1 - Trova i competitor giusti
+- Scope: dominio completo o folder come /blog/?
+- Mercato: paese + lingua target.
 
-In Ahrefs: Site Explorer -> Organic competitors.
+## Step 1 - Scegli competitor reali
 
-- Scegli siti che vendono la stessa cosa e puntano allo stesso pubblico.
-- Controlla a mano: overlap non significa sempre vero competitor.
+Ahrefs: Site Explorer -> Organic competitors, poi check manuale (evita Wikipedia/marketplaces se non sono rilevanti).
 
-## Step 2 - Apri lo strumento Content Gap
+## Step 2 - Usa Content Gap
 
-In Ahrefs: Site Explorer -> Content gap.
+Buon punto di partenza:
 
-Inserisci:
+- Intersections: 2+ o 3+
+- Competitor: top 10 (quick wins) o top 20 (piu ampio)
+- Tu: non in top 100 (o non in top 50 se strict)
 
-- "Show keywords that the below targets rank for": i competitor
-- "But the following target doesn't rank for": il tuo dominio
+## Step 3 - Filtra noise
 
-Buone impostazioni iniziali:
+- Volume range adatto
+- KD cap realistico
+- Clicks/traffic potential per evitare SERP noise
+- Exclude: brand terms, login, jobs, ecc.
 
-- Intersections: almeno 2 competitor
-- Posizione: competitor nella top 10
-- Tu: non in top 100 (o top 50 se vuoi essere piu severo)
+## Step 4 - Verifica intent SERP
 
-## Step 3 - Filtra la lista (per renderla utile)
+Su 10 keyword controlla:
 
-La lista grezza e spesso enorme. Filtra:
+- Tipo pagina (blog, categoria, prodotto, tool)
+- SERP features: ads, shopping, local pack, AI overview, video
+- Qualita contenuto: sottile vs forte
 
-- Intersections: 2+
-- Volume: per esempio 50 a 5000
-- KD: per esempio max 20-30 (dipende dalla tua autorita)
-- Exclude: brand competitor, "login", "pricing" (se non e rilevante), ecc.
+## Step 5 - New vs optimize
 
-Tip: apri 5 a 10 keywords e guarda la SERP. Capisci subito l intent.
+- Pagina esistente che puo vincere l intent? Ottimizza.
+- Altrimenti: pianifica una nuova pagina.
 
-## Step 4 - Scegli i winners (new vs optimize)
+## Step 6 - Piano contenuti
 
-Per ogni cluster:
-
-- Abbiamo gia una pagina adatta? Allora ottimizza.
-- Quale tipo di pagina matcha l intent: blog, categoria, prodotto, confronto?
-- Cosa fa bene il competitor e come possiamo fare meglio?
-
-Focus sui quick wins:
-
-- KD piu basso
-- Intent chiaro
-- Alta business value
-- Competitor rankano con contenuti sottili o vecchi
-
-## Step 5 - Trasformalo in un piano contenuti
-
-Lavora a batch:
-
-- Raggruppa keywords per tema (topic clusters)
-- Crea 1 pagina principale + pagine di supporto
-- Aggiungi internal link (support -> main, e ritorno)
-- Traccia le keyword in Rank Tracker e controlla dopo 4-8 settimane
-
-## Errori comuni
-
-- Scegliere competitor sbagliati
-- Inseguire volume ma ignorare intent
-- Non filtrare branded keywords
-- Aspettarsi ranking quando non si entra mai nella top 100
-
-Se sei quasi mai in top 100, sistema prima le basi: tecnica, internal link e alcune pagine forti.
+Sheet con: cluster, intent, page type, url/slug, KD/volume/clicks, business value, effort, priority, link interni, competitor URLs.
 
 ## Mini checklist
 
-- Scelti 3-5 competitor reali
-- Lanciato Content Gap con intersections 2+
-- Filtrati i termini branded
-- Impostati volume e KD
-- Controllato intent nella SERP
-- Deciso new vs optimize
-- Creati topic clusters
-- Attivato Rank Tracker
+- Mercato corretto
+- 3-5 competitor
+- Intersections 2+ lanciato
+- Intent verificato in SERP
+- New vs optimize deciso
+- Piano + link interni pronti
 `.trim(),
     },
   },

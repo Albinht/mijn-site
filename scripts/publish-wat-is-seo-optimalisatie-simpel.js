@@ -37,941 +37,623 @@ const article = {
   slug: 'wat-is-seo-optimalisatie',
   topic: 'SEO',
   status: 'PUBLISHED',
-  title: 'What is SEO (search engine optimization)? Simple guide + workflow',
-  content: `
-SEO (search engine optimization) is the work you do to get more qualified traffic from the organic results in Google (and other search engines). The goal is not "rank for the sake of ranking", but: relevant visitors and conversions.
+  title: 'What is SEO (search engine optimization)? Complete guide + workflow',
+  content: `SEO (search engine optimization) is the work you do to earn qualified visits from organic search results. The goal is not rankings for their own sake, but predictable traffic that converts.
 
-## What is SEO optimization?
+If you want the one-line definition: SEO aligns intent, content, technical foundations, and authority so search engines can confidently recommend your page.
 
-SEO is improving your website so search engines can crawl it, understand it, and trust it enough to show it for the right searches.
+## How search engines work (crawl -> render -> index -> rank)
 
-In practice, SEO is a mix of:
+Search engines do four things, in order:
 
-- Understanding what people search for (intent)
-- Creating the best page for that intent
-- Removing technical friction
-- Building trust (authority)
+1. Crawl: discover your URLs via links and sitemaps.
+2. Render: load the page (often with JavaScript) to see what users see.
+3. Index: store and understand the content (topics, entities, intent).
+4. Rank: decide which pages best satisfy the query.
 
-## What does SEO deliver?
+SEO breaks when one step fails:
 
-If you do it well, SEO can deliver:
+- Crawl issues: broken internal links, blocked robots.txt, slow server
+- Render issues: content only visible after JS, blocked resources
+- Index issues: noindex, wrong canonicals, duplicates, thin pages
+- Rank issues: wrong intent, weak content, weak authority, poor UX
 
-- More organic visitors without paying per click
-- Better lead quality (intent-driven traffic)
-- Lower cost per lead over time
-- Stronger brand: you show up again and again
+## What SEO optimization includes (beyond keywords)
 
-SEO takes time, but good pages can keep working for you for months or years.
+Modern SEO is a system, not a checklist:
 
-## The 3 pillars of SEO (simple)
+- Market research: what your audience wants and how they search
+- Information architecture: how pages relate (clusters and internal links)
+- Content production: pages that answer intent with depth and proof
+- Technical foundations: performance, indexation, rendering
+- Authority building: earning references and brand signals
+- Measurement: conversions and leading indicators
 
-### 1) Content
+## The 3 pillars of SEO (what actually matters)
 
-Content is what ranks. Not "more words", but better answers.
+### 1) Content (intent, depth, usefulness)
 
-Good SEO content:
+Good SEO content is not keyword stuffing. It is:
 
-- Answers the question fast, then goes deeper
-- Matches intent (informational, commercial, transactional)
-- Uses clear structure (H2/H3) so it is easy to scan
-- Adds proof: examples, screenshots, pricing, steps, FAQ
+- The right page type for the SERP (guide vs category vs landing vs comparison)
+- A fast answer in the intro, then depth for serious visitors
+- Clear structure (H2/H3) and scannability
+- Evidence: examples, screenshots, data, steps, FAQs
+- Freshness: updated processes, screenshots, and internal links
 
-### 2) Technical SEO
+Rule: one primary intent per page. If one page tries to do three jobs, it usually ranks for none.
 
-Technical SEO is the foundation. If the foundation is weak, growth hits a ceiling.
+### 2) Technical SEO (indexation and experience)
 
-Basics to get right:
+Technical SEO is the foundation. Prioritize:
 
-- Indexation: no accidental noindex, robots.txt not blocking, sitemap.xml submitted
-- Speed and usability (mobile)
-- Clean redirects (no chains) and no broken pages (404/5xx)
-- Canonicals that make sense (often self-referencing)
+- Indexing control: robots.txt, noindex, canonical, sitemap
+- URL consistency: HTTPS, www/non-www, trailing slash, redirect hygiene
+- Internal links: click depth, orphan pages, breadcrumbs
+- Performance: especially mobile and Core Web Vitals
+- Rendering: does Google see the content without issues?
+- Structured data: helps understanding and rich results
 
-### 3) Authority (trust)
+### 3) Authority (trust and defensibility)
 
 Authority is why two similar pages do not rank the same.
 
-Authority signals include:
+What builds real authority:
 
-- Relevant backlinks (quality over quantity)
-- Brand mentions and reviews
-- Helpful content that earns references naturally
+- Relevant backlinks from real sites (quality > quantity)
+- Mentions, reviews, and brand searches
+- Content that gets referenced because it is the best resource
 
-## A simple SEO roadmap (do this in order)
+Avoid shortcuts. Low-quality links create a ceiling or a penalty risk.
 
-### Step 0 - Set up measurement
+## A practical SEO workflow (0-90 days)
 
-Without measurement you will guess.
+### Days 0-7: measurement and baseline
 
-- Google Search Console: queries, pages, indexation
-- GA4: traffic quality and conversions
-- Define 1-3 core conversions (form submit, purchase, call)
+- Connect Search Console and GA4
+- Define 1-3 primary conversions
+- Export top pages and top queries
+- Note pages in positions 4-20 (quick wins list)
 
-### Step 1 - Fix crawl and index blockers
+### Days 8-30: fix blockers and capture quick wins
 
-Before content, make sure Google can actually access and index your pages.
+- Fix P0 technical issues: indexation, 5xx, redirect chains, broken key pages
+- Improve 5-10 pages already getting impressions:
+  - better title/meta for CTR
+  - stronger intro and missing sections
+  - internal links from relevant pages
+- Build a simple content map: topics -> one main page each
 
-Checklist:
+### Days 31-60: build topic clusters
 
-- HTTPS ok (no mixed content)
-- robots.txt ok (no important sections blocked)
-- No accidental noindex
-- sitemap.xml exists and is submitted
-- Fix big 404/5xx issues
-- Avoid redirect chains
+- Pick 2-4 topic clusters
+- Create one strong hub page per cluster
+- Publish 3-8 supporting pages per cluster
+- Add internal links both ways and from navigation where relevant
 
-### Step 2 - Choose keywords by intent (not volume only)
+### Days 61-90: scale and make it defensible
 
-Ask: what does the searcher want to do?
+- Refresh top pages with new proof and better UX
+- Start authority work: digital PR, partnerships, link reclamation
+- Add structured data where it fits
+- Create a monthly cadence (publish, update, links, technical)
 
-- Learn: guide, tutorial, checklist
-- Compare: best, vs, alternatives, reviews
-- Buy: pricing, quote, demo, product page
-- Navigate: brand + product/service
+## How to pick keywords that make money
 
-Pick battles you can win. Start with keywords where you can create a better page than the current top results.
+Volume is not a strategy. Use a simple filter:
 
-### Step 3 - Build 1 strong page per topic
+- Intent: informational, commercial, or transactional?
+- Business value: will this lead to the right conversion?
+- SERP reality: ads/local/AI answers can reduce clicks
+- Ability to win: can you beat the current top results?
+- Content fit: can one page satisfy the intent fully?
 
-For each topic, create one main page and support it with related articles.
+For existing sites, start in Search Console: find queries where you already get impressions and upgrade those pages.
 
-Per page:
+## On-page SEO checklist for one page
 
-- One clear main topic (avoid internal cannibalization)
-- Title/H1 that matches the search
-- Short intro with the direct answer
-- Sections that answer real questions (FAQ helps)
-- Internal links to and from relevant pages
+Before you publish, check:
 
-### Step 4 - Improve internal linking
-
-Internal links are free leverage.
-
-- Link from strong pages to money pages
-- Use descriptive anchors (not "click here")
-- Important pages within 2-3 clicks
-- Build topic clusters (hub + supporting pages)
-
-### Step 5 - Build authority (no shortcuts)
-
-Skip spam. Focus on:
-
-- Creating content worth citing
-- Partnerships, PR, communities in your niche
-- High-quality, relevant links over cheap volume
-
-### Step 6 - Refresh what already ranks
-
-Fast wins often come from pages that rank positions 4-20.
-
-- Expand missing sections
-- Improve the snippet (title + meta description)
-- Add internal links
-- Update examples and screenshots
-
-## My practical workflow (month 1 + monthly cycle)
-
-### Month 1: strategy and baseline
-
-- Measure: Search Console + GA4
-- Audit: indexation, technical issues, internal links
-- Research: keywords and intent
-- Roadmap: what to fix first (impact vs effort)
-
-### Monthly: execute, measure, repeat
-
-- Publish or upgrade content in batches
-- Fix 2-3 technical items with the highest impact
-- Strengthen internal links
-- Build/earn authority signals
-- Report: what moved, why, what is next
-
-## Quick SEO tips you can do today
-
-- Rewrite titles for your top pages (clear benefit + topic)
-- Fix obvious 404 pages and redirect chains
-- Add 5 internal links to your 3 most important pages
-- Update one page that already gets impressions in Search Console
-- Compress large images and remove heavy scripts you do not need
+- Title: clear topic + clear benefit, not just keywords
+- H1: matches the query and page type
+- Intro: answer fast, then promise depth
+- Headings: cover sub-questions the SERP implies
+- Internal links: to and from relevant pages
+- Media: examples, screenshots, visuals where helpful
+- CTA: next step for the visitor (quote, demo, contact, buy)
+- Schema: where relevant and correct
 
 ## Common mistakes
 
-- Publishing content without a plan (no clusters)
-- Only doing technical work and never improving pages
-- Targeting only high-volume keywords (too competitive)
-- Buying low-quality links
-- Not tracking conversions (rankings without revenue)
+- Doing keyword research without SERP checking
+- Publishing random posts without clusters and internal links
+- Creating multiple pages for the same intent (cannibalization)
+- Fixing every technical warning instead of prioritizing P0/P1
+- Tracking rankings but not conversions
+- Never updating content that already ranks
 
-## SEO in 2026: AI in search
+## SEO in 2026: AI answers and richer SERPs
 
-Google is increasingly showing AI-driven answers and rich SERP features. That usually means:
+AI-driven answers and rich features reduce clicks for some queries. Your response is:
 
-- Clarity wins: answer early, then add depth
-- Structure wins: headings, lists, FAQ
-- Proof wins: experience, examples, sources, updates
+- Be clear early: short answer, then depth
+- Add proof: experience, examples, data
+- Structure content: headings, lists, FAQ where useful
+- Build brand trust: mentions, reviews, citations
 
-The fundamentals stay the same: build the best page for the intent, and earn trust.
+The fundamentals do not change: match intent, remove friction, earn trust.
 
 ## Conclusion
 
-SEO optimization is not a trick. It is consistent work on content, technical foundations, and authority.
+SEO optimization is not a trick. It is a repeatable process: measure, fix blockers, publish the best pages for real intent, connect them with internal links, and earn authority.
 
-Want help picking the fastest SEO wins for your site? See /work-with-me.
+Want help turning your site into a prioritized roadmap? See /work-with-me.
 `.trim(),
   translations: {
     nl: {
-      title: 'Wat is SEO (zoekmachineoptimalisatie)? Simpele gids en werkwijze',
+      title: 'Wat is SEO (zoekmachineoptimalisatie)? Complete gids en werkwijze',
       topic: 'SEO',
-      metaTitle: 'Wat is SEO optimalisatie? | Simpele gids en werkwijze',
-      metaDescription: 'SEO optimalisatie simpel uitgelegd: wat het is, de 3 pijlers (content, techniek, autoriteit) en een praktisch stappenplan om vandaag te starten.',
+      metaTitle: 'Wat is SEO optimalisatie? | Complete gids en werkwijze',
+      metaDescription: 'Uitgebreide SEO gids: hoe zoekmachines werken, de 3 pijlers, een 0-90 dagen workflow en een checklist om te starten.',
       content: `
-SEO (zoekmachineoptimalisatie) is alles wat je doet om meer (en betere) bezoekers uit de organische zoekresultaten van Google te krijgen. Het doel is niet "hoog staan om het hoog staan", maar: relevante bezoekers en conversies.
+SEO (zoekmachineoptimalisatie) is het werk waarmee je meer gekwalificeerde bezoekers uit organische zoekresultaten krijgt. Het doel is niet hoog staan om het hoog staan, maar voorspelbaar verkeer dat converteert.
 
-## Wat is SEO optimalisatie?
+In 1 zin: SEO koppelt intentie, content, techniek en autoriteit zodat zoekmachines jouw pagina durven tonen.
 
-SEO is je website verbeteren zodat zoekmachines je paginas kunnen crawlen, begrijpen en genoeg vertrouwen hebben om je te tonen bij de juiste zoekopdrachten.
+## Hoe zoekmachines werken (crawl -> render -> indexeren -> ranken)
 
-In de praktijk is SEO een mix van:
+Zoekmachines doen vier stappen:
 
-- Begrijpen wat mensen zoeken (intentie)
-- De beste pagina maken voor die intentie
-- Technische frictie weghalen
-- Vertrouwen opbouwen (autoriteit)
+1. Crawlen: URLs vinden via links en sitemaps.
+2. Renderen: pagina laden (vaak met JavaScript).
+3. Indexeren: begrijpen en opslaan.
+4. Ranken: bepalen welke pagina het beste past.
 
-## Wat levert SEO op?
+SEO faalt als een stap stuk gaat:
 
-Als je het goed doet, levert SEO vaak:
+- Crawl issues: kapotte interne links, robots.txt blokkades, trage server
+- Render issues: content alleen zichtbaar na JS
+- Index issues: noindex, verkeerde canonicals, duplicates
+- Rank issues: verkeerde intent, zwakke content, weinig autoriteit
 
-- Meer organische bezoekers zonder betalen per klik
-- Betere leadkwaliteit (intentie-gedreven verkeer)
-- Lagere kosten per lead op termijn
-- Meer merkherkenning: je komt steeds terug in Google
+## De 3 pijlers van SEO
 
-SEO kost tijd, maar goede paginas kunnen maanden of jaren doorwerken.
+### 1) Content (intentie, diepte, nut)
 
-## De 3 pijlers van SEO (simpel)
+- Het juiste paginatype voor de SERP
+- Snel antwoord bovenaan, daarna diepte
+- Duidelijke structuur (H2/H3)
+- Bewijs: voorbeelden, screenshots, data, stappen, FAQ
 
-### 1) Content
+Regel: 1 primaire intent per pagina.
 
-Content is wat rankt. Niet "meer woorden", maar betere antwoorden.
+### 2) Techniek (indexatie en ervaring)
 
-Goede SEO-content:
-
-- Beantwoordt de vraag snel en gaat daarna de diepte in
-- Matcht de intentie (informational, commercial, transactional)
-- Heeft een duidelijke structuur (H2/H3) zodat het scanbaar is
-- Voegt bewijs toe: voorbeelden, stappen, screenshots, FAQ
-
-### 2) Technische SEO
-
-Techniek is het fundament. Als het fundament zwak is, plafonneert de groei.
-
-Basis op orde:
-
-- Indexatie: geen per ongeluk noindex, robots.txt blokkeert niets belangrijks, sitemap.xml is ingediend
-- Snelheid en gebruiksvriendelijkheid (mobiel)
-- Schone redirects (geen chains) en zo min mogelijk kapotte paginas (404/5xx)
-- Canonicals die logisch zijn (meestal self-referencing)
+- Indexatie controle: robots.txt, noindex, canonical, sitemap
+- URL consistentie: HTTPS, redirects netjes
+- Interne links: click depth, orphan pages, breadcrumbs
+- Performance: mobiel en Core Web Vitals
+- Rendering: ziet Google de content?
 
 ### 3) Autoriteit (vertrouwen)
 
-Autoriteit is waarom twee vergelijkbare paginas niet hetzelfde ranken.
+- Relevante backlinks (kwaliteit > kwantiteit)
+- Mentions, reviews, brand searches
+- Content die anderen citeren
 
-Signalen die helpen:
+## Praktische workflow (0-90 dagen)
 
-- Relevante backlinks (kwaliteit boven kwantiteit)
-- Mentions, reviews en naamsbekendheid
-- Helpful content die mensen echt willen delen en citeren
+### Dagen 0-7
 
-## Simpel SEO stappenplan (in de juiste volgorde)
+- Search Console + GA4 koppelen
+- 1-3 conversies bepalen
+- Top paginas en queries exporteren
 
-### Stap 0 - Meten
+### Dagen 8-30
 
-Zonder metingen ga je gokken.
+- P0 blockers fixen
+- 5-10 paginas met impressions verbeteren
+- Topics mappen -> 1 hoofd pagina per topic
 
-- Google Search Console: zoekopdrachten, paginas, indexatie
-- GA4: kwaliteit van verkeer en conversies
-- Definieer 1-3 conversies (formulier, aankoop, call)
+### Dagen 31-90
 
-### Stap 1 - Fix crawl en indexatie blokkades
+- Topic clusters bouwen (hub + supporting)
+- Interne links beide kanten op
+- Autoriteit opbouwen en winnaars updaten
 
-Voor je aan content werkt: zorg dat Google erbij kan.
+## Keywords kiezen die geld opleveren
 
-Checklist:
-
-- HTTPS ok (geen mixed content)
-- robots.txt ok (geen belangrijke delen geblokkeerd)
-- Geen per ongeluk noindex
-- sitemap.xml bestaat en is ingediend
-- Grote 404/5xx issues oplossen
-- Redirect chains voorkomen
-
-### Stap 2 - Kies zoekwoorden op intentie (niet alleen volume)
-
-Vraag: wat wil iemand echt doen?
-
-- Leren: gids, tutorial, checklist
-- Vergelijken: best, vs, alternatieven, reviews
-- Kopen: prijs, offerte, demo, productpagina
-- Navigeren: merknaam + dienst
-
-Kies gevechten die je kunt winnen. Start met zoekwoorden waar jij een betere pagina kunt maken dan de huidige top resultaten.
-
-### Stap 3 - Maak 1 sterke pagina per onderwerp
-
-Maak per onderwerp 1 hoofdpagina en ondersteun dit met gerelateerde artikelen.
-
-Per pagina:
-
-- 1 duidelijk hoofdonderwerp (voorkom interne concurrentie)
-- Title/H1 matcht de zoekopdracht
-- Korte intro met direct antwoord
-- Secties die echte vragen beantwoorden (FAQ helpt)
-- Interne links naar en vanuit relevante paginas
-
-### Stap 4 - Interne links verbeteren
-
-Interne links zijn gratis hefboom.
-
-- Link van sterke paginas naar je belangrijkste paginas
-- Gebruik beschrijvende ankers (niet "klik hier")
-- Belangrijke paginas binnen 2-3 klikken
-- Bouw clusters (hub + ondersteunende paginas)
-
-### Stap 5 - Autoriteit bouwen (zonder shortcuts)
-
-Geen spam. Focus op:
-
-- Content die het waard is om te citeren
-- Partners, PR, communities in je niche
-- Kwalitatieve, relevante links in plaats van goedkoop volume
-
-### Stap 6 - Update wat al rankt
-
-Snelle winst zit vaak bij paginas die al positie 4-20 staan.
-
-- Voeg ontbrekende secties toe
-- Verbeter snippet (title + meta description)
-- Voeg interne links toe
-- Update voorbeelden en screenshots
-
-## Mijn werkwijze (maand 1 + maandelijkse cyclus)
-
-### Maand 1: strategie en nulmeting
-
-- Meten: Search Console + GA4
-- Audit: indexatie, techniek, interne links
-- Research: zoekwoorden en intentie
-- Roadmap: wat eerst (impact vs effort)
-
-### Maandelijks: doen, meten, herhalen
-
-- Content publiceren of upgraden in batches
-- 2-3 technische punten fixen met hoogste impact
-- Interne links versterken
-- Autoriteit signalen bouwen/verdienen
-- Rapporteren: wat bewoog, waarom, wat nu
-
-## Snelle SEO tips (vandaag doen)
-
-- Herschrijf titles van je belangrijkste paginas (helder voordeel + onderwerp)
-- Fix obvious 404's en redirect chains
-- Voeg 5 interne links toe naar je top 3 pagina's
-- Update 1 pagina die al impressies krijgt in Search Console
-- Comprimeer grote afbeeldingen en schrap zware scripts die je niet nodig hebt
+- Intent match
+- Business value
+- SERP realiteit (ads/lokaal/AI)
+- Kans om te winnen
+- 1 pagina kan intent volledig afdekken
 
 ## Veelgemaakte fouten
 
-- Content plaatsen zonder plan (geen clusters)
-- Alleen techniek doen en paginas niet verbeteren
-- Alleen op hoge volumes mikken (te competitief)
-- Lage kwaliteit links kopen
-- Geen conversies meten (rankings zonder omzet)
-
-## SEO in 2026: AI in de zoekresultaten
-
-Google toont steeds vaker AI-gedreven antwoorden en extra SERP features. Dat betekent meestal:
-
-- Duidelijkheid wint: antwoord vroeg, daarna diepte
-- Structuur wint: koppen, lists, FAQ
-- Bewijs wint: ervaring, voorbeelden, updates
-
-De basis blijft hetzelfde: maak de beste pagina voor de intentie en bouw vertrouwen.
+- Geen SERP check
+- Losse blogs zonder clusters
+- Kannibalisatie (meerdere paginas, zelfde intent)
+- Alles fixen behalve P0/P1
+- Rankings meten zonder conversies
 
 ## Conclusie
 
-SEO optimalisatie is geen truc. Het is consequent werken aan content, techniek en autoriteit.
-
-Wil je hulp bij het kiezen van de snelste SEO wins voor jouw website? Check /work-with-me.
+SEO is een herhaalbaar proces: meten, blockers fixen, beste paginas bouwen, verbinden, autoriteit verdienen.
 `.trim(),
     },
     en: {
-      title: 'What is SEO (search engine optimization)? Simple guide + workflow',
+      title: 'What is SEO (search engine optimization)? Complete guide + workflow',
       topic: 'SEO',
-      metaTitle: 'What is SEO optimization? | Simple guide and workflow',
-      metaDescription: 'SEO optimization explained simply: what it is, the 3 pillars (content, technical, authority) and a practical roadmap to start today.',
+      metaTitle: 'What is SEO optimization? | Complete guide and workflow',
+      metaDescription: 'Complete SEO guide: how search engines work, the 3 pillars, a 0-90 day workflow, and a practical checklist.',
       content: `
-SEO (search engine optimization) is the work you do to get more qualified traffic from the organic results in Google (and other search engines). The goal is not "rank for the sake of ranking", but: relevant visitors and conversions.
+SEO (search engine optimization) is the work you do to earn qualified visits from organic search results. The goal is not rankings for their own sake, but predictable traffic that converts.
 
-## What is SEO optimization?
+If you want the one-line definition: SEO aligns intent, content, technical foundations, and authority so search engines can confidently recommend your page.
 
-SEO is improving your website so search engines can crawl it, understand it, and trust it enough to show it for the right searches.
+## How search engines work (crawl -> render -> index -> rank)
 
-In practice, SEO is a mix of:
+Search engines do four things, in order:
 
-- Understanding what people search for (intent)
-- Creating the best page for that intent
-- Removing technical friction
-- Building trust (authority)
+1. Crawl: discover your URLs via links and sitemaps.
+2. Render: load the page (often with JavaScript) to see what users see.
+3. Index: store and understand the content (topics, entities, intent).
+4. Rank: decide which pages best satisfy the query.
 
-## What does SEO deliver?
+SEO breaks when one step fails:
 
-If you do it well, SEO can deliver:
+- Crawl issues: broken internal links, blocked robots.txt, slow server
+- Render issues: content only visible after JS, blocked resources
+- Index issues: noindex, wrong canonicals, duplicates, thin pages
+- Rank issues: wrong intent, weak content, weak authority, poor UX
 
-- More organic visitors without paying per click
-- Better lead quality (intent-driven traffic)
-- Lower cost per lead over time
-- Stronger brand: you show up again and again
+## The 3 pillars of SEO
 
-SEO takes time, but good pages can keep working for you for months or years.
+### 1) Content (intent, depth, usefulness)
 
-## The 3 pillars of SEO (simple)
+- Right page type for the SERP
+- Fast answer up front, depth for serious readers
+- Clear structure (H2/H3) and scannability
+- Evidence: examples, screenshots, data, steps, FAQ
 
-### 1) Content
+Rule: one primary intent per page.
 
-Content is what ranks. Not "more words", but better answers.
+### 2) Technical SEO (indexation and experience)
 
-Good SEO content:
+- Indexing control: robots.txt, noindex, canonical, sitemap
+- URL consistency: HTTPS, www/non-www, trailing slash, redirect hygiene
+- Internal links: click depth, orphan pages, breadcrumbs
+- Performance: mobile and Core Web Vitals
+- Rendering: Google can see the content
 
-- Answers the question fast, then goes deeper
-- Matches intent (informational, commercial, transactional)
-- Uses clear structure (H2/H3) so it is easy to scan
-- Adds proof: examples, screenshots, pricing, steps, FAQ
+### 3) Authority (trust and defensibility)
 
-### 2) Technical SEO
+- Relevant backlinks from real sites (quality > quantity)
+- Mentions, reviews, and brand searches
+- Content that gets referenced
 
-Technical SEO is the foundation. If the foundation is weak, growth hits a ceiling.
+## Practical workflow (0-90 days)
 
-Basics to get right:
+### Days 0-7
 
-- Indexation: no accidental noindex, robots.txt not blocking, sitemap.xml submitted
-- Speed and usability (mobile)
-- Clean redirects (no chains) and no broken pages (404/5xx)
-- Canonicals that make sense (often self-referencing)
+- Connect Search Console and GA4
+- Define 1-3 conversions
+- Export top pages and queries
 
-### 3) Authority (trust)
+### Days 8-30
 
-Authority is why two similar pages do not rank the same.
+- Fix P0 blockers
+- Improve 5-10 pages with impressions
+- Map topics -> one main page each
 
-Authority signals include:
+### Days 31-90
 
-- Relevant backlinks (quality over quantity)
-- Brand mentions and reviews
-- Helpful content that earns references naturally
-
-## A simple SEO roadmap (do this in order)
-
-### Step 0 - Set up measurement
-
-Without measurement you will guess.
-
-- Google Search Console: queries, pages, indexation
-- GA4: traffic quality and conversions
-- Define 1-3 core conversions (form submit, purchase, call)
-
-### Step 1 - Fix crawl and index blockers
-
-Before content, make sure Google can actually access and index your pages.
-
-Checklist:
-
-- HTTPS ok (no mixed content)
-- robots.txt ok (no important sections blocked)
-- No accidental noindex
-- sitemap.xml exists and is submitted
-- Fix big 404/5xx issues
-- Avoid redirect chains
-
-### Step 2 - Choose keywords by intent (not volume only)
-
-Ask: what does the searcher want to do?
-
-- Learn: guide, tutorial, checklist
-- Compare: best, vs, alternatives, reviews
-- Buy: pricing, quote, demo, product page
-- Navigate: brand + product/service
-
-Pick battles you can win. Start with keywords where you can create a better page than the current top results.
-
-### Step 3 - Build 1 strong page per topic
-
-For each topic, create one main page and support it with related articles.
-
-Per page:
-
-- One clear main topic (avoid internal cannibalization)
-- Title/H1 that matches the search
-- Short intro with the direct answer
-- Sections that answer real questions (FAQ helps)
-- Internal links to and from relevant pages
-
-### Step 4 - Improve internal linking
-
-Internal links are free leverage.
-
-- Link from strong pages to money pages
-- Use descriptive anchors (not "click here")
-- Important pages within 2-3 clicks
 - Build topic clusters (hub + supporting pages)
+- Add internal links both ways
+- Start authority work and update winners
 
-### Step 5 - Build authority (no shortcuts)
+## How to pick keywords that make money
 
-Skip spam. Focus on:
-
-- Creating content worth citing
-- Partnerships, PR, communities in your niche
-- High-quality, relevant links over cheap volume
-
-### Step 6 - Refresh what already ranks
-
-Fast wins often come from pages that rank positions 4-20.
-
-- Expand missing sections
-- Improve the snippet (title + meta description)
-- Add internal links
-- Update examples and screenshots
-
-## My practical workflow (month 1 + monthly cycle)
-
-### Month 1: strategy and baseline
-
-- Measure: Search Console + GA4
-- Audit: indexation, technical issues, internal links
-- Research: keywords and intent
-- Roadmap: what to fix first (impact vs effort)
-
-### Monthly: execute, measure, repeat
-
-- Publish or upgrade content in batches
-- Fix 2-3 technical items with the highest impact
-- Strengthen internal links
-- Build/earn authority signals
-- Report: what moved, why, what is next
-
-## Quick SEO tips you can do today
-
-- Rewrite titles for your top pages (clear benefit + topic)
-- Fix obvious 404 pages and redirect chains
-- Add 5 internal links to your 3 most important pages
-- Update one page that already gets impressions in Search Console
-- Compress large images and remove heavy scripts you do not need
+- Intent fit
+- Business value
+- SERP reality (ads/local/AI answers)
+- Ability to win
+- One page can satisfy the intent
 
 ## Common mistakes
 
-- Publishing content without a plan (no clusters)
-- Only doing technical work and never improving pages
-- Targeting only high-volume keywords (too competitive)
-- Buying low-quality links
-- Not tracking conversions (rankings without revenue)
-
-## SEO in 2026: AI in search
-
-Google is increasingly showing AI-driven answers and rich SERP features. That usually means:
-
-- Clarity wins: answer early, then add depth
-- Structure wins: headings, lists, FAQ
-- Proof wins: experience, examples, updates
-
-The fundamentals stay the same: build the best page for the intent, and earn trust.
+- No SERP check
+- Random posts without clusters
+- Cannibalization (multiple pages, same intent)
+- Fixing every warning instead of P0/P1
+- Tracking rankings but not conversions
 
 ## Conclusion
 
-SEO optimization is not a trick. It is consistent work on content, technical foundations, and authority.
-
-Want help picking the fastest SEO wins for your site? See /work-with-me.
+SEO is a repeatable process: measure, fix blockers, publish the best pages, connect them, and earn authority.
 `.trim(),
     },
     de: {
-      title: 'Was ist SEO (Suchmaschinenoptimierung)? Einfache Anleitung und Vorgehen',
+      title: 'Was ist SEO (Suchmaschinenoptimierung)? Kompletter Guide und Ablauf',
       topic: 'SEO',
-      metaTitle: 'Was ist SEO Optimierung? | Einfache Anleitung',
-      metaDescription: 'SEO einfach erklaert: was es ist, die 3 Saeulen (Content, Technik, Autoritaet) und ein praktischer Plan, um heute zu starten.',
+      metaTitle: 'Was ist SEO? | Kompletter Guide',
+      metaDescription: 'SEO Guide mit Tiefe: Suchmaschinen Ablauf, 3 Saeulen, 0-90 Tage Workflow und praktische Checks.',
       content: `
-SEO (Suchmaschinenoptimierung) ist die Arbeit, mit der du mehr qualifizierte Besucher aus den organischen Google-Ergebnissen bekommst. Ziel ist nicht "Ranking um jeden Preis", sondern: relevante Besucher und Conversions.
+SEO (Suchmaschinenoptimierung) ist die Arbeit, mit der du qualifizierte Besucher aus organischen Suchergebnissen gewinnst. Ziel sind planbare Besucher und Conversions, nicht Rankings um jeden Preis.
 
-## Was ist SEO Optimierung?
+Kurz: SEO verbindet Intent, Content, Technik und Autoritaet, damit Suchmaschinen deine Seite sicher empfehlen.
 
-SEO bedeutet, deine Website so zu verbessern, dass Suchmaschinen sie crawlen, verstehen und ihr genug vertrauen, um sie fuer passende Suchanfragen zu zeigen.
+## Wie Suchmaschinen arbeiten (crawl -> render -> index -> rank)
 
-In der Praxis ist SEO eine Mischung aus:
+- Crawlen: URLs ueber Links und Sitemaps finden
+- Rendern: Seite laden (oft mit JavaScript)
+- Indexieren: Inhalte verstehen und speichern
+- Ranken: beste Ergebnisse auswaehlen
 
-- Suchintention verstehen
-- Die beste Seite fuer diese Intention erstellen
-- Technische Reibung entfernen
-- Vertrauen aufbauen (Autoritaet)
+Probleme entstehen, wenn ein Schritt faellt: Crawl Fehler, Rendering Probleme, falsche Canonicals oder falscher Intent.
 
-## Was bringt SEO?
+## Die 3 Saeulen
 
-Gute SEO kann bringen:
+### Content
 
-- Mehr organische Besucher ohne pro Klick zu zahlen
-- Bessere Leads (Intent-getrieben)
-- Sinkende Kosten pro Lead ueber Zeit
-- Staerkere Marke durch wiederholte Sichtbarkeit
+- Richtiger Seitentyp fuer die SERP
+- Schnelle Antwort, dann Tiefe
+- Klare Struktur und Beweise
 
-SEO braucht Zeit, aber gute Seiten koennen lange wirken.
+### Technik
 
-## Die 3 Saeulen von SEO
+- robots/noindex/canonical/sitemap
+- URL Konsistenz und Redirect Hygiene
+- Interne Links und Performance
+- Rendering: Google sieht die Inhalte
 
-### 1) Content
+### Autoritaet
 
-Content ist, was rankt. Nicht "mehr Text", sondern bessere Antworten.
+- Relevante Backlinks
+- Mentions, Reviews, Brand Searches
+- Content der zitiert wird
 
-- Frage schnell beantworten, dann vertiefen
-- Intention treffen (Info, Vergleich, Kauf)
-- Klare Struktur (H2/H3)
-- Beweise: Beispiele, Schritte, FAQ
+## Workflow (0-90 Tage)
 
-### 2) Technische SEO
+- Tage 0-7: Messen, Baseline, Top Seiten exportieren
+- Tage 8-30: P0 Fixes, Seiten mit Impressions verbessern
+- Tage 31-90: Topic Cluster, interne Links, Autoritaet starten
 
-Technik ist das Fundament.
+## Keywords die sich lohnen
 
-- Indexierung: kein versehentliches noindex, robots.txt ok, sitemap.xml eingereicht
-- Speed und Mobile UX
-- Saubere Redirects, wenig 404/5xx
-- Logische Canonicals
-
-### 3) Autoritaet
-
-Autoritaet erklaert, warum aehnliche Seiten unterschiedlich ranken.
-
-- Relevante Backlinks (Qualitaet vor Quantitaet)
-- Brand Mentions und Reviews
-- Content, der zitiert wird
-
-## Ein einfacher SEO Fahrplan (Reihenfolge)
-
-### Schritt 0 - Messen
-
-- Google Search Console
-- GA4 + Conversions
-
-### Schritt 1 - Crawl/Index Blocker fixen
-
-- HTTPS ok
-- robots.txt ok
-- Kein noindex auf wichtigen Seiten
-- sitemap.xml vorhanden und eingereicht
-- 404/5xx grob aufraeumen
-- Redirect Chains vermeiden
-
-### Schritt 2 - Keywords nach Intention
-
-- Lernen, Vergleichen, Kaufen, Navigation
-
-Starte mit Themen, bei denen du die Top Ergebnisse realistisch schlagen kannst.
-
-### Schritt 3 - Pro Thema eine starke Seite
-
-- Ein Hauptthema pro Seite
-- Guter Title/H1 + kurze Antwort im Intro
-- Interne Links und FAQ
-
-### Schritt 4 - Interne Links verbessern
-
-- Von starken Seiten zu wichtigen Seiten linken
-- Beschreibende Anchor Texte
-- Wichtige Seiten in 2-3 Klicks erreichbar
-
-### Schritt 5 - Autoritaet aufbauen
-
-- Keine Spam Links
-- Relevante Partnerschaften, PR, Community
-
-### Schritt 6 - Refresh statt immer neu
-
-Seiten auf Position 4-20 bringen oft schnelle Wins:
-
-- Fehlende Abschnitte ergaenzen
-- Snippet verbessern (Title + Meta)
-- Interne Links
+- Intent passt
+- Business Value klar
+- SERP nicht zu noisy
+- Realistische Chance zu gewinnen
 
 ## Fazit
 
-SEO ist kein Trick. Es ist konsequente Arbeit an Content, Technik und Autoritaet.
+SEO ist ein Prozess: messen, Blocker fixen, beste Seiten bauen, verlinken, Autoritaet verdienen.
 `.trim(),
     },
     sv: {
-      title: 'Vad ar SEO (sokmotoroptimering)? Enkel guide och arbetssatt',
+      title: 'Vad ar SEO (sokmotoroptimering)? Komplett guide och workflow',
       topic: 'SEO',
-      metaTitle: 'Vad ar SEO? | Enkel guide och arbetssatt',
-      metaDescription: 'SEO enkelt forklarat: vad det ar, 3 pelare (content, teknik, auktoritet) och en praktisk plan for att komma igang idag.',
+      metaTitle: 'Vad ar SEO? | Komplett guide',
+      metaDescription: 'SEO guide med djup: hur sokmotorer fungerar, 3 pelare och en 0-90 dagars workflow.',
       content: `
-SEO (sokmotoroptimering) ar arbetet du gor for att fa mer kvalificerad trafik fran Googles organiska resultat. Malet ar inte "rankning for rankningens skull", utan: relevanta besokare och konverteringar.
+SEO ar arbetet du gor for att fa kvalificerad trafik fran organiska resultat. Malet ar inte bara rankingar, utan trafik som konverterar.
 
-## Vad ar SEO?
+Kort: SEO kopplar intent, content, teknik och auktoritet sa sokmotorer valjer din sida.
 
-SEO betyder att du forbattrar din webbplats sa att sokmotorer kan crawla den, forsta den, och lita pa den nog for att visa den for ratt sokningar.
+## Hur sokmotorer fungerar (crawl -> render -> index -> rank)
 
-I praktiken ar SEO en mix av:
+- Crawl: hitta URLs via lankar och sitemaps
+- Render: ladda sidan (ofta med JavaScript)
+- Index: forsta och lagra innehall
+- Rank: valja basta svar
 
-- Forsta sokintention
-- Skapa den basta sidan for intentionen
-- Ta bort tekniska hinder
-- Bygga forstroende (auktoritet)
+## Tre pelare
 
-## Vad ger SEO?
+### Content
 
-Bra SEO kan ge:
+- Ratt sidtyp for SERP
+- Snabbt svar + djup
+- Struktur och bevis
 
-- Mer organisk trafik utan att betala per klick
-- Battre leads (intent-baserad trafik)
-- Lagre kostnad per lead over tid
-- Starkare varumarke genom synlighet
+### Teknik
 
-SEO tar tid, men bra sidor kan fortsatta leverera lange.
+- robots/noindex/canonical/sitemap
+- URL konsistens och redirects
+- Internlankar och performance
+- Rendering: Google ser innehall
 
-## 3 pelare i SEO
+### Auktoritet
 
-### 1) Content
-
-- Svara snabbt, ga djupare sen
-- Matcha intention (lara, jamfora, kop)
-- Tydlig struktur (H2/H3)
-- Bevis: exempel, steg, FAQ
-
-### 2) Teknik
-
-- Indexering: inga misstag med noindex, robots.txt ok, sitemap.xml inskickad
-- Hastighet och mobil upplevelse
-- Fixa 404/5xx och undvik redirect chains
-- Logiska canonicals
-
-### 3) Auktoritet
-
-- Relevanta backlinks (kvalitet > kvantitet)
+- Relevanta backlinks
 - Mentions och reviews
-- Content som folk citerar
+- Innehall som citeras
 
-## Enkel roadmap (i ordning)
+## Workflow (0-90 dagar)
 
-### Steg 0 - Mata
+- 0-7: mata, baseline, top sidor
+- 8-30: P0 fixes, forbedra sidor med impressions
+- 31-90: topic clusters, interna lankar, auktoritet
 
-- Search Console
-- GA4 + konverteringar
+## Keyword val
 
-### Steg 1 - Fixa crawl och index hinder
-
-### Steg 2 - Valj keywords efter intention
-
-### Steg 3 - En stark sida per topic
-
-### Steg 4 - Internlankning
-
-### Steg 5 - Bygg auktoritet utan spam
-
-### Steg 6 - Uppdatera sidor som redan rankar
+- Intent match
+- Affarsvarde
+- SERP verklighet
+- Realistisk vinst
 
 ## Slutsats
 
-SEO ar inte ett trick. Det ar konsekvent arbete med content, teknik och auktoritet.
+SEO ar ett repetitivt system: mata, fixa, bygg, linka, bygg auktoritet.
 `.trim(),
     },
     da: {
-      title: 'Hvad er SEO (soegemaskineoptimering)? Simpel guide og metode',
+      title: 'Hvad er SEO (soegemaskineoptimering)? Komplet guide og workflow',
       topic: 'SEO',
-      metaTitle: 'Hvad er SEO? | Simpel guide og metode',
-      metaDescription: 'SEO forklaret simpelt: hvad det er, 3 soejler (content, teknik, autoritet) og en praktisk plan for at starte i dag.',
+      metaTitle: 'Hvad er SEO? | Komplet guide',
+      metaDescription: 'SEO guide med dybde: hvordan sokmotorer virker, 3 soejler og en 0-90 dages workflow.',
       content: `
-SEO (soegemaskineoptimering) er arbejdet du gor for at fa mere kvalificeret trafik fra Googles organiske resultater. Maalet er ikke "rangering for rangeringens skyld", men: relevante besoegende og konverteringer.
+SEO er arbejdet du gor for at fa kvalificeret organisk trafik. Malet er ikke kun placeringer, men trafik der konverterer.
 
-## Hvad er SEO?
+Kort: SEO samler intent, content, teknik og autoritet sa sokmotorer vaelger din side.
 
-SEO betyder at du forbedrer dit site, sa soegemaskiner kan crawle det, forsta det og stole pa det nok til at vise det for de rigtige soegninger.
+## Hvordan sokmotorer virker (crawl -> render -> index -> rank)
 
-I praksis er SEO en blanding af:
+- Crawl: find URLs via links og sitemaps
+- Render: load siden (ofte med JavaScript)
+- Index: forsta og gem indhold
+- Rank: vaelg de bedste svar
 
-- Forsta intention
-- Lave den bedste side til intentionen
-- Fjerne tekniske barrierer
-- Bygge tillid (autoritet)
+## Tre soejler
 
-## Hvad giver SEO?
+### Content
 
-God SEO kan give:
+- Rigtig sidetype til SERP
+- Hurtigt svar + dybde
+- Struktur og bevis
 
-- Mere organisk trafik uden at betale per klik
-- Bedre leads (intent-baseret trafik)
-- Lavere pris per lead over tid
-- Staerkere brand via synlighed
+### Teknik
 
-SEO tager tid, men gode sider kan arbejde for dig laenge.
+- robots/noindex/canonical/sitemap
+- URL konsistens og redirects
+- Interne links og performance
+- Rendering: Google ser indhold
 
-## 3 soejler i SEO
+### Autoritet
 
-### 1) Content
-
-- Svar hurtigt, ga dybere bagefter
-- Match intention (laere, sammenligne, koebe)
-- Klar struktur (H2/H3)
-- Bevis: eksempler, steps, FAQ
-
-### 2) Teknik
-
-- Indeksering: ingen noindex fejl, robots.txt ok, sitemap.xml indsendt
-- Hastighed og mobil UX
-- Fiks 404/5xx og undgaa redirect chains
-- Logiske canonicals
-
-### 3) Autoritet
-
-- Relevante backlinks (kvalitet > kvantitet)
+- Relevante backlinks
 - Mentions og reviews
-- Content som bliver citeret
+- Indhold der citeres
 
-## Simpel roadmap (i den rigtige raekkefoelge)
+## Workflow (0-90 dage)
 
-- Maal foerst (Search Console + GA4)
-- Fiks crawl/index blokeringer
-- Vaelg keywords efter intention
-- Byg 1 staerk side per emne
-- Forbedr interne links
-- Byg autoritet uden spam
-- Opdater sider der allerede ranker
+- 0-7: maaling, baseline, top sider
+- 8-30: P0 fixes, forbedr sider med impressions
+- 31-90: topic clusters, interne links, autoritet
+
+## Keyword valg
+
+- Intent match
+- Business value
+- SERP realitet
+- Realistisk chance
 
 ## Konklusion
 
-SEO er ikke et trick. Det er konsekvent arbejde med content, teknik og autoritet.
+SEO er en proces: maal, fix, byg, link, opbyg autoritet.
 `.trim(),
     },
     fr: {
-      title: "Qu'est-ce que le SEO (optimisation pour les moteurs de recherche)? Guide simple",
+      title: 'Qu est-ce que le SEO? Guide complet et workflow',
       topic: 'SEO',
-      metaTitle: "Qu'est-ce que le SEO? | Guide simple",
-      metaDescription: "SEO explique simplement: definition, 3 piliers (contenu, technique, autorite) et une feuille de route pratique pour demarrer aujourd'hui.",
+      metaTitle: 'Qu est-ce que le SEO? | Guide complet',
+      metaDescription: 'Guide SEO complet: fonctionnement des moteurs, 3 piliers et workflow 0-90 jours.',
       content: `
-Le SEO (optimisation pour les moteurs de recherche) est le travail que vous faites pour obtenir plus de trafic qualifie depuis les resultats organiques de Google. L'objectif n'est pas "rank pour rank", mais: des visiteurs pertinents et des conversions.
+Le SEO est le travail qui permet d'obtenir du trafic qualifie depuis les resultats organiques. Le but n'est pas seulement les positions, mais un trafic qui convertit.
 
-## Qu'est-ce que le SEO?
+En bref: SEO aligne intent, contenu, technique et autorite pour que les moteurs choisissent ta page.
 
-Le SEO consiste a ameliorer votre site pour que les moteurs puissent le crawler, le comprendre, et lui faire confiance pour le montrer sur les bonnes requetes.
+## Comment les moteurs fonctionnent (crawl -> render -> index -> rank)
 
-En pratique, le SEO combine:
+- Crawl: trouver les URLs via liens et sitemaps
+- Render: charger la page (souvent avec JavaScript)
+- Index: comprendre et stocker le contenu
+- Rank: choisir les meilleurs resultats
 
-- Comprendre l'intention de recherche
-- Creer la meilleure page pour cette intention
-- Enlever les frictions techniques
-- Construire la confiance (autorite)
+## 3 piliers
 
-## Que peut apporter le SEO?
+### Contenu
 
-Un bon SEO peut apporter:
+- Bon type de page pour la SERP
+- Reponse rapide + profondeur
+- Structure et preuves
 
-- Plus de trafic organique sans payer par clic
-- Une meilleure qualite de leads
-- Un cout par lead plus bas sur la duree
-- Une marque plus forte via la visibilite
+### Technique
 
-## Les 3 piliers du SEO
+- robots/noindex/canonical/sitemap
+- URLs coherentes et redirects propres
+- Liens internes et performance
+- Rendering: Google voit le contenu
 
-### 1) Contenu
+### Autorite
 
-- Repondre vite, puis aller plus loin
-- Matcher l'intention (apprendre, comparer, acheter)
-- Structure claire (H2/H3)
-- Preuves: exemples, etapes, FAQ
-
-### 2) Technique
-
-- Indexation: pas de noindex accidentel, robots.txt ok, sitemap.xml soumis
-- Vitesse et mobile
-- Corriger 404/5xx et eviter les redirect chains
-- Canonicals logiques
-
-### 3) Autorite
-
-- Backlinks pertinents (qualite > quantite)
+- Backlinks pertinents
 - Mentions et avis
-- Contenu qui merite d'etre cite
+- Contenu qui se fait citer
 
-## Roadmap simple
+## Workflow (0-90 jours)
 
-- Mesurer (Search Console + GA4)
-- Corriger crawl/index
-- Choisir les mots-cles par intention
-- 1 page forte par sujet
-- Liens internes
-- Autorite sans spam
-- Mettre a jour ce qui ranke deja
+- 0-7: mesure, baseline, top pages
+- 8-30: P0 fixes, ameliorer pages avec impressions
+- 31-90: topic clusters, liens internes, autorite
+
+## Choix des mots-cles
+
+- Intent match
+- Valeur business
+- Realite SERP
+- Chance realiste
 
 ## Conclusion
 
-Le SEO n'est pas un truc. C'est du travail regulier sur le contenu, la technique et la confiance.
+Le SEO est un systeme: mesurer, corriger, construire, relier, gagner l'autorite.
 `.trim(),
     },
     it: {
-      title: "Che cos'e la SEO (ottimizzazione per i motori di ricerca)? Guida semplice",
+      title: 'Che cos e la SEO? Guida completa e workflow',
       topic: 'SEO',
-      metaTitle: "Che cos'e la SEO? | Guida semplice",
-      metaDescription: 'SEO spiegata in modo semplice: cos e, 3 pilastri (contenuti, tecnica, autorevolezza) e una roadmap pratica per iniziare oggi.',
+      metaTitle: 'Che cos e la SEO? | Guida completa',
+      metaDescription: 'Guida SEO completa: come funzionano i motori, 3 pilastri e workflow 0-90 giorni.',
       content: `
-La SEO (ottimizzazione per i motori di ricerca) e il lavoro che fai per ottenere piu traffico qualificato dai risultati organici di Google. L'obiettivo non e "rank per rank", ma: visitatori rilevanti e conversioni.
+La SEO e il lavoro che porta traffico qualificato dai risultati organici. L'obiettivo non e solo la posizione, ma traffico che converte.
 
-## Che cos'e la SEO?
+In breve: SEO allinea intent, contenuti, tecnica e autorevolezza per far scegliere la tua pagina ai motori.
 
-SEO significa migliorare il sito in modo che i motori possano fare crawl, capire i contenuti e fidarsi abbastanza da mostrarti per le query giuste.
+## Come funzionano i motori (crawl -> render -> index -> rank)
 
-In pratica, la SEO e un mix di:
+- Crawl: trovare URL via link e sitemap
+- Render: caricare la pagina (spesso con JavaScript)
+- Index: capire e salvare il contenuto
+- Rank: scegliere i migliori risultati
 
-- Capire l'intento di ricerca
-- Creare la pagina migliore per quell'intento
-- Rimuovere attriti tecnici
-- Costruire fiducia (autorevolezza)
+## 3 pilastri
 
-## Cosa porta la SEO?
+### Contenuti
 
-Una buona SEO puo portare:
+- Tipo di pagina giusto per la SERP
+- Risposta veloce + profondita
+- Struttura e prove
 
-- Piu traffico organico senza pagare per click
-- Lead di qualita migliore
-- Costo per lead piu basso nel tempo
-- Brand piu forte grazie alla visibilita
+### Tecnica
 
-## I 3 pilastri della SEO
+- robots/noindex/canonical/sitemap
+- URL coerenti e redirect puliti
+- Link interni e performance
+- Rendering: Google vede il contenuto
 
-### 1) Contenuti
+### Autorevolezza
 
-- Rispondi subito, poi vai in profondita
-- Matcha l'intento (imparare, confrontare, comprare)
-- Struttura chiara (H2/H3)
-- Prove: esempi, step, FAQ
+- Backlink rilevanti
+- Mentions e review
+- Contenuto che viene citato
 
-### 2) Tecnica
+## Workflow (0-90 giorni)
 
-- Indicizzazione: no noindex accidentale, robots.txt ok, sitemap.xml inviato
-- Velocita e mobile
-- Fix 404/5xx ed evita redirect chains
-- Canonical logici
+- 0-7: misurazioni, baseline, top pagine
+- 8-30: P0 fixes, migliorare pagine con impressions
+- 31-90: topic clusters, link interni, autorevolezza
 
-### 3) Autorevolezza
+## Scelta keyword
 
-- Backlink rilevanti (qualita > quantita)
-- Mentions e recensioni
-- Contenuti che meritano citazioni
-
-## Roadmap semplice
-
-- Misura (Search Console + GA4)
-- Fix crawl/index
-- Scegli keyword per intento
-- 1 pagina forte per topic
-- Link interni
-- Autorevolezza senza spam
-- Aggiorna cio che gia ranka
+- Intent match
+- Valore business
+- Realta SERP
+- Chance realistica
 
 ## Conclusione
 
-La SEO non e un trucco. E un lavoro costante su contenuti, tecnica e fiducia.
+La SEO e un processo: misurare, correggere, costruire, collegare, guadagnare autorevolezza.
 `.trim(),
     },
   },

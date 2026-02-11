@@ -38,21 +38,56 @@ const article = {
   slug: 'hoog-in-google',
   topic: 'SEO',
   status: 'PUBLISHED',
-  title: 'Hoog in Google komen: simpel SEO stappenplan',
+  title: 'Hoog in Google komen: complete SEO roadmap (stappenplan)',
   content: `
-## Wat betekent "hoog in Google"?
+Hoog in Google komen betekent: je wordt zichtbaar op zoekopdrachten die passen bij je aanbod, en je pagina levert niet alleen verkeer maar ook acties (leads, aanvragen of aankopen).
 
-"Hoog in Google" betekent: jouw pagina staat zichtbaar op relevante zoekopdrachten, en levert bezoekers op die ook echt klant kunnen worden.
+Een #1 positie op een keyword dat niet converteert is geen succes. SEO gaat dus altijd over: intent + waarde + uitvoering.
 
-Niet elk keyword is even waardevol. Een #1 positie met nul conversies is geen succes.
+## Hoe Google bepaalt wie hoog komt (simpel uitgelegd)
 
-## Hoe kom je hoog in Google? (de 3 pijlers)
+Google doet grofweg 3 dingen:
+
+- Crawlen: je pagina vinden
+- Indexeren: je pagina begrijpen en opslaan
+- Ranken: de beste resultaten kiezen voor een zoekopdracht
+
+Als je faalt op 1 van deze stappen, ga je niet structureel stijgen.
+
+### Crawlen (gevonden worden)
+
+Je helpt Google met:
+
+- Interne links (logische navigatie)
+- Sitemap.xml
+- Robots.txt die niets belangrijks blokkeert
+- Snelle pagina's (crawl budget)
+
+### Indexeren (begrepen worden)
+
+Je voorkomt indexatie problemen met:
+
+- Goede status codes (geen 404/5xx)
+- Logische canonicals (meestal self-referencing)
+- Geen per ongeluk noindex
+- Duplicate content oplossen (of bundelen)
+
+### Ranken (gekozen worden)
+
+Hier draait het om:
+
+- Intent match (het juiste type pagina)
+- Content kwaliteit en volledigheid
+- Gebruikerservaring (snel, mobiel, duidelijk)
+- Autoriteit en vertrouwen (links, mentions, brand)
+
+## De 3 pijlers van hoog in Google staan
 
 SEO bestaat in de praktijk uit 3 onderdelen die elkaar versterken:
 
 - Content: de beste pagina maken voor een zoekintentie
 - Techniek: zorgen dat Google alles kan crawlen, begrijpen en snel laden
-- Autoriteit: laten zien dat je een betrouwbare bron bent (o.a. via links en brand signalen)
+- Autoriteit: laten zien dat je een betrouwbare bron bent (links + brand signalen)
 
 Als 1 pijler ontbreekt, ga je bijna altijd plafonneren.
 
@@ -60,22 +95,25 @@ Als 1 pijler ontbreekt, ga je bijna altijd plafonneren.
 
 Zonder metingen weet je niet of je vooruitgaat.
 
-- Koppel Google Search Console
-- Koppel GA4 (en zet conversies goed)
-- Maak een simpele nulmeting: top paginas, top queries, conversies
+- Koppel Google Search Console (impressions, clicks, indexatie)
+- Koppel GA4 (conversies en kwaliteit)
+- Maak een nulmeting: top paginas, top queries, top conversies
 
-## Stap 1 - Fix indexatie en technische blokkades
+Tip: definieer 1-3 conversies die echt tellen (formulier, call, aankoop).
 
-Dit is prioriteit #1. Als Google je paginas niet kan indexeren, doet de rest weinig.
+## Stap 1 - Fix indexatie en technische blokkades (prioriteit #1)
 
-Check:
+Als Google je paginas niet kan indexeren, doet de rest weinig.
+
+Checklist:
 
 - HTTPS goed (geen mixed content)
-- robots.txt blokkeert niets belangrijks
-- geen noindex op belangrijke paginas
+- Robots.txt blokkeert niets belangrijks
+- Geen noindex op belangrijke paginas
 - sitemap.xml bestaat en is ingediend
-- canonical tags kloppen (meestal self-referencing)
+- Canonical tags kloppen
 - 404/5xx errors oplossen en redirect chains voorkomen
+- Snelheid op mobiel is acceptabel (Core Web Vitals als richting)
 
 ## Stap 2 - Kies keywords op intent (niet alleen volume)
 
@@ -83,65 +121,98 @@ Vraag altijd: wat wil iemand echt doen?
 
 - Informational: leren (blog, gids)
 - Commercial: vergelijken (best, vs, reviews)
-- Transactional: kopen / offerte (landingspagina)
+- Transactional: kopen / offerte (landing)
 - Navigational: merknaam
 
-Tip: begin met keywords waar je iets beters kunt maken dan de top 3.
+Kies keywords die passen bij je business value. Volume zonder intent is ruis.
 
-## Stap 3 - Maak 1 pagina per onderwerp (en maak hem beter)
+## Stap 3 - Bouw topic clusters (niet losse paginas)
 
-Google wil de beste match voor de intent.
+Google beloont sites die een onderwerp volledig dekken.
+
+Praktisch:
+
+- Kies 1 hoofdtopic (hub pagina)
+- Voeg 3-8 ondersteunende paginas toe (subvragen)
+- Link alles logisch aan elkaar (support <-> hub)
+
+Dit bouwt topical authority en maakt interne links meteen nuttig.
+
+## Stap 4 - Maak 1 pagina per intent (en maak hem beter dan top 3)
 
 Checklist per pagina:
 
-- Title en H1: duidelijk, met keyword, maar menselijk
-- Intro: direct antwoord + wat je gaat oplossen
-- Structuur: logische H2/H3, niet 1 grote lap tekst
-- Bewijs: voorbeelden, cases, screenshots, data
-- Media: visuals waar het helpt (geen vulling)
+- Title + H1: duidelijk, met keyword, maar menselijk
+- Intro: snel antwoord + wat je gaat oplossen
+- Structuur: logische H2/H3, scanbaar
+- Bewijs: voorbeelden, stappen, cases, screenshots
+- FAQ: beantwoord vragen die je in de SERP ziet
 - CTA: wat is de volgende stap?
 
 Geen trucjes. Gewoon de beste pagina maken.
 
-## Stap 4 - Interne links: maak je site logisch
+## Stap 5 - Interne links: maak je site logisch
 
-Interne links zijn gratis SEO.
+Interne links zijn gratis SEO, maar alleen als ze logisch zijn.
 
-- Link van je sterke paginas naar je belangrijke paginas
-- Gebruik duidelijke ankerteksten
-- Zorg dat belangrijke paginas binnen 2-3 klikken te bereiken zijn
-- Werk met clusters: 1 hoofdpagina + ondersteunende paginas
+- Link van sterke paginas naar je belangrijkste paginas
+- Gebruik duidelijke ankerteksten (niet "klik hier")
+- Belangrijke paginas binnen 2-3 klikken bereikbaar
+- Gebruik breadcrumbs waar het past (UX + structuur)
 
-## Stap 5 - Autoriteit: bouw vertrouwen (zonder spam)
+## Stap 6 - Snippet en CTR verbeteren (vaak snelle winst)
+
+Als je al impressions hebt, kan CTR optimalisatie snel werken.
+
+- Title: voordeel + onderwerp + specificiteit
+- Meta description: maak de belofte concreet
+- Structured data waar relevant (FAQ, product, review) als het klopt
+
+Kijk in Search Console welke paginas veel impressions maar lage CTR hebben.
+
+## Stap 7 - Autoriteit: bouw vertrouwen (zonder spam)
 
 Je hebt niet 1000 links nodig. Je hebt goede links nodig.
 
-- Zorg dat je content echt het waard is om te linken
-- Bouw relaties in je niche (partners, tools, communities)
-- Doe geen spammy startpagina links
+Wat wel werkt:
 
-Merk + reputatie helpen ook: reviews, mentions en goede PR.
+- Linkable assets (tools, research, templates)
+- Partnerships en relevante communities
+- PR en mentions (brand)
+- Reclaim: broken backlinks terughalen
 
-## Stap 6 - Update wat al rankt (sneller dan nieuw)
+Wat niet werkt (op termijn):
+
+- Spammy startpagina links
+- Link farms en goedkope bulk links
+
+## Stap 8 - Update wat al rankt (sneller dan nieuw)
 
 De snelste groei komt vaak uit paginas die al in de top 20 staan.
 
 - Pak queries waar je op positie 4-20 staat
-- Update de pagina: intent, extra secties, betere voorbeelden
+- Update: intent, extra secties, betere voorbeelden
 - Verbeter interne links
-- Maak je snippet beter (title/meta) voor hogere CTR
+- Verbeter snippet (title/meta) voor hogere CTR
 
 ## Quick wins (binnen 14 dagen)
 
 - Titles en meta descriptions uniek maken op je belangrijkste paginas
 - 404 fouten fixen en redirect chains opruimen
 - 5 interne links toevoegen naar je 3 belangrijkste pagina's
-- 1 top pagina updaten die al verkeer krijgt
-- PageSpeed: afbeeldingen comprimeren en onnodige scripts schrappen
+- 1 top pagina updaten die al impressions krijgt
+- Afbeeldingen comprimeren en zware scripts schrappen
+
+## 30 dagen plan (realistisch)
+
+- Week 1: meten + indexatie fixes (robots/noindex/sitemap/404)
+- Week 2: 1 quick win pagina updaten (positie 4-20) + interne links
+- Week 3: 1 hub pagina maken of verbeteren + 2 supporting paginas
+- Week 4: authority actie (reclaim/broken backlinks) + rapportage
 
 ## Valkuilen
 
-- Alleen content publiceren zonder plan
+- Alleen content publiceren zonder plan (geen clusters)
 - Alleen techniek fixen, maar geen sterke paginas maken
 - Links kopen / spam bouwen
 - Niet meten (geen Search Console/GA4)
@@ -149,181 +220,211 @@ De snelste groei komt vaak uit paginas die al in de top 20 staan.
 
 ## Mini checklist
 
-### Basis
-
-- Search Console actief
-- GA4 actief + conversies
-
-### Techniek
-
-- indexatie ok (robots/noindex/sitemap/canonical)
-- fouten ok (404/5xx/redirect chains)
-- snelheid ok (mobile)
-
-### Content
-
-- 1 pagina per intent
-- betere pagina dan top 3
-- duidelijke structuur + bewijs
-
-### Interne links
-
-- clusters gebouwd
-- belangrijke paginas binnen 2-3 klikken
-
-### Autoriteit
-
-- geen spam
-- focus op kwaliteit + mentions
+- Meting staat (GSC + GA4 + conversies)
+- Indexatie ok (robots/noindex/sitemap/canonical)
+- Fouten ok (404/5xx/redirect chains)
+- Content per intent + clusters
+- Interne links logisch (2-3 klikken)
+- Snippet verbeterd waar CTR laag is
+- Autoriteit plan zonder spam
 
 ## Conclusie
 
-Hoog in Google komen is geen truc. Het is: techniek op orde, de beste pagina maken, en vertrouwen bouwen.
+Hoog in Google komen is geen truc. Het is: techniek op orde, de beste pagina voor de intent, en vertrouwen bouwen.
 
-Wil je dat ik meekijk naar jouw snelste groeikansen? Check dan /work-with-me.
+Wil je dat ik meekijk naar jouw snelste groeikansen? Check /work-with-me.
 `.trim(),
   translations: {
     en: {
-      title: 'Rank higher in Google with SEO (simple steps)',
+      title: 'Rank higher in Google: complete SEO roadmap (steps)',
       topic: 'SEO',
-      metaTitle: 'Rank higher in Google | Simple SEO steps',
-      metaDescription: 'A simple SEO plan to rank higher in Google: fix indexation, match search intent, improve content, strengthen internal links, build authority, and measure results.',
+      metaTitle: 'Rank higher in Google | Complete SEO roadmap',
+      metaDescription: 'A complete SEO roadmap to rank higher in Google: measurement, indexation fixes, intent and topic clusters, content upgrades, internal links, CTR, authority, and updates.',
       content: `
-## What does "rank higher in Google" mean?
+Ranking higher in Google means: you show up for searches that match your offer, and your page drives actions (leads, calls, purchases).
 
-Ranking higher means your page shows up for the right searches and brings visitors who can actually convert.
+A #1 ranking for a keyword that does not convert is not success. SEO is always intent + value + execution.
 
-A #1 ranking with zero conversions is not a win.
+## How Google decides who ranks (simple)
 
-## How do you rank higher? (the 3 pillars)
+Google does 3 things:
 
-In practice SEO has 3 parts:
+- Crawl: find your page
+- Index: understand and store your page
+- Rank: choose the best results for a query
 
-- Content: create the best page for the search intent
-- Technical: make sure Google can crawl, understand, and load your site fast
+If you fail at one step, you will not grow consistently.
+
+### Crawling (getting discovered)
+
+Help Google with:
+
+- Internal links (logical navigation)
+- Sitemap.xml
+- robots.txt that does not block important pages
+- Fast pages (crawl budget)
+
+### Indexing (getting understood)
+
+Avoid indexation problems with:
+
+- Correct status codes (no 404/5xx for important pages)
+- Logical canonicals (often self-referencing)
+- No accidental noindex
+- Duplicate content resolved or merged
+
+### Ranking (getting chosen)
+
+This is about:
+
+- Intent match (the right page type)
+- Content quality and completeness
+- User experience (fast, mobile, clear)
+- Authority and trust (links, mentions, brand)
+
+## The 3 pillars of ranking higher
+
+SEO is three parts that reinforce each other:
+
+- Content: build the best page for the intent
+- Technical: make it easy to crawl, understand, and load
 - Authority: prove you are a trusted source (links + brand signals)
 
-If one pillar is missing, you will usually hit a ceiling.
+If one pillar is missing, you will hit a ceiling.
 
 ## Step 0 - Measure the basics first
 
-If you do not measure, you cannot improve.
+Without measurement you will guess.
 
-- Connect Google Search Console
-- Connect GA4 (and set conversions)
-- Create a simple baseline: top pages, top queries, conversions
+- Connect Google Search Console (impressions, clicks, indexation)
+- Connect GA4 (conversions and quality)
+- Baseline: top pages, top queries, top conversions
 
-## Step 1 - Fix indexation and technical blockers
+## Step 1 - Fix indexation and technical blockers (priority #1)
 
-This is priority #1. If Google cannot index your pages, the rest matters less.
+If Google cannot index your pages, the rest matters less.
 
-Check:
+Checklist:
 
-- HTTPS is correct (no mixed content)
-- robots.txt does not block important pages
-- no accidental noindex on key pages
+- HTTPS ok (no mixed content)
+- robots.txt ok (no important sections blocked)
+- No accidental noindex
 - sitemap.xml exists and is submitted
-- canonical tags are correct (often self-referencing)
-- fix 404/5xx errors and remove redirect chains
+- Canonicals make sense
+- Fix 404/5xx errors and remove redirect chains
+- Mobile speed is acceptable (Core Web Vitals as direction)
 
-## Step 2 - Pick keywords by intent (not volume only)
+## Step 2 - Choose keywords by intent (not volume only)
 
-Always ask: what does the searcher want to do?
+Ask: what does the searcher want to do?
 
 - Informational: learn (guide, blog)
 - Commercial: compare (best, vs, reviews)
 - Transactional: buy / request a quote (landing page)
 - Navigational: brand query
 
-Tip: start with keywords where you can realistically beat the top 3.
+Pick keywords with real business value. Volume without intent is noise.
 
-## Step 3 - Build 1 great page per topic
+## Step 3 - Build topic clusters (not random pages)
 
-Google wants the best match for intent.
+Google rewards sites that cover a topic deeply.
 
-Per-page checklist:
+Practical:
 
-- Title and H1: clear, includes keyword, still human
-- Intro: answer fast + show what you will solve
-- Structure: logical H2/H3, not one long wall of text
-- Proof: examples, cases, screenshots, data
-- Media: only when it helps
+- One hub page (main intent)
+- 3-8 supporting pages (sub-questions)
+- Internal links both ways (support <-> hub)
+
+This builds topical authority and makes internal links useful.
+
+## Step 4 - One page per intent (and beat the top 3)
+
+Per page checklist:
+
+- Title + H1: clear and human
+- Intro: answer fast, then go deeper
+- Structure: logical H2/H3
+- Proof: examples, steps, screenshots
+- FAQ: answer the questions you see in the SERP
 - CTA: next step
 
 No tricks. Just build the best page.
 
-## Step 4 - Internal links: make your site logical
+## Step 5 - Internal links: make the site logical
 
-Internal links are free SEO.
+Internal links are free leverage, but only when they are logical.
 
-- Link from strong pages to important pages
+- Link from strong pages to key pages
 - Use descriptive anchors
-- Key pages should be reachable within 2-3 clicks
-- Use clusters: 1 main page + supporting pages
+- Key pages reachable within 2-3 clicks
+- Use breadcrumbs when it makes sense
 
-## Step 5 - Authority: build trust (no spam)
+## Step 6 - Improve snippet and CTR (often fast wins)
+
+If you already have impressions, CTR work can move results fast.
+
+- Title: benefit + topic + specificity
+- Meta description: make the promise concrete
+- Structured data where relevant (FAQ, product, review) when accurate
+
+In Search Console, find pages with high impressions and low CTR.
+
+## Step 7 - Authority: build trust without spam
 
 You do not need 1000 links. You need good links.
 
-- Create content worth linking to
-- Build relationships in your niche
-- Avoid spammy link networks
+What works:
 
-Brand and reputation also help: reviews, mentions, and PR.
+- Linkable assets (tools, research, templates)
+- Partnerships and relevant communities
+- PR and brand mentions
+- Reclaim broken backlinks
 
-## Step 6 - Update what already ranks
+What does not work long term:
 
-Fast wins often come from pages already in the top 20.
+- Link farms and cheap bulk links
 
-- Find queries where you rank positions 4-20
-- Update the page: intent, missing sections, better examples
+## Step 8 - Update what already ranks (faster than new)
+
+Fast wins often come from pages already ranking top 20.
+
+- Target queries where you rank positions 4-20
+- Update: intent, missing sections, better examples
 - Improve internal linking
-- Improve your snippet (title/meta) to increase CTR
+- Improve the snippet (title/meta) to increase CTR
 
 ## Quick wins (within 14 days)
 
-- Make titles and meta descriptions unique for key pages
-- Fix 404 errors and remove redirect chains
+- Rewrite titles/meta for your key pages
+- Fix 404s and redirect chains
 - Add 5 internal links to your 3 most important pages
-- Update 1 top page that already gets traffic
-- Improve PageSpeed: compress images and remove unnecessary scripts
+- Update one page that already has impressions
+- Compress images and remove heavy scripts
 
-## Common mistakes
+## A realistic 30-day plan
 
-- Publishing content with no plan
-- Only fixing tech but not creating strong pages
+- Week 1: measurement + indexation fixes (robots/noindex/sitemap/404)
+- Week 2: update one quick win page (positions 4-20) + internal links
+- Week 3: build or improve one hub page + 2 supporting pages
+- Week 4: authority action (reclaim/broken backlinks) + reporting
+
+## Common pitfalls
+
+- Publishing content without a plan (no clusters)
+- Only fixing technical SEO but not improving pages
 - Buying links / building spam
 - Not measuring (no Search Console/GA4)
 - Changing everything at once and not knowing what worked
 
 ## Mini checklist
 
-### Basics
-
-- Search Console connected
-- GA4 connected + conversions
-
-### Technical
-
-- indexation ok (robots/noindex/sitemap/canonical)
-- errors ok (404/5xx/redirect chains)
-- speed ok (mobile)
-
-### Content
-
-- 1 page per intent
-- better than top 3
-- clear structure + proof
-
-### Internal links
-
-- clusters built
-- key pages within 2-3 clicks
-
-### Authority
-
-- no spam
-- focus on quality + mentions
+- Measurement set (GSC + GA4 + conversions)
+- Indexation ok (robots/noindex/sitemap/canonical)
+- Errors ok (404/5xx/redirect chains)
+- Content per intent + clusters
+- Internal links logical (2-3 clicks)
+- Snippet improved where CTR is low
+- Authority plan without spam
 
 ## Conclusion
 
@@ -333,24 +434,59 @@ Want me to review your fastest SEO opportunities? See /work-with-me.
 `.trim(),
     },
     nl: {
-      title: 'Hoog in Google komen: simpel SEO stappenplan',
+      title: 'Hoog in Google komen: complete SEO roadmap (stappenplan)',
       topic: 'SEO',
-      metaTitle: 'Hoog in Google komen | Simpel SEO stappenplan',
-      metaDescription: 'Simpel stappenplan om hoog in Google te komen: techniek en indexatie fixen, intent kiezen, content verbeteren, interne links, autoriteit en meten.',
+      metaTitle: 'Hoog in Google komen | Complete SEO roadmap',
+      metaDescription: 'Complete roadmap om hoog in Google te komen: meten, indexatie fixes, intent en topic clusters, content upgrades, interne links, CTR, autoriteit en updates.',
       content: `
-## Wat betekent "hoog in Google"?
+Hoog in Google komen betekent: je wordt zichtbaar op zoekopdrachten die passen bij je aanbod, en je pagina levert niet alleen verkeer maar ook acties (leads, aanvragen of aankopen).
 
-"Hoog in Google" betekent: jouw pagina staat zichtbaar op relevante zoekopdrachten, en levert bezoekers op die ook echt klant kunnen worden.
+Een #1 positie op een keyword dat niet converteert is geen succes. SEO gaat dus altijd over: intent + waarde + uitvoering.
 
-Niet elk keyword is even waardevol. Een #1 positie met nul conversies is geen succes.
+## Hoe Google bepaalt wie hoog komt (simpel uitgelegd)
 
-## Hoe kom je hoog in Google? (de 3 pijlers)
+Google doet grofweg 3 dingen:
+
+- Crawlen: je pagina vinden
+- Indexeren: je pagina begrijpen en opslaan
+- Ranken: de beste resultaten kiezen voor een zoekopdracht
+
+Als je faalt op 1 van deze stappen, ga je niet structureel stijgen.
+
+### Crawlen (gevonden worden)
+
+Je helpt Google met:
+
+- Interne links (logische navigatie)
+- Sitemap.xml
+- Robots.txt die niets belangrijks blokkeert
+- Snelle pagina's (crawl budget)
+
+### Indexeren (begrepen worden)
+
+Je voorkomt indexatie problemen met:
+
+- Goede status codes (geen 404/5xx)
+- Logische canonicals (meestal self-referencing)
+- Geen per ongeluk noindex
+- Duplicate content oplossen (of bundelen)
+
+### Ranken (gekozen worden)
+
+Hier draait het om:
+
+- Intent match (het juiste type pagina)
+- Content kwaliteit en volledigheid
+- Gebruikerservaring (snel, mobiel, duidelijk)
+- Autoriteit en vertrouwen (links, mentions, brand)
+
+## De 3 pijlers van hoog in Google staan
 
 SEO bestaat in de praktijk uit 3 onderdelen die elkaar versterken:
 
 - Content: de beste pagina maken voor een zoekintentie
 - Techniek: zorgen dat Google alles kan crawlen, begrijpen en snel laden
-- Autoriteit: laten zien dat je een betrouwbare bron bent (o.a. via links en brand signalen)
+- Autoriteit: laten zien dat je een betrouwbare bron bent (links + brand signalen)
 
 Als 1 pijler ontbreekt, ga je bijna altijd plafonneren.
 
@@ -358,22 +494,25 @@ Als 1 pijler ontbreekt, ga je bijna altijd plafonneren.
 
 Zonder metingen weet je niet of je vooruitgaat.
 
-- Koppel Google Search Console
-- Koppel GA4 (en zet conversies goed)
-- Maak een simpele nulmeting: top paginas, top queries, conversies
+- Koppel Google Search Console (impressions, clicks, indexatie)
+- Koppel GA4 (conversies en kwaliteit)
+- Maak een nulmeting: top paginas, top queries, top conversies
 
-## Stap 1 - Fix indexatie en technische blokkades
+Tip: definieer 1-3 conversies die echt tellen (formulier, call, aankoop).
 
-Dit is prioriteit #1. Als Google je paginas niet kan indexeren, doet de rest weinig.
+## Stap 1 - Fix indexatie en technische blokkades (prioriteit #1)
 
-Check:
+Als Google je paginas niet kan indexeren, doet de rest weinig.
+
+Checklist:
 
 - HTTPS goed (geen mixed content)
-- robots.txt blokkeert niets belangrijks
-- geen noindex op belangrijke paginas
+- Robots.txt blokkeert niets belangrijks
+- Geen noindex op belangrijke paginas
 - sitemap.xml bestaat en is ingediend
-- canonical tags kloppen (meestal self-referencing)
+- Canonical tags kloppen
 - 404/5xx errors oplossen en redirect chains voorkomen
+- Snelheid op mobiel is acceptabel (Core Web Vitals als richting)
 
 ## Stap 2 - Kies keywords op intent (niet alleen volume)
 
@@ -381,65 +520,98 @@ Vraag altijd: wat wil iemand echt doen?
 
 - Informational: leren (blog, gids)
 - Commercial: vergelijken (best, vs, reviews)
-- Transactional: kopen / offerte (landingspagina)
+- Transactional: kopen / offerte (landing)
 - Navigational: merknaam
 
-Tip: begin met keywords waar je iets beters kunt maken dan de top 3.
+Kies keywords die passen bij je business value. Volume zonder intent is ruis.
 
-## Stap 3 - Maak 1 pagina per onderwerp (en maak hem beter)
+## Stap 3 - Bouw topic clusters (niet losse paginas)
 
-Google wil de beste match voor de intent.
+Google beloont sites die een onderwerp volledig dekken.
+
+Praktisch:
+
+- Kies 1 hoofdtopic (hub pagina)
+- Voeg 3-8 ondersteunende paginas toe (subvragen)
+- Link alles logisch aan elkaar (support <-> hub)
+
+Dit bouwt topical authority en maakt interne links meteen nuttig.
+
+## Stap 4 - Maak 1 pagina per intent (en maak hem beter dan top 3)
 
 Checklist per pagina:
 
-- Title en H1: duidelijk, met keyword, maar menselijk
-- Intro: direct antwoord + wat je gaat oplossen
-- Structuur: logische H2/H3, niet 1 grote lap tekst
-- Bewijs: voorbeelden, cases, screenshots, data
-- Media: visuals waar het helpt (geen vulling)
+- Title + H1: duidelijk, met keyword, maar menselijk
+- Intro: snel antwoord + wat je gaat oplossen
+- Structuur: logische H2/H3, scanbaar
+- Bewijs: voorbeelden, stappen, cases, screenshots
+- FAQ: beantwoord vragen die je in de SERP ziet
 - CTA: wat is de volgende stap?
 
 Geen trucjes. Gewoon de beste pagina maken.
 
-## Stap 4 - Interne links: maak je site logisch
+## Stap 5 - Interne links: maak je site logisch
 
-Interne links zijn gratis SEO.
+Interne links zijn gratis SEO, maar alleen als ze logisch zijn.
 
-- Link van je sterke paginas naar je belangrijke paginas
-- Gebruik duidelijke ankerteksten
-- Zorg dat belangrijke paginas binnen 2-3 klikken te bereiken zijn
-- Werk met clusters: 1 hoofdpagina + ondersteunende paginas
+- Link van sterke paginas naar je belangrijkste paginas
+- Gebruik duidelijke ankerteksten (niet "klik hier")
+- Belangrijke paginas binnen 2-3 klikken bereikbaar
+- Gebruik breadcrumbs waar het past (UX + structuur)
 
-## Stap 5 - Autoriteit: bouw vertrouwen (zonder spam)
+## Stap 6 - Snippet en CTR verbeteren (vaak snelle winst)
+
+Als je al impressions hebt, kan CTR optimalisatie snel werken.
+
+- Title: voordeel + onderwerp + specificiteit
+- Meta description: maak de belofte concreet
+- Structured data waar relevant (FAQ, product, review) als het klopt
+
+Kijk in Search Console welke paginas veel impressions maar lage CTR hebben.
+
+## Stap 7 - Autoriteit: bouw vertrouwen (zonder spam)
 
 Je hebt niet 1000 links nodig. Je hebt goede links nodig.
 
-- Zorg dat je content echt het waard is om te linken
-- Bouw relaties in je niche (partners, tools, communities)
-- Doe geen spammy startpagina links
+Wat wel werkt:
 
-Merk + reputatie helpen ook: reviews, mentions en goede PR.
+- Linkable assets (tools, research, templates)
+- Partnerships en relevante communities
+- PR en mentions (brand)
+- Reclaim: broken backlinks terughalen
 
-## Stap 6 - Update wat al rankt (sneller dan nieuw)
+Wat niet werkt (op termijn):
+
+- Spammy startpagina links
+- Link farms en goedkope bulk links
+
+## Stap 8 - Update wat al rankt (sneller dan nieuw)
 
 De snelste groei komt vaak uit paginas die al in de top 20 staan.
 
 - Pak queries waar je op positie 4-20 staat
-- Update de pagina: intent, extra secties, betere voorbeelden
+- Update: intent, extra secties, betere voorbeelden
 - Verbeter interne links
-- Maak je snippet beter (title/meta) voor hogere CTR
+- Verbeter snippet (title/meta) voor hogere CTR
 
 ## Quick wins (binnen 14 dagen)
 
 - Titles en meta descriptions uniek maken op je belangrijkste paginas
 - 404 fouten fixen en redirect chains opruimen
 - 5 interne links toevoegen naar je 3 belangrijkste pagina's
-- 1 top pagina updaten die al verkeer krijgt
-- PageSpeed: afbeeldingen comprimeren en onnodige scripts schrappen
+- 1 top pagina updaten die al impressions krijgt
+- Afbeeldingen comprimeren en zware scripts schrappen
+
+## 30 dagen plan (realistisch)
+
+- Week 1: meten + indexatie fixes (robots/noindex/sitemap/404)
+- Week 2: 1 quick win pagina updaten (positie 4-20) + interne links
+- Week 3: 1 hub pagina maken of verbeteren + 2 supporting paginas
+- Week 4: authority actie (reclaim/broken backlinks) + rapportage
 
 ## Valkuilen
 
-- Alleen content publiceren zonder plan
+- Alleen content publiceren zonder plan (geen clusters)
 - Alleen techniek fixen, maar geen sterke paginas maken
 - Links kopen / spam bouwen
 - Niet meten (geen Search Console/GA4)
@@ -447,428 +619,221 @@ De snelste groei komt vaak uit paginas die al in de top 20 staan.
 
 ## Mini checklist
 
-### Basis
-
-- Search Console actief
-- GA4 actief + conversies
-
-### Techniek
-
-- indexatie ok (robots/noindex/sitemap/canonical)
-- fouten ok (404/5xx/redirect chains)
-- snelheid ok (mobile)
-
-### Content
-
-- 1 pagina per intent
-- betere pagina dan top 3
-- duidelijke structuur + bewijs
-
-### Interne links
-
-- clusters gebouwd
-- belangrijke paginas binnen 2-3 klikken
-
-### Autoriteit
-
-- geen spam
-- focus op kwaliteit + mentions
+- Meting staat (GSC + GA4 + conversies)
+- Indexatie ok (robots/noindex/sitemap/canonical)
+- Fouten ok (404/5xx/redirect chains)
+- Content per intent + clusters
+- Interne links logisch (2-3 klikken)
+- Snippet verbeterd waar CTR laag is
+- Autoriteit plan zonder spam
 
 ## Conclusie
 
-Hoog in Google komen is geen truc. Het is: techniek op orde, de beste pagina maken, en vertrouwen bouwen.
+Hoog in Google komen is geen truc. Het is: techniek op orde, de beste pagina voor de intent, en vertrouwen bouwen.
 
-Wil je dat ik meekijk naar jouw snelste groeikansen? Check dan /work-with-me.
+Wil je dat ik meekijk naar jouw snelste groeikansen? Check /work-with-me.
 `.trim(),
     },
     de: {
-      title: 'Hoeher in Google ranken: einfacher SEO Plan',
+      title: 'Hoeher in Google kommen: SEO Roadmap',
       topic: 'SEO',
-      metaTitle: 'Hoeher in Google ranken | Einfacher SEO Plan',
-      metaDescription: 'Ein einfacher SEO Plan um hoeher in Google zu ranken: Indexierung fixen, Suchintention matchen, Content verbessern, interne Links, Autoritaet und messen.',
+      metaTitle: 'Hoeher in Google kommen | SEO Roadmap',
+      metaDescription: 'Roadmap fuer hohe Google Rankings: Intent, Technik, Content, interne Links und Autoritaet.',
       content: `
-## Was bedeutet "hoeher in Google"?
+Hoch in Google zu kommen bedeutet: sichtbar fuer relevante Suchanfragen und Besucher die konvertieren. Eine #1 Position ohne Intent ist kein Erfolg.
 
-"Hoeher in Google" heisst: deine Seite erscheint bei relevanten Suchanfragen und bringt Besucher die auch konvertieren koennen.
+## Wie Google entscheidet
 
-Eine #1 Position ohne Conversions ist kein Erfolg.
+- Crawlen: URLs finden
+- Indexieren: Inhalte verstehen
+- Ranken: beste Antwort waehlen
 
-## Wie rankst du hoeher? (3 Saeulen)
+Wenn eine Stufe scheitert, gibt es keine stabile Sichtbarkeit.
 
-SEO besteht in der Praxis aus 3 Teilen:
+## Drei Saeulen
 
-- Content: die beste Seite fuer die Suchintention
-- Technik: Google kann crawlen, verstehen und schnell laden
-- Autoritaet: du bist eine vertrauenswuerdige Quelle (Links + Brand Signale)
+- Content: beste Seite fuer den Intent
+- Technik: crawlbar, schnell, mobil
+- Autoritaet: Links und Brand Signale
 
-Wenn eine Saeule fehlt, erreichst du oft schnell ein Plateau.
+## Roadmap (kurz)
 
-## Schritt 0 - Basics messen
+1. Messen: Search Console + GA4
+2. Indexation Fixes: robots/noindex/sitemap/404
+3. Keywords nach Intent
+4. 1 starke Seite pro Topic
+5. Interne Links und Cluster
+6. Autoritaet aufbauen
 
-Ohne Messung keine Verbesserung.
+## Quick Wins
 
-- Google Search Console verbinden
-- GA4 verbinden (Conversions setzen)
-- Baseline: Top Seiten, Top Queries, Conversions
-
-## Schritt 1 - Indexierung und technische Blocker fixen
-
-Prioritaet #1.
-
-Check:
-
-- HTTPS ok (kein mixed content)
-- robots.txt blockiert nichts Wichtiges
-- kein noindex auf wichtigen Seiten
-- sitemap.xml existiert und ist eingereicht
-- canonical Tags korrekt
-- 404/5xx fixen und redirect chains entfernen
-
-## Schritt 2 - Keywords nach Intent waehlen
-
-Frage: was will der Nutzer?
-
-- Informational: lernen
-- Commercial: vergleichen
-- Transactional: kaufen / anfragen
-- Navigational: Brand
-
-## Schritt 3 - 1 starke Seite pro Topic
-
-- Title und H1 klar
-- Intro: Antwort sofort
-- Struktur: klare H2/H3
-- Proof: Beispiele, Cases, Daten
-- CTA: naechster Schritt
-
-## Schritt 4 - Interne Links
-
-- Von starken Seiten auf wichtige Seiten linken
-- Gute Anchor Texte
-- Wichtige Seiten in 2-3 Klicks
-- Cluster: 1 Main + Supporting
-
-## Schritt 5 - Autoritaet ohne Spam
-
-- Content der Links verdient
-- Beziehungen in der Nische
-- Keine spammy Linknetzwerke
-
-## Schritt 6 - Updaten was schon rankt
-
-- Queries Position 4-20 finden
-- Seite updaten + interne Links
-- Snippet verbessern (title/meta)
-
-## Quick wins
-
-- Title/meta unique
-- 404 + redirect chains fixen
-- Interne Links setzen
-- 1 Seite updaten die schon Traffic hat
-- Bilder komprimieren und Scripts reduzieren
+- Seiten auf Position 4-20 optimieren
+- Snippets verbessern (Title/Meta)
+- Interne Links von starken Seiten
 
 ## Fazit
 
-Hoeher ranken ist kein Trick: Technik, beste Seite fuer Intent, Vertrauen.
-
-Wenn du willst, dass ich deine schnellsten Chancen finde: /work-with-me.
+Hohe Positionen kommen durch Intent Match, saubere Technik und echte Autoritaet.
 `.trim(),
     },
     sv: {
-      title: 'Ranka hogre i Google: enkel SEO plan',
+      title: 'Kom hogt i Google: SEO roadmap',
       topic: 'SEO',
-      metaTitle: 'Ranka hogre i Google | Enkel SEO plan',
-      metaDescription: 'En enkel SEO plan for att ranka hogre i Google: fixa indexering, matcha intent, forbattra content, interna lankar, auktoritet och mata.',
+      metaTitle: 'Kom hogt i Google | SEO roadmap',
+      metaDescription: 'Roadmap for att ranka hogre: intent, teknik, content, interna lankar och auktoritet.',
       content: `
-## Vad betyder "ranka hogre i Google"?
+Att komma hogt i Google betyder: synlighet pa relevanta sokningar och besokare som konverterar. #1 utan intent ar inte vinst.
 
-Det betyder att din sida syns for relevanta sokningar och tar in besokare som kan konvertera.
+## Hur Google valjer
 
-En #1 position utan conversions ar inte en vinst.
+- Crawl: hitta URLs
+- Index: forsta innehall
+- Rank: valja basta svar
 
-## Hur rankar du hogre? (3 pelare)
+## Tre pelare
 
 - Content: basta sidan for intent
-- Teknik: Google kan crawla, forsta och ladda snabbt
-- Auktoritet: du ar en trusted source (links + brand signals)
+- Teknik: crawlbar, snabb, mobil
+- Auktoritet: links och brand signals
 
-## Steg 0 - Mata grunderna
+## Roadmap
 
-- Koppla Search Console
-- Koppla GA4 (satt conversions)
-- Baseline: top pages, top queries, conversions
+1. Mata: Search Console + GA4
+2. Fix indexation (robots/noindex/sitemap/404)
+3. Keywords efter intent
+4. En stark sida per topic
+5. Interna lankar och clusters
+6. Bygg auktoritet
 
-## Steg 1 - Fixa indexering
+## Quick wins
 
-- HTTPS ok
-- robots.txt blockerar inte viktigt
-- inga noindex av misstag
-- sitemap.xml inskickad
-- canonicals ok
-- fixa 404/5xx och redirect chains
-
-## Steg 2 - Valj keywords pa intent
-
-- informational
-- commercial
-- transactional
-- navigational
-
-## Steg 3 - Bygg 1 stark sida per topic
-
-- title + H1 tydligt
-- svara tidigt
-- bra struktur
-- proof och exempel
-- tydlig CTA
-
-## Steg 4 - Interna lankar
-
-- lankar fran starka sidor
-- tydliga anchors
-- viktiga sidor inom 2-3 klick
-- clusters
-
-## Steg 5 - Auktoritet utan spam
-
-- skapa content som fortjanar lankar
-- bygg relationer
-- undvik spam
-
-## Steg 6 - Uppdatera det som redan rankar
-
-- hitta position 4-20
-- uppdatera + interna lankar
-- battra snippet (title/meta)
+- Forbattra sidor pos 4-20
+- Snippet optimering
+- Internlankar fran starka sidor
 
 ## Slutsats
 
-Teknik + bra content + forstroende.
-
-Vill du att jag kollar dina snabbaste chanser? /work-with-me.
+Hoga placeringar kommer fran intent match, teknik och auktoritet.
 `.trim(),
     },
     da: {
-      title: 'Rank hojere i Google: enkel SEO plan',
+      title: 'Kom hoejt i Google: SEO roadmap',
       topic: 'SEO',
-      metaTitle: 'Rank hojere i Google | Enkel SEO plan',
-      metaDescription: 'En enkel SEO plan til at ranke hojere i Google: fix indexering, match intent, forbedr content, interne links, autoritet og mal.',
+      metaTitle: 'Kom hoejt i Google | SEO roadmap',
+      metaDescription: 'Roadmap til hoejere placeringer: intent, teknik, content, interne links og autoritet.',
       content: `
-## Hvad betyder "rank hojere i Google"?
+At komme hojt i Google betyder: synlighed pa relevante sogninger og besoegende som konverterer. #1 uden intent er ikke succes.
 
-Det betyder at din side vises pa relevante sokninger og giver besogende der kan konvertere.
+## Hvordan Google vaelger
 
-En #1 position uden conversions er ikke en sejr.
+- Crawl: find URLs
+- Index: forsta indhold
+- Rank: vaelg bedste svar
 
-## Hvordan ranker du hojere? (3 sojler)
+## Tre soejler
 
 - Content: bedste side for intent
-- Teknik: Google kan crawle, forsta og loade hurtigt
-- Autoritet: du er en trusted source (links + brand signals)
+- Teknik: crawlbar, hurtig, mobil
+- Autoritet: links og brand signals
 
-## Trin 0 - Mal basen
+## Roadmap
 
-- Kobl Search Console
-- Kobl GA4 (satt conversions)
-- Baseline: top pages, top queries, conversions
+1. Maal: Search Console + GA4
+2. Fix indexation (robots/noindex/sitemap/404)
+3. Keywords efter intent
+4. En staerk side per topic
+5. Interne links og clusters
+6. Byg autoritet
 
-## Trin 1 - Fix indexering
+## Quick wins
 
-- HTTPS ok
-- robots.txt blokerer ikke vigtigt
-- ingen noindex ved en fejl
-- sitemap.xml indsendt
-- canonicals ok
-- fix 404/5xx og redirect chains
-
-## Trin 2 - Vaelg keywords pa intent
-
-- informational
-- commercial
-- transactional
-- navigational
-
-## Trin 3 - 1 staerk side per topic
-
-- title + H1 tydeligt
-- svar hurtigt
-- god struktur
-- proof og eksempler
-- tydelig CTA
-
-## Trin 4 - Interne links
-
-- links fra staerke sider
-- klare anchors
-- vigtige sider inden for 2-3 klik
-- clusters
-
-## Trin 5 - Autoritet uden spam
-
-- content der fortjener links
-- relationer i nichen
-- undga spam
-
-## Trin 6 - Opdater det der allerede ranker
-
-- find position 4-20
-- opdater + interne links
-- forbedr snippet (title/meta)
+- Forbedr sider pos 4-20
+- Snippet optimering
+- Interne links fra staerke sider
 
 ## Konklusion
 
-Teknik + godt content + tillid.
-
-Vil du have mig til at finde dine hurtigste muligheder? /work-with-me.
+Hoeje placeringer kommer fra intent match, teknik og autoritet.
 `.trim(),
     },
     fr: {
-      title: 'Monter plus haut dans Google: plan SEO simple',
+      title: 'Monter dans Google: roadmap SEO',
       topic: 'SEO',
-      metaTitle: 'Monter plus haut dans Google | Plan SEO simple',
-      metaDescription: 'Plan SEO simple pour monter dans Google: indexation, intent, content, liens internes, autorite et mesure.',
+      metaTitle: 'Monter dans Google | Roadmap SEO',
+      metaDescription: 'Roadmap pour monter dans Google: intent, technique, contenu, liens internes et autorite.',
       content: `
-## Que veut dire "monter dans Google"?
+Monter dans Google signifie: etre visible sur les bonnes requetes et attirer des visiteurs qui convertissent. #1 sans intent = peu de valeur.
 
-Cela veut dire: ta page apparait sur les bonnes requetes et amene des visiteurs qui peuvent convertir.
+## Comment Google decide
 
-Une #1 position sans conversions n est pas une victoire.
+- Crawl: trouver URLs
+- Index: comprendre contenu
+- Rank: choisir la meilleure reponse
 
-## Comment monter? (3 piliers)
+## Trois piliers
 
-- Content: la meilleure page pour l intent
-- Technique: Google peut crawler, comprendre et charger vite
-- Autorite: tu es une source fiable (links + signaux de marque)
+- Contenu: meilleure page pour l intent
+- Technique: crawlable, rapide, mobile
+- Autorite: liens et brand signals
 
-## Etape 0 - Mesurer la base
+## Roadmap
 
-- Connecter Search Console
-- Connecter GA4 (conversions)
-- Baseline: top pages, top queries, conversions
+1. Mesurer: Search Console + GA4
+2. Fix indexation (robots/noindex/sitemap/404)
+3. Keywords selon intent
+4. 1 page forte par topic
+5. Liens internes et clusters
+6. Construire autorite
 
-## Etape 1 - Indexation
+## Quick wins
 
-- HTTPS ok
-- robots.txt ne bloque rien d important
-- pas de noindex par erreur
-- sitemap.xml soumise
-- canonicals ok
-- corriger 404/5xx et redirect chains
-
-## Etape 2 - Choisir les keywords par intent
-
-- informational
-- commercial
-- transactional
-- navigational
-
-## Etape 3 - 1 page forte par topic
-
-- title + H1 clairs
-- reponse rapide
-- bonne structure
-- preuves et exemples
-- CTA clair
-
-## Etape 4 - Liens internes
-
-- liens depuis les pages fortes
-- anchors clairs
-- pages importantes en 2-3 clics
-- clusters
-
-## Etape 5 - Autorite sans spam
-
-- content qui merite des liens
-- relations
-- eviter le spam
-
-## Etape 6 - Updater ce qui ranke deja
-
-- trouver position 4-20
-- update + liens internes
-- ameliorer snippet (title/meta)
+- Optimiser pages position 4-20
+- Ameliorer snippet (title/meta)
+- Liens internes depuis pages fortes
 
 ## Conclusion
 
-Technique + bon content + confiance.
-
-Si tu veux, je peux trouver tes meilleures opportunites: /work-with-me.
+Les positions hautes viennent d un bon intent match, d une technique propre et d une vraie autorite.
 `.trim(),
     },
     it: {
-      title: 'Salire su Google: piano SEO semplice',
+      title: 'Salire in Google: roadmap SEO',
       topic: 'SEO',
-      metaTitle: 'Salire su Google | Piano SEO semplice',
-      metaDescription: 'Piano SEO semplice per salire su Google: indicizzazione, intent, content, link interni, autorita e misurazione.',
+      metaTitle: 'Salire in Google | Roadmap SEO',
+      metaDescription: 'Roadmap per salire in Google: intent, tecnica, contenuti, link interni e autorevolezza.',
       content: `
-## Cosa significa "salire su Google"?
+Salire in Google significa: visibilita sulle query giuste e visitatori che convertono. #1 senza intent non e valore.
 
-Significa che la tua pagina appare per ricerche rilevanti e porta visitatori che possono convertire.
+## Come Google decide
 
-Una #1 posizione senza conversioni non e un successo.
+- Crawl: trovare URLs
+- Index: capire contenuti
+- Rank: scegliere la risposta migliore
 
-## Come salire? (3 pilastri)
+## Tre pilastri
 
-- Content: la pagina migliore per intent
-- Tecnica: Google puo crawlarla, capire e caricare veloce
-- Autorita: sei una fonte affidabile (links + segnali di brand)
+- Contenuti: pagina migliore per intent
+- Tecnica: crawlable, veloce, mobile
+- Autorevolezza: link e brand signals
 
-## Step 0 - Misura la base
+## Roadmap
 
-- Collega Search Console
-- Collega GA4 (conversions)
-- Baseline: top pages, top queries, conversions
+1. Misura: Search Console + GA4
+2. Fix indexation (robots/noindex/sitemap/404)
+3. Keyword per intent
+4. 1 pagina forte per topic
+5. Link interni e clusters
+6. Costruire autorevolezza
 
-## Step 1 - Indicizzazione
+## Quick wins
 
-- HTTPS ok
-- robots.txt non blocca nulla di importante
-- niente noindex per errore
-- sitemap.xml inviata
-- canonicals ok
-- correggi 404/5xx e redirect chains
-
-## Step 2 - Scegli keywords per intent
-
-- informational
-- commercial
-- transactional
-- navigational
-
-## Step 3 - 1 pagina forte per topic
-
-- title + H1 chiari
-- risposta veloce
-- buona struttura
-- prove ed esempi
-- CTA chiara
-
-## Step 4 - Link interni
-
-- link dalle pagine forti
-- anchor chiari
-- pagine importanti in 2-3 click
-- clusters
-
-## Step 5 - Autorita senza spam
-
-- content che merita link
-- relazioni
-- evita spam
-
-## Step 6 - Aggiorna cio che gia ranka
-
-- trova posizione 4-20
-- update + link interni
-- migliora snippet (title/meta)
+- Ottimizzare pagine pos 4-20
+- Migliorare snippet (title/meta)
+- Link interni da pagine forti
 
 ## Conclusione
 
-Tecnica + buon content + fiducia.
-
-Se vuoi, posso trovare le opportunita piu veloci: /work-with-me.
+Posizioni alte arrivano da intent match, tecnica solida e autorevolezza.
 `.trim(),
     },
   },

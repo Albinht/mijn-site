@@ -37,874 +37,1005 @@ const article = {
   slug: 'technische-seo-analyse-stappenplan-checklist',
   topic: 'SEO',
   status: 'PUBLISHED',
-  title: 'Technische SEO-analyse: simpel stappenplan + checklist',
+  title: 'Technische SEO-analyse: compleet stappenplan + checklist (met prioriteit)',
   content: `
+Een technische SEO-analyse is de periodieke health check van je website. Je checkt of Google je site goed kan crawlen, renderen en indexeren, en of bezoekers een snelle, stabiele ervaring krijgen.
+
 ## Wat is een technische SEO-analyse?
 
-Een technische SEO-analyse is een check van de techniek van je website.
+Een technische SEO-analyse is het proces waarin je de technische gezondheid van je website beoordeelt. Het doel is tweeledig:
 
-Het doel is simpel:
+- Google moet je paginas kunnen crawlen, renderen en indexeren.
+- Bezoekers moeten een snelle, duidelijke ervaring krijgen (wat ook conversie helpt).
 
-- Google moet je paginas kunnen crawlen en indexeren.
-- Bezoekers moeten een snelle, fijne website krijgen.
+Het belangrijkste om te snappen: een audit is pas waardevol als er een prioriteitenlijst uitkomt. Niet 200 issues, maar 10-30 acties die echt impact hebben.
 
-## Wat check je? (3 blokken)
+## Wat is het resultaat van een goede audit?
 
-Je kunt alles groeperen in drie delen:
+Een technische SEO-audit levert idealiter op:
 
-- Website infrastructuur (HTTPS, sitemap, robots.txt)
-- Crawling en indexering (interne links, duplicate content, 404 paginas)
-- On-page techniek (snelheid, structured data, meta tags)
+- Een lijst met issues (met voorbeeld URLs)
+- Prioriteit (P0/P1/P2)
+- Impact inschatting (traffic/conversie risico)
+- Owner (wie pakt dit op: dev/content/seo)
+- Plan om te meten (Search Console + GA4)
 
-## Technische SEO-analyse: simpel stappenplan
+## Stap 0 - Verzamel data (30-60 min)
 
-### Stap 1 - Mag Google je paginas indexeren?
+Gebruik minimaal:
 
-Check dit als eerste, want als dit fout staat, helpt de rest bijna niet.
+- Google Search Console: Pages/Indexing, Sitemaps, Core Web Vitals, Enhancements, Manual actions, Security issues
+- Een crawler: Ahrefs Site Audit of een vergelijkbare crawl tool
+- GA4: top landing pages + conversies (zodat je weet welke paginas je niet "per ongeluk" sloopt)
 
-- Staat je site op HTTPS en zonder "mixed content"?
-- Blokkeert robots.txt geen belangrijke paginas?
-- Staan er geen onbedoelde noindex tags op belangrijke paginas?
-- Is er een sitemap.xml en staat die in Google Search Console?
-- Kloppen je canonical tags (meestal: self-referencing)?
+Optioneel (voor grotere sites): server logs (voor crawl budget en bots).
 
-### Stap 2 - Vind fouten (404/5xx) en slechte redirects
+## Stap 1 - Indexatie blockers (P0)
 
-- Check Google Search Console op crawl errors.
-- Los 404 paginas op (redirect of herstel de pagina).
-- Vermijd redirect chains (A -> B -> C). Maak er 1 redirect van.
-- Gebruik 301 voor permanente redirects.
+Als je hier problemen hebt, fix je dit eerst. Anders heeft de rest weinig zin.
 
-### Stap 3 - Check interne links en site structuur
+Checklist:
 
-- Kun je belangrijke paginas binnen 2-3 klikken bereiken?
-- Zijn er geen "wees paginas" (orphan pages) zonder interne links?
-- Gebruik duidelijke ankerteksten.
-- Gebruik breadcrumbs als je site groter is.
+- robots.txt blokkeert geen belangrijke secties
+- Geen noindex op belangrijke paginas (meta robots of x-robots-tag)
+- sitemap.xml bestaat, is up-to-date en staat in Search Console
+- Canonicals kloppen (meestal self-referencing) en wijzen niet naar 404
+- HTTP -> HTTPS is consistent (geen mixed content)
+- www/non-www en trailing slash zijn consistent
 
-### Stap 4 - Snelheid en mobiel
+## Stap 2 - Status codes en redirects (P0/P1)
 
-- Test met PageSpeed Insights (mobile is meestal de bottleneck).
-- Comprimeer afbeeldingen en gebruik moderne formaten waar kan.
-- Laad pas zware onderdelen als ze in beeld komen (lazy loading).
-- Minimaliseer onnodige scripts.
+Dit gaat over bereikbaarheid en link equity.
 
-### Stap 5 - On-page basics (meta + structured data)
+- 404/410: fix of redirect (zeker als er interne links of backlinks naartoe gaan)
+- 5xx: server errors zijn een direct risico voor indexatie
+- Redirect chains/loops: maak 1 schone redirect
+- 302 vs 301: 301 voor permanent (tenzij echt tijdelijk)
+- Soft 404s: pagina lijkt 200 maar is "not found" content
 
-- Unieke title tag en meta description per pagina.
-- Geen dubbele titles op belangrijke paginas.
-- Structured data waar het logisch is (Article/FAQ/Product).
+Praktisch: pak eerst errors op paginas met traffic of conversies.
 
-### Stap 6 - Meten en monitoren
+## Stap 3 - Crawl efficiency en duplicate content (P1)
 
-- Is GA4 actief?
-- Is Google Search Console gekoppeld?
-- Check elke maand even op nieuwe errors.
+Veel sites verliezen crawl budget en relevance door parameter URLs, filters en duplicaten.
+
+Check:
+
+- Parameter URLs (filters/sortering) die duizenden varianten maken
+- Duplicate content door tags, paginering, of copy/paste pagina templates
+- Canonical strategie bij filters en paginering
+- Interne links: sturen die Google naar de juiste (canonieke) paginas?
+
+Doel: minder ruis, meer focus op paginas die ertoe doen.
+
+## Stap 4 - Site structuur en interne links (P1)
+
+Structuur is technische SEO en content tegelijk.
+
+- Click depth: belangrijke paginas binnen 2-3 klikken
+- Orphan pages: paginas zonder interne links
+- Breadcrumbs: helpen UX en structuur
+- Anchor teksten: beschrijvend en consistent
+- Topic clusters: 1 hub pagina + supporting paginas
+
+Interne links zijn vaak de snelste technische win met weinig development.
+
+## Stap 5 - Performance en Core Web Vitals (P1/P2)
+
+Snelheid is niet alleen SEO, maar vooral UX.
+
+Waar ik meestal winst zie:
+
+- Afbeeldingen: formaten, compressie, lazy loading
+- JavaScript: minder third-party scripts, minder blocking scripts
+- CSS: critical CSS, minify, unused CSS
+- Caching: browser caching en server caching waar mogelijk
+
+Gebruik PageSpeed Insights als richting en test op mobiel (mobile-first).
+
+## Stap 6 - Rendering en JavaScript (P1)
+
+Veel sites lijken "ok" voor mensen, maar Google ziet minder.
+
+Check:
+
+- Is belangrijke content zichtbaar zonder JS?
+- Kan Google de pagina renderen (URL Inspection in Search Console)?
+- Wordt structured data correct gerenderd?
+
+Als rendering faalt, is content vaak onzichtbaar voor SEO.
+
+## Stap 7 - Structured data en metadata (P2)
+
+Structured data is geen ranking truc, maar helpt begrip en rich results.
+
+Checklist:
+
+- Structured data is relevant (Article/Product/FAQ waar het klopt)
+- Valideer op fouten (Search Console / testing tools)
+- Unieke title + meta description per belangrijke pagina
+- Geen massale duplicates door templates
+
+## Stap 8 - Internationale SEO (alleen als relevant)
+
+Als je meerdere talen/landen target:
+
+- hreflang correct (reciprocal en met juiste URLs)
+- Canonicals per locale kloppen
+- Sitemaps per taal/land (optioneel) en duidelijke structuur
+
+## Prioriteit model (simpel)
+
+- P0: indexatie blockers, 5xx, massale canonical/noindex fouten
+- P1: redirect chains, duplicate content op schaal, interne link issues, CWV problemen op templates
+- P2: structured data optimalisaties, kleinere meta issues, nice-to-haves
 
 ## Mini checklist (snel scannen)
 
-### Indexering
-
-- HTTPS werkt goed
-- robots.txt blokkeert niets belangrijks
-- sitemap.xml bestaat en staat in Search Console
-- geen onbedoelde noindex
-- canonicals kloppen
-
-### Fouten en redirects
-
-- 404/5xx errors oplossen
-- geen redirect chains
-- 301 voor permanente redirects
-
-### Structuur
-
-- belangrijke paginas binnen 2-3 klikken
-- geen orphan pages
-- interne links met duidelijke ankertekst
-
-### Performance
-
-- afbeeldingen verkleinen en comprimeren
-- scripts opschonen
-- mobile performance verbeteren
-
-### Meten
-
-- GA4 gecheckt
-- Search Console gecheckt
+- Indexatie: robots/noindex/sitemap/canonical
+- Errors: 404/5xx/redirect chains
+- Structuur: click depth, orphan pages, breadcrumbs
+- Performance: mobile speed en zware scripts
+- Rendering: JS/content zichtbaar voor Google
+- Meten: GSC + GA4 + conversies
 
 ## Hoe vaak doe je dit?
 
-Doe een technische SEO-analyse elke 3 tot 12 maanden. En altijd na grote releases of een redesign.
+- Kleine site: elke 6-12 maanden, en na grote releases/redesigns
+- Grotere site: elk kwartaal (light audit) + jaarlijks full audit
 
 ## Conclusie
 
-Technische SEO is de basis. Als Google je site niet goed kan lezen (of als je site traag is), laat je rankings en omzet liggen.
+Technische SEO is de basis. Als Google je site niet goed kan crawlen of indexeren, laat je rankings en omzet liggen.
 
-Pak eerst indexering en fouten aan. Daarna snelheid en structuur. Dan pas de details.
+Pak eerst P0 blockers aan, daarna structuur en performance, en pas daarna de details.
 `.trim(),
   translations: {
     en: {
-      title: 'Technical SEO audit: simple steps + checklist',
+      title: 'Technical SEO audit: complete steps + checklist (with priorities)',
       topic: 'SEO',
-      metaTitle: 'Technical SEO audit | Simple steps + checklist',
-      metaDescription: 'A simple technical SEO audit you can run in a few hours: indexing checks, errors, internal links, speed, structured data, and a quick checklist.',
+      metaTitle: 'Technical SEO audit checklist | Prioritized steps',
+      metaDescription: 'Run a prioritized technical SEO audit: indexing, redirects, crawl efficiency, internal links, Core Web Vitals, rendering/JS, and structured data.',
       content: `
-## What is a technical SEO audit?
+A technical SEO audit is the health check that tells you whether search engines can reliably crawl, render, and index your site and whether users get a fast, stable experience.
 
-A technical SEO audit is a check of your website's technical setup.
+The important part: the output should be a prioritized backlog, not a list of 200 warnings.
 
-The goal is simple:
+## What a good audit delivers
 
-- Google can crawl and index your pages.
-- Visitors get a fast, smooth experience.
+For each issue you want:
 
-## What do you check? (3 blocks)
+- Example URLs (proof)
+- Priority (P0/P1/P2)
+- Impact (traffic, conversion, risk)
+- Owner (SEO, dev, content)
+- Fix approach (what to change, where)
+- Measurement (how you will confirm the win)
 
-You can group the work into three parts:
+## Step 0 - Collect data (30-60 minutes)
 
-- Site infrastructure (HTTPS, sitemap, robots.txt)
-- Crawling and indexing (internal links, duplicate content, 404 pages)
-- On-page tech (speed, structured data, meta tags)
+Minimum:
 
-## Technical SEO audit: simple step-by-step
+- Google Search Console: Indexing, Sitemaps, Core Web Vitals, Enhancements, Manual actions, Security issues
+- A crawler: Ahrefs Site Audit or similar
+- GA4: top landing pages + conversions (so you do not break what makes money)
 
-### Step 1 - Can Google index your pages?
+Optional for bigger sites: server logs (bot behavior and crawl budget).
 
-Start here. If this is wrong, the rest will not help much.
+## Step 1 - Indexation and canonical setup (P0)
 
-- Is your site on HTTPS, without mixed content?
-- Does robots.txt block important pages?
-- Are there accidental noindex tags on key pages?
-- Do you have a sitemap.xml and is it submitted in Search Console?
-- Are canonical tags correct (usually self-referencing)?
+If Google cannot index, nothing else matters.
 
-### Step 2 - Find errors (404/5xx) and bad redirects
+Checklist:
 
-- Check Google Search Console for crawl errors.
-- Fix 404 pages (redirect or restore the page).
-- Avoid redirect chains (A -> B -> C). Make it one redirect.
-- Use 301 for permanent redirects.
+- robots.txt does not block important sections
+- no accidental noindex (meta robots or x-robots-tag)
+- sitemap.xml exists, is current, and is submitted in Search Console
+- canonicals are correct (often self-referencing) and do not point to 404
+- HTTP->HTTPS is consistent and no mixed content
+- www/non-www and trailing slash are consistent
 
-### Step 3 - Check internal links and site structure
+## Step 2 - Status codes and redirects (P0/P1)
 
-- Can you reach important pages within 2-3 clicks?
-- No orphan pages (pages without internal links).
-- Use clear anchor text.
-- Use breadcrumbs if the site is large.
+This is about accessibility and preserving link equity.
 
-### Step 4 - Speed and mobile
+- 5xx: direct indexation risk, fix fast
+- 404/410: fix or redirect (especially if internally linked or with backlinks)
+- redirect chains/loops: collapse to one clean redirect
+- 302 vs 301: use 301 when the move is permanent
+- soft 404: page returns 200 but behaves like a not-found page
 
-- Test with PageSpeed Insights (mobile is often the bottleneck).
-- Compress images and use modern formats where possible.
-- Load heavy parts only when needed (lazy loading).
-- Remove unnecessary scripts.
+Start with pages that get traffic or conversions.
 
-### Step 5 - On-page basics (meta + structured data)
+## Step 3 - Crawl efficiency and duplicates (P1)
 
-- Unique title tag and meta description per page.
-- No duplicate titles on key pages.
-- Add structured data where it makes sense (Article/FAQ/Product).
+Large sites leak crawl budget and relevance via:
 
-### Step 6 - Measure and monitor
+- parameter URLs (filters/sorting) creating thousands of variants
+- duplicate content from tags, pagination, templates, or session IDs
+- poor canonical strategy across variants
+- internal links sending Google to non-canonical URLs
 
-- Is GA4 active?
-- Is Search Console connected?
-- Check monthly for new errors.
+Goal: reduce noise and push crawl to pages that matter.
 
-## Mini checklist (quick scan)
+## Step 4 - Architecture and internal linking (P1)
 
-### Indexing
-
-- HTTPS works
-- robots.txt does not block important pages
-- sitemap.xml exists and is in Search Console
-- no accidental noindex
-- canonicals are correct
-
-### Errors and redirects
-
-- fix 404/5xx errors
-- no redirect chains
-- 301 for permanent redirects
-
-### Structure
+This is where many sites win quickly.
 
 - important pages within 2-3 clicks
-- no orphan pages
-- clear internal link anchors
+- no orphan pages (pages with no internal links)
+- breadcrumbs for structure and UX
+- descriptive anchors (not "click here")
+- topic clusters: 1 hub page + supporting pages, linked both ways
 
-### Performance
+## Step 5 - Performance and Core Web Vitals (P1/P2)
 
-- compress images
-- remove unused scripts
-- improve mobile performance
+Speed is mostly a UX problem, but it also affects crawling and conversion.
 
-### Measurement
+Typical wins:
 
-- GA4 checked
-- Search Console checked
+- images: right sizes, compression, lazy loading
+- JavaScript: remove heavy third-party scripts, reduce blocking work
+- CSS: remove unused CSS, optimize critical CSS
+- caching: browser and server caching where possible
 
-## How often should you do this?
+Test on mobile and validate improvements on template level (not one page).
 
-Run a technical SEO audit every 3 to 12 months. And always after big releases or a redesign.
+## Step 6 - Rendering and JavaScript SEO (P1)
+
+A site can look fine to users and still be weak for Google.
+
+Check:
+
+- is critical content visible without JavaScript?
+- can Google render the page (URL Inspection in Search Console)?
+- are internal links discoverable in rendered HTML?
+- does structured data render correctly?
+
+If rendering fails, content is effectively invisible for SEO.
+
+## Step 7 - Structured data and snippet quality (P2)
+
+Structured data is not a ranking hack. It helps understanding and eligibility for rich results.
+
+- use only relevant schemas (Article/Product/FAQ where it fits)
+- validate errors and warnings
+- ensure unique title + meta description on important pages
+- avoid mass duplicates caused by templates
+
+## Step 8 - International SEO (only if relevant)
+
+If you target multiple languages/countries:
+
+- hreflang is correct and reciprocal
+- canonicals are correct per locale
+- clear site structure per language/country (optional: separate sitemaps)
+
+## Simple priority model
+
+- P0: indexation blockers, 5xx, large-scale canonical/noindex mistakes
+- P1: redirect chains, duplicates at scale, internal link issues, CWV issues on templates, rendering problems
+- P2: structured data improvements, minor meta issues, nice-to-haves
+
+## Quick audit checklist
+
+- Indexing: robots/noindex/sitemap/canonical
+- Errors: 404/5xx/redirect chains
+- Crawl efficiency: parameters and duplicates
+- Structure: click depth, orphan pages, breadcrumbs
+- Performance: mobile speed and heavy scripts
+- Rendering: JS/content visible for Google
+- Measurement: GSC + GA4 + conversions
+
+## How often should you run it?
+
+- Small site: every 6-12 months, and after big releases/redesigns
+- Bigger site: quarterly light checks + yearly full audit
 
 ## Conclusion
 
-Technical SEO is the foundation. Fix indexing and errors first. Then speed and structure. Then the details.
+Technical SEO is the foundation. Fix P0 blockers first, then structure and performance, then the details.
 `.trim(),
     },
     nl: {
-      title: 'Technische SEO-analyse: simpel stappenplan + checklist',
+      title: 'Technische SEO-analyse: compleet stappenplan + checklist (met prioriteit)',
       topic: 'SEO',
-      metaTitle: 'Technische SEO-analyse | Simpel stappenplan + checklist',
-      metaDescription: 'Een simpele technische SEO-analyse in duidelijke stappen: indexering, fouten, interne links, snelheid, structured data en een mini checklist.',
+      metaTitle: 'Technische SEO-analyse checklist | Stappenplan met prioriteit',
+      metaDescription: 'Voer een technische SEO-analyse uit met prioriteit: indexatie, redirects, crawl efficiency, interne links, Core Web Vitals, rendering/JS en structured data.',
       content: `
-## Wat is een technische SEO-analyse?
+Een technische SEO-analyse is de health check waarmee je bepaalt of Google je site goed kan crawlen, renderen en indexeren, en of bezoekers een snelle, stabiele ervaring krijgen.
 
-Een technische SEO-analyse is een check van de techniek van je website.
+Het belangrijkste: de output hoort een prioriteitenlijst te zijn, niet een lijst met 200 warnings.
 
-Het doel is simpel:
+## Wat levert een goede audit op?
 
-- Google moet je paginas kunnen crawlen en indexeren.
-- Bezoekers moeten een snelle, fijne website krijgen.
+Per issue wil je dit terugzien:
 
-## Wat check je? (3 blokken)
+- Voorbeeld URLs (bewijs)
+- Prioriteit (P0/P1/P2)
+- Impact (traffic, conversie, risico)
+- Owner (SEO, dev, content)
+- Fix aanpak (wat pas je aan en waar)
+- Meting (hoe check je dat het is opgelost?)
 
-Je kunt alles groeperen in drie delen:
+## Stap 0 - Verzamel data (30-60 min)
 
-- Website infrastructuur (HTTPS, sitemap, robots.txt)
-- Crawling en indexering (interne links, duplicate content, 404 paginas)
-- On-page techniek (snelheid, structured data, meta tags)
+Minimaal:
 
-## Technische SEO-analyse: simpel stappenplan
+- Google Search Console: Indexing, Sitemaps, Core Web Vitals, Enhancements, Manual actions, Security issues
+- Een crawler: Ahrefs Site Audit of vergelijkbaar
+- GA4: top landing pages + conversies (zodat je niet per ongeluk je omzet sloopt)
 
-### Stap 1 - Mag Google je paginas indexeren?
+Optioneel bij grotere sites: server logs (bot gedrag en crawl budget).
 
-Check dit als eerste, want als dit fout staat, helpt de rest bijna niet.
+## Stap 1 - Indexatie en canonical setup (P0)
 
-- Staat je site op HTTPS en zonder "mixed content"?
-- Blokkeert robots.txt geen belangrijke paginas?
-- Staan er geen onbedoelde noindex tags op belangrijke paginas?
-- Is er een sitemap.xml en staat die in Google Search Console?
-- Kloppen je canonical tags (meestal: self-referencing)?
+Als Google niet kan indexeren, heeft de rest weinig zin.
 
-### Stap 2 - Vind fouten (404/5xx) en slechte redirects
+Checklist:
 
-- Check Google Search Console op crawl errors.
-- Los 404 paginas op (redirect of herstel de pagina).
-- Vermijd redirect chains (A -> B -> C). Maak er 1 redirect van.
-- Gebruik 301 voor permanente redirects.
+- robots.txt blokkeert geen belangrijke secties
+- geen onbedoelde noindex (meta robots of x-robots-tag)
+- sitemap.xml bestaat, is up-to-date en is ingediend in Search Console
+- canonicals kloppen (vaak self-referencing) en wijzen niet naar 404
+- HTTP->HTTPS is consistent en geen mixed content
+- www/non-www en trailing slash zijn consistent
 
-### Stap 3 - Check interne links en site structuur
+## Stap 2 - Status codes en redirects (P0/P1)
 
-- Kun je belangrijke paginas binnen 2-3 klikken bereiken?
-- Zijn er geen "wees paginas" (orphan pages) zonder interne links?
-- Gebruik duidelijke ankerteksten.
-- Gebruik breadcrumbs als je site groter is.
+Dit gaat om bereikbaarheid en het behouden van link equity.
 
-### Stap 4 - Snelheid en mobiel
+- 5xx: direct indexatie risico, fix snel
+- 404/410: fix of redirect (zeker met interne links of backlinks)
+- redirect chains/loops: maak 1 schone redirect
+- 302 vs 301: 301 voor permanent
+- soft 404: pagina is 200 maar gedraagt zich als "not found"
 
-- Test met PageSpeed Insights (mobile is meestal de bottleneck).
-- Comprimeer afbeeldingen en gebruik moderne formaten waar kan.
-- Laad pas zware onderdelen als ze in beeld komen (lazy loading).
-- Minimaliseer onnodige scripts.
+Start met paginas die traffic of conversies hebben.
 
-### Stap 5 - On-page basics (meta + structured data)
+## Stap 3 - Crawl efficiency en duplicates (P1)
 
-- Unieke title tag en meta description per pagina.
-- Geen dubbele titles op belangrijke paginas.
-- Structured data waar het logisch is (Article/FAQ/Product).
+Grote sites lekken crawl budget en relevance door:
 
-### Stap 6 - Meten en monitoren
+- parameter URLs (filters/sortering) met duizenden varianten
+- duplicate content door tags, paginering, templates of sessie IDs
+- slechte canonical strategie tussen varianten
+- interne links die naar non-canonicals sturen
 
-- Is GA4 actief?
-- Is Google Search Console gekoppeld?
-- Check elke maand even op nieuwe errors.
+Doel: minder ruis, meer focus op paginas die ertoe doen.
 
-## Mini checklist (snel scannen)
+## Stap 4 - Architectuur en interne links (P1)
 
-### Indexering
-
-- HTTPS werkt goed
-- robots.txt blokkeert niets belangrijks
-- sitemap.xml bestaat en staat in Search Console
-- geen onbedoelde noindex
-- canonicals kloppen
-
-### Fouten en redirects
-
-- 404/5xx errors oplossen
-- geen redirect chains
-- 301 voor permanente redirects
-
-### Structuur
+Hier zit vaak de snelste winst.
 
 - belangrijke paginas binnen 2-3 klikken
-- geen orphan pages
-- interne links met duidelijke ankertekst
+- geen orphan pages (paginas zonder interne links)
+- breadcrumbs voor structuur en UX
+- beschrijvende anchors (niet "klik hier")
+- topic clusters: 1 hub pagina + supporting paginas, met links beide kanten op
 
-### Performance
+## Stap 5 - Performance en Core Web Vitals (P1/P2)
 
-- afbeeldingen verkleinen en comprimeren
-- scripts opschonen
-- mobile performance verbeteren
+Snelheid is vooral UX, maar het helpt ook crawl en conversie.
 
-### Meten
+Waar ik meestal winst zie:
 
-- GA4 gecheckt
-- Search Console gecheckt
+- afbeeldingen: juiste formaten, compressie, lazy loading
+- JavaScript: minder third-party scripts, minder blocking werk
+- CSS: unused CSS weg, critical CSS optimaliseren
+- caching: browser en server caching waar mogelijk
+
+Test mobiel en valideer op template niveau (niet 1 losse pagina).
+
+## Stap 6 - Rendering en JavaScript SEO (P1)
+
+Een site kan er goed uitzien voor mensen en toch zwak zijn voor Google.
+
+Check:
+
+- is belangrijke content zichtbaar zonder JavaScript?
+- kan Google renderen (URL Inspection in Search Console)?
+- zijn interne links vindbaar in de gerenderde HTML?
+- rendert structured data correct?
+
+Als rendering faalt, is content in de praktijk onzichtbaar voor SEO.
+
+## Stap 7 - Structured data en snippet kwaliteit (P2)
+
+Structured data is geen ranking truc. Het helpt begrip en rich results.
+
+- gebruik alleen relevante schemas (Article/Product/FAQ waar het past)
+- valideer errors en warnings
+- unieke title + meta description op belangrijke paginas
+- voorkom massale duplicates door templates
+
+## Stap 8 - Internationale SEO (alleen als relevant)
+
+Als je meerdere talen/landen target:
+
+- hreflang klopt en is reciprocal
+- canonicals kloppen per locale
+- duidelijke structuur per taal/land (optioneel: aparte sitemaps)
+
+## Prioriteiten model (simpel)
+
+- P0: indexatie blockers, 5xx, grootschalige canonical/noindex fouten
+- P1: redirect chains, duplicates op schaal, interne link issues, CWV issues op templates, rendering problemen
+- P2: structured data optimalisaties, kleinere meta issues, nice-to-haves
+
+## Quick checklist
+
+- Indexatie: robots/noindex/sitemap/canonical
+- Errors: 404/5xx/redirect chains
+- Crawl efficiency: parameters en duplicates
+- Structuur: click depth, orphan pages, breadcrumbs
+- Performance: mobile speed en zware scripts
+- Rendering: JS/content zichtbaar voor Google
+- Meten: GSC + GA4 + conversies
 
 ## Hoe vaak doe je dit?
 
-Doe een technische SEO-analyse elke 3 tot 12 maanden. En altijd na grote releases of een redesign.
+- Kleine site: elke 6-12 maanden, en na grote releases/redesigns
+- Grotere site: elk kwartaal light checks + jaarlijks full audit
 
 ## Conclusie
 
-Technische SEO is de basis. Pak eerst indexering en fouten aan. Daarna snelheid en structuur. Dan pas de details.
+Technische SEO is de basis. Fix eerst P0 blockers, daarna structuur en performance, en pas daarna de details.
 `.trim(),
     },
     de: {
-      title: 'Technische SEO Analyse: einfache Schritte + Checkliste',
+      title: 'Technische SEO Analyse: kompletter Audit + Checkliste (mit Prioritaet)',
       topic: 'SEO',
-      metaTitle: 'Technische SEO Analyse | Schritte + Checkliste',
-      metaDescription: 'Einfache technische SEO Analyse: Indexierung, Fehler, interne Links, Speed, Structured Data und eine kurze Checkliste.',
+      metaTitle: 'Technische SEO Analyse Checkliste | Audit mit Prioritaet',
+      metaDescription: 'Priorisierte technische SEO Analyse: Indexierung, Redirects, Crawl Efficiency, interne Links, Core Web Vitals, Rendering/JS und Structured Data.',
       content: `
-## Was ist eine technische SEO Analyse?
+Eine technische SEO Analyse ist der Health Check, mit dem du pruefst, ob Google deine Website sauber crawlen, rendern und indexieren kann und ob Nutzer eine schnelle, stabile Experience bekommen.
 
-Eine technische SEO Analyse ist ein Check der technischen Basis deiner Website.
+Wichtig: das Ergebnis sollte ein priorisiertes Backlog sein, nicht 200 Warnungen ohne Kontext.
 
-Das Ziel ist simpel:
+## Was eine gute Analyse liefert
 
-- Google kann deine Seiten crawlen und indexieren.
-- Nutzer bekommen eine schnelle, saubere Experience.
+- Beispiel URLs (Beweis)
+- Prioritaet (P0/P1/P2)
+- Impact (Traffic, Conversion, Risiko)
+- Owner (SEO, Dev, Content)
+- Fix Ansatz und Messung
 
-## Was pruefst du? (3 Bloecke)
+## Schritt 0 - Daten sammeln (30-60 min)
 
-Du kannst alles in drei Teile gruppieren:
+- Google Search Console: Indexing, Sitemaps, Core Web Vitals, Enhancements, Manual actions, Security issues
+- Crawler: Ahrefs Site Audit oder aehnlich
+- GA4: wichtigste Landing Pages + Conversions
 
-- Infrastruktur (HTTPS, sitemap, robots.txt)
-- Crawling und Indexierung (interne Links, duplicate content, 404 Seiten)
-- On-page Technik (Speed, structured data, meta tags)
+Optional: Server Logs fuer Bot Verhalten und Crawl Budget.
 
-## Technische SEO Analyse: einfache Schritte
+## Schritt 1 - Indexierung und Canonicals (P0)
 
-### Schritt 1 - Darf Google deine Seiten indexieren?
-
-Starte hier. Wenn das falsch ist, bringt der Rest wenig.
-
-- Laeuft die Seite auf HTTPS, ohne mixed content?
-- Blockiert robots.txt wichtige Seiten?
-- Gibt es aus Versehen noindex auf wichtigen Seiten?
-- Gibt es eine sitemap.xml und ist sie in Search Console eingereicht?
-- Sind Canonical Tags korrekt (meist self-referencing)?
-
-### Schritt 2 - Fehler (404/5xx) und schlechte Redirects
-
-- Checke Search Console auf Crawl Errors.
-- Fixe 404 Seiten (redirect oder Seite wiederherstellen).
-- Vermeide redirect chains (A -> B -> C). Mach einen Redirect.
-- Nutze 301 fuer permanente Redirects.
-
-### Schritt 3 - Interne Links und Struktur
-
-- Wichtige Seiten in 2-3 Klicks erreichbar?
-- Keine orphan pages (Seiten ohne interne Links).
-- Klare Anchor Texte.
-- Breadcrumbs, wenn die Seite groesser ist.
-
-### Schritt 4 - Speed und Mobile
-
-- Teste mit PageSpeed Insights (mobile ist oft der Engpass).
-- Bilder komprimieren und moderne Formate nutzen.
-- Heavy content nur laden wenn noetig (lazy loading).
-- Unnoetige Skripte entfernen.
-
-### Schritt 5 - On-page Basics (Meta + Structured Data)
-
-- Unique Title und Meta Description pro Seite.
-- Keine doppelten Titles auf wichtigen Seiten.
-- Structured Data wo es passt (Article/FAQ/Product).
-
-### Schritt 6 - Messen und monitoren
-
-- GA4 aktiv?
-- Search Console verbunden?
-- Monatlich kurz auf neue Errors checken.
-
-## Mini Checkliste
-
-### Indexierung
-
-- HTTPS ok
 - robots.txt blockiert nichts Wichtiges
-- sitemap.xml existiert und ist eingereicht
-- kein versehentliches noindex
-- canonicals korrekt
+- kein noindex aus Versehen (meta robots / x-robots-tag)
+- sitemap.xml aktuell und in Search Console eingereicht
+- canonicals korrekt (oft self-referencing), keine 404 Targets
+- HTTPS konsistent, kein mixed content
+- www/non-www und trailing slash konsistent
 
-### Fehler und Redirects
+## Schritt 2 - Status Codes und Redirects (P0/P1)
 
-- 404/5xx fixen
-- keine redirect chains
-- 301 fuer permanente Redirects
+- 5xx sofort fixen (Indexierungsrisiko)
+- 404/410 fix oder redirect (vor allem mit internen Links/Backlinks)
+- redirect chains/loops auf eine saubere 301 reduzieren
+- 302 nur wenn wirklich temporaer
+- soft 404 erkennen (200, aber "not found" Inhalt)
 
-### Struktur
+## Schritt 3 - Crawl Efficiency und Duplicates (P1)
+
+- Parameter URLs (Filter/Sort) begrenzen
+- Duplicate Content durch Tags/Pagination/Templates reduzieren
+- Canonical Strategie fuer Varianten pruefen
+- Interne Links auf canonicals ausrichten
+
+## Schritt 4 - Architektur und interne Links (P1)
 
 - wichtige Seiten in 2-3 Klicks
 - keine orphan pages
-- klare interne Links
+- breadcrumbs fuer Struktur
+- klare Anchor Texte
+- Topic Cluster: Hub + Supporting Pages, beidseitig verlinkt
 
-### Performance
+## Schritt 5 - Performance und Core Web Vitals (P1/P2)
 
-- Bilder komprimieren
-- Skripte aufraeumen
-- mobile Performance verbessern
+- Bilder: Groesse, Kompression, lazy loading
+- JavaScript: third-party Skripte reduzieren, blocking Work minimieren
+- CSS: unused CSS entfernen, critical CSS optimieren
+- caching wo moeglich
 
-### Tracking
+## Schritt 6 - Rendering und JavaScript SEO (P1)
 
-- GA4 gecheckt
-- Search Console gecheckt
+- wichtige Inhalte ohne JS sichtbar?
+- URL Inspection (GSC) pruefen: Rendering ok?
+- interne Links im gerenderten HTML vorhanden?
+- structured data wird gerendert?
+
+## Schritt 7 - Structured Data und Snippet Qualitaet (P2)
+
+- nur passende Schemas nutzen (Article/Product/FAQ)
+- Errors/Warnungen validieren
+- unique Title + Meta pro wichtige Seite
+- Template Duplicates vermeiden
+
+## Schritt 8 - International SEO (nur wenn relevant)
+
+- hreflang korrekt und reciprocal
+- canonicals pro Locale korrekt
+- klare Struktur pro Sprache/Land
+
+## Prioritaetsmodell (simpel)
+
+- P0: Indexierungsblocker, 5xx, grosse canonical/noindex Fehler
+- P1: chains, duplicates at scale, interne Links, CWV/Rendering auf Templates
+- P2: structured data Feinschliff, kleinere meta Themen
+
+## Quick Checkliste
+
+- Indexing: robots/noindex/sitemap/canonical
+- Errors: 404/5xx/redirect chains
+- Crawl: Parameter + Duplicates
+- Struktur: click depth, orphan pages, breadcrumbs
+- Speed: mobile performance, heavy scripts
+- Rendering: JS/Content sichtbar
+- Messung: GSC + GA4 + Conversions
 
 ## Wie oft?
 
-Alle 3 bis 12 Monate. Und immer nach grossen Releases oder einem Redesign.
+- Kleine Sites: alle 6-12 Monate + nach Releases/Redesign
+- Groessere Sites: quartalsweise light checks + jaehrlich full audit
 
 ## Fazit
 
-Technische SEO ist die Basis. Fix Indexierung und Fehler zuerst. Dann Speed und Struktur. Dann Details.
+Technische SEO ist die Basis. Fix P0 zuerst, dann Struktur und Performance, dann Details.
 `.trim(),
     },
     sv: {
-      title: 'Teknisk SEO-analys: enkla steg + checklista',
+      title: 'Teknisk SEO-analys: komplett audit + checklista (med prioritet)',
       topic: 'SEO',
-      metaTitle: 'Teknisk SEO-analys | Steg + checklista',
-      metaDescription: 'En enkel teknisk SEO-analys: indexering, fel, interna lankar, hastighet, structured data och en snabb checklista.',
+      metaTitle: 'Teknisk SEO-analys checklista | Audit med prioritet',
+      metaDescription: 'Prioriterad teknisk SEO-analys: indexering, redirects, crawl efficiency, interna lankar, Core Web Vitals, rendering/JS och structured data.',
       content: `
-## Vad ar en teknisk SEO-analys?
+En teknisk SEO-analys ar en health check som visar om Google kan crawla, rendera och indexera din sajt pa ett stabilt satt och om besokare far en snabb, bra upplevelse.
 
-En teknisk SEO-analys ar en snabb check av webbplatsens teknik.
+Det viktiga: resultatet ska bli en prioriterad backlog, inte 200 varningar utan action.
 
-Maalet ar enkelt:
+## Vad en bra audit levererar
 
-- Google kan crawla och indexera dina sidor.
-- Besokare far en snabb och bra upplevelse.
+- Exempel URLs (bevis)
+- Prioritet (P0/P1/P2)
+- Effekt (trafik, konvertering, risk)
+- Owner (SEO, dev, content)
+- Fix + hur du mater resultat
 
-## Vad ska du kolla? (3 delar)
+## Steg 0 - Samla data (30-60 min)
 
-- Infrastruktur (HTTPS, sitemap, robots.txt)
-- Crawling och indexering (interna lankar, duplicate content, 404 sidor)
-- On-page tech (hastighet, structured data, meta tags)
+- Google Search Console: Indexing, Sitemaps, Core Web Vitals, Enhancements, Manual actions, Security issues
+- Crawler: Ahrefs Site Audit eller liknande
+- GA4: viktigaste landing pages + konverteringar
 
-## Teknisk SEO-analys: enkla steg
+Optional: server logs for bot beteende och crawl budget.
 
-### Steg 1 - Kan Google indexera dina sidor?
+## Steg 1 - Indexering och canonicals (P0)
 
-Borja har. Om detta ar fel, hjalper resten mindre.
-
-- HTTPS utan mixed content?
-- Blockerar robots.txt viktiga sidor?
-- Finns det noindex av misstag pa viktiga sidor?
-- Finns sitemap.xml och ar den inskickad i Search Console?
-- Ar canonical tags korrekta (oftast self-referencing)?
-
-### Steg 2 - Hitta fel (404/5xx) och daliga redirects
-
-- Kolla Search Console for crawl errors.
-- Fixa 404 sidor (redirect eller aterstall sidan).
-- Undvik redirect chains (A -> B -> C).
-- Anvand 301 for permanenta redirects.
-
-### Steg 3 - Interna lankar och struktur
-
-- Viktiga sidor inom 2-3 klick?
-- Inga orphan pages (sidor utan interna lankar).
-- Tydlig anchor text.
-- Breadcrumbs om sajten ar stor.
-
-### Steg 4 - Hastighet och mobile
-
-- Testa med PageSpeed Insights (mobile ar ofta flaskhals).
-- Komprimera bilder och anvand moderna format.
-- Lazy loading for tunga delar.
-- Ta bort onodiga script.
-
-### Steg 5 - On-page basics (meta + structured data)
-
-- Unik title och meta description per sida.
-- Inga dubbla titles pa viktiga sidor.
-- Structured data dar det passar (Article/FAQ/Product).
-
-### Steg 6 - Mata och folj upp
-
-- GA4 aktiv?
-- Search Console kopplad?
-- Kolla manadsvis efter nya fel.
-
-## Snabb checklista
-
-### Indexering
-
-- HTTPS ok
 - robots.txt blockerar inget viktigt
-- sitemap.xml finns och ar inskickad
-- inget noindex av misstag
-- canonicals ok
+- inget noindex av misstag (meta robots / x-robots-tag)
+- sitemap.xml ar aktuell och inskickad
+- canonicals korrekta (ofta self-referencing), inte mot 404
+- HTTPS konsekvent, ingen mixed content
+- www/non-www och trailing slash konsekvent
 
-### Fel och redirects
+## Steg 2 - Status codes och redirects (P0/P1)
 
-- fixa 404/5xx
-- inga redirect chains
-- 301 for permanenta redirects
+- 5xx fix direkt (indexeringsrisk)
+- 404/410 fixa eller redirect (sarskilt med interna lankar/backlinks)
+- redirect chains/loops: gor en ren redirect
+- 302 bara om det ar temporart
+- soft 404: 200 men "not found" innehall
 
-### Struktur
+## Steg 3 - Crawl efficiency och duplicates (P1)
+
+- parameter URLs (filter/sort) som skapar tusentals varianter
+- duplicates via tags/paginering/templates
+- canonical strategi for varianter
+- interna lankar pekar mot canonical URLs
+
+## Steg 4 - Struktur och interna lankar (P1)
 
 - viktiga sidor inom 2-3 klick
 - inga orphan pages
-- tydliga interna lankar
+- breadcrumbs for struktur och UX
+- tydliga anchors
+- topic clusters: 1 hub + supporting pages, lankade i bada riktningar
 
-### Performance
+## Steg 5 - Performance och Core Web Vitals (P1/P2)
 
-- komprimera bilder
-- stada script
-- battra mobile performance
+- bilder: storlek, komprimering, lazy loading
+- JavaScript: mindre third-party, mindre blocking
+- CSS: ta bort unused CSS, optimera critical CSS
+- caching dar det gar
 
-### Matning
+## Steg 6 - Rendering och JavaScript SEO (P1)
 
-- GA4 checkad
-- Search Console checkad
+- syns viktig content utan JS?
+- URL Inspection i GSC: rendering ok?
+- interna lankar synliga i renderad HTML?
+- structured data renderas?
+
+## Steg 7 - Structured data och snippet kvalitet (P2)
+
+- anvand bara relevanta schemas (Article/Product/FAQ)
+- validera errors och warnings
+- unik title + meta description pa viktiga sidor
+- undvik template duplicates
+
+## Steg 8 - International SEO (om relevant)
+
+- hreflang korrekt och reciprocal
+- canonicals per locale korrekta
+- tydlig struktur per sprak/land
+
+## Prioritet (enkelt)
+
+- P0: indexeringsblocker, 5xx, stora canonical/noindex fel
+- P1: chains, duplicates i skala, interna lankar, CWV/rendering pa templates
+- P2: structured data finjustering, mindre meta issues
+
+## Snabb checklista
+
+- Indexing: robots/noindex/sitemap/canonical
+- Errors: 404/5xx/redirect chains
+- Crawl: parameters + duplicates
+- Struktur: click depth, orphan pages, breadcrumbs
+- Speed: mobile performance, tunga scripts
+- Rendering: JS/content synlig
+- Matning: GSC + GA4 + konverteringar
 
 ## Hur ofta?
 
-Var 3 till 12 manad. Och alltid efter stora releaser eller redesign.
+- Liten sajt: var 6-12 manad + efter releaser/redesign
+- Stor sajt: kvartalsvis light checks + arlig full audit
 
 ## Slutsats
 
-Teknisk SEO ar grunden. Fixa indexering och fel forst. Sen hastighet och struktur. Sen detaljer.
+Teknisk SEO ar grunden. Fixa P0 forst, sen struktur och hastighet, sen detaljer.
 `.trim(),
     },
     da: {
-      title: 'Teknisk SEO-analyse: enkle trin + tjekliste',
+      title: 'Teknisk SEO-analyse: komplet audit + tjekliste (med prioritet)',
       topic: 'SEO',
-      metaTitle: 'Teknisk SEO-analyse | Trin + tjekliste',
-      metaDescription: 'En enkel teknisk SEO-analyse: indeksering, fejl, interne links, hastighed, structured data og en hurtig tjekliste.',
+      metaTitle: 'Teknisk SEO-analyse tjekliste | Audit med prioritet',
+      metaDescription: 'Prioriteret teknisk SEO-analyse: indeksering, redirects, crawl efficiency, interne links, Core Web Vitals, rendering/JS og structured data.',
       content: `
-## Hvad er en teknisk SEO-analyse?
+En teknisk SEO-analyse er et health check der viser om Google kan crawle, rendere og indeksere dit site stabilt, og om brugere faar en hurtig, god oplevelse.
 
-En teknisk SEO-analyse er et check af dit websites teknik.
+Det vigtige: resultatet skal vaere et prioriteret backlog, ikke 200 advarsler uden action.
 
-Maalet er simpelt:
+## Hvad en god audit leverer
 
-- Google kan crawle og indeksere dine sider.
-- Brugere faar en hurtig og god oplevelse.
+- Eksempel URLs (bevis)
+- Prioritet (P0/P1/P2)
+- Effekt (trafik, konvertering, risiko)
+- Owner (SEO, dev, content)
+- Fix + hvordan du maaler resultat
 
-## Hvad skal du tjekke? (3 blokke)
+## Trin 0 - Saml data (30-60 min)
 
-- Infrastruktur (HTTPS, sitemap, robots.txt)
-- Crawling og indeksering (interne links, duplicate content, 404 sider)
-- On-page tech (hastighed, structured data, meta tags)
+- Google Search Console: Indexing, Sitemaps, Core Web Vitals, Enhancements, Manual actions, Security issues
+- Crawler: Ahrefs Site Audit eller lignende
+- GA4: vigtigste landing pages + konverteringer
 
-## Teknisk SEO-analyse: enkle trin
+Optional: server logs for bot adfaerd og crawl budget.
 
-### Trin 1 - Kan Google indeksere dine sider?
+## Trin 1 - Indeksering og canonicals (P0)
 
-Start her. Hvis dette er forkert, giver resten mindre effekt.
+- robots.txt blokerer intet vigtigt
+- ingen noindex ved en fejl (meta robots / x-robots-tag)
+- sitemap.xml er aktuel og indsendt
+- canonicals korrekte (ofte self-referencing), ikke mod 404
+- HTTPS konsekvent, ingen mixed content
+- www/non-www og trailing slash konsekvent
 
-- HTTPS uden mixed content?
-- Blokerer robots.txt vigtige sider?
-- Er der noindex ved en fejl paa vigtige sider?
-- Findes sitemap.xml og er den indsendt i Search Console?
-- Er canonical tags korrekte (ofte self-referencing)?
+## Trin 2 - Status codes og redirects (P0/P1)
 
-### Trin 2 - Find fejl (404/5xx) og daarlige redirects
+- 5xx fixes straks (indekseringsrisiko)
+- 404/410 fix eller redirect (isaer med interne links/backlinks)
+- redirect chains/loops: lav 1 ren redirect
+- 302 kun hvis det er midlertidigt
+- soft 404: 200 men "not found" indhold
 
-- Tjek Search Console for crawl errors.
-- Fix 404 sider (redirect eller genskab siden).
-- Undgaa redirect chains (A -> B -> C).
-- Brug 301 til permanente redirects.
+## Trin 3 - Crawl efficiency og duplicates (P1)
 
-### Trin 3 - Interne links og struktur
+- parameter URLs (filter/sort) der skaber mange varianter
+- duplicates via tags/paginering/templates
+- canonical strategi for varianter
+- interne links peger mod canonical URLs
 
-- Vigtige sider inden for 2-3 klik?
-- Ingen orphan pages (sider uden interne links).
-- Tydelige ankertekster.
-- Breadcrumbs hvis sitet er stort.
-
-### Trin 4 - Hastighed og mobile
-
-- Test med PageSpeed Insights (mobile er ofte flaskehalsen).
-- Komprimer billeder og brug moderne formater.
-- Lazy loading til tunge elementer.
-- Fjern unodige scripts.
-
-### Trin 5 - On-page basics (meta + structured data)
-
-- Unik title og meta description pr side.
-- Ingen duplikerede titles paa vigtige sider.
-- Structured data hvor det giver mening (Article/FAQ/Product).
-
-### Trin 6 - Maal og foelg op
-
-- GA4 aktiv?
-- Search Console koblet paa?
-- Tjek maanedligt for nye fejl.
-
-## Hurtig tjekliste
-
-### Indeksering
-
-- HTTPS ok
-- robots.txt blokerer ikke noget vigtigt
-- sitemap.xml findes og er indsendt
-- ingen noindex ved en fejl
-- canonicals ok
-
-### Fejl og redirects
-
-- fix 404/5xx
-- ingen redirect chains
-- 301 til permanente redirects
-
-### Struktur
+## Trin 4 - Struktur og interne links (P1)
 
 - vigtige sider inden for 2-3 klik
 - ingen orphan pages
-- tydelige interne links
+- breadcrumbs for struktur og UX
+- tydelige anchors
+- topic clusters: 1 hub + supporting pages, linket begge veje
 
-### Performance
+## Trin 5 - Performance og Core Web Vitals (P1/P2)
 
-- komprimer billeder
-- ryd op i scripts
-- forbedr mobile performance
+- billeder: stoerrelse, komprimering, lazy loading
+- JavaScript: mindre third-party, mindre blocking
+- CSS: fjern unused CSS, optimer critical CSS
+- caching hvor det giver mening
 
-### Maaling
+## Trin 6 - Rendering og JavaScript SEO (P1)
 
-- GA4 tjekket
-- Search Console tjekket
+- er vigtig content synlig uden JS?
+- URL Inspection i GSC: rendering ok?
+- interne links synlige i renderet HTML?
+- structured data renderes?
+
+## Trin 7 - Structured data og snippet kvalitet (P2)
+
+- brug kun relevante schemas (Article/Product/FAQ)
+- valider errors og warnings
+- unik title + meta description paa vigtige sider
+- undgaa template duplicates
+
+## Trin 8 - International SEO (hvis relevant)
+
+- hreflang korrekt og reciprocal
+- canonicals pr locale korrekte
+- tydelig struktur pr sprog/land
+
+## Prioritet (simpelt)
+
+- P0: indekseringsblokeringer, 5xx, store canonical/noindex fejl
+- P1: chains, duplicates i skala, interne links, CWV/rendering paa templates
+- P2: structured data finpudsning, mindre meta issues
+
+## Hurtig tjekliste
+
+- Indeksering: robots/noindex/sitemap/canonical
+- Fejl: 404/5xx/redirect chains
+- Crawl: parameters + duplicates
+- Struktur: click depth, orphan pages, breadcrumbs
+- Speed: mobile performance, tunge scripts
+- Rendering: JS/content synlig
+- Maaling: GSC + GA4 + konverteringer
 
 ## Hvor ofte?
 
-Hver 3 til 12 maaned. Og altid efter store releases eller redesign.
+- Lille site: hver 6-12 maaned + efter releases/redesign
+- Stort site: kvartalsvis light checks + aarlig full audit
 
 ## Konklusion
 
-Teknisk SEO er fundamentet. Fix indeksering og fejl foerst. Saa hastighed og struktur. Saa detaljer.
+Teknisk SEO er fundamentet. Fix P0 foerst, saa struktur og hastighed, saa detaljer.
 `.trim(),
     },
     fr: {
-      title: 'Audit SEO technique: etapes simples + checklist',
+      title: 'Audit SEO technique: guide complet + checklist (avec priorite)',
       topic: 'SEO',
-      metaTitle: 'Audit SEO technique | Etapes + checklist',
-      metaDescription: 'Un audit SEO technique simple: indexation, erreurs, liens internes, vitesse, structured data et une checklist rapide.',
+      metaTitle: 'Audit SEO technique | Checklist priorisee',
+      metaDescription: 'Audit SEO technique priorise: indexation, redirects, crawl efficiency, liens internes, Core Web Vitals, rendering/JS et structured data.',
       content: `
-## Qu est-ce qu un audit SEO technique?
+Un audit SEO technique est le health check qui montre si Google peut crawler, rendre (render) et indexer ton site de facon fiable, et si les utilisateurs ont une experience rapide et stable.
 
-Un audit SEO technique est un check de la partie technique de ton site.
+L'objectif: sortir avec un backlog priorise, pas une liste de 200 alertes sans contexte.
 
-Le but est simple:
+## Ce qu'un bon audit doit livrer
 
-- Google peut crawler et indexer tes pages.
-- Les visiteurs ont une experience rapide et fluide.
+- Exemples d'URLs (preuve)
+- Priorite (P0/P1/P2)
+- Impact (trafic, conversion, risque)
+- Owner (SEO, dev, content)
+- Fix + comment mesurer le resultat
 
-## Quoi verifier? (3 blocs)
+## Etape 0 - Collecter les donnees (30-60 min)
 
-- Infrastructure (HTTPS, sitemap, robots.txt)
-- Crawling et indexation (liens internes, duplicate content, pages 404)
-- Tech on-page (vitesse, structured data, meta tags)
+- Google Search Console: Indexing, Sitemaps, Core Web Vitals, Enhancements, Manual actions, Security issues
+- Crawler: Ahrefs Site Audit ou equivalent
+- GA4: top landing pages + conversions
 
-## Audit SEO technique: etapes simples
+Optionnel: logs serveur pour comprendre les bots et le crawl budget.
 
-### Etape 1 - Google peut indexer tes pages?
+## Etape 1 - Indexation et canonicals (P0)
 
-Commence ici. Si c est faux, le reste aide moins.
+- robots.txt ne bloque rien d'important
+- pas de noindex par erreur (meta robots / x-robots-tag)
+- sitemap.xml a jour et soumise
+- canonicals correctes (souvent self-referencing), pas vers 404
+- HTTPS coherent, pas de mixed content
+- www/non-www et trailing slash coherents
 
-- HTTPS sans mixed content?
-- robots.txt bloque des pages importantes?
-- noindex par erreur sur des pages importantes?
-- sitemap.xml existe et est soumise dans Search Console?
-- canonical tags corrects (souvent self-referencing)?
+## Etape 2 - Status codes et redirects (P0/P1)
 
-### Etape 2 - Erreurs (404/5xx) et mauvais redirects
+- 5xx: corriger vite (risque d'indexation)
+- 404/410: corriger ou redirect (surtout si interne/backlinks)
+- redirect chains/loops: reduire a un seul redirect propre
+- 302 seulement si temporaire
+- soft 404: 200 mais contenu "not found"
 
-- Regarde Search Console pour les crawl errors.
-- Corrige les pages 404 (redirect ou restauration).
-- Evite les redirect chains (A -> B -> C).
-- Utilise 301 pour les redirects permanents.
+## Etape 3 - Crawl efficiency et duplicates (P1)
 
-### Etape 3 - Liens internes et structure
+- parameter URLs (filtres/sort) qui creent des variantes
+- duplicates via tags/pagination/templates
+- strategie de canonical pour les variantes
+- liens internes qui pointent sur les URLs canonicals
 
-- Pages importantes en 2-3 clics?
-- Pas de orphan pages (sans liens internes).
-- Ancrages clairs.
-- Breadcrumbs si le site est grand.
+## Etape 4 - Architecture et liens internes (P1)
 
-### Etape 4 - Vitesse et mobile
+- pages importantes en 2-3 clics
+- pas de pages orphelines (sans liens internes)
+- breadcrumbs pour structure et UX
+- ancres descriptives
+- topic clusters: 1 page hub + pages support, liees dans les deux sens
 
-- Teste avec PageSpeed Insights (mobile est souvent le probleme).
-- Compresse les images et utilise des formats modernes.
-- Lazy loading pour les elements lourds.
-- Supprime les scripts inutiles.
+## Etape 5 - Performance et Core Web Vitals (P1/P2)
 
-### Etape 5 - On-page basics (meta + structured data)
+- images: tailles, compression, lazy loading
+- JavaScript: moins de third-party, moins de blocage
+- CSS: enlever unused CSS, optimiser critical CSS
+- caching quand possible
 
-- Title et meta description uniques par page.
-- Pas de titles dupliques sur les pages importantes.
-- Structured data quand c est logique (Article/FAQ/Product).
+## Etape 6 - Rendering et JavaScript SEO (P1)
 
-### Etape 6 - Mesure et suivi
+- contenu critique visible sans JS?
+- URL Inspection (GSC): rendering ok?
+- liens internes visibles dans le HTML rendu?
+- structured data rendue correctement?
 
-- GA4 actif?
-- Search Console connectee?
-- Check chaque mois pour de nouvelles erreurs.
+## Etape 7 - Structured data et qualite du snippet (P2)
+
+- schemas pertinents seulement (Article/Product/FAQ)
+- valider errors et warnings
+- title + meta description uniques sur pages importantes
+- eviter les duplicates via templates
+
+## Etape 8 - International SEO (si pertinent)
+
+- hreflang correct et reciprocal
+- canonicals correctes par locale
+- structure claire par langue/pays
+
+## Modele de priorite (simple)
+
+- P0: blocages d'indexation, 5xx, grosses erreurs canonical/noindex
+- P1: chains, duplicates a grande echelle, liens internes, CWV/rendering sur templates
+- P2: structured data finitions, petits sujets meta
 
 ## Checklist rapide
 
-### Indexation
-
-- HTTPS ok
-- robots.txt ne bloque rien d important
-- sitemap.xml existe et est soumise
-- pas de noindex par erreur
-- canonicals ok
-
-### Erreurs et redirects
-
-- corriger 404/5xx
-- pas de redirect chains
-- 301 pour redirects permanents
-
-### Structure
-
-- pages importantes en 2-3 clics
-- pas de orphan pages
-- liens internes clairs
-
-### Performance
-
-- compresser les images
-- nettoyer les scripts
-- ameliorer la performance mobile
-
-### Mesure
-
-- GA4 check
-- Search Console check
+- Indexation: robots/noindex/sitemap/canonical
+- Erreurs: 404/5xx/redirect chains
+- Crawl: parameters + duplicates
+- Structure: click depth, pages orphelines, breadcrumbs
+- Speed: mobile performance, scripts lourds
+- Rendering: JS/content visible
+- Mesure: GSC + GA4 + conversions
 
 ## A quelle frequence?
 
-Tous les 3 a 12 mois. Et apres de grosses releases ou un redesign.
+- Petit site: tous les 6-12 mois + apres releases/redesign
+- Grand site: checks trimestriels + audit complet annuel
 
 ## Conclusion
 
-Le SEO technique est la base. Corrige l indexation et les erreurs d abord. Ensuite vitesse et structure. Ensuite les details.
+Le SEO technique est la base. Corrige P0 d'abord, puis structure et performance, puis les details.
 `.trim(),
     },
     it: {
-      title: 'Audit SEO tecnico: passi semplici + checklist',
+      title: 'Audit SEO tecnico: guida completa + checklist (con priorita)',
       topic: 'SEO',
-      metaTitle: 'Audit SEO tecnico | Passi + checklist',
-      metaDescription: 'Un audit SEO tecnico semplice: indicizzazione, errori, link interni, velocita, structured data e una checklist rapida.',
+      metaTitle: 'Audit SEO tecnico | Checklist con priorita',
+      metaDescription: 'Audit SEO tecnico prioritizzato: indicizzazione, redirect, crawl efficiency, link interni, Core Web Vitals, rendering/JS e structured data.',
       content: `
-## Cos e un audit SEO tecnico?
+Un audit SEO tecnico e il health check che mostra se Google puo crawlar(e), renderizzare e indicizzare il sito in modo affidabile, e se gli utenti hanno un'esperienza veloce e stabile.
 
-Un audit SEO tecnico e un check della parte tecnica del sito.
+L'obiettivo: uscire con un backlog prioritizzato, non con 200 warning senza contesto.
 
-L obiettivo e semplice:
+## Cosa deve produrre un buon audit
 
-- Google puo crawlarla e indicizzare le pagine.
-- I visitatori hanno un esperienza veloce e pulita.
+- URL di esempio (prova)
+- Priorita (P0/P1/P2)
+- Impatto (traffico, conversioni, rischio)
+- Owner (SEO, dev, content)
+- Fix + come misurare il risultato
 
-## Cosa controllare? (3 blocchi)
+## Step 0 - Raccogli i dati (30-60 min)
 
-- Infrastruttura (HTTPS, sitemap, robots.txt)
-- Crawling e indicizzazione (link interni, duplicate content, pagine 404)
-- Tech on-page (velocita, structured data, meta tag)
+- Google Search Console: Indexing, Sitemaps, Core Web Vitals, Enhancements, Manual actions, Security issues
+- Crawler: Ahrefs Site Audit o equivalente
+- GA4: top landing pages + conversioni
 
-## Audit SEO tecnico: passi semplici
+Opzionale: server logs per capire bot e crawl budget.
 
-### Passo 1 - Google puo indicizzare le pagine?
+## Step 1 - Indicizzazione e canonicals (P0)
 
-Inizia qui. Se questo e sbagliato, il resto aiuta meno.
+- robots.txt non blocca parti importanti
+- niente noindex per errore (meta robots / x-robots-tag)
+- sitemap.xml aggiornata e inviata
+- canonicals corrette (spesso self-referencing), non verso 404
+- HTTPS coerente, niente mixed content
+- www/non-www e trailing slash coerenti
 
-- HTTPS senza mixed content?
-- robots.txt blocca pagine importanti?
-- noindex per errore su pagine importanti?
-- sitemap.xml esiste ed e inviata in Search Console?
-- canonical tag corretti (di solito self-referencing)?
+## Step 2 - Status codes e redirect (P0/P1)
 
-### Passo 2 - Errori (404/5xx) e redirect sbagliati
+- 5xx: correggi subito (rischio indicizzazione)
+- 404/410: correggi o redirect (soprattutto con link interni/backlink)
+- redirect chains/loops: riduci a un solo redirect pulito
+- 302 solo se temporaneo
+- soft 404: 200 ma contenuto "not found"
 
-- Controlla Search Console per i crawl errors.
-- Risolvi le pagine 404 (redirect o ripristina la pagina).
-- Evita redirect chains (A -> B -> C).
-- Usa 301 per redirect permanenti.
+## Step 3 - Crawl efficiency e duplicati (P1)
 
-### Passo 3 - Link interni e struttura
+- parameter URLs (filtri/ordinamenti) che creano molte varianti
+- duplicati via tag/paginazione/templates
+- strategia canonical per le varianti
+- link interni puntano alle URL canoniche
 
-- Pagine importanti entro 2-3 click?
-- Niente orphan pages (pagine senza link interni).
-- Anchor text chiari.
-- Breadcrumbs se il sito e grande.
-
-### Passo 4 - Velocita e mobile
-
-- Test con PageSpeed Insights (mobile e spesso il collo di bottiglia).
-- Comprimi immagini e usa formati moderni.
-- Lazy loading per elementi pesanti.
-- Rimuovi script inutili.
-
-### Passo 5 - On-page basics (meta + structured data)
-
-- Title e meta description unici per pagina.
-- Niente title duplicati sulle pagine importanti.
-- Structured data quando ha senso (Article/FAQ/Product).
-
-### Passo 6 - Misura e monitoraggio
-
-- GA4 attivo?
-- Search Console collegata?
-- Check ogni mese per nuovi errori.
-
-## Checklist veloce
-
-### Indicizzazione
-
-- HTTPS ok
-- robots.txt non blocca nulla di importante
-- sitemap.xml esiste ed e inviata
-- niente noindex per errore
-- canonicals ok
-
-### Errori e redirect
-
-- risolvere 404/5xx
-- niente redirect chains
-- 301 per redirect permanenti
-
-### Struttura
+## Step 4 - Architettura e link interni (P1)
 
 - pagine importanti entro 2-3 click
-- niente orphan pages
-- link interni chiari
+- niente orphan pages (pagine senza link interni)
+- breadcrumbs per struttura e UX
+- anchor text descrittive
+- topic clusters: 1 hub + pagine di supporto, linkate in entrambe le direzioni
 
-### Performance
+## Step 5 - Performance e Core Web Vitals (P1/P2)
 
-- comprimere immagini
-- pulire script
-- migliorare performance mobile
+- immagini: dimensioni, compressione, lazy loading
+- JavaScript: meno third-party, meno blocchi
+- CSS: rimuovi unused CSS, ottimizza critical CSS
+- caching dove possibile
 
-### Misura
+## Step 6 - Rendering e JavaScript SEO (P1)
 
-- GA4 check
-- Search Console check
+- contenuto critico visibile senza JS?
+- URL Inspection (GSC): rendering ok?
+- link interni visibili nell'HTML renderizzato?
+- structured data renderizzata correttamente?
 
-## Ogni quanto?
+## Step 7 - Structured data e qualita dello snippet (P2)
 
-Ogni 3 a 12 mesi. E sempre dopo grandi release o redesign.
+- usa solo schema pertinenti (Article/Product/FAQ)
+- valida errori e warning
+- title + meta description uniche sulle pagine importanti
+- evita duplicati creati dai template
+
+## Step 8 - International SEO (se rilevante)
+
+- hreflang corretto e reciprocal
+- canonicals corrette per locale
+- struttura chiara per lingua/paese
+
+## Modello di priorita (semplice)
+
+- P0: blocchi di indicizzazione, 5xx, grossi errori canonical/noindex
+- P1: chains, duplicati su larga scala, link interni, CWV/rendering sui template
+- P2: finiture structured data, piccoli temi meta
+
+## Checklist rapida
+
+- Indicizzazione: robots/noindex/sitemap/canonical
+- Errori: 404/5xx/redirect chains
+- Crawl: parameters + duplicati
+- Struttura: click depth, orphan pages, breadcrumbs
+- Speed: mobile performance, script pesanti
+- Rendering: JS/content visibile
+- Misurazione: GSC + GA4 + conversioni
+
+## Quanto spesso?
+
+- Sito piccolo: ogni 6-12 mesi + dopo release/redesign
+- Sito grande: check trimestrali + audit completo annuale
 
 ## Conclusione
 
-Il SEO tecnico e la base. Sistema indicizzazione ed errori prima. Poi velocita e struttura. Poi i dettagli.
+La SEO tecnica e la base. Correggi prima P0, poi struttura e performance, poi i dettagli.
 `.trim(),
     },
   },

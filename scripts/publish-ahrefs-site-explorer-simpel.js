@@ -37,1160 +37,949 @@ const article = {
   slug: 'ahrefs-site-explorer-simpel-stappenplan',
   topic: 'SEO',
   status: 'PUBLISHED',
-  title: 'How to use Ahrefs Site Explorer (simple guide)',
+  title: 'How to use Ahrefs Site Explorer: complete guide (workflows + reporting)',
   content: `
-## What is Ahrefs Site Explorer?
+Ahrefs Site Explorer is the fastest way to understand a website's SEO "shape": traffic trend, keyword footprint, and link profile. I use it as a diagnostic dashboard before I decide what to do next (content, internal links, or authority).
 
-Site Explorer is Ahrefs' "dashboard" for a website. You paste a domain or a URL and you instantly see:
+This guide focuses on how to read the data and turn it into actions, not just what the buttons do.
 
-- Estimated organic traffic and keyword growth
-- Backlinks and referring domains
-- Top pages and competitors
+## What Site Explorer is good for (and what it is not)
 
-I use it as a first scan. Then I click through to the detailed reports.
+Use Site Explorer for:
 
-## Step 0 - Choose the right target (domain vs URL)
+- Fast competitive benchmarking (who is stronger and why)
+- Finding quick wins (keywords close to page 1)
+- Understanding link growth/decline (new vs lost referring domains)
+- Finding your best pages and weakest sections
 
-Before you look at numbers, pick the right scope:
+Do not use it as a replacement for:
 
-- Domain: overall view of the full site
-- Subdomain: only a blog, shop, or help center
-- Prefix: one folder like /blog/ or /collections/
-- Exact URL: one page only
+- Google Search Console (truth for impressions/clicks/indexing)
+- GA4 (truth for conversions and revenue)
 
-If you want strategy decisions, start with Domain. If you want to improve one section, use Prefix.
+Ahrefs is an external tool. Treat numbers as estimates. Trends and comparisons are where it shines.
 
-## Step 1 - Set country and timeframe
+## Step 0 - Pick the right target (scope matters)
 
-- Pick the country that matches your market.
-- Set a timeframe that shows the trend (not just 7 days).
-- If the graph is noisy, switch to weekly or monthly.
+Choose the scope first, otherwise you will draw the wrong conclusion:
 
-You want direction: up, down, flat, or volatile.
+- Domain: overall view of the whole site (strategy level)
+- Subdomain: isolate a blog/shop/help center
+- Prefix (folder): one section like /blog/ or /collections/
+- Exact URL: one page
 
-## Step 2 - Read the overview (what the metrics mean)
+Rule of thumb:
 
-The overview is useful, but most numbers are estimates. Use them to compare and to spot trends.
+- Strategy and competitor benchmarking: Domain
+- Improving a section: Prefix
+- Fixing one page: Exact URL
 
-### DR and UR
+## Step 1 - Set the right market (country + device + timeframe)
 
-- DR (Domain Rating): strength of the domain's backlink profile (Ahrefs metric)
-- UR (URL Rating): strength of a specific page (links + internal links)
+Most mistakes come from wrong market settings.
 
-Do not treat DR as a KPI. Use it to compare sites in the same niche.
+- Country: match your revenue market (not where you personally are)
+- Device: if mobile matters, review mobile trends too
+- Timeframe: use 6-12 months to see direction
 
-### Links and referring domains
+If the graph is noisy, switch to weekly or monthly smoothing.
 
-- Backlinks are the total links.
-- Referring domains are the number of unique websites linking to you.
+## Step 2 - Read the overview like an analyst (not like a scoreboard)
 
-Referring domains usually matters more than raw backlink count.
+### DR and UR (Ahrefs metrics)
 
-### Organic keywords and traffic
+- DR (Domain Rating): backlink strength at domain level
+- UR (URL Rating): link strength for one page (backlinks + internal links)
 
-- Organic keywords: how many keywords rank in the top 100.
-- Traffic: Ahrefs' estimate of organic visits.
+Use DR/UR to compare within the same niche, not as a KPI.
 
-Traffic is not the same as GA4 or Search Console. Use it for direction, not for exact reporting.
+### Referring domains > backlinks
 
-### Paid search (competitor signal)
+- Backlinks = total links
+- Referring domains = unique sites linking to you
 
-If Ahrefs shows paid keywords and paid traffic, treat it as a hint:
+In most cases, 10 strong referring domains beat 1,000 low quality backlinks.
 
-- Which topics competitors are willing to spend money on
-- Which pages they push with ads
+What I check:
 
-## Step 3 - Find quick wins with positions
+- New vs lost referring domains (trend)
+- Sudden spikes (possible spam or PR event)
+- Anchor text distribution (brand heavy vs exact match)
 
-Go to the Organic keywords / positions view and look at the buckets:
+### Organic keywords and traffic (estimates)
 
-- Positions 1-3: protect and improve CTR
-- Positions 4-10: quick wins (on-page + internal links)
-- Positions 11-20: medium term targets
-- Positions 21-50: long term targets
-- Positions 51+: future opportunities
+- Organic keywords: count of keywords in top 100
+- Traffic: estimated visits based on rankings and CTR models
 
-A simple workflow:
+Traffic will not match GA4. Use it to compare:
 
-- Filter positions 4-10
-- Sort by volume
-- Open the ranking URL and improve: title, intro, headings, intent match, internal links
+- You vs competitors
+- This month vs last month
+- Sections of the same site (prefix)
 
-## Step 4 - Check links without getting lost
+### Traffic value and paid search (competitor signal)
 
-Use Referring domains and Backlinks to answer 3 questions:
+Traffic value and paid keywords are directional signals:
 
-- Are we gaining or losing domains?
-- Which pages attract links (and why)?
-- Do we have obvious spam or sitewide links?
+- What topics competitors are willing to spend money on
+- Which pages they are pushing
 
-Quick actions:
+## Step 3 - Turn "Organic keywords" into a quick win list
 
-- Look at "New" vs "Lost" referring domains
-- Check "Best by links" to see link magnets
-- If a page has many links, protect it (keep the URL stable)
+This is where Site Explorer becomes a to-do list.
 
-## Step 5 - Use Top pages and competitors
+Workflow:
 
-### Top pages
+1. Open Organic keywords.
+2. Filter by position 4-10 (page 1 is close).
+3. Sort by traffic or volume.
+4. Check the ranking URL and the intent.
+5. Improve the page.
 
-Top pages shows which URLs drive most estimated traffic.
+What usually moves positions 4-10:
+
+- Better title/meta for higher CTR
+- Stronger intro: answer fast, then add depth
+- Fill missing sections (FAQ, examples, comparisons)
+- Add internal links from relevant pages
+- Improve topical coverage (not keyword stuffing)
+
+Pro tip: validate in Search Console before you invest. If a keyword has impressions but low clicks, snippet work can be a fast win.
+
+## Step 4 - Use Top pages to find what already works
+
+Top pages answers: which URLs drive the site.
 
 Use it to:
 
-- Find what already works (format, topics, angle)
-- Spot pages that should be updated first
-- Identify patterns you can repeat
+- Identify winning formats (guides, tools, comparisons)
+- Decide which pages deserve updates first
+- Spot fragile traffic (pages dependent on one keyword only)
 
-### Organic competitors
+Action:
 
-Ahrefs lists sites with keyword overlap.
+- Pick your top 10 pages and refresh them quarterly.
+- For pages with traffic but outdated content, update screenshots, steps, and examples.
 
-- Pick real competitors (same product, same audience)
-- Ignore platforms like Wikipedia if they are not your competitor
+## Step 5 - Competitors: clean the list before you analyze
 
-From there, a content gap analysis is the next step:
+Organic competitors is based on keyword overlap, not on business overlap.
 
-- Find keywords competitors rank for that you do not
-- Turn them into topic clusters
+Do this:
 
-## Step 6 - Find pages with (almost) zero traffic
+- Keep competitors with the same product and audience.
+- Remove big platforms (Wikipedia, marketplaces) if they are not direct competitors.
 
-Ahrefs can show many pages with little or no estimated traffic.
+Then use the cleaned list to:
 
-Do not delete blindly. Decide per page:
+- Run a content gap analysis (topic ideas)
+- Benchmark link growth (are they gaining referring domains faster?)
+- Compare top pages (what content types win in your niche)
 
-- Update (best option if intent still exists)
-- Merge into a stronger page
-- Redirect if the page is obsolete
-- Noindex if it must stay but should not rank
+## Step 6 - Link workflows that actually help SEO
 
-## My 10-minute Site Explorer checklist
+Site Explorer is great for link diagnostics and linkbuilding planning.
 
-- Target scope set (domain / prefix / URL)
-- Country set
-- Organic traffic trend checked
-- Referring domains trend checked
-- Positions 4-10 list exported
-- Top pages reviewed
-- Biggest link pages identified
-- Competitors list cleaned (real competitors only)
-- A short action list written (10 items max)
+### New vs lost links
+
+- New links: what is working (PR, partnerships, content)
+- Lost links: what to reclaim (broken pages, removed mentions)
+
+### Protect link magnets (Best by links)
+
+If a page has many referring domains:
+
+- Keep the URL stable
+- If you must change it, use a clean 301 redirect
+- Update internal links to the canonical URL
+
+### Find easy link reclamation
+
+Look for:
+
+- Broken backlinks (links pointing to 404 pages)
+- Old URLs that should redirect
+- Mentions without links (manual outreach)
+
+## Step 7 - Pages with low or zero traffic (prune carefully)
+
+Ahrefs can highlight pages with little estimated traffic. Use this as a signal, not a verdict.
+
+Per page decide:
+
+- Update (best if intent still exists)
+- Merge into a stronger page (avoid cannibalization)
+- Redirect (if obsolete)
+- Noindex (if it must exist but should not rank)
+
+Always check Search Console and conversions before you delete anything.
+
+## Step 8 - Simple monthly reporting template
+
+If you report to a client or team, keep it consistent.
+
+I include:
+
+- Organic trend (Search Console clicks + impressions)
+- Top 5 pages that moved (up/down)
+- Quick wins done (positions 4-10)
+- Link trend: new vs lost referring domains
+- Next 5 actions (with owner and deadline)
+
+## My 15-minute Site Explorer checklist
+
+- Scope correct (domain/prefix/url)
+- Country and timeframe correct
+- Traffic trend and keyword trend checked
+- Positions 4-10 exported as quick wins
+- Top pages reviewed (what to update first)
+- Competitors cleaned (real competitors only)
+- New/lost referring domains reviewed
+- One short action list written (10 items max)
 `.trim(),
   translations: {
     en: {
-      title: 'How to use Ahrefs Site Explorer (simple guide)',
+      title: 'How to use Ahrefs Site Explorer: complete guide (workflows + reporting)',
       topic: 'SEO',
-      metaTitle: 'Ahrefs Site Explorer | Simple guide',
-      metaDescription: 'A simple Ahrefs Site Explorer guide: pick the right scope, read DR/UR, use positions to find quick wins, check links, and build a short action list.',
+      metaTitle: 'Ahrefs Site Explorer | Complete guide',
+      metaDescription: 'Complete Ahrefs Site Explorer guide: scope selection, trend reading, quick wins from positions 4-10, link workflows, pruning signals, and reporting.',
       content: `
-## What is Ahrefs Site Explorer?
+Ahrefs Site Explorer is the fastest way to understand a website's SEO "shape": traffic trend, keyword footprint, and link profile. I use it as a diagnostic dashboard before I decide what to do next (content, internal links, or authority).
 
-Site Explorer is Ahrefs' "dashboard" for a website. You paste a domain or a URL and you instantly see:
+This guide focuses on how to read the data and turn it into actions, not just what the buttons do.
 
-- Estimated organic traffic and keyword growth
-- Backlinks and referring domains
-- Top pages and competitors
+## What Site Explorer is good for (and what it is not)
 
-I use it as a first scan. Then I click through to the detailed reports.
+Use Site Explorer for:
 
-## Step 0 - Choose the right target (domain vs URL)
+- Fast competitive benchmarking (who is stronger and why)
+- Finding quick wins (keywords close to page 1)
+- Understanding link growth/decline (new vs lost referring domains)
+- Finding your best pages and weakest sections
 
-Before you look at numbers, pick the right scope:
+Do not use it as a replacement for:
 
-- Domain: overall view of the full site
-- Subdomain: only a blog, shop, or help center
-- Prefix: one folder like /blog/ or /collections/
-- Exact URL: one page only
+- Google Search Console (truth for impressions/clicks/indexing)
+- GA4 (truth for conversions and revenue)
 
-If you want strategy decisions, start with Domain. If you want to improve one section, use Prefix.
+Ahrefs is an external tool. Treat numbers as estimates. Trends and comparisons are where it shines.
 
-## Step 1 - Set country and timeframe
+## Step 0 - Pick the right target (scope matters)
 
-- Pick the country that matches your market.
-- Set a timeframe that shows the trend (not just 7 days).
-- If the graph is noisy, switch to weekly or monthly.
+Choose the scope first, otherwise you will draw the wrong conclusion:
 
-You want direction: up, down, flat, or volatile.
+- Domain: overall view of the whole site (strategy level)
+- Subdomain: isolate a blog/shop/help center
+- Prefix (folder): one section like /blog/ or /collections/
+- Exact URL: one page
 
-## Step 2 - Read the overview (what the metrics mean)
+Rule of thumb:
 
-The overview is useful, but most numbers are estimates. Use them to compare and to spot trends.
+- Strategy and competitor benchmarking: Domain
+- Improving a section: Prefix
+- Fixing one page: Exact URL
 
-### DR and UR
+## Step 1 - Set the right market (country + device + timeframe)
 
-- DR (Domain Rating): strength of the domain's backlink profile (Ahrefs metric)
-- UR (URL Rating): strength of a specific page (links + internal links)
+Most mistakes come from wrong market settings.
 
-Do not treat DR as a KPI. Use it to compare sites in the same niche.
+- Country: match your revenue market (not where you personally are)
+- Device: if mobile matters, review mobile trends too
+- Timeframe: use 6-12 months to see direction
 
-### Links and referring domains
+If the graph is noisy, switch to weekly or monthly smoothing.
 
-- Backlinks are the total links.
-- Referring domains are the number of unique websites linking to you.
+## Step 2 - Read the overview like an analyst (not like a scoreboard)
 
-Referring domains usually matters more than raw backlink count.
+### DR and UR (Ahrefs metrics)
 
-### Organic keywords and traffic
+- DR (Domain Rating): backlink strength at domain level
+- UR (URL Rating): link strength for one page (backlinks + internal links)
 
-- Organic keywords: how many keywords rank in the top 100.
-- Traffic: Ahrefs' estimate of organic visits.
+Use DR/UR to compare within the same niche, not as a KPI.
 
-Traffic is not the same as GA4 or Search Console. Use it for direction, not for exact reporting.
+### Referring domains > backlinks
 
-### Paid search (competitor signal)
+- Backlinks = total links
+- Referring domains = unique sites linking to you
 
-If Ahrefs shows paid keywords and paid traffic, treat it as a hint:
+In most cases, 10 strong referring domains beat 1,000 low quality backlinks.
 
-- Which topics competitors are willing to spend money on
-- Which pages they push with ads
+What I check:
 
-## Step 3 - Find quick wins with positions
+- New vs lost referring domains (trend)
+- Sudden spikes (possible spam or PR event)
+- Anchor text distribution (brand heavy vs exact match)
 
-Go to the Organic keywords / positions view and look at the buckets:
+### Organic keywords and traffic (estimates)
 
-- Positions 1-3: protect and improve CTR
-- Positions 4-10: quick wins (on-page + internal links)
-- Positions 11-20: medium term targets
-- Positions 21-50: long term targets
-- Positions 51+: future opportunities
+- Organic keywords: count of keywords in top 100
+- Traffic: estimated visits based on rankings and CTR models
 
-A simple workflow:
+Traffic will not match GA4. Use it to compare:
 
-- Filter positions 4-10
-- Sort by volume
-- Open the ranking URL and improve: title, intro, headings, intent match, internal links
+- You vs competitors
+- This month vs last month
+- Sections of the same site (prefix)
 
-## Step 4 - Check links without getting lost
+### Traffic value and paid search (competitor signal)
 
-Use Referring domains and Backlinks to answer 3 questions:
+Traffic value and paid keywords are directional signals:
 
-- Are we gaining or losing domains?
-- Which pages attract links (and why)?
-- Do we have obvious spam or sitewide links?
+- What topics competitors are willing to spend money on
+- Which pages they are pushing
 
-Quick actions:
+## Step 3 - Turn "Organic keywords" into a quick win list
 
-- Look at "New" vs "Lost" referring domains
-- Check "Best by links" to see link magnets
-- If a page has many links, protect it (keep the URL stable)
+This is where Site Explorer becomes a to-do list.
 
-## Step 5 - Use Top pages and competitors
+Workflow:
 
-### Top pages
+1. Open Organic keywords.
+2. Filter by position 4-10 (page 1 is close).
+3. Sort by traffic or volume.
+4. Check the ranking URL and the intent.
+5. Improve the page.
 
-Top pages shows which URLs drive most estimated traffic.
+What usually moves positions 4-10:
+
+- Better title/meta for higher CTR
+- Stronger intro: answer fast, then add depth
+- Fill missing sections (FAQ, examples, comparisons)
+- Add internal links from relevant pages
+- Improve topical coverage (not keyword stuffing)
+
+Pro tip: validate in Search Console before you invest. If a keyword has impressions but low clicks, snippet work can be a fast win.
+
+## Step 4 - Use Top pages to find what already works
+
+Top pages answers: which URLs drive the site.
 
 Use it to:
 
-- Find what already works (format, topics, angle)
-- Spot pages that should be updated first
-- Identify patterns you can repeat
+- Identify winning formats (guides, tools, comparisons)
+- Decide which pages deserve updates first
+- Spot fragile traffic (pages dependent on one keyword only)
 
-### Organic competitors
+Action:
 
-Ahrefs lists sites with keyword overlap.
+- Pick your top 10 pages and refresh them quarterly.
+- For pages with traffic but outdated content, update screenshots, steps, and examples.
 
-- Pick real competitors (same product, same audience)
-- Ignore platforms like Wikipedia if they are not your competitor
+## Step 5 - Competitors: clean the list before you analyze
 
-From there, a content gap analysis is the next step:
+Organic competitors is based on keyword overlap, not on business overlap.
 
-- Find keywords competitors rank for that you do not
-- Turn them into topic clusters
+Do this:
 
-## Step 6 - Find pages with (almost) zero traffic
+- Keep competitors with the same product and audience.
+- Remove big platforms (Wikipedia, marketplaces) if they are not direct competitors.
 
-Ahrefs can show many pages with little or no estimated traffic.
+Then use the cleaned list to:
 
-Do not delete blindly. Decide per page:
+- Run a content gap analysis (topic ideas)
+- Benchmark link growth (are they gaining referring domains faster?)
+- Compare top pages (what content types win in your niche)
 
-- Update (best option if intent still exists)
-- Merge into a stronger page
-- Redirect if the page is obsolete
-- Noindex if it must stay but should not rank
+## Step 6 - Link workflows that actually help SEO
 
-## My 10-minute Site Explorer checklist
+Site Explorer is great for link diagnostics and linkbuilding planning.
 
-- Target scope set (domain / prefix / URL)
-- Country set
-- Organic traffic trend checked
-- Referring domains trend checked
-- Positions 4-10 list exported
-- Top pages reviewed
-- Biggest link pages identified
-- Competitors list cleaned (real competitors only)
-- A short action list written (10 items max)
+### New vs lost links
+
+- New links: what is working (PR, partnerships, content)
+- Lost links: what to reclaim (broken pages, removed mentions)
+
+### Protect link magnets (Best by links)
+
+If a page has many referring domains:
+
+- Keep the URL stable
+- If you must change it, use a clean 301 redirect
+- Update internal links to the canonical URL
+
+### Find easy link reclamation
+
+Look for:
+
+- Broken backlinks (links pointing to 404 pages)
+- Old URLs that should redirect
+- Mentions without links (manual outreach)
+
+## Step 7 - Pages with low or zero traffic (prune carefully)
+
+Ahrefs can highlight pages with little estimated traffic. Use this as a signal, not a verdict.
+
+Per page decide:
+
+- Update (best if intent still exists)
+- Merge into a stronger page (avoid cannibalization)
+- Redirect (if obsolete)
+- Noindex (if it must exist but should not rank)
+
+Always check Search Console and conversions before you delete anything.
+
+## Step 8 - Simple monthly reporting template
+
+If you report to a client or team, keep it consistent.
+
+I include:
+
+- Organic trend (Search Console clicks + impressions)
+- Top 5 pages that moved (up/down)
+- Quick wins done (positions 4-10)
+- Link trend: new vs lost referring domains
+- Next 5 actions (with owner and deadline)
+
+## My 15-minute Site Explorer checklist
+
+- Scope correct (domain/prefix/url)
+- Country and timeframe correct
+- Traffic trend and keyword trend checked
+- Positions 4-10 exported as quick wins
+- Top pages reviewed (what to update first)
+- Competitors cleaned (real competitors only)
+- New/lost referring domains reviewed
+- One short action list written (10 items max)
 `.trim(),
     },
     nl: {
-      title: 'Ahrefs Site Explorer gebruiken: simpele uitleg',
+      title: 'Ahrefs Site Explorer gebruiken: complete gids (workflows + rapportage)',
       topic: 'SEO',
-      metaTitle: 'Ahrefs Site Explorer gebruiken | Simpele uitleg',
-      metaDescription: 'Zo gebruik je Ahrefs Site Explorer: juiste scope kiezen, DR/UR snappen, quick wins vinden via posities, links beoordelen en een actieplan maken.',
+      metaTitle: 'Ahrefs Site Explorer gebruiken | Complete gids',
+      metaDescription: 'Complete Ahrefs Site Explorer gids: scope kiezen, trends lezen, quick wins (posities 4-10), link workflows, pruning signalen en rapportage.',
       content: `
-## Wat is Ahrefs Site Explorer?
+Ahrefs Site Explorer is de snelste manier om de SEO "shape" van een website te snappen: trend in organische zichtbaarheid, keyword footprint en linkprofiel. Ik gebruik het als diagnose-dashboard voordat ik keuzes maak (content, interne links of autoriteit).
 
-Site Explorer is de "dashboard" van Ahrefs voor een website. Je plakt een domein of URL en je ziet direct:
+Deze gids gaat niet over knopjes, maar over interpretatie en acties.
 
-- Geschatte organische traffic en keyword groei
-- Backlinks en referring domains
-- Top paginas en concurrenten
+## Waar Site Explorer goed voor is (en waar niet)
 
-Ik gebruik dit als eerste scan. Daarna klik ik door naar de detail reports.
+Gebruik Site Explorer voor:
 
-## Stap 0 - Kies de juiste scope (domein vs URL)
+- Snelle benchmark vs concurrenten (wie is sterker en waarom)
+- Quick wins vinden (keywords dicht bij pagina 1)
+- Link groei/krimp zien (new vs lost referring domains)
+- Beste paginas en zwakke secties herkennen
 
-Voordat je naar cijfers kijkt, kies je de juiste scope:
+Niet als vervanging voor:
 
-- Domain: totaalbeeld van de hele site
-- Subdomain: alleen blog, shop of help center
-- Prefix: 1 map zoals /blog/ of /collections/
+- Google Search Console (waarheid voor impressions/clicks/indexatie)
+- GA4 (waarheid voor conversies en omzet)
+
+Ahrefs is een externe tool. Zie cijfers als schattingen. Trends en vergelijkingen zijn het sterkst.
+
+## Stap 0 - Kies de juiste target (scope is alles)
+
+Kies eerst je scope, anders trek je de verkeerde conclusie:
+
+- Domain: totaalbeeld (strategisch)
+- Subdomain: blog/shop/help center apart
+- Prefix (folder): 1 sectie zoals /blog/ of /collections/
 - Exact URL: 1 pagina
 
-Wil je strategische keuzes maken? Start met Domain. Wil je 1 onderdeel verbeteren? Gebruik Prefix.
+Vuistregel:
 
-## Stap 1 - Zet land en periode goed
+- Strategie en benchmark: Domain
+- 1 onderdeel verbeteren: Prefix
+- 1 pagina fixen: Exact URL
 
-- Kies het land dat past bij jouw markt.
-- Kies een periode die trend laat zien (niet alleen 7 dagen).
-- Is de grafiek te onrustig? Zet hem op weekly of monthly.
+## Stap 1 - Zet je markt goed (land + device + periode)
 
-Je zoekt richting: stijgend, dalend, vlak of onstabiel.
+De grootste fouten komen door verkeerde instellingen.
 
-## Stap 2 - Lees het overzicht (wat betekent wat?)
+- Land: kies je omzetmarkt (niet waar jij zit)
+- Device: kijk ook naar mobile als dat belangrijk is
+- Periode: pak 6-12 maanden voor richting
 
-Het overzicht is handig, maar veel cijfers zijn schattingen. Gebruik het om te vergelijken en om trends te zien.
+Is de grafiek te "bumpy"? Zet smoothing op weekly of monthly.
 
-### DR en UR
+## Stap 2 - Lees het overzicht als analist (niet als scoreboard)
 
-- DR (Domain Rating): sterkte van het backlinkprofiel van het domein (Ahrefs metric)
-- UR (URL Rating): sterkte van een specifieke pagina (links + interne links)
+### DR en UR (Ahrefs metrics)
 
-Zie DR niet als KPI. Gebruik het om sites binnen dezelfde niche te vergelijken.
+- DR (Domain Rating): backlink strength op domein niveau
+- UR (URL Rating): link strength voor 1 pagina (backlinks + interne links)
 
-### Links en referring domains
+Gebruik DR/UR om sites in dezelfde niche te vergelijken, niet als KPI.
 
-- Backlinks = totaal aantal links.
-- Referring domains = aantal unieke websites dat naar je linkt.
+### Referring domains > backlinks
 
-Referring domains is vaak belangrijker dan alleen heel veel links.
+- Backlinks = totaal links
+- Referring domains = unieke websites die linken
 
-### Organische keywords en traffic
+In veel niches zijn 10 goede referring domains meer waard dan 1000 slechte links.
 
-- Organic keywords: hoeveel keywords in de top 100.
-- Traffic: Ahrefs schatting van organische bezoekers.
+Wat ik check:
 
-Dit is niet hetzelfde als GA4 of Search Console. Gebruik het voor richting, niet voor exacte rapportages.
+- New vs lost referring domains (trend)
+- Spikes (spam of PR)
+- Anchor text verdeling (brand vs exact match)
 
-### Paid search (signaal bij concurrenten)
+### Organic keywords en traffic (schattingen)
 
-Als Ahrefs paid keywords en paid traffic laat zien, zie het als hint:
+- Organic keywords: aantal keywords in top 100
+- Traffic: schatting op basis van rankings + CTR modellen
 
-- Op welke onderwerpen concurrenten geld zetten
-- Welke paginas ze pushen met ads
+Traffic matcht niet met GA4. Gebruik het om te vergelijken:
 
-## Stap 3 - Vind quick wins via posities
+- Jij vs concurrenten
+- deze maand vs vorige maand
+- secties (prefix)
 
-Ga naar Organic keywords / positions en kijk naar de buckets:
+### Traffic value en paid search (concurrent signaal)
 
-- Positie 1-3: verdedigen en CTR verbeteren
-- Positie 4-10: quick wins (on-page + interne links)
-- Positie 11-20: mid term targets
-- Positie 21-50: long term targets
-- Positie 51+: future opportunities
+Paid data is richtinggevend:
 
-Simpel proces:
+- Waar concurrenten geld op zetten
+- Welke paginas ze pushen
 
-- Filter op posities 4-10
-- Sorteer op volume
-- Open de ranking URL en verbeter: title, intro, headings, intent match, interne links
+## Stap 3 - Maak van Organic keywords een quick win lijst
 
-## Stap 4 - Check links zonder te verdrinken
+Hier wordt Site Explorer een to-do lijst.
 
-Gebruik Referring domains en Backlinks om 3 vragen te beantwoorden:
+Workflow:
 
-- Krijgen we meer of minder domeinen?
-- Welke paginas trekken links (en waarom)?
-- Zien we duidelijke spam of sitewide links?
+1. Open Organic keywords.
+2. Filter positie 4-10 (pagina 1 is dichtbij).
+3. Sorteer op traffic of volume.
+4. Check ranking URL + intent.
+5. Verbeter de pagina.
 
-Snelle acties:
+Wat meestal posities 4-10 laat bewegen:
 
-- Check "New" vs "Lost" referring domains
-- Check "Best by links" voor link magnets
-- Heeft een pagina veel links? Bescherm die URL (niet zomaar wijzigen)
+- Betere title/meta (hogere CTR)
+- Sterkere intro: snel antwoord, daarna diepte
+- Missende secties toevoegen (FAQ, voorbeelden, vergelijkingen)
+- Interne links toevoegen van relevante paginas
+- Topic coverage verbeteren (geen keyword stuffing)
 
-## Stap 5 - Gebruik Top pages en concurrenten
+Pro tip: valideer in Search Console. Als je impressions hebt maar weinig clicks, is snippet werk vaak snel resultaat.
 
-### Top pages
+## Stap 4 - Gebruik Top pages om te zien wat al werkt
 
-Top pages laat zien welke URLs de meeste geschatte traffic pakken.
+Top pages laat zien welke URLs de site dragen.
 
 Gebruik dit om:
 
-- Te zien wat al werkt (format, topics, angle)
-- Te bepalen welke paginas je eerst moet updaten
-- Patronen te vinden die je kunt herhalen
+- Winnaarsformats te herkennen (gidsen, tools, vergelijkingen)
+- Update prioriteit te bepalen
+- Fragiel verkeer te spotten (pagina hangt aan 1 keyword)
 
-### Organic competitors
+Actie:
 
-Ahrefs toont sites met keyword overlap.
+- Update je top 10 paginas elk kwartaal.
+- Update verouderde content (screenshots, stappen, voorbeelden).
 
-- Kies echte concurrenten (zelfde product, zelfde doelgroep)
-- Negeer platforms zoals Wikipedia als dat geen concurrent is
+## Stap 5 - Concurrenten: opschonen voordat je analyseert
 
-Vanaf hier is content gap vaak de volgende stap:
+Organic competitors gaat op keyword overlap, niet business overlap.
 
-- Keywords vinden waar concurrenten wel op ranken en jij niet
-- Omzetten naar topic clusters
+Doe dit:
 
-## Stap 6 - Paginas met (bijna) 0 traffic
+- Houd concurrenten met hetzelfde product en doelgroep.
+- Gooi grote platforms (Wikipedia/marketplaces) eruit als ze geen directe concurrent zijn.
 
-Ahrefs kan veel paginas tonen met weinig of geen geschatte traffic.
+Gebruik de opgeschoonde lijst voor:
 
-Niet blind verwijderen. Kies per pagina:
+- Content gap analyse (topic ideeen)
+- Link groei benchmark (wie wint referring domains sneller?)
+- Top pages vergelijken (welke content types winnen)
 
-- Updaten (beste optie als intent nog bestaat)
-- Mergen in een sterkere pagina
-- Redirect als de pagina verouderd is
-- Noindex als hij moet blijven maar niet hoeft te ranken
+## Stap 6 - Link workflows die echt helpen
 
-## 10-minuten checklist
+### New vs lost links
 
-- Scope gezet (domain / prefix / URL)
-- Land gezet
-- Trend organische traffic gecheckt
-- Trend referring domains gecheckt
-- Posities 4-10 lijst gepakt
-- Top pages bekeken
-- Belangrijkste link paginas gevonden
-- Concurrenten lijst opgeschoond (alleen echte)
+- New: wat werkt (PR, partnerships, content)
+- Lost: wat kun je reclaimen (broken pages, verwijderde mentions)
+
+### Bescherm link magnets (Best by links)
+
+Heeft een pagina veel referring domains?
+
+- Houd URL stabiel
+- Moet je wijzigen: 301 redirect
+- Update interne links naar canonical
+
+### Link reclamation
+
+Zoek naar:
+
+- Broken backlinks (links naar 404)
+- Oude URLs die moeten redirecten
+- Mentions zonder link (handmatig outreach)
+
+## Stap 7 - Paginas met weinig of nul traffic (prune voorzichtig)
+
+Ahrefs kan paginas tonen met weinig geschatte traffic. Zie dit als signaal, niet als oordeel.
+
+Per pagina:
+
+- Update
+- Merge (voorkom kannibalisatie)
+- Redirect (obsoleet)
+- Noindex (moet bestaan maar niet ranken)
+
+Check altijd Search Console en conversies voor je iets verwijdert.
+
+## Stap 8 - Simpel maandrapport template
+
+Ik rapporteer:
+
+- Organische trend (Search Console clicks + impressions)
+- Top 5 paginas die bewogen (up/down)
+- Quick wins die zijn uitgevoerd (posities 4-10)
+- Link trend: new vs lost referring domains
+- Volgende 5 acties (owner + deadline)
+
+## 15-minuten checklist
+
+- Scope klopt (domain/prefix/url)
+- Land + periode klopt
+- Traffic trend + keyword trend bekeken
+- Posities 4-10 lijst als quick wins
+- Top pages bekeken (wat eerst updaten)
+- Concurrenten opgeschoond (alleen echte)
+- New/lost referring domains bekeken
 - Korte actielijst gemaakt (max 10)
 `.trim(),
     },
     de: {
-      title: 'Ahrefs Site Explorer nutzen: einfache Anleitung',
+      title: 'Ahrefs Site Explorer nutzen: kompletter Guide (Workflows + Reporting)',
       topic: 'SEO',
-      metaTitle: 'Ahrefs Site Explorer nutzen | Einfache Anleitung',
-      metaDescription: 'So nutzt du Ahrefs Site Explorer: richtiger Scope, DR/UR verstehen, Quick Wins uber Positionen finden, Links checken und eine kurze To-do Liste bauen.',
+      metaTitle: 'Ahrefs Site Explorer | Kompletter Guide',
+      metaDescription: 'Kompletter Site Explorer Guide: Scope, Markt, Metriken, Quick Wins, Link Workflows und Reporting.',
       content: `
-## Was ist Ahrefs Site Explorer?
+Ahrefs Site Explorer ist das schnellste Tool um die SEO Form einer Website zu verstehen: Traffic Trend, Keyword Footprint und Linkprofil. Ich nutze es als Dashboard fuer Diagnose und Priorisierung.
 
-Site Explorer ist das "Dashboard" von Ahrefs fuer eine Website. Du fuegst eine Domain oder URL ein und siehst sofort:
+## Wofuer Site Explorer gut ist (und wofuer nicht)
 
-- Geschaetzten organischen Traffic und Keyword Wachstum
-- Backlinks und Referring Domains
-- Top Seiten und Wettbewerber
+Gut fuer:
 
-Ich nutze es als ersten Scan. Danach gehe ich in die Detail-Reports.
+- Benchmark gegen echte Wettbewerber
+- Quick Wins (Position 4-10)
+- Link Wachstum (new vs lost Referring Domains)
+- Beste Seiten und schwache Bereiche
 
-## Schritt 0 - Richtigen Scope waehlen (Domain vs URL)
+Nicht als Ersatz fuer Search Console oder GA4. Ahrefs liefert Schaetzungen, Trends sind das Wichtige.
 
-Bevor du Zahlen interpretierst, waehle den richtigen Scope:
+## Schritt 0 - Scope richtig setzen
 
-- Domain: Gesamtbild der ganzen Site
-- Subdomain: nur Blog, Shop oder Help Center
-- Prefix: ein Ordner wie /blog/ oder /collections/
-- Exact URL: eine einzelne Seite
+- Domain: Gesamtstrategie
+- Subdomain: Blog/Shop separat
+- Prefix: ein Ordner wie /blog/
+- Exact URL: eine Seite
 
-Fuer Strategie: Domain. Fuer ein bestimmtes Teilgebiet: Prefix.
+## Schritt 1 - Markt und Zeitraum
 
-## Schritt 1 - Land und Zeitraum setzen
+- Land und Sprache auf deinen Zielmarkt setzen
+- 6-12 Monate fuer Trend
+- Weekly/Monthly smoothing bei noisy Graphen
 
-- Waehle das Land fuer deinen Markt.
-- Nimm einen Zeitraum der Trends zeigt (nicht nur 7 Tage).
-- Wenn der Graph zu "bumpy" ist, stell auf weekly oder monthly.
+## Schritt 2 - Overview lesen wie ein Analyst
 
-Du suchst Richtung: rauf, runter, flach oder volatil.
+- DR/UR: nur zum Vergleich in der Nische
+- Referring Domains > Backlinks
+- Organic Keywords und Traffic sind Schaetzungen
+- Paid keywords zeigen wo Wettbewerber Budget investieren
 
-## Schritt 2 - Overview lesen (was bedeutet was?)
-
-Das Overview ist hilfreich, aber viele Werte sind Schaetzungen. Nutze es fuer Vergleich und Trends.
-
-### DR und UR
-
-- DR (Domain Rating): Staerke des Backlink Profils der Domain (Ahrefs Metric)
-- UR (URL Rating): Staerke einer Seite (Links + interne Links)
-
-DR ist kein KPI. Nutze es nur zum Vergleich in der gleichen Nische.
-
-### Links und Referring Domains
-
-- Backlinks = alle Links.
-- Referring Domains = Anzahl einzigartiger Websites die verlinken.
-
-Referring Domains ist oft wichtiger als pure Link Anzahl.
-
-### Organic Keywords und Traffic
-
-- Organic keywords: wie viele Keywords in den Top 100.
-- Traffic: Ahrefs Schaetzung.
-
-Nicht gleich GA4 oder Search Console. Gut fuer Richtung, nicht fuer exakte Reports.
-
-### Paid search (Wettbewerber Signal)
-
-Wenn Ahrefs paid keywords und paid traffic zeigt, ist das ein Hinweis:
-
-- Welche Topics Wettbewerber aktiv kaufen
-- Welche Seiten sie mit Ads pushen
-
-## Schritt 3 - Quick Wins uber Positionen finden
-
-Im Organic keywords / positions View:
-
-- Position 1-3: schuetzen und CTR verbessern
-- Position 4-10: Quick Wins (on-page + interne Links)
-- Position 11-20: mid term Targets
-- Position 21-50: long term
-- Position 51+: future opportunities
+## Schritt 3 - Quick Wins finden
 
 Workflow:
 
-- Filter 4-10
-- Sortiere nach Volume
-- Ranking URL oeffnen und verbessern: title, intro, headings, intent, interne Links
+1. Organic keywords oeffnen
+2. Filter Position 4-10
+3. Sortieren nach Traffic oder Volume
+4. Seite optimieren: Titel, Intro, fehlende Abschnitte, interne Links
 
-## Schritt 4 - Links checken ohne dich zu verlieren
+## Schritt 4 - Top Pages und Wettbewerber nutzen
 
-Mit Referring Domains und Backlinks beantwortest du 3 Fragen:
+- Top pages zeigen welche Formate funktionieren
+- Organic competitors nur echte Wettbewerber lassen
+- Danach Content Gap und Link Trends
 
-- Gewinnen oder verlieren wir Domains?
-- Welche Seiten ziehen Links (und warum)?
-- Gibt es offensichtlichen Spam oder sitewide Links?
+## Schritt 5 - Link Workflows
 
-Quick actions:
+- New vs Lost Referring Domains pruefen
+- Best by links schuetzen (URL stabil, 301 sauber)
+- Broken backlinks finden und reclaimen
 
-- "New" vs "Lost" Referring Domains
-- "Best by links" fuer Link Magneten
-- Seiten mit vielen Links schuetzen (URL nicht staendig aendern)
+## 15 Minuten Checkliste
 
-## Schritt 5 - Top pages und Wettbewerber nutzen
-
-### Top pages
-
-Top pages zeigt welche URLs den meisten geschaetzten Traffic bringen.
-
-Nutze das um:
-
-- Zu sehen was funktioniert (Format, Themen, Angle)
-- Upgrades zu priorisieren
-- Muster zu finden die du wiederholen kannst
-
-### Organic competitors
-
-Ahrefs zeigt Sites mit Keyword Overlap.
-
-- Echte Wettbewerber waehlen (gleiches Produkt, gleiche Zielgruppe)
-- Plattformen wie Wikipedia ignorieren wenn es kein Wettbewerber ist
-
-Danach ist oft Content Gap der naechste Schritt:
-
-- Keywords finden wo Wettbewerber ranken und du nicht
-- In Topic Cluster umsetzen
-
-## Schritt 6 - Seiten mit (fast) 0 Traffic
-
-Ahrefs zeigt oft viele Seiten mit wenig oder keinem geschaetzten Traffic.
-
-Nicht blind loeschen. Pro Seite entscheiden:
-
-- Updaten
-- In eine staerkere Seite mergen
-- Redirect wenn obsolet
-- Noindex wenn sie bleiben muss aber nicht ranken soll
-
-## 10-Minuten Checkliste
-
-- Scope gesetzt (domain / prefix / URL)
-- Land gesetzt
-- Organic Traffic Trend gecheckt
-- Referring Domains Trend gecheckt
-- Positionen 4-10 Liste exportiert
-- Top pages geprueft
-- Wichtigste Link Seiten identifiziert
-- Wettbewerber Liste bereinigt
-- Kurze To-do Liste geschrieben (max 10)
+- Scope und Markt korrekt
+- Trends geprueft
+- Position 4-10 exportiert
+- Top pages priorisiert
+- Wettbewerber bereinigt
+- New/Lost Links gecheckt
 `.trim(),
     },
     sv: {
-      title: 'Sa anvander du Ahrefs Site Explorer: enkel guide',
+      title: 'Ahrefs Site Explorer: komplett guide (workflows + rapportering)',
       topic: 'SEO',
-      metaTitle: 'Ahrefs Site Explorer | Enkel guide',
-      metaDescription: 'En enkel guide till Ahrefs Site Explorer: valj scope, forsta DR/UR, hitta quick wins via positioner, kolla lankar och bygg en kort action list.',
+      metaTitle: 'Ahrefs Site Explorer | Komplett guide',
+      metaDescription: 'Komplett Site Explorer guide: scope, marknad, quick wins, link workflows och rapportering.',
       content: `
-## Vad ar Ahrefs Site Explorer?
+Ahrefs Site Explorer ger snabb oversikt over en sajts SEO form: traffic trend, keyword footprint och lankar. Jag anvander det som dashboard for diagnos och prioritering.
 
-Site Explorer ar Ahrefs "dashboard" for en webbplats. Klistra in en domain eller URL och du ser direkt:
+## Bra for (och inte)
 
-- Skattad organisk traffic och keyword growth
-- Backlinks och referring domains
-- Top pages och konkurrenter
+Bra for:
 
-Jag anvander det som en forsta scan. Sen klickar jag vidare till detaljrapporter.
+- Benchmark mot riktiga konkurrenter
+- Quick wins (position 4-10)
+- Link trend (new vs lost referring domains)
+- Batta sidor och svaga delar
 
-## Steg 0 - Valj ratt scope (domain vs URL)
+Inte ersattning for Search Console eller GA4. Ahrefs ar estimat, trender ar det viktiga.
 
-Innan du kollar siffror, valj ratt scope:
+## Steg 0 - Ratt scope
 
-- Domain: helhetsbild av hela sajten
-- Subdomain: bara blog, shop eller help center
-- Prefix: en mapp som /blog/ eller /collections/
+- Domain: strategi
+- Subdomain: blog/shop separat
+- Prefix: /blog/
 - Exact URL: en sida
 
-For strategi: Domain. For en sektion: Prefix.
+## Steg 1 - Marknad och tid
 
-## Steg 1 - Satt land och period
+- Land och sprak for din marknad
+- 6-12 manader for trend
+- Weekly/Monthly smoothing vid brus
 
-- Valj land som matchar din marknad.
-- Valj en period som visar trend (inte bara 7 dagar).
-- Om grafen ar stokig, byt till weekly eller monthly.
+## Steg 2 - Overview som analyst
 
-Du vill se riktning: upp, ner, platt eller volatilt.
+- DR/UR for jamforelse, inte KPI
+- Referring domains > backlinks
+- Organic keywords/traffic ar estimat
+- Paid keywords visar var konkurrenter spenderar
 
-## Steg 2 - Las overview (vad betyder siffrorna?)
+## Steg 3 - Quick wins
 
-Overview ar nyttigt men manga siffror ar estimates. Anvand for jamforelse och trend.
+1. Organic keywords
+2. Filter position 4-10
+3. Sortera efter traffic/volume
+4. Forbattra sidan (titel, intro, missing sections, interna lankar)
 
-### DR och UR
+## Steg 4 - Top pages och konkurrenter
 
-- DR (Domain Rating): styrka i domainens backlink profile (Ahrefs metric)
-- UR (URL Rating): styrka for en specifik sida (links + interna links)
+- Se vilka format som fungerar
+- Rensa konkurrentlistan
+- Anvand for content gap och link trend
 
-DR ar inte en KPI. Anvand for jamforelse i samma nisch.
+## Steg 5 - Link workflows
 
-### Links och referring domains
+- New vs lost domains
+- Best by links skydda
+- Broken backlinks och reclaim
 
-- Backlinks ar total links.
-- Referring domains ar antal unika sajter som lankar.
+## 15 min checklista
 
-Referring domains betyder ofta mer an bara manga links.
-
-### Organic keywords och traffic
-
-- Organic keywords: hur manga keywords i top 100.
-- Traffic: Ahrefs estimate.
-
-Inte samma som GA4 eller Search Console. Bra for riktning, inte exakta rapporter.
-
-### Paid search (konkurrent signal)
-
-Om Ahrefs visar paid keywords och paid traffic, se det som en hint:
-
-- Vilka topics konkurrenter betalar for
-- Vilka sidor de pushar med ads
-
-## Steg 3 - Hitta quick wins med positioner
-
-I Organic keywords / positions:
-
-- Position 1-3: skydda och forbattra CTR
-- Position 4-10: quick wins (on-page + interna links)
-- Position 11-20: mid term
-- Position 21-50: long term
-- Position 51+: future opportunities
-
-Workflow:
-
-- Filtrera 4-10
-- Sortera pa volume
-- Oppna ranking URL och forbattra: title, intro, headings, intent, interna links
-
-## Steg 4 - Kolla lankar utan att drunkna
-
-Med Referring domains och Backlinks svarar du pa 3 fragor:
-
-- Vinner eller tappar vi domains?
-- Vilka sidor far lankar (och varfor)?
-- Finns tydlig spam eller sitewide links?
-
-Snabba actions:
-
-- Kolla "New" vs "Lost" referring domains
-- Kolla "Best by links" for link magnets
-- Sidor med manga links: skydda URL (anda inte i onodan)
-
-## Steg 5 - Anvand Top pages och konkurrenter
-
-### Top pages
-
-Top pages visar vilka URLs som driver mest skattad traffic.
-
-Anvand for att:
-
-- Se vad som funkar (format, topics, angle)
-- Prioritera vilka sidor som ska uppdateras
-- Hitta monster du kan upprepa
-
-### Organic competitors
-
-Ahrefs listar sajter med keyword overlap.
-
-- Valj riktiga konkurrenter (samma produkt, samma audience)
-- Ignorera Wikipedia om det inte ar en konkurrent
-
-Sen ar content gap ofta nasta steg:
-
-- Hitta keywords dar konkurrenter rankar och du inte
-- Bygg topic clusters
-
-## Steg 6 - Sidor med (nastan) 0 traffic
-
-Ahrefs kan visa manga sidor med lite eller ingen skattad traffic.
-
-Radera inte blint. Bestam per sida:
-
-- Uppdatera
-- Slag ihop med en starkare sida
-- Redirect om den ar obsolet
-- Noindex om den maste finnas men inte ska ranka
-
-## 10-minuters checklista
-
-- Scope satt (domain / prefix / URL)
-- Land satt
-- Organic traffic trend kollad
-- Referring domains trend kollad
-- Position 4-10 lista exporterad
-- Top pages granskade
-- Storsta link sidor hittade
-- Konkurrentlista rensad
-- Kort action list skriven (max 10)
+- Scope/market korrekt
+- Trend kollad
+- 4-10 lista export
+- Top pages prioriterade
+- Konkurrenter rensade
 `.trim(),
     },
     da: {
-      title: 'Sa bruger du Ahrefs Site Explorer: enkel guide',
+      title: 'Ahrefs Site Explorer: komplet guide (workflows + rapportering)',
       topic: 'SEO',
-      metaTitle: 'Ahrefs Site Explorer | Enkel guide',
-      metaDescription: 'En enkel guide til Ahrefs Site Explorer: vaelg scope, forstaa DR/UR, find quick wins via positioner, tjek links og lav en kort action list.',
+      metaTitle: 'Ahrefs Site Explorer | Komplet guide',
+      metaDescription: 'Komplet Site Explorer guide: scope, marked, quick wins, link workflows og rapportering.',
       content: `
-## Hvad er Ahrefs Site Explorer?
+Ahrefs Site Explorer giver hurtigt overblik over en websides SEO form: traffic trend, keyword footprint og linkprofil. Jeg bruger det som dashboard til diagnose og prioritering.
 
-Site Explorer er Ahrefs "dashboard" for et website. Indsaet et domane eller en URL og du ser straks:
+## Godt til (og ikke)
 
-- Estimeret organisk traffic og keyword growth
-- Backlinks og referring domains
-- Top pages og konkurrenter
+Godt til:
 
-Jeg bruger det som et foerste scan. Derefter klikker jeg videre til detail reports.
+- Benchmark mod rigtige konkurrenter
+- Quick wins (position 4-10)
+- Link trend (new vs lost referring domains)
+- Top sider og svage omrader
 
-## Trin 0 - Vaelg det rigtige scope (domane vs URL)
+Ikke erstatning for Search Console eller GA4. Ahrefs er estimater, trends er det vigtige.
 
-Inden du kigger pa tal, vaelg scope:
+## Trin 0 - Rigtigt scope
 
-- Domain: overblik over hele sitet
-- Subdomain: kun blog, shop eller help center
-- Prefix: en mappe som /blog/ eller /collections/
+- Domain: strategi
+- Subdomain: blog/shop separat
+- Prefix: /blog/
 - Exact URL: en side
 
-Til strategi: Domain. Til en sektion: Prefix.
+## Trin 1 - Marked og tid
 
-## Trin 1 - Saet land og periode
+- Land og sprog for dit marked
+- 6-12 maaneder for trend
+- Weekly/Monthly smoothing ved noise
 
-- Vaelg land der matcher dit marked.
-- Vaelg en periode der viser trend (ikke kun 7 dage).
-- Hvis grafen er ujavn, skift til weekly eller monthly.
+## Trin 2 - Overview som analytiker
 
-Du vil se retning: op, ned, fladt eller volatilt.
+- DR/UR til sammenligning, ikke KPI
+- Referring domains > backlinks
+- Organic keywords/traffic er estimater
+- Paid keywords viser hvor konkurrenter investerer
 
-## Trin 2 - Laes overview (hvad betyder metrics?)
+## Trin 3 - Quick wins
 
-Overview er nyttigt men mange tal er estimates. Brug til sammenligning og trend.
+1. Organic keywords
+2. Filter position 4-10
+3. Sorter efter traffic/volume
+4. Forbedr siden (titel, intro, missing sections, interne links)
 
-### DR og UR
+## Trin 4 - Top pages og konkurrenter
 
-- DR (Domain Rating): styrke i domenets backlink profile (Ahrefs metric)
-- UR (URL Rating): styrke for en side (links + interne links)
+- Se hvilke formater der virker
+- Rens konkurrentliste
+- Brug til content gap og link trend
 
-DR er ikke en KPI. Brug til sammenligning i samme niche.
+## Trin 5 - Link workflows
 
-### Links og referring domains
+- New vs lost domains
+- Best by links beskyttes
+- Broken backlinks og reclaim
 
-- Backlinks er total links.
-- Referring domains er antal unikke websites der linker.
+## 15 min tjekliste
 
-Referring domains betyder ofte mere end bare mange links.
-
-### Organic keywords og traffic
-
-- Organic keywords: hvor mange keywords i top 100.
-- Traffic: Ahrefs estimate.
-
-Det er ikke det samme som GA4 eller Search Console. God til retning, ikke eksakt rapport.
-
-### Paid search (konkurrent signal)
-
-Hvis Ahrefs viser paid keywords og paid traffic, se det som en hint:
-
-- Hvilke topics konkurrenter betaler for
-- Hvilke sider de pusher med ads
-
-## Trin 3 - Find quick wins med positioner
-
-I Organic keywords / positions:
-
-- Position 1-3: beskyt og forbedr CTR
-- Position 4-10: quick wins (on-page + interne links)
-- Position 11-20: mid term
-- Position 21-50: long term
-- Position 51+: future opportunities
-
-Workflow:
-
-- Filtrer 4-10
-- Sorter efter volume
-- Aabn ranking URL og forbedr: title, intro, headings, intent, interne links
-
-## Trin 4 - Tjek links uden at drukne
-
-Med Referring domains og Backlinks svarer du pa 3 sporgsmal:
-
-- Faar vi flere eller faerre domains?
-- Hvilke sider faar links (og hvorfor)?
-- Er der tydelig spam eller sitewide links?
-
-Hurtige actions:
-
-- Tjek "New" vs "Lost" referring domains
-- Tjek "Best by links" for link magnets
-- Sider med mange links: beskyt URL (aendr ikke unodigt)
-
-## Trin 5 - Brug Top pages og konkurrenter
-
-### Top pages
-
-Top pages viser hvilke URLs der driver mest estimeret traffic.
-
-Brug det til:
-
-- Se hvad der virker (format, topics, angle)
-- Prioritere opdateringer
-- Finde monster du kan gentage
-
-### Organic competitors
-
-Ahrefs lister sites med keyword overlap.
-
-- Vaelg rigtige konkurrenter (samme produkt, samme audience)
-- Ignorer Wikipedia hvis det ikke er en konkurrent
-
-Sa er content gap ofte naeste skridt:
-
-- Find keywords hvor konkurrenter ranker og du ikke
-- Byg topic clusters
-
-## Trin 6 - Sider med (naesten) 0 traffic
-
-Ahrefs kan vise mange sider med lidt eller ingen estimeret traffic.
-
-Slet ikke blindt. Beslut per side:
-
-- Opdater
-- Merge ind i en staerkere side
-- Redirect hvis siden er obsolet
-- Noindex hvis den skal blive men ikke ranke
-
-## 10-minutters checkliste
-
-- Scope sat (domain / prefix / URL)
-- Land sat
-- Organic traffic trend tjekket
-- Referring domains trend tjekket
-- Position 4-10 liste eksporteret
-- Top pages gennemgaaet
-- Storste link sider fundet
-- Konkurrentliste renset
-- Kort action list skrevet (max 10)
+- Scope/market korrekt
+- Trend tjekket
+- 4-10 liste eksport
+- Top pages prioriteret
+- Konkurrenter renset
 `.trim(),
     },
     fr: {
-      title: 'Comment utiliser Ahrefs Site Explorer: guide simple',
+      title: 'Ahrefs Site Explorer: guide complet (workflows + reporting)',
       topic: 'SEO',
-      metaTitle: 'Ahrefs Site Explorer | Guide simple',
-      metaDescription: 'Guide simple Ahrefs Site Explorer: choisir le bon scope, comprendre DR/UR, trouver des quick wins via positions, verifier les liens et creer une short action list.',
+      metaTitle: 'Ahrefs Site Explorer | Guide complet',
+      metaDescription: 'Guide complet Site Explorer: scope, marche, quick wins, link workflows et reporting.',
       content: `
-## Qu est-ce que Ahrefs Site Explorer?
+Ahrefs Site Explorer donne une vue rapide de la forme SEO d un site: tendance trafic, keywords et liens. Je l utilise comme dashboard pour diagnostic et priorites.
 
-Site Explorer est le "dashboard" Ahrefs pour un site. Tu colles un domaine ou une URL et tu vois tout de suite:
+## Utile pour (et pas)
 
-- Traffic organique estime et croissance keywords
-- Backlinks et referring domains
-- Top pages et concurrents
+Utile pour:
 
-Je l utilise comme premier scan. Ensuite je vais dans les rapports detailles.
+- Benchmark avec vrais concurrents
+- Quick wins (positions 4-10)
+- Tendance liens (new vs lost referring domains)
+- Top pages et zones faibles
 
-## Etape 0 - Choisir le bon scope (domaine vs URL)
+Pas un remplacement de Search Console ou GA4. Ahrefs donne des estimations, les trends comptent.
 
-Avant de lire les chiffres, choisis le bon scope:
+## Etape 0 - Choisir le scope
 
-- Domain: vue globale du site
-- Subdomain: seulement blog, shop ou help center
-- Prefix: un dossier comme /blog/ ou /collections/
+- Domain: strategie globale
+- Subdomain: blog/shop separe
+- Prefix: /blog/
 - Exact URL: une page
 
-Pour la strategie: Domain. Pour une section: Prefix.
+## Etape 1 - Marche et periode
 
-## Etape 1 - Choisir pays et periode
+- Pays et langue du marche
+- 6-12 mois pour la tendance
+- Weekly/Monthly smoothing si bruit
 
-- Choisis le pays de ton marche.
-- Prends une periode qui montre la tendance (pas seulement 7 jours).
-- Si le graphe est trop bruyant, passe en weekly ou monthly.
+## Etape 2 - Lire le overview
 
-Tu veux la direction: up, down, flat ou volatile.
+- DR/UR pour comparaison, pas KPI
+- Referring domains > backlinks
+- Organic keywords/traffic = estimations
+- Paid keywords = ou les concurrents investissent
 
-## Etape 2 - Lire l overview (que veulent dire les metrics?)
+## Etape 3 - Quick wins
 
-L overview est utile mais beaucoup de chiffres sont des estimations. Utilise pour comparer et voir les tendances.
+1. Organic keywords
+2. Filtre position 4-10
+3. Trier par traffic/volume
+4. Ameliorer la page (titre, intro, sections manquantes, liens internes)
 
-### DR et UR
+## Etape 4 - Top pages et concurrents
 
-- DR (Domain Rating): force du backlink profile du domaine (Ahrefs metric)
-- UR (URL Rating): force d une page (links + internal links)
+- Identifier les formats qui marchent
+- Nettoyer la liste concurrents
+- Utiliser pour content gap et link trend
 
-Ne traite pas DR comme KPI. Utilise pour comparer dans la meme niche.
+## Etape 5 - Link workflows
 
-### Links et referring domains
+- New vs lost domains
+- Best by links a proteger
+- Broken backlinks a recuperer
 
-- Backlinks = total links.
-- Referring domains = nombre de sites uniques qui linkent.
+## Checkliste 15 minutes
 
-Referring domains compte souvent plus que le volume brut de links.
-
-### Organic keywords et traffic
-
-- Organic keywords: combien de keywords en top 100.
-- Traffic: estimation Ahrefs.
-
-Ce n est pas GA4 ou Search Console. Bien pour direction, pas pour reporting exact.
-
-### Paid search (signal concurrent)
-
-Si Ahrefs montre paid keywords et paid traffic, vois ca comme une hint:
-
-- Quels topics les concurrents achetent
-- Quelles pages ils poussent avec des ads
-
-## Etape 3 - Trouver des quick wins via positions
-
-Dans Organic keywords / positions:
-
-- Positions 1-3: proteger et ameliorer CTR
-- Positions 4-10: quick wins (on-page + internal links)
-- Positions 11-20: mid term
-- Positions 21-50: long term
-- Positions 51+: future opportunities
-
-Workflow:
-
-- Filtre 4-10
-- Trie par volume
-- Ouvre la page et ameliore: title, intro, headings, intent, internal links
-
-## Etape 4 - Verifier les liens sans se perdre
-
-Avec Referring domains et Backlinks, reponds a 3 questions:
-
-- On gagne ou on perd des domains?
-- Quelles pages attirent des links (et pourquoi)?
-- Spam evident ou sitewide links?
-
-Actions rapides:
-
-- "New" vs "Lost" referring domains
-- "Best by links" pour trouver les link magnets
-- Page avec beaucoup de links: proteger l URL
-
-## Etape 5 - Utiliser Top pages et concurrents
-
-### Top pages
-
-Top pages montre les URLs qui apportent le plus de traffic estime.
-
-Utilise pour:
-
-- Voir ce qui marche (format, topics, angle)
-- Prioriser les updates
-- Repliquer des patterns
-
-### Organic competitors
-
-Ahrefs liste des sites avec keyword overlap.
-
-- Choisis de vrais concurrents (meme produit, meme audience)
-- Ignore Wikipedia si ce n est pas un concurrent
-
-Ensuite, content gap est souvent la prochaine etape:
-
-- Trouver des keywords ou les concurrents rankent et toi non
-- Construire des topic clusters
-
-## Etape 6 - Pages avec (presque) 0 traffic
-
-Ahrefs peut montrer beaucoup de pages avec peu ou pas de traffic estime.
-
-Ne supprime pas a l aveugle. Decide page par page:
-
-- Update
-- Merge dans une page plus forte
-- Redirect si obsolete
-- Noindex si elle doit rester mais ne pas ranker
-
-## Checklist 10 minutes
-
-- Scope ok (domain / prefix / URL)
-- Pays ok
-- Trend organic traffic verifie
-- Trend referring domains verifie
-- Liste positions 4-10 exportee
-- Top pages verifiees
-- Pages les plus linkees identifiees
-- Liste concurrents nettoyee
-- Short action list ecrite (max 10)
+- Scope et marche corrects
+- Trend verifie
+- Liste 4-10 exportee
+- Top pages priorisees
+- Concurrents nettoyes
 `.trim(),
     },
     it: {
-      title: 'Come usare Ahrefs Site Explorer: guida semplice',
+      title: 'Ahrefs Site Explorer: guida completa (workflows + reporting)',
       topic: 'SEO',
-      metaTitle: 'Ahrefs Site Explorer | Guida semplice',
-      metaDescription: 'Guida semplice ad Ahrefs Site Explorer: scegliere scope, capire DR/UR, trovare quick wins con le posizioni, controllare link e creare una short action list.',
+      metaTitle: 'Ahrefs Site Explorer | Guida completa',
+      metaDescription: 'Guida completa Site Explorer: scope, mercato, quick wins, link workflows e reporting.',
       content: `
-## Cos e Ahrefs Site Explorer?
+Ahrefs Site Explorer offre una vista rapida della forma SEO di un sito: trend traffico, keyword footprint e link profile. Lo uso come dashboard per diagnosi e priorita.
 
-Site Explorer e il "dashboard" di Ahrefs per un sito. Incolli un dominio o una URL e vedi subito:
+## Utile per (e non)
 
-- Traffico organico stimato e crescita keywords
-- Backlinks e referring domains
-- Top pages e competitor
+Utile per:
 
-Lo uso come prima scan. Poi entro nei report di dettaglio.
+- Benchmark con concorrenti reali
+- Quick wins (posizioni 4-10)
+- Trend link (new vs lost referring domains)
+- Top pages e aree deboli
 
-## Step 0 - Scegli lo scope giusto (dominio vs URL)
+Non sostituisce Search Console o GA4. Ahrefs sono stime, i trend contano.
 
-Prima di guardare i numeri, scegli lo scope:
+## Step 0 - Scegli lo scope
 
-- Domain: vista globale del sito
-- Subdomain: solo blog, shop o help center
-- Prefix: una cartella come /blog/ o /collections/
+- Domain: strategia globale
+- Subdomain: blog/shop separato
+- Prefix: /blog/
 - Exact URL: una pagina
 
-Per strategia: Domain. Per una sezione: Prefix.
+## Step 1 - Mercato e periodo
 
-## Step 1 - Imposta paese e periodo
+- Paese e lingua del mercato
+- 6-12 mesi per trend
+- Weekly/Monthly smoothing se grafico rumoroso
 
-- Scegli il paese del tuo mercato.
-- Scegli un periodo che mostra trend (non solo 7 giorni).
-- Se il grafico e troppo "bumpy", passa a weekly o monthly.
+## Step 2 - Leggere overview
 
-Cerchi direzione: su, giu, piatto o volatile.
+- DR/UR per confronto, non KPI
+- Referring domains > backlinks
+- Organic keywords/traffic sono stime
+- Paid keywords indicano dove i competitor spendono
 
-## Step 2 - Leggi l overview (cosa significano i metrics?)
+## Step 3 - Quick wins
 
-L overview e utile ma molti numeri sono stime. Usala per confronto e trend.
+1. Organic keywords
+2. Filtro posizione 4-10
+3. Ordina per traffic/volume
+4. Migliora la pagina (titolo, intro, sezioni mancanti, link interni)
 
-### DR e UR
+## Step 4 - Top pages e competitor
 
-- DR (Domain Rating): forza del backlink profile del dominio (Ahrefs metric)
-- UR (URL Rating): forza di una pagina (links + internal links)
+- Vedi quali formati funzionano
+- Pulisci lista competitor
+- Usa per content gap e link trend
 
-Non usare DR come KPI. Usalo per confrontare siti nella stessa nicchia.
+## Step 5 - Link workflows
 
-### Links e referring domains
+- New vs lost domains
+- Best by links da proteggere
+- Broken backlinks da recuperare
 
-- Backlinks = total links.
-- Referring domains = numero di siti unici che linkano.
+## Check 15 minuti
 
-Referring domains conta spesso piu del numero totale di links.
-
-### Organic keywords e traffic
-
-- Organic keywords: quante keywords in top 100.
-- Traffic: stima Ahrefs.
-
-Non e GA4 o Search Console. Buono per direzione, non per report esatti.
-
-### Paid search (segnale competitor)
-
-Se Ahrefs mostra paid keywords e paid traffic, consideralo una hint:
-
-- Su quali topics i competitor spendono
-- Quali pagine spingono con ads
-
-## Step 3 - Trova quick wins con le posizioni
-
-In Organic keywords / positions:
-
-- Posizioni 1-3: proteggi e migliora CTR
-- Posizioni 4-10: quick wins (on-page + internal links)
-- Posizioni 11-20: mid term
-- Posizioni 21-50: long term
-- Posizioni 51+: future opportunities
-
-Workflow:
-
-- Filtra 4-10
-- Ordina per volume
-- Apri la pagina e migliora: title, intro, headings, intent, internal links
-
-## Step 4 - Controlla i link senza perderti
-
-Con Referring domains e Backlinks rispondi a 3 domande:
-
-- Stiamo guadagnando o perdendo domains?
-- Quali pagine attirano links (e perche)?
-- C e spam evidente o sitewide links?
-
-Azioni rapide:
-
-- "New" vs "Lost" referring domains
-- "Best by links" per vedere link magnets
-- Pagine con molti links: proteggi la URL
-
-## Step 5 - Usa Top pages e competitor
-
-### Top pages
-
-Top pages mostra le URLs con piu traffic stimato.
-
-Usalo per:
-
-- Capire cosa funziona (format, topics, angle)
-- Prioritizzare gli update
-- Trovare pattern da ripetere
-
-### Organic competitors
-
-Ahrefs lista siti con keyword overlap.
-
-- Scegli competitor reali (stesso prodotto, stessa audience)
-- Ignora Wikipedia se non e un competitor
-
-Poi content gap e spesso il prossimo step:
-
-- Trova keywords dove i competitor rankano e tu no
-- Crea topic clusters
-
-## Step 6 - Pagine con (quasi) 0 traffic
-
-Ahrefs puo mostrare molte pagine con poco o nessun traffic stimato.
-
-Non cancellare a caso. Decidi pagina per pagina:
-
-- Update
-- Merge in una pagina piu forte
-- Redirect se obsoleta
-- Noindex se deve restare ma non deve rankare
-
-## Checklist 10 minuti
-
-- Scope ok (domain / prefix / URL)
-- Paese ok
-- Trend organic traffic controllato
-- Trend referring domains controllato
-- Lista posizioni 4-10 esportata
-- Top pages controllate
-- Pagine piu linkate identificate
-- Lista competitor pulita
-- Short action list scritta (max 10)
+- Scope e mercato corretti
+- Trend controllato
+- Lista 4-10 esportata
+- Top pages prioritarie
+- Competitor puliti
 `.trim(),
     },
   },
