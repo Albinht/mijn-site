@@ -39,303 +39,598 @@ const article = {
   status: 'PUBLISHED',
   title: 'Ahrefs Keywords Explorer: complete guide (research + planning)',
   content: `
-Ahrefs Keywords Explorer helps you pick keywords that actually drive traffic. The key is not just volume, but intent, clicks, and traffic potential.
+Ahrefs Keywords Explorer is not a magic keyword list. It is a decision tool: what to build, what to skip, and what it will take to win.
 
-## What Keywords Explorer is for
+If you only look at volume, you will over-invest in keywords that do not send clicks. Use intent, SERP reality, clicks, and Traffic Potential to build an SEO plan that actually performs.
+
+This article connects to the other Ahrefs workflows on the site:
+
+- Traffic Potential vs volume: [read it here](/blog/ahrefs-traffic-potential-vs-volume)
+- Site Explorer workflows: [read it here](/blog/ahrefs-site-explorer-simpel-stappenplan)
+- Content gap planning: [read it here](/blog/content-gap-analyse-ahrefs-stappenplan)
+
+## What Keywords Explorer is good for (and what it is not)
 
 Use it to:
 
-- Discover relevant keyword ideas
-- Estimate clicks and traffic potential
+- Find keyword and topic ideas
+- Estimate clicks and Traffic Potential (not just volume)
+- Understand intent and SERP composition
 - Build topic clusters (hub + supporting pages)
-- Prioritize by intent and business value
+- Prioritize by business value and difficulty
 
-## Step 1 - Set the market correctly
+Do not use it as a replacement for:
 
-- Country and language = your real revenue market
-- Choose device if mobile matters
+- Search Console (truth for impressions, clicks, indexation)
+- GA4 (truth for conversions and revenue)
 
-Wrong market settings = useless data.
+Ahrefs is an external tool. Treat numbers as estimates. Trends and comparisons are the real value.
 
-## Step 2 - Start with a seed keyword
+## Step 0 - Set the market correctly (do not skip)
 
-Enter a broad term, then look at:
+Most keyword research mistakes are market mistakes.
 
-- Matching terms
-- Related terms
-- Questions
+- Country: pick where you want customers, not where you live
+- Language: match your content language
+- Device: if most leads come from mobile, check mobile trends too
 
-Do not build a plan from one keyword. Build a cluster.
+If your market settings are wrong, everything that follows is wrong.
 
-## Step 3 - Read the right metrics
+If you are new to Ahrefs, start with the basics first: [create an Ahrefs account](/blog/ahrefs-account-aanmaken-simpele-uitleg).
 
-Key metrics in Ahrefs:
+## Step 1 - Start from business and intent (not from keywords)
 
-- Volume: searches per month
+Before you open Ahrefs, write down:
+
+- The 3-5 services/products you actually sell
+- The conversion you want (demo, quote, call, purchase)
+- The intent types you need: informational (learn), commercial (compare), transactional (buy)
+
+If you need a bigger SEO foundation first, read: [what SEO optimization is](/blog/wat-is-seo-optimalisatie) and the broader roadmap: [hoog in Google komen](/blog/hoog-in-google).
+
+## Step 2 - Build a seed list from real data
+
+Better seeds create better output.
+
+Good seed sources:
+
+- Search Console queries (pages with impressions)
+- Customer questions (sales calls, support tickets)
+- Competitor categories and landing pages
+- Your own internal site search (if you have it)
+
+Rule: do not start with one seed keyword. Start with 5-20 seeds and expect to build clusters.
+
+## Step 3 - Use the right reports inside Keywords Explorer
+
+In Ahrefs you can expand a seed via:
+
+- Matching terms: closest variants
+- Related terms: semantic expansion
+- Questions: great for supporting pages and FAQs
+
+Your goal is not 200 keywords. Your goal is:
+
+- 1 strong hub page per intent/topic
+- 3-8 supporting pages that feed it
+
+## Step 4 - Read the metrics like an SEO, not like a dashboard
+
+Here is how I interpret the core metrics:
+
+- Volume: searches per month (starting point, not a decision)
 - Clicks: estimated clicks from the SERP
-- CPS: clicks per search
-- KD: difficulty estimate
-- CPC: commercial intent signal
-- Traffic Potential: total organic traffic for #1 page
+- CPS: clicks per search (how clicky the SERP is)
+- KD: difficulty estimate (signal, not a rule)
+- CPC: commercial intent signal (useful for prioritization)
+- Traffic Potential (TP): estimated monthly organic traffic for the #1 page (topic-level)
 
-Traffic Potential is often more important than volume.
+Traffic Potential is often more useful than volume because top pages rank for many long-tail variations. If you want the full workflow: [Traffic Potential vs volume](/blog/ahrefs-traffic-potential-vs-volume).
 
-## Step 4 - Check intent and SERP reality
+Practical interpretation:
 
-Open the SERP overview and ask:
+- High volume + low clicks: SERP noise, instant answers, heavy ads
+- Lower volume + high clicks: often more reliable traffic
+- TP much higher than volume: broad topic (good for guides)
 
-- What page types rank (guide, category, product)?
-- Are there ads, shopping, or AI answers?
-- Are the top results strong brands?
+## Step 5 - Validate intent with the SERP (this is where plans fail)
 
-If the SERP does not match your page type, skip or change approach.
+Open the SERP overview and answer:
 
-## Step 5 - Build a small cluster
+- What page types rank? (guide, category, product, local page)
+- What SERP features steal clicks? (ads, shopping, local pack, AI answers)
+- Are top results stable brands?
+- Are the results fresh and detailed?
+
+If the SERP wants product pages and you plan a blog post, you will usually lose.
+
+## Step 6 - Calibrate difficulty using Site Explorer
+
+KD alone is not enough. Use Site Explorer to see what it actually takes.
+
+Workflow:
+
+1. In the SERP overview, open the top 3 ranking URLs.
+2. For each, check in Site Explorer:
+- Referring domains and link profile
+- Estimated traffic distribution (one keyword vs many)
+- Content depth and structure
+
+If you are new to Site Explorer, use this guide: [Ahrefs Site Explorer workflows](/blog/ahrefs-site-explorer-simpel-stappenplan).
+
+## Step 7 - Turn keywords into a cluster plan (not a random list)
+
+A cluster is the unit that wins. One page rarely wins alone.
 
 A practical cluster:
 
-- 1 hub page for the main intent
-- 3-8 supporting pages for sub topics
+- 1 hub page for the primary intent
+- 3-8 supporting pages for sub-questions and long-tail
 - Internal links both ways
 
 Avoid cannibalization: one primary intent per page.
 
-## Step 6 - Prioritize with a simple score
+If you want to find topics your competitors already win with, run a gap first: [content gap analyse in Ahrefs](/blog/content-gap-analyse-ahrefs-stappenplan).
 
-Use a lightweight score to decide what to build first:
+## Step 8 - Plan internal links before you publish
 
-- Opportunity = Traffic Potential x business value / difficulty
+Internal links are the cheapest SEO leverage.
 
-Keep business value as High / Medium / Low.
+Rules that work:
+
+- Hub page links to all supporting pages (descriptive anchors)
+- Supporting pages link back to the hub (early in the article)
+- Supporting pages cross-link when it helps the reader
+- Link from older, strong pages to the new hub (link velocity)
+
+If you need a technical audit to ensure crawl and index are not blocked: [technical SEO audit checklist](/blog/technische-seo-analyse-stappenplan-checklist).
+
+## Step 9 - Publish, measure, and iterate (the monthly loop)
+
+Use Search Console as truth:
+
+- Are you getting impressions?
+- Is CTR reasonable? (snippet quality)
+- Which queries show up unexpectedly? (expand content)
+
+Fast wins often live in positions 4-20. Update those pages first.
+
+## Filters I actually use (quick start)
+
+I keep it simple:
+
+- Exclude branded competitor terms
+- Filter by intent words (price, best, vs, how)
+- Start with lower KD for new sites
+- Prefer higher CPS when SERPs are noisy
 
 ## Common mistakes
 
+- Building a keyword list without a cluster plan
 - Choosing by volume only
-- Ignoring intent and SERP features
-- Creating multiple pages for one intent
-- Not linking pages into clusters
+- Skipping SERP checks
+- Creating multiple pages for the same intent
+- Ignoring internal links
+- Measuring rankings but not conversions
 
 ## Conclusion
 
-Keywords Explorer is powerful when you use it as a planning tool, not just a keyword list. Focus on intent, clicks, and traffic potential, then build clusters with clear internal links.
+Keywords Explorer is powerful when you use it as a planning workflow: market settings, intent, clicks, Traffic Potential, SERP validation, and clusters with internal links.
+
+Want a practical SEO roadmap built from your market and your data? Start here: [wat is SEO optimalisatie](/blog/wat-is-seo-optimalisatie).
 `.trim(),
   translations: {
     en: {
       title: 'Ahrefs Keywords Explorer: complete guide (research + planning)',
       topic: 'SEO',
       metaTitle: 'Ahrefs Keywords Explorer | Complete guide',
-      metaDescription: 'Use Ahrefs Keywords Explorer to find keyword ideas, evaluate intent and clicks, and build topic clusters that drive traffic.',
+      metaDescription: 'Complete Keywords Explorer workflow: market settings, intent, clicks, Traffic Potential, SERP checks, clustering, and internal linking.',
       content: `
-Ahrefs Keywords Explorer helps you pick keywords that actually drive traffic. The key is not just volume, but intent, clicks, and traffic potential.
+Ahrefs Keywords Explorer is a decision tool: what to build, what to skip, and what it will take to win.
 
-## What Keywords Explorer is for
+Key related workflows:
 
-Use it to:
+- [Traffic Potential vs volume](/blog/ahrefs-traffic-potential-vs-volume)
+- [Site Explorer workflows](/blog/ahrefs-site-explorer-simpel-stappenplan)
+- [Content gap planning](/blog/content-gap-analyse-ahrefs-stappenplan)
 
-- Discover relevant keyword ideas
-- Estimate clicks and traffic potential
-- Build topic clusters (hub + supporting pages)
-- Prioritize by intent and business value
+## Step 0 - Set the market correctly
 
-## Step 1 - Set the market correctly
+- Country and language = your real market
+- Check device if mobile matters
 
-- Country and language = your real revenue market
-- Choose device if mobile matters
+New to Ahrefs? Start with setup first: [create an Ahrefs account](/blog/ahrefs-account-aanmaken-simpele-uitleg).
 
-## Step 2 - Start with a seed keyword
+## Step 1 - Start from business and intent
 
-Enter a broad term, then explore:
+- Define the conversion (demo, quote, call, purchase)
+- Pick intent types: learn, compare, buy
+
+## Step 2 - Build a seed list from real data
+
+- Search Console queries
+- Customer questions
+- Competitor pages
+
+## Step 3 - Expand inside Keywords Explorer
+
+Use:
 
 - Matching terms
 - Related terms
 - Questions
 
-## Step 3 - Read the right metrics
+## Step 4 - Read metrics that matter
 
-- Volume
-- Clicks and CPS
-- KD
-- CPC
-- Traffic Potential
+- Volume is a starting point
+- Clicks + CPS show whether the SERP sends traffic
+- Traffic Potential (TP) is topic-level opportunity
 
-## Step 4 - Check intent and SERP reality
+More detail: [Traffic Potential vs volume](/blog/ahrefs-traffic-potential-vs-volume).
 
-If the SERP does not match your page type, skip or change approach.
+## Step 5 - Validate intent via SERP overview
 
-## Step 5 - Build a small cluster
+- Page types that rank
+- SERP features (ads, shopping, local, AI)
+- Stable brands
+
+## Step 6 - Calibrate difficulty with Site Explorer
+
+Do not trust KD alone. Inspect the top 3 pages:
+
+- Referring domains
+- Content depth and structure
+- Keyword distribution
+
+Guide: [Site Explorer workflows](/blog/ahrefs-site-explorer-simpel-stappenplan).
+
+## Step 7 - Build clusters
 
 - 1 hub page
 - 3-8 supporting pages
 - Internal links both ways
 
-## Step 6 - Prioritize
+Avoid cannibalization: one primary intent per page.
 
-- Opportunity = Traffic Potential x business value / difficulty
+## Step 8 - Plan internal links before you publish
+
+- Hub -> supporting pages
+- Supporting pages -> hub
+- Link from older strong pages -> new hub
+
+## Step 9 - Publish and iterate
+
+Use Search Console to measure impressions, CTR, and pages in positions 4-20.
 
 ## Conclusion
 
-Focus on intent, clicks, and traffic potential to build clusters that rank and convert.
+Use Keywords Explorer as a workflow: market, intent, clicks, TP, SERP checks, clusters, and internal linking.
 `.trim(),
     },
     nl: {
       title: 'Ahrefs Keywords Explorer: complete gids (research + planning)',
       topic: 'SEO',
       metaTitle: 'Ahrefs Keywords Explorer | Complete gids',
-      metaDescription: 'Gebruik Ahrefs Keywords Explorer om keyword ideeen te vinden, intent te checken en topic clusters te bouwen.',
+      metaDescription: 'Complete Keywords Explorer workflow: marktinstellingen, intent, clicks, Traffic Potential, SERP checks, clustering en interne links.',
       content: `
-Ahrefs Keywords Explorer helpt je keywords te kiezen die echt traffic brengen. Het gaat niet alleen om volume, maar om intent, clicks en traffic potential.
+Ahrefs Keywords Explorer is geen magische keywordlijst. Het is een beslis tool: wat bouw je, wat skip je, en wat kost het om te winnen.
 
-## Waarvoor gebruik je Keywords Explorer?
+Als je alleen naar volume kijkt, investeer je snel in keywords die geen clicks sturen. Gebruik intent, SERP realiteit, clicks en Traffic Potential om een SEO plan te maken dat echt presteert.
 
-- Keyword ideeen vinden
-- Clicks en traffic potential inschatten
-- Topic clusters bouwen (hub + supporting)
-- Prioriteren op intent en business value
+Handige interne links naar gerelateerde workflows:
 
-## Stap 1 - Zet de markt goed
+- Traffic Potential vs volume: [lees het hier](/blog/ahrefs-traffic-potential-vs-volume)
+- Site Explorer workflows: [lees het hier](/blog/ahrefs-site-explorer-simpel-stappenplan)
+- Content gap planning: [lees het hier](/blog/content-gap-analyse-ahrefs-stappenplan)
 
-- Land en taal = je echte markt
-- Kies device als mobile belangrijk is
+## Waarvoor is Keywords Explorer nuttig (en waarvoor niet)
 
-## Stap 2 - Start met een seed keyword
+Gebruik het om:
 
-Kijk daarna naar:
+- Keyword en topic ideeen te vinden
+- Clicks en Traffic Potential te schatten (niet alleen volume)
+- Intent en SERP opbouw te begrijpen
+- Topic clusters te bouwen (hub + supporting)
+- Prioriteiten te kiezen op business value en difficulty
 
-- Matching terms
-- Related terms
-- Questions
+Niet als vervanging van:
 
-## Stap 3 - Lees de juiste metrics
+- Search Console (waarheid voor impressions, clicks, indexatie)
+- GA4 (waarheid voor conversies en omzet)
 
-- Volume
-- Clicks en CPS
-- KD
-- CPC
-- Traffic Potential
+Ahrefs is een externe tool. Zie cijfers als schattingen. Trends en vergelijkingen zijn de echte waarde.
 
-## Stap 4 - Check intent en SERP
+## Stap 0 - Zet je markt goed (niet overslaan)
 
-Als de SERP niet past bij jouw paginatype, skip of pas aan.
+De meeste keyword research fouten zijn markt fouten.
 
-## Stap 5 - Bouw een cluster
+- Land: kies waar je klanten zitten
+- Taal: match je content taal
+- Device: als mobile belangrijk is, check mobile ook
 
-- 1 hub pagina
-- 3-8 supporting paginas
+Als dit fout staat, is de rest waardeloos.
+
+Ben je nieuw in Ahrefs? Start dan eerst met de basis: [Ahrefs account aanmaken](/blog/ahrefs-account-aanmaken-simpele-uitleg).
+
+## Stap 1 - Start vanuit business en intent (niet vanuit keywords)
+
+Voor je Ahrefs opent, noteer:
+
+- Je 3-5 echte diensten/producten
+- Welke conversie telt (demo, offerte, call, aankoop)
+- Welke intent types je nodig hebt: informational (leren), commercial (vergelijken), transactional (kopen)
+
+Als je eerst de basis wil snappen: [wat is SEO optimalisatie](/blog/wat-is-seo-optimalisatie) en het roadmap artikel: [hoog in Google komen](/blog/hoog-in-google).
+
+## Stap 2 - Bouw een seed lijst uit echte data
+
+Betere seeds geven betere output.
+
+Goede seed bronnen:
+
+- Search Console queries (paginas met impressions)
+- Vragen van klanten (sales calls, support)
+- Concurrent categorieen en landings
+- Interne site search (als je die hebt)
+
+Regel: begin niet met 1 seed keyword. Begin met 5-20 seeds en verwacht clusters.
+
+## Stap 3 - Gebruik de juiste reports in Keywords Explorer
+
+Je breidt een seed uit via:
+
+- Matching terms: dichtstbijzijnde varianten
+- Related terms: semantische uitbreiding
+- Questions: ideaal voor supporting paginas en FAQ
+
+Je doel is niet 200 keywords. Je doel is:
+
+- 1 sterke hub pagina per intent/topic
+- 3-8 supporting paginas die de hub voeden
+
+## Stap 4 - Lees de metrics als SEO specialist
+
+Zo interpreteer ik de core metrics:
+
+- Volume: startpunt, geen besluit
+- Clicks: geschatte clicks vanuit de SERP
+- CPS: clicks per search (hoe clicky is de SERP)
+- KD: difficulty (signaal, geen regel)
+- CPC: signaal voor commerciele intent
+- Traffic Potential (TP): geschatte maandelijkse traffic voor de #1 pagina (topic niveau)
+
+Traffic Potential is vaak nuttiger dan volume omdat top paginas ranken op veel long-tail varianten. Volledige uitleg: [Traffic Potential vs volume](/blog/ahrefs-traffic-potential-vs-volume).
+
+Praktische interpretatie:
+
+- Hoog volume + lage clicks: SERP noise, instant answers, zware ads
+- Lager volume + hoge clicks: vaak betrouwbaarder traffic
+- TP veel hoger dan volume: breed topic (goed voor gidsen)
+
+## Stap 5 - Valideer intent met de SERP (hier gaat het vaak mis)
+
+Open de SERP overview en check:
+
+- Welke paginatypes ranken? (gids, categorie, product, lokaal)
+- Welke SERP features stelen clicks? (ads, shopping, local pack, AI)
+- Zijn de top resultaten sterke brands?
+- Is de content recent en diep?
+
+Als de SERP product paginas wil en jij schrijft een blog, verlies je meestal.
+
+## Stap 6 - Kalibreer difficulty met Site Explorer
+
+KD alleen is niet genoeg. Gebruik Site Explorer om te zien wat het echt kost.
+
+Workflow:
+
+1. Open in SERP overview de top 3 URLs.
+2. Check per URL in Site Explorer:
+- Referring domains en linkprofiel
+- Traffic verdeling (1 keyword vs veel)
+- Content diepte en structuur
+
+Site Explorer gids: [Ahrefs Site Explorer workflows](/blog/ahrefs-site-explorer-simpel-stappenplan).
+
+## Stap 7 - Zet keywords om naar een cluster plan
+
+Een cluster is de unit die wint. 1 pagina wint zelden alleen.
+
+Een praktische cluster:
+
+- 1 hub pagina voor de primaire intent
+- 3-8 supporting paginas voor subvragen en long-tail
 - Interne links beide kanten op
 
-## Stap 6 - Prioriteer
+Vermijd kannibalisatie: 1 primaire intent per pagina.
 
-- Opportunity = Traffic Potential x business value / difficulty
+Wil je topics vinden waar concurrenten al winnen? Run eerst een gap: [content gap analyse in Ahrefs](/blog/content-gap-analyse-ahrefs-stappenplan).
+
+## Stap 8 - Plan interne links voordat je publiceert
+
+Interne links zijn de goedkoopste SEO hefboom.
+
+Regels die werken:
+
+- Hub pagina linkt naar alle supporting paginas (beschrijvende anchors)
+- Supporting paginas linken terug naar de hub (vroeg in het artikel)
+- Supporting paginas cross linken als het de lezer helpt
+- Link van oudere, sterke paginas naar de nieuwe hub (link velocity)
+
+Zorg ook dat crawl/indexatie technisch goed staat: [technische SEO audit checklist](/blog/technische-seo-analyse-stappenplan-checklist).
+
+## Stap 9 - Publiceer, meet en verbeter (maandelijkse loop)
+
+Gebruik Search Console als waarheid:
+
+- Krijg je impressions?
+- Is CTR logisch? (snippet kwaliteit)
+- Welke queries komen onverwacht binnen? (content uitbreiden)
+
+Snelle winst zit vaak in posities 4-20. Update die paginas eerst.
+
+## Filters die ik echt gebruik (quick start)
+
+- Exclude branded concurrent termen
+- Filter op intent woorden (prijs, beste, vs, hoe)
+- Start met lagere KD bij nieuwe sites
+- Kies liever hogere CPS als SERPs noisy zijn
+
+## Veelgemaakte fouten
+
+- Keyword lijst maken zonder cluster plan
+- Alleen kiezen op volume
+- SERP check overslaan
+- Meerdere paginas voor dezelfde intent
+- Interne links negeren
+- Rankings meten zonder conversies
 
 ## Conclusie
 
-Gebruik Keywords Explorer als planning tool: focus op intent, clicks en traffic potential en bouw clusters.
+Keywords Explorer werkt het best als workflow: markt, intent, clicks, Traffic Potential, SERP validatie, en clusters met interne links.
+
+Wil je een praktische SEO roadmap op basis van jouw markt en data? Start hier: [wat is SEO optimalisatie](/blog/wat-is-seo-optimalisatie).
 `.trim(),
     },
     de: {
       title: 'Ahrefs Keywords Explorer: kompletter Guide (Research + Planung)',
       topic: 'SEO',
       metaTitle: 'Ahrefs Keywords Explorer | Kompletter Guide',
-      metaDescription: 'Keywords finden, Intent pruefen und Topic Cluster planen mit Ahrefs Keywords Explorer.',
+      metaDescription: 'Kompletter Workflow: Markt, Intent, Clicks, Traffic Potential, SERP Check, Cluster und interne Links.',
       content: `
-Ahrefs Keywords Explorer hilft dir Keywords zu finden, die wirklich Traffic bringen. Nicht nur Volume, sondern Intent, Clicks und Traffic Potential.
+Ahrefs Keywords Explorer ist ein Decision Tool: was bauen, was skippen, und was es kostet zu gewinnen.
 
-## Schritte
+Interne Links:
 
-1. Markt setzen (Land/Sprache)
-2. Seed Keyword eingeben
-3. Metrics lesen: Volume, Clicks, CPS, KD, CPC, TP
-4. SERP und Intent pruefen
-5. Cluster bauen (Hub + Supporting)
-6. Priorisieren
+- [Traffic Potential vs Volume](/blog/ahrefs-traffic-potential-vs-volume)
+- [Site Explorer Workflows](/blog/ahrefs-site-explorer-simpel-stappenplan)
+- [Content Gap Analyse](/blog/content-gap-analyse-ahrefs-stappenplan)
+
+## Kurz Workflow
+
+1. Markt setzen (Land/Sprache/Device)
+2. Seeds aus echten Daten (Search Console, Kundenfragen)
+3. Reports: Matching, Related, Questions
+4. Metrics: Clicks, CPS, TP (nicht nur Volume)
+5. SERP Check: Intent und Page Types
+6. Difficulty kalibrieren in Site Explorer
+7. Cluster bauen (Hub + Supporting) + interne Links planen
 
 ## Fazit
 
-Nutze Keywords Explorer als Planungs Tool, nicht nur als Keyword Liste.
+Nutze Keywords Explorer als Workflow, nicht als Liste.
 `.trim(),
     },
     sv: {
       title: 'Ahrefs Keywords Explorer: komplett guide (research + planning)',
       topic: 'SEO',
       metaTitle: 'Ahrefs Keywords Explorer | Komplett guide',
-      metaDescription: 'Hitta keywords, kolla intent och bygg topic clusters med Ahrefs Keywords Explorer.',
+      metaDescription: 'Komplett workflow: marknad, intent, clicks, traffic potential, SERP check, clusters och interna lankar.',
       content: `
-Keywords Explorer hjalper dig valja keywords som ger trafik. Fokus pa intent, clicks och traffic potential.
+Keywords Explorer ar ett decision tool: vad du ska bygga, vad du ska skippa, och vad som kravs for att vinna.
+
+Interne links:
+
+- /blog/ahrefs-traffic-potential-vs-volume
+- /blog/ahrefs-site-explorer-simpel-stappenplan
+- /blog/content-gap-analyse-ahrefs-stappenplan
 
 ## Kort workflow
 
-1. Satt marknad
-2. Seed keyword
-3. Metrics: volume, clicks, CPS, KD, CPC, TP
-4. SERP check
-5. Bygg cluster
+1. Satt marknad (land/sprak/device)
+2. Seeds fran data (Search Console, kundfragor)
+3. Matching/Related/Questions
+4. Clicks, CPS, Traffic Potential
+5. SERP check (intent + page types)
+6. Bygg cluster och planera interna lankar
 
 ## Slutsats
 
-Anvand verktyget for planering, inte bara listor.
+Anvand Keywords Explorer for planering och prioritering.
 `.trim(),
     },
     da: {
       title: 'Ahrefs Keywords Explorer: komplet guide (research + planning)',
       topic: 'SEO',
       metaTitle: 'Ahrefs Keywords Explorer | Komplet guide',
-      metaDescription: 'Find keywords, tjek intent og byg clusters med Ahrefs Keywords Explorer.',
+      metaDescription: 'Komplet workflow: marked, intent, clicks, traffic potential, SERP check, clusters og interne links.',
       content: `
-Keywords Explorer hjalper dig vaelge keywords som giver trafik. Fokus pa intent, clicks og traffic potential.
+Keywords Explorer er et decision tool: hvad du skal bygge, hvad du skal skippe, og hvad der kraeves for at vinde.
+
+Interne links:
+
+- /blog/ahrefs-traffic-potential-vs-volume
+- /blog/ahrefs-site-explorer-simpel-stappenplan
+- /blog/content-gap-analyse-ahrefs-stappenplan
 
 ## Kort workflow
 
-1. Saet marked
-2. Seed keyword
-3. Metrics: volume, clicks, CPS, KD, CPC, TP
-4. SERP check
-5. Byg cluster
+1. Saet marked (land/sprog/device)
+2. Seeds fra data (Search Console, kundesporgsmal)
+3. Matching/Related/Questions
+4. Clicks, CPS, Traffic Potential
+5. SERP check (intent + page types)
+6. Byg clusters og plan interne links
 
 ## Konklusion
 
-Brug vaerktojet til planlaegning, ikke kun lister.
+Brug Keywords Explorer til planlaegning og prioritering.
 `.trim(),
     },
     fr: {
       title: 'Ahrefs Keywords Explorer: guide complet (research + planning)',
       topic: 'SEO',
       metaTitle: 'Ahrefs Keywords Explorer | Guide complet',
-      metaDescription: 'Trouver des keywords, verifier l intent et construire des clusters avec Ahrefs Keywords Explorer.',
+      metaDescription: 'Workflow complet: marche, intent, clicks, traffic potential, SERP check, clusters et liens internes.',
       content: `
-Keywords Explorer aide a choisir des keywords qui apportent du trafic. Pas seulement le volume, mais l intent, les clicks et le traffic potential.
+Keywords Explorer est un decision tool: quoi construire, quoi ignorer, et ce qu il faut pour gagner.
+
+Liens internes:
+
+- /blog/ahrefs-traffic-potential-vs-volume
+- /blog/ahrefs-site-explorer-simpel-stappenplan
+- /blog/content-gap-analyse-ahrefs-stappenplan
 
 ## Workflow court
 
-1. Marche et langue
-2. Seed keyword
-3. Metrics: volume, clicks, CPS, KD, CPC, TP
-4. SERP check
-5. Construire un cluster
+1. Marche (pays/langue/device)
+2. Seeds via data (Search Console, questions clients)
+3. Matching/Related/Questions
+4. Clicks, CPS, Traffic Potential
+5. SERP check (intent + types de pages)
+6. Clusters + liens internes
 
 ## Conclusion
 
-Utilise l outil pour planifier, pas juste pour lister.
+Utilise Keywords Explorer comme workflow, pas comme liste.
 `.trim(),
     },
     it: {
       title: 'Ahrefs Keywords Explorer: guida completa (research + planning)',
       topic: 'SEO',
       metaTitle: 'Ahrefs Keywords Explorer | Guida completa',
-      metaDescription: 'Trovare keyword, verificare intent e costruire cluster con Ahrefs Keywords Explorer.',
+      metaDescription: 'Workflow completo: mercato, intent, clicks, traffic potential, SERP check, cluster e link interni.',
       content: `
-Keywords Explorer aiuta a scegliere keyword che portano traffico. Non solo volume, ma intent, clicks e traffic potential.
+Keywords Explorer e un decision tool: cosa costruire, cosa skippare e cosa serve per vincere.
+
+Link interni:
+
+- /blog/ahrefs-traffic-potential-vs-volume
+- /blog/ahrefs-site-explorer-simpel-stappenplan
+- /blog/content-gap-analyse-ahrefs-stappenplan
 
 ## Workflow breve
 
-1. Mercato e lingua
-2. Seed keyword
-3. Metrics: volume, clicks, CPS, KD, CPC, TP
-4. SERP check
-5. Costruire un cluster
+1. Mercato (paese/lingua/device)
+2. Seeds da data (Search Console, domande clienti)
+3. Matching/Related/Questions
+4. Clicks, CPS, Traffic Potential
+5. SERP check (intent + page types)
+6. Cluster + link interni
 
 ## Conclusione
 
-Usa lo strumento per pianificare, non solo per fare liste.
+Usa Keywords Explorer come workflow, non solo come lista.
 `.trim(),
     },
   },
