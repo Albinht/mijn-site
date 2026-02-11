@@ -66,6 +66,19 @@ Do not use it as a replacement for:
 
 Ahrefs is an external tool. Treat numbers as estimates. Trends and comparisons are the real value.
 
+## The tool stack I use (and why)
+
+Keywords Explorer becomes stronger when you combine it with first-party data and conversion data.
+
+I typically combine:
+
+- Google Search Console: truth for impressions, clicks, indexation and pages that already have demand
+- GA4: truth for conversions, lead quality and revenue
+- Ahrefs Keywords Explorer: keyword ideas, clicks, Traffic Potential, SERP snapshots and competitor discovery
+- Google Keyword Planner (optional): extra CPC context when you want paid intent confirmation
+
+If you only use one tool, you will miss something.
+
 ## Step 0 - Set the market correctly (do not skip)
 
 Most keyword research mistakes are market mistakes.
@@ -169,6 +182,20 @@ A practical cluster:
 - Internal links both ways
 
 Avoid cannibalization: one primary intent per page.
+
+Simple planning template (sheet columns):
+
+- cluster name
+- primary keyword
+- intent (learn/compare/buy)
+- page type (guide/comparison/category/service)
+- parent topic
+- Clicks, CPS, Traffic Potential, KD, CPC (indicative)
+- existing URL (if any)
+- new slug (if needed)
+- supporting pages (3-8)
+- internal links from (older strong pages)
+- priority (P1/P2/P3)
 
 If you want to find topics your competitors already win with, run a gap first: [content gap analyse in Ahrefs](/blog/content-gap-analyse-ahrefs-stappenplan).
 
@@ -340,6 +367,19 @@ Niet als vervanging van:
 
 Ahrefs is een externe tool. Zie cijfers als schattingen. Trends en vergelijkingen zijn de echte waarde.
 
+## De tool stack die ik combineer (en waarom)
+
+Keywords Explorer wordt veel sterker als je het combineert met first-party data en conversie data.
+
+Ik combineer meestal:
+
+- Google Search Console: waarheid voor impressions, clicks, indexatie en paginas die al vraag hebben
+- GA4: waarheid voor conversies, lead kwaliteit en omzet
+- Ahrefs Keywords Explorer: ideeen, clicks, Traffic Potential, SERP snapshots en concurrent discovery
+- Google Keyword Planner (optioneel): extra CPC context als je paid intent wil bevestigen
+
+Als je maar 1 tool gebruikt, mis je altijd een stuk van het verhaal.
+
 ## Stap 0 - Zet je markt goed (niet overslaan)
 
 De meeste keyword research fouten zijn markt fouten.
@@ -443,6 +483,20 @@ Een praktische cluster:
 - Interne links beide kanten op
 
 Vermijd kannibalisatie: 1 primaire intent per pagina.
+
+Simpel contentplan template (sheet kolommen):
+
+- cluster naam
+- primary keyword
+- intent (leren/vergelijken/kopen)
+- paginatype (gids/vergelijking/categorie/dienst)
+- parent topic
+- Clicks, CPS, Traffic Potential, KD, CPC (indicatief)
+- bestaande URL (als die er is)
+- nieuwe slug (als je een nieuwe pagina maakt)
+- supporting paginas (3-8)
+- interne links vanaf (oudere sterke paginas)
+- prioriteit (P1/P2/P3)
 
 Wil je topics vinden waar concurrenten al winnen? Run eerst een gap: [content gap analyse in Ahrefs](/blog/content-gap-analyse-ahrefs-stappenplan).
 
