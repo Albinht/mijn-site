@@ -225,8 +225,7 @@ async function getBlogPosts(locale) {
     ]
     
     // Combine dynamic and static posts
-    return [...staticPosts, ...dynamicPosts]
-  } catch (error) {
+    return [...staticPosts.slice(0, 2), ...dynamicPosts]
     console.error('Error fetching blog posts:', error)
     return []
   }

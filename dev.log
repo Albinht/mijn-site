@@ -193,3 +193,59 @@ https://nextjs.org/docs/messages/module-not-found
  GET /blog/the-best-customer-service-software-in-2026 500 in 12ms
  GET /blog/the-best-customer-service-software-in-2026 500 in 10ms
  GET /blog/the-best-customer-service-software-in-2026 500 in 10ms
+ GET /blog/the-best-customer-service-software-in-2026 500 in 34ms
+ GET /blog/the-best-customer-service-software-in-2026 500 in 34ms
+ GET /blog/the-best-customer-service-software-in-2026 500 in 30ms
+ GET /blog/the-best-customer-service-software-in-2026 500 in 27ms
+ ✓ Compiled /_error in 581ms (1119 modules)
+ ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⨯ Error [TypeError]: Cannot read properties of undefined (reading 'metadata')
+    at Module.generateMetadata (src/app/blog/the-best-customer-service-software-in-2026/page.js:7:42)
+    at MetadataOutlet (../../../src/client/components/metadata/async-metadata.tsx:11:32)
+   5 |   const locale = await getServerLocale();
+   6 |   const copy = getBlogCopy(locale);
+>  7 |   return copy.customerServiceSoftware2026.metadata;
+     |                                          ^
+   8 | }
+   9 |
+  10 | export default function CustomerServiceSoftware2026() { {
+  environmentName: 'Server',
+  digest: '884077883'
+}
+ GET /_next/static/webpack/b117affdabf309f8.webpack.hot-update.json 404 in 941ms
+ ⨯ Error [TypeError]: Cannot read properties of undefined (reading 'metadata')
+    at Module.generateMetadata (src/app/blog/the-best-customer-service-software-in-2026/page.js:7:42)
+    at MetadataOutlet (../../../src/client/components/metadata/async-metadata.tsx:11:32)
+   5 |   const locale = await getServerLocale();
+   6 |   const copy = getBlogCopy(locale);
+>  7 |   return copy.customerServiceSoftware2026.metadata;
+     |                                          ^
+   8 | }
+   9 |
+  10 | export default function CustomerServiceSoftware2026() { {
+  environmentName: 'Server',
+  digest: '884077883'
+}
+ GET /blog/the-best-customer-service-software-in-2026 200 in 324ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⨯ ./src/app/blog/page.js
+Error:   [31mx[0m Expected a semicolon
+     ,-[[36;1;4m/Users/al/mijn-site/src/app/blog/page.js[0m:232:1]
+ [2m229[0m |     console.error('Error fetching blog posts:', error)
+ [2m230[0m |     return []
+ [2m231[0m |   }
+ [2m232[0m | }
+     : [35;1m^[0m
+ [2m233[0m | 
+ [2m234[0m | export default async function BlogPage() {
+ [2m235[0m |   const headerList = await headers()
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/blog/page.js
+ GET /blog/the-best-customer-service-software-in-2026 500 in 219ms
