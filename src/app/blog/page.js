@@ -1,13 +1,10 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import { headers } from 'next/headers'
-import prisma from '@/lib/prisma'
-import avatarImage from '../../assets/avatar.png'
-import LeadForm from '@/components/LeadForm'
+import { getServerLocale } from '@/lib/locale';
+import { getBlogCopy } from '@/i18n/blog';
+import prisma from '@/lib/prisma';
 
-const supportedLocales = ['en', 'de', 'sv', 'da', 'fr', 'it', 'nl']
-const defaultLocale = 'en'
-const localeCookieName = 'niblah-locale'
+const supportedLocales = ['en', 'de', 'sv', 'da', 'fr', 'it', 'nl'];
+const defaultLocale = 'en';
+const localeCookieName = 'niblah-locale';
 
 const localeAliases = {
   'en-us': 'en',
@@ -19,12 +16,12 @@ const localeAliases = {
   'fr-fr': 'fr',
   'it-it': 'it',
   'nl-nl': 'nl',
-}
+};
 
 export const metadata = {
   title: 'De Niblah Blog - SEO en Marketing Tips | Niblah',
   description: 'Vergroot je SEO en marketing kennis met gedetailleerde tutorials en praktijkvoorbeelden van de Niblah experts.',
-}
+};
 
 // Category mapping based on topic and title
 function getCategoryData(topic, title) {
@@ -39,6 +36,7 @@ function getCategoryData(topic, title) {
   if (topicLower.includes('seo') || topicLower.includes('search')) {
     return { category: 'SEO', color: 'bg-[#E8C88E]', textColor: 'text-gray-900' }
   }
+  
   if (topicLower.includes('google ads') || topicLower.includes('ads') || topicLower.includes('sea')) {
     return { category: 'GOOGLE ADS', color: 'bg-[#B8C5D6]', textColor: 'text-gray-900' }
   }
@@ -52,70 +50,44 @@ function getCategoryData(topic, title) {
   return { category: 'GENERAL', color: 'bg-gray-200', textColor: 'text-gray-900' }
 }
 
-function normalizeLocale(value) {
-  if (!value) return null
-  const normalized = value.toLowerCase().replace('_', '-')
-  if (supportedLocales.includes(normalized)) return normalized
-  return localeAliases[normalized] || normalized.split('-')[0]
-}
-
-function parseAcceptLanguage(value) {
-  if (!value) return []
-  return value
-    .split(',')
-    .map((entry) => {
-      const [lang, qValue] = entry.trim().split(';q=')
-      return { lang: normalizeLocale(lang), q: qValue ? Number(qValue) : 1 }
-    })
-    .filter((item) => item.lang)
-    .sort((a, b) => b.q - a.q)
-    .map((item) => item.lang)
-}
-
-function pickPreferredLocale({ cookieLocale, acceptLanguage }) {
-  if (cookieLocale && supportedLocales.includes(cookieLocale)) return cookieLocale
-  const accepted = parseAcceptLanguage(acceptLanguage)
-  const match = accepted.find((locale) => supportedLocales.includes(locale))
-  return match || defaultLocale
-}
-
-function getLocaleFromCookies(cookieHeader) {
-  if (!cookieHeader) return null
-  const cookies = Object.fromEntries(cookieHeader.split('; ').map((cookie) => cookie.split('=')))
-  return normalizeLocale(cookies[localeCookieName])
-}
-
-function localeToDateLocale(locale) {
-  const normalized = normalizeLocale(locale) || defaultLocale
-  if (normalized === 'en') return 'en-US'
-  if (normalized === 'nl') return 'nl-NL'
-  if (normalized === 'de') return 'de-DE'
-  if (normalized === 'sv') return 'sv-SE'
-  if (normalized === 'da') return 'da-DK'
-  if (normalized === 'fr') return 'fr-FR'
-  if (normalized === 'it') return 'it-IT'
-  return normalized
-}
-
-function pickTranslatedString(fallback, value) {
-  if (typeof value !== 'string') return fallback
-  const trimmed = value.trim()
-  return trimmed.length > 0 ? value : fallback
-}
-
-function getLocalizedArticle(article, locale) {
-  const normalized = normalizeLocale(locale) || defaultLocale
-  const translations = article?.translations && typeof article.translations === 'object' ? article.translations : null
-  const entry = translations?.[normalized] && typeof translations[normalized] === 'object' ? translations[normalized] : null
-
-  return {
-    title: pickTranslatedString(article.title, entry?.title),
-    topic: pickTranslatedString(article.topic, entry?.topic),
-    content: pickTranslatedString(article.content, entry?.content),
-    metaTitle: pickTranslatedString(null, entry?.metaTitle),
-    metaDescription: pickTranslatedString(null, entry?.metaDescription),
-  }
-}
+// Add static posts
+function getStaticPosts(locale) {
+  const staticPosts = [
+    {
+      id: 'static-customer-service-2026',
+      title: locale === 'nl' ? 'De beste klantenservice-software in 2026' : 
+              locale === 'en' ? 'The Best Customer Service Software in 2026' :
+              locale === 'de' ? 'Die beste Kundenservice-Software 2026' :
+              locale === 'sv' ? 'Bästa kundservice mjukvaran 2026' :
+              locale === 'da' ? 'Den bedste kundeservice-software i 2026' :
+              locale === 'fr' ? 'Le meilleur logiciel de service client en 2026' :
+              locale === 'it' ? 'Il miglior software di assistenza clienti del 2026' : 'De beste klantenservice-software in 2026',
+      excerpt: locale === 'nl' ? 'Complete gids voor de beste tools voor klantenservice en hoe u de juiste keuze maakt.' :
+              locale === 'en' ? 'Complete guide to the best tools for customer service and how to make the right choice.' :
+              locale === 'de' ? 'Vollständiger Leitfaden für die besten Tools für Kundenservice und wie Sie die richtige Wahl treffen.' :
+              locale === 'sv' ? 'Komplett guide för de bästa verktyg för kundservice och hur du gör rätt val.' :
+              locale === 'da' ? 'Komplet guide til de bedste værktøjer til kundeservice og hvordan du træffer det rigtige valg.' :
+              locale === 'fr' ? 'Guide complet des meilleurs outils pour le service client et comment faire le bon choix.' :
+              locale === 'it' ? 'Guida completa ai migliori strumenti per l\'assistenza clienti e come fare la scelta giusta.' :
+              'De beste klantenservice-software in 2026',
+      slug: locale === 'nl' ? 'de-beste-klantenservice-software-in-2026' : 
+              locale === 'en' ? 'the-best-customer-service-software-in-2026' :
+              locale === 'de' ? 'die-beste-kundenservice-software-2026' :
+              locale === 'sv' ? 'basta-kundservice-mjukvaran-2026' :
+              locale === 'da' ? 'den-bedste-kundeservice-software-i-2026' :
+              locale === 'fr' ? 'le-meilleur-logiciel-de-service-client-en-2026' :
+              locale === 'it' ? 'il-miglior-software-di-assistenza-clienti-del-2026' : 'the-best-customer-service-software-in-2026',
+      category: 'GUIDE',
+      categoryColor: 'bg-[#FFD43B]',
+      categoryTextColor: 'text-gray-900',
+      author: 'Albin Hot',
+      date: new Date().toLocaleDateString(localeToDateLocale(locale), { 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+      })
+    }
+  ];
 
 async function getBlogPosts(locale) {
   try {
@@ -154,80 +126,12 @@ async function getBlogPosts(locale) {
       }
     })
 
-    // Add static posts
-    const staticPosts = [
-      {
-        id: 'static-1',
-        title: locale === 'nl' ? 'De beste klantenservice-software in 2026' : 
-                locale === 'en' ? 'The Best Customer Service Software in 2026' :
-                locale === 'de' ? 'Die beste Kundenservice-Software 2026' :
-                locale === 'sv' ? 'Bästa kundservice mjukvaran 2026' :
-                locale === 'da' ? 'Den bedste kundeservice-software i 2026' :
-                locale === 'fr' ? 'Le meilleur logiciel de service client en 2026' :
-                locale === 'it' ? 'Il miglior software di assistenza clienti del 2026' : 'De beste klantenservice-software in 2026',
-        excerpt: locale === 'nl' ? 'Complete gids voor de beste tools voor klantenservice en hoe u de juiste keuze maakt.' :
-                locale === 'en' ? 'Complete guide to the best tools for customer service and how to make the right choice.' :
-                locale === 'de' ? 'Vollständiger Leitfaden für die besten Tools für Kundenservice und wie Sie die richtige Wahl treffen.' :
-                locale === 'sv' ? 'Komplett guide för de bästa verktygen för kundservice och hur du gör rätt val.' :
-                locale === 'da' ? 'Komplet guide til de bedste værktøjer til kundeservice og hvordan du træffer det rigtige valg.' :
-                locale === 'fr' ? 'Guide complet des meilleurs outils pour le service client et comment faire le bon choix.' :
-                locale === 'it' ? 'Guida completa ai migliori strumenti per l\'assistenza clienti e come fare la scelta giusta.' : 'Complete gids voor de beste tools voor klantenservice en hoe u de juiste keuze maakt.',
-        slug: locale === 'nl' ? 'de-beste-klantenservice-software-in-2026' : 
-                locale === 'en' ? 'the-best-customer-service-software-in-2026' :
-                locale === 'de' ? 'die-beste-kundenservice-software-2026' :
-                locale === 'sv' ? 'basta-kundservice-mjukvaran-2026' :
-                locale === 'da' ? 'den-bedste-kundeservice-software-i-2026' :
-                locale === 'fr' ? 'le-meilleur-logiciel-de-service-client-en-2026' :
-                locale === 'it' ? 'il-miglior-software-di-assistenza-clienti-del-2026' : 'de-beste-klantenservice-software-in-2026',
-        category: 'GUIDE',
-        categoryColor: 'bg-[#FFD43B]',
-        categoryTextColor: 'text-gray-900',
-        author: 'Albin Hot',
-        date: new Date().toLocaleDateString(localeToDateLocale(locale), { 
-          year: 'numeric', 
-          month: 'long', 
-          day: 'numeric' 
-        })
-      },
-      {
-        id: 'static-2',
-        title: locale === 'nl' ? 'Marketing Automation Tools: Verhoog uw efficiëntie' : 
-                locale === 'en' ? 'Marketing Automation Tools: Increase Your Efficiency' :
-                locale === 'de' ? 'Marketing-Automatisierungs-Tools: Erhöhen Sie Ihre Effizienz' :
-                locale === 'sv' ? 'Marketing Automatiseringsverktyg: Öka din effektivitet' :
-                locale === 'da' ? 'Marketing Automatiseringsværktøjer: Øg din effektivitet' :
-                locale === 'fr' ? 'Outils d\'automatisation marketing: Augmentez votre efficacité' :
-                locale === 'it' ? 'Strumenti di automazione marketing: Aumenta la tua efficienza' : 'Marketing Automation Tools: Verhoog uw efficiëntie',
-        excerpt: locale === 'nl' ? 'Ontdek de beste tools voor marketing automatisering om tijd te besparen en resultaten te verbeteren.' :
-                locale === 'en' ? 'Discover the best tools for marketing automation to save time and improve results.' :
-                locale === 'de' ? 'Entdecken Sie die besten Tools für Marketing-Automatisierung, um Zeit zu sparen und Ergebnisse zu verbessern.' :
-                locale === 'sv' ? 'Upptäck de bästa verktygen för marknadsföringsautomatisering för att spara tid och förbättra resultat.' :
-                locale === 'da' ? 'Opdag de bedste værktøjer til marketingautomatisering for at spare tid og forbedre resultater.' :
-                locale === 'fr' ? 'Découvrez les meilleurs outils d\'automatisation marketing pour économiser du temps et améliorer les résultats.' :
-                locale === 'it' ? 'Scopri i migliori strumenti per l\'automazione del marketing per risparmiare tempo e migliorare i risultati.' : 'Ontdek de beste tools voor marketing automatisering om tijd te besparen en resultaten te verbeteren.',
-        slug: locale === 'nl' ? 'marketing-automation-tools' : 
-                locale === 'en' ? 'marketing-automation-tools' :
-                locale === 'de' ? 'marketing-automation-tools' :
-                locale === 'sv' ? 'marketing-automation-tools' :
-                locale === 'da' ? 'marketing-automation-tools' :
-                locale === 'fr' ? 'marketing-automation-tools' :
-                locale === 'it' ? 'marketing-automation-tools' : 'marketing-automation-tools',
-        category: 'GUIDE',
-        categoryColor: 'bg-[#E8C88E]',
-        categoryTextColor: 'text-gray-900',
-        author: 'Albin Hot',
-        date: new Date(Date.now() - 86400000).toLocaleDateString(localeToDateLocale(locale), { 
-          year: 'numeric', 
-          month: 'long', 
-          day: 'numeric' 
-        })
-      }
-    ]
-    
-    // Combine dynamic and static posts
-    return [...staticPosts.slice(0, 2), ...dynamicPosts]
+    // Combine static and dynamic posts
+    return [...staticPosts, ...dynamicPosts]
+  } catch (error) {
     console.error('Error fetching blog posts:', error)
     return []
+  }
   }
 }
 
@@ -238,7 +142,7 @@ export default async function BlogPage() {
     acceptLanguage: headerList.get('accept-language'),
   })
   const blogPosts = await getBlogPosts(locale)
-  
+   
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -248,10 +152,10 @@ export default async function BlogPage() {
             De Niblah Blog
           </h1>
           <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
-            Vergroot je SEO en marketing kennis met gedetailleerde tutorials en praktijkvoorbeelden.
+            Vergroot je SEO en marketing kennis met gedetailleerde tutorials en praktijkvoorbeelden van de Niblah experts.
           </p>
         </div>
-      </section>
+      </section> 
 
       {/* Blog Posts Grid */}
       <section className="py-16 px-6">
@@ -270,19 +174,19 @@ export default async function BlogPage() {
                       <span className={`inline-block px-3 py-1 text-xs font-semibold ${post.categoryTextColor} ${post.categoryColor} rounded`}>
                         {post.category}
                       </span>
-                    </div>
+                    </div> 
 
                     {/* Title */}
                     <Link href={`/blog/${post.slug}`}>
                       <h2 className="text-2xl font-bold text-gray-900 mb-3 hover:text-[#1795FF] transition-colors">
                         {post.title}
                       </h2>
-                    </Link>
+                    </Link> 
 
                     {/* Excerpt */}
                     <p className="text-gray-600 mb-4 leading-relaxed">
                       {post.excerpt}
-                    </p>
+                    </p> 
 
                     {/* Author & Date */}
                     <div className="flex items-center gap-3">
@@ -303,19 +207,9 @@ export default async function BlogPage() {
                   </article>
                 ))}
               </div>
-
-              {/* Load More Button */}
-              {blogPosts.length >= 20 && (
-                <div className="text-center mt-12">
-                  <button className="inline-flex items-center gap-2 px-8 py-3 bg-[#1795FF] text-white font-semibold rounded-full hover:bg-[#0f7dd4] transition-colors shadow-[4px_4px_0_0_#000] hover:shadow-[2px_2px_0_0_#000] hover:translate-y-0.5 border-2 border-black">
-                    Laad meer artikelen
-                  </button>
-                </div>
-              )}
-            </>
+              </div>
           )}
-        </div>
-      </section>
+        </section>
 
       {/* Lead Form Section */}
       <section className="bg-gray-50 py-16 md:py-24 px-6">
@@ -332,19 +226,20 @@ export default async function BlogPage() {
                   <span className="font-semibold">Bespaar 25%</span> <span className="hidden sm:inline">t.o.v. grote bureaus</span><span className="sm:hidden">vs bureaus</span>
                 </button>
               </div>
+            </div> 
 
-              {/* Title */}
-              <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Maak gratis kennis met onze <span className="relative inline-block">
-                  marketingdiensten
-                  <span className="absolute bottom-0 left-0 w-full h-3 bg-[#FFD43B] -z-10"></span>
-                </span>
-              </h2>
+            {/* Title */}
+            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+              Maak gratis kennis met onze <span className="relative inline-block">
+                marketingdiensten
+                <span className="absolute bottom-0 left-0 w-full h-3 bg-[#FFD43B] -z-10"></span>
+              </span>
+            </h2> 
 
-              {/* Description */}
-              <p className="text-lg text-gray-900 mb-8 leading-relaxed">
-                Kom erachter waarom klanten massaal hun marketingbureaus ontslaan en kiezen voor een boutique bureau dat in staat is allround service te bieden met een direct contactpersoon. Weet met wie je te maken hebt.
-              </p>
+            {/* Description */}
+            <p className="text-lg text-gray-900 mb-8 leading-relaxed">
+              Kom erachter waarom klanten massaal hun marketingbureaus ontslaan en kiezen voor een boutique bureau dat in staat is allround service te bieden met een direct contactpersoon. Weet met wie je te maken hebt.
+            </p>
               
               {/* Features Grid - 2 columns */}
               <div className="grid grid-cols-2 gap-x-8 gap-y-4 mb-10">
@@ -353,77 +248,67 @@ export default async function BlogPage() {
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 bg-[#1795FF] rounded-full flex items-center justify-center mt-0.5">
                       <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414 1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                     </div>
                     <span className="text-base text-gray-900">Direct contact met je specialist</span>
                   </div>
-                  <div className="flex items-start gap-3">
+                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 bg-[#1795FF] rounded-full flex items-center justify-center mt-0.5">
                       <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414 1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                     </div>
                     <span className="text-base text-gray-900">30+ jaar ervaring in één team</span>
                   </div>
-                  <div className="flex items-start gap-3">
+                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 bg-[#1795FF] rounded-full flex items-center justify-center mt-0.5">
                       <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414 1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                     </div>
                     <span className="text-base text-gray-900">Allround service onder één dak</span>
                   </div>
                 </div>
+              </div>
 
-                {/* Right Column */}
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 bg-[#1795FF] rounded-full flex items-center justify-center mt-0.5">
+              {/* Right Column */}
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 bg-[#1795FF] rounded-full flex items-center justify-center mt-0.5">
                       <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <span className="text-base text-gray-900">Geen lange wachttijden</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 bg-[#1795FF] rounded-full flex items-center justify-center mt-0.5">
-                      <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414 1.414L8 12.586l7.293-7.293a1 1 011.414 1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                     </div>
                     <span className="text-base text-gray-900">Transparante rapportages</span>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 bg-[#1795FF] rounded-full flex items-center justify-center mt-0.5">
-                      <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <span className="text-base text-gray-900">Persoonlijke aanpak</span>
-                  </div>
                 </div>
               </div>
-
-              {/* Ontdek onze diensten button */}
-              <div className="flex items-center gap-3">
-                <span className="text-lg font-normal text-gray-900">Ontdek onze diensten</span>
-                <Link 
-                  href="/services"
-                  className="flex items-center justify-center w-10 h-10 bg-[#1795FF] rounded-full hover:bg-[#0f7dd4] transition-colors"
-                >
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </Link>
-              </div>
             </div>
+          </div>
 
-            {/* Right - Lead Form */}
-            <LeadForm />
+          {/* Ontdek onze diensten button */}
+          <div className="flex items-center gap-3">
+            <span className="text-lg font-normal text-gray-900">Ontdek onze diensten</span>
+            <Link 
+              href="/services"
+              className="flex items-center justify-center w-10 h-10 bg-[#1795FF] rounded-full hover:bg-[#0f7dd4] transition-colors"
+            >
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7m0 0l-7 7m0 0H3" />
+              </svg>
+            </Link>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+
+      {/* Right - Lead Form */}
+      <div>
+        <LeadForm />
+      </div>
+    </div>
+  </main>
   )
 }
+
+export default BlogPage;

@@ -249,3 +249,25 @@ Caused by:
 Import trace for requested module:
 ./src/app/blog/page.js
  GET /blog/the-best-customer-service-software-in-2026 500 in 219ms
+ GET /blog/the-best-customer-service-software-in-2026 500 in 29ms
+ ⨯ ./src/app/blog/page.js
+Error:   [31mx[0m Expected '</', got 'div'
+     ,-[[36;1;4m/Users/al/mijn-site/src/app/blog/page.js[0m:210:1]
+ [2m207[0m |                   </article>
+ [2m208[0m |                 ))}
+ [2m209[0m |               </div>
+ [2m210[0m |               </div>
+     : [35;1m                ^^^[0m
+ [2m211[0m |           )}
+ [2m212[0m |         </section>
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/app/blog/page.js
+ GET /_next/static/webpack/b117affdabf309f8.webpack.hot-update.json 500 in 389ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET /blog/the-best-customer-service-software-in-2026 500 in 11ms
+ ○ Compiling /_not-found ...
