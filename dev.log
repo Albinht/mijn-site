@@ -1,0 +1,195 @@
+
+> mijn-site@0.1.0 dev
+> next dev
+
+ ⚠ Warning: Found multiple lockfiles. Selecting /Users/al/package-lock.json.
+   Consider removing the lockfiles at:
+   * /Users/al/mijn-site/package-lock.json
+
+   ▲ Next.js 15.4.10
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.1.191:3000
+   - Environments: .env.local, .env
+
+ ✓ Starting...
+ ✓ Ready in 974ms
+ ✓ Compiled /middleware in 319ms (222 modules)
+ ○ Compiling / ...
+ ✓ Compiled / in 1942ms (787 modules)
+ ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+ HEAD / 200 in 2250ms
+ GET / 200 in 132ms
+ ✓ Compiled /blog in 398ms (761 modules)
+ ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+prisma:query BEGIN
+prisma:query DEALLOCATE ALL
+prisma:query BEGIN
+prisma:query SELECT "public"."Article"."id", "public"."Article"."title", "public"."Article"."topic", "public"."Article"."content", "public"."Article"."translations", "public"."Article"."slug", "public"."Article"."status"::text, "public"."Article"."source", "public"."Article"."authorId", "public"."Article"."views", "public"."Article"."createdAt", "public"."Article"."updatedAt", "public"."Article"."publishedAt" FROM "public"."Article" WHERE "public"."Article"."status" = CAST($1::text AS "public"."ArticleStatus") ORDER BY "public"."Article"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query DEALLOCATE ALL
+prisma:query COMMIT
+ GET /blog 200 in 1816ms
+prisma:query SELECT "public"."Article"."id", "public"."Article"."title", "public"."Article"."topic", "public"."Article"."content", "public"."Article"."translations", "public"."Article"."slug", "public"."Article"."status"::text, "public"."Article"."source", "public"."Article"."authorId", "public"."Article"."views", "public"."Article"."createdAt", "public"."Article"."updatedAt", "public"."Article"."publishedAt" FROM "public"."Article" WHERE "public"."Article"."status" = CAST($1::text AS "public"."ArticleStatus") ORDER BY "public"."Article"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query COMMIT
+ GET /blog 200 in 3161ms
+ ✓ Compiled in 508ms (969 modules)
+ ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+prisma:query SELECT 1
+prisma:query SELECT 1
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query SELECT "public"."Article"."id", "public"."Article"."title", "public"."Article"."topic", "public"."Article"."content", "public"."Article"."translations", "public"."Article"."slug", "public"."Article"."status"::text, "public"."Article"."source", "public"."Article"."authorId", "public"."Article"."views", "public"."Article"."createdAt", "public"."Article"."updatedAt", "public"."Article"."publishedAt" FROM "public"."Article" WHERE "public"."Article"."status" = CAST($1::text AS "public"."ArticleStatus") ORDER BY "public"."Article"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."Article"."id", "public"."Article"."title", "public"."Article"."topic", "public"."Article"."content", "public"."Article"."translations", "public"."Article"."slug", "public"."Article"."status"::text, "public"."Article"."source", "public"."Article"."authorId", "public"."Article"."views", "public"."Article"."createdAt", "public"."Article"."updatedAt", "public"."Article"."publishedAt" FROM "public"."Article" WHERE "public"."Article"."status" = CAST($1::text AS "public"."ArticleStatus") ORDER BY "public"."Article"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query COMMIT
+ GET /blog 200 in 7351ms
+prisma:query COMMIT
+ GET /blog 200 in 7673ms
+ ✓ Compiled in 425ms (969 modules)
+ ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+prisma:query SELECT 1
+prisma:query SELECT 1
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query SELECT "public"."Article"."id", "public"."Article"."title", "public"."Article"."topic", "public"."Article"."content", "public"."Article"."translations", "public"."Article"."slug", "public"."Article"."status"::text, "public"."Article"."source", "public"."Article"."authorId", "public"."Article"."views", "public"."Article"."createdAt", "public"."Article"."updatedAt", "public"."Article"."publishedAt" FROM "public"."Article" WHERE "public"."Article"."status" = CAST($1::text AS "public"."ArticleStatus") ORDER BY "public"."Article"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."Article"."id", "public"."Article"."title", "public"."Article"."topic", "public"."Article"."content", "public"."Article"."translations", "public"."Article"."slug", "public"."Article"."status"::text, "public"."Article"."source", "public"."Article"."authorId", "public"."Article"."views", "public"."Article"."createdAt", "public"."Article"."updatedAt", "public"."Article"."publishedAt" FROM "public"."Article" WHERE "public"."Article"."status" = CAST($1::text AS "public"."ArticleStatus") ORDER BY "public"."Article"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query COMMIT
+ GET /blog 200 in 1173ms
+prisma:query COMMIT
+ GET /blog 200 in 1420ms
+ ✓ Compiled in 485ms (969 modules)
+ ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+prisma:query SELECT 1
+prisma:query SELECT 1
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query SELECT "public"."Article"."id", "public"."Article"."title", "public"."Article"."topic", "public"."Article"."content", "public"."Article"."translations", "public"."Article"."slug", "public"."Article"."status"::text, "public"."Article"."source", "public"."Article"."authorId", "public"."Article"."views", "public"."Article"."createdAt", "public"."Article"."updatedAt", "public"."Article"."publishedAt" FROM "public"."Article" WHERE "public"."Article"."status" = CAST($1::text AS "public"."ArticleStatus") ORDER BY "public"."Article"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."Article"."id", "public"."Article"."title", "public"."Article"."topic", "public"."Article"."content", "public"."Article"."translations", "public"."Article"."slug", "public"."Article"."status"::text, "public"."Article"."source", "public"."Article"."authorId", "public"."Article"."views", "public"."Article"."createdAt", "public"."Article"."updatedAt", "public"."Article"."publishedAt" FROM "public"."Article" WHERE "public"."Article"."status" = CAST($1::text AS "public"."ArticleStatus") ORDER BY "public"."Article"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query COMMIT
+ GET /blog 200 in 1178ms
+prisma:query COMMIT
+ GET /blog 200 in 1450ms
+ ✓ Compiled in 529ms (969 modules)
+ ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+prisma:query BEGIN
+prisma:query DEALLOCATE ALL
+prisma:query BEGIN
+prisma:query DEALLOCATE ALL
+prisma:query SELECT "public"."Article"."id", "public"."Article"."title", "public"."Article"."topic", "public"."Article"."content", "public"."Article"."translations", "public"."Article"."slug", "public"."Article"."status"::text, "public"."Article"."source", "public"."Article"."authorId", "public"."Article"."views", "public"."Article"."createdAt", "public"."Article"."updatedAt", "public"."Article"."publishedAt" FROM "public"."Article" WHERE "public"."Article"."status" = CAST($1::text AS "public"."ArticleStatus") ORDER BY "public"."Article"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query COMMIT
+ GET /blog 200 in 1907ms
+prisma:query SELECT "public"."Article"."id", "public"."Article"."title", "public"."Article"."topic", "public"."Article"."content", "public"."Article"."translations", "public"."Article"."slug", "public"."Article"."status"::text, "public"."Article"."source", "public"."Article"."authorId", "public"."Article"."views", "public"."Article"."createdAt", "public"."Article"."updatedAt", "public"."Article"."publishedAt" FROM "public"."Article" WHERE "public"."Article"."status" = CAST($1::text AS "public"."ArticleStatus") ORDER BY "public"."Article"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query COMMIT
+ GET /blog 200 in 1946ms
+ ✓ Compiled in 508ms (969 modules)
+ ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+prisma:query SELECT 1
+prisma:query SELECT 1
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query SELECT "public"."Article"."id", "public"."Article"."title", "public"."Article"."topic", "public"."Article"."content", "public"."Article"."translations", "public"."Article"."slug", "public"."Article"."status"::text, "public"."Article"."source", "public"."Article"."authorId", "public"."Article"."views", "public"."Article"."createdAt", "public"."Article"."updatedAt", "public"."Article"."publishedAt" FROM "public"."Article" WHERE "public"."Article"."status" = CAST($1::text AS "public"."ArticleStatus") ORDER BY "public"."Article"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query COMMIT
+prisma:query SELECT "public"."Article"."id", "public"."Article"."title", "public"."Article"."topic", "public"."Article"."content", "public"."Article"."translations", "public"."Article"."slug", "public"."Article"."status"::text, "public"."Article"."source", "public"."Article"."authorId", "public"."Article"."views", "public"."Article"."createdAt", "public"."Article"."updatedAt", "public"."Article"."publishedAt" FROM "public"."Article" WHERE "public"."Article"."status" = CAST($1::text AS "public"."ArticleStatus") ORDER BY "public"."Article"."createdAt" DESC LIMIT $2 OFFSET $3
+ GET /blog 200 in 1098ms
+prisma:query COMMIT
+ GET /blog 200 in 1415ms
+ ✓ Compiled in 474ms (969 modules)
+ ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+prisma:query SELECT 1
+prisma:query SELECT 1
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query SELECT "public"."Article"."id", "public"."Article"."title", "public"."Article"."topic", "public"."Article"."content", "public"."Article"."translations", "public"."Article"."slug", "public"."Article"."status"::text, "public"."Article"."source", "public"."Article"."authorId", "public"."Article"."views", "public"."Article"."createdAt", "public"."Article"."updatedAt", "public"."Article"."publishedAt" FROM "public"."Article" WHERE "public"."Article"."status" = CAST($1::text AS "public"."ArticleStatus") ORDER BY "public"."Article"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query SELECT "public"."Article"."id", "public"."Article"."title", "public"."Article"."topic", "public"."Article"."content", "public"."Article"."translations", "public"."Article"."slug", "public"."Article"."status"::text, "public"."Article"."source", "public"."Article"."authorId", "public"."Article"."views", "public"."Article"."createdAt", "public"."Article"."updatedAt", "public"."Article"."publishedAt" FROM "public"."Article" WHERE "public"."Article"."status" = CAST($1::text AS "public"."ArticleStatus") ORDER BY "public"."Article"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query COMMIT
+prisma:query COMMIT
+ GET /blog 200 in 4220ms
+ GET /blog 200 in 3993ms
+ ✓ Compiled in 517ms (969 modules)
+ ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+prisma:query SELECT 1
+prisma:query SELECT 1
+prisma:query BEGIN
+prisma:query BEGIN
+prisma:query DEALLOCATE ALL
+prisma:query DEALLOCATE ALL
+prisma:query SELECT "public"."Article"."id", "public"."Article"."title", "public"."Article"."topic", "public"."Article"."content", "public"."Article"."translations", "public"."Article"."slug", "public"."Article"."status"::text, "public"."Article"."source", "public"."Article"."authorId", "public"."Article"."views", "public"."Article"."createdAt", "public"."Article"."updatedAt", "public"."Article"."publishedAt" FROM "public"."Article" WHERE "public"."Article"."status" = CAST($1::text AS "public"."ArticleStatus") ORDER BY "public"."Article"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query COMMIT
+prisma:query SELECT "public"."Article"."id", "public"."Article"."title", "public"."Article"."topic", "public"."Article"."content", "public"."Article"."translations", "public"."Article"."slug", "public"."Article"."status"::text, "public"."Article"."source", "public"."Article"."authorId", "public"."Article"."views", "public"."Article"."createdAt", "public"."Article"."updatedAt", "public"."Article"."publishedAt" FROM "public"."Article" WHERE "public"."Article"."status" = CAST($1::text AS "public"."ArticleStatus") ORDER BY "public"."Article"."createdAt" DESC LIMIT $2 OFFSET $3
+ GET /blog 200 in 1100ms
+prisma:query COMMIT
+ GET /blog 200 in 1418ms
+prisma:error Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+prisma:error Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+prisma:query BEGIN
+prisma:query DEALLOCATE ALL
+prisma:query SELECT "public"."Article"."id", "public"."Article"."title", "public"."Article"."topic", "public"."Article"."content", "public"."Article"."translations", "public"."Article"."slug", "public"."Article"."status"::text, "public"."Article"."source", "public"."Article"."authorId", "public"."Article"."views", "public"."Article"."createdAt", "public"."Article"."updatedAt", "public"."Article"."publishedAt" FROM "public"."Article" WHERE "public"."Article"."status" = CAST($1::text AS "public"."ArticleStatus") ORDER BY "public"."Article"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query COMMIT
+ GET /blog 200 in 2064ms
+prisma:query SELECT 1
+prisma:query BEGIN
+prisma:query DEALLOCATE ALL
+prisma:query SELECT "public"."Article"."id", "public"."Article"."title", "public"."Article"."topic", "public"."Article"."content", "public"."Article"."translations", "public"."Article"."slug", "public"."Article"."status"::text, "public"."Article"."source", "public"."Article"."authorId", "public"."Article"."views", "public"."Article"."createdAt", "public"."Article"."updatedAt", "public"."Article"."publishedAt" FROM "public"."Article" WHERE "public"."Article"."status" = CAST($1::text AS "public"."ArticleStatus") ORDER BY "public"."Article"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query COMMIT
+ GET /blog 200 in 1251ms
+ ✓ Compiled in 415ms (761 modules)
+ ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+prisma:query SELECT 1
+prisma:query BEGIN
+prisma:query DEALLOCATE ALL
+prisma:query SELECT "public"."Article"."id", "public"."Article"."title", "public"."Article"."topic", "public"."Article"."content", "public"."Article"."translations", "public"."Article"."slug", "public"."Article"."status"::text, "public"."Article"."source", "public"."Article"."authorId", "public"."Article"."views", "public"."Article"."createdAt", "public"."Article"."updatedAt", "public"."Article"."publishedAt" FROM "public"."Article" WHERE "public"."Article"."status" = CAST($1::text AS "public"."ArticleStatus") ORDER BY "public"."Article"."createdAt" DESC LIMIT $2 OFFSET $3
+prisma:query COMMIT
+ GET /blog 200 in 1104ms
+ ⨯ ./src/app/blog/the-best-customer-service-software-in-2026/page.js:2:1
+Module not found: Can't resolve '@/i18n/blog'
+  1 | import { getServerLocale } from '@/lib/locale';
+> 2 | import { getBlogCopy } from '@/i18n/blog';
+    | ^
+  3 |
+  4 | export async function generateMetadata() {
+  5 |   const locale = await getServerLocale();
+
+https://nextjs.org/docs/messages/module-not-found
+ ⨯ ./src/app/blog/the-best-customer-service-software-in-2026/page.js:2:1
+Module not found: Can't resolve '@/i18n/blog'
+  1 | import { getServerLocale } from '@/lib/locale';
+> 2 | import { getBlogCopy } from '@/i18n/blog';
+    | ^
+  3 |
+  4 | export async function generateMetadata() {
+  5 |   const locale = await getServerLocale();
+
+https://nextjs.org/docs/messages/module-not-found
+ ○ Compiling /_not-found ...
+ ⨯ ./src/app/blog/the-best-customer-service-software-in-2026/page.js:2:1
+Module not found: Can't resolve '@/i18n/blog'
+  1 | import { getServerLocale } from '@/lib/locale';
+> 2 | import { getBlogCopy } from '@/i18n/blog';
+    | ^
+  3 |
+  4 | export async function generateMetadata() {
+  5 |   const locale = await getServerLocale();
+
+https://nextjs.org/docs/messages/module-not-found
+ ⨯ ./src/app/blog/the-best-customer-service-software-in-2026/page.js:2:1
+Module not found: Can't resolve '@/i18n/blog'
+  1 | import { getServerLocale } from '@/lib/locale';
+> 2 | import { getBlogCopy } from '@/i18n/blog';
+    | ^
+  3 |
+  4 | export async function generateMetadata() {
+  5 |   const locale = await getServerLocale();
+
+https://nextjs.org/docs/messages/module-not-found
+ GET /blog/the-best-customer-service-software-in-2026 500 in 1992ms
+ GET /blog/the-best-customer-service-software-in-2026 500 in 12ms
+ GET /blog/the-best-customer-service-software-in-2026 500 in 10ms
+ GET /blog/the-best-customer-service-software-in-2026 500 in 10ms

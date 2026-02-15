@@ -119,6 +119,7 @@ function getLocalizedArticle(article, locale) {
 
 async function getBlogPosts(locale) {
   try {
+    // Get dynamic posts from database
     const articles = await prisma.article.findMany({
       where: {
         status: 'PUBLISHED'
@@ -126,10 +127,11 @@ async function getBlogPosts(locale) {
       orderBy: {
         createdAt: 'desc'
       },
-      take: 20
+      take: 10  // Reduced to make room for static posts
     })
     
-    return articles.map(article => {
+    // Get dynamic posts
+    const dynamicPosts = articles.map(article => {
       const localized = getLocalizedArticle(article, locale)
       const categoryData = getCategoryData(localized.topic, localized.title)
       const excerpt = localized.content?.substring(0, 200) || ''
@@ -151,6 +153,79 @@ async function getBlogPosts(locale) {
         date: date
       }
     })
+
+    // Add static posts
+    const staticPosts = [
+      {
+        id: 'static-1',
+        title: locale === 'nl' ? 'De beste klantenservice-software in 2026' : 
+                locale === 'en' ? 'The Best Customer Service Software in 2026' :
+                locale === 'de' ? 'Die beste Kundenservice-Software 2026' :
+                locale === 'sv' ? 'Bästa kundservice mjukvaran 2026' :
+                locale === 'da' ? 'Den bedste kundeservice-software i 2026' :
+                locale === 'fr' ? 'Le meilleur logiciel de service client en 2026' :
+                locale === 'it' ? 'Il miglior software di assistenza clienti del 2026' : 'De beste klantenservice-software in 2026',
+        excerpt: locale === 'nl' ? 'Complete gids voor de beste tools voor klantenservice en hoe u de juiste keuze maakt.' :
+                locale === 'en' ? 'Complete guide to the best tools for customer service and how to make the right choice.' :
+                locale === 'de' ? 'Vollständiger Leitfaden für die besten Tools für Kundenservice und wie Sie die richtige Wahl treffen.' :
+                locale === 'sv' ? 'Komplett guide för de bästa verktygen för kundservice och hur du gör rätt val.' :
+                locale === 'da' ? 'Komplet guide til de bedste værktøjer til kundeservice og hvordan du træffer det rigtige valg.' :
+                locale === 'fr' ? 'Guide complet des meilleurs outils pour le service client et comment faire le bon choix.' :
+                locale === 'it' ? 'Guida completa ai migliori strumenti per l\'assistenza clienti e come fare la scelta giusta.' : 'Complete gids voor de beste tools voor klantenservice en hoe u de juiste keuze maakt.',
+        slug: locale === 'nl' ? 'de-beste-klantenservice-software-in-2026' : 
+                locale === 'en' ? 'the-best-customer-service-software-in-2026' :
+                locale === 'de' ? 'die-beste-kundenservice-software-2026' :
+                locale === 'sv' ? 'basta-kundservice-mjukvaran-2026' :
+                locale === 'da' ? 'den-bedste-kundeservice-software-i-2026' :
+                locale === 'fr' ? 'le-meilleur-logiciel-de-service-client-en-2026' :
+                locale === 'it' ? 'il-miglior-software-di-assistenza-clienti-del-2026' : 'de-beste-klantenservice-software-in-2026',
+        category: 'GUIDE',
+        categoryColor: 'bg-[#FFD43B]',
+        categoryTextColor: 'text-gray-900',
+        author: 'Albin Hot',
+        date: new Date().toLocaleDateString(localeToDateLocale(locale), { 
+          year: 'numeric', 
+          month: 'long', 
+          day: 'numeric' 
+        })
+      },
+      {
+        id: 'static-2',
+        title: locale === 'nl' ? 'Marketing Automation Tools: Verhoog uw efficiëntie' : 
+                locale === 'en' ? 'Marketing Automation Tools: Increase Your Efficiency' :
+                locale === 'de' ? 'Marketing-Automatisierungs-Tools: Erhöhen Sie Ihre Effizienz' :
+                locale === 'sv' ? 'Marketing Automatiseringsverktyg: Öka din effektivitet' :
+                locale === 'da' ? 'Marketing Automatiseringsværktøjer: Øg din effektivitet' :
+                locale === 'fr' ? 'Outils d\'automatisation marketing: Augmentez votre efficacité' :
+                locale === 'it' ? 'Strumenti di automazione marketing: Aumenta la tua efficienza' : 'Marketing Automation Tools: Verhoog uw efficiëntie',
+        excerpt: locale === 'nl' ? 'Ontdek de beste tools voor marketing automatisering om tijd te besparen en resultaten te verbeteren.' :
+                locale === 'en' ? 'Discover the best tools for marketing automation to save time and improve results.' :
+                locale === 'de' ? 'Entdecken Sie die besten Tools für Marketing-Automatisierung, um Zeit zu sparen und Ergebnisse zu verbessern.' :
+                locale === 'sv' ? 'Upptäck de bästa verktygen för marknadsföringsautomatisering för att spara tid och förbättra resultat.' :
+                locale === 'da' ? 'Opdag de bedste værktøjer til marketingautomatisering for at spare tid og forbedre resultater.' :
+                locale === 'fr' ? 'Découvrez les meilleurs outils d\'automatisation marketing pour économiser du temps et améliorer les résultats.' :
+                locale === 'it' ? 'Scopri i migliori strumenti per l\'automazione del marketing per risparmiare tempo e migliorare i risultati.' : 'Ontdek de beste tools voor marketing automatisering om tijd te besparen en resultaten te verbeteren.',
+        slug: locale === 'nl' ? 'marketing-automation-tools' : 
+                locale === 'en' ? 'marketing-automation-tools' :
+                locale === 'de' ? 'marketing-automation-tools' :
+                locale === 'sv' ? 'marketing-automation-tools' :
+                locale === 'da' ? 'marketing-automation-tools' :
+                locale === 'fr' ? 'marketing-automation-tools' :
+                locale === 'it' ? 'marketing-automation-tools' : 'marketing-automation-tools',
+        category: 'GUIDE',
+        categoryColor: 'bg-[#E8C88E]',
+        categoryTextColor: 'text-gray-900',
+        author: 'Albin Hot',
+        date: new Date(Date.now() - 86400000).toLocaleDateString(localeToDateLocale(locale), { 
+          year: 'numeric', 
+          month: 'long', 
+          day: 'numeric' 
+        })
+      }
+    ]
+    
+    // Combine dynamic and static posts
+    return [...staticPosts, ...dynamicPosts]
   } catch (error) {
     console.error('Error fetching blog posts:', error)
     return []
