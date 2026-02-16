@@ -1,11 +1,7 @@
-import { getServerLocale } from '@/lib/locale';
-import { getBlogCopy } from '@/i18n/blog';
-
-export async function generateMetadata() {
-  const locale = await getServerLocale();
-  const copy = getBlogCopy(locale);
-  return copy.customerServiceSoftware2026.metadata;
-}
+export const metadata = {
+  title: 'Die Beste Kundenservice-Software 2026: Vollständiger Leitfaden | Niblah',
+  description: 'Entdecken Sie die Top-Kundenservice-Software-Plattformen 2026. Vollständiger Vergleich mit Preisen, Funktionen und Expertenempfehlungen.',
+};
 
 export default function CustomerServiceSoftware2026() {
   return (
@@ -14,8 +10,8 @@ export default function CustomerServiceSoftware2026() {
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
           Die beste Kundenservice-Software 2026: Vollständiger Leitfaden
         </h1>
-        <p className="text-xl text-gray-600 mb-8">
-          In der heutigen digitalen Welt ist Kundenservice-Software kein Luxus mehr, sondern eine Notwendigkeit für Unternehmen, die im Kundenzufriedenheits- und Loyalitätswettbewerb konkurrieren. Entdecken Sie, welche Lösungen am besten zu Ihrem Unternehmen passen.
+          <p className="text-xl text-gray-600 mb-8">
+          In der heutigen digitalen Welt ist Kundenservice-Software kein Luxus mehr, sondern eine Notwendigkeit für Unternehmen, die im Wettbewerb um Kundenzufriedenheit und Loyalität konkurrieren. Ein leistungsstarkes <a href="https://www.samdesk.nl" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-semibold">Kundenservice-Portal</a> bildet dabei das Herzstück jeder erfolgreichen Kundenstrategie.
         </p>
         
         <div className="mb-12">

@@ -271,3 +271,8 @@ Import trace for requested module:
  ⚠ Fast Refresh had to perform a full reload due to a runtime error.
  GET /blog/the-best-customer-service-software-in-2026 500 in 11ms
  ○ Compiling /_not-found ...
+prisma:error Error in PostgreSQL connection: Error { kind: Closed, cause: None }
+ GET /blog/the-best-customer-service-software-in-2026 500 in 66ms
+ GET /blog 500 in 39ms
+ GET /blog 500 in 32ms
+[?25h

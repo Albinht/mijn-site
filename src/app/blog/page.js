@@ -1,6 +1,11 @@
 import { getServerLocale } from '@/lib/locale';
 import { getBlogCopy } from '@/i18n/blog';
 import prisma from '@/lib/prisma';
+import Link from 'next/link';
+import Image from 'next/image';
+import { headers } from 'next/headers';
+import avatarImage from '@/assets/avatar.png';
+import LeadForm from '@/components/LeadForm';
 
 const supportedLocales = ['en', 'de', 'sv', 'da', 'fr', 'it', 'nl'];
 const defaultLocale = 'en';
@@ -50,6 +55,80 @@ function getCategoryData(topic, title) {
   return { category: 'GENERAL', color: 'bg-gray-200', textColor: 'text-gray-900' }
 }
 
+function localeToDateLocale(locale) {
+  const map = {
+    'en': 'en-US',
+    'de': 'de-DE',
+    'sv': 'sv-SE',
+    'da': 'da-DK',
+    'fr': 'fr-FR',
+    'it': 'it-IT',
+    'nl': 'nl-NL'
+  };
+  return map[locale] || 'en-US';
+}
+
+function getLocaleFromCookies(cookieString) {
+  if (!cookieString) return null;
+  const match = cookieString.match(/niblah-locale=([^;]+)/);
+  if (match) {
+    let locale = match[1];
+    if (localeAliases[locale.toLowerCase()]) {
+      return localeAliases[locale.toLowerCase()];
+    }
+    if (supportedLocales.includes(locale.toLowerCase())) {
+      return locale.toLowerCase();
+    }
+  }
+  return null;
+}
+
+function pickPreferredLocale({ cookieLocale, acceptLanguage }) {
+  if (cookieLocale && supportedLocales.includes(cookieLocale)) {
+    return cookieLocale;
+  }
+  if (acceptLanguage) {
+    const languages = acceptLanguage.split(',').map(l => l.split(';')[0].trim().toLowerCase());
+    for (const lang of languages) {
+      if (localeAliases[lang]) {
+        return localeAliases[lang];
+      }
+      if (supportedLocales.includes(lang)) {
+        return lang;
+      }
+    }
+  }
+  return defaultLocale;
+}
+
+function getLocalizedArticle(article, locale) {
+  if (!article) return null;
+  
+  // Safe check: ensure translations is an array before calling .find()
+  const translations = Array.isArray(article.translations) 
+    ? article.translations 
+    : [];
+  const translation = translations.find(t => t.locale === locale);
+  
+  if (translation) {
+    return {
+      title: translation.title || article.title,
+      content: translation.content || article.content,
+      topic: translation.topic || article.topic,
+      metaTitle: translation.metaTitle || article.metaTitle,
+      metaDescription: translation.metaDescription || article.metaDescription,
+    };
+  }
+  
+  return {
+    title: article.title,
+    content: article.content,
+    topic: article.topic,
+    metaTitle: article.metaTitle,
+    metaDescription: article.metaDescription,
+  };
+}
+
 // Add static posts
 function getStaticPosts(locale) {
   const staticPosts = [
@@ -73,9 +152,9 @@ function getStaticPosts(locale) {
       slug: locale === 'nl' ? 'de-beste-klantenservice-software-in-2026' : 
               locale === 'en' ? 'the-best-customer-service-software-in-2026' :
               locale === 'de' ? 'die-beste-kundenservice-software-2026' :
-              locale === 'sv' ? 'basta-kundservice-mjukvaran-2026' :
+              locale === 'sv' ? 'basta-kundtjanst-mjukvara-2026' :
               locale === 'da' ? 'den-bedste-kundeservice-software-i-2026' :
-              locale === 'fr' ? 'le-meilleur-logiciel-de-service-client-en-2026' :
+              locale === 'fr' ? 'le-meilleur-logiciel-de-service-client-2026' :
               locale === 'it' ? 'il-miglior-software-di-assistenza-clienti-del-2026' : 'the-best-customer-service-software-in-2026',
       category: 'GUIDE',
       categoryColor: 'bg-[#FFD43B]',
@@ -89,6 +168,9 @@ function getStaticPosts(locale) {
     }
   ];
 
+  return staticPosts;
+}
+
 async function getBlogPosts(locale) {
   try {
     // Get dynamic posts from database
@@ -99,19 +181,19 @@ async function getBlogPosts(locale) {
       orderBy: {
         createdAt: 'desc'
       },
-      take: 10  // Reduced to make room for static posts
-    })
+      take: 10
+    });
     
     // Get dynamic posts
     const dynamicPosts = articles.map(article => {
-      const localized = getLocalizedArticle(article, locale)
-      const categoryData = getCategoryData(localized.topic, localized.title)
-      const excerpt = localized.content?.substring(0, 200) || ''
+      const localized = getLocalizedArticle(article, locale);
+      const categoryData = getCategoryData(localized.topic, localized.title);
+      const excerpt = localized.content?.substring(0, 200) || '';
       const date = new Date(article.createdAt).toLocaleDateString(localeToDateLocale(locale), { 
         year: 'numeric', 
         month: 'long', 
         day: 'numeric' 
-      })
+      });
       
       return {
         id: article.id,
@@ -123,25 +205,24 @@ async function getBlogPosts(locale) {
         categoryTextColor: categoryData.textColor,
         author: 'Albin Hot',
         date: date
-      }
-    })
+      };
+    });
 
     // Combine static and dynamic posts
-    return [...staticPosts, ...dynamicPosts]
+    return [...getStaticPosts(locale), ...dynamicPosts];
   } catch (error) {
-    console.error('Error fetching blog posts:', error)
-    return []
-  }
+    console.error('Error fetching blog posts:', error);
+    return getStaticPosts(locale);
   }
 }
 
 export default async function BlogPage() {
-  const headerList = await headers()
+  const headerList = await headers();
   const locale = pickPreferredLocale({
     cookieLocale: getLocaleFromCookies(headerList.get('cookie')),
     acceptLanguage: headerList.get('accept-language'),
-  })
-  const blogPosts = await getBlogPosts(locale)
+  });
+  const blogPosts = await getBlogPosts(locale);
    
   return (
     <main className="min-h-screen bg-white">
@@ -165,51 +246,50 @@ export default async function BlogPage() {
               <p className="text-xl text-gray-600">Geen artikelen gevonden. Check back soon!</p>
             </div>
           ) : (
-            <>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {blogPosts.map((post) => (
-                  <article key={post.id} className="border-t-2 border-gray-200 pt-6">
-                    {/* Category Badge */}
-                    <div className="mb-4">
-                      <span className={`inline-block px-3 py-1 text-xs font-semibold ${post.categoryTextColor} ${post.categoryColor} rounded`}>
-                        {post.category}
-                      </span>
-                    </div> 
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {blogPosts.map((post) => (
+                <article key={post.id} className="border-t-2 border-gray-200 pt-6">
+                  {/* Category Badge */}
+                  <div className="mb-4">
+                    <span className={`inline-block px-3 py-1 text-xs font-semibold ${post.categoryTextColor} ${post.categoryColor} rounded`}>
+                      {post.category}
+                    </span>
+                  </div> 
 
-                    {/* Title */}
-                    <Link href={`/blog/${post.slug}`}>
-                      <h2 className="text-2xl font-bold text-gray-900 mb-3 hover:text-[#1795FF] transition-colors">
-                        {post.title}
-                      </h2>
-                    </Link> 
+                  {/* Title */}
+                  <Link href={`/blog/${post.slug}`}>
+                    <h2 className="text-2xl font-bold text-gray-900 mb-3 hover:text-[#1795FF] transition-colors">
+                      {post.title}
+                    </h2>
+                  </Link> 
 
-                    {/* Excerpt */}
-                    <p className="text-gray-600 mb-4 leading-relaxed">
-                      {post.excerpt}
-                    </p> 
+                  {/* Excerpt */}
+                  <p className="text-gray-600 mb-4 leading-relaxed">
+                    {post.excerpt}
+                  </p> 
 
-                    {/* Author & Date */}
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full overflow-hidden relative">
-                        <Image 
-                          src={avatarImage}
-                          alt={post.author}
-                          width={40}
-                          height={40}
-                          className="object-cover"
-                        />
-                      </div>
-                      <div>
-                        <p className="text-sm font-semibold text-gray-900">{post.author}</p>
-                        <p className="text-sm text-gray-500">{post.date}</p>
-                      </div>
+                  {/* Author & Date */}
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full overflow-hidden relative">
+                      <Image 
+                        src={avatarImage}
+                        alt={post.author}
+                        width={40}
+                        height={40}
+                        className="object-cover"
+                      />
                     </div>
-                  </article>
-                ))}
-              </div>
-              </div>
+                    <div>
+                      <p className="text-sm font-semibold text-gray-900">{post.author}</p>
+                      <p className="text-sm text-gray-500">{post.date}</p>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
           )}
-        </section>
+        </div>
+      </section>
 
       {/* Lead Form Section */}
       <section className="bg-gray-50 py-16 md:py-24 px-6">
@@ -226,20 +306,19 @@ export default async function BlogPage() {
                   <span className="font-semibold">Bespaar 25%</span> <span className="hidden sm:inline">t.o.v. grote bureaus</span><span className="sm:hidden">vs bureaus</span>
                 </button>
               </div>
-            </div> 
 
-            {/* Title */}
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Maak gratis kennis met onze <span className="relative inline-block">
-                marketingdiensten
-                <span className="absolute bottom-0 left-0 w-full h-3 bg-[#FFD43B] -z-10"></span>
-              </span>
-            </h2> 
+              {/* Title */}
+              <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                Maak gratis kennis met onze <span className="relative inline-block">
+                  marketingdiensten
+                  <span className="absolute bottom-0 left-0 w-full h-3 bg-[#FFD43B] -z-10"></span>
+                </span>
+              </h2> 
 
-            {/* Description */}
-            <p className="text-lg text-gray-900 mb-8 leading-relaxed">
-              Kom erachter waarom klanten massaal hun marketingbureaus ontslaan en kiezen voor een boutique bureau dat in staat is allround service te bieden met een direct contactpersoon. Weet met wie je te maken hebt.
-            </p>
+              {/* Description */}
+              <p className="text-lg text-gray-900 mb-8 leading-relaxed">
+                Kom erachter waarom klanten massaal hun marketingbureaus ontslaan en kiezen voor een boutique bureau dat in staat is allround service te bieden met een direct contactpersoon. Weet met wie je te maken hebt.
+              </p>
               
               {/* Features Grid - 2 columns */}
               <div className="grid grid-cols-2 gap-x-8 gap-y-4 mb-10">
@@ -253,7 +332,7 @@ export default async function BlogPage() {
                     </div>
                     <span className="text-base text-gray-900">Direct contact met je specialist</span>
                   </div>
-                   <div className="flex items-start gap-3">
+                  <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 bg-[#1795FF] rounded-full flex items-center justify-center mt-0.5">
                       <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414 1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -261,7 +340,7 @@ export default async function BlogPage() {
                     </div>
                     <span className="text-base text-gray-900">30+ jaar ervaring in één team</span>
                   </div>
-                   <div className="flex items-start gap-3">
+                  <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 bg-[#1795FF] rounded-full flex items-center justify-center mt-0.5">
                       <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414 1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -270,45 +349,49 @@ export default async function BlogPage() {
                     <span className="text-base text-gray-900">Allround service onder één dak</span>
                   </div>
                 </div>
-              </div>
 
-              {/* Right Column */}
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 bg-[#1795FF] rounded-full flex items-center justify-center mt-0.5">
+                {/* Right Column */}
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-[#1795FF] rounded-full flex items-center justify-center mt-0.5">
                       <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414 1.414L8 12.586l7.293-7.293a1 1 011.414 1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414 1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                     </div>
                     <span className="text-base text-gray-900">Transparante rapportages</span>
                   </div>
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-[#1795FF] rounded-full flex items-center justify-center mt-0.5">
+                      <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414 1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <span className="text-base text-gray-900">Snelle response tijd</span>
+                  </div>
                 </div>
               </div>
+
+              {/* Ontdek onze diensten button */}
+              <div className="flex items-center gap-3">
+                <span className="text-lg font-normal text-gray-900">Ontdek onze diensten</span>
+                <Link 
+                  href="/services"
+                  className="flex items-center justify-center w-10 h-10 bg-[#1795FF] rounded-full hover:bg-[#0f7dd4] transition-colors"
+                >
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+
+            {/* Right - Lead Form */}
+            <div>
+              <LeadForm />
             </div>
           </div>
-
-          {/* Ontdek onze diensten button */}
-          <div className="flex items-center gap-3">
-            <span className="text-lg font-normal text-gray-900">Ontdek onze diensten</span>
-            <Link 
-              href="/services"
-              className="flex items-center justify-center w-10 h-10 bg-[#1795FF] rounded-full hover:bg-[#0f7dd4] transition-colors"
-            >
-              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7m0 0l-7 7m0 0H3" />
-              </svg>
-            </Link>
-          </div>
         </div>
-      </div>
-
-      {/* Right - Lead Form */}
-      <div>
-        <LeadForm />
-      </div>
-    </div>
-  </main>
-  )
+      </section>
+    </main>
+  );
 }
-
-export default BlogPage;
