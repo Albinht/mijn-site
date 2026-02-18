@@ -1,94 +1,346 @@
 'use client';
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { PhotoIcon } from '@heroicons/react/24/outline';
+import { useMemo, useState } from 'react';
+import { PhotoIcon, MagnifyingGlassIcon, ClipboardIcon, CheckIcon } from '@heroicons/react/24/outline';
 
-export default function BulkAltChecker() {
-  const [urls, setUrls] = useState('');
+function statusBadgeClass(status) {
+  if (status === 'missing') return 'bg-red-100 text-red-800 border-red-200';
+  if (status === 'empty') return 'bg-amber-100 text-amber-800 border-amber-200';
+  if (status === 'needs-improvement') return 'bg-blue-100 text-blue-800 border-blue-200';
+  return 'bg-green-100 text-green-800 border-green-200';
+}
+
+function statusLabel(status) {
+  if (status === 'missing') return 'Ontbreekt';
+  if (status === 'empty') return 'Leeg';
+  if (status === 'needs-improvement') return 'Optimaliseren';
+  return 'Goed';
+}
+
+function issueLabel(issue) {
+  switch (issue) {
+    case 'missing-alt-attribute':
+      return 'Geen alt attribuut';
+    case 'empty-alt':
+      return 'Lege alt tekst';
+    case 'too-short':
+      return 'Te kort';
+    case 'too-long':
+      return 'Te lang';
+    case 'duplicate-alt':
+      return 'Duplicaat';
+    case 'generic-alt':
+      return 'Te generiek';
+    case 'keyword-stuffing-risk':
+      return 'Keyword stuffing risico';
+    default:
+      return issue;
+  }
+}
+
+export default function AltAttributeCheckerPage() {
+  const [url, setUrl] = useState('http://example.com');
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [result, setResult] = useState(null);
+  const [copiedSrc, setCopiedSrc] = useState('');
+
+  const orderedRows = useMemo(() => {
+    if (!result?.images) return [];
+    const weight = {
+      missing: 0,
+      empty: 1,
+      'needs-improvement': 2,
+      good: 3,
+    };
+    return [...result.images].sort((a, b) => (weight[a.status] || 9) - (weight[b.status] || 9));
+  }, [result]);
+
+  const handleCheck = async () => {
+    const value = url.trim();
+    if (!value) {
+      setError('Vul een URL in om te controleren.');
+      return;
+    }
+
+    setIsLoading(true);
+    setError('');
+    setResult(null);
+
+    try {
+      const response = await fetch('/api/tools/bulk-alt-checker', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url: value }),
+      });
+      const data = await response.json();
+      if (!response.ok || !data?.success) {
+        setError(data?.error || 'Controle mislukt. Probeer het opnieuw.');
+        return;
+      }
+      setResult(data);
+    } catch {
+      setError('Controle mislukt door een netwerkfout.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleCopy = async (value) => {
+    try {
+      await navigator.clipboard.writeText(value);
+      setCopiedSrc(value);
+      window.setTimeout(() => setCopiedSrc(''), 1200);
+    } catch {
+      // no-op
+    }
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-rose-50 py-12 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-rose-50 via-white to-pink-50 py-12 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <PhotoIcon className="h-12 w-12 text-pink-600 mx-auto mb-4" />
-          <h1 className="text-4xl font-bold mb-4">Bulk Alt Checker</h1>
-          <p className="text-xl text-gray-600">Check alt tags bulk voor image SEO. Missing alt detection tool.</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Alt Attribute Checker</h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Mijn alt attribute checker is een onmisbare tool om te controleren of afbeeldingen op je website goede
+            alt-teksten hebben voor SEO en toegankelijkheid.
+          </p>
         </div>
 
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
-          <textarea value={urls} onChange={(e) => setUrls(e.target.value)} placeholder="URLs to check" className="w-full h-48 p-4 border rounded mb-4" />
-          <button className="w-full bg-pink-600 text-white py-3 rounded">Check Alt Tags</button>
+        <div className="bg-white rounded-lg shadow-lg p-8 mb-8 border border-gray-100">
+          <label className="block text-sm font-semibold text-gray-700 mb-2">Enter URL:</label>
+          <div className="flex flex-col md:flex-row gap-3">
+            <input
+              type="text"
+              value={url}
+              onChange={(event) => setUrl(event.target.value)}
+              onKeyDown={(event) => event.key === 'Enter' && handleCheck()}
+              placeholder="http://example.com"
+              className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+            />
+            <button
+              type="button"
+              onClick={handleCheck}
+              disabled={isLoading}
+              className="inline-flex items-center justify-center gap-2 bg-pink-600 text-white px-8 py-3 rounded-lg hover:bg-pink-700 disabled:bg-gray-300 disabled:cursor-not-allowed font-semibold transition-colors"
+            >
+              {isLoading ? (
+                <>
+                  <span className="animate-spin rounded-full h-4 w-4 border-b-2 border-white" />
+                  Controleren...
+                </>
+              ) : (
+                <>
+                  <MagnifyingGlassIcon className="h-5 w-5" />
+                  Check
+                </>
+              )}
+            </button>
+          </div>
+
+          {error && (
+            <div className="mt-5 p-4 bg-red-50 border border-red-200 rounded-lg">
+              <p className="text-red-700">{error}</p>
+            </div>
+          )}
         </div>
 
-        <div className="bg-white rounded-lg p-8 mb-8">
-          <h2 className="text-2xl font-bold mb-6">Alt Tags: Image SEO Essentials</h2>
-          <div className="prose max-w-none space-y-4">
-            <p>Alt attributes (alt tags) describe images voor screen readers and search engines. Missing alt tags hurt accessibility (blind users can't understand images) and SEO (Google can't "see" images without text description). This bulk alt checker scans multiple pages simultaneously, identifying images missing alt tags, evaluating alt quality, and flagging optimization opportunities. For sites with hundreds/thousands of images, bulk checking is only practical audit method.</p>
+        {result && (
+          <>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+              <div className="bg-white border border-gray-200 rounded-lg p-5">
+                <p className="text-sm text-gray-500">Totaal afbeeldingen</p>
+                <p className="text-3xl font-bold text-gray-900 mt-1">{result.summary.totalImages}</p>
+              </div>
+              <div className="bg-white border border-gray-200 rounded-lg p-5">
+                <p className="text-sm text-gray-500">Met alt attribuut</p>
+                <p className="text-3xl font-bold text-green-700 mt-1">{result.summary.withAlt}</p>
+              </div>
+              <div className="bg-white border border-gray-200 rounded-lg p-5">
+                <p className="text-sm text-gray-500">Ontbrekend / leeg</p>
+                <p className="text-3xl font-bold text-red-700 mt-1">
+                  {result.summary.missingAlt + result.summary.emptyAlt}
+                </p>
+              </div>
+              <div className="bg-white border border-gray-200 rounded-lg p-5">
+                <p className="text-sm text-gray-500">Duplicaten</p>
+                <p className="text-3xl font-bold text-amber-700 mt-1">{result.summary.duplicateAlt}</p>
+              </div>
+            </div>
 
-            <p>Image SEO is underutilized—most sites ignore it despite significant traffic potential. Google Images drives 20-30% of search traffic for visual niches (fashion, recipes, design). Proper alt tags are foundation of image SEO: they describe image content, include relevant keywords naturally, and provide context. Sites with comprehensive alt tags rank images higher, capture image search traffic, and provide better UX. Bulk alt auditing ensures no images orphaned without descriptions.</p>
+            <div className="bg-white rounded-lg border border-gray-200 p-8 mb-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Aanbevelingen voor optimalisatie</h2>
+              <ul className="space-y-3 text-gray-700">
+                {result.recommendations.map((item) => (
+                  <li key={item} className="flex gap-3">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-pink-600 flex-shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-            <h3 className="text-xl font-bold mt-6 mb-4">Writing Quality Alt Text</h3>
-            
-            <p>Good alt text describes image specifically and concisely. Bad: "image123.jpg" or "photo". Better: "red Nike running shoes". Best: "Nike Air Zoom Pegasus 40 red running shoes on white background". Include relevant keywords naturally but don't stuff. Alt isn't invisible text field for keywords—it's functional description. Screen reader users hear every alt tag read aloud; make them meaningful. Length: 10-15 words optimal, max 125 characters before truncation risks.</p>
+            <div className="bg-white rounded-lg border border-gray-200 p-8 mb-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Resultaten</h2>
+              {result.truncated && (
+                <p className="text-sm text-amber-700 mb-4">
+                  Er zijn meer dan {result.summary.shownInTable} afbeeldingen gevonden. De tabel toont de eerste{' '}
+                  {result.summary.shownInTable} resultaten voor performance.
+                </p>
+              )}
+              <div className="overflow-x-auto">
+                <table className="min-w-full text-sm">
+                  <thead>
+                    <tr className="text-left text-gray-600 border-b">
+                      <th className="py-3 pr-4">Afbeelding</th>
+                      <th className="py-3 pr-4">Alt tekst</th>
+                      <th className="py-3 pr-4">Status</th>
+                      <th className="py-3 pr-4">Issues</th>
+                      <th className="py-3 pr-4">Score</th>
+                      <th className="py-3">Actie</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {orderedRows.map((row) => (
+                      <tr key={`${row.src}-${row.alt}`} className="border-b last:border-b-0 align-top">
+                        <td className="py-4 pr-4 max-w-xs">
+                          <a
+                            href={row.src}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="text-blue-700 hover:underline break-all"
+                          >
+                            {row.src}
+                          </a>
+                        </td>
+                        <td className="py-4 pr-4 text-gray-800 max-w-sm">
+                          {row.alt ? row.alt : <span className="text-gray-400">(leeg)</span>}
+                        </td>
+                        <td className="py-4 pr-4">
+                          <span
+                            className={`inline-flex items-center px-2.5 py-1 rounded-full border text-xs font-semibold ${statusBadgeClass(
+                              row.status
+                            )}`}
+                          >
+                            {statusLabel(row.status)}
+                          </span>
+                        </td>
+                        <td className="py-4 pr-4">
+                          {row.issues.length ? (
+                            <div className="flex flex-wrap gap-2">
+                              {row.issues.map((issue) => (
+                                <span
+                                  key={`${row.src}-${issue}`}
+                                  className="inline-flex items-center px-2 py-1 rounded border border-gray-200 bg-gray-50 text-xs text-gray-700"
+                                >
+                                  {issueLabel(issue)}
+                                </span>
+                              ))}
+                            </div>
+                          ) : (
+                            <span className="text-gray-500">Geen issues</span>
+                          )}
+                        </td>
+                        <td className="py-4 pr-4 font-semibold text-gray-900">{row.qualityScore}/100</td>
+                        <td className="py-4">
+                          <button
+                            type="button"
+                            onClick={() => handleCopy(row.src)}
+                            className="inline-flex items-center justify-center p-2 rounded-lg border border-gray-200 hover:bg-gray-50"
+                            title="Kopieer afbeeldings-URL"
+                          >
+                            {copiedSrc === row.src ? (
+                              <CheckIcon className="h-4 w-4 text-green-600" />
+                            ) : (
+                              <ClipboardIcon className="h-4 w-4 text-gray-700" />
+                            )}
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-gray-500 mt-4">
+                Gescand op: <code>{result.url}</code> op {new Date(result.checkedAt).toLocaleString('nl-NL')}.
+              </p>
+            </div>
+          </>
+        )}
 
-            <h4 className="text-lg font-semibold mt-5 mb-3">Decorative vs Informative Images</h4>
-            <p>Not all images need descriptive alt. Decorative images (design elements, spacers, purely aesthetic) should have empty alt (alt="") not missing alt. This tells screen readers to skip image—improves accessibility. Bulk checker distinguishes: missing alt (bad) vs empty alt (acceptable for decorative). Informative images (content, products, infographics) need descriptive alt. Check your results: are empty alts truly decorative or should they be descriptive?</p>
-
-            <h4 className="text-lg font-semibold mt-5 mb-3">Product Image Alt Optimization</h4>
-            <p>E-commerce sites with thousands product images need systematic alt strategy. Template approach: "[Brand] [Product Name] [Key Feature] [Color/Variant]". Example: "Apple iPhone 15 Pro smartphone titanium blue". Consistency aids bulk management. Avoid generic: "product image" on 500 products helps nobody. Include product attributes searched: color, size, material. Product images often rank in Google Images bringing qualified traffic—descriptive alts essential.</p>
-
-            <h3 className="text-xl font-bold mt-6 mb-4">Alt Tags vs Image File Names</h3>
-            
-            <p>Both matter för image SEO. File name: nike-running-shoes-red.jpg (descriptive, keyword-rich, hyphens). Alt tag: "Nike Air Zoom running shoes in red for marathon training". File name indexed, alt tag displayed. Use both strategically—keywords in filename, descriptive context in alt. Checker validates alt presence; separately audit file names. Sites with IMG_1234.jpg file names miss SEO opportunity even with good alt tags.</p>
-
-            <p>Combine with <Link href="/tools/html-validator" className="text-blue-600 hover:underline">HTML validation</Link> and <Link href="/tools/rich-snippet-validator" className="text-blue-600 hover:underline">schema markup</Link>.</p>
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Wat is een alt-attribuut?</h2>
+          <div className="space-y-4 text-gray-700">
+            <p>
+              Een alt-attribuut (alternatieve tekst) is een HTML-element dat een beschrijving van een afbeelding geeft.
+              Het wordt gebruikt door zoekmachines om de inhoud van de afbeelding te begrijpen en door schermlezers om
+              visueel gehandicapte gebruikers te helpen.
+            </p>
+            <p>
+              Een goed geschreven alt-tekst kan de SEO en toegankelijkheid van je website aanzienlijk verbeteren.
+            </p>
           </div>
         </div>
 
-        <div className="bg-white rounded-lg p-8 mb-8">
-          <h2 className="text-2xl font-bold mb-6">Bulk Alt Tag Audit Workflow</h2>
-          <div className="prose max-w-none space-y-4">
-            <p>Step 1: Crawl site to inventory all images. Tools like Screaming Frog extract every image URL + current alt. Export to CSV. Step 2: Run through bulk alt checker for validation. Identifies: completely missing alts, empty alts, duplicated alts (same alt on multiple images), keyword-stuffed alts, too-long alts. Step 3: Prioritize fixes—homepage images first, then high-traffic pages, then deep pages. Step 4: Implement fixes in CMS. Step 5: Recheck to verify. Quarterly repeat for new images.</p>
+        <div className="grid lg:grid-cols-2 gap-8 mb-8">
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Waarom een alt attribute checker gebruiken?</h2>
+            <ul className="space-y-3 text-gray-700">
+              <li className="flex gap-3">
+                <span className="mt-1 h-2 w-2 rounded-full bg-pink-600 flex-shrink-0" />
+                <span>Verbeter SEO: zoekmachines gebruiken alt-teksten om afbeeldingen beter te indexeren.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-1 h-2 w-2 rounded-full bg-pink-600 flex-shrink-0" />
+                <span>Verhoog toegankelijkheid voor gebruikers met visuele beperkingen.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-1 h-2 w-2 rounded-full bg-pink-600 flex-shrink-0" />
+                <span>Identificeer ontbrekende alt-teksten en los ze gericht op.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-1 h-2 w-2 rounded-full bg-pink-600 flex-shrink-0" />
+                <span>Optimaliseer content met duidelijke en relevante beschrijvingen.</span>
+              </li>
+            </ul>
+          </div>
 
-            <h3 className="text-xl font-bold mt-6 mb-4">Common Alt Tag Mistakes</h3>
-            
-            <p>Mistake 1: Same alt for all images—"company logo" on every image is useless. Each image needs unique descriptive alt. Mistake 2: Keyword stuffing—alt="buy shoes buy running shoes best shoes cheap shoes" is spam. Mistake 3: Too verbose—alt="This is a photograph showing a pair of red running shoes manufactured by Nike in size 10 sitting on a white background table"—way too long. Mistake 4: Starting with "image of" or "picture of"—redundant (obviously an image). Checker flags these patterns.</p>
-
-            <h4 className="text-lg font-semibold mt-5 mb-3">Alt Tags for Complex Images</h4>
-            <p>Charts, diagrams, infographics need longer alt text describing data shown. For very complex images, use alt for summary plus longdesc attribute or surrounding text for details. Example: graph showing "Annual revenue growth 2020-2024" as alt, caption below details specific numbers. Don't try cramming all graph data into alt—summarize visually, provide details in accessible format (table, text).</p>
-
-            <h4 className="text-lg font-semibold mt-5 mb-3">CMS Alt Tag Management</h4>
-            <p>WordPress, Shopify, etc. have alt fields in media uploader. Fill them during upload, not retroactively. Bulk checker catches historical images uploaded without alts. For bulk fixing: export image list, generate alt text (manually or AI-assisted), bulk import back to CMS. Some platforms have bulk edit features—use them. Don't leave alts empty thinking "I'll add later"—later never comes. Alt on upload = best practice.</p>
-
-            <h3 className="text-xl font-bold mt-6 mb-4">Image SEO Beyond Alt Tags</h3>
-            
-            <p>Alt tags are foundation but complete image SEO includes: descriptive file names, image sitemaps (for Google Images indexing), compression (fast load), responsive sizing (srcset), lazy loading (performance), structured data (Product, Article images). Bulk alt checking is step one. Follow with: file name audit, sitemap submission, compression audit. Multi-faceted approach maximizes image SEO value.</p>
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Waar checkt deze tool op?</h2>
+            <ul className="space-y-3 text-gray-700">
+              <li className="flex gap-3">
+                <span className="mt-1 h-2 w-2 rounded-full bg-rose-600 flex-shrink-0" />
+                <span>Aanwezigheid van alt-attributen op alle afbeeldingen.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-1 h-2 w-2 rounded-full bg-rose-600 flex-shrink-0" />
+                <span>Kwaliteit van alt-teksten: beschrijvend, relevant en niet te generiek.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-1 h-2 w-2 rounded-full bg-rose-600 flex-shrink-0" />
+                <span>Lengte van alt-teksten: te kort of te lang wordt gemarkeerd.</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-1 h-2 w-2 rounded-full bg-rose-600 flex-shrink-0" />
+                <span>Duplicatie van alt-teksten die de effectiviteit verminderen.</span>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <div className="bg-white rounded-lg p-8 mb-8">
-          <h2 className="text-2xl font-bold mb-6">Veelgestelde Vragen</h2>
-          <div className="space-y-6">
-            <div className="border-b pb-6">
-              <h3 className="text-lg font-semibold mb-2">Moet elk image een alt tag hebben?</h3>
-              <p>Yes, every image needs alt attribute. Informative images: descriptive alt text. Decorative images: empty alt (alt=""). Never omit alt entirely—that's accessibility violation and missed SEO. Bulk checker flags completely missing alts as high priority—fix these first.</p>
-            </div>
-            <div className="border-b pb-6">
-              <h3 className="text-lg font-semibold mb-2">Kunnen alt tags rankings verbeteren?</h3>
-              <p>For image search: absolutely. Descriptive alts help images rank in Google Images. For web search: minor direct impact but contributes to overall page relevance. If page about "SEO tips", images with "SEO" in alts reinforce topical relevance. Plus accessibility improvements (from good alts) enhance UX metrics.</p>
-            </div>
-            <div className="border-b pb-6">
-              <h3 className="text-lg font-semibold mb-2">Hoeveel keywords in alt tag?</h3>
-              <p>One primary keyword naturally integrated, maximum. Alt="best running shoes for marathon" = fine. Alt="running shoes best shoes marathon shoes athletic shoes buy shoes" = stuffing. Focus on accurate description that happens to include keyword, not keyword optimization disguised as description.</p>
-            </div>
-            <div className="pb-6">
-              <h3 className="text-lg font-semibold mb-2">Wat als ik 1000s images moet updaten?</h3>
-              <p>Prioritize: homepage images first (highest visibility), product images (commercial value), blog featured images (SEO value). Deep legacy images lower priority. Use AI tools to generate alt suggestions (describe image with AI, review/edit, bulk apply). Don't try perfect every alt—focus on important images first. 80% coverage better than 100% perfection delayed indefinitely.</p>
-            </div>
-          </div>
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Hoe werkt de alt attribute checker?</h2>
+          <ol className="space-y-3 text-gray-700 list-decimal pl-5">
+            <li>Voer de URL van de pagina in die je wilt controleren.</li>
+            <li>De tool controleert alle afbeeldingen op aanwezigheid en kwaliteit van alt-attributen.</li>
+            <li>Je krijgt een duidelijk overzicht met status, issues en aanbevelingen voor optimalisatie.</li>
+          </ol>
+          <p className="text-gray-700 mt-6">
+            Door regelmatig je alt-attributen te controleren en te optimaliseren, verbeter je zowel toegankelijkheid als
+            SEO-prestaties.
+          </p>
         </div>
-
       </div>
     </div>
   );
