@@ -141,7 +141,8 @@ const copy = {
     },
     hero: {
       title: 'YouTube Naam Generator',
-      subtitle: 'Vul je onderwerp in en krijg kanaalnaam ideeen die herkenbaar en bruikbaar zijn.',
+      subtitle:
+        'Mijn YouTube Name Generator gebruikt AI om creatieve en relevante namen voor je kanaal te genereren.',
     },
     form: {
       label: 'Onderwerp',
@@ -180,37 +181,34 @@ const copy = {
       whatIs: {
         title: 'Wat is een YouTube Naam Generator?',
         paragraphs: [
-          'Een YouTube naam generator geeft kanaalnaam ideeen op basis van een onderwerp, niche of korte omschrijving. Je krijgt snel opties die passen bij je content en die je doelgroep beter onthoudt.',
-          'Deze tool gebruikt AI om meerdere richtingen te verkennen: beschrijvende namen, merk-achtige namen en korte combinaties die je makkelijk kunt omzetten naar een consistente YouTube handle.',
+          'Een YouTube Name Generator is een tool die suggesties biedt voor kanaalnamen op basis van je ingevoerde trefwoorden, niche of interesses.',
+          'Het helpt content creators om een naam te vinden die memorabel en passend is bij hun content en doelgroep.',
         ],
       },
       why: {
         title: 'Waarom een AI YouTube Naam Generator gebruiken?',
         bullets: [
-          'Creatieve inspiratie: je komt sneller voorbij de standaard ideeen.',
-          'Consistent merkgevoel: namen die matchen met je tone of voice.',
-          'Tijdbesparing: in minuten een shortlist in plaats van uren puzzelen.',
-          'Beter te onthouden: focus op namen die je makkelijk uitspreekt en typt.',
+          'Creatieve inspiratie: ontvang unieke en originele naamideeen die je zelf misschien niet had bedacht.',
+          'Merkconsistentie: zorg dat je kanaalnaam past bij je merkidentiteit en de boodschap die je wilt overbrengen.',
+          'Tijdbesparend: bespaar tijd door automatisch naamideeen te genereren in plaats van handmatig te brainstormen.',
+          'Memorabele namen: creeer een naam die makkelijk te onthouden is en aantrekkelijk is voor je doelgroep.',
         ],
       },
       checks: {
-        title: 'Waar let deze tool op?',
+        title: 'Waar checkt deze tool op?',
         bullets: [
-          'Relevantie: de naam sluit aan op je onderwerp en doelgroep.',
-          'Duidelijkheid: minder kans op verwarring door lastige spelling.',
-          'Brandability: ruimte om later breder te gaan dan 1 serie videos.',
-          'Handle ideeen: elke naam krijgt een @handle suggestie die je kunt tweaken.',
-          'Beschikbaarheids-hint: snelle check of de handle URL al bezet lijkt.',
+          'Relevantie: de gegenereerde namen sluiten aan op je trefwoorden, niche en doelgroep.',
+          'Creativiteit: unieke en creatieve ideeen die je kanaal onderscheiden van concurrenten.',
+          'Merkidentiteit: namen die passen bij je positionering en boodschap.',
+          'Beschikbaarheid: controleert of de voorgestelde namen en handles waarschijnlijk nog beschikbaar zijn.',
         ],
       },
       howWorks: {
-        title: 'Zo werkt het (binnen 30 seconden)',
+        title: 'Hoe werkt de YouTube Naam Generator (AI)?',
         steps: [
-          'Vul je onderwerp in (niche + doelgroep werkt het best).',
-          'Genereer een lijst met naam ideeen.',
-          'Kopieer je favorieten en kies 3-5 opties.',
-          'Verifieer: zoek op YouTube + check handle + socials.',
-          'Kies 1 naam en maak je branding consistent (banner, thumbnails, about).',
+          'Voer trefwoorden, een niche of een korte beschrijving van je kanaal in.',
+          'De AI analyseert je invoer en genereert een reeks relevante en creatieve kanaalnamen.',
+          'Je krijgt een lijst met voorgestelde kanaalnamen die je direct kunt gebruiken voor je YouTube-kanaal.',
         ],
       },
       tips: {

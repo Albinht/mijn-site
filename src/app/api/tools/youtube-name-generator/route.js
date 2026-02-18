@@ -8,6 +8,8 @@ import prisma from '@/lib/prisma';
 export const runtime = 'nodejs';
 
 export async function POST(request) {
+  let topicSafe = 'channel';
+
   try {
     const body = await request.json().catch(() => ({}));
     const topic = typeof body.topic === 'string' ? body.topic.trim() : '';
@@ -30,7 +32,7 @@ export async function POST(request) {
       );
     }
 
-    const topicSafe = topic.slice(0, 120);
+    topicSafe = topic.slice(0, 120);
 
     const generatedNames = await generateNames(topicSafe, { desiredCount: 20 });
     let uniqueNames = dedupeNames(generatedNames, topicSafe);
@@ -52,9 +54,9 @@ export async function POST(request) {
     });
   } catch (error) {
     console.error('YouTube name generator error:', error);
-    const fallback = buildFallbackNames('channel', { desiredCount: 20 });
-    const results = await withHandleAvailability(fallback, 'channel');
-    return NextResponse.json({ success: true, topic: 'channel', results });
+    const fallback = buildFallbackNames(topicSafe, { desiredCount: 20 });
+    const results = await withHandleAvailability(fallback, topicSafe);
+    return NextResponse.json({ success: true, topic: topicSafe, results });
   }
 }
 
