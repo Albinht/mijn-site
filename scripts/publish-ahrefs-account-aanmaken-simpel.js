@@ -33,613 +33,376 @@ loadDatabaseUrl()
 const { PrismaClient } = require('@prisma/client')
 const prisma = new PrismaClient()
 
+const nlContent = `
+Een Ahrefs account aanmaken kost je een paar minuten. Een Ahrefs account goed inrichten bespaart je maanden in je SEO traject.
+
+Dat is het verschil waar ik in de praktijk op stuur: niet alleen toegang tot de tool, maar een setup die direct laat zien waar je groei zit in content, techniek en autoriteit.
+
+Gebruik dit artikel als complete onboarding gids. Daarna kun je Ahrefs inzetten als vast onderdeel van je SEO ritme.
+
+## Waarom dit belangrijk is
+
+Veel teams gebruiken Ahrefs als losse tool:
+
+- af en toe een keyword opzoeken
+- soms een concurrent checken
+- eens per kwartaal een audit draaien
+
+Dan krijg je wel data, maar weinig richting.
+
+Met een goede setup gebruik je Ahrefs als beslissysteem:
+
+- wat publiceer je eerst
+- welke paginas update je als eerste
+- waar verlies je verkeer of links
+- welke kansen zijn realistisch in 90 dagen
+
+## Stap 1: bepaal je doel voor je inlogt
+
+Kies eerst je primaire use-case. Anders bouw je een account vol ruis.
+
+Mogelijke doelen:
+
+- content planning en keyword research
+- concurrentieanalyse op topics en paginas
+- linkbuilding kansen vinden en monitoren
+- technische issues signaleren via Site Audit
+- rankings monitoren met Rank Tracker
+
+Interne verdieping:
+
+- [Ahrefs Keywords Explorer stappenplan](/blog/ahrefs-keywords-explorer-stappenplan)
+- [Content gap analyse in Ahrefs](/blog/content-gap-analyse-ahrefs-stappenplan)
+- [Ahrefs Site Explorer workflows](/blog/ahrefs-site-explorer-simpel-stappenplan)
+
+## Stap 2: kies een plan op basis van gebruik, niet op basis van features
+
+Plannen en limieten veranderen regelmatig. Werk daarom met deze selectievragen:
+
+- hoeveel mensen hebben toegang nodig
+- hoeveel projecten run je tegelijk
+- hoeveel keywords wil je structureel tracken
+- hoe vaak wil je crawlen en hoe groot zijn je sites
+
+Praktische indeling:
+
+- solo/freelancer: 1-2 projecten, 30-100 tracked keywords per project
+- MKB marketingteam: meerdere projecten, maandelijkse crawls, rank tracking per dienst
+- bureau/agency: teamtoegang, hogere crawl capaciteit, rapportages voor meerdere klanten
+
+## Stap 3: account aanmaken in Ahrefs
+
+De signup is simpel. Dit is de versie die ik aanhoud:
+
+1. Maak een account aan en bevestig je e-mail.
+2. Stel facturatie en betaalmethode in.
+3. Zet direct 2FA aan voor veiligheid.
+4. Voeg teamleden toe met de juiste rechten.
+5. Controleer timezone, standaard land en taalinstellingen.
+
+Waarom dit telt:
+
+- verkeerde rechten veroorzaken fouten in projecten
+- verkeerde marktinstellingen geven irrelevante datasets
+- zonder 2FA loop je onnodig risico op account lockout
+
+## Stap 4: richt je eerste project goed in
+
+Hier maken de meeste teams fouten. Ze starten te breed of met de verkeerde scope.
+
+Kies eerst je projectscope:
+
+- domain: als je complete domeinprestaties wilt zien
+- subdomain: als blog/shop los draait
+- prefix/folder: als je 1 markt of sectie analyseert
+
+Daarna pas je crawl en tracking aan op je doel.
+
+Project checklist:
+
+- juiste scope gekozen
+- juiste markt (land + taal)
+- sitemap toegevoegd
+- irrelevante paden uitgesloten (staging, admin, filter-URLs)
+- crawl frequentie ingesteld (wekelijks of maandelijks)
+
+Technische verdieping:
+
+- [Technische SEO analyse en checklist](/blog/technische-seo-analyse-stappenplan-checklist)
+
+## Stap 5: je eerste 60 minuten in Ahrefs (actievolgorde)
+
+Als je direct waarde wilt halen, gebruik dan deze volgorde:
+
+1. Site Explorer: check traffic trend van laatste 12 maanden.
+2. Top pages: noteer paginas met meeste organische waarde.
+3. Organic keywords: filter op posities 4-20 (quick wins).
+4. Backlinks: bekijk nieuwe en verloren referring domains.
+5. Content Gap: vergelijk 2-3 echte concurrenten.
+6. Rank Tracker: voeg alleen strategische keywords toe.
+
+Output na 60 minuten:
+
+- 10 quick wins
+- 5 risicopunten
+- 1 prioriteitenlijst voor de komende maand
+
+## Stap 6: welke metrics je wel en niet centraal zet
+
+Ahrefs geeft veel cijfers. Niet alles is een KPI.
+
+Gebruik als kern:
+
+- clicks en traffic trend
+- keywordposities op business zoekwoorden
+- verkeer per pagina en per intent
+- referring domains met context
+- Traffic Potential op topicniveau
+
+Gebruik met nuance:
+
+- DR en UR (handig als context, niet als einddoel)
+- keyword volume (zonder intent zegt het weinig)
+
+Verdieping:
+
+- [Traffic Potential is belangrijker dan volume](/blog/ahrefs-traffic-potential-vs-volume)
+
+## Stap 7: maak Ahrefs onderdeel van je vaste maandritme
+
+Een goede setup zonder ritme levert alsnog weinig op.
+
+Mijn minimale ritme:
+
+- wekelijks: ranking shifts, lost links, nieuwe kansen
+- maandelijks: content gaps, technische issues, pagina-updates
+- per kwartaal: strategieherijking op basis van output en conversie
+
+Koppel Ahrefs altijd aan:
+
+- Google Search Console voor echte clicks/impressions
+- GA4 of CRM data voor leadkwaliteit en omzetimpact
+
+## Veelgemaakte fouten bij het aanmaken van een Ahrefs account
+
+- je kiest het verkeerde land en trekt verkeerde conclusies
+- je trackt honderden irrelevante keywords
+- je kijkt alleen naar DR en niet naar pagina-impact
+- je draait audits maar prioriteert issues niet
+- je gebruikt Ahrefs los van Search Console en conversiedata
+
+## Interne route na dit artikel
+
+Wil je dit slim opbouwen? Werk in deze volgorde:
+
+1. [Ahrefs account aanmaken](/blog/ahrefs-account-aanmaken-simpele-uitleg)
+2. [Keywords Explorer stappenplan](/blog/ahrefs-keywords-explorer-stappenplan)
+3. [Content gap analyse in Ahrefs](/blog/content-gap-analyse-ahrefs-stappenplan)
+4. [Site Explorer workflows](/blog/ahrefs-site-explorer-simpel-stappenplan)
+5. [Wat is SEO optimalisatie](/blog/wat-is-seo-optimalisatie)
+6. [Hoger in Google komen](/blog/hoog-in-google)
+
+## Conclusie
+
+Een Ahrefs account aanmaken is het makkelijke deel.
+
+Het echte resultaat komt uit:
+
+- strakke scope
+- juiste marktinstellingen
+- een vaste workflow
+- koppeling met je eigen businessdata
+
+Zo maak je van Ahrefs geen dashboard, maar een groeimotor voor SEO.
+`.trim()
+
+const enContent = `
+Creating an Ahrefs account takes minutes. Setting it up correctly saves months.
+
+Use this setup sequence:
+
+1. Define your use-case first (keywords, content, links, technical scans, tracking).
+2. Choose a plan based on users, projects, crawl depth, and rank tracking needs.
+3. Create the account, enable 2FA, and configure market defaults.
+4. Build your first project with the right scope (domain, subdomain, or folder).
+5. Run a 60-minute onboarding sprint in Site Explorer, Keywords, Backlinks, and Content Gap.
+
+Internal workflows:
+
+- [Keywords Explorer workflow](/blog/ahrefs-keywords-explorer-stappenplan)
+- [Content Gap analysis](/blog/content-gap-analyse-ahrefs-stappenplan)
+- [Site Explorer workflow](/blog/ahrefs-site-explorer-simpel-stappenplan)
+- [Traffic Potential vs volume](/blog/ahrefs-traffic-potential-vs-volume)
+
+Do not treat DR as your main KPI. Focus on traffic trends, page-level impact, ranking movement, and conversion outcomes from Search Console + GA4.
+
+If you need the technical layer around this setup, use:
+
+- [Technical SEO checklist](/blog/technische-seo-analyse-stappenplan-checklist)
+
+Conclusion: account creation is step zero. Real performance comes from a focused setup and a weekly operating rhythm.
+`.trim()
+
+const deContent = `
+Ein Ahrefs Konto ist schnell erstellt. Die Wirkung kommt erst durch das richtige Setup.
+
+Fuer den Start:
+
+1. Ziel festlegen (Keywords, Content, Links, Technik, Tracking).
+2. Plan nach Bedarf waehlen (Users, Projects, Crawl, Rank Tracker).
+3. Konto anlegen, 2FA aktivieren, Markt korrekt setzen.
+4. Erstes Projekt sauber aufsetzen (Domain, Subdomain oder Folder).
+5. Erste 60 Minuten fuer Trends, Top Pages, Keywords, Backlinks und Gaps nutzen.
+
+Interne Guides:
+
+- [Keywords Explorer](/blog/ahrefs-keywords-explorer-stappenplan)
+- [Content Gap Analyse](/blog/content-gap-analyse-ahrefs-stappenplan)
+- [Site Explorer](/blog/ahrefs-site-explorer-simpel-stappenplan)
+- [Traffic Potential vs Volume](/blog/ahrefs-traffic-potential-vs-volume)
+
+Wichtig: DR ist Kontext, kein Geschaeftsziel. Prioritaet haben Traffic, Rankings, Page Impact und Conversions.
+`.trim()
+
+const svContent = `
+Att skapa ett Ahrefs-konto ar snabbt. Resultat kommer nar setupen ar ratt.
+
+Starta sa har:
+
+1. Valj mal (keywords, content, lankar, teknik, tracking).
+2. Valj plan utifran users, projects, crawl och rank tracker.
+3. Skapa konto, aktivera 2FA, satt ratt marknad.
+4. Bygg forsta projektet med korrekt scope.
+5. Gor en 60-minuters onboarding i Site Explorer, Keywords och Content Gap.
+
+Las vidare:
+
+- [Keywords Explorer](/blog/ahrefs-keywords-explorer-stappenplan)
+- [Content Gap](/blog/content-gap-analyse-ahrefs-stappenplan)
+- [Site Explorer](/blog/ahrefs-site-explorer-simpel-stappenplan)
+- [Traffic Potential vs volume](/blog/ahrefs-traffic-potential-vs-volume)
+
+Fokusera pa trafik, rankings, page impact och affarsresultat, inte bara DR.
+`.trim()
+
+const daContent = `
+Det tager fa minutter at oprette en Ahrefs konto. Effekten kommer fra den rigtige opsaetning.
+
+Brug denne raekkefolge:
+
+1. Definer maalet (keywords, content, links, teknik, tracking).
+2. Vaelg plan efter users, projects, crawl og rank tracker behov.
+3. Opret konto, aktiver 2FA og vaelg korrekt marked.
+4. Opsaet forste projekt med korrekt scope.
+5. Lav en 60-minutters onboarding med Site Explorer, Keywords og Content Gap.
+
+Relevante guides:
+
+- [Keywords Explorer](/blog/ahrefs-keywords-explorer-stappenplan)
+- [Content Gap analyse](/blog/content-gap-analyse-ahrefs-stappenplan)
+- [Site Explorer workflow](/blog/ahrefs-site-explorer-simpel-stappenplan)
+- [Traffic Potential vs volume](/blog/ahrefs-traffic-potential-vs-volume)
+
+Prioriter trafik, sideeffekt og konvertering frem for vanity metrics.
+`.trim()
+
+const frContent = `
+Creer un compte Ahrefs est rapide. Le vrai resultat vient d une configuration solide.
+
+Sequence recommandee:
+
+1. Definir l objectif (keywords, contenu, liens, technique, suivi).
+2. Choisir le plan selon users, projets, crawl et Rank Tracker.
+3. Creer le compte, activer 2FA, configurer le bon marche.
+4. Lancer le premier projet avec le bon scope.
+5. Faire un sprint de 60 minutes: trends, top pages, keywords, backlinks, gaps.
+
+Guides internes:
+
+- [Keywords Explorer](/blog/ahrefs-keywords-explorer-stappenplan)
+- [Content Gap](/blog/content-gap-analyse-ahrefs-stappenplan)
+- [Site Explorer](/blog/ahrefs-site-explorer-simpel-stappenplan)
+- [Traffic Potential vs volume](/blog/ahrefs-traffic-potential-vs-volume)
+
+Ne pilotez pas uniquement avec DR. Suivez trafic, positions, impact par page et conversion.
+`.trim()
+
+const itContent = `
+Creare un account Ahrefs e veloce. I risultati arrivano con una configurazione corretta.
+
+Passi consigliati:
+
+1. Definisci l obiettivo (keyword, contenuti, link, tecnica, tracking).
+2. Scegli il piano in base a utenti, progetti, crawl e rank tracker.
+3. Crea l account, attiva 2FA, imposta mercato e lingua corretti.
+4. Configura il primo progetto con lo scope giusto.
+5. Esegui uno sprint da 60 minuti su trend, top pages, keyword, backlink e gap.
+
+Approfondimenti interni:
+
+- [Keywords Explorer](/blog/ahrefs-keywords-explorer-stappenplan)
+- [Content Gap](/blog/content-gap-analyse-ahrefs-stappenplan)
+- [Site Explorer](/blog/ahrefs-site-explorer-simpel-stappenplan)
+- [Traffic Potential vs volume](/blog/ahrefs-traffic-potential-vs-volume)
+
+Non usare solo DR come KPI. Conta di piu la crescita di traffico, ranking e conversioni.
+`.trim()
+
 const article = {
   slug: 'ahrefs-account-aanmaken-simpele-uitleg',
   topic: 'SEO',
   status: 'PUBLISHED',
-  title: 'Ahrefs account aanmaken (en goed instellen): complete gids',
-  content: `
-Ahrefs is een van de meest gebruikte SEO tools voor keyword research, concurrentieanalyse en linkbuilding. Een account aanmaken is zo gedaan, maar de echte winst zit in: de juiste instellingen, een slim project, en een workflow die je elke week herhaalt.
-
-## 1) Voor je start: bepaal je doel
-
-Ahrefs kan veel. Als je alles tegelijk probeert, verdwaal je. Kies eerst waarvoor je het gaat gebruiken:
-
-- Keyword research: nieuwe topics en pagina ideeen vinden
-- Content planning: clusters bouwen en prioriteiten kiezen
-- Concurrentieanalyse: zien waar anderen groeien
-- Linkbuilding: kansen vinden en verloren links spotten
-- Technische SEO: quick scan met Site Audit (niet als vervanging van Search Console)
-
-Je doel bepaalt welk abonnement en welke instellingen je nodig hebt.
-
-## 2) Abonnement kiezen (zonder oude prijzen)
-
-Ahrefs heeft meestal meerdere plannen (bijv. Lite/Standard/Advanced/Agency). Namen, limieten en prijzen kunnen veranderen, dus kijk altijd naar de actuele Ahrefs pricing pagina. Dit is hoe je kiest zonder te verdwalen:
-
-### 4 vragen die het antwoord geven
-
-- Met hoeveel mensen ga je inloggen? (users)
-- Hoeveel websites/klanten wil je beheren? (projects)
-- Hoe vaak/hoe diep wil je crawlen en hoe groot zijn je sites? (crawl credits)
-- Hoeveel keywords wil je structureel tracken? (rank tracker limits)
-
-### Praktische vuistregels
-
-- Freelancer of kleine site: start klein, focus op 1 project en 30-100 tracked keywords.
-- MKB of meerdere sites: je wil genoeg projects + crawl om maandelijks te auditen.
-- Agency: team toegang, meerdere projecten, en genoeg crawl voor grotere sites.
-
-Tip: kies liever een plan dat je echt gebruikt, dan een plan waar je "mogelijk later" iets aan hebt.
-
-## 3) Ahrefs account aanmaken (stappen)
-
-De signup zelf is meestal rechttoe rechtaan:
-
-1. Ga naar Ahrefs en klik op starten (trial of direct plan).
-2. Maak je login aan en bevestig je e-mail.
-3. Vul bedrijfsgegevens in (voor facturatie).
-4. Kies betaalmethode en rond af.
-5. Log in en zet meteen 2 dingen goed:
-- Land/taal instellingen (waar je wil ranken)
-- Team access (als je met meerdere mensen werkt)
-
-## 4) Zet je eerste project goed neer (dit scheelt uren)
-
-Na signup wil je niet "random rapporten". Maak 1 goed project dat je de komende weken blijft gebruiken.
-
-### Project checklist
-
-- Target: domein vs subdomein vs folder (kies scope die bij je strategie past)
-- Markt: kies het juiste land en taal (dit is de #1 fout)
-- Crawl instellingen: start conservatief en breid uit als alles klopt
-
-### Site Audit (waar ik op let)
-
-Site Audit is handig als snelle technische scan. Gebruik het om issues te vinden en te prioriteren, niet om blind "alles wat rood is" te fixen.
-
-Zet bij de eerste crawl dit goed:
-
-- Crawl source: begin met sitemap + interne links
-- Crawl limit: genoeg om je belangrijkste paginas te zien (niet meteen maximaal)
-- Include/exclude: sluit staging, login, parameters of irrelevante folders uit
-- Schedule: wekelijks voor sites met veel changes, anders maandelijks
-
-## 5) Quick start: je eerste 30 minuten in Ahrefs
-
-Als je maar 30 minuten hebt, doe dan dit:
-
-1. Site Explorer: plak je domein en check trend (traffic/keywords) op 6-12 maanden.
-2. Top pages: welke paginas dragen nu het meeste bij?
-3. Organic keywords: filter op posities 4-20 voor quick wins.
-4. Backlinks: check "new" en "lost" om risico en kansen te zien.
-5. Schrijf een actielijst van 10 items (impact > effort).
-
-## 6) Rank Tracker slim instellen (zonder overkill)
-
-Rank tracking is pas nuttig als je het klein en relevant houdt.
-
-- Start met 30-100 keywords (niet 1000)
-- Groepeer per landingspagina of thema
-- Kies device (mobile vs desktop) dat bij je doelgroep past
-- Track 3-5 echte concurrenten (geen Wikipedia of marketplaces als dat niet je business is)
-
-Meet niet alleen posities. Koppel dit altijd terug naar:
-
-- Search Console clicks/impressions (realiteit)
-- Conversies in GA4 (waarde)
-
-## 7) Veelgemaakte fouten
-
-- Verkeerd land gekozen: je ziet dan "perfecte" data die niet klopt.
-- Alleen naar DR kijken: DR is een metric, geen KPI.
-- Te veel keywords tracken: je verliest focus en betaalt voor ruis.
-- Alles fixen wat de audit zegt: prioriteer indexatie, interne links, grote fouten.
-- Volume boven intent: 10.000 searches zonder intent is niets waard.
-
-## Mini checklist
-
-- Doel gekozen (keyword research, linkbuilding, audit, content)
-- Juiste land/talen ingesteld
-- 1 project aangemaakt met logische scope
-- Eerste crawl gedraaid + top issues genoteerd
-- Rank Tracker gestart met korte, relevante lijst
-
-## Conclusie
-
-Een Ahrefs account aanmaken is makkelijk. Resultaat komt van een goed ingericht project en een vaste routine.
-
-Wil je dat ik je Ahrefs setup doorloop en er meteen een actieplan van maak? Check /work-with-me.
-`.trim(),
+  title: 'Ahrefs account aanmaken: complete setup gids voor SEO groei',
+  content: nlContent,
   translations: {
     en: {
-      title: 'Create an Ahrefs account (and set it up right): complete guide',
+      title: 'Creating an Ahrefs account: complete setup guide',
       topic: 'SEO',
-      metaTitle: 'Create an Ahrefs account | Setup and workflow',
-      metaDescription: 'Create an Ahrefs account and set it up correctly: pick a plan, configure your first project, and use a weekly workflow for SEO.',
-      content: `
-Ahrefs is a widely used SEO tool for keyword research, competitor analysis, and link building. Creating an account is fast, but results come from: correct market settings, a clean first project, and a workflow you repeat every week.
-
-## 1) Before you start: pick your goal
-
-Ahrefs can do a lot. If you try everything at once, you lose focus. Pick your primary use case:
-
-- Keyword research: new topics and page ideas
-- Content planning: build clusters and priorities
-- Competitor analysis: see what is driving growth
-- Link building: find opportunities and track lost links
-- Technical SEO: quick scan with Site Audit (not a replacement for Search Console)
-
-## 2) Choose a plan (do not rely on old pricing)
-
-Ahrefs has multiple plans (names, limits, and pricing can change). Choose based on your needs, not on a screenshot of old prices.
-
-### The 4 questions that decide it
-
-- How many people need access? (users)
-- How many websites/clients will you manage? (projects)
-- How large are your sites and how often will you crawl? (crawl credits)
-- How many keywords will you track over time? (rank tracker limits)
-
-### Rules of thumb
-
-- Solo / small site: start small, focus on one project, track 30-100 keywords.
-- Multiple sites: ensure you have enough projects and crawl for monthly audits.
-- Agency: team access + many projects + enough crawl for larger sites.
-
-## 3) Create your Ahrefs account (steps)
-
-Signup is usually straightforward:
-
-1. Go to Ahrefs and start a trial or plan.
-2. Create your login and verify your email.
-3. Add company details (billing).
-4. Add payment method and finish.
-5. After login, set two things immediately:
-- Country/language settings (where you want to rank)
-- Team access (if multiple people work in the account)
-
-## 4) Build your first project (this saves hours)
-
-Do not start with random reports. Create one strong project you will keep using.
-
-### Project checklist
-
-- Scope: domain vs subdomain vs folder
-- Market: correct country and language (the #1 mistake)
-- Crawl settings: start conservative and expand after validation
-
-### Site Audit (how to set it up)
-
-Site Audit is useful for a quick technical scan. Use it to find issues and prioritize, not to blindly fix every warning.
-
-Good first crawl settings:
-
-- Crawl source: start with sitemap + internal links
-- Crawl limit: enough to cover key pages (do not max out by default)
-- Include/exclude: skip staging, login areas, heavy parameters, irrelevant folders
-- Schedule: weekly for fast-moving sites, otherwise monthly
-
-## 5) Your first 30 minutes in Ahrefs (quick start)
-
-If you only have 30 minutes:
-
-1. Site Explorer: paste your domain and check the 6-12 month trend (traffic/keywords).
-2. Top pages: identify what currently drives traffic.
-3. Organic keywords: filter positions 4-20 for quick wins.
-4. Backlinks: review "new" and "lost" for risk and opportunities.
-5. Write a 10-item action list (impact > effort).
-
-## 6) Set up Rank Tracker (without overkill)
-
-Rank tracking works when you keep it small and relevant:
-
-- Start with 30-100 keywords
-- Group by landing page or topic
-- Choose device (mobile vs desktop) that matches your audience
-- Track 3-5 real competitors (not Wikipedia or marketplaces if irrelevant)
-
-Always connect rankings to reality:
-
-- Search Console clicks/impressions
-- GA4 conversions
-
-## 7) Common mistakes
-
-- Wrong country: the data looks "great" but is useless.
-- Treating DR as a KPI: DR is a metric, not a business outcome.
-- Tracking too many keywords: you pay for noise.
-- Fixing everything from the audit: prioritize indexation and high-impact issues.
-- Picking keywords by volume only: intent matters more.
-
-## Mini checklist
-
-- Goal selected (keywords, links, audits, content)
-- Correct market settings
-- One project created with the right scope
-- First crawl completed and key issues noted
-- Rank Tracker started with a focused list
-
-## Conclusion
-
-Creating an Ahrefs account is easy. Performance comes from a clean setup and a consistent routine.
-
-Want me to review your Ahrefs setup and turn it into an action plan? See /work-with-me.
-`.trim(),
+      metaTitle: 'Creating an Ahrefs account | Complete setup guide',
+      metaDescription: 'Create an Ahrefs account and set it up correctly: plan selection, first project setup, and a workflow that drives SEO growth.',
+      content: enContent,
     },
     nl: {
-      title: 'Ahrefs account aanmaken (en goed instellen): complete gids',
+      title: 'Ahrefs account aanmaken: complete setup gids voor SEO groei',
       topic: 'SEO',
-      metaTitle: 'Ahrefs account aanmaken | Setup en workflow',
-      metaDescription: 'Ahrefs account aanmaken en goed instellen: plan kiezen, eerste project configureren en een praktische routine voor SEO, content en linkbuilding.',
-      content: `
-Ahrefs is een van de meest gebruikte SEO tools voor keyword research, concurrentieanalyse en linkbuilding. Een account aanmaken is zo gedaan, maar de echte winst zit in: de juiste instellingen, een slim project, en een workflow die je elke week herhaalt.
-
-## 1) Voor je start: bepaal je doel
-
-Ahrefs kan veel. Als je alles tegelijk probeert, verdwaal je. Kies eerst waarvoor je het gaat gebruiken:
-
-- Keyword research: nieuwe topics en pagina ideeen vinden
-- Content planning: clusters bouwen en prioriteiten kiezen
-- Concurrentieanalyse: zien waar anderen groeien
-- Linkbuilding: kansen vinden en verloren links spotten
-- Technische SEO: quick scan met Site Audit (niet als vervanging van Search Console)
-
-Je doel bepaalt welk abonnement en welke instellingen je nodig hebt.
-
-## 2) Abonnement kiezen (zonder oude prijzen)
-
-Ahrefs heeft meestal meerdere plannen (bijv. Lite/Standard/Advanced/Agency). Namen, limieten en prijzen kunnen veranderen, dus kijk altijd naar de actuele Ahrefs pricing pagina. Dit is hoe je kiest zonder te verdwalen:
-
-### 4 vragen die het antwoord geven
-
-- Met hoeveel mensen ga je inloggen? (users)
-- Hoeveel websites/klanten wil je beheren? (projects)
-- Hoe vaak/hoe diep wil je crawlen en hoe groot zijn je sites? (crawl credits)
-- Hoeveel keywords wil je structureel tracken? (rank tracker limits)
-
-### Praktische vuistregels
-
-- Freelancer of kleine site: start klein, focus op 1 project en 30-100 tracked keywords.
-- MKB of meerdere sites: je wil genoeg projects + crawl om maandelijks te auditen.
-- Agency: team toegang, meerdere projecten, en genoeg crawl voor grotere sites.
-
-Tip: kies liever een plan dat je echt gebruikt, dan een plan waar je "mogelijk later" iets aan hebt.
-
-## 3) Ahrefs account aanmaken (stappen)
-
-De signup zelf is meestal rechttoe rechtaan:
-
-1. Ga naar Ahrefs en klik op starten (trial of direct plan).
-2. Maak je login aan en bevestig je e-mail.
-3. Vul bedrijfsgegevens in (voor facturatie).
-4. Kies betaalmethode en rond af.
-5. Log in en zet meteen 2 dingen goed:
-- Land/taal instellingen (waar je wil ranken)
-- Team access (als je met meerdere mensen werkt)
-
-## 4) Zet je eerste project goed neer (dit scheelt uren)
-
-Na signup wil je niet "random rapporten". Maak 1 goed project dat je de komende weken blijft gebruiken.
-
-### Project checklist
-
-- Target: domein vs subdomein vs folder (kies scope die bij je strategie past)
-- Markt: kies het juiste land en taal (dit is de #1 fout)
-- Crawl instellingen: start conservatief en breid uit als alles klopt
-
-### Site Audit (waar ik op let)
-
-Site Audit is handig als snelle technische scan. Gebruik het om issues te vinden en te prioriteren, niet om blind "alles wat rood is" te fixen.
-
-Zet bij de eerste crawl dit goed:
-
-- Crawl source: begin met sitemap + interne links
-- Crawl limit: genoeg om je belangrijkste paginas te zien (niet meteen maximaal)
-- Include/exclude: sluit staging, login, parameters of irrelevante folders uit
-- Schedule: wekelijks voor sites met veel changes, anders maandelijks
-
-## 5) Quick start: je eerste 30 minuten in Ahrefs
-
-Als je maar 30 minuten hebt, doe dan dit:
-
-1. Site Explorer: plak je domein en check trend (traffic/keywords) op 6-12 maanden.
-2. Top pages: welke paginas dragen nu het meeste bij?
-3. Organic keywords: filter op posities 4-20 voor quick wins.
-4. Backlinks: check "new" en "lost" om risico en kansen te zien.
-5. Schrijf een actielijst van 10 items (impact > effort).
-
-## 6) Rank Tracker slim instellen (zonder overkill)
-
-Rank tracking is pas nuttig als je het klein en relevant houdt.
-
-- Start met 30-100 keywords (niet 1000)
-- Groepeer per landingspagina of thema
-- Kies device (mobile vs desktop) dat bij je doelgroep past
-- Track 3-5 echte concurrenten (geen Wikipedia of marketplaces als dat niet je business is)
-
-Meet niet alleen posities. Koppel dit altijd terug naar:
-
-- Search Console clicks/impressions (realiteit)
-- Conversies in GA4 (waarde)
-
-## 7) Veelgemaakte fouten
-
-- Verkeerd land gekozen: je ziet dan "perfecte" data die niet klopt.
-- Alleen naar DR kijken: DR is een metric, geen KPI.
-- Te veel keywords tracken: je verliest focus en betaalt voor ruis.
-- Alles fixen wat de audit zegt: prioriteer indexatie, interne links, grote fouten.
-- Volume boven intent: 10.000 searches zonder intent is niets waard.
-
-## Mini checklist
-
-- Doel gekozen (keyword research, linkbuilding, audit, content)
-- Juiste land/talen ingesteld
-- 1 project aangemaakt met logische scope
-- Eerste crawl gedraaid + top issues genoteerd
-- Rank Tracker gestart met korte, relevante lijst
-
-## Conclusie
-
-Een Ahrefs account aanmaken is makkelijk. Resultaat komt van een goed ingericht project en een vaste routine.
-
-Wil je dat ik je Ahrefs setup doorloop en er meteen een actieplan van maak? Check /work-with-me.
-`.trim(),
+      metaTitle: 'Ahrefs account aanmaken | Complete setup gids',
+      metaDescription: 'Ahrefs account aanmaken en direct goed instellen: plan kiezen, eerste project opzetten, metrics prioriteren en je SEO workflow opbouwen.',
+      content: nlContent,
     },
     de: {
-      title: 'Ahrefs Konto erstellen und richtig einrichten: kompletter Guide',
+      title: 'Ahrefs Konto erstellen: kompletter Setup Guide',
       topic: 'SEO',
-      metaTitle: 'Ahrefs Konto erstellen | Setup und Workflow',
-      metaDescription: 'Ahrefs Konto erstellen und sauber einrichten: Plan waehlen, erstes Projekt konfigurieren und eine praktische SEO Routine starten.',
-      content: `
-Ahrefs ist ein SEO Tool fuer Keyword Research, Wettbewerbsanalyse und Linkbuilding. Ein Konto ist schnell erstellt, aber der Unterschied kommt vom Setup: richtige Markt-Einstellungen, ein sauberes Projekt und eine Routine, die du regelmaessig nutzt.
-
-## 1) Ziel definieren
-
-Waehle zuerst, wofuer du Ahrefs nutzen willst:
-
-- Keywords und Content Ideen
-- Content Planung (Cluster + Prioritaeten)
-- Wettbewerbsanalyse
-- Linkbuilding (Chancen + Lost Links)
-- Technische Checks via Site Audit (kein Ersatz fuer Search Console)
-
-## 2) Plan waehlen (ohne alte Preise)
-
-Plaene, Limits und Preise koennen sich aendern. Entscheide ueber diese 4 Fragen:
-
-- Wie viele Nutzer brauchen Zugriff?
-- Wie viele Projekte/Websites?
-- Wie oft und wie tief willst du crawlen? (crawl credits)
-- Wie viele Keywords willst du tracken? (Rank Tracker)
-
-## 3) Konto erstellen
-
-Kurz:
-
-1. Signup starten (Trial oder Plan)
-2. E-Mail bestaetigen
-3. Billing Daten + Zahlung
-4. Nach Login: Land/Sprache und Team Zugriffe setzen
-
-## 4) Erstes Projekt einrichten
-
-- Scope: Domain vs Subdomain vs Folder
-- Markt: Land/Sprache korrekt (Top Fehler)
-- Site Audit: mit Sitemap + internen Links starten
-- Excludes: staging, login, irrelevante Parameter
-
-## 5) 30 Minuten Quick Start
-
-1. Site Explorer: 6-12 Monate Trend
-2. Top Pages: was bringt Traffic?
-3. Organic Keywords: Filter Position 4-20
-4. Backlinks: new/lost
-5. 10-Punkte Action List schreiben
-
-## 6) Rank Tracker ohne Overkill
-
-- Starte mit 30-100 Keywords
-- Gruppiere nach Landing Page oder Thema
-- Track 3-5 echte Wettbewerber
-- Verbinde mit Search Console + GA4 Conversions
-
-## Fazit
-
-Ahrefs Konto erstellen ist leicht. Wachstum kommt von sauberem Setup und Wiederholung.
-`.trim(),
+      metaTitle: 'Ahrefs Konto erstellen | Setup Guide',
+      metaDescription: 'Ahrefs Konto erstellen und richtig einrichten: Plan waehlen, erstes Projekt setzen und ein SEO Workflow mit Fokus auf Wirkung.',
+      content: deContent,
     },
     sv: {
-      title: 'Skapa ett Ahrefs konto och stalla in det ratt: komplett guide',
+      title: 'Skapa ett Ahrefs konto: komplett setup guide',
       topic: 'SEO',
-      metaTitle: 'Skapa Ahrefs konto | Setup och workflow',
-      metaDescription: 'Skapa ett Ahrefs konto och stalla in det korrekt: valj plan, bygg ett forsta projekt och folj en praktisk SEO rutin.',
-      content: `
-Ahrefs ar ett SEO verktyg for keyword research, konkurrentanalys och linkbuilding. Ett konto ar snabbt att skapa, men effekten kommer fran setup: ratt marknad, ett bra projekt och en rutin du upprepar.
-
-## 1) Valj ditt mal
-
-- Keyword research och content ideer
-- Content planering (clusters + prioritet)
-- Konkurrentanalys
-- Linkbuilding (new/lost links)
-- Teknisk scan via Site Audit (inte ersattning for Search Console)
-
-## 2) Valj plan baserat pa behov
-
-Planer och priser kan andras. Valj utifran:
-
-- Antal users
-- Antal projects
-- Crawl credits
-- Rank Tracker limits
-
-## 3) Skapa konto
-
-Signup, verifiera e-post, billing och betalning. Efter login: stalla in land/marknad direkt (vanligaste misstaget).
-
-## 4) Skapa forsta projektet
-
-- Scope: domain vs subdomain vs folder
-- Site Audit: starta med sitemap + interna lankar
-- Exkludera staging, login och onodiga parametrar
-
-## 5) 30 min quick start
-
-1. Site Explorer trend (6-12 manader)
-2. Top pages
-3. Organic keywords: filter position 4-20
-4. Backlinks: new/lost
-5. Kort action list
-
-## Slutsats
-
-Ahrefs konto ar enkelt. Ratt setup och rutin gor skillnaden.
-`.trim(),
+      metaTitle: 'Skapa Ahrefs konto | Setup guide',
+      metaDescription: 'Skapa ett Ahrefs konto och konfigurera det ratt: planval, forsta projekt och ett praktiskt SEO workflow.',
+      content: svContent,
     },
     da: {
-      title: 'Opret en Ahrefs konto og saet den rigtigt op: komplet guide',
+      title: 'Opret en Ahrefs konto: komplet setup guide',
       topic: 'SEO',
-      metaTitle: 'Opret Ahrefs konto | Setup og workflow',
-      metaDescription: 'Opret en Ahrefs konto og saet den korrekt op: vaelg plan, opret et forste projekt og folg en praktisk SEO rutine.',
-      content: `
-Ahrefs er et SEO vaerktoj til keyword research, konkurrentanalyse og linkbuilding. En konto er hurtig at oprette, men resultater kommer fra setup: korrekt marked, et godt forste projekt og en rutine du gentager.
-
-## 1) Vaelg dit maal
-
-- Keyword research og content ideer
-- Content plan (clusters + prioritet)
-- Konkurrentanalyse
-- Linkbuilding (new/lost links)
-- Teknisk scan via Site Audit (ikke erstatning for Search Console)
-
-## 2) Vaelg plan efter behov
-
-Planer og priser kan aendre sig. Vaelg ud fra:
-
-- Antal users
-- Antal projects
-- Crawl credits
-- Rank Tracker limits
-
-## 3) Opret konto
-
-Signup, verifier e-mail, billing og betaling. Efter login: vaelg land/marked med det samme (stor fejl hvis forkert).
-
-## 4) Saet forste projekt op
-
-- Scope: domain vs subdomain vs folder
-- Site Audit: start med sitemap + interne links
-- Exkluder staging, login og tunge parametre
-
-## 5) 30 min quick start
-
-1. Site Explorer trend (6-12 maaneder)
-2. Top pages
-3. Organic keywords: filter position 4-20
-4. Backlinks: new/lost
-5. Kort action list
-
-## Konklusion
-
-Ahrefs konto er let. Godt setup og fast rutine giver effekt.
-`.trim(),
+      metaTitle: 'Opret Ahrefs konto | Setup guide',
+      metaDescription: 'Opret en Ahrefs konto og saet den rigtigt op: planvalg, forste projekt og et praktisk SEO workflow.',
+      content: daContent,
     },
     fr: {
-      title: 'Creer un compte Ahrefs et bien le configurer: guide complet',
+      title: 'Creer un compte Ahrefs: guide setup complet',
       topic: 'SEO',
-      metaTitle: 'Creer un compte Ahrefs | Setup et workflow',
-      metaDescription: 'Creer un compte Ahrefs et le configurer correctement: choix du plan, premier projet et une routine SEO pratique.',
-      content: `
-Ahrefs est un outil SEO pour la recherche de mots-cles, l analyse de la concurrence et le linkbuilding. Creer un compte est rapide, mais le vrai gain vient du setup: bon marche (pays), bon projet, et une routine que vous repetez chaque semaine.
-
-## 1) Choisir votre objectif
-
-- Recherche de mots-cles et idees de contenu
-- Plan de contenu (clusters + priorites)
-- Analyse des concurrents
-- Linkbuilding (new/lost links)
-- Scan technique via Site Audit (pas un remplacement de Search Console)
-
-## 2) Choisir le plan
-
-Les plans et prix peuvent changer. Choisissez selon:
-
-- Nombre d utilisateurs
-- Nombre de projets
-- Crawl credits
-- Limites Rank Tracker
-
-## 3) Creer le compte
-
-Signup, verification e-mail, billing et paiement. Apres login: definir le bon pays/marche tout de suite (erreur #1 si faux).
-
-## 4) Creer le premier projet
-
-- Scope: domaine vs sous-domaine vs dossier
-- Site Audit: commencer avec sitemap + liens internes
-- Exclure staging, login et parametres inutiles
-
-## 5) 30 min quick start
-
-1. Site Explorer trend (6-12 mois)
-2. Top pages
-3. Organic keywords: filtrer positions 4-20
-4. Backlinks: new/lost
-5. Liste d actions courte
-
-## Conclusion
-
-Creer un compte Ahrefs est simple. Un bon setup et un workflow repetable font la difference.
-`.trim(),
+      metaTitle: 'Creer un compte Ahrefs | Guide setup',
+      metaDescription: 'Creer un compte Ahrefs et bien le configurer: choix du plan, premier projet et workflow SEO oriente performance.',
+      content: frContent,
     },
     it: {
-      title: 'Creare un account Ahrefs e configurarlo bene: guida completa',
+      title: 'Creare un account Ahrefs: guida setup completa',
       topic: 'SEO',
-      metaTitle: 'Creare account Ahrefs | Setup e workflow',
-      metaDescription: 'Creare un account Ahrefs e impostarlo correttamente: scelta del piano, primo progetto e una routine SEO pratica.',
-      content: `
-Ahrefs e uno strumento SEO per keyword research, analisi competitor e linkbuilding. Creare un account e veloce, ma il valore arriva dal setup: mercato giusto, primo progetto fatto bene e una routine che ripeti ogni settimana.
-
-## 1) Definisci l obiettivo
-
-- Keyword research e idee contenuto
-- Piano contenuti (cluster + priorita)
-- Analisi competitor
-- Linkbuilding (new/lost links)
-- Scan tecnico con Site Audit (non sostituisce Search Console)
-
-## 2) Scegli il piano
-
-Piani e prezzi possono cambiare. Scegli in base a:
-
-- Numero utenti
-- Numero progetti
-- Crawl credits
-- Limiti Rank Tracker
-
-## 3) Crea l account
-
-Signup, verifica e-mail, billing e pagamento. Dopo login: imposta subito paese/mercato (errore #1 se sbagli).
-
-## 4) Crea il primo progetto
-
-- Scope: dominio vs sottodominio vs cartella
-- Site Audit: inizia con sitemap + link interni
-- Escludi staging, login e parametri inutili
-
-## 5) 30 min quick start
-
-1. Site Explorer trend (6-12 mesi)
-2. Top pages
-3. Organic keywords: filtra posizioni 4-20
-4. Backlinks: new/lost
-5. Lista azioni corta
-
-## Conclusione
-
-Account facile. Setup pulito e workflow ripetibile fanno la differenza.
-`.trim(),
+      metaTitle: 'Creare account Ahrefs | Guida setup',
+      metaDescription: 'Creare un account Ahrefs e configurarlo bene: scelta piano, primo progetto e workflow SEO orientato ai risultati.',
+      content: itContent,
     },
   },
 }
