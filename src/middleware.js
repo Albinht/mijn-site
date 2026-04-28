@@ -49,6 +49,12 @@ export async function middleware(request) {
   const { locale: localeFromPath, pathname: strippedPath } = splitLocaleFromPath(pathname);
   const isExcludedPath = isLocaleExcludedPath(strippedPath);
 
+  if (strippedPath === '/youtube' || strippedPath.startsWith('/youtube/')) {
+    const redirectUrl = request.nextUrl.clone();
+    redirectUrl.pathname = strippedPath.replace(/^\/youtube/, '/yt');
+    return NextResponse.redirect(redirectUrl);
+  }
+
   if (localeFromPath === defaultLocale) {
     const redirectUrl = request.nextUrl.clone();
     redirectUrl.pathname = strippedPath;
@@ -118,6 +124,7 @@ export async function middleware(request) {
 
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set('x-locale', localeForPage);
+  requestHeaders.set('x-pathname', strippedPath || '/');
   if (isExcludedPath) {
     requestHeaders.set('x-i18n-excluded', '1');
   }

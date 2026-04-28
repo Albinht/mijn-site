@@ -7,6 +7,7 @@ import { Geist, Geist_Mono } from 'next/font/google'
 
 // Componenten
 import Header from '../components/HeaderNew.js'
+import YouTubeHeader from '../components/YouTubeHeader.js'
 import Footer from '../components/Footer.js'
 import ConditionalContactForm from '../components/ConditionalContactForm.js'
 import GoogleAnalytics from '../components/GoogleAnalytics.js'
@@ -89,6 +90,8 @@ export default async function RootLayout({ children }) {
   const locale = headerList.get('x-locale') || defaultLocale
   const htmlLang = localeToHtmlLang(locale)
   const isExcluded = headerList.get('x-i18n-excluded') === '1'
+  const pathname = headerList.get('x-pathname')
+  const isYoutubePage = pathname === '/yt' || pathname?.startsWith('/yt/')
 
   return (
     <html lang={htmlLang} className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${merriweather.variable}`}>
@@ -101,11 +104,11 @@ export default async function RootLayout({ children }) {
         data-i18n-excluded={isExcluded ? 'true' : 'false'}
       >
         <GoogleAnalytics />
-        <Header />
+        {isYoutubePage ? <YouTubeHeader /> : <Header />}
         {children}
         <ConditionalContactForm />
-        <Footer />
-        <FloatingChatButton />
+        {!isYoutubePage && <Footer />}
+        {!isYoutubePage && <FloatingChatButton />}
       </body>
     </html>
   )

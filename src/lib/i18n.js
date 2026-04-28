@@ -27,6 +27,8 @@ const nonLocalizedPrefixes = [
   '/downloads',
   '/assets',
   '/static',
+  '/youtube',
+  '/yt',
 ];
 
 export const localeLabels = {
