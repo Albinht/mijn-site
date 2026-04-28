@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import WorkWithMeClient from './WorkWithMeClient';
 
 export const metadata = {
   title: 'Work with me | Niblah YouTube',
@@ -8,7 +8,7 @@ export const metadata = {
 export default function YouTubeWorkWithMePage() {
   return (
     <main className="min-h-screen bg-white text-[#0A0A0A]">
-      <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 pb-10 pt-28">
+      <section className="relative min-h-screen overflow-hidden px-4 pb-16 pt-28 md:pb-24 md:pt-32">
         <div className="absolute inset-0 bg-[linear-gradient(180deg,#FFFFFF_0%,#F7F7F7_58%,#FFFFFF_100%)]" />
         <div className="absolute inset-x-0 top-0 h-72 bg-[linear-gradient(180deg,rgba(0,0,0,0.05),rgba(255,255,255,0))]" />
         <div className="absolute -left-24 top-0 h-[70%] w-1/2 rounded-full bg-black/[0.035] blur-3xl" />
@@ -31,12 +31,7 @@ export default function YouTubeWorkWithMePage() {
             If one of the YouTube workflows is close to what you need, this is the page for turning it into a working implementation for your business.
           </p>
 
-          <Link
-            href="/contact"
-            className="mt-8 inline-flex h-12 items-center justify-center rounded-[3px] bg-black px-5 text-sm font-semibold text-white transition-colors hover:bg-black/90"
-          >
-            Start a project
-          </Link>
+          <WorkWithMeClient />
         </div>
       </section>
     </main>
