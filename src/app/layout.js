@@ -38,6 +38,7 @@ const geistMono = Geist_Mono({
 })
 
 const baseMetadata = {
+  metadataBase: new URL('https://niblah.com'),
   title: 'Niblah - Digital Marketing Expert',
   description: 'Professional digital marketing services including SEO, Google Ads, and website optimization. Get your business found online and attract more customers.',
   keywords: 'digital marketing, SEO, Google Ads, website optimization, online marketing',
@@ -52,7 +53,7 @@ const baseMetadata = {
   openGraph: {
     title: 'Niblah - Digital Marketing Expert',
     description: 'Professional digital marketing services including SEO, Google Ads, and website optimization.',
-    url: 'https://albinmarketing.com',
+    url: 'https://niblah.com',
     siteName: 'Niblah',
     images: [
       {

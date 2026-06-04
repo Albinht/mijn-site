@@ -112,7 +112,7 @@ export default function HeaderNew() {
               {/* Logo - Niblah met vinkje */}
               <Link href="/" className="flex items-center flex-shrink-0">
                 <div className="relative">
-                  <h1 className="text-sm font-bold text-gray-900">Niblah</h1>
+                  <span className="text-sm font-bold text-gray-900">Niblah</span>
                   <img 
                     src="https://schilderenopnummerwinkel.nl/wp-content/uploads/2025/07/Twitter_Verified_Badge.svg.png" 
                     alt={copy.alt.verified} 
@@ -167,7 +167,7 @@ export default function HeaderNew() {
                           </Link>
 
                           {/* Google Ads */}
-                          <Link href="/services/google-ads" className="flex gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group">
+                          <Link href="/services/sea/google-ads" className="flex gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group">
                             <div className="flex-shrink-0">
                               <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
@@ -193,7 +193,7 @@ export default function HeaderNew() {
                           </Link>
 
                           {/* Website Ontwikkeling */}
-                          <Link href="/services/websites" className="flex gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group">
+                          <Link href="/website-laten-maken" className="flex gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group">
                             <div className="flex-shrink-0">
                               <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
@@ -206,7 +206,7 @@ export default function HeaderNew() {
                           </Link>
 
                           {/* Content Creatie */}
-                          <Link href="/services/content" className="flex gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group">
+                          <Link href="/services/seo/contentmarketing" className="flex gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group">
                             <div className="flex-shrink-0">
                               <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
@@ -505,7 +505,7 @@ export default function HeaderNew() {
                         
                         <div className="grid grid-cols-3 gap-x-8 gap-y-6">
                           {/* WordPress Website */}
-                          <Link href="/wordpress/website-laten-maken" className="flex gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group">
+                          <Link href="/website-laten-maken" className="flex gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group">
                             <div className="flex-shrink-0">
                               <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
@@ -629,7 +629,7 @@ export default function HeaderNew() {
                         <div className="mb-6">
                           <h3 className="text-sm font-semibold text-gray-900 mb-4">{copy.wordpress.sidebar.popularTitle}</h3>
                           <div className="space-y-2">
-                            <Link href="/wordpress/website-laten-maken" className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">{copy.wordpress.sidebar.popularItems.complete}</Link>
+                            <Link href="/website-laten-maken" className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">{copy.wordpress.sidebar.popularItems.complete}</Link>
                             <Link href="/wordpress/maatwerk" className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">{copy.wordpress.sidebar.popularItems.customDev}</Link>
                             <Link href="/wordpress/thema" className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">{copy.wordpress.sidebar.popularItems.themeSetup}</Link>
                             <Link href="/wordpress/marketing" className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">{copy.wordpress.sidebar.popularItems.marketingSeo}</Link>
@@ -1013,7 +1013,7 @@ export default function HeaderNew() {
                             </svg>
                             {copy.services.items.seo.title}
                           </Link>
-                          <Link href="/services/google-ads" className="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>
+                          <Link href="/services/sea/google-ads" className="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>
                             <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                             </svg>
@@ -1025,13 +1025,13 @@ export default function HeaderNew() {
                             </svg>
                             {copy.services.items.email.title}
                           </Link>
-                          <Link href="/services/websites" className="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>
+                          <Link href="/website-laten-maken" className="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>
                             <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                             </svg>
                             {copy.services.items.websites.title}
                           </Link>
-                          <Link href="/services/content" className="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>
+                          <Link href="/services/seo/contentmarketing" className="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>
                             <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                             </svg>
@@ -1177,7 +1177,7 @@ export default function HeaderNew() {
                           <h4 className="text-xs font-semibold text-gray-900">{copy.wordpress.mobile.heading}</h4>
                         </div>
                         <div className="space-y-1">
-                          <Link href="/wordpress/website-laten-maken" className="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>
+                          <Link href="/website-laten-maken" className="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>
                             <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                             </svg>

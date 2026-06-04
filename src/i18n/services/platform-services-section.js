@@ -22,7 +22,7 @@ const copy = {
       title: { prefix: 'WordPress', highlight: 'Development' },
       intro: 'From websites to custom plugins - complete WordPress solutions.',
       services: [
-        { title: 'WordPress website build', href: '/wordpress/website-laten-maken' },
+        { title: 'WordPress website build', href: '/website-laten-maken' },
         { title: 'WordPress custom development', href: '/wordpress/maatwerk' },
         { title: 'WordPress theme', href: '/wordpress/thema' },
         { title: 'WordPress marketing', href: '/wordpress/marketing' },
@@ -54,7 +54,7 @@ const copy = {
       title: { prefix: 'WordPress', highlight: 'Development' },
       intro: 'Van website tot custom plugins - complete WordPress oplossingen',
       services: [
-        { title: 'WordPress website laten maken', href: '/wordpress/website-laten-maken' },
+        { title: 'WordPress website laten maken', href: '/website-laten-maken' },
         { title: 'WordPress maatwerk', href: '/wordpress/maatwerk' },
         { title: 'WordPress thema', href: '/wordpress/thema' },
         { title: 'WordPress marketing', href: '/wordpress/marketing' },
@@ -86,7 +86,7 @@ const copy = {
       title: { prefix: 'WordPress', highlight: 'Development' },
       intro: 'Von Websites bis zu Custom Plugins - komplette WordPress Loesungen.',
       services: [
-        { title: 'WordPress Website erstellen', href: '/wordpress/website-laten-maken' },
+        { title: 'WordPress Website erstellen', href: '/website-laten-maken' },
         { title: 'WordPress Sonderentwicklung', href: '/wordpress/maatwerk' },
         { title: 'WordPress Theme', href: '/wordpress/thema' },
         { title: 'WordPress Marketing', href: '/wordpress/marketing' },
@@ -118,7 +118,7 @@ const copy = {
       title: { prefix: 'WordPress', highlight: 'Utveckling' },
       intro: 'Fran webbplats till custom plugins - kompletta WordPress losningar.',
       services: [
-        { title: 'WordPress webbplats', href: '/wordpress/website-laten-maken' },
+        { title: 'WordPress webbplats', href: '/website-laten-maken' },
         { title: 'WordPress specialutveckling', href: '/wordpress/maatwerk' },
         { title: 'WordPress tema', href: '/wordpress/thema' },
         { title: 'WordPress marknadsforing', href: '/wordpress/marketing' },
@@ -150,7 +150,7 @@ const copy = {
       title: { prefix: 'WordPress', highlight: 'Udvikling' },
       intro: 'Fra website til custom plugins - komplette WordPress losninger.',
       services: [
-        { title: 'WordPress website', href: '/wordpress/website-laten-maken' },
+        { title: 'WordPress website', href: '/website-laten-maken' },
         { title: 'WordPress specialudvikling', href: '/wordpress/maatwerk' },
         { title: 'WordPress tema', href: '/wordpress/thema' },
         { title: 'WordPress marketing', href: '/wordpress/marketing' },
@@ -182,7 +182,7 @@ const copy = {
       title: { prefix: 'WordPress', highlight: 'Developpement' },
       intro: 'Du site aux plugins sur mesure - des solutions WordPress completes.',
       services: [
-        { title: 'Site WordPress', href: '/wordpress/website-laten-maken' },
+        { title: 'Site WordPress', href: '/website-laten-maken' },
         { title: 'Developpement WordPress sur mesure', href: '/wordpress/maatwerk' },
         { title: 'Theme WordPress', href: '/wordpress/thema' },
         { title: 'Marketing WordPress', href: '/wordpress/marketing' },
@@ -214,7 +214,7 @@ const copy = {
       title: { prefix: 'WordPress', highlight: 'Sviluppo' },
       intro: 'Dal sito ai plugin su misura - soluzioni WordPress complete.',
       services: [
-        { title: 'Sito WordPress', href: '/wordpress/website-laten-maken' },
+        { title: 'Sito WordPress', href: '/website-laten-maken' },
         { title: 'Sviluppo WordPress su misura', href: '/wordpress/maatwerk' },
         { title: 'Tema WordPress', href: '/wordpress/thema' },
         { title: 'Marketing WordPress', href: '/wordpress/marketing' },
