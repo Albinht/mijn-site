@@ -80,6 +80,7 @@ export function isLocaleExcludedPath(pathname) {
   if (nonLocalizedPrefixes.some((prefix) => pathname.startsWith(prefix))) return true;
   if (pathname.startsWith('/marketing/')) return true;
   if (pathname.startsWith('/marketing-')) return true;
+  if (pathname === '/website-laten-maken-barneveld') return true;
   if (pathname.startsWith('/services/') && pathname.endsWith('-barneveld')) return true;
   return false;
 }

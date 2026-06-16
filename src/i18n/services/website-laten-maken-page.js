@@ -265,6 +265,7 @@ const copy = {
         subtitle: 'Handige vervolgstappen als je meer nodig hebt dan een standaard bedrijfswebsite',
         moreInfoLabel: 'Meer info ->',
         cards: [
+          { href: '/website-laten-maken-barneveld', title: 'Website laten maken Barneveld', description: 'Lokale landingspagina voor bedrijven in Barneveld die een professionele website nodig hebben.' },
           { href: '/wordpress/maatwerk', title: 'WordPress maatwerk', description: 'Voor koppelingen, geavanceerde functionaliteit en processen die niet standaard zijn.' },
           { href: '/wordpress/thema', title: 'WordPress thema', description: 'Een snellere route wanneer een sterke theme-based website voldoende is.' },
           { href: '/services/web-development', title: 'Web development', description: 'Breder development support voor websites, platformen en technische trajecten.' },

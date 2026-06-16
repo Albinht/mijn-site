@@ -58,6 +58,12 @@ export default function sitemap() {
       priority: 0.85,
     },
     {
+      url: `${baseUrl}/website-laten-maken-barneveld`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/services/web-development`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
