@@ -3,12 +3,10 @@ import Link from 'next/link'
 import HeroButton from '../components/HeroButton'
 import LeadForm from '../components/LeadForm'
 import GoogleReviewBar from '../components/GoogleReviewBar'
-import { getServerLocale } from '@/lib/locale'
-import { getHomeCopy } from '@/i18n/home'
+import { getHomeCopy } from '@/content/home'
 
 export async function generateMetadata() {
-  const locale = await getServerLocale()
-  const copy = getHomeCopy(locale)
+  const copy = getHomeCopy()
   return copy.metadata
 }
 
@@ -168,8 +166,7 @@ const ServiceReviewSlider = () => {
 };
 
 export default async function Home() {
-  const locale = await getServerLocale()
-  const copy = getHomeCopy(locale)
+  const copy = getHomeCopy()
 
   return (
     <main className="min-h-screen">

@@ -2,14 +2,11 @@ import Link from 'next/link'
 import ServicePageTemplate from '@/components/templates/ServicePageTemplate'
 import DevelopmentReviewSlider from '@/components/DevelopmentReviewSlider'
 import DevelopmentConsultSection from '@/components/DevelopmentConsultSection'
-import { getServerLocale } from '@/lib/locale'
-import { buildLocalizedPath } from '@/lib/i18n'
-import { getWebsiteLatenMakenCopy } from '@/i18n/services/website-laten-maken-page'
+import { getWebsiteLatenMakenCopy } from '@/content/services/website-laten-maken-page'
 
 export async function generateMetadata() {
-  const locale = await getServerLocale()
-  const copy = getWebsiteLatenMakenCopy(locale)
-  const path = buildLocalizedPath('/website-laten-maken', locale)
+  const copy = getWebsiteLatenMakenCopy()
+  const path = '/website-laten-maken'
 
   return {
     ...copy.metadata,
@@ -24,12 +21,11 @@ export async function generateMetadata() {
 }
 
 export default async function WebsiteLatenMakenPage() {
-  const locale = await getServerLocale()
-  const copy = getWebsiteLatenMakenCopy(locale)
+  const copy = getWebsiteLatenMakenCopy()
 
   const heroData = {
     ...copy.hero,
-    ctaLink: buildLocalizedPath(copy.hero.ctaLink, locale),
+    ctaLink: copy.hero.ctaLink,
   }
 
   return (
@@ -119,7 +115,7 @@ export default async function WebsiteLatenMakenPage() {
                 {copy.sections.pricing.closing}
               </p>
               <Link
-                href={buildLocalizedPath('/contact', locale)}
+                href={'/contact'}
                 className="inline-flex items-center justify-center gap-2 font-semibold text-white text-sm px-6 py-3 rounded-full bg-black border-2 border-black hover:translate-y-0.5 hover:shadow-[0_2px_0_0_#000] shadow-[0_4px_0_0_#000] transition-all duration-200"
               >
                 {copy.hero.ctaText}
@@ -192,7 +188,7 @@ export default async function WebsiteLatenMakenPage() {
             {copy.sections.related.cards.map((card) => (
               <Link
                 key={card.href}
-                href={buildLocalizedPath(card.href, locale)}
+                href={card.href}
                 className="group bg-white border-2 border-black rounded-xl p-6 hover:translate-y-0.5 hover:shadow-[0_4px_0_0_#000] shadow-[0_6px_0_0_#000] transition-all duration-200"
               >
                 <h3 className="text-base font-bold text-gray-900 group-hover:text-[#1795FF] transition-colors mb-2">

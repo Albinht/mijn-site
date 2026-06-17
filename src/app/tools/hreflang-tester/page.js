@@ -3,15 +3,13 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { GlobeAltIcon, CheckCircleIcon, XCircleIcon } from '@heroicons/react/24/outline';
-import useLocale from '@/hooks/useLocale';
-import { getHreflangTesterCopy } from '@/i18n/tools/hreflang-tester';
+import { getHreflangTesterCopy } from '@/content/tools/hreflang-tester';
 
 export default function HreflangTester() {
   const [url, setUrl] = useState('');
   const [results, setResults] = useState(null);
   const [isChecking, setIsChecking] = useState(false);
-  const { locale } = useLocale();
-  const copy = getHreflangTesterCopy(locale);
+  const copy = getHreflangTesterCopy();
 
   const handleCheck = async () => {
     setIsChecking(true);

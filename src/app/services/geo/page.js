@@ -1,23 +1,19 @@
 import ServicePageTemplate from '@/components/templates/ServicePageTemplate'
 import SEOReviewSlider from '@/components/SEOReviewSlider'
 import SEOConsultSection from '@/components/SEOConsultSection'
-import { getServerLocale } from '@/lib/locale'
-import { buildLocalizedPath } from '@/lib/i18n'
-import { getGEOPageCopy } from '@/i18n/services/geo-page'
+import { getGEOPageCopy } from '@/content/services/geo-page'
 
 export async function generateMetadata() {
-  const locale = await getServerLocale()
-  const copy = getGEOPageCopy(locale)
+  const copy = getGEOPageCopy()
   return copy.metadata
 }
 
 export default async function GEOPage() {
-  const locale = await getServerLocale()
-  const copy = getGEOPageCopy(locale)
+  const copy = getGEOPageCopy()
 
   const heroData = {
     ...copy.hero,
-    ctaLink: buildLocalizedPath(copy.hero.ctaLink, locale),
+    ctaLink: copy.hero.ctaLink,
   }
 
   const whyNiblahIcons = ['🧪', '🎯', '🚀']

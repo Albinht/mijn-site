@@ -3,16 +3,14 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { DocumentTextIcon, CheckCircleIcon, XCircleIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline';
-import useLocale from '@/hooks/useLocale';
-import { getSitemapCheckerCopy } from '@/i18n/tools/sitemap-checker';
+import { getSitemapCheckerCopy } from '@/content/tools/sitemap-checker';
 
 export default function SitemapChecker() {
   const [sitemapUrl, setSitemapUrl] = useState('');
   const [results, setResults] = useState(null);
   const [isChecking, setIsChecking] = useState(false);
   const [error, setError] = useState('');
-  const { locale } = useLocale();
-  const copy = getSitemapCheckerCopy(locale);
+  const copy = getSitemapCheckerCopy();
 
   const checkSitemap = async () => {
     if (!sitemapUrl.trim()) {

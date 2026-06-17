@@ -2,15 +2,12 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import useLocale from '@/hooks/useLocale'
-import { buildLocalizedPath } from '@/lib/i18n'
-import { getPlatformServicesSectionCopy } from '@/i18n/services/platform-services-section'
+import { getPlatformServicesSectionCopy } from '@/content/services/platform-services-section'
 
 const PlatformServicesSection = () => {
-  const { locale } = useLocale()
-  const copy = getPlatformServicesSectionCopy(locale)
+  const copy = getPlatformServicesSectionCopy()
 
-  const localizePath = (href) => buildLocalizedPath(href, locale)
+  const localizePath = (href) => href
 
   return (
     <section className="py-16 md:py-24 px-6 bg-white">

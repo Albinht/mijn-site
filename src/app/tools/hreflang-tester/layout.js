@@ -1,9 +1,7 @@
-import { getServerLocale } from '@/lib/locale';
-import { getHreflangTesterCopy } from '@/i18n/tools/hreflang-tester';
+import { getHreflangTesterCopy } from '@/content/tools/hreflang-tester';
 
 export async function generateMetadata() {
-  const locale = await getServerLocale();
-  const copy = getHreflangTesterCopy(locale);
+  const copy = getHreflangTesterCopy();
   return copy.metadata;
 }
 

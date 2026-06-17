@@ -1,23 +1,13 @@
 "use client";
 import Link from 'next/link'
 import { useState, useRef, useEffect } from 'react'
-import { useRouter } from 'next/navigation'
-import {
-  buildLocalizedPath,
-  localeCookieName,
-  localeLabels,
-  sourceLocale,
-  supportedLocales,
-} from '@/lib/i18n'
-import useLocale from '@/hooks/useLocale'
-import { getHeaderCopy } from '@/i18n/header'
+import { getHeaderCopy } from '@/content/header'
 
 export default function HeaderNew() {
   const [activeDropdown, setActiveDropdown] = useState(null)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [mobileSubMenu, setMobileSubMenu] = useState(null)
   const dropdownTimeoutRef = useRef(null)
-  const router = useRouter()
 
   // Close mobile menu when clicking outside
   useEffect(() => {
@@ -46,35 +36,7 @@ export default function HeaderNew() {
     setMobileSubMenu(mobileSubMenu === menu ? null : menu)
   }
 
-  const { locale: currentLocale, basePath, isExcluded } = useLocale()
-  const copy = getHeaderCopy(currentLocale)
-
-  const handleLocaleChange = (event) => {
-    const nextLocale = event.target.value
-    const targetPath = isExcluded
-      ? (nextLocale === sourceLocale ? basePath : buildLocalizedPath('/', nextLocale))
-      : buildLocalizedPath(basePath, nextLocale)
-
-    document.cookie = `${localeCookieName}=${nextLocale}; path=/; max-age=31536000; samesite=lax`
-    router.push(targetPath)
-  }
-
-  const renderLocaleSelector = (className = '') => (
-    <div className={`flex items-center ${className}`} data-i18n-ignore="true" translate="no">
-      <select
-        value={currentLocale}
-        onChange={handleLocaleChange}
-        className="text-xs font-semibold uppercase tracking-wide bg-white border border-gray-200 rounded-full px-3 py-2 text-gray-700 hover:border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1795FF]/40"
-        aria-label={copy.labels.selectLanguage}
-      >
-        {supportedLocales.map((locale) => (
-          <option key={locale} value={locale}>
-            {localeLabels[locale] || locale.toUpperCase()}
-          </option>
-        ))}
-      </select>
-    </div>
-  )
+  const copy = getHeaderCopy()
 
   return (
     <>
@@ -915,8 +877,6 @@ export default function HeaderNew() {
                 <a href="tel:+31648728828" className="hover:text-gray-900">+31 6 48728828</a>
               </div>
 
-              {renderLocaleSelector()}
-
               {/* CTA Button - Blauwe Styling met Push Effect */}
               <Link 
                 href="/contact"
@@ -980,10 +940,6 @@ export default function HeaderNew() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
-              </div>
-
-              <div className="mb-6">
-                {renderLocaleSelector('justify-start')}
               </div>
 
               {/* Mobile Nav Items */}

@@ -1,16 +1,13 @@
 import ContactForm from '../../components/ContactForm'
-import { getServerLocale } from '@/lib/locale'
-import { getContactPageCopy } from '@/i18n/contact-page'
+import { getContactPageCopy } from '@/content/contact-page'
 
 export async function generateMetadata() {
-  const locale = await getServerLocale()
-  const copy = getContactPageCopy(locale)
+  const copy = getContactPageCopy()
   return copy.metadata
 }
 
 export default async function ContactPage() {
-  const locale = await getServerLocale()
-  const copy = getContactPageCopy(locale)
+  const copy = getContactPageCopy()
 
   return (
     <main className="min-h-screen">

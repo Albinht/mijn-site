@@ -1,8 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import useLocale from '@/hooks/useLocale'
-import { getSEOBenefitsSliderCopy } from '@/i18n/services/seo-benefits-slider'
+import { getSEOBenefitsSliderCopy } from '@/content/services/seo-benefits-slider'
 
 const SEOBenefitsSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -10,9 +9,7 @@ const SEOBenefitsSlider = () => {
   const [isDragging, setIsDragging] = useState(false)
   const [startX, setStartX] = useState(0)
   const [scrollLeft, setScrollLeft] = useState(0)
-
-  const { locale } = useLocale()
-  const copy = getSEOBenefitsSliderCopy(locale)
+  const copy = getSEOBenefitsSliderCopy()
   const benefits = copy.items
 
   const nextSlide = () => {

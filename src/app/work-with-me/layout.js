@@ -1,9 +1,7 @@
-import { getServerLocale } from '@/lib/locale'
-import { getWorkWithMeCopy } from '@/i18n/work-with-me'
+import { getWorkWithMeCopy } from '@/content/work-with-me'
 
 export async function generateMetadata() {
-  const locale = await getServerLocale()
-  const copy = getWorkWithMeCopy(locale)
+  const copy = getWorkWithMeCopy()
   return copy.metadata
 }
 

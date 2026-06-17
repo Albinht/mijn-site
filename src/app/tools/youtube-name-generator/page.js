@@ -3,13 +3,10 @@
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import { SparklesIcon, VideoCameraIcon, ClipboardIcon, CheckIcon } from '@heroicons/react/24/outline';
-import useLocale from '@/hooks/useLocale';
-import { buildLocalizedPath } from '@/lib/i18n';
-import { getYouTubeNameGeneratorCopy } from '@/i18n/tools/youtube-name-generator';
+import { getYouTubeNameGeneratorCopy } from '@/content/tools/youtube-name-generator';
 
 export default function YouTubeNameGenerator() {
-  const { locale } = useLocale();
-  const copy = useMemo(() => getYouTubeNameGeneratorCopy(locale), [locale]);
+  const copy = useMemo(() => getYouTubeNameGeneratorCopy(), []);
 
   const [topic, setTopic] = useState('');
   const [results, setResults] = useState([]);
@@ -83,7 +80,7 @@ export default function YouTubeNameGenerator() {
     return copy.results.availability.unknown;
   };
 
-  const contactHref = buildLocalizedPath('/work-with-me', locale);
+  const contactHref = '/work-with-me';
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-rose-50 py-12 px-4">

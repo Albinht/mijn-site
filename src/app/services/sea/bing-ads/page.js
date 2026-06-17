@@ -1,23 +1,19 @@
 import ServicePageTemplate from '@/components/templates/ServicePageTemplate'
 import SEOReviewSlider from '@/components/SEOReviewSlider'
 import SEOConsultSection from '@/components/SEOConsultSection'
-import { getServerLocale } from '@/lib/locale'
-import { buildLocalizedPath } from '@/lib/i18n'
-import { getSEABingAdsPageCopy } from '@/i18n/services/sea-bing-ads-page'
+import { getSEABingAdsPageCopy } from '@/content/services/sea-bing-ads-page'
 
 export async function generateMetadata() {
-  const locale = await getServerLocale()
-  const copy = getSEABingAdsPageCopy(locale)
+  const copy = getSEABingAdsPageCopy()
   return copy.metadata
 }
 
 export default async function BingAdsPage() {
-  const locale = await getServerLocale()
-  const copy = getSEABingAdsPageCopy(locale)
+  const copy = getSEABingAdsPageCopy()
 
   const heroData = {
     ...copy.hero,
-    ctaLink: buildLocalizedPath(copy.hero.ctaLink, locale),
+    ctaLink: copy.hero.ctaLink,
   }
 
   const accentBackgrounds = ['bg-[#1795FF] text-white', 'bg-[#FFE500] text-black']

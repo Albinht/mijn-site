@@ -1,16 +1,13 @@
 import Button from '../../../components/Button'
-import { getServerLocale } from '@/lib/locale'
-import { getEmailMarketingCopy } from '@/i18n/services/email-marketing-page'
+import { getEmailMarketingCopy } from '@/content/services/email-marketing-page'
 
 export async function generateMetadata() {
-  const locale = await getServerLocale()
-  const copy = getEmailMarketingCopy(locale)
+  const copy = getEmailMarketingCopy()
   return copy.metadata
 }
 
 export default async function EmailMarketing() {
-  const locale = await getServerLocale()
-  const copy = getEmailMarketingCopy(locale)
+  const copy = getEmailMarketingCopy()
 
   return (
     <main className="min-h-screen bg-white text-gray-900 px-6 py-16">

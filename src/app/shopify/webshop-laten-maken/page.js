@@ -3,23 +3,19 @@ import DevelopmentReviewSlider from '@/components/DevelopmentReviewSlider'
 import DevelopmentConsultSection from '@/components/DevelopmentConsultSection'
 import Image from 'next/image'
 import Link from 'next/link'
-import { getServerLocale } from '@/lib/locale'
-import { buildLocalizedPath } from '@/lib/i18n'
-import { getShopifyWebshopLatenMakenCopy } from '@/i18n/shopify/webshop-laten-maken-page'
+import { getShopifyWebshopLatenMakenCopy } from '@/content/shopify/webshop-laten-maken-page'
 
 export async function generateMetadata() {
-  const locale = await getServerLocale()
-  const copy = getShopifyWebshopLatenMakenCopy(locale)
+  const copy = getShopifyWebshopLatenMakenCopy()
   return copy.metadata
 }
 
 export default async function ShopifyWebshopPage() {
-  const locale = await getServerLocale()
-  const copy = getShopifyWebshopLatenMakenCopy(locale)
+  const copy = getShopifyWebshopLatenMakenCopy()
 
   const heroData = {
     ...copy.hero,
-    ctaLink: buildLocalizedPath(copy.hero.ctaLink, locale),
+    ctaLink: copy.hero.ctaLink,
   }
 
   const listIconAlt = 'Check'
@@ -123,7 +119,7 @@ export default async function ShopifyWebshopPage() {
             {copy.sections.related.cards.map((card) => (
               <Link
                 key={card.href}
-                href={buildLocalizedPath(card.href, locale)}
+                href={card.href}
                 className="group bg-white border-2 border-black rounded-xl p-6 hover:translate-y-0.5 hover:shadow-[0_4px_0_0_#000] shadow-[0_6px_0_0_#000] transition-all duration-200"
               >
                 <h3 className="text-base font-bold text-gray-900 group-hover:text-[#1795FF] transition-colors mb-2">

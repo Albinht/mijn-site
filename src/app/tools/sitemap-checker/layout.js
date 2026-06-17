@@ -1,9 +1,7 @@
-import { getServerLocale } from '@/lib/locale';
-import { getSitemapCheckerCopy } from '@/i18n/tools/sitemap-checker';
+import { getSitemapCheckerCopy } from '@/content/tools/sitemap-checker';
 
 export async function generateMetadata() {
-  const locale = await getServerLocale();
-  const copy = getSitemapCheckerCopy(locale);
+  const copy = getSitemapCheckerCopy();
   return copy.metadata;
 }
 

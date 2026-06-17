@@ -2,12 +2,10 @@
 
 import { useState } from 'react'
 import Button from './Button'
-import useLocale from '@/hooks/useLocale'
-import { getContactFormCopy } from '@/i18n/contact-form'
+import { getContactFormCopy } from '@/content/contact-form'
 
 export default function ContactForm() {
-  const { locale } = useLocale()
-  const copy = getContactFormCopy(locale)
+  const copy = getContactFormCopy()
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',

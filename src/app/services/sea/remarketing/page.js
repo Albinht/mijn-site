@@ -1,23 +1,19 @@
 import ServicePageTemplate from '@/components/templates/ServicePageTemplate'
 import SEOReviewSlider from '@/components/SEOReviewSlider'
 import SEOConsultSection from '@/components/SEOConsultSection'
-import { getServerLocale } from '@/lib/locale'
-import { buildLocalizedPath } from '@/lib/i18n'
-import { getSEARemarketingPageCopy } from '@/i18n/services/sea-remarketing-page'
+import { getSEARemarketingPageCopy } from '@/content/services/sea-remarketing-page'
 
 export async function generateMetadata() {
-  const locale = await getServerLocale()
-  const copy = getSEARemarketingPageCopy(locale)
+  const copy = getSEARemarketingPageCopy()
   return copy.metadata
 }
 
 export default async function RemarketingPage() {
-  const locale = await getServerLocale()
-  const copy = getSEARemarketingPageCopy(locale)
+  const copy = getSEARemarketingPageCopy()
 
   const heroData = {
     ...copy.hero,
-    ctaLink: buildLocalizedPath(copy.hero.ctaLink, locale),
+    ctaLink: copy.hero.ctaLink,
   }
 
   const expectationIcons = ['💰', '🎯', '🚀']

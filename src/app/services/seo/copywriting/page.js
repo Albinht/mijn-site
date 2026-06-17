@@ -2,23 +2,19 @@ import ServicePageTemplate from '../../../../components/templates/ServicePageTem
 import SEOReviewSlider from '../../../../components/SEOReviewSlider'
 import SEOConsultSection from '../../../../components/SEOConsultSection'
 import ProcessSlider from '../../../../components/ProcessSlider'
-import { getServerLocale } from '@/lib/locale'
-import { buildLocalizedPath } from '@/lib/i18n'
-import { getSEOCopywritingPageCopy } from '@/i18n/services/seo-copywriting-page'
+import { getSEOCopywritingPageCopy } from '@/content/services/seo-copywriting-page'
 
 export async function generateMetadata() {
-  const locale = await getServerLocale()
-  const copy = getSEOCopywritingPageCopy(locale)
+  const copy = getSEOCopywritingPageCopy()
   return copy.metadata
 }
 
 export default async function CopywritingPage() {
-  const locale = await getServerLocale()
-  const copy = getSEOCopywritingPageCopy(locale)
+  const copy = getSEOCopywritingPageCopy()
 
   const heroData = {
     ...copy.hero,
-    ctaLink: buildLocalizedPath(copy.hero.ctaLink, locale),
+    ctaLink: copy.hero.ctaLink,
   }
 
   const niblahIcons = ['💹', '🎯', '🚀']
@@ -272,7 +268,7 @@ export default async function CopywritingPage() {
 
           <div className="mt-8">
             <a
-              href={buildLocalizedPath(copy.seoWriting.cta.link, locale)}
+              href={copy.seoWriting.cta.link}
               className="inline-flex items-center justify-center gap-2 font-semibold text-white text-base px-8 py-4 rounded-full bg-[#1795FF] hover:bg-[#0f7dd4] transition-all duration-200 border-2 border-black hover:translate-y-0.5 hover:shadow-[0_2px_0_0_#000] shadow-[0_4px_0_0_#000]"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -3,23 +3,19 @@
 	import DevelopmentConsultSection from '../../../components/DevelopmentConsultSection'
 	import Link from 'next/link'
 	import Image from 'next/image'
-	import { getServerLocale } from '@/lib/locale'
-	import { buildLocalizedPath } from '@/lib/i18n'
-	import { getWordPressKoppelingenCopy } from '@/i18n/wordpress/koppelingen-page'
+	import { getWordPressKoppelingenCopy } from '@/content/wordpress/koppelingen-page'
 
 	export async function generateMetadata() {
-	  const locale = await getServerLocale()
-	  const copy = getWordPressKoppelingenCopy(locale)
+	  const copy = getWordPressKoppelingenCopy()
 	  return copy.metadata
 	}
 
 	export default async function WordPressKoppelingenPage() {
-	  const locale = await getServerLocale()
-	  const copy = getWordPressKoppelingenCopy(locale)
+	  const copy = getWordPressKoppelingenCopy()
 
 	  const heroData = {
 	    ...copy.hero,
-	    ctaLink: buildLocalizedPath(copy.hero.ctaLink, locale),
+	    ctaLink: copy.hero.ctaLink,
 	  }
 
   return (
@@ -132,7 +128,7 @@
                   ))}
                 </div>
                 <Link
-                  href={buildLocalizedPath(card.ctaLink, locale)}
+                  href={card.ctaLink}
                   className="inline-flex items-center justify-center gap-2 font-semibold text-[#1795FF] hover:text-[#1795FF]/80 transition-colors"
                 >
                   {card.ctaText} <span>→</span>
@@ -158,7 +154,7 @@
             {copy.sections.efficiency.paragraphs[1]}
           </p>
           <Link
-            href={buildLocalizedPath(copy.sections.efficiency.buttonLink, locale)}
+            href={copy.sections.efficiency.buttonLink}
             className="inline-flex items-center justify-center gap-2 font-semibold text-white bg-[#1795FF] text-lg px-8 py-4 rounded-full transition-all duration-200 border-2 border-black hover:translate-y-0.5 hover:shadow-[0_3px_0_0_#000] shadow-[0_5px_0_0_#000]"
           >
             {copy.sections.efficiency.buttonText} <span>→</span>
@@ -197,7 +193,7 @@
               {copy.sections.custom.question}
             </p>
             <Link
-              href={buildLocalizedPath(copy.sections.custom.linkLink, locale)}
+              href={copy.sections.custom.linkLink}
               className="inline-flex items-center justify-center gap-2 font-semibold text-[#1795FF] hover:text-[#1795FF]/80 transition-colors text-lg"
             >
               {copy.sections.custom.linkText} <span>→</span>
@@ -224,7 +220,7 @@
             {copy.sections.related.cards.map((card) => (
               <Link
                 key={card.href}
-                href={buildLocalizedPath(card.href, locale)}
+                href={card.href}
                 className="group bg-white border-2 border-black rounded-xl p-6 hover:translate-y-0.5 hover:shadow-[0_4px_0_0_#000] shadow-[0_6px_0_0_#000] transition-all duration-200"
               >
                 <h3 className="text-base font-bold text-gray-900 group-hover:text-[#1795FF] transition-colors mb-2">{card.title}</h3>

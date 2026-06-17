@@ -1,23 +1,19 @@
 import ServicePageTemplate from '@/components/templates/ServicePageTemplate'
 import SEOReviewSlider from '@/components/SEOReviewSlider'
 import SEOConsultSection from '@/components/SEOConsultSection'
-import { getServerLocale } from '@/lib/locale'
-import { buildLocalizedPath } from '@/lib/i18n'
-import { getSEAGoogleShoppingPageCopy } from '@/i18n/services/sea-google-shopping-page'
+import { getSEAGoogleShoppingPageCopy } from '@/content/services/sea-google-shopping-page'
 
 export async function generateMetadata() {
-  const locale = await getServerLocale()
-  const copy = getSEAGoogleShoppingPageCopy(locale)
+  const copy = getSEAGoogleShoppingPageCopy()
   return copy.metadata
 }
 
 export default async function GoogleShoppingPage() {
-  const locale = await getServerLocale()
-  const copy = getSEAGoogleShoppingPageCopy(locale)
+  const copy = getSEAGoogleShoppingPageCopy()
 
   const heroData = {
     ...copy.hero,
-    ctaLink: buildLocalizedPath(copy.hero.ctaLink, locale),
+    ctaLink: copy.hero.ctaLink,
   }
 
   const accentBackgrounds = ['bg-[#1795FF] text-white', 'bg-[#FFE500] text-black']

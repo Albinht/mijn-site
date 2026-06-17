@@ -1,12 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
-import { getServerLocale } from '@/lib/locale';
-import { getFooterCopy } from '@/i18n/footer';
+import { getFooterCopy } from '@/content/footer';
 import FooterVideoTestimonials from './FooterVideoTestimonials';
 
 const Footer = async () => {
-  const locale = await getServerLocale();
-  const copy = getFooterCopy(locale);
+  const copy = getFooterCopy();
 
   return (
     <footer className="bg-gray-50 px-6 pt-12 pb-6">

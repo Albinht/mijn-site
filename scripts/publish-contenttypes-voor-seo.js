@@ -373,57 +373,6 @@ const article = {
   status: 'PUBLISHED',
   title: 'Contenttypes voor SEO: welke werken wanneer (en hoe je ze laat converteren)',
   content: nlContent,
-  translations: {
-    en: {
-      title: 'Content types for SEO: what to use and when',
-      topic: 'Content',
-      metaTitle: 'Content types for SEO | What to use when',
-      metaDescription: 'An intent-first guide to SEO content types: pages, guides, comparisons, case studies, tools, video, and how to connect them with internal links.',
-      content: enContent,
-    },
-    nl: {
-      title: 'Contenttypes voor SEO: welke werken wanneer (en hoe je ze laat converteren)',
-      topic: 'Content',
-      metaTitle: 'Contenttypes voor SEO | Welke werken wanneer',
-      metaDescription: 'Welke contenttypes werken het best voor SEO? Leer hoe je per intent het juiste format kiest en alles aan elkaar knoopt met interne links.',
-      content: nlContent,
-    },
-    de: {
-      title: 'Content Typen fuer SEO: was funktioniert wann',
-      topic: 'Content',
-      metaTitle: 'Content Typen fuer SEO | Intent Modell',
-      metaDescription: 'Intent-first Guide: Welche Content Typen fuer SEO funktionieren und wie interne Verlinkung den Unterschied macht.',
-      content: deContent,
-    },
-    sv: {
-      title: 'Contenttyper for SEO: vad fungerar nar',
-      topic: 'Content',
-      metaTitle: 'Contenttyper for SEO | Intent guide',
-      metaDescription: 'Intent-first guide till contenttyper for SEO: guider, pages, jamforelser, cases, tools och intern lankning.',
-      content: svContent,
-    },
-    da: {
-      title: 'Contenttyper til SEO: hvad virker hvornar',
-      topic: 'Content',
-      metaTitle: 'Contenttyper til SEO | Intent guide',
-      metaDescription: 'Intent-first guide til contenttyper for SEO: guides, pages, sammenligninger, cases, tools og intern linking.',
-      content: daContent,
-    },
-    fr: {
-      title: 'Types de contenu pour le SEO: quoi utiliser et quand',
-      topic: 'Content',
-      metaTitle: 'Types de contenu SEO | Guide intent',
-      metaDescription: 'Guide intent-first sur les types de contenu SEO: pages, guides, comparatifs, cas clients, outils, video et liens internes.',
-      content: frContent,
-    },
-    it: {
-      title: 'Tipi di contenuto per SEO: cosa usare e quando',
-      topic: 'Content',
-      metaTitle: 'Tipi di contenuto SEO | Guida intent',
-      metaDescription: 'Guida intent-first ai tipi di contenuto SEO: pagine, guide, confronti, case study, tool, video e internal linking.',
-      content: itContent,
-    },
-  },
 }
 
 async function publishArticle() {
@@ -436,7 +385,6 @@ async function publishArticle() {
         title: article.title,
         topic: article.topic,
         content: article.content,
-        translations: article.translations,
         status: article.status,
         publishedAt: new Date(),
       },
@@ -446,7 +394,6 @@ async function publishArticle() {
         content: article.content,
         topic: article.topic,
         status: article.status,
-        translations: article.translations,
         source: 'manual',
         publishedAt: new Date(),
       },

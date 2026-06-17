@@ -1,12 +1,10 @@
 'use client'
 
 import Link from 'next/link'
-import useLocale from '@/hooks/useLocale'
-import { getSEOServicesSectionCopy } from '@/i18n/services/seo-services-section'
+import { getSEOServicesSectionCopy } from '@/content/services/seo-services-section'
 
 const SEOServicesSection = () => {
-  const { locale } = useLocale()
-  const copy = getSEOServicesSectionCopy(locale)
+  const copy = getSEOServicesSectionCopy()
   const seoServices = copy.services
 
   return (

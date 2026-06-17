@@ -3,23 +3,19 @@
 	import DevelopmentConsultSection from '../../../components/DevelopmentConsultSection'
 	import Link from 'next/link'
 	import Image from 'next/image'
-	import { getServerLocale } from '@/lib/locale'
-	import { buildLocalizedPath } from '@/lib/i18n'
-	import { getWordPressDeveloperCopy } from '@/i18n/wordpress/developer-page'
+	import { getWordPressDeveloperCopy } from '@/content/wordpress/developer-page'
 
 	export async function generateMetadata() {
-	  const locale = await getServerLocale()
-	  const copy = getWordPressDeveloperCopy(locale)
+	  const copy = getWordPressDeveloperCopy()
 	  return copy.metadata
 	}
 
 	export default async function WordPressDeveloperPage() {
-	  const locale = await getServerLocale()
-	  const copy = getWordPressDeveloperCopy(locale)
+	  const copy = getWordPressDeveloperCopy()
 
 	  const heroData = {
 	    ...copy.hero,
-	    ctaLink: buildLocalizedPath(copy.hero.ctaLink, locale),
+	    ctaLink: copy.hero.ctaLink,
 	  }
 
   return (
@@ -199,7 +195,7 @@
           </div>
 
           <Link
-            href={buildLocalizedPath(copy.sections.flexibility.buttonLink, locale)}
+            href={copy.sections.flexibility.buttonLink}
             className="inline-flex items-center justify-center gap-2 font-semibold text-white bg-[#1795FF] text-lg px-8 py-4 rounded-full transition-all duration-200 border-2 border-black hover:translate-y-0.5 hover:shadow-[0_3px_0_0_#000] shadow-[0_5px_0_0_#000]"
           >
             {copy.sections.flexibility.buttonText} <span>→</span>
@@ -225,7 +221,7 @@
             {copy.sections.related.cards.map((card) => (
               <Link
                 key={card.href}
-                href={buildLocalizedPath(card.href, locale)}
+                href={card.href}
                 className="group bg-white border-2 border-black rounded-xl p-6 hover:translate-y-0.5 hover:shadow-[0_4px_0_0_#000] shadow-[0_6px_0_0_#000] transition-all duration-200"
               >
                 <h3 className="text-base font-bold text-gray-900 group-hover:text-[#1795FF] transition-colors mb-2">{card.title}</h3>

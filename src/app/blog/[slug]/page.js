@@ -1,29 +1,12 @@
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
-import { headers } from 'next/headers'
 import prisma from '@/lib/prisma'
 import avatarImage from '../../../assets/avatar.png'
 import TableOfContents from './TableOfContents'
 import ArticleContent from './ArticleContent'
 
-const supportedLocales = ['en', 'de', 'sv', 'da', 'fr', 'it', 'nl']
-const defaultLocale = 'en'
-const localeCookieName = 'niblah-locale'
-
 export const dynamic = 'force-dynamic'
-
-const localeAliases = {
-  'en-us': 'en',
-  'en_us': 'en',
-  'en-gb': 'en',
-  'de-de': 'de',
-  'sv-se': 'sv',
-  'da-dk': 'da',
-  'fr-fr': 'fr',
-  'it-it': 'it',
-  'nl-nl': 'nl',
-}
 
 // Helper function to calculate reading time
 function calculateReadingTime(content) {
@@ -33,146 +16,33 @@ function calculateReadingTime(content) {
   return minutes
 }
 
-function normalizeLocale(value) {
-  if (!value) return null
-  const normalized = value.toLowerCase().replace('_', '-')
-  if (supportedLocales.includes(normalized)) return normalized
-  return localeAliases[normalized] || normalized.split('-')[0]
+function dateLocale() {
+  return 'nl-NL'
 }
 
-function parseAcceptLanguage(value) {
-  if (!value) return []
-  return value
-    .split(',')
-    .map((entry) => {
-      const [lang, qValue] = entry.trim().split(';q=')
-      return { lang: normalizeLocale(lang), q: qValue ? Number(qValue) : 1 }
-    })
-    .filter((item) => item.lang)
-    .sort((a, b) => b.q - a.q)
-    .map((item) => item.lang)
-}
-
-function pickPreferredLocale({ cookieLocale, acceptLanguage }) {
-  if (cookieLocale && supportedLocales.includes(cookieLocale)) return cookieLocale
-  const accepted = parseAcceptLanguage(acceptLanguage)
-  const match = accepted.find((locale) => supportedLocales.includes(locale))
-  return match || defaultLocale
-}
-
-function getLocaleFromCookies(cookieHeader) {
-  if (!cookieHeader) return null
-  const cookies = Object.fromEntries(cookieHeader.split('; ').map((cookie) => cookie.split('=')))
-  return normalizeLocale(cookies[localeCookieName])
-}
-
-function localeToDateLocale(locale) {
-  const normalized = normalizeLocale(locale) || defaultLocale
-  if (normalized === 'en') return 'en-US'
-  if (normalized === 'nl') return 'nl-NL'
-  if (normalized === 'de') return 'de-DE'
-  if (normalized === 'sv') return 'sv-SE'
-  if (normalized === 'da') return 'da-DK'
-  if (normalized === 'fr') return 'fr-FR'
-  if (normalized === 'it') return 'it-IT'
-  return normalized
-}
-
-async function getRequestLocale() {
-  const headerList = await headers()
-  return pickPreferredLocale({
-    cookieLocale: getLocaleFromCookies(headerList.get('cookie')),
-    acceptLanguage: headerList.get('accept-language'),
-  })
-}
-
-function pickTranslatedString(fallback, value) {
-  if (typeof value !== 'string') return fallback
-  const trimmed = value.trim()
-  return trimmed.length > 0 ? value : fallback
-}
-
-function getLocalizedArticle(article, locale) {
-  const normalized = normalizeLocale(locale) || defaultLocale
-  const translations = article?.translations && typeof article.translations === 'object' ? article.translations : null
-  const entry = translations?.[normalized] && typeof translations[normalized] === 'object' ? translations[normalized] : null
-
+function getArticleContent(article) {
   return {
-    title: pickTranslatedString(article.title, entry?.title),
-    topic: pickTranslatedString(article.topic, entry?.topic),
-    content: pickTranslatedString(article.content, entry?.content),
-    metaTitle: pickTranslatedString(null, entry?.metaTitle),
-    metaDescription: pickTranslatedString(null, entry?.metaDescription),
+    title: article.title,
+    topic: article.topic,
+    content: article.content,
+    metaTitle: article.metaTitle,
+    metaDescription: article.metaDescription,
   }
 }
 
-function getBlogArticleUiCopy(locale) {
-  const normalized = normalizeLocale(locale) || defaultLocale
-  const copy = {
-    en: {
-      backToBlog: 'Back to blog',
-      by: 'By',
-      readTime: 'min read',
-      tocTitle: 'Contents',
-      readMore: 'Read more',
-      keepLearning: 'Keep learning',
-    },
-    nl: {
-      backToBlog: 'Terug naar blog',
-      by: 'Door',
-      readTime: 'min leestijd',
-      tocTitle: 'Inhoud',
-      readMore: 'Lees verder',
-      keepLearning: 'Blijf leren',
-    },
-    de: {
-      backToBlog: 'Zurück zum Blog',
-      by: 'Von',
-      readTime: 'Min. Lesezeit',
-      tocTitle: 'Inhalt',
-      readMore: 'Weiterlesen',
-      keepLearning: 'Weiter lernen',
-    },
-    sv: {
-      backToBlog: 'Tillbaka till bloggen',
-      by: 'Av',
-      readTime: 'min lästid',
-      tocTitle: 'Innehåll',
-      readMore: 'Läs vidare',
-      keepLearning: 'Fortsätt lära',
-    },
-    da: {
-      backToBlog: 'Tilbage til blog',
-      by: 'Af',
-      readTime: 'min læsetid',
-      tocTitle: 'Indhold',
-      readMore: 'Læs videre',
-      keepLearning: 'Bliv ved med at lære',
-    },
-    fr: {
-      backToBlog: 'Retour au blog',
-      by: 'Par',
-      readTime: 'min de lecture',
-      tocTitle: 'Sommaire',
-      readMore: 'Lire la suite',
-      keepLearning: 'Continuer à apprendre',
-    },
-    it: {
-      backToBlog: 'Torna al blog',
-      by: 'Di',
-      readTime: 'min di lettura',
-      tocTitle: 'Indice',
-      readMore: 'Leggi anche',
-      keepLearning: 'Continua a imparare',
-    },
+function getBlogArticleUiCopy() {
+  return {
+    backToBlog: 'Terug naar blog',
+    by: 'Door',
+    readTime: 'min leestijd',
+    tocTitle: 'Inhoud',
+    readMore: 'Lees verder',
+    keepLearning: 'Blijf leren',
   }
-
-  return copy[normalized] || copy.en
 }
 
 export async function generateMetadata({ params }) {
   const { slug } = params
-  const locale = await getRequestLocale()
   
   try {
     const article = await prisma.article.findUnique({
@@ -186,14 +56,14 @@ export async function generateMetadata({ params }) {
       }
     }
     
-    const localized = getLocalizedArticle(article, locale)
-    const excerpt = localized.metaDescription || localized.content?.substring(0, 160) || ''
+    const articleContent = getArticleContent(article)
+    const excerpt = articleContent.metaDescription || articleContent.content?.substring(0, 160) || ''
     
     return {
-      title: `${localized.metaTitle || localized.title} | Niblah Blog`,
+      title: `${articleContent.metaTitle || articleContent.title} | Niblah Blog`,
       description: excerpt,
       openGraph: {
-        title: localized.metaTitle || localized.title,
+        title: articleContent.metaTitle || articleContent.title,
         description: excerpt,
         type: 'article',
         publishedTime: article.publishedAt || article.createdAt,
@@ -210,8 +80,7 @@ export async function generateMetadata({ params }) {
 
 export default async function BlogArticlePage({ params }) {
   const { slug } = params
-  const locale = await getRequestLocale()
-  const ui = getBlogArticleUiCopy(locale)
+  const ui = getBlogArticleUiCopy()
   
   let article, recentArticles
   try {
@@ -241,8 +110,7 @@ export default async function BlogArticlePage({ params }) {
         slug: true,
         topic: true,
         content: true,
-        createdAt: true,
-        translations: true
+        createdAt: true
       }
     })
     
@@ -250,22 +118,22 @@ export default async function BlogArticlePage({ params }) {
       where: { id: article.id },
       data: { views: { increment: 1 } }
     }).catch(err => console.error('Error updating views:', err))
-    
+
   } catch (error) {
     console.error('Error fetching article:', error)
     return notFound()
   }
-  
-  const localizedArticle = getLocalizedArticle(article, locale)
 
-  const publishDate = new Date(article.createdAt).toLocaleDateString(localeToDateLocale(locale), { 
-    year: 'numeric', 
-    month: 'long', 
-    day: 'numeric' 
+  const articleContent = getArticleContent(article)
+
+  const publishDate = new Date(article.createdAt).toLocaleDateString(dateLocale(), {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
   })
-  
-  const readingTime = calculateReadingTime(localizedArticle.content)
-  
+
+  const readingTime = calculateReadingTime(articleContent.content)
+
   const leesVerderArticles = recentArticles.slice(0, 3)
   const blijfLerenArticles = recentArticles.slice(0, 6)
 
@@ -290,13 +158,13 @@ export default async function BlogArticlePage({ params }) {
           {/* Category Badge */}
           <div className="mb-4">
             <span className="inline-block px-3 py-1 text-xs font-semibold text-white bg-white/20 rounded">
-              {localizedArticle.topic?.toUpperCase() || 'ARTICLE'}
+              {articleContent.topic?.toUpperCase() || 'ARTICLE'}
             </span>
           </div>
           
           {/* Title */}
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight max-w-4xl">
-            {localizedArticle.title}
+            {articleContent.title}
           </h1>
           
           {/* Author & Meta */}
@@ -327,12 +195,12 @@ export default async function BlogArticlePage({ params }) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             {/* Left Column - Table of Contents (20%) */}
             <aside className="lg:col-span-2 hidden lg:block">
-              <TableOfContents content={localizedArticle.content} title={ui.tocTitle} />
+              <TableOfContents content={articleContent.content} title={ui.tocTitle} />
             </aside>
 
             {/* Middle Column - Content (60%) */}
             <article className="lg:col-span-7">
-              <ArticleContent content={localizedArticle.content} />
+              <ArticleContent content={articleContent.content} />
 
               {/* Lees Verder Section */}
               {leesVerderArticles.length > 0 && (
@@ -340,7 +208,7 @@ export default async function BlogArticlePage({ params }) {
                   <h2 className="text-2xl font-bold text-gray-900 mb-8">{ui.readMore}</h2>
                   <div className="space-y-6">
                     {leesVerderArticles.map((relatedArticle) => {
-                      const localizedRelated = getLocalizedArticle(relatedArticle, locale)
+                      const relatedContent = getArticleContent(relatedArticle)
                       return (
                         <Link 
                           key={relatedArticle.id}
@@ -349,10 +217,10 @@ export default async function BlogArticlePage({ params }) {
                         >
                           <div className="border-l-4 border-[#1795FF] pl-4 hover:border-[#0f7dd4] transition-colors">
                             <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#1795FF] mb-2">
-                              {localizedRelated.title}
+                              {relatedContent.title}
                             </h3>
                             <p className="text-sm text-gray-600">
-                              {localizedRelated.content?.substring(0, 150)}...
+                              {relatedContent.content?.substring(0, 150)}...
                             </p>
                           </div>
                         </Link>
@@ -470,14 +338,14 @@ export default async function BlogArticlePage({ params }) {
             <h2 className="text-3xl font-bold text-gray-900 mb-8">{ui.keepLearning}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {blijfLerenArticles.map((relatedArticle) => {
-                const localizedRelated = getLocalizedArticle(relatedArticle, locale)
-                const articleDate = new Date(relatedArticle.createdAt).toLocaleDateString(localeToDateLocale(locale), { 
-                  year: 'numeric', 
-                  month: 'long', 
-                  day: 'numeric' 
+                const relatedContent = getArticleContent(relatedArticle)
+                const articleDate = new Date(relatedArticle.createdAt).toLocaleDateString(dateLocale(), {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric'
                 })
                 return (
-                  <Link 
+                  <Link
                     key={relatedArticle.id}
                     href={`/blog/${relatedArticle.slug}`}
                     className="group bg-white rounded-xl overflow-hidden border border-gray-200 hover:border-[#1795FF] transition-all hover:shadow-lg"
@@ -485,14 +353,14 @@ export default async function BlogArticlePage({ params }) {
                     <div className="p-6">
                       <div className="mb-3">
                         <span className="inline-block px-2 py-1 text-xs font-semibold text-[#1795FF] bg-blue-50 rounded">
-                          {localizedRelated.topic?.toUpperCase() || 'ARTICLE'}
+                          {relatedContent.topic?.toUpperCase() || 'ARTICLE'}
                         </span>
                       </div>
                       <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#1795FF] mb-2 line-clamp-2">
-                        {localizedRelated.title}
+                        {relatedContent.title}
                       </h3>
                       <p className="text-sm text-gray-600 mb-4 line-clamp-2">
-                        {localizedRelated.content?.substring(0, 100)}...
+                        {relatedContent.content?.substring(0, 100)}...
                       </p>
                       <p className="text-xs text-gray-500">{articleDate}</p>
                     </div>

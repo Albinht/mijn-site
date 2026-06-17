@@ -1,12 +1,10 @@
 'use client'
 
 import LeadForm from './LeadForm'
-import useLocale from '@/hooks/useLocale'
-import { getSEOConsultSectionCopy } from '@/i18n/services/seo-consult-section'
+import { getSEOConsultSectionCopy } from '@/content/services/seo-consult-section'
 
 const SEOConsultSection = () => {
-  const { locale } = useLocale()
-  const copy = getSEOConsultSectionCopy(locale)
+  const copy = getSEOConsultSectionCopy()
 
   return (
     <section className="bg-gradient-to-br from-gray-50 to-white py-16 md:py-24 px-6">

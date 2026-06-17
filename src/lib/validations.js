@@ -1,15 +1,5 @@
 import { z } from 'zod';
 
-const translationSchema = z.object({
-  title: z.string().min(1).max(200).optional(),
-  topic: z.string().min(1).max(200).optional(),
-  content: z.string().optional(),
-  metaTitle: z.string().max(200).optional(),
-  metaDescription: z.string().max(160).optional(),
-});
-
-const translationsSchema = z.record(translationSchema).optional();
-
 // Content validation schemas
 export const createContentSchema = z.object({
   title: z.string().min(1).max(200),
@@ -17,7 +7,6 @@ export const createContentSchema = z.object({
   content: z.string(),
   metaTitle: z.string().max(200).optional(),
   metaDescription: z.string().max(160).optional(),
-  translations: translationsSchema,
   type: z.enum(['MARKETING', 'SERVICE', 'TOOL', 'BLUEPRINT', 'LANDING', 'marketing', 'service', 'tool', 'blueprint']),
   status: z.enum(['DRAFT', 'PUBLISHED']).default('DRAFT')
 });
@@ -39,7 +28,6 @@ export const createArticleSchema = z.object({
   topic: z.string().min(1).max(200),
   title: z.string().min(1).max(200).optional(),
   content: z.string().optional(),
-  translations: translationsSchema,
   status: z.enum(['DRAFT', 'PROCESSING', 'PUBLISHED']).default('DRAFT')
 });
 

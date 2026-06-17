@@ -1,23 +1,19 @@
 import ServicePageTemplate from '../../../../components/templates/ServicePageTemplate'
 import SEOReviewSlider from '../../../../components/SEOReviewSlider'
 import SEOConsultSection from '../../../../components/SEOConsultSection'
-import { getServerLocale } from '@/lib/locale'
-import { buildLocalizedPath } from '@/lib/i18n'
-import { getSEOTechnicalPageCopy } from '@/i18n/services/seo-technical-page'
+import { getSEOTechnicalPageCopy } from '@/content/services/seo-technical-page'
 
 export async function generateMetadata() {
-  const locale = await getServerLocale()
-  const copy = getSEOTechnicalPageCopy(locale)
+  const copy = getSEOTechnicalPageCopy()
   return copy.metadata
 }
 
 export default async function TechnicalSEOPage() {
-  const locale = await getServerLocale()
-  const copy = getSEOTechnicalPageCopy(locale)
+  const copy = getSEOTechnicalPageCopy()
 
   const heroData = {
     ...copy.hero,
-    ctaLink: buildLocalizedPath(copy.hero.ctaLink, locale),
+    ctaLink: copy.hero.ctaLink,
   }
 
   const niblahIcons = ['⚙️', '📊', '💻']

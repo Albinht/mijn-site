@@ -1,82 +1,28 @@
 import { notFound } from 'next/navigation';
-import { headers } from 'next/headers';
 import prisma from '@/lib/prisma';
-import { defaultLocale, normalizeLocale } from '@/lib/i18n';
 
 export const dynamic = 'force-dynamic';
 
-async function getRequestLocale() {
-  const headerList = await headers();
-  const localeHeader = headerList.get('x-locale');
-  return normalizeLocale(localeHeader) || defaultLocale;
-}
-
-function pickTranslatedString(fallback, value) {
-  if (typeof value !== 'string') return fallback;
-  const trimmed = value.trim();
-  return trimmed.length > 0 ? value : fallback;
-}
-
-function getLocalizedPage(page, locale) {
-  const normalized = normalizeLocale(locale) || defaultLocale;
-  const translations = page?.translations && typeof page.translations === 'object' ? page.translations : null;
-  const entry = translations?.[normalized] && typeof translations[normalized] === 'object' ? translations[normalized] : null;
-
+function getPageContent(page) {
   return {
-    title: pickTranslatedString(page.title, entry?.title),
-    content: pickTranslatedString(page.content || '', entry?.content),
-    metaTitle: pickTranslatedString(page.metaTitle || page.title, entry?.metaTitle),
-    metaDescription: pickTranslatedString(page.metaDescription || '', entry?.metaDescription),
+    title: page.title,
+    content: page.content || '',
+    metaTitle: page.metaTitle || page.title,
+    metaDescription: page.metaDescription || '',
   };
 }
 
-function getDynamicPageUiCopy(locale) {
-  const normalized = normalizeLocale(locale) || defaultLocale;
-  const copy = {
-    en: {
-      ctaTitle: 'Ready to Get Started?',
-      ctaSubtitle: "Let's discuss how we can help grow your business",
-      ctaButton: 'Work with me',
-    },
-    nl: {
-      ctaTitle: 'Klaar om te starten?',
-      ctaSubtitle: 'Laten we bespreken hoe we jouw bedrijf kunnen laten groeien',
-      ctaButton: 'Samenwerken',
-    },
-    de: {
-      ctaTitle: 'Bereit loszulegen?',
-      ctaSubtitle: 'Lass uns besprechen, wie wir dein Business wachsen lassen',
-      ctaButton: 'Zusammenarbeiten',
-    },
-    sv: {
-      ctaTitle: 'Redo att komma igang?',
-      ctaSubtitle: 'Lat oss prata om hur vi kan hjalpa ditt foretag att vaxa',
-      ctaButton: 'Jobba med mig',
-    },
-    da: {
-      ctaTitle: 'Klar til at komme i gang?',
-      ctaSubtitle: 'Lad os tale om hvordan vi kan hjalpe din forretning med at vokse',
-      ctaButton: 'Arbejd med mig',
-    },
-    fr: {
-      ctaTitle: 'Pret a demarrer?',
-      ctaSubtitle: 'Parlons de la facon dont nous pouvons faire grandir votre activite',
-      ctaButton: 'Travailler avec moi',
-    },
-    it: {
-      ctaTitle: 'Pronto a iniziare?',
-      ctaSubtitle: 'Parliamo di come possiamo far crescere il tuo business',
-      ctaButton: 'Lavora con me',
-    },
+function getDynamicPageUiCopy() {
+  return {
+    ctaTitle: 'Klaar om te starten?',
+    ctaSubtitle: 'Laten we bespreken hoe we jouw bedrijf kunnen laten groeien',
+    ctaButton: 'Samenwerken',
   };
-
-  return copy[normalized] || copy.en;
 }
 
 // Generate metadata for SEO
 export async function generateMetadata({ params }) {
   const { slug } = params;
-  const locale = await getRequestLocale();
   
   try {
     const page = await prisma.page.findUnique({
@@ -90,14 +36,14 @@ export async function generateMetadata({ params }) {
       };
     }
 
-    const localized = getLocalizedPage(page, locale);
+    const content = getPageContent(page);
     
     return {
-      title: localized.metaTitle || localized.title,
-      description: localized.metaDescription || localized.content?.substring(0, 160),
+      title: content.metaTitle || content.title,
+      description: content.metaDescription || content.content?.substring(0, 160),
       openGraph: {
-        title: localized.metaTitle || localized.title,
-        description: localized.metaDescription || localized.content?.substring(0, 160),
+        title: content.metaTitle || content.title,
+        description: content.metaDescription || content.content?.substring(0, 160),
         type: 'website',
       }
     };
@@ -112,8 +58,7 @@ export async function generateMetadata({ params }) {
 
 export default async function DynamicPage({ params }) {
   const { slug } = params;
-  const locale = await getRequestLocale();
-  const ui = getDynamicPageUiCopy(locale);
+  const ui = getDynamicPageUiCopy();
   
   let page;
   try {
@@ -137,8 +82,8 @@ export default async function DynamicPage({ params }) {
     return notFound();
   }
 
-  const localized = getLocalizedPage(page, locale);
-  const contentToRender = localized.content || '';
+  const content = getPageContent(page);
+  const contentToRender = content.content || '';
   
   // Render different layouts based on page type
   const renderContent = () => {
@@ -166,11 +111,11 @@ export default async function DynamicPage({ params }) {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              {localized.title}
+              {content.title}
             </h1>
-            {localized.metaDescription && (
+            {content.metaDescription && (
               <p className="text-xl text-gray-600">
-                {localized.metaDescription}
+                {content.metaDescription}
               </p>
             )}
           </div>

@@ -3,23 +3,19 @@
 	import DevelopmentConsultSection from '../../../components/DevelopmentConsultSection'
 	import Link from 'next/link'
 	import Image from 'next/image'
-	import { getServerLocale } from '@/lib/locale'
-	import { buildLocalizedPath } from '@/lib/i18n'
-	import { getShopifyMaatwerkCopy } from '@/i18n/shopify/maatwerk-page'
+	import { getShopifyMaatwerkCopy } from '@/content/shopify/maatwerk-page'
 
 	export async function generateMetadata() {
-	  const locale = await getServerLocale()
-	  const copy = getShopifyMaatwerkCopy(locale)
+	  const copy = getShopifyMaatwerkCopy()
 	  return copy.metadata
 	}
 
 	export default async function ShopifyMaatwerkPage() {
-	  const locale = await getServerLocale()
-	  const copy = getShopifyMaatwerkCopy(locale)
+	  const copy = getShopifyMaatwerkCopy()
 
 	  const heroData = {
 	    ...copy.hero,
-	    ctaLink: buildLocalizedPath(copy.hero.ctaLink, locale),
+	    ctaLink: copy.hero.ctaLink,
 	  }
 
   return (
@@ -142,7 +138,7 @@
             {copy.sections.related.cards.map((card) => (
               <Link
                 key={card.href}
-                href={buildLocalizedPath(card.href, locale)}
+                href={card.href}
                 className="group bg-white border-2 border-black rounded-xl p-6 hover:translate-y-0.5 hover:shadow-[0_4px_0_0_#000] shadow-[0_6px_0_0_#000] transition-all duration-200"
               >
                 <h3 className="text-base font-bold text-gray-900 group-hover:text-[#1795FF] transition-colors mb-2">{card.title}</h3>

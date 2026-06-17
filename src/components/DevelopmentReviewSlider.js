@@ -1,11 +1,8 @@
 'use client'
-
-import useLocale from '@/hooks/useLocale'
-import { getDevelopmentReviewSliderCopy } from '@/i18n/services/development-review-slider'
+import { getDevelopmentReviewSliderCopy } from '@/content/services/development-review-slider'
 
 const DevelopmentReviewSlider = () => {
-  const { locale } = useLocale()
-  const copy = getDevelopmentReviewSliderCopy(locale)
+  const copy = getDevelopmentReviewSliderCopy()
 
   const developmentReviews = copy.reviews
   const moreDevelopmentReviews = copy.moreReviews

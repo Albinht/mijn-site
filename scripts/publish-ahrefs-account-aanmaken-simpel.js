@@ -354,57 +354,6 @@ const article = {
   status: 'PUBLISHED',
   title: 'Ahrefs account aanmaken: complete setup gids voor SEO groei',
   content: nlContent,
-  translations: {
-    en: {
-      title: 'Creating an Ahrefs account: complete setup guide',
-      topic: 'SEO',
-      metaTitle: 'Creating an Ahrefs account | Complete setup guide',
-      metaDescription: 'Create an Ahrefs account and set it up correctly: plan selection, first project setup, and a workflow that drives SEO growth.',
-      content: enContent,
-    },
-    nl: {
-      title: 'Ahrefs account aanmaken: complete setup gids voor SEO groei',
-      topic: 'SEO',
-      metaTitle: 'Ahrefs account aanmaken | Complete setup gids',
-      metaDescription: 'Ahrefs account aanmaken en direct goed instellen: plan kiezen, eerste project opzetten, metrics prioriteren en je SEO workflow opbouwen.',
-      content: nlContent,
-    },
-    de: {
-      title: 'Ahrefs Konto erstellen: kompletter Setup Guide',
-      topic: 'SEO',
-      metaTitle: 'Ahrefs Konto erstellen | Setup Guide',
-      metaDescription: 'Ahrefs Konto erstellen und richtig einrichten: Plan waehlen, erstes Projekt setzen und ein SEO Workflow mit Fokus auf Wirkung.',
-      content: deContent,
-    },
-    sv: {
-      title: 'Skapa ett Ahrefs konto: komplett setup guide',
-      topic: 'SEO',
-      metaTitle: 'Skapa Ahrefs konto | Setup guide',
-      metaDescription: 'Skapa ett Ahrefs konto och konfigurera det ratt: planval, forsta projekt och ett praktiskt SEO workflow.',
-      content: svContent,
-    },
-    da: {
-      title: 'Opret en Ahrefs konto: komplet setup guide',
-      topic: 'SEO',
-      metaTitle: 'Opret Ahrefs konto | Setup guide',
-      metaDescription: 'Opret en Ahrefs konto og saet den rigtigt op: planvalg, forste projekt og et praktisk SEO workflow.',
-      content: daContent,
-    },
-    fr: {
-      title: 'Creer un compte Ahrefs: guide setup complet',
-      topic: 'SEO',
-      metaTitle: 'Creer un compte Ahrefs | Guide setup',
-      metaDescription: 'Creer un compte Ahrefs et bien le configurer: choix du plan, premier projet et workflow SEO oriente performance.',
-      content: frContent,
-    },
-    it: {
-      title: 'Creare un account Ahrefs: guida setup completa',
-      topic: 'SEO',
-      metaTitle: 'Creare account Ahrefs | Guida setup',
-      metaDescription: 'Creare un account Ahrefs e configurarlo bene: scelta piano, primo progetto e workflow SEO orientato ai risultati.',
-      content: itContent,
-    },
-  },
 }
 
 async function publishArticle() {
@@ -417,7 +366,6 @@ async function publishArticle() {
         title: article.title,
         topic: article.topic,
         content: article.content,
-        translations: article.translations,
         status: article.status,
         publishedAt: new Date(),
       },
@@ -427,7 +375,6 @@ async function publishArticle() {
         content: article.content,
         topic: article.topic,
         status: article.status,
-        translations: article.translations,
         source: 'manual',
         publishedAt: new Date(),
       },

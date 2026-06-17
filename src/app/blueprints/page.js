@@ -1,9 +1,6 @@
 import Link from 'next/link'
-import { getServerLocale } from '@/lib/locale'
-import { buildLocalizedPath } from '@/lib/i18n'
 
-const copyByLocale = {
-  nl: {
+const copy = {
     metadata: {
       title: 'Blueprints | Marketing Templates en Strategieën | Niblah',
       description:
@@ -20,35 +17,11 @@ const copyByLocale = {
       { href: '/blueprints/meta', title: 'Meta Blueprint', description: 'Advertenties en creatieve richting voor Meta campagnes.' },
       { href: '/blueprints/klaviyo', title: 'Klaviyo Blueprint', description: 'Flows, segmentatie en e-mailstructuur voor betere retentie.' },
     ],
-  },
-  en: {
-    metadata: {
-      title: 'Blueprints | Marketing Templates and Strategy Guides | Niblah',
-      description:
-        'Explore Niblah blueprints for SEO, Google Ads, Meta ads, and Klaviyo.',
-    },
-    hero: {
-      title: 'Blueprints for the core marketing channels',
-      description:
-        'Use these blueprint pages as a starting point for strategy, execution, and optimization.',
-    },
-    cards: [
-      { href: '/blueprints/seo', title: 'SEO Blueprint', description: 'Structure, priorities, and growth opportunities for organic visibility.' },
-      { href: '/blueprints/google-ads', title: 'Google Ads Blueprint', description: 'A clearer framework for campaigns, structure, and return.' },
-      { href: '/blueprints/meta', title: 'Meta Blueprint', description: 'Advertising direction and creative structure for Meta campaigns.' },
-      { href: '/blueprints/klaviyo', title: 'Klaviyo Blueprint', description: 'Flows, segmentation, and email structure for better retention.' },
-    ],
-  },
-}
+  }
 
-function getCopy(locale) {
-  return copyByLocale[locale] || copyByLocale.en
-}
 
 export async function generateMetadata() {
-  const locale = await getServerLocale()
-  const copy = getCopy(locale)
-  const path = buildLocalizedPath('/blueprints', locale)
+    const path = '/blueprints'
 
   return {
     ...copy.metadata,
@@ -59,8 +32,6 @@ export async function generateMetadata() {
 }
 
 export default async function BlueprintsOverviewPage() {
-  const locale = await getServerLocale()
-  const copy = getCopy(locale)
 
   return (
     <main className="min-h-screen bg-white px-6 py-16">
@@ -74,7 +45,7 @@ export default async function BlueprintsOverviewPage() {
           {copy.cards.map((card) => (
             <Link
               key={card.href}
-              href={buildLocalizedPath(card.href, locale)}
+              href={card.href}
               className="group bg-white border-2 border-black rounded-xl p-6 shadow-[4px_4px_0_0_#000] hover:translate-y-0.5 hover:shadow-[0_4px_0_0_#000] transition-all duration-200"
             >
               <h2 className="text-xl font-bold text-gray-900 group-hover:text-[#1795FF] mb-3">{card.title}</h2>

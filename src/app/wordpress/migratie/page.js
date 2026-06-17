@@ -3,23 +3,19 @@ import DevelopmentReviewSlider from '@/components/DevelopmentReviewSlider'
 import DevelopmentConsultSection from '@/components/DevelopmentConsultSection'
 import Image from 'next/image'
 import Link from 'next/link'
-import { getServerLocale } from '@/lib/locale'
-import { buildLocalizedPath } from '@/lib/i18n'
-import { getWordPressMigratieCopy } from '@/i18n/wordpress/migratie-page'
+import { getWordPressMigratieCopy } from '@/content/wordpress/migratie-page'
 
 export async function generateMetadata() {
-  const locale = await getServerLocale()
-  const copy = getWordPressMigratieCopy(locale)
+  const copy = getWordPressMigratieCopy()
   return copy.metadata
 }
 
 export default async function WordPressMigratiePage() {
-  const locale = await getServerLocale()
-  const copy = getWordPressMigratieCopy(locale)
+  const copy = getWordPressMigratieCopy()
 
   const heroData = {
     ...copy.hero,
-    ctaLink: buildLocalizedPath(copy.hero.ctaLink, locale),
+    ctaLink: copy.hero.ctaLink,
   }
 
   const listIconAlt = 'Check'
@@ -89,7 +85,7 @@ export default async function WordPressMigratiePage() {
           <div className="mt-8 text-center">
             <p className="text-gray-600 mb-4">{copy.sections.routes.ctaNote}</p>
             <Link
-              href={buildLocalizedPath(copy.sections.routes.ctaLink, locale)}
+              href={copy.sections.routes.ctaLink}
               className="inline-flex items-center justify-center gap-2 font-semibold text-[#1795FF] hover:text-[#1795FF]/80 transition-colors"
             >
               {copy.sections.routes.ctaText} <span>→</span>
@@ -195,7 +191,7 @@ export default async function WordPressMigratiePage() {
 
             <div className="text-center">
               <Link
-                href={buildLocalizedPath(copy.sections.pricing.buttonLink, locale)}
+                href={copy.sections.pricing.buttonLink}
                 className="inline-flex items-center justify-center gap-2 font-semibold text-white bg-[#1795FF] text-lg px-8 py-4 rounded-full transition-all duration-200 border-2 border-black hover:translate-y-0.5 hover:shadow-[0_3px_0_0_#000] shadow-[0_5px_0_0_#000]"
               >
                 {copy.sections.pricing.buttonText} <span>→</span>
@@ -221,7 +217,7 @@ export default async function WordPressMigratiePage() {
             {copy.sections.related.cards.map((card) => (
               <Link
                 key={card.href}
-                href={buildLocalizedPath(card.href, locale)}
+                href={card.href}
                 className="group bg-white border-2 border-black rounded-xl p-6 hover:translate-y-0.5 hover:shadow-[0_4px_0_0_#000] shadow-[0_6px_0_0_#000] transition-all duration-200"
               >
                 <h3 className="text-base font-bold text-gray-900 group-hover:text-[#1795FF] transition-colors mb-2">

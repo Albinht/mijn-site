@@ -12,7 +12,6 @@ import Footer from '../components/Footer.js'
 import ConditionalContactForm from '../components/ConditionalContactForm.js'
 import GoogleAnalytics from '../components/GoogleAnalytics.js'
 import FloatingChatButton from '../components/FloatingChatButton.js'
-import { defaultLocale, localeToHtmlLang, localeToOpenGraphLocale } from '@/lib/i18n'
 
 // Fonts activeren
 const poppins = Poppins({
@@ -39,9 +38,9 @@ const geistMono = Geist_Mono({
 
 const baseMetadata = {
   metadataBase: new URL('https://niblah.com'),
-  title: 'Niblah - Digital Marketing Expert',
-  description: 'Professional digital marketing services including SEO, Google Ads, and website optimization. Get your business found online and attract more customers.',
-  keywords: 'digital marketing, SEO, Google Ads, website optimization, online marketing',
+  title: 'Niblah - Online Marketing Specialist',
+  description: 'Online marketing services voor SEO, Google Ads, websites en conversie-optimalisatie. Laat je bedrijf beter vindbaar worden en trek meer klanten aan.',
+  keywords: 'online marketing, SEO, Google Ads, website optimalisatie, marketing bureau',
   authors: [{ name: 'Niblah' }],
   creator: 'Niblah',
   publisher: 'Niblah',
@@ -51,8 +50,8 @@ const baseMetadata = {
     apple: '/icon.png',
   },
   openGraph: {
-    title: 'Niblah - Digital Marketing Expert',
-    description: 'Professional digital marketing services including SEO, Google Ads, and website optimization.',
+    title: 'Niblah - Online Marketing Specialist',
+    description: 'Online marketing services voor SEO, Google Ads, websites en conversie-optimalisatie.',
     url: 'https://niblah.com',
     siteName: 'Niblah',
     images: [
@@ -60,49 +59,41 @@ const baseMetadata = {
         url: '/avatar.png',
         width: 800,
         height: 800,
-        alt: 'Niblah - Digital Marketing Expert',
+        alt: 'Niblah - Online Marketing Specialist',
       },
     ],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Niblah - Digital Marketing Expert',
-    description: 'Professional digital marketing services including SEO, Google Ads, and website optimization.',
+    title: 'Niblah - Online Marketing Specialist',
+    description: 'Online marketing services voor SEO, Google Ads, websites en conversie-optimalisatie.',
     images: ['/avatar.png'],
   },
 }
 
 export async function generateMetadata() {
-  const headerList = await headers()
-  const locale = headerList.get('x-locale') || defaultLocale
-
   return {
     ...baseMetadata,
     openGraph: {
       ...baseMetadata.openGraph,
-      locale: localeToOpenGraphLocale(locale),
+      locale: 'nl_NL',
     },
   }
 }
 
 export default async function RootLayout({ children }) {
   const headerList = await headers()
-  const locale = headerList.get('x-locale') || defaultLocale
-  const htmlLang = localeToHtmlLang(locale)
-  const isExcluded = headerList.get('x-i18n-excluded') === '1'
   const pathname = headerList.get('x-pathname')
   const isYoutubePage = pathname === '/yt' || pathname?.startsWith('/yt/')
 
   return (
-    <html lang={htmlLang} className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${merriweather.variable}`}>
+    <html lang="nl-NL" className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${merriweather.variable}`}>
       <head>
       </head>
       <body
         suppressHydrationWarning={true}
         className="font-sans"
-        data-locale={locale}
-        data-i18n-excluded={isExcluded ? 'true' : 'false'}
       >
         <GoogleAnalytics />
         {isYoutubePage ? <YouTubeHeader /> : <Header />}

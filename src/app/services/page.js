@@ -1,9 +1,6 @@
 import Link from 'next/link'
-import { getServerLocale } from '@/lib/locale'
-import { buildLocalizedPath } from '@/lib/i18n'
 
-const copyByLocale = {
-  nl: {
+const copy = {
     metadata: {
       title: 'Services | SEO, Websites, Ads en Automation | Niblah',
       description:
@@ -24,39 +21,11 @@ const copyByLocale = {
       { href: '/services/web-development', title: 'Web development', description: 'Technische development support voor websites, platformen en maatwerk.' },
       { href: '/resources/automation', title: 'Automation', description: 'Praktische automatiseringen voor marketing, opvolging en interne processen.' },
     ],
-  },
-  en: {
-    metadata: {
-      title: 'Services | SEO, Websites, Ads and Automation | Niblah',
-      description:
-        'Explore Niblah services for SEO, business websites, Google Ads, email marketing, CRO, and automation.',
-    },
-    hero: {
-      title: 'Services built to support growth, visibility, and conversions',
-      description:
-        'From business websites to SEO, paid ads, and automation, choose the service that best fits your current growth stage.',
-    },
-    cards: [
-      { href: '/website-laten-maken', title: 'Website build services', description: 'Business websites for growing companies, often in WordPress and always built for results.' },
-      { href: '/services/seo', title: 'SEO services', description: 'More organic visibility through technical improvements and better ranking content.' },
-      { href: '/services/sea/google-ads', title: 'Google Ads', description: 'Campaign management with tighter structure and stronger return focus.' },
-      { href: '/services/paid-ads', title: 'Paid ads', description: 'Broader advertising support for companies that want to scale with control.' },
-      { href: '/services/email-marketing', title: 'Email marketing', description: 'Campaigns, flows, and automations that turn your list into repeat revenue.' },
-      { href: '/services/cro', title: 'CRO', description: 'Improve your website and funnels so more visitors convert.' },
-      { href: '/services/web-development', title: 'Web development', description: 'Technical development support for websites, platforms, and custom builds.' },
-      { href: '/resources/automation', title: 'Automation', description: 'Practical automation for marketing, follow-up, and internal processes.' },
-    ],
-  },
-}
+  }
 
-function getCopy(locale) {
-  return copyByLocale[locale] || copyByLocale.en
-}
 
 export async function generateMetadata() {
-  const locale = await getServerLocale()
-  const copy = getCopy(locale)
-  const path = buildLocalizedPath('/services', locale)
+    const path = '/services'
 
   return {
     ...copy.metadata,
@@ -67,8 +36,6 @@ export async function generateMetadata() {
 }
 
 export default async function ServicesOverviewPage() {
-  const locale = await getServerLocale()
-  const copy = getCopy(locale)
 
   return (
     <main className="min-h-screen bg-white px-6 py-16">
@@ -82,7 +49,7 @@ export default async function ServicesOverviewPage() {
           {copy.cards.map((card) => (
             <Link
               key={card.href}
-              href={buildLocalizedPath(card.href, locale)}
+              href={card.href}
               className="group bg-white border-2 border-black rounded-xl p-6 shadow-[4px_4px_0_0_#000] hover:translate-y-0.5 hover:shadow-[0_4px_0_0_#000] transition-all duration-200"
             >
               <h2 className="text-xl font-bold text-gray-900 group-hover:text-[#1795FF] mb-3">{card.title}</h2>

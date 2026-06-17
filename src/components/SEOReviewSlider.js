@@ -1,11 +1,8 @@
 'use client'
-
-import useLocale from '@/hooks/useLocale'
-import { getSEOReviewSliderCopy } from '@/i18n/services/seo-review-slider'
+import { getSEOReviewSliderCopy } from '@/content/services/seo-review-slider'
 
 const SEOReviewSlider = () => {
-  const { locale } = useLocale()
-  const copy = getSEOReviewSliderCopy(locale)
+  const copy = getSEOReviewSliderCopy()
   const seoReviews = copy.reviews
   const moreSeoReviews = copy.moreReviews
 

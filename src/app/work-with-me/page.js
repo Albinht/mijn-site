@@ -3,12 +3,10 @@ import Button from '../../components/Button'
 import ReviewSlider from '../../components/ReviewSlider'
 import avatarImage from '../../assets/avatar.png'
 import graphImage from '../../assets/graph.png'
-import { getServerLocale } from '@/lib/locale'
-import { getWorkWithMeCopy } from '@/i18n/work-with-me'
+import { getWorkWithMeCopy } from '@/content/work-with-me'
 
 export default async function WorkWithMe() {
-  const locale = await getServerLocale()
-  const copy = getWorkWithMeCopy(locale)
+  const copy = getWorkWithMeCopy()
 
   return (
     <main className="min-h-screen bg-white">

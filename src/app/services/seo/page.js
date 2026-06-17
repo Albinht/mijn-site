@@ -3,23 +3,19 @@ import SEOServicesSection from '../../../components/SEOServicesSection'
 import SEOReviewSlider from '../../../components/SEOReviewSlider'
 import SEOConsultSection from '../../../components/SEOConsultSection'
 import SEOBenefitsSlider from '../../../components/SEOBenefitsSlider'
-import { getServerLocale } from '@/lib/locale'
-import { buildLocalizedPath } from '@/lib/i18n'
-import { getSEOPageCopy } from '@/i18n/services/seo-page'
+import { getSEOPageCopy } from '@/content/services/seo-page'
 
 export async function generateMetadata() {
-  const locale = await getServerLocale()
-  const copy = getSEOPageCopy(locale)
+  const copy = getSEOPageCopy()
   return copy.metadata
 }
 
 export default async function SEOPage() {
-  const locale = await getServerLocale()
-  const copy = getSEOPageCopy(locale)
+  const copy = getSEOPageCopy()
 
   const heroData = {
     ...copy.hero,
-    ctaLink: buildLocalizedPath(copy.hero.ctaLink, locale),
+    ctaLink: copy.hero.ctaLink,
   }
 
   const pillarStyles = [

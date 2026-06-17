@@ -1,27 +1,8 @@
-import { getServerLocale } from '@/lib/locale';
-import { getBlogCopy } from '@/i18n/blog';
 import prisma from '@/lib/prisma';
 import Link from 'next/link';
 import Image from 'next/image';
-import { headers } from 'next/headers';
 import avatarImage from '@/assets/avatar.png';
 import LeadForm from '@/components/LeadForm';
-
-const supportedLocales = ['en', 'de', 'sv', 'da', 'fr', 'it', 'nl'];
-const defaultLocale = 'en';
-const localeCookieName = 'niblah-locale';
-
-const localeAliases = {
-  'en-us': 'en',
-  'en_us': 'en',
-  'en-gb': 'en',
-  'de-de': 'de',
-  'sv-se': 'sv',
-  'da-dk': 'da',
-  'fr-fr': 'fr',
-  'it-it': 'it',
-  'nl-nl': 'nl',
-};
 
 export const metadata = {
   title: 'De Niblah Blog - SEO en Marketing Tips | Niblah',
@@ -55,71 +36,13 @@ function getCategoryData(topic, title) {
   return { category: 'GENERAL', color: 'bg-gray-200', textColor: 'text-gray-900' }
 }
 
-function localeToDateLocale(locale) {
-  const map = {
-    'en': 'en-US',
-    'de': 'de-DE',
-    'sv': 'sv-SE',
-    'da': 'da-DK',
-    'fr': 'fr-FR',
-    'it': 'it-IT',
-    'nl': 'nl-NL'
-  };
-  return map[locale] || 'en-US';
+function dateLocale() {
+  return 'nl-NL';
 }
 
-function getLocaleFromCookies(cookieString) {
-  if (!cookieString) return null;
-  const match = cookieString.match(/niblah-locale=([^;]+)/);
-  if (match) {
-    let locale = match[1];
-    if (localeAliases[locale.toLowerCase()]) {
-      return localeAliases[locale.toLowerCase()];
-    }
-    if (supportedLocales.includes(locale.toLowerCase())) {
-      return locale.toLowerCase();
-    }
-  }
-  return null;
-}
-
-function pickPreferredLocale({ cookieLocale, acceptLanguage }) {
-  if (cookieLocale && supportedLocales.includes(cookieLocale)) {
-    return cookieLocale;
-  }
-  if (acceptLanguage) {
-    const languages = acceptLanguage.split(',').map(l => l.split(';')[0].trim().toLowerCase());
-    for (const lang of languages) {
-      if (localeAliases[lang]) {
-        return localeAliases[lang];
-      }
-      if (supportedLocales.includes(lang)) {
-        return lang;
-      }
-    }
-  }
-  return defaultLocale;
-}
-
-function getLocalizedArticle(article, locale) {
+function getArticleContent(article) {
   if (!article) return null;
-  
-  // Safe check: ensure translations is an array before calling .find()
-  const translations = Array.isArray(article.translations) 
-    ? article.translations 
-    : [];
-  const translation = translations.find(t => t.locale === locale);
-  
-  if (translation) {
-    return {
-      title: translation.title || article.title,
-      content: translation.content || article.content,
-      topic: translation.topic || article.topic,
-      metaTitle: translation.metaTitle || article.metaTitle,
-      metaDescription: translation.metaDescription || article.metaDescription,
-    };
-  }
-  
+
   return {
     title: article.title,
     content: article.content,
@@ -130,48 +53,27 @@ function getLocalizedArticle(article, locale) {
 }
 
 // Add static posts
-function getStaticPosts(locale) {
-  const staticPosts = [
+function getStaticPosts() {
+  return [
     {
       id: 'static-customer-service-2026',
-      title: locale === 'nl' ? 'De beste klantenservice-software in 2026' : 
-              locale === 'en' ? 'The Best Customer Service Software in 2026' :
-              locale === 'de' ? 'Die beste Kundenservice-Software 2026' :
-              locale === 'sv' ? 'Bästa kundservice mjukvaran 2026' :
-              locale === 'da' ? 'Den bedste kundeservice-software i 2026' :
-              locale === 'fr' ? 'Le meilleur logiciel de service client en 2026' :
-              locale === 'it' ? 'Il miglior software di assistenza clienti del 2026' : 'De beste klantenservice-software in 2026',
-      excerpt: locale === 'nl' ? 'Complete gids voor de beste tools voor klantenservice en hoe u de juiste keuze maakt.' :
-              locale === 'en' ? 'Complete guide to the best tools for customer service and how to make the right choice.' :
-              locale === 'de' ? 'Vollständiger Leitfaden für die besten Tools für Kundenservice und wie Sie die richtige Wahl treffen.' :
-              locale === 'sv' ? 'Komplett guide för de bästa verktyg för kundservice och hur du gör rätt val.' :
-              locale === 'da' ? 'Komplet guide til de bedste værktøjer til kundeservice og hvordan du træffer det rigtige valg.' :
-              locale === 'fr' ? 'Guide complet des meilleurs outils pour le service client et comment faire le bon choix.' :
-              locale === 'it' ? 'Guida completa ai migliori strumenti per l\'assistenza clienti e come fare la scelta giusta.' :
-              'De beste klantenservice-software in 2026',
-      slug: locale === 'nl' ? 'de-beste-klantenservice-software-in-2026' : 
-              locale === 'en' ? 'the-best-customer-service-software-in-2026' :
-              locale === 'de' ? 'die-beste-kundenservice-software-2026' :
-              locale === 'sv' ? 'basta-kundtjanst-mjukvara-2026' :
-              locale === 'da' ? 'den-bedste-kundeservice-software-i-2026' :
-              locale === 'fr' ? 'le-meilleur-logiciel-de-service-client-2026' :
-              locale === 'it' ? 'il-miglior-software-di-assistenza-clienti-del-2026' : 'the-best-customer-service-software-in-2026',
+      title: 'De beste klantenservice-software in 2026',
+      excerpt: 'Complete gids voor de beste tools voor klantenservice en hoe u de juiste keuze maakt.',
+      slug: 'de-beste-klantenservice-software-in-2026',
       category: 'GUIDE',
       categoryColor: 'bg-[#FFD43B]',
       categoryTextColor: 'text-gray-900',
       author: 'Albin Hot',
-      date: new Date().toLocaleDateString(localeToDateLocale(locale), { 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric' 
+      date: new Date().toLocaleDateString(dateLocale(), {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
       })
     }
   ];
-
-  return staticPosts;
 }
 
-async function getBlogPosts(locale) {
+async function getBlogPosts() {
   try {
     // Get dynamic posts from database
     const articles = await prisma.article.findMany({
@@ -186,18 +88,18 @@ async function getBlogPosts(locale) {
     
     // Get dynamic posts
     const dynamicPosts = articles.map(article => {
-      const localized = getLocalizedArticle(article, locale);
-      const categoryData = getCategoryData(localized.topic, localized.title);
-      const excerpt = localized.content?.substring(0, 200) || '';
-      const date = new Date(article.createdAt).toLocaleDateString(localeToDateLocale(locale), { 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric' 
+      const articleContent = getArticleContent(article);
+      const categoryData = getCategoryData(articleContent.topic, articleContent.title);
+      const excerpt = articleContent.content?.substring(0, 200) || '';
+      const date = new Date(article.createdAt).toLocaleDateString(dateLocale(), {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
       });
-      
+
       return {
         id: article.id,
-        title: localized.title,
+        title: articleContent.title,
         excerpt: excerpt,
         slug: article.slug,
         category: categoryData.category,
@@ -209,20 +111,15 @@ async function getBlogPosts(locale) {
     });
 
     // Combine static and dynamic posts
-    return [...getStaticPosts(locale), ...dynamicPosts];
+    return [...getStaticPosts(), ...dynamicPosts];
   } catch (error) {
     console.error('Error fetching blog posts:', error);
-    return getStaticPosts(locale);
+    return getStaticPosts();
   }
 }
 
 export default async function BlogPage() {
-  const headerList = await headers();
-  const locale = pickPreferredLocale({
-    cookieLocale: getLocaleFromCookies(headerList.get('cookie')),
-    acceptLanguage: headerList.get('accept-language'),
-  });
-  const blogPosts = await getBlogPosts(locale);
+  const blogPosts = await getBlogPosts();
    
   return (
     <main className="min-h-screen bg-white">

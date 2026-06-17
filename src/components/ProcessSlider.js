@@ -1,8 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import useLocale from '@/hooks/useLocale'
-import { getProcessSliderCopy } from '@/i18n/process-slider'
+import { getProcessSliderCopy } from '@/content/process-slider'
 
 const ProcessSlider = ({ 
   title, 
@@ -11,8 +10,7 @@ const ProcessSlider = ({
   bgColor = 'bg-[#F5F5F5]',
   titleHighlight = 'bg-[#1795FF] text-white'
 }) => {
-  const { locale } = useLocale()
-  const copy = getProcessSliderCopy(locale)
+  const copy = getProcessSliderCopy()
   const [currentIndex, setCurrentIndex] = useState(0)
   const sliderRef = useRef(null)
   const [isDragging, setIsDragging] = useState(false)

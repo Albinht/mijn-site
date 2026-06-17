@@ -2,7 +2,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Button from '../../../components/Button'
 import authorImage from '../../../assets/author.png'
-import { getServerLocale } from '@/lib/locale'
 import PermanentShopifyAdminApiKeyArticle, {
   getPermanentShopifyAdminApiKeyMeta,
 } from '@/components/articles/PermanentShopifyAdminApiKeyArticle'
@@ -18,8 +17,7 @@ const post = {
 }
 
 export async function generateMetadata() {
-  const locale = await getServerLocale()
-  const meta = getPermanentShopifyAdminApiKeyMeta(locale)
+  const meta = getPermanentShopifyAdminApiKeyMeta()
 
   return {
     title: `${meta.title} | Niblah`,
@@ -33,8 +31,7 @@ export async function generateMetadata() {
 }
 
 export default async function YouTubeArticlePage() {
-  const locale = await getServerLocale()
-  const meta = getPermanentShopifyAdminApiKeyMeta(locale)
+  const meta = getPermanentShopifyAdminApiKeyMeta()
 
   return (
     <main className="min-h-screen bg-white">
@@ -93,7 +90,7 @@ export default async function YouTubeArticlePage() {
               </div>
             )}
 
-            <PermanentShopifyAdminApiKeyArticle locale={locale} />
+            <PermanentShopifyAdminApiKeyArticle />
 
             <div className="mt-12 p-6 bg-gray-50 rounded-lg flex items-center gap-6">
               <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0">

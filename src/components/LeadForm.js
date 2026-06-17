@@ -1,12 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import useLocale from '@/hooks/useLocale';
-import { getLeadFormCopy } from '@/i18n/lead-form';
+import { getLeadFormCopy } from '@/content/lead-form';
 
 export default function LeadForm() {
-  const { locale } = useLocale();
-  const copy = getLeadFormCopy(locale);
+  const copy = getLeadFormCopy();
   const [formData, setFormData] = useState({
     name: '',
     email: '',

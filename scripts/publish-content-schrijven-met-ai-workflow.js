@@ -348,57 +348,6 @@ const article = {
   status: 'PUBLISHED',
   title: 'Content schrijven met AI: mijn workflow voor kwaliteit op schaal',
   content: nlContent,
-  translations: {
-    en: {
-      title: 'Writing content with AI: my quality-first workflow',
-      topic: 'Content',
-      metaTitle: 'Writing content with AI | Quality-first workflow',
-      metaDescription: 'How to write content with AI without losing quality: intent, prompt stack, editorial checks, internal linking, and iteration.',
-      content: enContent,
-    },
-    nl: {
-      title: 'Content schrijven met AI: mijn workflow voor kwaliteit op schaal',
-      topic: 'Content',
-      metaTitle: 'Content schrijven met AI | Workflow voor kwaliteit',
-      metaDescription: 'Leer hoe je AI inzet voor content zonder kwaliteitsverlies: intent, promptstack, redactiechecks, interne links en iteratie.',
-      content: nlContent,
-    },
-    de: {
-      title: 'Content mit AI schreiben: mein Qualitaetsworkflow',
-      topic: 'Content',
-      metaTitle: 'Content mit AI schreiben | Qualitaetsworkflow',
-      metaDescription: 'So nutzt du AI fuer Content ohne Qualitaetsverlust: Intent, Prompt Stack, Redaktion und laufende Optimierung.',
-      content: deContent,
-    },
-    sv: {
-      title: 'Skriva content med AI: min kvalitetsworkflow',
-      topic: 'Content',
-      metaTitle: 'Skriva content med AI | Kvalitetsworkflow',
-      metaDescription: 'Sa skriver du content med AI utan att tappa kvalitet: intent, prompt stack, redaktionell kontroll och uppfoljning.',
-      content: svContent,
-    },
-    da: {
-      title: 'Skriv content med AI: min kvalitetsworkflow',
-      topic: 'Content',
-      metaTitle: 'Skriv content med AI | Kvalitetsworkflow',
-      metaDescription: 'Saadan bruger du AI til content uden kvalitetstab: intent, prompt stack, redaktionel kontrol og iterativ optimering.',
-      content: daContent,
-    },
-    fr: {
-      title: 'Ecrire du contenu avec AI: mon workflow qualite',
-      topic: 'Content',
-      metaTitle: 'Ecrire du contenu avec AI | Workflow qualite',
-      metaDescription: 'Comment ecrire avec AI sans perdre en qualite: intention, prompts, controle editorial et optimisation continue.',
-      content: frContent,
-    },
-    it: {
-      title: 'Scrivere contenuti con AI: il mio workflow qualita',
-      topic: 'Content',
-      metaTitle: 'Scrivere contenuti con AI | Workflow qualita',
-      metaDescription: 'Come usare AI per i contenuti senza perdere qualita: intent, prompt stack, revisione editoriale e iterazione.',
-      content: itContent,
-    },
-  },
 }
 
 async function publishArticle() {
@@ -411,7 +360,6 @@ async function publishArticle() {
         title: article.title,
         topic: article.topic,
         content: article.content,
-        translations: article.translations,
         status: article.status,
         publishedAt: new Date(),
       },
@@ -421,7 +369,6 @@ async function publishArticle() {
         content: article.content,
         topic: article.topic,
         status: article.status,
-        translations: article.translations,
         source: 'manual',
         publishedAt: new Date(),
       },

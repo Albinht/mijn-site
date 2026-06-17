@@ -1,7 +1,5 @@
 'use client';
-
-import useLocale from '@/hooks/useLocale';
-import { getGoogleReviewBarCopy } from '@/i18n/google-review-bar';
+import { getGoogleReviewBarCopy } from '@/content/google-review-bar';
 
 const GoogleReviewCard = ({ review }) => (
   <div className="flex-shrink-0 bg-white rounded-lg border-2 border-black p-6 mx-3 w-96 shadow-[4px_4px_0_0_#000]">
@@ -31,8 +29,7 @@ const GoogleReviewCard = ({ review }) => (
 );
 
 export default function GoogleReviewBar() {
-  const { locale } = useLocale();
-  const copy = getGoogleReviewBarCopy(locale);
+  const copy = getGoogleReviewBarCopy();
   const duplicatedReviewsRow1 = [...copy.reviewsRow1, ...copy.reviewsRow1, ...copy.reviewsRow1];
   const duplicatedReviewsRow2 = [...copy.reviewsRow2, ...copy.reviewsRow2, ...copy.reviewsRow2];
 

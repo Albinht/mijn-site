@@ -1,16 +1,13 @@
 import Button from '../../../components/Button'
-import { getServerLocale } from '@/lib/locale'
-import { getPaidAdsCopy } from '@/i18n/services/paid-ads-page'
+import { getPaidAdsCopy } from '@/content/services/paid-ads-page'
 
 export async function generateMetadata() {
-  const locale = await getServerLocale()
-  const copy = getPaidAdsCopy(locale)
+  const copy = getPaidAdsCopy()
   return copy.metadata
 }
 
 export default async function PaidAds() {
-  const locale = await getServerLocale()
-  const copy = getPaidAdsCopy(locale)
+  const copy = getPaidAdsCopy()
 
   return (
     <main className="min-h-screen bg-white text-gray-900 px-6 py-16">

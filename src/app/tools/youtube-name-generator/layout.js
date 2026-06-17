@@ -1,9 +1,7 @@
-import { getServerLocale } from '@/lib/locale';
-import { getYouTubeNameGeneratorCopy } from '@/i18n/tools/youtube-name-generator';
+import { getYouTubeNameGeneratorCopy } from '@/content/tools/youtube-name-generator';
 
 export async function generateMetadata() {
-  const locale = await getServerLocale();
-  const copy = getYouTubeNameGeneratorCopy(locale);
+  const copy = getYouTubeNameGeneratorCopy();
   return copy.metadata;
 }
 
