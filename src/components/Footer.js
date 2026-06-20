@@ -187,7 +187,7 @@ const Footer = async () => {
 
         <div
           aria-hidden="true"
-          className="pointer-events-none relative z-30 mx-auto mb-[-4.4rem] mt-10 h-52 w-full max-w-5xl overflow-hidden md:mb-[-5.2rem] md:mt-12 md:h-64"
+          className="pointer-events-none relative z-10 mx-auto mb-6 mt-10 h-52 w-full max-w-5xl overflow-hidden md:mb-8 md:mt-12 md:h-64"
         >
           <div
             aria-hidden="true"
@@ -205,7 +205,7 @@ const Footer = async () => {
           </div>
         </div>
 
-        <div className="relative z-20 w-full rounded-lg bg-[#F7F8F6] p-6 pt-20 text-[#101828] shadow-[0_28px_90px_rgba(0,0,0,0.28)] md:p-10 md:pt-20 lg:p-12 lg:pt-20">
+        <div className="relative z-20 w-full rounded-lg bg-[#F7F8F6] p-6 text-[#101828] shadow-[0_28px_90px_rgba(0,0,0,0.28)] md:p-10 lg:p-12">
           <div className="grid gap-10 lg:grid-cols-[1.15fr_2.2fr] lg:gap-14">
             <div>
               <FooterLogo />
