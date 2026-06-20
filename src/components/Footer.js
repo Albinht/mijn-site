@@ -34,6 +34,7 @@ const XIcon = ({ className = socialIconClassName }) => (
 
 const iconMap = {
   ads: CursorArrowRaysIcon,
+  email: EnvelopeIcon,
   seo: MagnifyingGlassIcon,
   growth: ChartBarIcon,
   whatsapp: WhatsAppIcon,
@@ -41,8 +42,7 @@ const iconMap = {
   youtube: YouTubeIcon,
 };
 
-const ORBIT_DURATION_SECONDS = 18;
-const ORBIT_TRACK_ITEM_COUNT = 5;
+const ORBIT_TRACK_ITEM_COUNT = 7;
 
 const buildOrbitTrackItems = (items) => {
   if (!items.length) {
@@ -110,14 +110,14 @@ const FooterColumn = ({ title, links }) => (
 
 const OrbitIcon = ({ item, index, total }) => {
   const Icon = iconMap[item.icon] || ChartBarIcon;
-  const delay = `${-1 * ((index * ORBIT_DURATION_SECONDS) / total)}s`;
+  const angle = `${(index / total) * 360}deg`;
 
   return (
     <span
       className="footer-orbit-item"
-      style={{ '--footer-orbit-delay': delay }}
+      style={{ '--footer-orbit-angle': angle }}
     >
-      <span className="footer-orbit-card inline-flex h-12 w-12 items-center justify-center rounded-lg border border-white/70 bg-[#F7F8F6] text-[#331300] shadow-[0_16px_34px_rgba(0,0,0,0.18)] md:h-14 md:w-14">
+      <span className="footer-orbit-card inline-flex h-11 w-11 items-center justify-center rounded-lg border border-white/70 bg-[#F7F8F6] text-[#331300] shadow-[0_16px_34px_rgba(0,0,0,0.18)] md:h-14 md:w-14">
         <Icon className="h-5 w-5 md:h-6 md:w-6" aria-hidden="true" />
       </span>
     </span>
@@ -187,21 +187,23 @@ const Footer = async () => {
 
         <div
           aria-hidden="true"
-          className="pointer-events-none relative z-10 mx-auto mb-6 mt-10 h-52 w-full max-w-5xl overflow-hidden md:mb-8 md:mt-12 md:h-64"
+          className="pointer-events-none relative z-10 mx-auto mb-6 mt-10 h-44 w-full max-w-5xl overflow-visible md:mb-8 md:mt-14 md:h-[24rem]"
         >
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute left-1/2 top-6 h-72 w-72 -translate-x-1/2 rounded-full border border-white/12 md:top-8 md:h-[28rem] md:w-[48rem]"
-          />
-          <div className="footer-orbit-ring absolute left-1/2 top-6 h-72 w-72 md:top-8 md:h-[28rem] md:w-[48rem]">
-            {orbitItems.map((item, index) => (
-              <OrbitIcon
-                key={`${item.label}-${index}`}
-                item={item}
-                index={index}
-                total={orbitItems.length}
-              />
-            ))}
+          <div className="footer-orbit-plane absolute left-1/2 top-0 h-[18rem] w-[18rem] md:h-[58rem] md:w-[58rem]">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 rounded-full border border-white/12"
+            />
+            <div className="footer-orbit-ring absolute inset-0">
+              {orbitItems.map((item, index) => (
+                <OrbitIcon
+                  key={`${item.label}-${index}`}
+                  item={item}
+                  index={index}
+                  total={orbitItems.length}
+                />
+              ))}
+            </div>
           </div>
         </div>
 

@@ -30,6 +30,18 @@ const copy = {
         icon: 'ads',
       },
       {
+        label: 'Marketing groei',
+        ariaLabel: 'Bekijk alle marketingdiensten',
+        href: '/services',
+        icon: 'growth',
+      },
+      {
+        label: 'Automation',
+        ariaLabel: 'Bekijk marketing automation diensten',
+        href: '/services/email-marketing',
+        icon: 'email',
+      },
+      {
         label: 'YouTube',
         ariaLabel: 'Bekijk Niblah op YouTube',
         href: 'https://www.youtube.com/channel/UCvy37Ft-33KdCaYVCDHA35Q/',
