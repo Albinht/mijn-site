@@ -1,33 +1,111 @@
 const copy = {
-    about: 'Specialist in digitale marketing en SEO. Wij helpen bedrijven groeien met slimme online strategieën die resultaten opleveren.',
-    ctaPrimary: 'Start uw project',
-    ctaWhatsapp: 'Direct contact via WhatsApp',
+    about:
+      'Niblah is een full service marketing bureau voor ondernemers die betere vindbaarheid, sterkere campagnes en meer aanvragen willen zonder lange lijnen.',
+    cta: {
+      eyebrow: 'Gratis strategiesessie',
+      heading: 'Klaar om je marketing',
+      headingAccent: 'scherper te zetten?',
+      description:
+        'Plan een gratis consult en ontdek welke combinatie van SEO, Google Ads, websites en automation voor jouw bedrijf de meeste groei kan opleveren.',
+      primaryLabel: 'Plan gratis consult',
+      secondaryLabel: 'Ontdek onze diensten',
+    },
     videoTestimonials: {
       heading: 'Video reviews van onze klanten',
       playCta: 'Bekijk review',
       lazyNote: 'Aanrader om te kijken — echte klantreviews.',
       badgeNew: 'Nieuw',
     },
-    headings: {
-      services: 'Diensten',
-      tools: 'Tools',
-      locations: 'Locaties',
-      contact: 'Contact',
-    },
-    serviceLinks: {
-      seo: 'SEO',
-      emailMarketing: 'Email Marketing',
-      paidAds: 'Betaalde advertenties',
-      cro: 'CRO',
-    },
-    toolLinks: {
-      audit: 'AI Marketing Audit',
-      serp: 'SERP Simulator',
-      roas: 'ROAS Calculator',
-      cpa: 'CPA Calculator',
-    },
-    toolsAll: 'Alle Tools →',
-    locationsAll: 'Alle Locaties →',
+    orbitItems: [
+      {
+        label: 'SEO',
+        ariaLabel: 'Bekijk SEO diensten',
+        href: '/services/seo',
+        icon: 'seo',
+      },
+      {
+        label: 'Google Ads',
+        ariaLabel: 'Bekijk Google Ads diensten',
+        href: '/services/sea',
+        icon: 'ads',
+      },
+      {
+        label: 'YouTube',
+        ariaLabel: 'Bekijk Niblah op YouTube',
+        href: 'https://www.youtube.com/channel/UCvy37Ft-33KdCaYVCDHA35Q/',
+        icon: 'youtube',
+      },
+      {
+        label: 'WhatsApp',
+        ariaLabel: 'Neem contact op via WhatsApp',
+        href: 'https://wa.link/zhg1bl',
+        icon: 'whatsapp',
+      },
+      {
+        label: 'X',
+        ariaLabel: 'Volg Niblah op X',
+        href: 'https://x.com/Niblahistaken',
+        icon: 'x',
+      },
+    ],
+    socialLinks: [
+      {
+        label: 'YouTube',
+        ariaLabel: 'Bekijk Niblah op YouTube',
+        href: 'https://www.youtube.com/channel/UCvy37Ft-33KdCaYVCDHA35Q/',
+        icon: 'youtube',
+      },
+      {
+        label: 'X',
+        ariaLabel: 'Volg Niblah op X',
+        href: 'https://x.com/Niblahistaken',
+        icon: 'x',
+      },
+      {
+        label: 'WhatsApp',
+        ariaLabel: 'Neem contact op via WhatsApp',
+        href: 'https://wa.link/zhg1bl',
+        icon: 'whatsapp',
+      },
+    ],
+    columns: [
+      {
+        title: 'Diensten',
+        links: [
+          { label: 'SEO', href: '/services/seo' },
+          { label: 'Google Ads', href: '/services/sea' },
+          { label: 'Websites', href: '/services/web-development' },
+          { label: 'Marketing automation', href: '/services/email-marketing' },
+        ],
+      },
+      {
+        title: 'Tools',
+        links: [
+          { label: 'AI Marketing Audit', href: '/tools/ai-marketing-audit' },
+          { label: 'SERP Simulator', href: '/tools/serp-simulator' },
+          { label: 'ROAS Calculator', href: '/tools/break-even-roas-calculator' },
+          { label: 'Alle tools', href: '/tools' },
+        ],
+      },
+      {
+        title: 'Locaties',
+        links: [
+          { label: 'Marketing Nederland', href: '/marketing' },
+          { label: 'Marketing Barneveld', href: '/marketing/barneveld' },
+          { label: 'Marketing Amsterdam', href: '/marketing/amsterdam' },
+          { label: 'Marketing Utrecht', href: '/marketing/utrecht' },
+        ],
+      },
+      {
+        title: 'Bedrijf',
+        links: [
+          { label: 'Contact', href: '/contact' },
+          { label: 'Resources', href: '/resources' },
+          { label: 'YouTube', href: '/youtube' },
+          { label: 'Blog', href: '/blog' },
+        ],
+      },
+    ],
     contactPage: 'Contactpagina',
     privacy: 'Privacy',
     terms: 'Voorwaarden',

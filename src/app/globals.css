@@ -79,3 +79,92 @@ p {
     transform: translateX(0);
   }
 }
+
+.footer-orbit-ring {
+  transform: translateX(-50%);
+}
+
+.footer-orbit-item {
+  --footer-orbit-x-start: -14rem;
+  --footer-orbit-x-left: -7.4rem;
+  --footer-orbit-x-right: 7.4rem;
+  --footer-orbit-x-end: 14rem;
+  --footer-orbit-y-edge: -0.35rem;
+  --footer-orbit-y-top: -4.2rem;
+  --footer-orbit-y-hidden: 5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  animation: footerOrbitArc 18s linear infinite;
+  animation-delay: var(--footer-orbit-delay, 0s);
+}
+
+.footer-orbit-card {
+  scale: 1;
+  transform-origin: 50% 50%;
+}
+
+@keyframes footerOrbitArc {
+  0%,
+  14% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translate(var(--footer-orbit-x-start), var(--footer-orbit-y-hidden)) rotate(-22deg) scale(0.92);
+  }
+
+  20%,
+  32% {
+    opacity: 1;
+    transform: translate(-50%, -50%) translate(var(--footer-orbit-x-left), var(--footer-orbit-y-edge)) rotate(-12deg) scale(1);
+  }
+
+  46%,
+  54% {
+    opacity: 1;
+    transform: translate(-50%, -50%) translate(0, var(--footer-orbit-y-top)) rotate(0deg) scale(1.04);
+  }
+
+  68%,
+  80% {
+    opacity: 1;
+    transform: translate(-50%, -50%) translate(var(--footer-orbit-x-right), var(--footer-orbit-y-edge)) rotate(12deg) scale(1);
+  }
+
+  86%,
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translate(var(--footer-orbit-x-end), var(--footer-orbit-y-hidden)) rotate(22deg) scale(0.92);
+  }
+}
+
+@media (min-width: 768px) {
+  .footer-orbit-item {
+    --footer-orbit-x-start: -25rem;
+    --footer-orbit-x-left: -12rem;
+    --footer-orbit-x-right: 12rem;
+    --footer-orbit-x-end: 25rem;
+    --footer-orbit-y-edge: -0.6rem;
+    --footer-orbit-y-top: -5.4rem;
+    --footer-orbit-y-hidden: 5.6rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-orbit-item {
+    animation: none;
+    opacity: 1;
+    transform: translate(-50%, -50%) translate(var(--footer-orbit-x-left), var(--footer-orbit-y-edge));
+  }
+
+  .footer-orbit-item:nth-child(2) {
+    transform: translate(-50%, -50%) translate(0, var(--footer-orbit-y-top));
+  }
+
+  .footer-orbit-item:nth-child(3) {
+    transform: translate(-50%, -50%) translate(var(--footer-orbit-x-right), var(--footer-orbit-y-edge));
+  }
+
+  .footer-orbit-item:nth-child(n+4) {
+    display: none;
+  }
+}
