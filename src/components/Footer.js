@@ -180,9 +180,9 @@ const Footer = async () => {
         >
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute left-1/2 top-6 h-72 w-72 -translate-x-1/2 rounded-full border border-white/12 md:top-8 md:h-96 md:w-96"
+            className="pointer-events-none absolute left-1/2 top-6 h-72 w-72 -translate-x-1/2 rounded-full border border-white/12 md:top-8 md:h-[28rem] md:w-[48rem]"
           />
-          <div className="footer-orbit-ring absolute left-1/2 top-6 h-72 w-72 md:top-8 md:h-96 md:w-96">
+          <div className="footer-orbit-ring absolute left-1/2 top-6 h-72 w-72 md:top-8 md:h-[28rem] md:w-[48rem]">
             {copy.orbitItems.map((item, index) => (
               <OrbitIcon
                 key={item.label}
