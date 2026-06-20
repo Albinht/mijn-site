@@ -87,10 +87,13 @@ p {
 .footer-orbit-item {
   --footer-orbit-x-start: -14rem;
   --footer-orbit-x-left: -7.4rem;
+  --footer-orbit-x-mid-left: -4.6rem;
+  --footer-orbit-x-mid-right: 4.6rem;
   --footer-orbit-x-right: 7.4rem;
   --footer-orbit-x-end: 14rem;
-  --footer-orbit-y-edge: -0.35rem;
-  --footer-orbit-y-top: -4.2rem;
+  --footer-orbit-y-edge: -1.15rem;
+  --footer-orbit-y-mid: -3.7rem;
+  --footer-orbit-y-top: -4.8rem;
   --footer-orbit-y-hidden: 5rem;
   position: absolute;
   top: 50%;
@@ -98,6 +101,7 @@ p {
   opacity: 0;
   animation: footerOrbitArc 18s linear infinite;
   animation-delay: var(--footer-orbit-delay, 0s);
+  will-change: transform, opacity;
 }
 
 .footer-orbit-card {
@@ -117,28 +121,27 @@ p {
     transform: translate(-50%, -50%) translate(var(--footer-orbit-x-left), var(--footer-orbit-y-edge)) rotate(-12deg) scale(1);
   }
 
-  32% {
+  35% {
     opacity: 1;
-    transform: translate(-50%, -50%) translate(var(--footer-orbit-x-left), var(--footer-orbit-y-edge)) rotate(-12deg) scale(1);
+    transform: translate(-50%, -50%) translate(var(--footer-orbit-x-mid-left), var(--footer-orbit-y-mid)) rotate(-7deg) scale(1.02);
   }
 
-  46%,
-  54% {
+  50% {
     opacity: 1;
     transform: translate(-50%, -50%) translate(0, var(--footer-orbit-y-top)) rotate(0deg) scale(1.04);
   }
 
-  68% {
+  65% {
+    opacity: 1;
+    transform: translate(-50%, -50%) translate(var(--footer-orbit-x-mid-right), var(--footer-orbit-y-mid)) rotate(7deg) scale(1.02);
+  }
+
+  79.99% {
     opacity: 1;
     transform: translate(-50%, -50%) translate(var(--footer-orbit-x-right), var(--footer-orbit-y-edge)) rotate(12deg) scale(1);
   }
 
-  80% {
-    opacity: 1;
-    transform: translate(-50%, -50%) translate(var(--footer-orbit-x-right), var(--footer-orbit-y-edge)) rotate(12deg) scale(1);
-  }
-
-  80.01%,
+  80%,
   100% {
     opacity: 0;
     transform: translate(-50%, -50%) translate(var(--footer-orbit-x-end), var(--footer-orbit-y-hidden)) rotate(22deg) scale(0.92);
@@ -148,11 +151,14 @@ p {
 @media (min-width: 768px) {
   .footer-orbit-item {
     --footer-orbit-x-start: -36rem;
-    --footer-orbit-x-left: -18rem;
-    --footer-orbit-x-right: 18rem;
+    --footer-orbit-x-left: -19rem;
+    --footer-orbit-x-mid-left: -10rem;
+    --footer-orbit-x-mid-right: 10rem;
+    --footer-orbit-x-right: 19rem;
     --footer-orbit-x-end: 36rem;
-    --footer-orbit-y-edge: -1rem;
-    --footer-orbit-y-top: -6.2rem;
+    --footer-orbit-y-edge: -2.5rem;
+    --footer-orbit-y-mid: -5.6rem;
+    --footer-orbit-y-top: -7rem;
     --footer-orbit-y-hidden: 5.6rem;
   }
 }

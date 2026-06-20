@@ -41,6 +41,17 @@ const iconMap = {
   youtube: YouTubeIcon,
 };
 
+const ORBIT_DURATION_SECONDS = 18;
+const ORBIT_TRACK_ITEM_COUNT = 5;
+
+const buildOrbitTrackItems = (items) => {
+  if (!items.length) {
+    return [];
+  }
+
+  return Array.from({ length: ORBIT_TRACK_ITEM_COUNT }, (_, index) => items[index % items.length]);
+};
+
 const isExternalHref = (href) =>
   href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:');
 
@@ -99,8 +110,7 @@ const FooterColumn = ({ title, links }) => (
 
 const OrbitIcon = ({ item, index, total }) => {
   const Icon = iconMap[item.icon] || ChartBarIcon;
-  const orbitDuration = 18;
-  const delay = `${-1 * ((index * orbitDuration) / total)}s`;
+  const delay = `${-1 * ((index * ORBIT_DURATION_SECONDS) / total)}s`;
 
   return (
     <span
@@ -116,6 +126,7 @@ const OrbitIcon = ({ item, index, total }) => {
 
 const Footer = async () => {
   const copy = getFooterCopy();
+  const orbitItems = buildOrbitTrackItems(copy.orbitItems);
 
   return (
     <footer className="bg-gray-50 pt-12">
@@ -183,12 +194,12 @@ const Footer = async () => {
             className="pointer-events-none absolute left-1/2 top-6 h-72 w-72 -translate-x-1/2 rounded-full border border-white/12 md:top-8 md:h-[28rem] md:w-[48rem]"
           />
           <div className="footer-orbit-ring absolute left-1/2 top-6 h-72 w-72 md:top-8 md:h-[28rem] md:w-[48rem]">
-            {copy.orbitItems.map((item, index) => (
+            {orbitItems.map((item, index) => (
               <OrbitIcon
-                key={item.label}
+                key={`${item.label}-${index}`}
                 item={item}
                 index={index}
-                total={copy.orbitItems.length}
+                total={orbitItems.length}
               />
             ))}
           </div>
