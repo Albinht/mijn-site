@@ -10,7 +10,6 @@ import {
   PhoneIcon,
 } from '@heroicons/react/24/outline';
 import { getFooterCopy } from '@/content/footer';
-import FooterVideoTestimonials from './FooterVideoTestimonials';
 
 const socialIconClassName = 'h-5 w-5';
 
@@ -130,22 +129,9 @@ const Footer = async ({ pathname } = {}) => {
   const copy = getFooterCopy();
   const orbitItems = buildOrbitTrackItems(copy.orbitItems);
   const hideFooterCta = pathname === '/seo-specialist/rotterdam';
-  const hideFooterTestimonials = pathname === '/seo-specialist/rotterdam';
 
   return (
-    <footer className="bg-gray-50 pt-12">
-      {!hideFooterTestimonials && (
-        <div className="mb-10 w-full px-6">
-          <FooterVideoTestimonials
-            theme="light"
-            heading={copy.videoTestimonials.heading}
-            playCta={copy.videoTestimonials.playCta}
-            lazyNote={copy.videoTestimonials.lazyNote}
-            badgeNew={copy.videoTestimonials.badgeNew}
-          />
-        </div>
-      )}
-
+    <footer className="bg-gray-50">
       <section
         className={`relative isolate overflow-hidden bg-[#331300] px-6 pb-8 text-white ${
           hideFooterCta ? 'pt-12 md:pt-16' : 'pt-14 md:pt-20'
