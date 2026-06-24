@@ -99,7 +99,7 @@ export default async function RootLayout({ children }) {
         {isYoutubePage ? <YouTubeHeader /> : <Header />}
         {children}
         <ConditionalContactForm />
-        {!isYoutubePage && <Footer />}
+        {!isYoutubePage && <Footer pathname={pathname} />}
         {!isYoutubePage && <FloatingChatButton />}
       </body>
     </html>

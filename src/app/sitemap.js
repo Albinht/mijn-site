@@ -234,10 +234,10 @@ export default function sitemap() {
       priority: 0.6,
     },
     {
-      url: `${baseUrl}/marketing-barneveld`,
+      url: `${baseUrl}/marketing/barneveld`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.6,
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/marketing-leusden`,

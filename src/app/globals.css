@@ -80,14 +80,20 @@ p {
   }
 }
 
+.footer-orbit-stage {
+  overflow: hidden;
+  transform: translateY(-100%);
+  contain: layout paint;
+}
+
 .footer-orbit-plane {
-  --footer-orbit-duration: 32s;
-  --footer-orbit-radius: 9rem;
-  --footer-orbit-scale-y: 0.58;
-  --footer-orbit-counter-scale: 1.72;
+  --footer-orbit-duration: 34s;
+  --footer-orbit-radius: 15rem;
+  --footer-orbit-scale-y: 0.48;
+  --footer-orbit-counter-scale: 2.08;
   translate: -50% 0;
   transform: scaleY(var(--footer-orbit-scale-y));
-  transform-origin: 50% 0;
+  transform-origin: 50% 50%;
 }
 
 .footer-orbit-ring {
@@ -129,9 +135,9 @@ p {
 
 @media (min-width: 768px) {
   .footer-orbit-plane {
-    --footer-orbit-radius: 29rem;
-    --footer-orbit-scale-y: 0.54;
-    --footer-orbit-counter-scale: 1.85;
+    --footer-orbit-radius: 39rem;
+    --footer-orbit-scale-y: 0.27;
+    --footer-orbit-counter-scale: 3.7;
   }
 }
 

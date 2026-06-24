@@ -13,131 +13,262 @@ export const barneveldData = {
   },
 
   seo: {
-    title: 'SEO Specialist Barneveld | Marketing Bureau & Online Marketing Barneveld',
-    description: 'SEO Specialist Barneveld nodig? Hét marketing bureau voor Barneveld. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Barneveld.',
+    title: 'Marketing bureau Barneveld | SEO, Google Ads en websites - Niblah',
+    description: 'Zoek je een marketing bureau in Barneveld? Niblah helpt met SEO, Google Ads, websites en automation voor meer aanvragen. Plan een gratis consult.',
     canonical: 'https://www.niblah.com/marketing/barneveld',
-    keywords: 'SEO Barneveld, marketing bureau Barneveld, online marketing Barneveld',
+    keywords: 'marketing bureau Barneveld, online marketing Barneveld, SEO Barneveld, Google Ads Barneveld, website laten maken Barneveld',
   },
 
   hero: {
-    title: 'SEO Specialist Barneveld',
-    titleHighlight: 'Marketing Barneveld',
-    subtitle: 'Groei jouw bedrijf in de kippenstad van Nederland!',
-    description: 'Met 60.000+ inwoners, een bloeiende pluimveesector en strategische ligging aan de A1/A30 is Barneveld hét ondernemershart van de Gelderse Vallei. Als SEO specialist in Barneveld ken ik de lokale markt - van agrarische bedrijven tot moderne dienstverleners.',
+    title: 'Marketing bureau Barneveld',
+    titleHighlight: 'online groei',
+    subtitle: 'Voor ondernemers die meer aanvragen willen uit Barneveld en de Gelderse Vallei.',
+    description: 'Niblah helpt bedrijven in Barneveld met SEO, Google Ads, websites en marketing automation. Geen losse marketingacties, maar een groeisysteem waarin vindbaarheid, campagnes en opvolging samen werken.',
     highlights: [
-      'Lokale SEO voor bedrijven rond het centrum en bedrijvenpark Harselaar',
-      'Google Ads gericht op Barneveld, Voorthuizen & Kootwijkerbroek',
-      'Specialisatie in agrarische sector & B2B marketing',
-      'SEO Barneveld met kennis van de pluimveemarkt',
-      'Bereik klanten van Ede tot Amersfoort via de A1 corridor',
+      'Lokale SEO voor Barneveld, Harselaar, Voorthuizen en Kootwijkerbroek',
+      'Google Ads campagnes gericht op aanvragen, omzet en marge',
+      'Websites met duidelijke pagina\'s, tracking en conversiepunten',
+      'Marketing automation voor snellere opvolging van nieuwe leads',
+      'Direct contact met een specialist die strategie en uitvoering koppelt',
     ],
     ctaPrimary: {
-      text: 'Gratis SEO Consult',
+      text: 'Plan gratis consult',
       action: 'scroll-contact',
     },
     ctaSecondary: {
-      text: 'Meer over SEO in Barneveld',
-      href: '/work-with-me',
+      text: 'Bekijk diensten',
+      href: '/services',
     },
-    extraInfo: 'Actief als marketing bureau in Barneveld en omgeving',
+    extraInfo: 'Marketing bureau voor Barneveld, de A1/A30-corridor en omliggende kernen',
     phoneNumber: '+31 6 48728828',
     heroImage: graphImage,
     avatarImage: avatarImage,
   },
 
   features: {
-    title: 'Jouw Marketing Bureau & SEO Specialist in Barneveld',
-    subtitle: 'Lokaal gevonden worden? Meer klanten in Barneveld?',
+    title: 'Online marketing Barneveld met een duidelijk systeem',
+    subtitle: 'De meeste bedrijven hebben geen behoefte aan nog een los kanaal, maar aan een aanpak waarin verkeer, website en opvolging elkaar versterken.',
     items: [
       {
-        badge: 'SEO Barneveld',
-        title: 'Lokale SEO Specialist Barneveld',
-        description: 'Als SEO specialist help ik je Barnevelder bedrijf met lokale topposities in Google. Jouw bedrijf structureel bovenaan voor belangrijke zoektermen zoals \'[jouw dienst] Barneveld\'.',
-        visualTitle: 'SEO Strategie',
-        visualSubtitle: 'Lokale topposities',
+        badge: 'Vindbaarheid',
+        title: 'Lokale SEO voor Barneveld',
+        description: 'We bouwen pagina\'s rond zoekintentie, techniek en lokale relevantie, zodat mensen uit Barneveld jouw aanbod sneller vinden en vertrouwen.',
+        visualTitle: 'SEO basis',
+        visualSubtitle: 'Structureel verkeer',
         image: masterSeoImage,
       },
       {
-        badge: 'Google Ads',
-        title: 'Google Ads Barneveld',
-        description: 'Snel meer klanten uit Barneveld en omgeving? Met Google Ads Barneveld bereik je lokaal relevante klanten precies op het juiste moment.',
-        visualTitle: 'Direct Resultaat',
-        visualSubtitle: 'Meer aanvragen',
+        badge: 'Campagnes',
+        title: 'Google Ads voor directe vraag',
+        description: 'We richten campagnes op zoekers die nu een oplossing zoeken in Barneveld of de regio, met tracking op aanvragen in plaats van losse klikken.',
+        visualTitle: 'SEA campagnes',
+        visualSubtitle: 'Vraag van nu',
         image: keywordResearchImage,
       },
       {
-        badge: 'Website & Conversie',
-        title: 'Marketing Bureau Barneveld',
-        description: 'Wij bouwen websites die Barneveld overtuigen. Conversiegerichte, snelle websites waarmee je direct een voorsprong hebt in de lokale markt.',
-        visualTitle: 'Website Ontwerp',
-        visualSubtitle: 'Meer omzet',
+        badge: 'Conversie',
+        title: 'Websites die aanvragen opleveren',
+        description: 'We verbeteren of bouwen pagina\'s die bezoekers helpen kiezen, contact opnemen en terugkomen in een meetbare opvolgflow.',
+        visualTitle: 'Website flow',
+        visualSubtitle: 'Meer leads',
         image: contentRanksImage,
       },
     ],
   },
 
-  reviews: {
-    title: 'Barneveld kiest voor <span class=\'bg-[#F7D8FA] px-2 rounded italic\'>SEO & Marketing</span> door Albin',
-    items: [
-      { name: 'Pluimveebedrijf Harselaar', rating: 5, text: 'Als pluimveehouder in Harselaar Zuid krijgen we nu veel meer B2B aanvragen. Perfect voor onze exportmarkt naar heel Europa!' },
-      { name: 'Restaurant Aan de Brink', rating: 5, text: 'Ons restaurant aan de historische Brink is nu altijd vol. Toeristen vinden ons makkelijk dankzij de lokale SEO strategie.' },
-      { name: 'Meubelzaak Voorthuizen', rating: 5, text: 'Vanuit onze showroom bij de A30 trekken we nu klanten uit heel Midden-Nederland. Google Ads werkt uitstekend voor ons!' },
-      { name: 'Kapsalon Norschoten', rating: 5, text: 'In de wijk Norschoten is veel concurrentie, maar we staan nu bovenaan. Agenda zit vol met klanten uit heel Barneveld-Noord.' },
-      { name: 'Installateur De Burgt', rating: 5, text: 'Voor spoedklussen in De Burgt en Veller worden we nu als eerste gevonden. De investering betaalt zich dubbel terug.' },
-      { name: 'Tandarts Eilanden-Oost', rating: 4.5, text: 'Onze praktijk in de nieuwbouwwijk Eilanden-Oost groeit snel dankzij de online marketing. Veel jonge gezinnen als nieuwe patiënten!' },
+  localProof: {
+    title: 'Wat we zien bij marketing in Barneveld',
+    intro: 'Barneveld is lokaal genoeg voor gerichte zoekopdrachten, maar regionaal genoeg om concurrentie te voelen vanuit Ede, Nijkerk en Amersfoort. Daardoor werkt online marketing hier het best als SEO, advertenties en websiteconversie tegelijk worden bekeken.',
+    observations: [
+      {
+        title: 'Zoekers vergelijken lokaal en regionaal',
+        description: 'Iemand zoekt niet alleen op een dienst in Barneveld, maar vergelijkt ook aanbieders in omliggende plaatsen. Alleen een plaatsnaam op de homepage is dan te dun.',
+        action: 'We bouwen servicepagina\'s die lokale relevantie combineren met duidelijke argumenten om contact op te nemen.',
+      },
+      {
+        title: 'Harselaar en de A1/A30 vragen om B2B-focus',
+        description: 'Voor bedrijven rond Harselaar draait vindbaarheid vaak om zakelijke aanvragen, levertijden, capaciteit en betrouwbaarheid, niet alleen om zichtbaarheid.',
+        action: 'We koppelen SEO en Google Ads aan conversies die commercieel waardevol zijn.',
+      },
+      {
+        title: 'Veel leads vallen weg na het eerste contactmoment',
+        description: 'Nieuwe aanvragen leveren pas groei op als opvolging snel en duidelijk gebeurt. Dat geldt voor lokale diensten, webshops en B2B-bedrijven.',
+        action: 'We richten tracking, formulieren en automation zo in dat je weet welke kanalen echte gesprekken opleveren.',
+      },
     ],
-    moreItems: [
-      { name: 'Transportbedrijf A1 Corridor', rating: 5, text: 'Gelegen aan de A1 bereiken we nu logistieke klanten uit heel Nederland. De B2B marketing strategie werkt perfect!' },
-      { name: 'Beauty Centrum Kallenbroek', rating: 5, text: 'In winkelcentrum Kallenbroek hebben we veel concurrentie, maar staan nu bovenaan. Omzet is verdubbeld!' },
-      { name: 'Fietsspecialist Kootwijkerbroek', rating: 4.5, text: 'Vanuit onze vestiging in Kootwijkerbroek bereiken we nu heel Noord-Barneveld. Vooral e-bikes lopen goed.' },
-      { name: 'Advocatenkantoor Vellerselaar', rating: 5, text: 'Voor ons kantoor in bedrijvenpark Harselaar was professionele uitstraling cruciaal. Nu structureel nieuwe zakelijke cliënten.' },
-      { name: 'Tuincentrum De Glind', rating: 5, text: 'Nabij jeugddorp De Glind trekken we nu klanten uit de hele regio. Seizoensacties worden perfect gevonden via Google.' },
-      { name: 'Dierenarts Garderen', rating: 4.5, text: 'Onze kliniek bij natuurgebied Garderen wordt nu gevonden door heel Barneveld-Oost. Top resultaten!' },
-    ],
+    callout: 'Deze pagina is daarom geen algemene SEO-tekst met alleen de plaatsnaam Barneveld erin. De insteek is: welke combinatie van vindbaarheid, campagnes, website en opvolging geeft een bedrijf in deze regio de meeste kans op aanvragen?',
   },
 
   services: {
-    title: 'Marketing Bureau & SEO Specialist in <span class="bg-[#F7D8FA] px-2 rounded italic">Barneveld</span>',
-    subtitle: 'Complete marketing oplossingen voor lokale bedrijven, zzp\'ers & mkb in Barneveld.',
+    title: 'Full service marketing bureau in <span class="bg-[#F7D8FA] px-2 rounded italic">Barneveld</span>',
+    subtitle: 'Een compacte dienstenmix voor bedrijven die niet alleen meer verkeer willen, maar betere aanvragen.',
     backgroundColor: 'bg-gray-50',
     items: [
       {
-        title: 'SEO Specialist Barneveld',
-        description: 'Scoor topposities in Google met lokale SEO. Word gevonden door nieuwe klanten uit Barneveld & omstreken.',
+        title: 'SEO in Barneveld',
+        description: 'SEO voor bedrijven die structureel gevonden willen worden op diensten, lokale zoekvragen en informatieve vragen van klanten.',
         features: [
-          'Google Mijn Bedrijf optimalisatie',
-          'Lokale zoekwoorden research',
-          'Content & linkbuilding',
-          'Review management',
+          'Lokale zoekintentie en SERP-analyse',
+          'Techniek, content en interne links',
+          'Servicepagina\'s met duidelijke conversie',
+          'Maandelijkse optimalisatie op kansen',
         ],
+        cta: { text: 'Bekijk SEO', href: '/services/seo' },
       },
       {
-        title: 'Google Ads Barneveld',
-        description: 'Snel meer klanten uit Barneveld? Met Google Ads bereik je direct lokale aanvragen en leads.',
+        title: 'Google Ads in Barneveld',
+        description: 'Campagnes voor mensen die nu zoeken naar jouw aanbod, met sturing op aanvragen en commerciële kwaliteit.',
         features: [
-          'Lokale campagnes',
-          'Geografische targeting',
-          'Conversie optimalisatie',
-          'Maandelijkse rapportages',
+          'Search campagnes per dienst of regio',
+          'Conversiemeting op formulieren en calls',
+          'Negatieve zoekwoorden en budgetcontrole',
+          'Rapportage op leads, niet alleen klikken',
         ],
         featured: true,
+        cta: { text: 'Bekijk SEA', href: '/services/sea' },
       },
       {
-        title: 'Website & Online Marketing',
-        description: 'Moderne websites & online marketing die conversiegericht zijn voor de Barneveldse markt.',
+        title: 'Websites en automation',
+        description: 'Snelle websites en opvolgflows die bezoekers helpen kiezen en je team helpen sneller reageren.',
         features: [
-          'Professioneel ontwerp',
-          'Lokale focus',
-          'Snel & mobielvriendelijk',
-          'Gericht op meer omzet',
+          'WordPress, Shopify of maatwerk pagina\'s',
+          'Heldere formulieren en contactmomenten',
+          'Tracking voor kanaal en leadkwaliteit',
+          'E-mail en CRM opvolging waar nuttig',
+        ],
+        cta: { text: 'Bekijk websites', href: '/services/web-development' },
+      },
+    ],
+  },
+
+  method: {
+    title: 'Zo bouwen we groei op voor Barneveld',
+    description: 'We starten niet met losse taken, maar met de vraag waar de meeste commerciële winst zit: beter gevonden worden, beter converteren of sneller opvolgen.',
+    steps: [
+      {
+        title: 'Nulmeting',
+        description: 'We bekijken je huidige website, zoekwoorden, campagnes, tracking en belangrijkste concurrenten.',
+      },
+      {
+        title: 'Lokale kansen',
+        description: 'We bepalen welke zoekvragen in Barneveld en omgeving waardevol genoeg zijn om pagina\'s of campagnes voor te maken.',
+      },
+      {
+        title: 'Basis op orde',
+        description: 'We verbeteren techniek, tracking, contactpunten en paginaopbouw voordat extra verkeer wordt ingekocht.',
+      },
+      {
+        title: 'Uitvoering',
+        description: 'SEO-content, Google Ads, websiteblokken en automation worden op elkaar afgestemd.',
+      },
+      {
+        title: 'Bijsturen',
+        description: 'We kijken naar aanvragen, kwaliteit en kosten per lead, zodat marketing steeds scherper wordt.',
+      },
+    ],
+  },
+
+  comparison: {
+    title: 'Geen bureau dat alleen taken afvinkt',
+    body: 'Veel marketing bureaus leveren een rapport, campagne of website op als los project. Niblah kijkt liever naar het systeem erachter: welke zoekvragen leveren aanvragen op, welke pagina\'s overtuigen, welke campagnes vullen de pijplijn en hoe snel worden leads opgevolgd?',
+    points: [
+      {
+        title: 'Strategie en uitvoering blijven bij elkaar',
+        description: 'De persoon die de kansen ziet, kijkt ook mee naar de uitvoering. Daardoor blijven SEO, Google Ads en websitekeuzes praktisch.',
+      },
+      {
+        title: 'Lokale pagina\'s krijgen eigen inhoud',
+        description: 'Geen gekopieerde plaatsnaamteksten, maar lokale argumenten, zoekintentie en relevante omliggende plaatsen.',
+      },
+      {
+        title: 'Marketing wordt gekoppeld aan verkoop',
+        description: 'Meer verkeer is niet genoeg. We kijken naar contactaanvragen, belmomenten, opvolging en de kwaliteit van leads.',
+      },
+    ],
+  },
+
+  faq: {
+    title: 'Vragen over marketing bureau Barneveld',
+    items: [
+      {
+        question: 'Wat doet een marketing bureau in Barneveld?',
+        answer: 'Een marketing bureau in Barneveld helpt bedrijven beter zichtbaar worden, meer relevante bezoekers aantrekken en meer aanvragen uit die bezoekers halen. Bij Niblah combineren we SEO, Google Ads, websites en marketing automation zodat kanalen elkaar versterken.',
+      },
+      {
+        question: 'Is lokale SEO belangrijk voor bedrijven in Barneveld?',
+        answer: 'Ja, vooral wanneer klanten zoeken op een dienst plus plaats of regio. Lokale SEO helpt je zichtbaar worden voor zoekopdrachten rond Barneveld, Harselaar, Voorthuizen, Kootwijkerbroek en omliggende plaatsen. De pagina moet wel echte lokale waarde hebben, niet alleen een plaatsnaam.',
+      },
+      {
+        question: 'Werkt Google Ads voor lokale bedrijven in Barneveld?',
+        answer: 'Google Ads kan goed werken wanneer de campagnes strak zijn ingericht op zoekintentie, regio en conversies. We sturen niet op zoveel mogelijk klikken, maar op aanvragen die passen bij je aanbod en marge.',
+      },
+      {
+        question: 'Kan Niblah ook mijn bestaande website verbeteren?',
+        answer: 'Ja. Vaak is een volledig nieuwe website niet de eerste stap. We kijken eerst naar snelheid, paginaopbouw, tracking, formulieren, call-to-actions en content. Daarna bepalen we of verbeteren genoeg is of dat nieuwbouw slimmer is.',
+      },
+      {
+        question: 'Hoe snel zie ik resultaat van online marketing in Barneveld?',
+        answer: 'Google Ads kan vaak sneller data en aanvragen opleveren. SEO bouwt meestal over meerdere maanden op, omdat techniek, content en autoriteit tijd nodig hebben. De beste aanpak hangt af van je huidige website, concurrentie en budget.',
+      },
+      {
+        question: 'Wat kost online marketing in Barneveld?',
+        answer: 'Dat hangt af van de combinatie van diensten. Een lokale SEO-aanpak, Google Ads beheer of websiteproject vraagt elk om een andere investering. In een gratis consult bekijken we eerst waar de grootste kans zit, zodat je geen pakket koopt dat niet past.',
+      },
+    ],
+  },
+
+  internalLinks: {
+    title: 'Meer Niblah pagina\'s voor je vergelijking',
+    groups: [
+      {
+        title: 'Diensten',
+        links: [
+          { label: 'SEO services', href: '/services/seo' },
+          { label: 'Google Ads services', href: '/services/sea' },
+          { label: 'Website development', href: '/services/web-development' },
         ],
       },
+      {
+        title: 'Tools',
+        links: [
+          { label: 'AI Marketing Audit', href: '/tools/ai-marketing-audit' },
+          { label: 'SERP Simulator', href: '/tools/serp-simulator' },
+          { label: 'ROAS Calculator', href: '/tools/break-even-roas-calculator' },
+        ],
+      },
+      {
+        title: 'In de buurt',
+        links: [
+          { label: 'Marketing Ede', href: '/marketing/ede' },
+          { label: 'Marketing Nijkerk', href: '/marketing/nijkerk' },
+          { label: 'Marketing Veenendaal', href: '/marketing/veenendaal' },
+        ],
+      },
+    ],
+  },
+
+  cta: {
+    title: 'Ontdek welke marketingmix past bij jouw bedrijf in Barneveld',
+    description: 'Plan een gratis consult. We kijken naar je huidige vindbaarheid, website, campagnes en opvolging, en bepalen welke stap de meeste impact kan maken.',
+    primaryCTA: {
+      text: 'Plan gratis consult',
+      action: 'scroll-contact',
+    },
+    secondaryCTA: {
+      text: 'Bekijk alle diensten',
+      href: '/services',
+    },
+    backgroundColor: 'bg-[#D9EDFF]',
+    highlights: [
+      'Analyse van je huidige online vindbaarheid',
+      'Concrete kansen voor SEO, Google Ads en websiteconversie',
+      'Advies zonder verplicht pakket of lange wachttijd',
     ],
   },
 
   contact: {
-    title: 'Gratis kennismaken met jouw <span class="bg-[#F7D8FA] px-2 rounded italic">SEO Specialist Barneveld</span>?',
-    description: 'Ontdek wat mijn marketing bureau voor jouw bedrijf in Barneveld kan doen.',
+    title: 'Gratis kennismaken met Niblah als <span class="bg-[#F7D8FA] px-2 rounded italic">marketing bureau Barneveld</span>?',
+    description: 'Vertel waar je nu staat. Dan kijken we welke combinatie van SEO, Google Ads, website en automation logisch is voor jouw bedrijf.',
     phone: '+31 6 48728828',
     whatsapp: 'https://wa.me/31648728828',
   },

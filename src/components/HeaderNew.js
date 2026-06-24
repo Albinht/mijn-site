@@ -239,10 +239,10 @@ export default function HeaderNew() {
                         <div className="mb-6">
                           <h3 className="text-sm font-semibold text-gray-900 mb-4">{copy.services.sidebar.industriesTitle}</h3>
                           <div className="space-y-2">
-                            <Link href="/industries/ecommerce" className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">{copy.services.sidebar.industries.ecommerce}</Link>
-                            <Link href="/industries/saas" className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">{copy.services.sidebar.industries.saas}</Link>
-                            <Link href="/industries/local" className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">{copy.services.sidebar.industries.local}</Link>
-                            <Link href="/industries/b2b" className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">{copy.services.sidebar.industries.b2b}</Link>
+                            <Link href="/industries/ecommerce" prefetch={false} className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">{copy.services.sidebar.industries.ecommerce}</Link>
+                            <Link href="/industries/saas" prefetch={false} className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">{copy.services.sidebar.industries.saas}</Link>
+                            <Link href="/industries/local" prefetch={false} className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">{copy.services.sidebar.industries.local}</Link>
+                            <Link href="/industries/b2b" prefetch={false} className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">{copy.services.sidebar.industries.b2b}</Link>
                           </div>
                         </div>
 
@@ -250,8 +250,8 @@ export default function HeaderNew() {
                           <h3 className="text-sm font-semibold text-gray-900 mb-4">{copy.services.sidebar.professionalTitle}</h3>
                           <div className="space-y-2">
                             <Link href="/contact" className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">{copy.services.sidebar.professional.hire}</Link>
-                            <Link href="/onboarding" className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">{copy.services.sidebar.professional.onboarding}</Link>
-                            <Link href="/support" className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">{copy.services.sidebar.professional.success}</Link>
+                            <Link href="/onboarding" prefetch={false} className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">{copy.services.sidebar.professional.onboarding}</Link>
+                            <Link href="/support" prefetch={false} className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">{copy.services.sidebar.professional.success}</Link>
                           </div>
                         </div>
                       </div>
@@ -629,7 +629,7 @@ export default function HeaderNew() {
                   <div className="fixed left-6 top-[6.5rem] w-full max-w-5xl bg-white border border-gray-200 rounded-2xl shadow-2xl max-h-96 overflow-y-auto z-50">
                     <div className="p-6">
                       <div className="grid grid-cols-3 gap-x-4 gap-y-2">
-                        <Link href="/marketing/amsterdam" className="text-sm text-gray-700 hover:text-gray-900 hover:underline">Amsterdam</Link>
+                        <Link href="/marketing/amsterdam" prefetch={false} className="text-sm text-gray-700 hover:text-gray-900 hover:underline">Amsterdam</Link>
                         <Link href="/marketing/rotterdam" className="text-sm text-gray-700 hover:text-gray-900 hover:underline">Rotterdam</Link>
                         <Link href="/marketing/utrecht" className="text-sm text-gray-700 hover:text-gray-900 hover:underline">Utrecht</Link>
                         <Link href="/marketing/eindhoven" className="text-sm text-gray-700 hover:text-gray-900 hover:underline">Eindhoven</Link>
@@ -827,19 +827,19 @@ export default function HeaderNew() {
                       <div className="w-64 bg-gray-50 p-6 rounded-r-2xl border-l border-gray-200">
                         {/* Icons Section */}
                         <div className="mb-6 space-y-3">
-                          <Link href="/help" className="flex items-center gap-3 text-sm text-gray-700 hover:text-gray-900">
+                          <Link href="/help" prefetch={false} className="flex items-center gap-3 text-sm text-gray-700 hover:text-gray-900">
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
                             </svg>
                             {copy.resources.sidebar.help}
                           </Link>
-                          <Link href="/case-studies" className="flex items-center gap-3 text-sm text-gray-700 hover:text-gray-900">
+                          <Link href="/case-studies" prefetch={false} className="flex items-center gap-3 text-sm text-gray-700 hover:text-gray-900">
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
                             </svg>
                             {copy.resources.sidebar.caseStudies}
                           </Link>
-                          <Link href="/events" className="flex items-center gap-3 text-sm text-gray-700 hover:text-gray-900">
+                          <Link href="/events" prefetch={false} className="flex items-center gap-3 text-sm text-gray-700 hover:text-gray-900">
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                             </svg>
@@ -852,8 +852,8 @@ export default function HeaderNew() {
                           <h3 className="text-sm font-semibold text-gray-900 mb-4">{copy.resources.sidebar.professionalTitle}</h3>
                           <div className="space-y-2">
                             <Link href="/contact" className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">{copy.resources.sidebar.professional.hire}</Link>
-                            <Link href="/onboarding" className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">{copy.resources.sidebar.professional.onboarding}</Link>
-                            <Link href="/support" className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">{copy.resources.sidebar.professional.success}</Link>
+                            <Link href="/onboarding" prefetch={false} className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">{copy.resources.sidebar.professional.onboarding}</Link>
+                            <Link href="/support" prefetch={false} className="block text-sm text-gray-700 hover:text-gray-900 hover:underline">{copy.resources.sidebar.professional.success}</Link>
                           </div>
                         </div>
                       </div>
@@ -863,7 +863,7 @@ export default function HeaderNew() {
               </div>
 
               {/* Pricing */}
-              <Link href="/pricing" className="px-3 py-2 text-sm font-semibold text-[#101828] hover:text-[#101828]/80">
+              <Link href="/contact" className="px-3 py-2 text-sm font-semibold text-[#101828] hover:text-[#101828]/80">
                 {copy.nav.pricing}
               </Link>
               </nav>
@@ -1215,7 +1215,7 @@ export default function HeaderNew() {
                     <div className="ml-2 mt-2 pb-3">
                       <div className="pl-4 border-l-2 border-gray-200 max-h-60 overflow-y-auto">
                         <div className="grid grid-cols-2 gap-x-3 gap-y-1">
-                          <Link href="/marketing/amsterdam" className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>Amsterdam</Link>
+                          <Link href="/marketing/amsterdam" prefetch={false} className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>Amsterdam</Link>
                           <Link href="/marketing/rotterdam" className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>Rotterdam</Link>
                           <Link href="/marketing/utrecht" className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>Utrecht</Link>
                           <Link href="/marketing/eindhoven" className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>Eindhoven</Link>
@@ -1322,7 +1322,7 @@ export default function HeaderNew() {
 
                 {/* Prijzen */}
                 <Link 
-                  href="/pricing" 
+                  href="/contact" 
                   className="block px-4 py-3 text-base font-semibold text-[#101828] hover:bg-gray-50 rounded-lg"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >

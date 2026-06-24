@@ -11,10 +11,10 @@ const copy = {
       secondaryLabel: 'Ontdek onze diensten',
     },
     videoTestimonials: {
-      heading: 'Video reviews van onze klanten',
+      heading: 'Geliefd door ondernemers die vooruit willen',
       playCta: 'Bekijk review',
-      lazyNote: 'Aanrader om te kijken — echte klantreviews.',
-      badgeNew: 'Nieuw',
+      lazyNote: 'Twee echte video reviews van klanten die onze persoonlijke aanpak en manier van werken hebben ervaren.',
+      badgeNew: 'Klantreviews',
     },
     orbitItems: [
       {
@@ -40,6 +40,18 @@ const copy = {
         ariaLabel: 'Bekijk marketing automation diensten',
         href: '/services/email-marketing',
         icon: 'email',
+      },
+      {
+        label: 'Strategie',
+        ariaLabel: 'Bekijk de marketingstrategie diensten',
+        href: '/services',
+        icon: 'strategy',
+      },
+      {
+        label: 'Consult',
+        ariaLabel: 'Plan een gratis consult',
+        href: '/contact',
+        icon: 'consult',
       },
       {
         label: 'YouTube',

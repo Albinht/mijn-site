@@ -183,32 +183,6 @@ const copy = {
         },
       ],
     },
-    leadSection: {
-      pills: {
-        primary: 'Probeer het gratis',
-        secondaryBold: 'Bespaar 25%',
-        secondaryRest: 't.o.v. grote bureaus',
-        secondaryShort: 'vs bureaus',
-      },
-      title: {
-        prefix: 'Maak gratis kennis met onze',
-        highlight: 'marketingdiensten',
-        suffix: '',
-      },
-      description:
-        'Kom erachter waarom klanten massaal hun marketingbureaus ontslaan en kiezen voor een boutique bureau dat in staat is allround service te bieden met een direct contactpersoon. Weet met wie je te maken hebt.',
-      featuresLeft: [
-        'Direct contact met je specialist',
-        '30+ jaar ervaring in een team',
-        'Allround service onder een dak',
-      ],
-      featuresRight: [
-        'Geen lange wachttijden',
-        'Transparante rapportages',
-        'Persoonlijke aanpak',
-      ],
-      ctaLabel: 'Ontdek onze diensten',
-    },
   };
 
 export function getHomeCopy() {

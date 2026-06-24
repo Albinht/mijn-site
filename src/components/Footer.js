@@ -37,12 +37,14 @@ const iconMap = {
   email: EnvelopeIcon,
   seo: MagnifyingGlassIcon,
   growth: ChartBarIcon,
+  consult: PhoneIcon,
+  strategy: CheckBadgeIcon,
   whatsapp: WhatsAppIcon,
   x: XIcon,
   youtube: YouTubeIcon,
 };
 
-const ORBIT_TRACK_ITEM_COUNT = 7;
+const ORBIT_TRACK_ITEM_COUNT = 9;
 
 const buildOrbitTrackItems = (items) => {
   if (!items.length) {
@@ -73,14 +75,14 @@ const SmartLink = ({ href, className, children, ariaLabel }) => {
   }
 
   return (
-    <Link href={href} className={className} aria-label={ariaLabel}>
+    <Link href={href} className={className} aria-label={ariaLabel} prefetch={false}>
       {children}
     </Link>
   );
 };
 
 const FooterLogo = () => (
-  <Link href="/" className="inline-flex items-center">
+  <Link href="/" className="inline-flex items-center" prefetch={false}>
     <span className="relative inline-flex items-center">
       <span className="text-lg font-bold tracking-tight text-[#101828]">Niblah</span>
       <span className="ml-1.5 inline-flex h-4 w-4 items-center justify-center rounded-full bg-[#1995FF] text-white">
@@ -124,23 +126,31 @@ const OrbitIcon = ({ item, index, total }) => {
   );
 };
 
-const Footer = async () => {
+const Footer = async ({ pathname } = {}) => {
   const copy = getFooterCopy();
   const orbitItems = buildOrbitTrackItems(copy.orbitItems);
+  const hideFooterCta = pathname === '/seo-specialist/rotterdam';
+  const hideFooterTestimonials = pathname === '/seo-specialist/rotterdam';
 
   return (
     <footer className="bg-gray-50 pt-12">
-      <div className="mb-10 w-full px-6">
-        <FooterVideoTestimonials
-          theme="light"
-          heading={copy.videoTestimonials.heading}
-          playCta={copy.videoTestimonials.playCta}
-          lazyNote={copy.videoTestimonials.lazyNote}
-          badgeNew={copy.videoTestimonials.badgeNew}
-        />
-      </div>
+      {!hideFooterTestimonials && (
+        <div className="mb-10 w-full px-6">
+          <FooterVideoTestimonials
+            theme="light"
+            heading={copy.videoTestimonials.heading}
+            playCta={copy.videoTestimonials.playCta}
+            lazyNote={copy.videoTestimonials.lazyNote}
+            badgeNew={copy.videoTestimonials.badgeNew}
+          />
+        </div>
+      )}
 
-      <section className="relative isolate overflow-hidden bg-[#331300] px-6 pb-8 pt-14 text-white md:pt-20">
+      <section
+        className={`relative isolate overflow-hidden bg-[#331300] px-6 pb-8 text-white ${
+          hideFooterCta ? 'pt-12 md:pt-16' : 'pt-14 md:pt-20'
+        }`}
+      >
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_8%,rgba(25,149,255,0.2),transparent_28%),linear-gradient(to_right,rgba(255,255,255,0.09)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.07)_1px,transparent_1px)] bg-[size:auto,36px_36px,36px_36px] opacity-70"
@@ -150,64 +160,65 @@ const Footer = async () => {
           className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_72%,rgba(255,255,255,0.14),transparent_34%)]"
         />
 
-        <div className="mx-auto max-w-4xl text-center">
-          <div className="mb-5 inline-flex items-center gap-2 text-sm font-semibold text-[#1995FF]">
-            <span className="h-2 w-2 rounded-full bg-[#1995FF]" />
-            {copy.cta.eyebrow}
-          </div>
-          <h2
-            className="mx-auto max-w-4xl font-bold leading-[1.08] text-white"
-            style={{
-              fontFamily: 'var(--font-poppins), sans-serif',
-              fontSize: 'clamp(1.85rem, 3.1vw, 2.65rem)',
-            }}
-          >
-            {copy.cta.heading}{' '}
-            <span className="text-[#1995FF]">{copy.cta.headingAccent}</span>
-          </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white/62 md:text-lg">
-            {copy.cta.description}
-          </p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-3 rounded-full bg-white px-6 py-3 text-sm font-bold text-[#331300] shadow-[0_14px_36px_rgba(0,0,0,0.18)] transition-transform hover:-translate-y-0.5 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1995FF]"
+        {!hideFooterCta && (
+          <div className="mx-auto max-w-4xl text-center">
+            <div className="mb-5 inline-flex items-center gap-2 text-sm font-semibold text-[#1995FF]">
+              <span className="h-2 w-2 rounded-full bg-[#1995FF]" />
+              {copy.cta.eyebrow}
+            </div>
+            <h2
+              className="mx-auto max-w-4xl text-2xl font-bold leading-tight text-white"
             >
-              <span>{copy.cta.primaryLabel}</span>
-              <ArrowUpRightIcon className="h-4 w-4" aria-hidden="true" />
-            </Link>
-            <Link
-              href="/services"
-              className="inline-flex items-center justify-center rounded-full border border-white/18 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-[#1995FF] hover:text-[#1995FF] focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1995FF]"
-            >
-              {copy.cta.secondaryLabel}
-            </Link>
-          </div>
-        </div>
-
-        <div
-          aria-hidden="true"
-          className="pointer-events-none relative z-10 mx-auto mb-6 mt-10 h-44 w-full max-w-5xl overflow-visible md:mb-8 md:mt-14 md:h-[24rem]"
-        >
-          <div className="footer-orbit-plane absolute left-1/2 top-0 h-[18rem] w-[18rem] md:h-[58rem] md:w-[58rem]">
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-0 rounded-full border border-white/12"
-            />
-            <div className="footer-orbit-ring absolute inset-0">
-              {orbitItems.map((item, index) => (
-                <OrbitIcon
-                  key={`${item.label}-${index}`}
-                  item={item}
-                  index={index}
-                  total={orbitItems.length}
-                />
-              ))}
+              {copy.cta.heading}{' '}
+              <span className="text-[#1995FF]">{copy.cta.headingAccent}</span>
+            </h2>
+            <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white/62 md:text-lg">
+              {copy.cta.description}
+            </p>
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <Link
+                href="/contact"
+                prefetch={false}
+                className="inline-flex items-center justify-center gap-3 rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#331300] shadow-[0_14px_36px_rgba(0,0,0,0.18)] transition-transform hover:-translate-y-0.5 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1995FF]"
+              >
+                <span>{copy.cta.primaryLabel}</span>
+                <ArrowUpRightIcon className="h-4 w-4" aria-hidden="true" />
+              </Link>
+              <Link
+                href="/services"
+                prefetch={false}
+                className="inline-flex items-center justify-center rounded-full border border-white/18 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-[#1995FF] hover:text-[#1995FF] focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1995FF]"
+              >
+                {copy.cta.secondaryLabel}
+              </Link>
             </div>
           </div>
-        </div>
+        )}
 
-        <div className="relative z-20 w-full rounded-lg bg-[#F7F8F6] p-6 text-[#101828] shadow-[0_28px_90px_rgba(0,0,0,0.28)] md:p-10 lg:p-12">
+        <div className={`relative mx-auto w-full ${hideFooterCta ? 'mt-3 md:mt-8' : 'mt-24 md:mt-28'}`}>
+          <div
+            aria-hidden="true"
+            className="footer-orbit-stage pointer-events-none absolute inset-x-0 top-0 z-10 h-32 md:h-40"
+          >
+            <div className="footer-orbit-plane absolute left-1/2 bottom-[-20.5rem] h-[34rem] w-[34rem] md:bottom-[-50.5rem] md:h-[88rem] md:w-[88rem]">
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 rounded-full border border-white/14"
+              />
+              <div className="footer-orbit-ring absolute inset-0">
+                {orbitItems.map((item, index) => (
+                  <OrbitIcon
+                    key={`${item.label}-${index}`}
+                    item={item}
+                    index={index}
+                    total={orbitItems.length}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="relative z-20 w-full rounded-lg bg-[#F7F8F6] p-6 text-[#101828] shadow-[0_28px_90px_rgba(0,0,0,0.28)] md:p-10 lg:p-12">
           <div className="grid gap-10 lg:grid-cols-[1.15fr_2.2fr] lg:gap-14">
             <div>
               <FooterLogo />
@@ -274,6 +285,7 @@ const Footer = async () => {
                 </a>
               </div>
             </div>
+          </div>
           </div>
         </div>
       </section>

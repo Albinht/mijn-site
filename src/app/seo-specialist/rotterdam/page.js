@@ -1,17 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import SeoTestimonialsSlider from '@/components/SeoTestimonialsSlider';
 import {
   ArrowRightIcon,
-  ChartBarSquareIcon,
   CheckCircleIcon,
   ClipboardDocumentCheckIcon,
   CursorArrowRaysIcon,
-  MagnifyingGlassIcon,
   MapPinIcon,
   PresentationChartLineIcon,
-  RocketLaunchIcon,
   ShieldCheckIcon,
-  SparklesIcon,
   WrenchScrewdriverIcon,
 } from '@heroicons/react/24/outline';
 
@@ -53,8 +50,8 @@ const caseStudies = [
     description:
       'We brachten content, interne links, technische SEO en conversie samen in een structuur die maandelijks verder uitgebouwd kan worden.',
     image: '/downloads/organic results.png',
-    background: '#A9FFB0',
-    accent: '#37C66A',
+    background: '#F4FAFF',
+    accent: '#1995FF',
     metrics: [
       { value: '+86%', label: 'meer non-branded verkeer' },
       { value: '19', label: 'pagina\'s geoptimaliseerd' },
@@ -82,31 +79,42 @@ const caseStudies = [
 
 const trustCards = [
   {
-    label: 'Bedrijven geholpen',
-    value: '100+',
+    label: 'Organische groei',
+    value: '300',
+    suffix: '%',
     description:
-      'Ondernemers geholpen met SEO, websites, Google Ads en marketing systemen die meer aanvragen moeten opleveren.',
+      'Tot 300% meer organisch verkeer bij klanten door techniek, content, autoriteit en conversie samen te verbeteren.',
+    hoverDetail: 'SEO wordt gekoppeld aan meetbare aanvragen, niet alleen aan posities.',
     background: '#FFF4E3',
+    accent: '#F5A53D',
+    height: '27.8rem',
     offsetClass: 'md:mt-0',
     overlapClass: '',
   },
   {
-    label: 'Gebundelde ervaring',
-    value: '30+',
-    suffix: 'jaar',
+    label: 'Bedrijven geholpen',
+    value: '100',
+    suffix: '+',
     description:
-      'Marketingervaring in een klein team dat strategie, uitvoering en optimalisatie onder een dak houdt.',
-    background: '#EAFDDE',
-    offsetClass: 'md:mt-10',
+      'Ondernemers geholpen met SEO, websites, Google Ads en marketing systemen die meer aanvragen moeten opleveren.',
+    hoverDetail: 'Van lokale dienstverleners tot e-commerce teams met groeiplannen.',
+    background: '#F4FAFF',
+    accent: '#1995FF',
+    height: '25.6rem',
+    offsetClass: 'md:mt-[2.2rem]',
     overlapClass: 'md:-ml-6',
   },
   {
-    label: 'Organische groei',
-    value: '300%',
+    label: 'Gebundelde ervaring',
+    value: '30',
+    suffix: '+ jaar',
     description:
-      'Tot 300% meer organisch verkeer bij klanten door techniek, content, autoriteit en conversie samen te verbeteren.',
+      'Marketingervaring in een klein team dat strategie, uitvoering en optimalisatie onder een dak houdt.',
+    hoverDetail: 'Strategie, uitvoering en rapportage blijven in dezelfde korte lijn.',
     background: '#D8ECFF',
-    offsetClass: 'md:mt-16',
+    accent: '#1995FF',
+    height: '23.4rem',
+    offsetClass: 'md:mt-[4.4rem]',
     overlapClass: 'md:-ml-6',
     decorated: true,
   },
@@ -116,21 +124,57 @@ const trustCards = [
     suffix: 'team',
     description:
       'Een vast aanspreekpunt dat je bedrijf begrijpt en niet iedere optimalisatie door losse lagen laat lopen.',
+    hoverDetail: 'Je spreekt de mensen die aan je SEO, website en campagnes werken.',
     background: '#FBE4F5',
-    offsetClass: 'md:mt-24',
+    accent: '#F08BE5',
+    height: '21.2rem',
+    offsetClass: 'md:mt-[6.6rem]',
     overlapClass: 'md:-ml-6',
   },
 ];
 
-const trustTools = [
-  'Shopify',
-  'WordPress',
-  'Google Ads',
-  'Search Console',
-  'GA4',
-  'Klaviyo',
-  'WooCommerce',
-  'Looker Studio',
+const trustLogos = [
+  { name: 'Google', src: 'https://cdn.simpleicons.org/google' },
+  { name: 'Google Search Console', src: 'https://cdn.simpleicons.org/googlesearchconsole' },
+  { name: 'Google Analytics', src: 'https://cdn.simpleicons.org/googleanalytics' },
+  { name: 'Shopify', src: 'https://cdn.simpleicons.org/shopify' },
+  { name: 'WordPress', src: 'https://cdn.simpleicons.org/wordpress' },
+  {
+    name: 'Klaviyo',
+    src: 'https://companieslogo.com/img/orig/KVYO-73fd140d.svg?t=1720244492&download=true',
+  },
+  { name: 'Looker Studio', src: 'https://cdn.simpleicons.org/looker' },
+  { name: 'WooCommerce', src: 'https://cdn.simpleicons.org/woocommerce' },
+];
+
+const testimonialCases = [
+  {
+    quote:
+      'We zagen eindelijk welke SEO-acties aanvragen opleveren en welke pagina\'s alleen maar verkeer trokken zonder resultaat.',
+    attribution: 'Eigenaar, lokale dienstverlener in Rotterdam',
+    background: '#D8ECFF',
+    accent: '#1995FF',
+    image: '/downloads/seo-testimonial-persona-1.png',
+    imagePosition: 'center center',
+  },
+  {
+    quote:
+      'De combinatie van techniek, content en betere landingspagina\'s gaf ons binnen enkele weken meer grip op organische groei.',
+    attribution: 'Marketing manager, B2B-team regio Rijnmond',
+    background: '#FFF4C7',
+    accent: '#F5A53D',
+    image: '/downloads/seo-testimonial-persona-2.png',
+    imagePosition: 'center center',
+  },
+  {
+    quote:
+      'Geen losse optimalisaties meer. We hebben nu een SEO-systeem met duidelijke prioriteiten, rapportage en opvolging.',
+    attribution: 'Founder, e-commerce bedrijf in Zuid-Holland',
+    background: '#FFF4E3',
+    accent: '#F5A53D',
+    image: '/downloads/seo-testimonial-persona-3.png',
+    imagePosition: 'center center',
+  },
 ];
 
 const seoScaleCards = [
@@ -155,8 +199,8 @@ const seoScaleCards = [
     title: 'Lokale vindbaarheid',
     description:
       'Vergroot je zichtbaarheid in Barneveld, de regio Foodvalley en omliggende plaatsen waar klanten zoeken.',
-    background: '#F3FDED',
-    accent: '#65C971',
+    background: '#F4FAFF',
+    accent: '#1995FF',
   },
   {
     icon: ShieldCheckIcon,
@@ -182,42 +226,6 @@ const seoScaleCards = [
     background: '#F3F1FF',
     accent: '#7B61FF',
   },
-];
-
-const processSteps = [
-  {
-    step: '01',
-    title: 'SEO audit',
-    description:
-      'We bekijken techniek, content, concurrenten, zoekwoorden, lokale signalen en conversiepunten. Daarna weet je waar groei lekt.',
-  },
-  {
-    step: '02',
-    title: 'Roadmap',
-    description:
-      'We prioriteren acties op impact: welke pagina\'s, verbeteringen en campagnes leveren het snelst meer relevante bezoekers op.',
-  },
-  {
-    step: '03',
-    title: 'Uitvoering',
-    description:
-      'We schrijven, optimaliseren, bouwen en verbeteren. Alles wordt gekoppeld aan het doel: meer vindbaarheid en betere aanvragen.',
-  },
-  {
-    step: '04',
-    title: 'Optimalisatie',
-    description:
-      'SEO stopt niet na publicatie. We meten rankings, leads, gedrag en omzetkansen en sturen de strategie maandelijks bij.',
-  },
-];
-
-const localTargets = [
-  'SEO voor dienstverleners in Rotterdam',
-  'Lokale vindbaarheid voor B2B-bedrijven',
-  'Contentclusters voor groei buiten de stad',
-  'Google Business Profile en lokale landingspagina\'s',
-  'SEO in combinatie met Google Ads en websites',
-  'Meetbare leads in plaats van losse posities',
 ];
 
 const faqs = [
@@ -246,13 +254,119 @@ const faqs = [
     answer:
       'Niet altijd op dezelfde manier. SEO past vooral wanneer mensen actief zoeken naar je dienst, product of probleem. Tijdens een consult bepalen we of SEO, Google Ads, website optimalisatie of marketing automation de beste eerste stap is.',
   },
+  {
+    question: 'Hoe pakken jullie lokale SEO voor Rotterdam aan?',
+    answer:
+      'We kijken naar je diensten, concurrenten, wijken, omliggende plaatsen en lokale zoekintentie. Daarna bouwen we pagina\'s, interne links en signalen die logisch zijn voor klanten die in Rotterdam of de regio zoeken.',
+  },
+  {
+    question: 'Kan SEO samen met Google Ads of een nieuwe website?',
+    answer:
+      'Ja. Vaak werkt SEO sterker wanneer Google Ads data, landingspagina\'s, tracking en website optimalisatie samenkomen. Zo zie je sneller welke zoekwoorden aanvragen opleveren en welke pagina\'s beter moeten converteren.',
+  },
+  {
+    question: 'Hoe starten we met een SEO traject bij Niblah?',
+    answer:
+      'We starten met een korte strategiesessie. Daarin bespreken we je bedrijf, je huidige website, je belangrijkste diensten en je groeidoel. Daarna krijg je een concreet advies voor de beste eerste stap.',
+  },
 ];
 
-const relatedLinks = [
-  { href: '/marketing/rotterdam/', label: 'Marketing bureau Rotterdam' },
-  { href: '/website-laten-maken/rotterdam/', label: 'Website laten maken Rotterdam' },
-  { href: '/services/seo', label: 'SEO services' },
-  { href: '/services/sea/google-ads', label: 'Google Ads uitbesteden' },
+const beforeAfterPanels = [
+  {
+    theme: 'before',
+    title: 'Voor SEO met Niblah',
+    description:
+      'Groei blijft hangen wanneer SEO bestaat uit losse acties, oude pagina\'s en rapportages zonder duidelijke prioriteit.',
+    items: [
+      {
+        title: 'Losse optimalisaties',
+        description: 'Pagina\'s worden aangepast zonder duidelijk plan voor zoekintentie, techniek en conversie.',
+      },
+      {
+        title: 'Onduidelijke resultaten',
+        description: 'Je ziet rankings bewegen, maar niet welke SEO-acties echte aanvragen opleveren.',
+      },
+      {
+        title: 'Gemiste lokale kansen',
+        description: 'Rotterdamse zoekopdrachten, wijken en omliggende plaatsen blijven buiten de structuur vallen.',
+      },
+    ],
+  },
+  {
+    theme: 'after',
+    title: 'Na SEO met Niblah',
+    description:
+      'SEO wordt een groeisysteem waarin techniek, content, lokale vindbaarheid en opvolging samen meer aanvragen opleveren.',
+    items: [
+      {
+        title: 'Heldere SEO roadmap',
+        description: 'Iedere actie heeft een reden, eigenaar en meetpunt zodat prioriteiten scherp blijven.',
+      },
+      {
+        title: 'Betere landingspagina\'s',
+        description: 'Content wordt gebouwd rond zoekintentie, vertrouwen en conversie naar contact of offerte.',
+      },
+      {
+        title: 'Meetbare groei',
+        description: 'Rapportage laat zien welke pagina\'s, zoekwoorden en optimalisaties bijdragen aan aanvragen.',
+      },
+    ],
+  },
+];
+
+const seoPackages = [
+  {
+    label: 'Fundament',
+    title: 'Techniek en groeiroadmap',
+    description:
+      'Voor bedrijven die eerst helder willen krijgen waar groei lekt en welke SEO acties prioriteit verdienen.',
+    accent: '#1995FF',
+    background: '#F4FAFF',
+    cta: 'Kies fundament',
+    featuresLabel: 'Fundament bevat:',
+    features: [
+      'Technische analyse',
+      'Zoekwoorden en concurrentieanalyse',
+      'Tracking en indexatie check',
+      'Prioriteitenroadmap',
+      'Quick wins voor je belangrijkste pagina\'s',
+    ],
+  },
+  {
+    label: 'Groei',
+    title: 'Maandelijkse SEO uitvoering',
+    description:
+      'Voor teams die structureel willen bouwen aan content, techniek, lokale zichtbaarheid en betere aanvragen.',
+    accent: '#8D6BFF',
+    background: '#F3EEFF',
+    cta: 'Kies groei',
+    featuresLabel: 'Groei bevat:',
+    features: [
+      'Maandelijkse optimalisaties',
+      'Contentplanning en productie',
+      'Lokale SEO voor Rotterdam',
+      'Conversieverbeteringen',
+      'Rapportage en groeioverleg',
+    ],
+  },
+  {
+    label: 'Maatwerk',
+    title: 'SEO systeem voor schaal',
+    description:
+      'Voor bedrijven met meerdere diensten, locaties of contentclusters die SEO als serieus groeikanaal willen inzetten.',
+    accent: '#F5A53D',
+    background: '#FFF4E3',
+    cta: 'Vraag maatwerk aan',
+    featuresLabel: 'Maatwerk bevat:',
+    features: [
+      'Strategische SEO workshops',
+      'Meerdere locatiepagina\'s',
+      'Contentclusters en interne links',
+      'Dashboards op leadniveau',
+      'SEO gecombineerd met Ads data',
+      'Vaste specialist als aanspreekpunt',
+    ],
+  },
 ];
 
 const professionalServiceJsonLd = {
@@ -693,13 +807,158 @@ function LatestWorkSection() {
 function TrustSection() {
   return (
     <section className="overflow-hidden bg-white px-6 py-16 md:py-24">
+      <style>
+        {`
+          .trust-stat-card {
+            --card-accent: #1995ff;
+            position: relative;
+            min-block-size: 21rem;
+            translate: 0 0;
+            scale: 1;
+            contain: layout paint;
+            transition:
+              translate 320ms ease,
+              scale 320ms ease,
+              box-shadow 320ms ease;
+          }
+
+          .trust-stat-card::before,
+          .trust-stat-card::after {
+            content: "";
+            position: absolute;
+            pointer-events: none;
+            background: var(--card-accent);
+            opacity: 0;
+            transition:
+              opacity 320ms ease,
+              translate 320ms ease;
+          }
+
+          .trust-stat-card::before {
+            inline-size: 3.15rem;
+            block-size: 4.9rem;
+            inset-block-start: 0;
+            inset-inline-end: 4.4rem;
+            translate: 0 -0.9rem;
+          }
+
+          .trust-stat-card::after {
+            inline-size: 7.6rem;
+            block-size: 2.3rem;
+            inset-block-end: 0;
+            inset-inline-end: 1.8rem;
+            translate: 0 1rem;
+          }
+
+          .trust-stat-card:hover,
+          .trust-stat-card:focus-visible {
+            translate: 0 0;
+            scale: 1;
+            box-shadow: 0 1.35rem 2.9rem rgba(16, 32, 29, 0.08);
+            z-index: 20;
+          }
+
+          .trust-stat-card:focus-visible {
+            outline: 2px solid var(--card-accent);
+            outline-offset: 3px;
+          }
+
+          .trust-stat-card:hover::before,
+          .trust-stat-card:hover::after,
+          .trust-stat-card:focus-visible::before,
+          .trust-stat-card:focus-visible::after {
+            opacity: 0.48;
+            translate: 0 0;
+          }
+
+          .trust-card-reveal {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            translate: 0 0.35rem;
+            color: rgba(16, 32, 29, 0.9);
+            pointer-events: none;
+            transition:
+              opacity 320ms ease,
+              translate 320ms ease;
+          }
+
+          .trust-card-description {
+            opacity: 1;
+            transition: opacity 240ms ease, translate 320ms ease;
+            translate: 0 0;
+          }
+
+          .trust-stat-card:hover .trust-card-description,
+          .trust-stat-card:focus-visible .trust-card-description {
+            opacity: 0;
+            translate: 0 -0.2rem;
+          }
+
+          .trust-stat-card:hover .trust-card-reveal,
+          .trust-stat-card:focus-visible .trust-card-reveal {
+            opacity: 1;
+            translate: 0 0;
+          }
+
+          .trust-logo-item {
+            inline-size: 8.25rem;
+            block-size: 3.4rem;
+            display: grid;
+            place-items: center;
+            flex: 0 0 auto;
+            border: 1px solid rgba(16, 32, 29, 0.08);
+            background: rgba(255, 255, 255, 0.72);
+          }
+
+          .trust-logo-item img {
+            display: block;
+            max-inline-size: 6.9rem;
+            max-block-size: 2.1rem;
+            object-fit: contain;
+            filter: grayscale(1) saturate(0.15);
+            opacity: 0.86;
+          }
+
+          .trust-logo-track {
+            animation: trust-logo-marquee 30s linear infinite;
+          }
+
+          .trust-logo-mask {
+            mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+          }
+
+          @keyframes trust-logo-marquee {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+          }
+
+          @media (min-width: 768px) {
+            .trust-stat-card {
+              block-size: var(--card-height);
+              min-block-size: var(--card-height);
+            }
+          }
+
+          @media (prefers-reduced-motion: reduce) {
+            .trust-stat-card,
+            .trust-stat-card::before,
+            .trust-stat-card::after,
+            .trust-card-reveal,
+            .trust-logo-track {
+              transition: none;
+              animation: none;
+            }
+          }
+        `}
+      </style>
       <div className="mx-auto max-w-[1180px]">
-        <div className="grid gap-8 md:grid-cols-[1fr_0.75fr] md:items-start">
+        <div className="grid gap-8 md:grid-cols-[1.35fr_0.65fr] md:items-start">
           <h2
-            className="max-w-[42rem] font-medium tracking-[-0.005em] text-[#10201D]"
+            className="max-w-[52rem] font-medium tracking-[-0.005em] text-[#10201D]"
             style={{
               fontFamily: 'var(--font-poppins), sans-serif',
-              fontSize: 'clamp(1.55rem, 3vw, 2.6rem)',
+              fontSize: 'clamp(1.55rem, 2.65vw, 2.45rem)',
               lineHeight: '1.08',
               textWrap: 'balance',
             }}
@@ -716,8 +975,15 @@ function TrustSection() {
           {trustCards.map((card) => (
             <article
               key={card.label}
-              className={`relative flex min-h-[19rem] flex-col overflow-hidden rounded-[0.35rem] p-6 md:min-h-[25.5rem] md:flex-1 md:p-7 ${card.offsetClass} ${card.overlapClass}`}
-              style={{ backgroundColor: card.background }}
+              tabIndex={0}
+              role="group"
+              aria-label={`${card.label}: ${card.value}${card.suffix || ''}`}
+              className={`trust-stat-card flex flex-col overflow-hidden p-6 outline-none md:flex-1 md:p-7 ${card.offsetClass} ${card.overlapClass}`}
+              style={{
+                backgroundColor: card.background,
+                '--card-height': card.height,
+                '--card-accent': card.accent,
+              }}
             >
               {card.decorated ? (
                 <>
@@ -747,24 +1013,549 @@ function TrustSection() {
                 ) : null}
               </div>
 
-              <p className="relative z-10 mt-auto max-w-[19rem] pt-10 text-[0.92rem] leading-relaxed text-[#10201D]/76">
-                {card.description}
-              </p>
+              <div className="relative z-10 mt-auto max-w-[19rem] pt-10">
+                <p className="trust-card-description text-[0.92rem] leading-relaxed text-[#10201D]/76">
+                  {card.description}
+                </p>
+                <div className="trust-card-reveal text-[0.9rem] font-semibold leading-snug text-[#10201D]">
+                  <span className="mr-2 inline-block h-2 w-2 rounded-full bg-[var(--card-accent)]" aria-hidden="true" />
+                  {card.hoverDetail}
+                </div>
+              </div>
             </article>
           ))}
         </div>
 
-        <div className="mt-12 grid gap-6 border-t border-[#331300]/10 pt-8 md:grid-cols-[0.55fr_1.45fr] md:items-center">
+        <div className="mt-12 grid gap-6 pt-8 md:grid-cols-[0.55fr_1.45fr] md:items-center">
           <p className="max-w-[23rem] text-[0.95rem] leading-relaxed text-[#10201D]/72">
             Gebouwd met tooling die ondernemers en marketingteams al kennen.
           </p>
-          <div className="overflow-hidden">
-            <div className="flex min-w-max flex-wrap gap-x-7 gap-y-3 text-sm font-bold uppercase tracking-[0.03em] text-[#10201D]/55 md:justify-end">
-              {trustTools.map((tool) => (
-                <span key={tool}>{tool}</span>
+          <div className="trust-logo-mask overflow-hidden">
+            <div className="trust-logo-track flex w-max items-center gap-5 pr-5">
+              {[...trustLogos, ...trustLogos].map((logo, index) => (
+                <span
+                  key={`${logo.name}-${index}`}
+                  className="trust-logo-item"
+                  aria-hidden={index >= trustLogos.length ? true : undefined}
+                >
+                  <img
+                    src={logo.src}
+                    alt={index >= trustLogos.length ? '' : logo.name}
+                    loading="lazy"
+                    decoding="async"
+                    width="132"
+                    height="54"
+                  />
+                </span>
               ))}
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function TestimonialsSection() {
+  return (
+    <section className="relative isolate overflow-hidden bg-[#331300] px-6 py-16 text-white md:py-20">
+      <style>
+        {`
+          .seo-testimonial-rail {
+            scroll-snap-type: x mandatory;
+            overscroll-behavior-inline: contain;
+            scrollbar-width: none;
+          }
+
+          .seo-testimonial-rail::-webkit-scrollbar {
+            display: none;
+          }
+
+          .seo-testimonial-card {
+            scroll-snap-align: center;
+            contain: layout paint;
+          }
+
+          .seo-testimonial-card::before,
+          .seo-testimonial-card::after {
+            content: "";
+            position: absolute;
+            pointer-events: none;
+            background: var(--testimonial-accent);
+            opacity: 0.28;
+          }
+
+          .seo-testimonial-card::before {
+            inline-size: 10.5rem;
+            block-size: 2.6rem;
+            inset-block-start: 0;
+            inset-inline-start: 0;
+          }
+
+          .seo-testimonial-card::after {
+            inline-size: 10.5rem;
+            block-size: 2.6rem;
+            inset-block-end: 0;
+            inset-inline-end: 0;
+          }
+
+          @media (max-width: 767px) {
+            .seo-testimonial-card::before,
+            .seo-testimonial-card::after {
+              inline-size: 6.5rem;
+              block-size: 2rem;
+            }
+          }
+        `}
+      </style>
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_right,rgba(255,255,255,0.07)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:42px_42px] opacity-35"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute right-[-6rem] top-[-8rem] -z-10 h-80 w-80 rounded-full bg-[#1995FF]/14 blur-3xl"
+      />
+
+      <div className="mx-auto max-w-[1180px]">
+        <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
+          <div>
+            <div className="mb-4 inline-flex items-center gap-2 text-sm font-semibold text-[#1995FF]">
+              <span className="h-2 w-2 rounded-full bg-[#1995FF]" />
+              Ervaringen
+            </div>
+            <h2
+              className="font-medium tracking-[-0.005em] text-white"
+              style={{
+                fontFamily: 'var(--font-poppins), sans-serif',
+                fontSize: 'clamp(1.55rem, 2.55vw, 2.35rem)',
+                lineHeight: '1.1',
+              }}
+            >
+              Wat ondernemers merken zodra SEO een systeem wordt
+            </h2>
+            <p className="mt-4 max-w-[42rem] text-[0.95rem] leading-relaxed text-white/66">
+              Geanonimiseerde klantcases uit trajecten waarin techniek, content,
+              lokale vindbaarheid en conversie samen zijn opgepakt.
+            </p>
+          </div>
+
+          <div className="hidden items-center gap-3 md:flex">
+            <a
+              href="#seo-testimonial-1"
+              className="grid h-12 w-12 place-items-center rounded-[0.35rem] bg-white/10 text-xl text-white/72 transition hover:bg-white hover:text-[#331300]"
+              aria-label="Ga naar eerste testimonial"
+            >
+              ←
+            </a>
+            <a
+              href="#seo-testimonial-3"
+              className="grid h-12 w-12 place-items-center rounded-[0.35rem] bg-white/10 text-xl text-white transition hover:bg-white hover:text-[#331300]"
+              aria-label="Ga naar laatste testimonial"
+            >
+              →
+            </a>
+          </div>
+        </div>
+
+        <div className="-mx-6 mt-10 overflow-hidden md:mt-12">
+          <div className="seo-testimonial-rail flex gap-5 overflow-x-auto px-6 pb-2">
+            {testimonialCases.map((item, index) => (
+              <article
+                key={item.attribution}
+                id={`seo-testimonial-${index + 1}`}
+                className="seo-testimonial-card relative grid min-h-[28rem] w-[86vw] max-w-[58rem] flex-none overflow-hidden md:w-[78vw] md:grid-cols-[0.42fr_0.58fr] lg:w-[64rem]"
+                style={{
+                  backgroundColor: item.background,
+                  '--testimonial-accent': item.accent,
+                }}
+              >
+                <div className="relative min-h-[17rem] overflow-hidden md:min-h-0">
+                  <Image
+                    src={item.image}
+                    alt=""
+                    fill
+                    sizes="(max-width: 768px) 86vw, 420px"
+                    className="object-cover object-[var(--testimonial-image-position)]"
+                    style={{ '--testimonial-image-position': item.imagePosition }}
+                    loading="lazy"
+                  />
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[rgba(16,32,29,0.12)] to-transparent"
+                  />
+                </div>
+
+                <div className="relative z-10 flex min-h-[23rem] flex-col justify-between p-6 text-[#10201D] md:p-8 lg:p-10">
+                  <blockquote
+                    className="max-w-[37rem] font-medium tracking-[-0.01em]"
+                    style={{
+                      fontFamily: 'var(--font-poppins), sans-serif',
+                      fontSize: 'clamp(1.35rem, 2.45vw, 2.45rem)',
+                      lineHeight: '1.14',
+                      textWrap: 'balance',
+                    }}
+                  >
+                    “{item.quote}”
+                  </blockquote>
+
+                  <div className="mt-10 flex flex-col gap-3 border-t border-[#10201D]/12 pt-5 sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                      <p className="text-[0.95rem] font-semibold text-[#10201D]">
+                        Geanonimiseerde klantcase
+                      </p>
+                      <p className="mt-1 text-[0.9rem] leading-relaxed text-[#10201D]/62">
+                        {item.attribution}
+                      </p>
+                    </div>
+                    <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white/55 px-3 py-1.5 text-xs font-semibold text-[#10201D]/72">
+                      <span className="h-2 w-2 rounded-full" style={{ backgroundColor: item.accent }} />
+                      SEO traject
+                    </span>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function BeforeAfterSection() {
+  return (
+    <section className="relative isolate overflow-hidden bg-[#331300] px-6 py-16 text-white md:py-20">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_right,rgba(255,255,255,0.055)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.045)_1px,transparent_1px)] bg-[size:42px_42px] opacity-45"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-[-10rem] top-1/2 -z-10 hidden -translate-y-1/2 text-[7rem] font-semibold tracking-[-0.04em] text-white/[0.025] lg:block"
+      >
+        Voor
+      </div>
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute right-[-7rem] top-1/2 -z-10 hidden -translate-y-1/2 text-[7rem] font-semibold tracking-[-0.04em] text-white/[0.025] lg:block"
+      >
+        Na
+      </div>
+
+      <div className="mx-auto max-w-[1180px]">
+        <div className="mx-auto mb-9 max-w-2xl text-center md:mb-11">
+          <div className="mb-4 inline-flex items-center gap-2 text-sm font-semibold text-[#1995FF]">
+            <span className="h-2 w-2 rounded-full bg-[#1995FF]" />
+            Before en after
+          </div>
+          <h2
+            className="font-medium tracking-[-0.005em] text-white"
+            style={{
+              fontFamily: 'var(--font-poppins), sans-serif',
+              fontSize: 'clamp(1.45rem, 2.25vw, 2.15rem)',
+              lineHeight: '1.12',
+              textWrap: 'balance',
+            }}
+          >
+            Van losse SEO-acties naar een systeem dat aanvragen blijft opbouwen
+          </h2>
+        </div>
+
+        <div className="mx-auto grid max-w-[760px] gap-5 lg:max-w-[820px] lg:grid-cols-2">
+          {beforeAfterPanels.map((panel) => {
+            const isAfter = panel.theme === 'after';
+
+            return (
+              <article
+                key={panel.title}
+                className={`relative overflow-hidden rounded-[0.35rem] border p-6 md:p-7 ${
+                  isAfter
+                    ? 'border-[#1995FF]/22 bg-[#D8ECFF] text-[#10201D] shadow-[0_24px_70px_rgba(25,149,255,0.14)]'
+                    : 'border-white/12 bg-white/[0.025] text-white'
+                }`}
+              >
+                {isAfter ? (
+                  <>
+                    <span
+                      aria-hidden="true"
+                      className="absolute left-0 top-0 h-16 w-16 bg-[#1995FF]/82"
+                    />
+                    <span
+                      aria-hidden="true"
+                      className="absolute right-0 top-0 h-2.5 w-16 bg-[#1995FF]/82"
+                    />
+                    <span
+                      aria-hidden="true"
+                      className="absolute bottom-16 right-0 h-24 w-4 bg-[#1995FF]/82"
+                    />
+                  </>
+                ) : null}
+
+                <h3
+                  className={`relative z-10 font-medium tracking-[-0.005em] ${
+                    isAfter ? 'text-[#10201D]' : 'text-white'
+                  }`}
+                  style={{
+                    fontFamily: 'var(--font-poppins), sans-serif',
+                    fontSize: 'clamp(1.15rem, 1.8vw, 1.45rem)',
+                    lineHeight: '1.18',
+                  }}
+                >
+                  {panel.title}
+                </h3>
+                <p
+                  className={`relative z-10 mt-4 max-w-[30rem] text-[0.92rem] leading-relaxed ${
+                    isAfter ? 'text-[#10201D]/72' : 'text-white/62'
+                  }`}
+                >
+                  {panel.description}
+                </p>
+
+                <div
+                  className={`relative z-10 my-7 h-px ${
+                    isAfter ? 'bg-[#10201D]/10' : 'bg-white/10'
+                  }`}
+                />
+
+                <ul className="relative z-10 grid gap-5">
+                  {panel.items.map((item) => (
+                    <li key={item.title} className="grid grid-cols-[3rem_1fr] gap-3">
+                      <span
+                        className={`flex h-10 w-10 items-center justify-center rounded-full border text-lg ${
+                          isAfter
+                            ? 'border-[#10201D]/10 bg-white/30 text-[#10201D]'
+                            : 'border-white/10 bg-white/[0.03] text-white/82'
+                        }`}
+                        aria-hidden="true"
+                      >
+                        {isAfter ? '✓' : '×'}
+                      </span>
+                      <span>
+                        <span
+                          className={`block text-[0.98rem] font-semibold ${
+                            isAfter ? 'text-[#10201D]' : 'text-white/88'
+                          }`}
+                        >
+                          {item.title}
+                        </span>
+                        <span
+                          className={`mt-1 block text-[0.88rem] leading-relaxed ${
+                            isAfter ? 'text-[#10201D]/66' : 'text-white/48'
+                          }`}
+                        >
+                          {item.description}
+                        </span>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PackageFeature({ children }) {
+  return (
+    <li className="flex items-start gap-3 text-[0.92rem] leading-relaxed text-[#10201D]/74">
+      <CheckCircleIcon className="mt-0.5 h-4 w-4 flex-none text-[#10201D]" aria-hidden="true" />
+      <span>{children}</span>
+    </li>
+  );
+}
+
+function SeoPackagesSection() {
+  return (
+    <section className="bg-[#F7F8F6] px-6 py-16 md:py-20">
+      <div className="mx-auto max-w-[1180px]">
+        <div className="mx-auto mb-10 max-w-3xl text-center">
+          <div className="mb-4 inline-flex items-center gap-2 text-sm font-semibold text-[#1995FF]">
+            <span className="h-2 w-2 rounded-full bg-[#1995FF]" />
+            SEO trajecten
+          </div>
+          <h2
+            className="font-medium tracking-[-0.005em] text-[#10201D]"
+            style={{
+              fontFamily: 'var(--font-poppins), sans-serif',
+              fontSize: 'clamp(1.45rem, 2.35vw, 2.2rem)',
+              lineHeight: '1.12',
+              textWrap: 'balance',
+            }}
+          >
+            Kies de SEO-aanpak die past bij je groeifase
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-[0.95rem] leading-relaxed text-[#10201D]/64">
+            Geen standaard pakket om een pakket te verkopen. We starten met de route die
+            het best past bij je website, markt en huidige vindbaarheid in Rotterdam.
+          </p>
+        </div>
+
+        <div className="grid gap-4 lg:grid-cols-2">
+          {seoPackages.map((item, index) => {
+            const isWide = index === seoPackages.length - 1;
+
+            return (
+              <article
+                key={item.label}
+                className={`overflow-hidden rounded-[0.35rem] border bg-white ${
+                  isWide ? 'lg:col-span-2' : ''
+                }`}
+                style={{ borderColor: item.accent }}
+              >
+                <div
+                  className="flex items-center justify-between px-5 py-3 text-[0.96rem] font-semibold text-[#10201D]"
+                  style={{ backgroundColor: item.background }}
+                >
+                  <span>{item.label}</span>
+                  <span
+                    className="h-2.5 w-2.5 rounded-full"
+                    style={{ backgroundColor: item.accent }}
+                    aria-hidden="true"
+                  />
+                </div>
+
+                <div
+                  className={`grid gap-7 p-6 md:p-7 ${
+                    isWide ? 'lg:grid-cols-[0.95fr_1.05fr]' : 'sm:grid-cols-[0.86fr_1fr]'
+                  }`}
+                >
+                  <div className="flex flex-col">
+                    <h3
+                      className="font-medium tracking-[-0.005em] text-[#10201D]"
+                      style={{
+                        fontFamily: 'var(--font-poppins), sans-serif',
+                        fontSize: isWide
+                          ? 'clamp(1.45rem, 2.2vw, 2rem)'
+                          : 'clamp(1.25rem, 1.9vw, 1.65rem)',
+                        lineHeight: '1.12',
+                        textWrap: 'balance',
+                      }}
+                    >
+                      {item.title}
+                    </h3>
+                    <p className="mt-5 max-w-[31rem] text-[0.92rem] leading-relaxed text-[#10201D]/68">
+                      {item.description}
+                    </p>
+                    <Link
+                      href="/contact"
+                      prefetch={false}
+                      className="mt-8 inline-flex h-12 w-fit items-center justify-center gap-3 rounded-[0.25rem] bg-[#10201D] px-4 text-[0.82rem] font-semibold uppercase tracking-[0.02em] text-white transition-transform hover:-translate-y-0.5 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1995FF]"
+                    >
+                      <span>{item.cta}</span>
+                      <span className="grid h-8 w-8 place-items-center rounded-[0.18rem] bg-white text-[#10201D]">
+                        <ArrowRightIcon className="h-4 w-4 -rotate-45" aria-hidden="true" />
+                      </span>
+                    </Link>
+                  </div>
+
+                  <div className="border-t border-[#10201D]/8 pt-6 sm:border-l sm:border-t-0 sm:pl-7 sm:pt-0">
+                    <p className="mb-5 text-[0.82rem] font-semibold uppercase tracking-[0.04em] text-[#10201D]/42">
+                      {item.featuresLabel}
+                    </p>
+                    <ul className={`grid gap-4 ${isWide ? 'sm:grid-cols-2' : ''}`}>
+                      {item.features.map((feature) => (
+                        <PackageFeature key={feature}>{feature}</PackageFeature>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FaqSection() {
+  return (
+    <section className="bg-[#F7F3EF] px-6 py-16 md:py-20">
+      <div className="mx-auto grid max-w-[1180px] gap-8 lg:grid-cols-[0.66fr_1.34fr] lg:gap-12">
+        <div className="flex flex-col">
+          <div>
+            <h2
+              className="max-w-[24rem] font-medium tracking-[-0.005em] text-[#10201D]"
+              style={{
+                fontFamily: 'var(--font-poppins), sans-serif',
+                fontSize: 'clamp(1.45rem, 2.35vw, 2.15rem)',
+                lineHeight: '1.12',
+                textWrap: 'balance',
+              }}
+            >
+              Antwoorden op je SEO vragen
+            </h2>
+            <p className="mt-4 max-w-[25rem] text-[0.92rem] leading-relaxed text-[#10201D]/66">
+              Heldere antwoorden over hoe we SEO, lokale vindbaarheid, content en
+              conversie inzetten voor bedrijven in Rotterdam.
+            </p>
+          </div>
+
+          <Link
+            href="/contact"
+            prefetch={false}
+            className="group mt-8 grid max-w-[23rem] grid-cols-[3.75rem_1fr_2rem] items-center gap-3 rounded-[0.35rem] border border-[#331300]/8 bg-white p-2.5 shadow-[0_14px_36px_rgba(51,19,0,0.055)] transition-transform hover:-translate-y-0.5 lg:mt-auto"
+          >
+            <span className="relative h-14 w-14 overflow-hidden rounded-[0.28rem] bg-[#D8ECFF]">
+              <Image
+                src="/niblah-headshot.webp"
+                alt="Albin van Niblah"
+                fill
+                sizes="56px"
+                className="object-cover"
+              />
+            </span>
+            <span>
+              <span className="block text-[0.94rem] font-medium text-[#10201D]">
+                Nog vragen?
+              </span>
+              <span className="mt-0.5 block text-[0.82rem] leading-relaxed text-[#10201D]/66">
+                Plan een gratis SEO consult.
+              </span>
+            </span>
+            <span className="grid h-8 w-8 place-items-center rounded-[0.22rem] bg-[#F7F3EF] text-[#331300] transition-colors group-hover:bg-[#331300] group-hover:text-white">
+              <ArrowRightIcon className="h-3.5 w-3.5 -rotate-45" aria-hidden="true" />
+            </span>
+          </Link>
+        </div>
+
+        <div className="border-t border-[#331300]/10">
+          {faqs.map((faq, index) => (
+            <details
+              key={faq.question}
+              name="seo-rotterdam-faq"
+              className="group border-b border-[#331300]/10 py-4 md:py-5"
+              open={index === 0}
+            >
+              <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-left marker:hidden [&::-webkit-details-marker]:hidden">
+                <span
+                  className="max-w-[40rem] font-medium tracking-normal text-[#10201D]"
+                  style={{
+                    fontFamily: 'var(--font-poppins), sans-serif',
+                    fontSize: 'clamp(1.02rem, 1.25vw, 1.2rem)',
+                    lineHeight: '1.32',
+                    textWrap: 'balance',
+                  }}
+                >
+                  {faq.question}
+                </span>
+                <span
+                  className="relative mt-0.5 grid h-7 w-7 flex-none place-items-center rounded-full text-[#331300]"
+                  aria-hidden="true"
+                >
+                  <span className="text-xl leading-none group-open:hidden">+</span>
+                  <span className="hidden text-xl leading-none group-open:block">−</span>
+                </span>
+              </summary>
+              <p className="mt-3 max-w-[40rem] text-[0.92rem] leading-relaxed text-[#10201D]/70">
+                {faq.answer}
+              </p>
+            </details>
+          ))}
         </div>
       </div>
     </section>
@@ -797,23 +1588,23 @@ export default function SEOSpecialistRotterdamPage() {
           <span className="absolute left-[5.5%] top-0 h-20 w-3 bg-[#E7DEFF]" />
           <span className="absolute left-[6.5%] top-[7rem] h-48 w-10 bg-[#E7DEFF]" />
           <span className="absolute left-[9.5%] top-[18.2rem] h-24 w-24 bg-[#D8ECFF]" />
-          <span className="absolute left-[5.5%] bottom-[8.5rem] h-32 w-3 bg-[#A9FFB0]" />
-          <span className="absolute left-[18%] top-0 h-36 w-8 bg-[#A9FFB0]" />
+          <span className="absolute left-[5.5%] bottom-[8.5rem] h-32 w-3 bg-[#1995FF]" />
+          <span className="absolute left-[18%] top-0 h-36 w-8 bg-[#1995FF]" />
           <span className="absolute left-[18%] bottom-[2.8rem] h-56 w-8 bg-[#FFE7A6]" />
           <span className="absolute left-[6.5%] bottom-[4.5rem] h-20 w-10 bg-[#D8ECFF]" />
 
           <span className="absolute right-[9%] top-0 h-36 w-24 bg-[#E7DEFF]" />
-          <span className="absolute right-[15%] top-[3rem] h-44 w-9 bg-[#A9FFB0]" />
+          <span className="absolute right-[15%] top-[3rem] h-44 w-9 bg-[#1995FF]" />
           <span className="absolute right-[4.5%] top-[13.2rem] h-44 w-11 bg-[#D8ECFF]" />
           <span className="absolute right-[9%] top-[22.8rem] h-24 w-24 bg-[#FFE7A6]" />
           <span className="absolute right-[18%] bottom-[7rem] h-20 w-9 bg-[#D8ECFF]" />
           <span className="absolute right-[6.5%] bottom-[2.5rem] h-24 w-8 bg-[#D8ECFF]" />
-          <span className="absolute right-[5%] bottom-0 h-20 w-3 bg-[#A9FFB0]" />
+          <span className="absolute right-[5%] bottom-0 h-20 w-3 bg-[#1995FF]" />
         </div>
 
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 md:hidden">
           <span className="absolute -left-3 top-20 h-24 w-8 bg-[#E7DEFF]" />
-          <span className="absolute right-5 top-10 h-20 w-5 bg-[#A9FFB0]" />
+          <span className="absolute right-5 top-10 h-20 w-5 bg-[#1995FF]" />
           <span className="absolute -right-5 top-44 h-24 w-10 bg-[#D8ECFF]" />
           <span className="absolute left-6 bottom-8 h-16 w-8 bg-[#FFE7A6]" />
         </div>
@@ -898,195 +1689,13 @@ export default function SEOSpecialistRotterdamPage() {
 
       <TrustSection />
 
-      <section className="bg-white px-6 py-16 md:py-22">
-        <div className="mx-auto grid max-w-[1180px] gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          <SectionHeader
-            align="left"
-            eyebrow="Aanpak"
-            title="Van audit naar een SEO systeem dat blijft verbeteren"
-            description="We maken de route concreet voordat er content of techniek wordt aangepast. Daardoor weet je welke acties prioriteit hebben en waarom."
-          />
+      <SeoTestimonialsSlider testimonials={testimonialCases} />
 
-          <div className="grid gap-4">
-            {processSteps.map((item) => (
-              <article
-                key={item.step}
-                className="grid gap-4 rounded-lg border border-[#331300]/10 bg-[#F7F8F6] p-5 sm:grid-cols-[4rem_1fr]"
-              >
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#1995FF] text-sm font-bold text-white">
-                  {item.step}
-                </div>
-                <div>
-                  <h3
-                    className="font-bold text-[#101828]"
-                    style={{
-                      fontFamily: 'var(--font-merriweather), Georgia, serif',
-                      fontSize: '1.1rem',
-                      lineHeight: '1.2',
-                    }}
-                  >
-                    {item.title}
-                  </h3>
-                  <div className="mt-2 text-sm leading-relaxed text-[#101828]/64">
-                    {item.description}
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      <BeforeAfterSection />
 
-      <section className="relative isolate overflow-hidden bg-[#331300] px-6 py-16 text-white md:py-20">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_right,rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:34px_34px] opacity-65"
-        />
-        <div className="mx-auto grid max-w-[1180px] gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-          <div>
-            <div className="mb-4 inline-flex items-center gap-2 text-sm font-semibold text-[#1995FF]">
-              <SparklesIcon className="h-4 w-4" aria-hidden="true" />
-              Rotterdam en omgeving
-            </div>
-            <h2
-              className="font-bold text-white"
-              style={{
-                fontSize: 'clamp(1.35rem, 2vw, 1.85rem)',
-                lineHeight: '1.18',
-              }}
-            >
-              Lokale zichtbaarheid zonder losse marketingacties
-            </h2>
-            <div className="mt-5 max-w-2xl leading-relaxed text-white/68">
-              Voor bedrijven in Rotterdam werkt SEO het best wanneer je dienstpagina's,
-              lokale signalen, Google Ads data, tracking en websiteconversie op elkaar
-              aansluiten. Zo bouw je niet alleen posities, maar ook een voorspelbare
-              stroom aan relevante aanvragen.
-            </div>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <PrimaryButton href="/contact" invert>
-                Bespreek je SEO kansen
-              </PrimaryButton>
-              <SecondaryButton href="/marketing/rotterdam/" invert>
-                Marketing bureau Rotterdam
-              </SecondaryButton>
-            </div>
-          </div>
+      <SeoPackagesSection />
 
-          <div className="rounded-lg border border-white/12 bg-white/8 p-5 backdrop-blur">
-            <div className="mb-5 flex items-center gap-3">
-              <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-white text-[#331300]">
-                <MagnifyingGlassIcon className="h-5 w-5" aria-hidden="true" />
-              </div>
-              <div className="text-sm font-semibold text-white">Waar we op sturen</div>
-            </div>
-            <ul className="grid gap-3">
-              {localTargets.map((target) => (
-                <li key={target} className="flex items-start gap-3 text-sm leading-relaxed text-white/72">
-                  <CheckCircleIcon className="mt-0.5 h-5 w-5 flex-none text-[#1995FF]" aria-hidden="true" />
-                  <span>{target}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section className="px-6 py-16 md:py-22">
-        <div className="mx-auto max-w-[1180px]">
-          <SectionHeader
-            eyebrow="Veelgestelde vragen"
-            title="Vragen over SEO specialist Rotterdam"
-            description="Deze vragen gebruiken we bewust als inhoudelijke informatie voor bezoekers. De keywords staan erin waar ze natuurlijk horen, niet als checklist."
-          />
-
-          <div className="mx-auto mt-10 grid max-w-4xl gap-3">
-            {faqs.map((faq, index) => (
-              <details
-                key={faq.question}
-                className="group rounded-lg border border-[#331300]/10 bg-white p-5 shadow-[0_14px_40px_rgba(16,24,40,0.04)]"
-                open={index === 0}
-              >
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left">
-                  <span className="text-[0.95rem] font-semibold text-[#101828]">{faq.question}</span>
-                  <span className="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-[#F7F8F6] text-[#331300] transition-colors group-open:bg-[#331300] group-open:text-white">
-                    +
-                  </span>
-                </summary>
-                <div className="mt-4 max-w-3xl text-sm leading-relaxed text-[#101828]/64">
-                  {faq.answer}
-                </div>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white px-6 py-14">
-        <div className="mx-auto max-w-[1180px] rounded-lg border border-[#331300]/10 bg-[#F7F8F6] p-6 md:p-8">
-          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
-            <div>
-              <div className="mb-3 inline-flex items-center gap-2 text-sm font-semibold text-[#1995FF]">
-                <ChartBarSquareIcon className="h-4 w-4" aria-hidden="true" />
-                Volgende pagina's
-              </div>
-              <h2
-                className="font-bold text-[#101828]"
-                style={{
-                  fontSize: 'clamp(1.35rem, 2vw, 1.75rem)',
-                  lineHeight: '1.18',
-                }}
-              >
-                Bouw deze structuur door voor elke stad en dienst
-              </h2>
-            </div>
-
-            <div className="grid gap-3 sm:grid-cols-2">
-              {relatedLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  prefetch={false}
-                  className="group flex items-center justify-between rounded-lg border border-[#331300]/10 bg-white px-4 py-4 text-sm font-semibold text-[#101828] transition-colors hover:border-[#1995FF] hover:text-[#1995FF]"
-                >
-                  <span>{link.label}</span>
-                  <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="px-6 pb-16">
-        <div className="mx-auto max-w-[1180px] rounded-lg bg-[#331300] p-7 text-white md:p-10">
-          <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-            <div>
-              <div className="mb-3 inline-flex items-center gap-2 text-sm font-semibold text-[#1995FF]">
-                <RocketLaunchIcon className="h-4 w-4" aria-hidden="true" />
-                Gratis strategiesessie
-              </div>
-              <h2
-                className="font-bold text-white"
-                style={{
-                  fontSize: 'clamp(1.45rem, 2.35vw, 2rem)',
-                  lineHeight: '1.16',
-                }}
-              >
-                Wil je weten waar je SEO kansen in Rotterdam liggen?
-              </h2>
-              <div className="mt-4 max-w-2xl leading-relaxed text-white/68">
-                Plan een gratis consult. We kijken naar je huidige vindbaarheid, je
-                belangrijkste diensten en welke SEO acties voor jouw bedrijf de meeste
-                impact kunnen hebben.
-              </div>
-            </div>
-            <PrimaryButton href="/contact" invert>
-              Plan gratis consult
-            </PrimaryButton>
-          </div>
-        </div>
-      </section>
+      <FaqSection />
     </main>
   );
 }

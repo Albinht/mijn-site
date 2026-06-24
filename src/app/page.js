@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import HeroButton from '../components/HeroButton'
-import LeadForm from '../components/LeadForm'
 import GoogleReviewBar from '../components/GoogleReviewBar'
 import { getHomeCopy } from '@/content/home'
 import { ArrowRightIcon, CalendarDaysIcon, CheckCircleIcon } from '@heroicons/react/24/outline'
@@ -131,7 +130,7 @@ const ServiceReviewSlider = () => {
 
   return (
     <section className="bg-white py-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">Client <span className="bg-[#F7D8FA] px-2 rounded italic">Success</span> Stories</h2>
+        <h2 className="mb-12 text-center text-2xl font-bold text-gray-900">Client <span className="bg-[#F7D8FA] px-2 rounded italic">Success</span> Stories</h2>
         
         {/* First slider - scrolling left */}
         <div className="relative w-full overflow-hidden mb-8">
@@ -178,40 +177,22 @@ function getAvailabilityQuarter() {
   return currentQuarter === 4 ? 1 : currentQuarter + 1
 }
 
-function HeroDashboardMockup({ className = '' }) {
+function HeroGrowthImage({ className = '' }) {
   return (
     <div
-      aria-hidden="true"
-      className={`pointer-events-none overflow-hidden rounded-[1.35rem] border-2 border-[#331300]/70 bg-white/80 shadow-[0_24px_80px_rgba(25,149,255,0.22),0_14px_56px_rgba(51,19,0,0.16)] backdrop-blur-sm ${className}`}
+      className={`overflow-hidden rounded-[1.35rem] border-2 border-[#331300]/70 bg-white shadow-[0_24px_80px_rgba(25,149,255,0.24),0_14px_56px_rgba(51,19,0,0.18)] ${className}`}
     >
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_8%_0%,rgba(25,149,255,0.24),transparent_31%),radial-gradient(circle_at_92%_5%,rgba(51,19,0,0.18),transparent_30%),radial-gradient(circle_at_74%_92%,rgba(25,149,255,0.14),transparent_36%),linear-gradient(135deg,rgba(25,149,255,0.09),rgba(51,19,0,0.06)_52%,rgba(25,149,255,0.06))]" />
-      <div className="absolute inset-0 z-0 bg-white/62" />
-      <div className="relative z-10 flex h-16 items-center border-b border-[#331300]/10 px-5">
-        <div className="h-3 w-3 rounded-full bg-[#ff6b3d]" />
-        <div className="ml-3 h-4 w-24 rounded bg-[#101828]/12" />
-        <div className="ml-auto h-4 w-4 rounded border border-[#101828]/20" />
-      </div>
-      <div className="relative z-10 grid min-w-[32rem] grid-cols-[0.82fr_1.18fr] gap-4 p-5">
-        <div className="space-y-3">
-          <div className="h-10 rounded-lg border border-[#101828]/10 bg-white shadow-sm" />
-          <div className="h-11 rounded-lg bg-[#101828]/8" />
-          <div className="h-9 rounded-lg bg-[#101828]/6" />
-          <div className="h-9 rounded-lg bg-[#101828]/6" />
-          <div className="pt-4">
-            <div className="h-3 w-20 rounded bg-[#101828]/14" />
-          </div>
-          <div className="h-9 rounded-lg bg-[#101828]/6" />
-          <div className="h-9 rounded-lg bg-[#101828]/6" />
-        </div>
-        <div className="space-y-4">
-          <div className="h-12 rounded-xl bg-[#101828]/6" />
-          <div className="grid grid-cols-2 gap-3">
-            <div className="h-28 rounded-xl border border-[#101828]/10 bg-white shadow-sm" />
-            <div className="h-28 rounded-xl border border-[#101828]/10 bg-white shadow-sm" />
-          </div>
-          <div className="h-36 rounded-xl border border-[#101828]/10 bg-white shadow-sm" />
-        </div>
-      </div>
+      <img
+        src="/home-hero-growth.webp"
+        alt="Groeigrafiek voor Google, Meta, TikTok en Shopify marketing"
+        fetchPriority="high"
+        decoding="async"
+        className="h-full w-full object-contain p-4 md:p-5"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_88%_16%,rgba(25,149,255,0.2),transparent_32%),radial-gradient(circle_at_12%_80%,rgba(51,19,0,0.12),transparent_34%)] mix-blend-multiply"
+      />
     </div>
   )
 }
@@ -228,7 +209,6 @@ export default async function Home() {
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_right,rgba(16,24,40,0.07)_1px,transparent_1px),linear-gradient(to_bottom,rgba(16,24,40,0.07)_1px,transparent_1px)] bg-[size:34px_34px] opacity-70 md:inset-y-0 md:left-auto md:right-0 md:w-[58%] md:[mask-image:linear-gradient(to_left,black_54%,transparent)]"
         />
-        <HeroDashboardMockup className="absolute right-14 top-24 -z-10 hidden h-[26rem] w-[28rem] lg:block xl:right-24" />
         <div className="relative w-full">
           <div className="mx-auto max-w-3xl text-center md:mx-0 md:text-left">
             <div className="relative left-1/2 mb-5 flex w-screen -translate-x-1/2 flex-nowrap items-center justify-center gap-2 whitespace-nowrap text-[13.6px] font-semibold text-gray-800 [text-wrap:nowrap] md:static md:inline-flex md:w-auto md:translate-x-0 md:justify-start">
@@ -257,8 +237,8 @@ export default async function Home() {
             <HeroButton href="/contact">
               {copy.hero.cta}
             </HeroButton>
-            <HeroDashboardMockup className="relative mx-auto mt-14 h-[22rem] w-[calc(100vw-3rem)] max-w-[40rem] md:hidden" />
           </div>
+          <HeroGrowthImage className="relative mx-auto mt-14 h-[22rem] w-[calc(100vw-3rem)] max-w-[40rem] md:hidden lg:absolute lg:right-14 lg:top-0 lg:z-[-10] lg:mx-0 lg:mt-0 lg:block lg:h-[26rem] lg:w-[28rem] lg:max-w-none xl:right-24" />
         </div>
       </section>
 
@@ -568,7 +548,7 @@ export default async function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left - Main Text */}
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              <h2 className="mb-6 text-2xl font-bold text-white">
                 {copy.stats.heading}
               </h2>
               <p className="text-lg text-gray-300 leading-relaxed">
@@ -580,7 +560,7 @@ export default async function Home() {
             <div className="grid grid-cols-2 gap-8">
               {/* Stat 1 */}
               <div>
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                <h3 className="mb-2 text-2xl font-bold text-white">
                   {copy.stats.items[0].value}
                 </h3>
                 <p className="text-sm text-gray-400">
@@ -590,7 +570,7 @@ export default async function Home() {
 
               {/* Stat 2 */}
               <div>
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                <h3 className="mb-2 text-2xl font-bold text-white">
                   {copy.stats.items[1].value}
                 </h3>
                 <p className="text-sm text-gray-400">
@@ -600,7 +580,7 @@ export default async function Home() {
 
               {/* Stat 3 */}
               <div>
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                <h3 className="mb-2 text-2xl font-bold text-white">
                   {copy.stats.items[2].value}
                 </h3>
                 <p className="text-sm text-gray-400">
@@ -610,7 +590,7 @@ export default async function Home() {
 
               {/* Stat 4 */}
               <div>
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                <h3 className="mb-2 text-2xl font-bold text-white">
                   {copy.stats.items[3].value}
                 </h3>
                 <p className="text-sm text-gray-400">
@@ -820,89 +800,6 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Lead Form Section */}
-      <section className="bg-gray-50 py-16 md:py-24 px-6">
-        <div className="w-full">
-          <div className="grid md:grid-cols-[2fr_1fr] gap-12 items-start">
-            {/* Left - Text Content */}
-            <div>
-              {/* Top Pills */}
-              <div className="flex items-center gap-0 mb-8">
-                <button className="px-3 md:px-6 py-1.5 md:py-2.5 bg-[#241C15] text-white font-semibold rounded-l-full border-2 border-[#241C15] text-xs md:text-base whitespace-nowrap">
-                  {copy.leadSection.pills.primary}
-                </button>
-                <button className="px-3 md:px-6 py-1.5 md:py-2.5 bg-white text-gray-900 font-normal rounded-r-full border-2 border-[#241C15] border-l-0 text-xs md:text-base">
-                  <span className="font-semibold">{copy.leadSection.pills.secondaryBold}</span>{' '}
-                  <span className="hidden sm:inline">{copy.leadSection.pills.secondaryRest}</span>
-                  <span className="sm:hidden">{copy.leadSection.pills.secondaryShort}</span>
-                </button>
-              </div>
-
-              {/* Title */}
-              <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                {copy.leadSection.title.prefix}{' '}
-                <span className="relative inline-block">
-                  {copy.leadSection.title.highlight}
-                  <span className="absolute bottom-0 left-0 w-full h-3 bg-[#FFD43B] -z-10"></span>
-                </span>
-                {copy.leadSection.title.suffix ? ` ${copy.leadSection.title.suffix}` : ''}
-              </h2>
-
-              {/* Description */}
-              <p className="text-lg text-gray-900 mb-8 leading-relaxed">
-                {copy.leadSection.description}
-              </p>
-              
-              {/* Features Grid - 2 columns */}
-              <div className="grid grid-cols-2 gap-x-8 gap-y-4 mb-10">
-                {/* Left Column */}
-                <div className="space-y-4">
-                  {copy.leadSection.featuresLeft.map((item) => (
-                    <div key={item} className="flex items-start gap-3">
-                      <div className="flex-shrink-0 w-6 h-6 bg-[#1795FF] rounded-full flex items-center justify-center mt-0.5">
-                        <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                      </div>
-                      <span className="text-base text-gray-900">{item}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Right Column */}
-                <div className="space-y-4">
-                  {copy.leadSection.featuresRight.map((item) => (
-                    <div key={item} className="flex items-start gap-3">
-                      <div className="flex-shrink-0 w-6 h-6 bg-[#1795FF] rounded-full flex items-center justify-center mt-0.5">
-                        <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                      </div>
-                      <span className="text-base text-gray-900">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Ontdek onze diensten button */}
-              <div className="flex items-center gap-3">
-                <span className="text-lg font-normal text-gray-900">{copy.leadSection.ctaLabel}</span>
-                <Link 
-                  href="/services"
-                  className="flex items-center justify-center w-10 h-10 bg-[#1795FF] rounded-full hover:bg-[#0f7dd4] transition-colors"
-                >
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </Link>
-              </div>
-            </div>
-
-            {/* Right - Lead Form */}
-            <LeadForm />
-          </div>
-        </div>
-      </section>
     </main>
   )
 }
