@@ -2,7 +2,6 @@
 import Link from 'next/link'
 import { useState, useRef, useEffect } from 'react'
 import { getHeaderCopy } from '@/content/header'
-import { SEO_LOCATION_MENU_ITEMS } from '@/lib/seo-locations'
 
 export default function HeaderNew() {
   const [activeDropdown, setActiveDropdown] = useState(null)
@@ -612,44 +611,6 @@ export default function HeaderNew() {
                 )}
               </div>
 
-              {/* Locaties */}
-              <div 
-                className="relative"
-                onMouseEnter={() => handleMouseEnter('locaties')}
-                onMouseLeave={handleMouseLeave}
-              >
-                <button className="px-3 py-2 text-sm font-semibold text-[#101828] hover:text-[#101828]/80 flex items-center gap-1">
-                  {copy.nav.locations}
-                  <svg className={`w-3.5 h-3.5 transition-transform ${activeDropdown === 'locaties' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                
-                {activeDropdown === 'locaties' && (
-                  <div className="fixed left-6 top-[6.5rem] w-full max-w-5xl bg-white border border-gray-200 rounded-2xl shadow-2xl max-h-96 overflow-y-auto z-50">
-                    <div className="p-6">
-                      <div className="grid grid-cols-3 gap-x-4 gap-y-2">
-                        {SEO_LOCATION_MENU_ITEMS.map((location) => (
-                          <Link
-                            key={location.slug}
-                            href={location.href}
-                            prefetch={false}
-                            className="text-sm text-gray-700 hover:text-gray-900 hover:underline"
-                          >
-                            {location.label}
-                          </Link>
-                        ))}
-                      </div>
-                      <div className="mt-4 pt-4 border-t">
-                        <Link href="/services/seo" className="text-sm font-medium text-[#1795FF] hover:text-[#0f7dd4]">
-                          SEO services bekijken
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
-
               {/* Resources */}
               <div 
                 className="relative"
@@ -1185,41 +1146,6 @@ export default function HeaderNew() {
                       <Link href="/services/web-development" className="block ml-4 px-3 py-2 text-sm font-medium text-[#1795FF] hover:underline" onClick={() => setIsMobileMenuOpen(false)}>
                         {copy.wordpress.mobile.viewAll}
                       </Link>
-                    </div>
-                  )}
-                </div>
-
-                {/* Locaties */}
-                <div>
-                  <button 
-                    onClick={() => toggleMobileSubMenu('locaties')}
-                    className="flex items-center justify-between w-full px-4 py-3 text-base font-semibold text-[#101828] hover:bg-gray-50 rounded-lg"
-                  >
-                    <span>{copy.nav.locations}</span>
-                    <svg className={`w-5 h-5 transition-transform ${mobileSubMenu === 'locaties' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
-                  {mobileSubMenu === 'locaties' && (
-                    <div className="ml-2 mt-2 pb-3">
-                      <div className="pl-4 border-l-2 border-gray-200 max-h-60 overflow-y-auto">
-                        <div className="grid grid-cols-2 gap-x-3 gap-y-1">
-                          {SEO_LOCATION_MENU_ITEMS.map((location) => (
-                            <Link
-                              key={location.slug}
-                              href={location.href}
-                              prefetch={false}
-                              className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded"
-                              onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                              {location.name}
-                            </Link>
-                          ))}
-                        </div>
-                        <Link href="/services/seo" className="block mt-3 px-3 py-2 text-sm font-medium text-[#1795FF] hover:underline" onClick={() => setIsMobileMenuOpen(false)}>
-                          SEO services bekijken
-                        </Link>
-                      </div>
                     </div>
                   )}
                 </div>
