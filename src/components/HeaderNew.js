@@ -71,16 +71,15 @@ export default function HeaderNew() {
             
             {/* Left side - Logo + Navigation */}
             <div className="flex items-center gap-8">
-              {/* Logo - Niblah met vinkje */}
+              {/* Logo */}
               <Link href="/" className="flex items-center flex-shrink-0">
-                <div className="relative">
-                  <span className="text-sm font-bold text-gray-900">Niblah</span>
-                  <img 
-                    src="https://schilderenopnummerwinkel.nl/wp-content/uploads/2025/07/Twitter_Verified_Badge.svg.png" 
-                    alt={copy.alt.verified} 
-                    className="w-4 h-4 absolute -top-0.5 -right-4" 
-                  />
-                </div>
+                <img
+                  src="/niblah-logo-black.png"
+                  alt="Niblah"
+                  width="120"
+                  height="33"
+                  className="h-8 w-auto"
+                />
               </Link>
 
               {/* Desktop Navigation */}
@@ -924,14 +923,13 @@ export default function HeaderNew() {
             <div className="p-6">
               {/* Header */}
               <div className="flex justify-between items-center mb-8">
-                <div className="relative">
-                  <h2 className="text-sm font-bold text-gray-900">Niblah</h2>
-                  <img 
-                    src="https://schilderenopnummerwinkel.nl/wp-content/uploads/2025/07/Twitter_Verified_Badge.svg.png" 
-                    alt={copy.alt.verified} 
-                    className="w-4 h-4 absolute -top-0.5 -right-4" 
-                  />
-                </div>
+                <img
+                  src="/niblah-logo-black.png"
+                  alt="Niblah"
+                  width="120"
+                  height="33"
+                  className="h-8 w-auto"
+                />
                 <button 
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="p-2 text-gray-500 hover:text-gray-900"

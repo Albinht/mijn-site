@@ -82,12 +82,13 @@ const SmartLink = ({ href, className, children, ariaLabel }) => {
 
 const FooterLogo = () => (
   <Link href="/" className="inline-flex items-center" prefetch={false}>
-    <span className="relative inline-flex items-center">
-      <span className="text-lg font-bold tracking-tight text-[#101828]">Niblah</span>
-      <span className="ml-1.5 inline-flex h-4 w-4 items-center justify-center rounded-full bg-[#1995FF] text-white">
-        <CheckBadgeIcon className="h-3.5 w-3.5" aria-hidden="true" />
-      </span>
-    </span>
+    <img
+      src="/niblah-logo-black.png"
+      alt="Niblah"
+      width="132"
+      height="36"
+      className="h-9 w-auto"
+    />
   </Link>
 );
 
