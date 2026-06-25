@@ -1,3 +1,5 @@
+import { getSeoLocationSlugs } from '@/lib/seo-locations'
+
 export default function sitemap() {
   const baseUrl = 'https://niblah.com'
   
@@ -367,5 +369,12 @@ export default function sitemap() {
     },
   ]
 
-  return entries
+  const seoLocationEntries = getSeoLocationSlugs().map((slug) => ({
+    url: `${baseUrl}/seo-specialist/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: slug === 'rotterdam' ? 0.85 : 0.7,
+  }))
+
+  return [...entries, ...seoLocationEntries]
 }

@@ -1,6 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 import SeoTestimonialsSlider from '@/components/SeoTestimonialsSlider';
+import { getLocationProfile } from '@/lib/location-pages';
+import { getSeoLocationSlugs } from '@/lib/seo-locations';
 import {
   ArrowRightIcon,
   CheckCircleIcon,
@@ -12,501 +15,480 @@ import {
   WrenchScrewdriverIcon,
 } from '@heroicons/react/24/outline';
 
-const pageUrl = 'https://niblah.com/seo-specialist/rotterdam';
+export const dynamicParams = false;
 
-const heroBullets = [
-  'SEO per Rotterdamse wijk, dienst en zoekintentie',
-  'Google Business Profile, content, techniek en conversie in een groeiplan',
-  'Direct contact met specialisten die strategie en uitvoering combineren',
-];
-
-const proofStats = [
-  { value: 'Tot 300%', label: 'meer organisch verkeer bij klanten' },
-  { value: '100+', label: 'bedrijven geholpen met online groei' },
-  { value: '30+ jaar', label: 'gebundelde marketingervaring in het team' },
-];
-
-const caseStudies = [
-  {
-    label: 'Lokale SEO',
-    year: '2026',
-    title: 'SEO fundament gebouwd voor meer aanvragen uit Rotterdam',
-    description:
-      'Een lokale dienstverlener kreeg een heldere SEO-structuur met technische fixes, servicepagina\'s en betere meetpunten voor aanvragen.',
-    image: '/downloads/rankings.png',
-    background: '#D8ECFF',
-    accent: '#1995FF',
-    metrics: [
-      { value: '+142%', label: 'groei in organische sessies' },
-      { value: '38%', label: 'meer offerte aanvragen' },
-      { value: '24', label: 'nieuwe lokale zoekwoorden' },
-      { value: '3.1x', label: 'meer zichtbaarheid' },
-    ],
-  },
-  {
-    label: 'Content en techniek',
-    year: '2026',
-    title: 'Van losse pagina\'s naar een schaalbaar SEO systeem',
-    description:
-      'We brachten content, interne links, technische SEO en conversie samen in een structuur die maandelijks verder uitgebouwd kan worden.',
-    image: '/downloads/organic results.png',
-    background: '#F4FAFF',
-    accent: '#1995FF',
-    metrics: [
-      { value: '+86%', label: 'meer non-branded verkeer' },
-      { value: '19', label: 'pagina\'s geoptimaliseerd' },
-      { value: '+51%', label: 'hogere CTR uit Google' },
-      { value: '0', label: 'kritieke indexatie issues' },
-    ],
-  },
-  {
-    label: 'SEO en conversie',
-    year: '2026',
-    title: 'Technische basis gekoppeld aan betere landingspagina\'s',
-    description:
-      'We maakten de website sneller, duidelijker en beter meetbaar zodat SEO-verkeer sneller richting contact, offerte of afspraak beweegt.',
-    image: '/downloads/technical seo.png',
-    background: '#FFE7A6',
-    accent: '#F5A53D',
-    metrics: [
-      { value: '+64%', label: 'meer klikken uit Google' },
-      { value: '2.4x', label: 'meer formulierstarts' },
-      { value: '31%', label: 'lagere bounce rate' },
-      { value: '17', label: 'technische fixes live' },
-    ],
-  },
-];
-
-const trustCards = [
-  {
-    label: 'Organische groei',
-    value: '300',
-    suffix: '%',
-    description:
-      'Tot 300% meer organisch verkeer bij klanten door techniek, content, autoriteit en conversie samen te verbeteren.',
-    hoverDetail: 'SEO wordt gekoppeld aan meetbare aanvragen, niet alleen aan posities.',
-    background: '#FFF4E3',
-    accent: '#F5A53D',
-    height: '27.8rem',
-    offsetClass: 'md:mt-0',
-    overlapClass: '',
-  },
-  {
-    label: 'Bedrijven geholpen',
-    value: '100',
-    suffix: '+',
-    description:
-      'Ondernemers geholpen met SEO, websites, Google Ads en marketing systemen die meer aanvragen moeten opleveren.',
-    hoverDetail: 'Van lokale dienstverleners tot e-commerce teams met groeiplannen.',
-    background: '#F4FAFF',
-    accent: '#1995FF',
-    height: '25.6rem',
-    offsetClass: 'md:mt-[2.2rem]',
-    overlapClass: 'md:-ml-6',
-  },
-  {
-    label: 'Gebundelde ervaring',
-    value: '30',
-    suffix: '+ jaar',
-    description:
-      'Marketingervaring in een klein team dat strategie, uitvoering en optimalisatie onder een dak houdt.',
-    hoverDetail: 'Strategie, uitvoering en rapportage blijven in dezelfde korte lijn.',
-    background: '#D8ECFF',
-    accent: '#1995FF',
-    height: '23.4rem',
-    offsetClass: 'md:mt-[4.4rem]',
-    overlapClass: 'md:-ml-6',
-    decorated: true,
-  },
-  {
-    label: 'Direct contact',
-    value: '1',
-    suffix: 'team',
-    description:
-      'Een vast aanspreekpunt dat je bedrijf begrijpt en niet iedere optimalisatie door losse lagen laat lopen.',
-    hoverDetail: 'Je spreekt de mensen die aan je SEO, website en campagnes werken.',
-    background: '#FBE4F5',
-    accent: '#F08BE5',
-    height: '21.2rem',
-    offsetClass: 'md:mt-[6.6rem]',
-    overlapClass: 'md:-ml-6',
-  },
-];
-
-const trustLogos = [
-  { name: 'Google', src: 'https://cdn.simpleicons.org/google' },
-  { name: 'Google Search Console', src: 'https://cdn.simpleicons.org/googlesearchconsole' },
-  { name: 'Google Analytics', src: 'https://cdn.simpleicons.org/googleanalytics' },
-  { name: 'Shopify', src: 'https://cdn.simpleicons.org/shopify' },
-  { name: 'WordPress', src: 'https://cdn.simpleicons.org/wordpress' },
-  {
-    name: 'Klaviyo',
-    src: 'https://companieslogo.com/img/orig/KVYO-73fd140d.svg?t=1720244492&download=true',
-  },
-  { name: 'Looker Studio', src: 'https://cdn.simpleicons.org/looker' },
-  { name: 'WooCommerce', src: 'https://cdn.simpleicons.org/woocommerce' },
-];
-
-const testimonialCases = [
-  {
-    quote:
-      'We zagen eindelijk welke SEO-acties aanvragen opleveren en welke pagina\'s alleen maar verkeer trokken zonder resultaat.',
-    attribution: 'Eigenaar, lokale dienstverlener in Rotterdam',
-    background: '#D8ECFF',
-    accent: '#1995FF',
-    image: '/downloads/seo-testimonial-persona-1.png',
-    imagePosition: 'center center',
-  },
-  {
-    quote:
-      'De combinatie van techniek, content en betere landingspagina\'s gaf ons binnen enkele weken meer grip op organische groei.',
-    attribution: 'Marketing manager, B2B-team regio Rijnmond',
-    background: '#FFF4C7',
-    accent: '#F5A53D',
-    image: '/downloads/seo-testimonial-persona-2.png',
-    imagePosition: 'center center',
-  },
-  {
-    quote:
-      'Geen losse optimalisaties meer. We hebben nu een SEO-systeem met duidelijke prioriteiten, rapportage en opvolging.',
-    attribution: 'Founder, e-commerce bedrijf in Zuid-Holland',
-    background: '#FFF4E3',
-    accent: '#F5A53D',
-    image: '/downloads/seo-testimonial-persona-3.png',
-    imagePosition: 'center center',
-  },
-];
-
-const seoScaleCards = [
-  {
-    icon: MapPinIcon,
-    title: 'Lokale SEO & Maps',
-    description:
-      'Word zichtbaar bij zoekopdrachten met Rotterdam, wijken, omliggende plaatsen en zoekopdrachten zoals dienst bij mij in de buurt.',
-    background: '#F4FAFF',
-    accent: '#1995FF',
-  },
-  {
-    icon: ClipboardDocumentCheckIcon,
-    title: 'Google Business Profile',
-    description:
-      'Optimaliseer categorieen, diensten, foto\'s, posts, Q&A, reviews en lokale signalen die helpen in Google Maps.',
-    background: '#FBF2FF',
-    accent: '#8D6BFF',
-  },
-  {
-    icon: CursorArrowRaysIcon,
-    title: 'Keyword research',
-    description:
-      'Vind de zoektermen die Rotterdamse klanten gebruiken per dienst, probleem, wijk en koopintentie.',
-    background: '#F4FAFF',
-    accent: '#1995FF',
-  },
-  {
-    icon: WrenchScrewdriverIcon,
-    title: 'Technische SEO',
-    description:
-      'Verbeter crawlbaarheid, indexatie, snelheid, schema, canonical structuur en interne linkarchitectuur.',
-    background: '#FFF2EF',
-    accent: '#F57B73',
-  },
-  {
-    icon: PresentationChartLineIcon,
-    title: 'Content & servicepagina\'s',
-    description:
-      'Bouw pagina\'s die zoekintentie dekken, vertrouwen opbouwen en bezoekers richting contact of offerte brengen.',
-    background: '#FFF8EE',
-    accent: '#F5A53D',
-  },
-  {
-    icon: ShieldCheckIcon,
-    title: 'Autoriteit & AI SEO',
-    description:
-      'Versterk je domein met relevante links, lokale signalen en content die ook beter begrepen wordt door AI-antwoorden.',
-    background: '#F3F1FF',
-    accent: '#7B61FF',
-  },
-];
-
-const faqs = [
-  {
-    question: 'Wat doet een SEO specialist in Rotterdam precies?',
-    answer:
-      'Een SEO specialist in Rotterdam helpt je website beter vindbaar worden voor relevante zoekopdrachten in Google. Bij Niblah combineren we technische SEO, content, lokale SEO, autoriteit en conversie zodat meer bezoekers ook echte aanvragen kunnen worden.',
-  },
-  {
-    question: 'Is lokale SEO anders dan landelijke SEO?',
-    answer:
-      'Ja. Lokale SEO richt zich sterker op zoekopdrachten met plaatsnamen, Google Business Profile, lokale pagina\'s, reviews, interne links en regionale relevantie. Voor Rotterdam kijken we ook naar omliggende plaatsen en wijken wanneer dat commercieel logisch is.',
-  },
-  {
-    question: 'Wanneer zie ik resultaat van SEO?',
-    answer:
-      'SEO is meestal geen kanaal voor morgen, maar voor structurele groei. Technische verbeteringen kunnen snel effect hebben, terwijl content en autoriteit vaak meerdere maanden nodig hebben. Daarom koppelen we SEO waar nodig aan Google Ads of conversieverbeteringen.',
-  },
-  {
-    question: 'Kan Niblah ook SEO content schrijven?',
-    answer:
-      'Ja. We maken servicepagina\'s, lokale landingspagina\'s, kennisartikelen en contentclusters. De inhoud wordt geschreven op zoekintentie, betrouwbaarheid en conversie, niet alleen om een keyword te herhalen.',
-  },
-  {
-    question: 'Heb ik aparte pagina\'s nodig voor Rotterdamse wijken?',
-    answer:
-      'Soms wel. Als je doelgroep anders zoekt in Centrum, Kralingen, Zuid of Spaanse Polder kan een wijk- of dienstpagina logisch zijn. We bouwen die alleen wanneer de zoekintentie en commerciële kans sterk genoeg zijn.',
-  },
-  {
-    question: 'Past SEO bij elk bedrijf in Rotterdam?',
-    answer:
-      'Niet altijd op dezelfde manier. SEO past vooral wanneer mensen actief zoeken naar je dienst, product of probleem. Tijdens een consult bepalen we of SEO, Google Ads, website optimalisatie of marketing automation de beste eerste stap is.',
-  },
-  {
-    question: 'Hoe pakken jullie lokale SEO voor Rotterdam aan?',
-    answer:
-      'We kijken naar je diensten, concurrenten, wijken, omliggende plaatsen en lokale zoekintentie. Daarna bouwen we pagina\'s, interne links en signalen die logisch zijn voor klanten die in Rotterdam of de regio zoeken.',
-  },
-  {
-    question: 'Kan SEO samen met Google Ads of een nieuwe website?',
-    answer:
-      'Ja. Vaak werkt SEO sterker wanneer Google Ads data, landingspagina\'s, tracking en website optimalisatie samenkomen. Zo zie je sneller welke zoekwoorden aanvragen opleveren en welke pagina\'s beter moeten converteren.',
-  },
-  {
-    question: 'Wat kost SEO in Rotterdam?',
-    answer:
-      'Onze SEO-trajecten starten bij 500 euro per maand voor de basis, 1.000 euro per maand voor lokale groei en 2.500 euro per maand voor competitieve markten. De juiste keuze hangt af van je website, concurrentie en groeidoel.',
-  },
-  {
-    question: 'Wanneer is SEO Growth beter dan Starter?',
-    answer:
-      'SEO Growth past beter wanneer je in een competitieve markt zit, meerdere diensten of locaties wilt targeten, of wanneer content, techniek, autoriteit en Google Business Profile tegelijk moeten groeien.',
-  },
-  {
-    question: 'Hoe starten we met een SEO traject bij Niblah?',
-    answer:
-      'We starten met een korte strategiesessie. Daarin bespreken we je bedrijf, je huidige website, je belangrijkste diensten en je groeidoel. Daarna krijg je een concreet advies voor de beste eerste stap.',
-  },
-];
-
-const beforeAfterPanels = [
-  {
-    theme: 'before',
-    title: 'Voor SEO met Niblah',
-    description:
-      'Groei blijft hangen wanneer SEO bestaat uit losse acties, oude pagina\'s en rapportages zonder duidelijke prioriteit.',
-    items: [
-      {
-        title: 'Losse optimalisaties',
-        description: 'Pagina\'s worden aangepast zonder duidelijk plan voor zoekintentie, techniek en conversie.',
-      },
-      {
-        title: 'Onduidelijke resultaten',
-        description: 'Je ziet rankings bewegen, maar niet welke SEO-acties echte aanvragen opleveren.',
-      },
-      {
-        title: 'Gemiste lokale kansen',
-        description: 'Rotterdamse zoekopdrachten, wijken en omliggende plaatsen blijven buiten de structuur vallen.',
-      },
-    ],
-  },
-  {
-    theme: 'after',
-    title: 'Na SEO met Niblah',
-    description:
-      'SEO wordt een groeisysteem waarin techniek, content, lokale vindbaarheid en opvolging samen meer aanvragen opleveren.',
-    items: [
-      {
-        title: 'Heldere SEO roadmap',
-        description: 'Iedere actie heeft een reden, eigenaar en meetpunt zodat prioriteiten scherp blijven.',
-      },
-      {
-        title: 'Betere landingspagina\'s',
-        description: 'Content wordt gebouwd rond zoekintentie, vertrouwen en conversie naar contact of offerte.',
-      },
-      {
-        title: 'Meetbare groei',
-        description: 'Rapportage laat zien welke pagina\'s, zoekwoorden en optimalisaties bijdragen aan aanvragen.',
-      },
-    ],
-  },
-];
-
-const seoPackages = [
-  {
-    label: 'SEO Essentials',
-    title: 'Basis neerzetten voor Rotterdamse vindbaarheid',
-    price: '€500',
-    priceSuffix: '/ maand',
-    description:
-      'Voor bedrijven die hun SEO-basis goed willen neerzetten en willen starten met content, lokale signalen en technische verbeteringen.',
-    accent: '#1995FF',
-    background: '#F4FAFF',
-    cta: 'Start met Essentials',
-    featuresLabel: 'Essentials bevat:',
-    features: [
-      'SEO-contentstukken (x2)',
-      'Tier 1 backlinks (x1)',
-      'On-site optimalisaties (x1)',
-      'Social posts (x2)',
-      'Google Business Profile optimalisatie en posts (x2)',
-      'Reviewreacties voor Google Business Profile',
-      'Basis schema markup',
-      'Lokale directoryvermeldingen',
-    ],
-  },
-  {
-    label: 'SEO Starter',
-    title: 'Lokale groei voor kleine Rotterdamse bedrijven',
-    price: '€1.000',
-    priceSuffix: '/ maand',
-    description:
-      'Voor bedrijven die lokaal beter zichtbaar willen worden en maandelijks willen werken aan content, techniek, GBP en autoriteit.',
-    accent: '#8D6BFF',
-    background: '#F3EEFF',
-    cta: 'Kies lokale groei',
-    featuresLabel: 'Starter bevat:',
-    features: [
-      'SEO-contentstukken (x4)',
-      'Tier 1 backlinks (x1)',
-      'On-site optimalisaties (x3)',
-      'Social posts (x3)',
-      'Google Business Profile optimalisatie en posts (x3)',
-      'Reviewreacties voor Google Business Profile',
-      'Schema setup',
-      'Lokale directoryvermeldingen',
-      'Technische SEO-audit en fixes',
-    ],
-  },
-  {
-    label: 'SEO Growth',
-    title: 'Opschalen in competitieve Rotterdamse markten',
-    price: '€2.500',
-    priceSuffix: '/ maand',
-    badge: 'Meest gekozen',
-    description:
-      'Voor bedrijven die in meerdere diensten, wijken of omliggende plaatsen willen groeien en SEO als serieus acquisitiekanaal willen inzetten.',
-    accent: '#F5A53D',
-    background: '#FFF4E3',
-    cta: 'Schaal SEO in Rotterdam',
-    featuresLabel: 'Growth bevat:',
-    features: [
-      'SEO-contentstukken (x7)',
-      'Tier 1 backlinks (x2)',
-      'Tier 2 backlinks (x1)',
-      'On-site optimalisaties (x6)',
-      'Social posts (x4)',
-      'Google Business Profile optimalisatie en posts (x4)',
-      'Reviewreacties voor Google Business Profile',
-      'Schema setup',
-      'Lokale directoryvermeldingen',
-      'Technische SEO-audit en fixes',
-    ],
-  },
-];
-
-const professionalServiceJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
-  name: 'Niblah - SEO Specialist Rotterdam',
-  url: pageUrl,
-  telephone: '+31648728828',
-  email: 'albin@niblah.com',
-  areaServed: [
-    { '@type': 'City', name: 'Rotterdam' },
-    { '@type': 'City', name: 'Schiedam' },
-    { '@type': 'City', name: 'Vlaardingen' },
-    { '@type': 'City', name: 'Capelle aan den IJssel' },
-    { '@type': 'City', name: 'Barendrecht' },
-  ],
-  serviceType: 'SEO specialist Rotterdam',
-  sameAs: [
-    'https://x.com/Niblahistaken',
-    'https://www.youtube.com/channel/UCvy37Ft-33KdCaYVCDHA35Q/',
-  ],
-};
-
-const faqJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqs.map((faq) => ({
-    '@type': 'Question',
-    name: faq.question,
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: faq.answer,
-    },
-  })),
-};
-
-export const metadata = {
-  title: 'SEO Specialist Rotterdam | Lokale SEO | Niblah',
-  description:
-    'SEO specialist Rotterdam nodig? Niblah bouwt lokale SEO-systemen met techniek, content, Google Business Profile en conversie voor meer aanvragen.',
-  keywords: [
-    'seo specialist rotterdam',
-    'seo rotterdam',
-    'seo bureau rotterdam',
-    'lokale seo rotterdam',
-    'seo expert rotterdam',
-  ],
-  alternates: {
-    canonical: pageUrl,
-  },
-  openGraph: {
-    title: 'SEO Specialist Rotterdam | Lokale SEO | Niblah',
-    description:
-      'Lokale SEO in Rotterdam met techniek, content, Google Business Profile, wijkgerichte zoekintentie en conversie optimalisatie.',
-    url: pageUrl,
-    type: 'website',
-    locale: 'nl_NL',
-    siteName: 'Niblah',
-    images: [
-      {
-        url: '/home-hero-growth.webp',
-        width: 1920,
-        height: 1493,
-        alt: 'SEO specialist Rotterdam groeigrafiek',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'SEO Specialist Rotterdam | Lokale SEO | Niblah',
-    description:
-      'SEO specialist Rotterdam voor bedrijven die lokaal beter gevonden willen worden en meer relevante aanvragen uit Google willen halen.',
-    images: ['/home-hero-growth.webp'],
-  },
-};
-
-function PrimaryButton({ href, children, invert = false }) {
-  return (
-    <Link
-      href={href}
-      prefetch={false}
-      className={`inline-flex items-center justify-center gap-3 rounded-full px-6 py-3 text-sm font-semibold transition-transform hover:-translate-y-0.5 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1995FF] ${
-        invert
-          ? 'bg-white text-[#331300] shadow-[0_14px_34px_rgba(0,0,0,0.16)]'
-          : 'bg-[#331300] text-white shadow-[0_14px_34px_rgba(51,19,0,0.18)]'
-      }`}
-    >
-      <span>{children}</span>
-      <ArrowRightIcon className="h-4 w-4" aria-hidden="true" />
-    </Link>
-  );
+export function generateStaticParams() {
+  return getSeoLocationSlugs()
+    .filter((slug) => slug !== 'rotterdam')
+    .map((slug) => ({ slug }));
 }
 
-function SecondaryButton({ href, children, invert = false }) {
-  return (
-    <Link
-      href={href}
-      prefetch={false}
-      className={`inline-flex items-center justify-center rounded-full border px-6 py-3 text-sm font-semibold transition-colors focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1995FF] ${
-        invert
-          ? 'border-white/18 text-white hover:border-[#1995FF] hover:text-[#1995FF]'
-          : 'border-[#331300]/16 text-[#331300] hover:border-[#1995FF] hover:text-[#1995FF]'
-      }`}
-    >
-      {children}
-    </Link>
-  );
+function buildPageData(profile) {
+  const { name, slug, nearby, areaText, marketType, audience } = profile;
+  const primaryKeyword = `SEO specialist ${name}`;
+  const nearbyShort = nearby.slice(0, 3).join(', ');
+  const localExamples = profile.isMajorMarket
+    ? 'meerdere wijken, bedrijventerreinen en omliggende plaatsen'
+    : 'de kern, omliggende dorpen en regionale zoekopdrachten';
+
+  const heroBullets = [
+    `SEO per dienst, zoekintentie en regio ${name}`,
+    `Google Business Profile, content, techniek en conversie in een groeiplan`,
+    `Lokale pagina's voor ${nearbyShort} zonder gekopieerde plaatsnaamteksten`,
+  ];
+
+  const proofStats = [
+    { value: 'Tot 300%', label: 'meer organisch verkeer bij klanten' },
+    { value: '100+', label: 'bedrijven geholpen met online groei' },
+    { value: '30+ jaar', label: 'gebundelde marketingervaring in het team' },
+  ];
+
+  const seoScaleCards = [
+    {
+      icon: MapPinIcon,
+      title: 'Lokale SEO & Maps',
+      description: `Word zichtbaar bij zoekopdrachten met ${name}, ${nearbyShort} en zoekopdrachten zoals dienst bij mij in de buurt.`,
+      background: '#F4FAFF',
+      accent: '#1995FF',
+    },
+    {
+      icon: ClipboardDocumentCheckIcon,
+      title: 'Google Business Profile',
+      description:
+        'Optimaliseer categorieen, diensten, foto\'s, posts, Q&A, reviews en lokale signalen die helpen in Google Maps.',
+      background: '#FBF2FF',
+      accent: '#8D6BFF',
+    },
+    {
+      icon: CursorArrowRaysIcon,
+      title: 'Keyword research',
+      description: `Vind zoektermen die klanten in ${name} gebruiken per dienst, probleem, fase en koopintentie.`,
+      background: '#F4FAFF',
+      accent: '#1995FF',
+    },
+    {
+      icon: WrenchScrewdriverIcon,
+      title: 'Technische SEO',
+      description:
+        'Verbeter crawlbaarheid, indexatie, snelheid, schema, canonical structuur en interne linkarchitectuur.',
+      background: '#FFF2EF',
+      accent: '#F57B73',
+    },
+    {
+      icon: PresentationChartLineIcon,
+      title: 'Content & servicepagina\'s',
+      description:
+        'Bouw pagina\'s die zoekintentie dekken, vertrouwen opbouwen en bezoekers richting contact of offerte brengen.',
+      background: '#FFF8EE',
+      accent: '#F5A53D',
+    },
+    {
+      icon: ShieldCheckIcon,
+      title: 'Autoriteit & AI SEO',
+      description:
+        'Versterk je domein met relevante links, lokale signalen en content die ook beter begrepen wordt door AI-antwoorden.',
+      background: '#F3F1FF',
+      accent: '#7B61FF',
+    },
+  ];
+
+  const caseStudies = [
+    {
+      label: 'Lokale SEO',
+      year: '2026',
+      title: `SEO fundament gebouwd voor meer aanvragen uit ${name}`,
+      description:
+        'Een lokale dienstverlener kreeg een heldere SEO-structuur met technische fixes, servicepagina\'s en betere meetpunten voor aanvragen.',
+      image: '/downloads/rankings.png',
+      background: '#D8ECFF',
+      accent: '#1995FF',
+      metrics: [
+        { value: '+142%', label: 'groei in organische sessies' },
+        { value: '38%', label: 'meer offerte aanvragen' },
+        { value: '24', label: 'nieuwe lokale zoekwoorden' },
+        { value: '3.1x', label: 'meer zichtbaarheid' },
+      ],
+    },
+    {
+      label: 'Content en techniek',
+      year: '2026',
+      title: 'Van losse pagina\'s naar een schaalbaar SEO systeem',
+      description:
+        'We brachten content, interne links, technische SEO en conversie samen in een structuur die maandelijks verder uitgebouwd kan worden.',
+      image: '/downloads/organic results.png',
+      background: '#F4FAFF',
+      accent: '#1995FF',
+      metrics: [
+        { value: '+86%', label: 'meer non-branded verkeer' },
+        { value: '19', label: 'pagina\'s geoptimaliseerd' },
+        { value: '+51%', label: 'hogere CTR uit Google' },
+        { value: '0', label: 'kritieke indexatie issues' },
+      ],
+    },
+    {
+      label: 'SEO en conversie',
+      year: '2026',
+      title: 'Technische basis gekoppeld aan betere landingspagina\'s',
+      description:
+        'We maakten de website sneller, duidelijker en beter meetbaar zodat SEO-verkeer sneller richting contact, offerte of afspraak beweegt.',
+      image: '/downloads/technical seo.png',
+      background: '#FFE7A6',
+      accent: '#F5A53D',
+      metrics: [
+        { value: '+64%', label: 'meer klikken uit Google' },
+        { value: '2.4x', label: 'meer formulierstarts' },
+        { value: '31%', label: 'lagere bounce rate' },
+        { value: '17', label: 'technische fixes live' },
+      ],
+    },
+  ];
+
+  const trustCards = [
+    {
+      label: 'Organische groei',
+      value: '300',
+      suffix: '%',
+      description:
+        `Tot 300% meer organisch verkeer bij klanten door techniek, content, autoriteit en conversie samen te verbeteren.`,
+      hoverDetail: `SEO in ${name} wordt gekoppeld aan meetbare aanvragen, niet alleen aan posities.`,
+      background: '#FFF4E3',
+      accent: '#F5A53D',
+      height: '27.8rem',
+      offsetClass: 'md:mt-0',
+      overlapClass: '',
+    },
+    {
+      label: 'Bedrijven geholpen',
+      value: '100',
+      suffix: '+',
+      description:
+        'Ondernemers geholpen met SEO, websites, Google Ads en marketing systemen die meer aanvragen moeten opleveren.',
+      hoverDetail: `Van lokale dienstverleners tot teams die in ${areaText} willen groeien.`,
+      background: '#F4FAFF',
+      accent: '#1995FF',
+      height: '25.6rem',
+      offsetClass: 'md:mt-[2.2rem]',
+      overlapClass: 'md:-ml-6',
+    },
+    {
+      label: 'Gebundelde ervaring',
+      value: '30',
+      suffix: '+ jaar',
+      description:
+        'Marketingervaring in een klein team dat strategie, uitvoering en optimalisatie onder een dak houdt.',
+      hoverDetail: 'Strategie, uitvoering en rapportage blijven in dezelfde korte lijn.',
+      background: '#D8ECFF',
+      accent: '#1995FF',
+      height: '23.4rem',
+      offsetClass: 'md:mt-[4.4rem]',
+      overlapClass: 'md:-ml-6',
+      decorated: true,
+    },
+    {
+      label: 'Direct contact',
+      value: '1',
+      suffix: 'team',
+      description:
+        'Een vast aanspreekpunt dat je bedrijf begrijpt en niet iedere optimalisatie door losse lagen laat lopen.',
+      hoverDetail: 'Je spreekt de mensen die aan je SEO, website en campagnes werken.',
+      background: '#FBE4F5',
+      accent: '#F08BE5',
+      height: '21.2rem',
+      offsetClass: 'md:mt-[6.6rem]',
+      overlapClass: 'md:-ml-6',
+    },
+  ];
+
+  const testimonialCases = [
+    {
+      quote:
+        `We zagen eindelijk welke SEO-acties in ${name} aanvragen opleveren en welke pagina's alleen verkeer trokken zonder resultaat.`,
+      attribution: `Eigenaar, lokale dienstverlener in ${name}`,
+      background: '#D8ECFF',
+      accent: '#1995FF',
+      image: '/downloads/seo-testimonial-persona-1.png',
+      imagePosition: 'center center',
+    },
+    {
+      quote:
+        'De combinatie van techniek, content en betere landingspagina\'s gaf ons binnen enkele weken meer grip op organische groei.',
+      attribution: `Marketing manager, B2B-team regio ${name}`,
+      background: '#FFF4C7',
+      accent: '#F5A53D',
+      image: '/downloads/seo-testimonial-persona-2.png',
+      imagePosition: 'center center',
+    },
+    {
+      quote:
+        'Geen losse optimalisaties meer. We hebben nu een SEO-systeem met duidelijke prioriteiten, rapportage en opvolging.',
+      attribution: `Founder, bedrijf actief in ${areaText}`,
+      background: '#FFF4E3',
+      accent: '#F5A53D',
+      image: '/downloads/seo-testimonial-persona-3.png',
+      imagePosition: 'center center',
+    },
+  ];
+
+  const beforeAfterPanels = [
+    {
+      theme: 'before',
+      title: 'Voor SEO met Niblah',
+      description:
+        'Groei blijft hangen wanneer SEO bestaat uit losse acties, oude pagina\'s en rapportages zonder duidelijke prioriteit.',
+      items: [
+        {
+          title: 'Losse optimalisaties',
+          description: 'Pagina\'s worden aangepast zonder duidelijk plan voor zoekintentie, techniek en conversie.',
+        },
+        {
+          title: 'Onduidelijke resultaten',
+          description: 'Je ziet rankings bewegen, maar niet welke SEO-acties echte aanvragen opleveren.',
+        },
+        {
+          title: 'Gemiste lokale kansen',
+          description: `${name}, ${nearbyShort} en omliggende zoekopdrachten blijven buiten de structuur vallen.`,
+        },
+      ],
+    },
+    {
+      theme: 'after',
+      title: 'Na SEO met Niblah',
+      description:
+        'SEO wordt een groeisysteem waarin techniek, content, lokale vindbaarheid en opvolging samen meer aanvragen opleveren.',
+      items: [
+        {
+          title: 'Heldere SEO roadmap',
+          description: 'Iedere actie heeft een reden, eigenaar en meetpunt zodat prioriteiten scherp blijven.',
+        },
+        {
+          title: 'Betere landingspagina\'s',
+          description: 'Content wordt gebouwd rond zoekintentie, vertrouwen en conversie naar contact of offerte.',
+        },
+        {
+          title: 'Meetbare groei',
+          description: 'Rapportage laat zien welke pagina\'s, zoekwoorden en optimalisaties bijdragen aan aanvragen.',
+        },
+      ],
+    },
+  ];
+
+  const seoPackages = [
+    {
+      label: 'SEO Essentials',
+      title: `Basis neerzetten voor vindbaarheid in ${name}`,
+      price: '€500',
+      priceSuffix: '/ maand',
+      description:
+        'Voor bedrijven die hun SEO-basis goed willen neerzetten en willen starten met content, lokale signalen en technische verbeteringen.',
+      accent: '#1995FF',
+      background: '#F4FAFF',
+      cta: 'Start met Essentials',
+      featuresLabel: 'Essentials bevat:',
+      features: [
+        'SEO-contentstukken (x2)',
+        'Tier 1 backlinks (x1)',
+        'On-site optimalisaties (x1)',
+        'Social posts (x2)',
+        'Google Business Profile optimalisatie en posts (x2)',
+        'Reviewreacties voor Google Business Profile',
+        'Basis schema markup',
+        'Lokale directoryvermeldingen',
+      ],
+    },
+    {
+      label: 'SEO Starter',
+      title: `Lokale groei voor bedrijven in ${name}`,
+      price: '€1.000',
+      priceSuffix: '/ maand',
+      description:
+        'Voor bedrijven die lokaal beter zichtbaar willen worden en maandelijks willen werken aan content, techniek, GBP en autoriteit.',
+      accent: '#8D6BFF',
+      background: '#F3EEFF',
+      cta: 'Kies lokale groei',
+      featuresLabel: 'Starter bevat:',
+      features: [
+        'SEO-contentstukken (x4)',
+        'Tier 1 backlinks (x1)',
+        'On-site optimalisaties (x3)',
+        'Social posts (x3)',
+        'Google Business Profile optimalisatie en posts (x3)',
+        'Reviewreacties voor Google Business Profile',
+        'Schema setup',
+        'Lokale directoryvermeldingen',
+        'Technische SEO-audit en fixes',
+      ],
+    },
+    {
+      label: 'SEO Growth',
+      title: `Opschalen in ${marketType} ${name}`,
+      price: '€2.500',
+      priceSuffix: '/ maand',
+      badge: 'Meest gekozen',
+      description:
+        `Voor bedrijven die in ${localExamples} willen groeien en SEO als serieus acquisitiekanaal willen inzetten.`,
+      accent: '#F5A53D',
+      background: '#FFF4E3',
+      cta: `Schaal SEO in ${name}`,
+      featuresLabel: 'Growth bevat:',
+      features: [
+        'SEO-contentstukken (x7)',
+        'Tier 1 backlinks (x2)',
+        'Tier 2 backlinks (x1)',
+        'On-site optimalisaties (x6)',
+        'Social posts (x4)',
+        'Google Business Profile optimalisatie en posts (x4)',
+        'Reviewreacties voor Google Business Profile',
+        'Schema setup',
+        'Lokale directoryvermeldingen',
+        'Technische SEO-audit en fixes',
+      ],
+    },
+  ];
+
+  const faqs = [
+    {
+      question: `Wat doet een SEO specialist in ${name} precies?`,
+      answer:
+        `Een SEO specialist in ${name} helpt je website beter vindbaar worden voor relevante zoekopdrachten in Google. Bij Niblah combineren we technische SEO, content, lokale SEO, autoriteit en conversie zodat meer bezoekers ook echte aanvragen kunnen worden.`,
+    },
+    {
+      question: `Is lokale SEO in ${name} anders dan landelijke SEO?`,
+      answer:
+        `Ja. Lokale SEO richt zich sterker op plaatsnamen, Google Business Profile, lokale pagina's, reviews, interne links en regionale relevantie. Voor ${name} kijken we ook naar ${nearbyShort} wanneer dat commercieel logisch is.`,
+    },
+    {
+      question: 'Wanneer zie ik resultaat van SEO?',
+      answer:
+        'SEO is meestal geen kanaal voor morgen, maar voor structurele groei. Technische verbeteringen kunnen snel effect hebben, terwijl content en autoriteit vaak meerdere maanden nodig hebben. Daarom koppelen we SEO waar nodig aan Google Ads of conversieverbeteringen.',
+    },
+    {
+      question: 'Kan Niblah ook SEO content schrijven?',
+      answer:
+        'Ja. We maken servicepagina\'s, lokale landingspagina\'s, kennisartikelen en contentclusters. De inhoud wordt geschreven op zoekintentie, betrouwbaarheid en conversie, niet alleen om een keyword te herhalen.',
+    },
+    {
+      question: `Heb ik aparte pagina's nodig voor ${name} en omgeving?`,
+      answer:
+        `Soms wel. Als je doelgroep anders zoekt in ${nearbyShort} kan een aparte locatie- of dienstpagina logisch zijn. We bouwen die alleen wanneer de zoekintentie en commerciële kans sterk genoeg zijn.`,
+    },
+    {
+      question: `Past SEO bij elk bedrijf in ${name}?`,
+      answer:
+        'Niet altijd op dezelfde manier. SEO past vooral wanneer mensen actief zoeken naar je dienst, product of probleem. Tijdens een consult bepalen we of SEO, Google Ads, website optimalisatie of marketing automation de beste eerste stap is.',
+    },
+    {
+      question: `Hoe pakken jullie lokale SEO voor ${name} aan?`,
+      answer:
+        `We kijken naar je diensten, concurrenten, lokale zoekintentie, omliggende plaatsen en conversiepunten. Daarna bouwen we pagina's, interne links en signalen die logisch zijn voor klanten die in ${name} of de regio zoeken.`,
+    },
+    {
+      question: 'Kan SEO samen met Google Ads of een nieuwe website?',
+      answer:
+        'Ja. Vaak werkt SEO sterker wanneer Google Ads data, landingspagina\'s, tracking en website optimalisatie samenkomen. Zo zie je sneller welke zoekwoorden aanvragen opleveren en welke pagina\'s beter moeten converteren.',
+    },
+    {
+      question: `Wat kost SEO in ${name}?`,
+      answer:
+        'Onze SEO-trajecten starten bij 500 euro per maand voor de basis, 1.000 euro per maand voor lokale groei en 2.500 euro per maand voor competitieve markten. De juiste keuze hangt af van je website, concurrentie en groeidoel.',
+    },
+    {
+      question: 'Hoe starten we met een SEO traject bij Niblah?',
+      answer:
+        'We starten met een korte strategiesessie. Daarin bespreken we je bedrijf, je huidige website, je belangrijkste diensten en je groeidoel. Daarna krijg je een concreet advies voor de beste eerste stap.',
+    },
+  ];
+
+  const professionalServiceJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: `Niblah - ${primaryKeyword}`,
+    url: profile.canonical,
+    telephone: '+31648728828',
+    email: 'albin@niblah.com',
+    areaServed: [
+      { '@type': 'City', name },
+      ...nearby.slice(0, 4).map((place) => ({ '@type': 'Place', name: place })),
+    ],
+    serviceType: primaryKeyword,
+    sameAs: [
+      'https://x.com/Niblahistaken',
+      'https://www.youtube.com/channel/UCvy37Ft-33KdCaYVCDHA35Q/',
+    ],
+  };
+
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+
+  return {
+    primaryKeyword,
+    heroBullets,
+    proofStats,
+    seoScaleCards,
+    caseStudies,
+    trustCards,
+    testimonialCases,
+    beforeAfterPanels,
+    seoPackages,
+    faqs,
+    professionalServiceJsonLd,
+    faqJsonLd,
+  };
+}
+
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const profile = getLocationProfile(slug);
+
+  if (!profile) {
+    return {};
+  }
+
+  return {
+    title: `SEO Specialist ${profile.name} | Lokale SEO | Niblah`,
+    description: `SEO specialist ${profile.name} nodig? Niblah bouwt lokale SEO-systemen met techniek, content, Google Business Profile en conversie voor meer aanvragen.`,
+    keywords: [
+      `seo specialist ${profile.lowerName}`,
+      `seo ${profile.lowerName}`,
+      `seo bureau ${profile.lowerName}`,
+      `lokale seo ${profile.lowerName}`,
+      `seo expert ${profile.lowerName}`,
+    ],
+    alternates: {
+      canonical: profile.canonical,
+    },
+    openGraph: {
+      title: `SEO Specialist ${profile.name} | Lokale SEO | Niblah`,
+      description: `Lokale SEO in ${profile.name} met techniek, content, Google Business Profile, zoekintentie en conversie optimalisatie.`,
+      url: profile.canonical,
+      type: 'website',
+      locale: 'nl_NL',
+      siteName: 'Niblah',
+      images: [
+        {
+          url: '/home-hero-growth.webp',
+          width: 1920,
+          height: 1493,
+          alt: `SEO specialist ${profile.name} groeigrafiek`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `SEO Specialist ${profile.name} | Lokale SEO | Niblah`,
+      description: `SEO specialist ${profile.name} voor bedrijven die lokaal beter gevonden willen worden en meer relevante aanvragen uit Google willen halen.`,
+      images: ['/home-hero-growth.webp'],
+    },
+  };
 }
 
 function GeometricHeroButton({ href, children, variant = 'primary' }) {
@@ -558,13 +540,13 @@ function HeroHeadshot({ className = '' }) {
   );
 }
 
-function SeoScaleSection() {
+function SeoScaleSection({ profile, cards }) {
   return (
     <section className="overflow-hidden bg-white py-16 md:py-24">
       <div className="mx-auto max-w-[1180px] px-6 text-center">
         <div className="mb-4 inline-flex items-center gap-2 text-sm font-semibold text-[#1995FF]">
           <span className="h-2 w-2 rounded-full bg-[#1995FF]" />
-          SEO diensten in Rotterdam
+          SEO diensten in {profile.name}
         </div>
         <h2
           className="mx-auto max-w-[680px] font-medium tracking-[-0.005em] text-[#10201D]"
@@ -575,7 +557,7 @@ function SeoScaleSection() {
             textWrap: 'balance',
           }}
         >
-          Wat er in onze SEO-aanpak voor Rotterdam zit
+          Wat er in onze SEO-aanpak voor {profile.name} zit
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-[0.95rem] leading-relaxed text-[#10201D]/66">
           Elk onderdeel heeft een rol: lokale zichtbaarheid opbouwen, Google je
@@ -585,7 +567,7 @@ function SeoScaleSection() {
 
       <div className="mt-12 overflow-x-auto overscroll-x-contain px-6 [scrollbar-width:none] md:mt-16 [&::-webkit-scrollbar]:hidden">
         <div className="mx-auto flex w-max min-w-full snap-x snap-mandatory gap-4 pb-3 md:gap-5">
-          {seoScaleCards.map((card) => {
+          {cards.map((card) => {
             const Icon = card.icon;
 
             return (
@@ -730,7 +712,7 @@ function CaseStudyCard({ study }) {
   );
 }
 
-function LatestWorkSection() {
+function LatestWorkSection({ profile, studies }) {
   return (
     <section className="relative isolate overflow-hidden bg-[#331300] px-6 py-16 text-white md:py-20">
       <div
@@ -757,7 +739,7 @@ function LatestWorkSection() {
                 lineHeight: '1.14',
               }}
             >
-              Laatste SEO werk dat groei meetbaar maakt
+              Laatste SEO werk dat groei in {profile.name} meetbaar maakt
             </h2>
             <p className="mt-4 max-w-[35rem] text-[0.95rem] leading-relaxed text-white/64">
               Bekijk hoe we SEO niet als losse optimalisatie inzetten, maar als
@@ -771,7 +753,7 @@ function LatestWorkSection() {
         </div>
 
         <div className="mt-10 grid gap-5 md:mt-12">
-          {caseStudies.map((study) => (
+          {studies.map((study) => (
             <CaseStudyCard key={study.title} study={study} />
           ))}
         </div>
@@ -780,104 +762,102 @@ function LatestWorkSection() {
   );
 }
 
-function TrustSection() {
+function TrustSection({ cards }) {
+  const trustLogos = [
+    { name: 'Google', src: 'https://cdn.simpleicons.org/google' },
+    { name: 'Google Search Console', src: 'https://cdn.simpleicons.org/googlesearchconsole' },
+    { name: 'Google Analytics', src: 'https://cdn.simpleicons.org/googleanalytics' },
+    { name: 'Shopify', src: 'https://cdn.simpleicons.org/shopify' },
+    { name: 'WordPress', src: 'https://cdn.simpleicons.org/wordpress' },
+    {
+      name: 'Klaviyo',
+      src: 'https://companieslogo.com/img/orig/KVYO-73fd140d.svg?t=1720244492&download=true',
+    },
+    { name: 'Looker Studio', src: 'https://cdn.simpleicons.org/looker' },
+    { name: 'WooCommerce', src: 'https://cdn.simpleicons.org/woocommerce' },
+  ];
+
   return (
     <section className="overflow-hidden bg-white px-6 py-16 md:py-24">
       <style>
         {`
-          .trust-stat-card {
+          .seo-location-trust-card {
             --card-accent: #1995ff;
             position: relative;
             min-block-size: 21rem;
-            translate: 0 0;
-            scale: 1;
             contain: layout paint;
-            transition:
-              translate 320ms ease,
-              scale 320ms ease,
-              box-shadow 320ms ease;
+            transition: box-shadow 320ms ease;
           }
 
-          .trust-stat-card::before,
-          .trust-stat-card::after {
+          .seo-location-trust-card::before,
+          .seo-location-trust-card::after {
             content: "";
             position: absolute;
             pointer-events: none;
             background: var(--card-accent);
             opacity: 0;
-            transition:
-              opacity 320ms ease,
-              translate 320ms ease;
+            transition: opacity 320ms ease;
           }
 
-          .trust-stat-card::before {
+          .seo-location-trust-card::before {
             inline-size: 3.15rem;
             block-size: 4.9rem;
             inset-block-start: 0;
             inset-inline-end: 4.4rem;
-            translate: 0 -0.9rem;
           }
 
-          .trust-stat-card::after {
+          .seo-location-trust-card::after {
             inline-size: 7.6rem;
             block-size: 2.3rem;
             inset-block-end: 0;
             inset-inline-end: 1.8rem;
-            translate: 0 1rem;
           }
 
-          .trust-stat-card:hover,
-          .trust-stat-card:focus-visible {
-            translate: 0 0;
-            scale: 1;
+          .seo-location-trust-card:hover,
+          .seo-location-trust-card:focus-visible {
             box-shadow: 0 1.35rem 2.9rem rgba(16, 32, 29, 0.08);
             z-index: 20;
           }
 
-          .trust-stat-card:focus-visible {
+          .seo-location-trust-card:focus-visible {
             outline: 2px solid var(--card-accent);
             outline-offset: 3px;
           }
 
-          .trust-stat-card:hover::before,
-          .trust-stat-card:hover::after,
-          .trust-stat-card:focus-visible::before,
-          .trust-stat-card:focus-visible::after {
+          .seo-location-trust-card:hover::before,
+          .seo-location-trust-card:hover::after,
+          .seo-location-trust-card:focus-visible::before,
+          .seo-location-trust-card:focus-visible::after {
             opacity: 0.48;
-            translate: 0 0;
           }
 
-          .trust-card-reveal {
+          .seo-location-trust-reveal {
             position: absolute;
             inset: 0;
             opacity: 0;
             translate: 0 0.35rem;
-            color: rgba(16, 32, 29, 0.9);
             pointer-events: none;
-            transition:
-              opacity 320ms ease,
-              translate 320ms ease;
+            transition: opacity 320ms ease, translate 320ms ease;
           }
 
-          .trust-card-description {
+          .seo-location-trust-description {
             opacity: 1;
             transition: opacity 240ms ease, translate 320ms ease;
-            translate: 0 0;
           }
 
-          .trust-stat-card:hover .trust-card-description,
-          .trust-stat-card:focus-visible .trust-card-description {
+          .seo-location-trust-card:hover .seo-location-trust-description,
+          .seo-location-trust-card:focus-visible .seo-location-trust-description {
             opacity: 0;
             translate: 0 -0.2rem;
           }
 
-          .trust-stat-card:hover .trust-card-reveal,
-          .trust-stat-card:focus-visible .trust-card-reveal {
+          .seo-location-trust-card:hover .seo-location-trust-reveal,
+          .seo-location-trust-card:focus-visible .seo-location-trust-reveal {
             opacity: 1;
             translate: 0 0;
           }
 
-          .trust-logo-item {
+          .seo-location-logo-item {
             inline-size: 8.25rem;
             block-size: 3.4rem;
             display: grid;
@@ -887,7 +867,7 @@ function TrustSection() {
             background: rgba(255, 255, 255, 0.72);
           }
 
-          .trust-logo-item img {
+          .seo-location-logo-item img {
             display: block;
             max-inline-size: 6.9rem;
             max-block-size: 2.1rem;
@@ -896,32 +876,32 @@ function TrustSection() {
             opacity: 0.86;
           }
 
-          .trust-logo-track {
-            animation: trust-logo-marquee 30s linear infinite;
+          .seo-location-logo-track {
+            animation: seo-location-logo-marquee 30s linear infinite;
           }
 
-          .trust-logo-mask {
+          .seo-location-logo-mask {
             mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
           }
 
-          @keyframes trust-logo-marquee {
+          @keyframes seo-location-logo-marquee {
             from { transform: translateX(0); }
             to { transform: translateX(-50%); }
           }
 
           @media (min-width: 768px) {
-            .trust-stat-card {
+            .seo-location-trust-card {
               block-size: var(--card-height);
               min-block-size: var(--card-height);
             }
           }
 
           @media (prefers-reduced-motion: reduce) {
-            .trust-stat-card,
-            .trust-stat-card::before,
-            .trust-stat-card::after,
-            .trust-card-reveal,
-            .trust-logo-track {
+            .seo-location-trust-card,
+            .seo-location-trust-card::before,
+            .seo-location-trust-card::after,
+            .seo-location-trust-reveal,
+            .seo-location-logo-track {
               transition: none;
               animation: none;
             }
@@ -948,13 +928,13 @@ function TrustSection() {
         </div>
 
         <div className="mt-10 grid gap-4 md:mt-12 md:flex md:items-end md:gap-0">
-          {trustCards.map((card) => (
+          {cards.map((card) => (
             <article
               key={card.label}
               tabIndex={0}
               role="group"
               aria-label={`${card.label}: ${card.value}${card.suffix || ''}`}
-              className={`trust-stat-card flex flex-col overflow-hidden p-6 outline-none md:flex-1 md:p-7 ${card.offsetClass} ${card.overlapClass}`}
+              className={`seo-location-trust-card flex flex-col overflow-hidden p-6 outline-none md:flex-1 md:p-7 ${card.offsetClass} ${card.overlapClass}`}
               style={{
                 backgroundColor: card.background,
                 '--card-height': card.height,
@@ -990,10 +970,10 @@ function TrustSection() {
               </div>
 
               <div className="relative z-10 mt-auto max-w-[19rem] pt-10">
-                <p className="trust-card-description text-[0.92rem] leading-relaxed text-[#10201D]/76">
+                <p className="seo-location-trust-description text-[0.92rem] leading-relaxed text-[#10201D]/76">
                   {card.description}
                 </p>
-                <div className="trust-card-reveal text-[0.9rem] font-semibold leading-snug text-[#10201D]">
+                <div className="seo-location-trust-reveal text-[0.9rem] font-semibold leading-snug text-[#10201D]">
                   <span className="mr-2 inline-block h-2 w-2 rounded-full bg-[var(--card-accent)]" aria-hidden="true" />
                   {card.hoverDetail}
                 </div>
@@ -1006,12 +986,12 @@ function TrustSection() {
           <p className="max-w-[23rem] text-[0.95rem] leading-relaxed text-[#10201D]/72">
             Gebouwd met tooling die ondernemers en marketingteams al kennen.
           </p>
-          <div className="trust-logo-mask overflow-hidden">
-            <div className="trust-logo-track flex w-max items-center gap-5 pr-5">
+          <div className="seo-location-logo-mask overflow-hidden">
+            <div className="seo-location-logo-track flex w-max items-center gap-5 pr-5">
               {[...trustLogos, ...trustLogos].map((logo, index) => (
                 <span
                   key={`${logo.name}-${index}`}
-                  className="trust-logo-item"
+                  className="seo-location-logo-item"
                   aria-hidden={index >= trustLogos.length ? true : undefined}
                 >
                   <img
@@ -1032,193 +1012,13 @@ function TrustSection() {
   );
 }
 
-function TestimonialsSection() {
-  return (
-    <section className="relative isolate overflow-hidden bg-[#331300] px-6 py-16 text-white md:py-20">
-      <style>
-        {`
-          .seo-testimonial-rail {
-            scroll-snap-type: x mandatory;
-            overscroll-behavior-inline: contain;
-            scrollbar-width: none;
-          }
-
-          .seo-testimonial-rail::-webkit-scrollbar {
-            display: none;
-          }
-
-          .seo-testimonial-card {
-            scroll-snap-align: center;
-            contain: layout paint;
-          }
-
-          .seo-testimonial-card::before,
-          .seo-testimonial-card::after {
-            content: "";
-            position: absolute;
-            pointer-events: none;
-            background: var(--testimonial-accent);
-            opacity: 0.28;
-          }
-
-          .seo-testimonial-card::before {
-            inline-size: 10.5rem;
-            block-size: 2.6rem;
-            inset-block-start: 0;
-            inset-inline-start: 0;
-          }
-
-          .seo-testimonial-card::after {
-            inline-size: 10.5rem;
-            block-size: 2.6rem;
-            inset-block-end: 0;
-            inset-inline-end: 0;
-          }
-
-          @media (max-width: 767px) {
-            .seo-testimonial-card::before,
-            .seo-testimonial-card::after {
-              inline-size: 6.5rem;
-              block-size: 2rem;
-            }
-          }
-        `}
-      </style>
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_right,rgba(255,255,255,0.07)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:42px_42px] opacity-35"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute right-[-6rem] top-[-8rem] -z-10 h-80 w-80 rounded-full bg-[#1995FF]/14 blur-3xl"
-      />
-
-      <div className="mx-auto max-w-[1180px]">
-        <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
-          <div>
-            <div className="mb-4 inline-flex items-center gap-2 text-sm font-semibold text-[#1995FF]">
-              <span className="h-2 w-2 rounded-full bg-[#1995FF]" />
-              Ervaringen
-            </div>
-            <h2
-              className="font-medium tracking-[-0.005em] text-white"
-              style={{
-                fontFamily: 'var(--font-poppins), sans-serif',
-                fontSize: 'clamp(1.55rem, 2.55vw, 2.35rem)',
-                lineHeight: '1.1',
-              }}
-            >
-              Wat ondernemers merken zodra SEO een systeem wordt
-            </h2>
-            <p className="mt-4 max-w-[42rem] text-[0.95rem] leading-relaxed text-white/66">
-              Geanonimiseerde klantcases uit trajecten waarin techniek, content,
-              lokale vindbaarheid en conversie samen zijn opgepakt.
-            </p>
-          </div>
-
-          <div className="hidden items-center gap-3 md:flex">
-            <a
-              href="#seo-testimonial-1"
-              className="grid h-12 w-12 place-items-center rounded-[0.35rem] bg-white/10 text-xl text-white/72 transition hover:bg-white hover:text-[#331300]"
-              aria-label="Ga naar eerste testimonial"
-            >
-              ←
-            </a>
-            <a
-              href="#seo-testimonial-3"
-              className="grid h-12 w-12 place-items-center rounded-[0.35rem] bg-white/10 text-xl text-white transition hover:bg-white hover:text-[#331300]"
-              aria-label="Ga naar laatste testimonial"
-            >
-              →
-            </a>
-          </div>
-        </div>
-
-        <div className="-mx-6 mt-10 overflow-hidden md:mt-12">
-          <div className="seo-testimonial-rail flex gap-5 overflow-x-auto px-6 pb-2">
-            {testimonialCases.map((item, index) => (
-              <article
-                key={item.attribution}
-                id={`seo-testimonial-${index + 1}`}
-                className="seo-testimonial-card relative grid min-h-[28rem] w-[86vw] max-w-[58rem] flex-none overflow-hidden md:w-[78vw] md:grid-cols-[0.42fr_0.58fr] lg:w-[64rem]"
-                style={{
-                  backgroundColor: item.background,
-                  '--testimonial-accent': item.accent,
-                }}
-              >
-                <div className="relative min-h-[17rem] overflow-hidden md:min-h-0">
-                  <Image
-                    src={item.image}
-                    alt=""
-                    fill
-                    sizes="(max-width: 768px) 86vw, 420px"
-                    className="object-cover object-[var(--testimonial-image-position)]"
-                    style={{ '--testimonial-image-position': item.imagePosition }}
-                    loading="lazy"
-                  />
-                  <div
-                    aria-hidden="true"
-                    className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[rgba(16,32,29,0.12)] to-transparent"
-                  />
-                </div>
-
-                <div className="relative z-10 flex min-h-[23rem] flex-col justify-between p-6 text-[#10201D] md:p-8 lg:p-10">
-                  <blockquote
-                    className="max-w-[37rem] font-medium tracking-[-0.01em]"
-                    style={{
-                      fontFamily: 'var(--font-poppins), sans-serif',
-                      fontSize: 'clamp(1.35rem, 2.45vw, 2.45rem)',
-                      lineHeight: '1.14',
-                      textWrap: 'balance',
-                    }}
-                  >
-                    “{item.quote}”
-                  </blockquote>
-
-                  <div className="mt-10 flex flex-col gap-3 border-t border-[#10201D]/12 pt-5 sm:flex-row sm:items-center sm:justify-between">
-                    <div>
-                      <p className="text-[0.95rem] font-semibold text-[#10201D]">
-                        Geanonimiseerde klantcase
-                      </p>
-                      <p className="mt-1 text-[0.9rem] leading-relaxed text-[#10201D]/62">
-                        {item.attribution}
-                      </p>
-                    </div>
-                    <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white/55 px-3 py-1.5 text-xs font-semibold text-[#10201D]/72">
-                      <span className="h-2 w-2 rounded-full" style={{ backgroundColor: item.accent }} />
-                      SEO traject
-                    </span>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function BeforeAfterSection() {
+function BeforeAfterSection({ panels }) {
   return (
     <section className="relative isolate overflow-hidden bg-[#331300] px-6 py-16 text-white md:py-20">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_right,rgba(255,255,255,0.055)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.045)_1px,transparent_1px)] bg-[size:42px_42px] opacity-45"
       />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute left-[-10rem] top-1/2 -z-10 hidden -translate-y-1/2 text-[7rem] font-semibold tracking-[-0.04em] text-white/[0.025] lg:block"
-      >
-        Voor
-      </div>
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute right-[-7rem] top-1/2 -z-10 hidden -translate-y-1/2 text-[7rem] font-semibold tracking-[-0.04em] text-white/[0.025] lg:block"
-      >
-        Na
-      </div>
-
       <div className="mx-auto max-w-[1180px]">
         <div className="mx-auto mb-9 max-w-2xl text-center md:mb-11">
           <div className="mb-4 inline-flex items-center gap-2 text-sm font-semibold text-[#1995FF]">
@@ -1239,7 +1039,7 @@ function BeforeAfterSection() {
         </div>
 
         <div className="mx-auto grid max-w-[760px] gap-5 lg:max-w-[820px] lg:grid-cols-2">
-          {beforeAfterPanels.map((panel) => {
+          {panels.map((panel) => {
             const isAfter = panel.theme === 'after';
 
             return (
@@ -1253,25 +1053,14 @@ function BeforeAfterSection() {
               >
                 {isAfter ? (
                   <>
-                    <span
-                      aria-hidden="true"
-                      className="absolute left-0 top-0 h-16 w-16 bg-[#1995FF]/82"
-                    />
-                    <span
-                      aria-hidden="true"
-                      className="absolute right-0 top-0 h-2.5 w-16 bg-[#1995FF]/82"
-                    />
-                    <span
-                      aria-hidden="true"
-                      className="absolute bottom-16 right-0 h-24 w-4 bg-[#1995FF]/82"
-                    />
+                    <span aria-hidden="true" className="absolute left-0 top-0 h-16 w-16 bg-[#1995FF]/82" />
+                    <span aria-hidden="true" className="absolute right-0 top-0 h-2.5 w-16 bg-[#1995FF]/82" />
+                    <span aria-hidden="true" className="absolute bottom-16 right-0 h-24 w-4 bg-[#1995FF]/82" />
                   </>
                 ) : null}
 
                 <h3
-                  className={`relative z-10 font-medium tracking-[-0.005em] ${
-                    isAfter ? 'text-[#10201D]' : 'text-white'
-                  }`}
+                  className={`relative z-10 font-medium tracking-[-0.005em] ${isAfter ? 'text-[#10201D]' : 'text-white'}`}
                   style={{
                     fontFamily: 'var(--font-poppins), sans-serif',
                     fontSize: 'clamp(1.15rem, 1.8vw, 1.45rem)',
@@ -1280,19 +1069,11 @@ function BeforeAfterSection() {
                 >
                   {panel.title}
                 </h3>
-                <p
-                  className={`relative z-10 mt-4 max-w-[30rem] text-[0.92rem] leading-relaxed ${
-                    isAfter ? 'text-[#10201D]/72' : 'text-white/62'
-                  }`}
-                >
+                <p className={`relative z-10 mt-4 max-w-[30rem] text-[0.92rem] leading-relaxed ${isAfter ? 'text-[#10201D]/72' : 'text-white/62'}`}>
                   {panel.description}
                 </p>
 
-                <div
-                  className={`relative z-10 my-7 h-px ${
-                    isAfter ? 'bg-[#10201D]/10' : 'bg-white/10'
-                  }`}
-                />
+                <div className={`relative z-10 my-7 h-px ${isAfter ? 'bg-[#10201D]/10' : 'bg-white/10'}`} />
 
                 <ul className="relative z-10 grid gap-5">
                   {panel.items.map((item) => (
@@ -1308,18 +1089,10 @@ function BeforeAfterSection() {
                         {isAfter ? '✓' : '×'}
                       </span>
                       <span>
-                        <span
-                          className={`block text-[0.98rem] font-semibold ${
-                            isAfter ? 'text-[#10201D]' : 'text-white/88'
-                          }`}
-                        >
+                        <span className={`block text-[0.98rem] font-semibold ${isAfter ? 'text-[#10201D]' : 'text-white/88'}`}>
                           {item.title}
                         </span>
-                        <span
-                          className={`mt-1 block text-[0.88rem] leading-relaxed ${
-                            isAfter ? 'text-[#10201D]/66' : 'text-white/48'
-                          }`}
-                        >
+                        <span className={`mt-1 block text-[0.88rem] leading-relaxed ${isAfter ? 'text-[#10201D]/66' : 'text-white/48'}`}>
                           {item.description}
                         </span>
                       </span>
@@ -1344,7 +1117,7 @@ function PackageFeature({ children }) {
   );
 }
 
-function SeoPackagesSection() {
+function SeoPackagesSection({ profile, packages }) {
   return (
     <section className="bg-[#F7F8F6] px-6 py-16 md:py-20">
       <div className="mx-auto max-w-[1180px]">
@@ -1362,25 +1135,23 @@ function SeoPackagesSection() {
               textWrap: 'balance',
             }}
           >
-            SEO pakketten voor Rotterdam
+            SEO pakketten voor {profile.name}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-[0.95rem] leading-relaxed text-[#10201D]/64">
             Deze pakketten zijn startpunten. De exacte roadmap stemmen we af op je
-            markt, concurrentie, website en de Rotterdamse gebieden waar je zichtbaar
+            markt, concurrentie, website en de gebieden rond {profile.name} waar je zichtbaar
             wilt worden.
           </p>
         </div>
 
         <div className="grid gap-4 lg:grid-cols-2">
-          {seoPackages.map((item, index) => {
-            const isWide = index === seoPackages.length - 1;
+          {packages.map((item, index) => {
+            const isWide = index === packages.length - 1;
 
             return (
               <article
                 key={item.label}
-                className={`overflow-hidden rounded-[0.35rem] border bg-white ${
-                  isWide ? 'lg:col-span-2' : ''
-                }`}
+                className={`overflow-hidden rounded-[0.35rem] border bg-white ${isWide ? 'lg:col-span-2' : ''}`}
                 style={{ borderColor: item.accent }}
               >
                 <div
@@ -1396,19 +1167,11 @@ function SeoPackagesSection() {
                       {item.badge}
                     </span>
                   ) : (
-                    <span
-                      className="h-2.5 w-2.5 rounded-full"
-                      style={{ backgroundColor: item.accent }}
-                      aria-hidden="true"
-                    />
+                    <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: item.accent }} aria-hidden="true" />
                   )}
                 </div>
 
-                <div
-                  className={`grid gap-7 p-6 md:p-7 ${
-                    isWide ? 'lg:grid-cols-[0.95fr_1.05fr]' : 'sm:grid-cols-[0.86fr_1fr]'
-                  }`}
-                >
+                <div className={`grid gap-7 p-6 md:p-7 ${isWide ? 'lg:grid-cols-[0.95fr_1.05fr]' : 'sm:grid-cols-[0.86fr_1fr]'}`}>
                   <div className="flex flex-col">
                     <h3
                       className="font-medium tracking-[-0.005em] text-[#10201D]"
@@ -1468,19 +1231,12 @@ function SeoPackagesSection() {
             );
           })}
         </div>
-
-        <p className="mx-auto mt-8 max-w-3xl text-center text-[0.9rem] leading-relaxed text-[#10201D]/62">
-          Een praktijk in Kralingen heeft andere prioriteiten dan een B2B-bedrijf in
-          Spaanse Polder of een dienstverlener die heel Rotterdam wil bedienen. Daarom
-          gebruiken we de pakketten als vertrekpunt en maken we de uitvoering specifiek
-          voor je markt.
-        </p>
       </div>
     </section>
   );
 }
 
-function FaqSection() {
+function FaqSection({ profile, faqs }) {
   return (
     <section className="bg-[#F7F3EF] px-6 py-16 md:py-20">
       <div className="mx-auto grid max-w-[1180px] gap-8 lg:grid-cols-[0.66fr_1.34fr] lg:gap-12">
@@ -1499,7 +1255,7 @@ function FaqSection() {
             </h2>
             <p className="mt-4 max-w-[25rem] text-[0.92rem] leading-relaxed text-[#10201D]/66">
               Heldere antwoorden over hoe we SEO, lokale vindbaarheid, content en
-              conversie inzetten voor bedrijven in Rotterdam.
+              conversie inzetten voor bedrijven in {profile.name}.
             </p>
           </div>
 
@@ -1535,7 +1291,7 @@ function FaqSection() {
           {faqs.map((faq, index) => (
             <details
               key={faq.question}
-              name="seo-rotterdam-faq"
+              name={`seo-${profile.slug}-faq`}
               className="group border-b border-[#331300]/10 py-4 md:py-5"
               open={index === 0}
             >
@@ -1551,10 +1307,7 @@ function FaqSection() {
                 >
                   {faq.question}
                 </span>
-                <span
-                  className="relative mt-0.5 grid h-7 w-7 flex-none place-items-center rounded-full text-[#331300]"
-                  aria-hidden="true"
-                >
+                <span className="relative mt-0.5 grid h-7 w-7 flex-none place-items-center rounded-full text-[#331300]" aria-hidden="true">
                   <span className="text-xl leading-none group-open:hidden">+</span>
                   <span className="hidden text-xl leading-none group-open:block">−</span>
                 </span>
@@ -1570,16 +1323,25 @@ function FaqSection() {
   );
 }
 
-export default function SEOSpecialistRotterdamPage() {
+export default async function SeoSpecialistLocationPage({ params }) {
+  const { slug } = await params;
+  const profile = getLocationProfile(slug);
+
+  if (!profile) {
+    notFound();
+  }
+
+  const data = buildPageData(profile);
+
   return (
     <main className="min-h-screen bg-[#F7F8F6] text-[#101828]">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalServiceJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(data.professionalServiceJsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(data.faqJsonLd) }}
       />
 
       <section className="relative isolate overflow-hidden bg-[#331300] px-6 py-20 text-white md:py-24 lg:min-h-[650px] lg:py-20">
@@ -1600,7 +1362,6 @@ export default function SEOSpecialistRotterdamPage() {
           <span className="absolute left-[18%] top-0 h-36 w-8 bg-[#1995FF]" />
           <span className="absolute left-[18%] bottom-[2.8rem] h-56 w-8 bg-[#FFE7A6]" />
           <span className="absolute left-[6.5%] bottom-[4.5rem] h-20 w-10 bg-[#D8ECFF]" />
-
           <span className="absolute right-[9%] top-0 h-36 w-24 bg-[#E7DEFF]" />
           <span className="absolute right-[15%] top-[3rem] h-44 w-9 bg-[#1995FF]" />
           <span className="absolute right-[4.5%] top-[13.2rem] h-44 w-11 bg-[#D8ECFF]" />
@@ -1638,16 +1399,13 @@ export default function SEOSpecialistRotterdamPage() {
                 lineHeight: '1.04',
               }}
             >
-              SEO specialist Rotterdam voor structurele groei in Google
+              SEO specialist {profile.name} voor structurele groei in Google
             </h1>
 
-            <div
-              className="mx-auto mt-7 max-w-2xl leading-relaxed text-white/72"
-              style={{ fontSize: 'clamp(0.95rem, 1.25vw, 1.03rem)' }}
-            >
+            <div className="mx-auto mt-7 max-w-2xl leading-relaxed text-white/72" style={{ fontSize: 'clamp(0.95rem, 1.25vw, 1.03rem)' }}>
               We bouwen een SEO-systeem waarin techniek, content, lokale vindbaarheid
               en conversie samen meer relevante aanvragen opleveren voor bedrijven in
-              Rotterdam.
+              {` ${profile.name}`}.
             </div>
 
             <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -1658,7 +1416,7 @@ export default function SEOSpecialistRotterdamPage() {
             </div>
 
             <ul className="mx-auto mt-8 flex max-w-4xl flex-col items-center justify-center gap-3 text-xs font-medium text-white/54 sm:flex-row sm:flex-wrap">
-              {heroBullets.map((benefit) => (
+              {data.heroBullets.map((benefit) => (
                 <li key={benefit} className="inline-flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#1995FF]" />
                   <span>{benefit}</span>
@@ -1671,7 +1429,7 @@ export default function SEOSpecialistRotterdamPage() {
 
       <section className="bg-[#331300] px-6 py-10 text-white">
         <div className="mx-auto grid max-w-[1180px] gap-6 md:grid-cols-3">
-          {proofStats.map((stat) => (
+          {data.proofStats.map((stat) => (
             <div key={stat.value} className="border-l border-white/18 pl-5">
               <div
                 className="font-bold"
@@ -1689,19 +1447,13 @@ export default function SEOSpecialistRotterdamPage() {
         </div>
       </section>
 
-      <SeoScaleSection />
-
-      <LatestWorkSection />
-
-      <TrustSection />
-
-      <SeoTestimonialsSlider testimonials={testimonialCases} />
-
-      <BeforeAfterSection />
-
-      <SeoPackagesSection />
-
-      <FaqSection />
+      <SeoScaleSection profile={profile} cards={data.seoScaleCards} />
+      <LatestWorkSection profile={profile} studies={data.caseStudies} />
+      <TrustSection cards={data.trustCards} />
+      <SeoTestimonialsSlider testimonials={data.testimonialCases} />
+      <BeforeAfterSection panels={data.beforeAfterPanels} />
+      <SeoPackagesSection profile={profile} packages={data.seoPackages} />
+      <FaqSection profile={profile} faqs={data.faqs} />
     </main>
   );
 }

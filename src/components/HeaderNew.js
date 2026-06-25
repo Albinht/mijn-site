@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { useState, useRef, useEffect } from 'react'
 import { getHeaderCopy } from '@/content/header'
+import { SEO_LOCATION_MENU_ITEMS } from '@/lib/seo-locations'
 
 export default function HeaderNew() {
   const [activeDropdown, setActiveDropdown] = useState(null)
@@ -628,30 +629,20 @@ export default function HeaderNew() {
                   <div className="fixed left-6 top-[6.5rem] w-full max-w-5xl bg-white border border-gray-200 rounded-2xl shadow-2xl max-h-96 overflow-y-auto z-50">
                     <div className="p-6">
                       <div className="grid grid-cols-3 gap-x-4 gap-y-2">
-                        <Link href="/marketing/amsterdam" prefetch={false} className="text-sm text-gray-700 hover:text-gray-900 hover:underline">Amsterdam</Link>
-                        <Link href="/marketing/rotterdam" className="text-sm text-gray-700 hover:text-gray-900 hover:underline">Rotterdam</Link>
-                        <Link href="/marketing/utrecht" className="text-sm text-gray-700 hover:text-gray-900 hover:underline">Utrecht</Link>
-                        <Link href="/marketing/eindhoven" className="text-sm text-gray-700 hover:text-gray-900 hover:underline">Eindhoven</Link>
-                        <Link href="/marketing/den-haag" className="text-sm text-gray-700 hover:text-gray-900 hover:underline">Den Haag</Link>
-                        <Link href="/marketing/groningen" className="text-sm text-gray-700 hover:text-gray-900 hover:underline">Groningen</Link>
-                        <Link href="/marketing/tilburg" className="text-sm text-gray-700 hover:text-gray-900 hover:underline">Tilburg</Link>
-                        <Link href="/marketing/almere" className="text-sm text-gray-700 hover:text-gray-900 hover:underline">Almere</Link>
-                        <Link href="/marketing/breda" className="text-sm text-gray-700 hover:text-gray-900 hover:underline">Breda</Link>
-                        <Link href="/marketing/nijmegen" className="text-sm text-gray-700 hover:text-gray-900 hover:underline">Nijmegen</Link>
-                        <Link href="/marketing/enschede" className="text-sm text-gray-700 hover:text-gray-900 hover:underline">Enschede</Link>
-                        <Link href="/marketing/apeldoorn" className="text-sm text-gray-700 hover:text-gray-900 hover:underline">Apeldoorn</Link>
-                        <Link href="/marketing/haarlem" className="text-sm text-gray-700 hover:text-gray-900 hover:underline">Haarlem</Link>
-                        <Link href="/marketing/arnhem" className="text-sm text-gray-700 hover:text-gray-900 hover:underline">Arnhem</Link>
-                        <Link href="/marketing/amersfoort" className="text-sm text-gray-700 hover:text-gray-900 hover:underline">Amersfoort</Link>
-                        <Link href="/marketing/zaanstad" className="text-sm text-gray-700 hover:text-gray-900 hover:underline">Zaanstad</Link>
-                        <Link href="/marketing/haarlemmermeer" className="text-sm text-gray-700 hover:text-gray-900 hover:underline">Haarlemmermeer</Link>
-                        <Link href="/marketing/ede" className="text-sm text-gray-700 hover:text-gray-900 hover:underline">Ede</Link>
-                        <Link href="/marketing/barneveld" className="text-sm text-gray-700 hover:text-gray-900 hover:underline">Barneveld</Link>
-                        <Link href="/marketing/nijkerk" className="text-sm text-gray-700 hover:text-gray-900 hover:underline">Nijkerk</Link>
+                        {SEO_LOCATION_MENU_ITEMS.map((location) => (
+                          <Link
+                            key={location.slug}
+                            href={location.href}
+                            prefetch={false}
+                            className="text-sm text-gray-700 hover:text-gray-900 hover:underline"
+                          >
+                            {location.label}
+                          </Link>
+                        ))}
                       </div>
                       <div className="mt-4 pt-4 border-t">
-                        <Link href="/marketing" className="text-sm font-medium text-purple-600 hover:text-purple-700">
-                          {copy.locations.viewAll}
+                        <Link href="/services/seo" className="text-sm font-medium text-[#1795FF] hover:text-[#0f7dd4]">
+                          SEO services bekijken
                         </Link>
                       </div>
                     </div>
@@ -1213,21 +1204,20 @@ export default function HeaderNew() {
                     <div className="ml-2 mt-2 pb-3">
                       <div className="pl-4 border-l-2 border-gray-200 max-h-60 overflow-y-auto">
                         <div className="grid grid-cols-2 gap-x-3 gap-y-1">
-                          <Link href="/marketing/amsterdam" prefetch={false} className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>Amsterdam</Link>
-                          <Link href="/marketing/rotterdam" className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>Rotterdam</Link>
-                          <Link href="/marketing/utrecht" className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>Utrecht</Link>
-                          <Link href="/marketing/eindhoven" className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>Eindhoven</Link>
-                          <Link href="/marketing/den-haag" className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>Den Haag</Link>
-                          <Link href="/marketing/groningen" className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>Groningen</Link>
-                          <Link href="/marketing/tilburg" className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>Tilburg</Link>
-                          <Link href="/marketing/almere" className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>Almere</Link>
-                          <Link href="/marketing/breda" className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>Breda</Link>
-                          <Link href="/marketing/nijmegen" className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>Nijmegen</Link>
-                          <Link href="/marketing/barneveld" className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>Barneveld</Link>
-                          <Link href="/marketing/ede" className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded" onClick={() => setIsMobileMenuOpen(false)}>Ede</Link>
+                          {SEO_LOCATION_MENU_ITEMS.map((location) => (
+                            <Link
+                              key={location.slug}
+                              href={location.href}
+                              prefetch={false}
+                              className="px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded"
+                              onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                              {location.name}
+                            </Link>
+                          ))}
                         </div>
-                        <Link href="/marketing" className="block mt-3 px-3 py-2 text-sm font-medium text-[#1795FF] hover:underline" onClick={() => setIsMobileMenuOpen(false)}>
-                          {copy.locations.viewAll}
+                        <Link href="/services/seo" className="block mt-3 px-3 py-2 text-sm font-medium text-[#1795FF] hover:underline" onClick={() => setIsMobileMenuOpen(false)}>
+                          SEO services bekijken
                         </Link>
                       </div>
                     </div>
