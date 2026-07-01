@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist London | Expert SEO Services & Consultancy',
     description: 'Leading SEO specialist in London offering expert SEO services, local SEO, technical audits & digital marketing consultancy. Boost your London business rankings today.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist London | Expert SEO Services & Consultancy',
     description: 'Leading SEO specialist in London offering expert SEO services, local SEO, technical audits & digital marketing consultancy. Boost your London business rankings today.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

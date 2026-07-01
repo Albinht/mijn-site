@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Kootwijk | Marketing Bureau Kootwijk - Niblah',
     description: 'SEO Specialist Kootwijk nodig? Hét marketing bureau voor Kootwijk. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Kootwijk.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Kootwijk | Marketing Bureau Kootwijk - Niblah',
     description: 'SEO Specialist Kootwijk nodig? Hét marketing bureau voor Kootwijk. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Kootwijk.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

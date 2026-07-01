@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Oudendijk | Marketing Bureau Oudendijk - Niblah',
     description: 'SEO Specialist Oudendijk nodig? Het lokale marketing bureau voor meer klanten en zichtbaarheid. Specialist in SEO, Google Ads en websites voor Oudendijk.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Oudendijk | Marketing Bureau Oudendijk - Niblah',
     description: 'SEO Specialist Oudendijk nodig? Het lokale marketing bureau voor meer klanten en zichtbaarheid. Specialist in SEO, Google Ads en websites voor Oudendijk.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

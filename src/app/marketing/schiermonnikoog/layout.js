@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Schiermonnikoog | Marketing Bureau Schiermonnikoog - Niblah',
     description: 'SEO Specialist Schiermonnikoog nodig? Hét marketing bureau voor Schiermonnikoog. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven op het Waddeneiland.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Schiermonnikoog | Marketing Bureau Schiermonnikoog - Niblah',
     description: 'SEO Specialist Schiermonnikoog nodig? Hét marketing bureau voor Schiermonnikoog. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven op het Waddeneiland.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

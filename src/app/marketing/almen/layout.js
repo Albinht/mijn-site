@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Almen | Marketing Bureau Almen - Niblah',
     description: 'SEO Specialist Almen nodig? Hét marketing bureau voor Almen. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Almen.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Almen | Marketing Bureau Almen - Niblah',
     description: 'SEO Specialist Almen nodig? Hét marketing bureau voor Almen. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Almen.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Sint-Anthonis | Marketing Bureau Sint-Anthonis - Niblah',
     description: 'SEO Specialist Sint-Anthonis nodig? Hét marketing bureau voor Sint-Anthonis. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Sint-Anthonis.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Sint-Anthonis | Marketing Bureau Sint-Anthonis - Niblah',
     description: 'SEO Specialist Sint-Anthonis nodig? Hét marketing bureau voor Sint-Anthonis. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Sint-Anthonis.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

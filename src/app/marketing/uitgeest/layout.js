@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Uitgeest | Marketing Bureau Waterland - Niblah',
     description: 'SEO Specialist Uitgeest zorgt voor meer klanten uit uw regio. Lokale vindbaarheid tussen Alkmaar en Zaanstreek. Online marketing voor Uitgeest.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Uitgeest | Marketing Bureau Waterland - Niblah',
     description: 'SEO Specialist Uitgeest zorgt voor meer klanten uit uw regio. Lokale vindbaarheid tussen Alkmaar en Zaanstreek.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

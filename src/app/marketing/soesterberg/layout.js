@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Soesterberg | Marketing Bureau Soesterberg - Niblah',
     description: 'SEO Specialist Soesterberg nodig? Hét marketing bureau voor Soesterberg. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Soesterberg.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Soesterberg | Marketing Bureau Soesterberg - Niblah',
     description: 'SEO Specialist Soesterberg nodig? Hét marketing bureau voor Soesterberg. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Soesterberg.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

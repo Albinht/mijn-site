@@ -647,7 +647,7 @@ export default async function Home() {
               <div className="mb-6 hidden items-center justify-between gap-4 md:flex">
                 <div className="relative h-12 w-12 overflow-hidden rounded-full bg-[#1995FF]/10">
                   <Image
-                    src="/avatar.png"
+                    src="/niblah-headshot.webp"
                     alt={copy.consult.imageAlt}
                     fill
                     className="object-cover"

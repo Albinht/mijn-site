@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Westbeemster | Marketing Bureau Westbeemster - Niblah',
     description: 'SEO Specialist Westbeemster nodig? Het lokale marketing bureau voor de Beemster polder. Meer klanten met lokale SEO, Google Ads en websites.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Westbeemster | Marketing Bureau Westbeemster - Niblah',
     description: 'SEO Specialist Westbeemster nodig? Het lokale marketing bureau voor de Beemster polder. Meer klanten met lokale SEO, Google Ads en websites.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

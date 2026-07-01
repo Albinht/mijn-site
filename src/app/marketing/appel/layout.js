@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Appel | Marketing Bureau Appel - Niblah',
     description: 'SEO Specialist Appel nodig? Hét marketing bureau voor Appel. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Appel.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Appel | Marketing Bureau Appel - Niblah',
     description: 'SEO Specialist Appel nodig? Hét marketing bureau voor Appel. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Appel.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

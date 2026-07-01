@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Warder | Marketing Bureau Warder - Niblah',
     description: 'SEO Specialist Warder nodig? Het lokale marketing bureau voor meer klanten uit Warder en Edam-Volendam. Specialist in SEO, Google Ads en websites.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Warder | Marketing Bureau Warder - Niblah',
     description: 'SEO Specialist Warder nodig? Het lokale marketing bureau voor meer klanten uit Warder en Edam-Volendam. Specialist in SEO, Google Ads en websites.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

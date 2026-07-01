@@ -7,7 +7,7 @@ const copy = {
       openGraph: {
         title: 'WordPress Website Laten Maken | Niblah',
         description: 'Professionele WordPress websites die converteren. Van design tot development, volledig op maat.',
-        images: ['/avatar.png'],
+        images: ['/niblah-headshot.webp'],
       },
     },
     hero: {

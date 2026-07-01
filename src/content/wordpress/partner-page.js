@@ -7,7 +7,7 @@ const copy = {
       openGraph: {
         title: 'WordPress Expert Agency | Niblah',
         description: 'WordPress expertise met 30+ jaar ervaring voor kleine websites tot enterprise oplossingen.',
-        images: ['/avatar.png'],
+        images: ['/niblah-headshot.webp'],
       },
     },
     hero: {

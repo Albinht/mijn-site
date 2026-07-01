@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Middelie | Marketing Bureau Middelie - Niblah',
     description: 'SEO Specialist Middelie nodig? Het lokale marketing bureau voor kleine dorpen. Meer klanten uit Middelie en omgeving met SEO, Google Ads en websites.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Middelie | Marketing Bureau Middelie - Niblah',
     description: 'SEO Specialist Middelie nodig? Het lokale marketing bureau voor kleine dorpen. Meer klanten uit Middelie en omgeving met SEO, Google Ads en websites.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

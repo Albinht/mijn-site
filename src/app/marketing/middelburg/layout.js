@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Middelburg | Marketing Bureau Zeeland - Niblah',
     description: 'SEO Specialist Middelburg nodig? Hét marketing bureau voor Middelburg en Zeeland. Meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Middelburg.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Middelburg | Marketing Bureau Zeeland - Niblah',
     description: 'SEO Specialist Middelburg nodig? Hét marketing bureau voor Middelburg en Zeeland. Meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Middelburg.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

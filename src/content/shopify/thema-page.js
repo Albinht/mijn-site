@@ -7,7 +7,7 @@ const copy = {
       openGraph: {
         title: 'Shopify Thema | Snel & Kostenefficiënt | Niblah',
         description: 'Start snel met een professioneel Shopify thema. Kosteneffectief en binnen 2-4 weken live.',
-        images: ['/avatar.png'],
+        images: ['/niblah-headshot.webp'],
       },
     },
     hero: {

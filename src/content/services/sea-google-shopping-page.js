@@ -7,7 +7,7 @@ const copy = {
       openGraph: {
         title: 'Google Shopping uitbesteden | Niblah',
         description: 'Producten bovenaan met een winstgerichte Shopping strategie.',
-        images: ['/avatar.png'],
+        images: ['/niblah-headshot.webp'],
       },
     },
     hero: {

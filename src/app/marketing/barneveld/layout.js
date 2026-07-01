@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'Marketing bureau Barneveld | Niblah',
     description: 'SEO, Google Ads, websites en marketing automation voor bedrijven in Barneveld en de Gelderse Vallei.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Marketing bureau Barneveld | Niblah',
     description: 'SEO, Google Ads, websites en automation voor meer aanvragen uit Barneveld.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 }
 

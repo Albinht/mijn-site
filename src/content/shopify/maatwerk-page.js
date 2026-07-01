@@ -8,7 +8,7 @@ const copy = {
       openGraph: {
         title: 'Shopify Maatwerk | Custom Development | Niblah',
         description: 'Custom Shopify development voor unieke functionaliteiten en design op maat.',
-        images: ['/avatar.png'],
+        images: ['/niblah-headshot.webp'],
       },
     },
     hero: {

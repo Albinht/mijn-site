@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Garderen | Marketing Bureau Garderen - Niblah',
     description: 'SEO Specialist Garderen nodig? Hét marketing bureau voor Garderen. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Garderen.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Garderen | Marketing Bureau Garderen - Niblah',
     description: 'SEO Specialist Garderen nodig? Hét marketing bureau voor Garderen. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Garderen.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

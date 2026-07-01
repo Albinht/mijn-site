@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Aerdenburg | Marketing Bureau Aerdenburg - Niblah',
     description: 'SEO Specialist Aerdenburg nodig? Hét marketing bureau voor Aerdenburg. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Aerdenburg.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Aerdenburg | Marketing Bureau Aerdenburg - Niblah',
     description: 'SEO Specialist Aerdenburg nodig? Hét marketing bureau voor Aerdenburg. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Aerdenburg.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Appeltern | Marketing Bureau Appeltern - Niblah',
     description: 'SEO Specialist Appeltern nodig? Hét marketing bureau voor Appeltern. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Appeltern.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Appeltern | Marketing Bureau Appeltern - Niblah',
     description: 'SEO Specialist Appeltern nodig? Hét marketing bureau voor Appeltern. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Appeltern.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

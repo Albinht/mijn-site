@@ -56,7 +56,7 @@ const baseMetadata = {
     siteName: 'Niblah',
     images: [
       {
-        url: '/avatar.png',
+        url: '/niblah-headshot.webp',
         width: 800,
         height: 800,
         alt: 'Niblah - Online Marketing Specialist',
@@ -68,7 +68,7 @@ const baseMetadata = {
     card: 'summary_large_image',
     title: 'Niblah - Online Marketing Specialist',
     description: 'Online marketing services voor SEO, Google Ads, websites en conversie-optimalisatie.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 }
 

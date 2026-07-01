@@ -7,7 +7,7 @@ const copy = {
       openGraph: {
         title: 'Linkbuilding Uitbesteden | Niblah',
         description: 'Kwalitatieve backlinks die autoriteit en rankings bouwen.',
-        images: ['/avatar.png'],
+        images: ['/niblah-headshot.webp'],
       },
     },
     hero: {

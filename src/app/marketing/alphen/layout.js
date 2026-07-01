@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Alphen | Marketing Bureau Alphen - Niblah',
     description: 'SEO Specialist Alphen nodig? Hét marketing bureau voor Alphen. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Alphen.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Alphen | Marketing Bureau Alphen - Niblah',
     description: 'SEO Specialist Alphen nodig? Hét marketing bureau voor Alphen. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Alphen.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

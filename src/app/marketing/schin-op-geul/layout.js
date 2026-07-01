@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Schin op Geul | Marketing Bureau Schin op Geul - Niblah',
     description: 'SEO Specialist Schin op Geul nodig? Hét marketing bureau voor Schin op Geul. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven in Zuid-Limburg.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Schin op Geul | Marketing Bureau Schin op Geul - Niblah',
     description: 'SEO Specialist Schin op Geul nodig? Hét marketing bureau voor Schin op Geul. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven in Zuid-Limburg.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

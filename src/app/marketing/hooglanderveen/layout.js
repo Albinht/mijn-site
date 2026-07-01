@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Hooglanderveen | Marketing Bureau Hooglanderveen - Niblah',
     description: 'SEO Specialist Hooglanderveen nodig? Hét marketing bureau voor Hooglanderveen. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Hooglanderveen.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Hooglanderveen | Marketing Bureau Hooglanderveen - Niblah',
     description: 'SEO Specialist Hooglanderveen nodig? Hét marketing bureau voor Hooglanderveen. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Hooglanderveen.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

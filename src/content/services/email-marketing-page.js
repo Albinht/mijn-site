@@ -5,7 +5,7 @@ const copy = {
       openGraph: {
         title: 'Email marketing | Niblah',
         description: 'Bouw en onderhoud je emaillijst met campagnes die abonnees omzetten in loyale klanten.',
-        images: ['/avatar.png'],
+        images: ['/niblah-headshot.webp'],
       },
     },
     title: 'Email marketing',

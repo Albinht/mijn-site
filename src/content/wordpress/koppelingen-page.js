@@ -8,7 +8,7 @@ const copy = {
       openGraph: {
         title: 'WordPress Koppelingen | Automatiseer je Workflow | Niblah',
         description: 'Maatwerk WordPress koppelingen met Realworks, HRoffice en meer systemen.',
-        images: ['/avatar.png'],
+        images: ['/niblah-headshot.webp'],
       },
     },
     hero: {

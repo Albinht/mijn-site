@@ -8,7 +8,7 @@ const copy = {
         title: 'SEA Uitbesteden | Niblah',
         description:
           'SEA specialist met focus op bedrijfsdoelen, niet op maximale ad spend.',
-        images: ['/avatar.png'],
+        images: ['/niblah-headshot.webp'],
       },
     },
     hero: {

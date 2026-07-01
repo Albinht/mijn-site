@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Haarlem | Marketing Bureau Haarlem - Niblah',
     description: 'SEO Specialist Haarlem nodig? Hét marketing bureau voor Haarlem. Meer klanten met lokale SEO, Google Ads & professionele marketing in de bloemenstad van Nederland.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Haarlem | Marketing Bureau Haarlem - Niblah',
     description: 'SEO Specialist Haarlem nodig? Hét marketing bureau voor Haarlem. Meer klanten met lokale SEO, Google Ads & professionele marketing in de bloemenstad van Nederland.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

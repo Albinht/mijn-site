@@ -6,7 +6,7 @@ Static image assets used throughout the marketing website. All images support th
 ## Image Categories
 
 ### Brand & Personal
-- **avatar.png**: Profile photo of Albin (personal branding)
+- **niblah-headshot.webp**: Profile photo of Albin (personal branding)
 - **author.png**: Alternative author image for content
 - **footer.png**: Footer visual element
 
@@ -17,7 +17,7 @@ Static image assets used throughout the marketing website. All images support th
 
 ### Educational Content Images
 - **Master_seo fundamentals.png**: SEO foundations visual
-- **Keyword_research.png**: Keyword research methodology image  
+- **Keyword_research.png**: Keyword research methodology image
 - **content that ranks.png**: Content strategy visualization
 - **google ads account architecture.png**: Account structure diagram
 - **Bidding google ads.png**: Bidding strategy illustration
@@ -50,7 +50,7 @@ Images are imported and used across various components:
 ### Import Structure
 ```javascript
 import graphImage from '../assets/graph.png'
-import avatarImage from '../assets/avatar.png' 
+import avatarImage from '../assets/niblah-headshot.webp'
 import masterSeoImage from '../assets/Master_seo fundamentals.png'
 ```
 
@@ -86,7 +86,7 @@ import masterSeoImage from '../assets/Master_seo fundamentals.png'
 ## Technical Integration
 Images are imported at component level and rendered through Next.js Image component for:
 - Automatic format optimization
-- Responsive image sizing  
+- Responsive image sizing
 - Progressive loading
 - SEO-friendly markup
 

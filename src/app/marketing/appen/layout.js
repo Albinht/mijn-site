@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Appen | Marketing Bureau Appen - Niblah',
     description: 'SEO Specialist Appen nodig? Hét marketing bureau voor Appen. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Appen.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Appen | Marketing Bureau Appen - Niblah',
     description: 'SEO Specialist Appen nodig? Hét marketing bureau voor Appen. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Appen.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

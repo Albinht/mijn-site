@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Blaricum | Premium Marketing Het Gooi - Niblah',
     description: 'SEO Specialist Blaricum voor exclusieve online marketing in Het Gooi. Premium marketing strategie voor luxury brands en high-end dienstverleners.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Blaricum | Premium Marketing Het Gooi - Niblah',
     description: 'Exclusieve online marketing voor Blaricum en Het Gooi. Bereik de welgestelde doelgroep met premium SEO en luxury brand positioning.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

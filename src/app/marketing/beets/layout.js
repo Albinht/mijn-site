@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Beets | Marketing Bureau Beets - Niblah',
     description: 'SEO Specialist Beets nodig? Het lokale marketing bureau voor bedrijven in Beets. Meer klanten uit de Beemster met lokale SEO, Google Ads en websites.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Beets | Marketing Bureau Beets - Niblah',
     description: 'SEO Specialist Beets nodig? Het lokale marketing bureau voor bedrijven in Beets. Meer klanten uit de Beemster met lokale SEO, Google Ads en websites.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

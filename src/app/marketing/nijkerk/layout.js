@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Nijkerk | Marketing Bureau Nijkerk - Niblah',
     description: 'SEO Specialist Nijkerk nodig? Hét marketing bureau voor Nijkerk. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Nijkerk.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Nijkerk | Marketing Bureau Nijkerk - Niblah',
     description: 'SEO Specialist Nijkerk nodig? Hét marketing bureau voor Nijkerk. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Nijkerk.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Schijndel | Marketing Bureau Schijndel - Niblah',
     description: 'SEO Specialist Schijndel nodig? Hét marketing bureau voor Schijndel. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven in Noord-Brabant.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Schijndel | Marketing Bureau Schijndel - Niblah',
     description: 'SEO Specialist Schijndel nodig? Hét marketing bureau voor Schijndel. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven in Noord-Brabant.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

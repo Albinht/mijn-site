@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Arnhem | Marketing Bureau Arnhem - Niblah',
     description: 'SEO Specialist Arnhem nodig? Hét marketing bureau voor Arnhem. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Arnhem.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Arnhem | Marketing Bureau Arnhem - Niblah',
     description: 'SEO Specialist Arnhem nodig? Hét marketing bureau voor Arnhem. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Arnhem.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

@@ -7,7 +7,7 @@ const copy = {
       openGraph: {
         title: 'Bing Ads uitbesteden | Niblah',
         description: 'Lagere kosten en hoogwaardige clicks met Bing Ads.',
-        images: ['/avatar.png'],
+        images: ['/niblah-headshot.webp'],
       },
     },
     hero: {

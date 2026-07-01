@@ -41,7 +41,7 @@ Each blueprint follows this consistent layout:
 Located in `src/assets/`:
 - Course-specific header images (e.g., "google ads header.png")
 - Module visualization images (e.g., "google ads account architecture.png")  
-- Generic images reused across courses (avatar.png, graph.png)
+- Generic images reused across courses (niblah-headshot.webp, graph.png)
 
 ## Conversion Optimization
 - **Multiple CTAs**: Hero, mid-page, and footer purchase buttons

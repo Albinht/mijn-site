@@ -9,7 +9,7 @@ const copy = {
         title: 'Officiële Shopify Partner | Niblah',
         description:
           'Gecertificeerde Shopify expertise met directe toegang tot Shopify support en tools.',
-        images: ['/avatar.png'],
+        images: ['/niblah-headshot.webp'],
       },
     },
     hero: {

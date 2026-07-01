@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Azewijn | Marketing Bureau Azewijn - Niblah',
     description: 'SEO Specialist Azewijn nodig? Hét marketing bureau voor Azewijn. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Azewijn.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Azewijn | Marketing Bureau Azewijn - Niblah',
     description: 'SEO Specialist Azewijn nodig? Hét marketing bureau voor Azewijn. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Azewijn.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

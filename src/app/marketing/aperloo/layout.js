@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Aperloo | Marketing Bureau Aperloo - Niblah',
     description: 'SEO Specialist Aperloo nodig? Hét marketing bureau voor Aperloo. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Aperloo.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Aperloo | Marketing Bureau Aperloo - Niblah',
     description: 'SEO Specialist Aperloo nodig? Hét marketing bureau voor Aperloo. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Aperloo.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

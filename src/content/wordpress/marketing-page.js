@@ -7,7 +7,7 @@ const copy = {
       openGraph: {
         title: 'WordPress Marketing | Groei je website | Niblah',
         description: 'Complete marketing oplossingen voor WordPress websites. Van SEO tot content marketing.',
-        images: ['/avatar.png'],
+        images: ['/niblah-headshot.webp'],
       },
     },
     hero: {

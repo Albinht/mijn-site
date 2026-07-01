@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Waalwijk | Digital Marketing Bureau Noord-Brabant - Niblah',
     description: 'Digital marketing specialist Waalwijk nodig? Expert in logistiek-sector marketing, schoenenindustrie, manufacturing B2B. Domineer met SEO, ads & industriële marketing strategieën.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Waalwijk | Digital Marketing Bureau Noord-Brabant - Niblah',
     description: 'Digital marketing specialist Waalwijk nodig? Expert in logistiek-sector marketing, schoenenindustrie, manufacturing B2B. Domineer met SEO, ads & industriële marketing strategieën.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

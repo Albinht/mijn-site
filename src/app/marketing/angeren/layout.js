@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Angeren | Marketing Bureau Angeren - Niblah',
     description: 'SEO Specialist Angeren nodig? Hét marketing bureau voor Angeren. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Angeren.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Angeren | Marketing Bureau Angeren - Niblah',
     description: 'SEO Specialist Angeren nodig? Hét marketing bureau voor Angeren. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Angeren.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

@@ -8,7 +8,7 @@ const copy = {
       openGraph: {
         title: 'Shopify Developer & Agency | Niblah',
         description: 'Expert Shopify development voor technisch perfecte webshops die converteren.',
-        images: ['/avatar.png'],
+        images: ['/niblah-headshot.webp'],
       },
     },
     hero: {

@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Breda | Marketing Bureau Breda - Niblah',
     description: 'SEO Specialist Breda inschakelen? Kies voor hét marketing bureau in Breda. Meer klanten en zichtbaarheid met lokale SEO, Google Ads en professionele marketing voor bedrijven in de Parel van het Zuiden.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Breda | Marketing Bureau Breda - Niblah',
     description: 'SEO Specialist Breda inschakelen? Kies voor hét marketing bureau in Breda. Meer klanten en zichtbaarheid met lokale SEO, Google Ads en professionele marketing voor bedrijven in de Parel van het Zuiden.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

@@ -7,7 +7,7 @@ const copy = {
       openGraph: {
         title: 'Shopify Marketing | Groei je webshop | Niblah',
         description: 'Complete marketing oplossingen voor Shopify webshops. Van Google Ads tot email marketing.',
-        images: ['/avatar.png'],
+        images: ['/niblah-headshot.webp'],
       },
     },
     hero: {

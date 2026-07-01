@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import graphImage from '../../../assets/graph.png' // voeg hier je eigen afbeelding toe
-import avatarImage from '../../../assets/avatar.png' // profielfoto in overlay
+import avatarImage from '../../../assets/niblah-headshot.webp' // profielfoto in overlay
 import masterSeoImage from '../../../assets/Master_seo fundamentals.png'
 import keywordResearchImage from '../../../assets/Keyword_research.png'
 import contentRanksImage from '../../../assets/content that ranks.png'
@@ -17,7 +17,7 @@ export const metadata = {
   openGraph: {
     title: 'SEO Blueprint Course | Learn SEO From Scratch',
     description: 'Master SEO with my comprehensive blueprint course. Learn keyword research, content optimization, link building, and technical SEO.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 }
 

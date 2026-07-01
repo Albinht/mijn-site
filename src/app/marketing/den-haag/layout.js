@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Den Haag | Marketing Bureau Den Haag - Niblah',
     description: 'SEO Specialist Den Haag nodig? Hét marketing bureau voor Den Haag. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit de hofstad.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Den Haag | Marketing Bureau Den Haag - Niblah',
     description: 'SEO Specialist Den Haag nodig? Hét marketing bureau voor Den Haag. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit de hofstad.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Zwaag | Marketing Bureau Zwaag - Niblah',
     description: 'SEO Specialist Zwaag nodig? Hét marketing bureau voor Zwaag. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Zwaag.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Zwaag | Marketing Bureau Zwaag - Niblah',
     description: 'SEO Specialist Zwaag nodig? Hét marketing bureau voor Zwaag. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Zwaag.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

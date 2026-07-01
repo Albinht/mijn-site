@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Harderwijk | Marketing Bureau Harderwijk - Niblah',
     description: 'SEO Specialist Harderwijk nodig? Hét marketing bureau voor Harderwijk aan het Veluwemeer. Meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Harderwijk.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Harderwijk | Marketing Bureau Harderwijk - Niblah',
     description: 'SEO Specialist Harderwijk nodig? Hét marketing bureau voor Harderwijk aan het Veluwemeer. Meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Harderwijk.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

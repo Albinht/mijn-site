@@ -7,7 +7,7 @@ const copy = {
       openGraph: {
         title: 'Copywriting Uitbesteden | Niblah',
         description: 'Professionele copy die rankings en conversies verhoogt.',
-        images: ['/avatar.png'],
+        images: ['/niblah-headshot.webp'],
       },
     },
     hero: {

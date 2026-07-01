@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Landsmeer | Marketing Bureau Waterland - Niblah',
     description: 'SEO Specialist Landsmeer voor meer klanten uit Waterland. Bereik inwoners van Landsmeer, Den Ilp en Purmerland met effectieve online marketing.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Landsmeer | Marketing Bureau Waterland - Niblah',
     description: 'Online marketing voor Landsmeer en Waterland. Bereik 11.000+ inwoners met lokale SEO en Google Ads.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

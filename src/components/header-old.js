@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState, useRef } from 'react'
-import avatar from '../assets/avatar.png' // Vervang dit met jouw eigen afbeelding
+import avatar from '../assets/niblah-headshot.webp' // Vervang dit met jouw eigen afbeelding
 import Button from './Button'; // Importeer de nieuwe Button component
 
 export default function Header() {

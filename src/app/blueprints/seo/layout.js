@@ -5,7 +5,7 @@ export const metadata = {
   openGraph: {
     title: 'SEO Blueprint Course | Learn SEO From Scratch',
     description: 'Master SEO with my comprehensive blueprint course. Learn keyword research, content optimization, link building, and technical SEO.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 }
 

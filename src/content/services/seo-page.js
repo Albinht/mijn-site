@@ -8,7 +8,7 @@ const copy = {
         title: 'SEO Uitbesteden | Niblah',
         description:
           'Topposities in Google met meetbaar resultaat. Flexibele samenwerking met SEO-specialisten die echt kennis van zaken hebben.',
-        images: ['/avatar.png'],
+        images: ['/niblah-headshot.webp'],
       },
     },
     hero: {

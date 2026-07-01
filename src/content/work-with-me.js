@@ -9,7 +9,7 @@ const copy = {
         title: 'Werk met mij | Digital marketing services & prijzen',
         description:
           'Klaar om te groeien? Ontdek mijn digital marketing services, tarieven en plan een consult.',
-        images: ['/avatar.png'],
+        images: ['/niblah-headshot.webp'],
       },
     },
     hero: {

@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Scherpenzeel | Marketing Bureau Gelderse Vallei - Niblah',
     description: 'SEO Specialist Scherpenzeel voor meer klanten uit de Gelderse Vallei. Bereik inwoners op de grens van Gelderland en Utrecht met effectieve online marketing.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Scherpenzeel | Marketing Bureau Gelderse Vallei - Niblah',
     description: 'Online marketing voor Scherpenzeel en de Gelderse Vallei. Bereik 10.000+ inwoners met lokale SEO en Google Ads.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

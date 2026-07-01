@@ -7,7 +7,7 @@ const copy = {
       openGraph: {
         title: 'Content Marketing Uitbesteden | Niblah',
         description: 'Strategische content die autoriteit bouwt en groei versnelt.',
-        images: ['/avatar.png'],
+        images: ['/niblah-headshot.webp'],
       },
     },
     hero: {

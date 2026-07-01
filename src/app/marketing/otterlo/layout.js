@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Otterlo | Marketing Bureau Otterlo - Niblah',
     description: 'SEO Specialist Otterlo nodig? Hét marketing bureau voor Otterlo. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Otterlo.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Otterlo | Marketing Bureau Otterlo - Niblah',
     description: 'SEO Specialist Otterlo nodig? Hét marketing bureau voor Otterlo. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Otterlo.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Putten | Marketing Bureau Putten - Niblah',
     description: 'SEO Specialist Putten nodig? Hét marketing bureau voor Putten. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Putten.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Putten | Marketing Bureau Putten - Niblah',
     description: 'SEO Specialist Putten nodig? Hét marketing bureau voor Putten. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Putten.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

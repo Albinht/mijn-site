@@ -5,7 +5,7 @@ export const metadata = {
   openGraph: {
     title: 'Meta Blueprint Course | Master Facebook & Instagram Ads',
     description: 'Learn Meta advertising from scratch. Master Facebook Ads, Instagram Ads, audience targeting, and campaign optimization.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 }
 

@@ -1,7 +1,7 @@
 import prisma from '@/lib/prisma';
 import Link from 'next/link';
 import Image from 'next/image';
-import avatarImage from '@/assets/avatar.png';
+import avatarImage from '@/assets/niblah-headshot.webp';
 
 export const metadata = {
   title: 'De Niblah Blog - SEO en Marketing Tips | Niblah',

@@ -9,7 +9,7 @@ const copy = {
         title: 'Website Laten Maken | Niblah',
         description:
           'Professionele zakelijke websites voor bedrijven die meer vertrouwen, zichtbaarheid en leads willen.',
-        images: ['/avatar.png'],
+        images: ['/niblah-headshot.webp'],
       },
     },
     hero: {

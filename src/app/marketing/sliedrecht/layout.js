@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Sliedrecht | Marketing Bureau Sliedrecht - Niblah',
     description: 'SEO Specialist Sliedrecht nodig? Hét marketing bureau voor Sliedrecht. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Sliedrecht.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Sliedrecht | Marketing Bureau Sliedrecht - Niblah',
     description: 'SEO Specialist Sliedrecht nodig? Hét marketing bureau voor Sliedrecht. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Sliedrecht.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Kootwijkerbroek | Marketing Bureau Kootwijkerbroek - Niblah',
     description: 'SEO Specialist Kootwijkerbroek nodig? Hét marketing bureau voor Kootwijkerbroek. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Kootwijkerbroek.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Kootwijkerbroek | Marketing Bureau Kootwijkerbroek - Niblah',
     description: 'SEO Specialist Kootwijkerbroek nodig? Hét marketing bureau voor Kootwijkerbroek. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Kootwijkerbroek.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

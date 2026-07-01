@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Woudenberg | Marketing Bureau Woudenberg - Niblah',
     description: 'SEO Specialist Woudenberg nodig? Hét marketing bureau voor Woudenberg. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Woudenberg.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Woudenberg | Marketing Bureau Woudenberg - Niblah',
     description: 'SEO Specialist Woudenberg nodig? Hét marketing bureau voor Woudenberg. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Woudenberg.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

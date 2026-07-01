@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Angerlo | Marketing Bureau Angerlo - Niblah',
     description: 'SEO Specialist Angerlo nodig? Hét marketing bureau voor Angerlo. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Angerlo.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Angerlo | Marketing Bureau Angerlo - Niblah',
     description: 'SEO Specialist Angerlo nodig? Hét marketing bureau voor Angerlo. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Angerlo.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

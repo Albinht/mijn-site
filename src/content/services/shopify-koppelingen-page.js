@@ -7,7 +7,7 @@ const copy = {
       openGraph: {
         title: 'Shopify Koppelingen | Automatiseer je Webshop | Niblah',
         description: 'Professionele Shopify koppelingen voor volledige automatisering van je webshop processen.',
-        images: ['/avatar.png'],
+        images: ['/niblah-headshot.webp'],
       },
     },
     hero: {

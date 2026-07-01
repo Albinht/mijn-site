@@ -7,7 +7,7 @@ const copy = {
       openGraph: {
         title: 'Website Development & Design | Niblah',
         description: 'Professionele websites die converteren. Van design tot development, volledig op maat.',
-        images: ['/avatar.png'],
+        images: ['/niblah-headshot.webp'],
       },
     },
     hero: {

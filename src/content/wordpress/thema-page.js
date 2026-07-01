@@ -7,7 +7,7 @@ const copy = {
       openGraph: {
         title: 'WordPress Thema | Snel & Kostenefficiënt | Niblah',
         description: 'Start snel met een professioneel WordPress thema. Kosteneffectief en binnen 1-3 weken live.',
-        images: ['/avatar.png'],
+        images: ['/niblah-headshot.webp'],
       },
     },
     hero: {

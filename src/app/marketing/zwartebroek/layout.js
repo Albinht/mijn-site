@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Zwartebroek | Marketing Bureau Zwartebroek - Niblah',
     description: 'SEO Specialist Zwartebroek nodig? Hét marketing bureau voor Zwartebroek. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Zwartebroek.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Zwartebroek | Marketing Bureau Zwartebroek - Niblah',
     description: 'SEO Specialist Zwartebroek nodig? Hét marketing bureau voor Zwartebroek. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Zwartebroek.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

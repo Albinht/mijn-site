@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Sneek | Marketing Bureau Sneek - Niblah',
     description: 'SEO Specialist Sneek nodig? Hét marketing bureau voor Sneek. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Sneek.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Sneek | Marketing Bureau Sneek - Niblah',
     description: 'SEO Specialist Sneek nodig? Hét marketing bureau voor Sneek. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Sneek.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

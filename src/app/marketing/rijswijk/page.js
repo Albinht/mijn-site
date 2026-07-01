@@ -3,7 +3,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import graphImage from '../../../assets/graph.png'
-import avatarImage from '../../../assets/avatar.png'
+import avatarImage from '../../../assets/niblah-headshot.webp'
 import masterSeoImage from '../../../assets/Master_seo fundamentals.png'
 import keywordResearchImage from '../../../assets/Keyword_research.png'
 import contentRanksImage from '../../../assets/content that ranks.png'

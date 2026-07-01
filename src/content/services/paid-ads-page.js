@@ -5,7 +5,7 @@ const copy = {
       openGraph: {
         title: 'Betaalde advertenties | Niblah',
         description: 'Schaal je bedrijf met betaalde campagnes die converteren op Google, Facebook en andere platformen.',
-        images: ['/avatar.png'],
+        images: ['/niblah-headshot.webp'],
       },
     },
     title: 'Betaalde advertenties',

@@ -9,7 +9,7 @@ export const metadata = {
     siteName: 'Niblah',
     images: [
       {
-        url: '/avatar.png',
+        url: '/niblah-headshot.webp',
         width: 800,
         height: 600,
         alt: 'Niblah - Shopify Developer Barneveld',
@@ -22,7 +22,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Shopify Developer Barneveld | E-commerce Expert - Niblah',
     description: 'Professionele Shopify ontwikkeling in Barneveld. Custom themes, Shopify Plus implementaties en app integraties.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   alternates: {
     canonical: 'https://niblah.com/services/shopify-developer-barneveld',

@@ -7,7 +7,7 @@ const copy = {
       openGraph: {
         title: 'Shopify Webshop Laten Maken | Niblah',
         description: 'Professionele Shopify webshops die converteren. Van design tot development, volledig op maat.',
-        images: ['/avatar.png'],
+        images: ['/niblah-headshot.webp'],
       },
     },
     hero: {

@@ -8,7 +8,7 @@ const copy = {
       openGraph: {
         title: 'WordPress Maatwerk | Custom Development | Niblah',
         description: 'Custom WordPress development voor unieke functionaliteiten en design op maat.',
-        images: ['/avatar.png'],
+        images: ['/niblah-headshot.webp'],
       },
     },
     hero: {

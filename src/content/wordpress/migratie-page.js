@@ -7,7 +7,7 @@ const copy = {
       openGraph: {
         title: 'WordPress Migratie | Naadloos Verhuizen | Niblah',
         description: 'Professionele WordPress migratie met SEO behoud en 100% uptime.',
-        images: ['/avatar.png'],
+        images: ['/niblah-headshot.webp'],
       },
     },
     hero: {

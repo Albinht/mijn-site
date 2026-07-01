@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Asperen | Marketing Bureau Asperen - Niblah',
     description: 'SEO Specialist Asperen nodig? Hét marketing bureau voor Asperen. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Asperen.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Asperen | Marketing Bureau Asperen - Niblah',
     description: 'SEO Specialist Asperen nodig? Hét marketing bureau voor Asperen. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Asperen.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Ampsen | Marketing Bureau Ampsen - Niblah',
     description: 'SEO Specialist Ampsen nodig? Hét marketing bureau voor Ampsen. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Ampsen.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Ampsen | Marketing Bureau Ampsen - Niblah',
     description: 'SEO Specialist Ampsen nodig? Hét marketing bureau voor Ampsen. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Ampsen.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

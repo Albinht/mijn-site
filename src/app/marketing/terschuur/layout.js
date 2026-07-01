@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Terschuur | Marketing Bureau Terschuur - Niblah',
     description: 'SEO Specialist Terschuur nodig? Hét marketing bureau voor Terschuur. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Terschuur.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Terschuur | Marketing Bureau Terschuur - Niblah',
     description: 'SEO Specialist Terschuur nodig? Hét marketing bureau voor Terschuur. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Terschuur.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

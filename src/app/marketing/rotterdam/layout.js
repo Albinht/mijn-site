@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Rotterdam | Marketing Bureau Rotterdam - Niblah',
     description: 'SEO Specialist Rotterdam nodig? Hét marketing bureau voor Rotterdam. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit de havenstad.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Rotterdam | Marketing Bureau Rotterdam - Niblah',
     description: 'SEO Specialist Rotterdam nodig? Hét marketing bureau voor Rotterdam. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit de havenstad.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

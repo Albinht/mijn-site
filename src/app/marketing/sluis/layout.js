@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Sluis | Marketing Bureau Sluis - Niblah',
     description: 'SEO Specialist Sluis nodig? Hét marketing bureau voor Sluis. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Sluis.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Sluis | Marketing Bureau Sluis - Niblah',
     description: 'SEO Specialist Sluis nodig? Hét marketing bureau voor Sluis. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Sluis.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import avatarImage from '@/assets/avatar.png';
+import avatarImage from '@/assets/niblah-headshot.webp';
 
 function formatDate(value) {
   if (!value) return null;

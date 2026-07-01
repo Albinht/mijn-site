@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist De Glind | Marketing Bureau De Glind - Niblah',
     description: 'SEO Specialist De Glind nodig? Hét marketing bureau voor De Glind. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit De Glind.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist De Glind | Marketing Bureau De Glind - Niblah',
     description: 'SEO Specialist De Glind nodig? Hét marketing bureau voor De Glind. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit De Glind.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

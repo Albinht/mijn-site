@@ -5,7 +5,7 @@ export const metadata = {
   openGraph: {
     title: 'Logo Animator - Gratis Logo Animatie Tool',
     description: 'Maak je bedrijfslogo levend met professionele animaties. Gratis tool met instant preview en export opties.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 }
 

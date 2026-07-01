@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Alverna | Marketing Bureau Alverna - Niblah',
     description: 'SEO Specialist Alverna nodig? Hét marketing bureau voor Alverna. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Alverna.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Alverna | Marketing Bureau Alverna - Niblah',
     description: 'SEO Specialist Alverna nodig? Hét marketing bureau voor Alverna. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Alverna.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

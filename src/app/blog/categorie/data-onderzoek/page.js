@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import prisma from '@/lib/prisma'
-import avatarImage from '../../../../assets/avatar.png'
+import avatarImage from '../../../../assets/niblah-headshot.webp'
 
 export const metadata = {
   title: 'Data & Onderzoek - Marketing Studies | Niblah',

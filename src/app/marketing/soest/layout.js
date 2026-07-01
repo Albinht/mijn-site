@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Soest | Marketing Bureau Soest - Niblah',
     description: 'SEO Specialist Soest nodig? Hét marketing bureau voor Soest. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Soest.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Soest | Marketing Bureau Soest - Niblah',
     description: 'SEO Specialist Soest nodig? Hét marketing bureau voor Soest. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Soest.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

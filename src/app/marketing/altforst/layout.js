@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Altforst | Marketing Bureau Altforst - Niblah',
     description: 'SEO Specialist Altforst nodig? Hét marketing bureau voor Altforst. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Altforst.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Altforst | Marketing Bureau Altforst - Niblah',
     description: 'SEO Specialist Altforst nodig? Hét marketing bureau voor Altforst. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Altforst.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

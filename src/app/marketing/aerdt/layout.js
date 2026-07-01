@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Aerdt | Marketing Bureau Aerdt - Niblah',
     description: 'SEO Specialist Aerdt nodig? Hét marketing bureau voor Aerdt. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Aerdt.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Aerdt | Marketing Bureau Aerdt - Niblah',
     description: 'SEO Specialist Aerdt nodig? Hét marketing bureau voor Aerdt. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Aerdt.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

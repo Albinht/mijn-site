@@ -5,7 +5,7 @@ export const metadata = {
   openGraph: {
     title: 'Google Ads Services | Professional PPC Management',
     description: 'Professional Google Ads management services. Campaign setup, keyword targeting, ad optimization, and performance tracking.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 }
 

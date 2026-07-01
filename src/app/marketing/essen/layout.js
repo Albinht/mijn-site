@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Essen | Marketing Bureau Essen - Niblah',
     description: 'SEO Specialist Essen nodig? Hét marketing bureau voor Essen. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Essen.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Essen | Marketing Bureau Essen - Niblah',
     description: 'SEO Specialist Essen nodig? Hét marketing bureau voor Essen. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Essen.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

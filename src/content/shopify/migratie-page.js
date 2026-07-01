@@ -7,7 +7,7 @@ const copy = {
       openGraph: {
         title: 'Shopify Migratie | Naadloos Verhuizen | Niblah',
         description: 'Professionele Shopify migratie met SEO behoud en minimale downtime.',
-        images: ['/avatar.png'],
+        images: ['/niblah-headshot.webp'],
       },
     },
     hero: {

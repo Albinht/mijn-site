@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Assel | Marketing Bureau Assel - Niblah',
     description: 'SEO Specialist Assel nodig? Hét marketing bureau voor Assel. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Assel.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Assel | Marketing Bureau Assel - Niblah',
     description: 'SEO Specialist Assel nodig? Hét marketing bureau voor Assel. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Assel.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

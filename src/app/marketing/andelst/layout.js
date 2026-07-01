@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Andelst | Marketing Bureau Andelst - Niblah',
     description: 'SEO Specialist Andelst nodig? Hét marketing bureau voor Andelst. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Andelst.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Andelst | Marketing Bureau Andelst - Niblah',
     description: 'SEO Specialist Andelst nodig? Hét marketing bureau voor Andelst. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Andelst.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

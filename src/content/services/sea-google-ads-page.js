@@ -7,7 +7,7 @@ const copy = {
       openGraph: {
         title: 'Google Ads uitbesteden | Niblah',
         description: 'Winstgerichte Google Ads campagnes voor groei.',
-        images: ['/avatar.png'],
+        images: ['/niblah-headshot.webp'],
       },
     },
     hero: {

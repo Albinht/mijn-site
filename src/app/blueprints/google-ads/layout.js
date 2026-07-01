@@ -5,7 +5,7 @@ export const metadata = {
   openGraph: {
     title: 'Google Ads Blueprint Course | Master Google Ads',
     description: 'Learn Google Ads from scratch with my comprehensive blueprint. Master campaign setup, keyword targeting, ad creation, and optimization.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 }
 

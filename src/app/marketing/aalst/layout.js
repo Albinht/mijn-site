@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Aalst | Marketing Bureau Aalst - Niblah',
     description: 'SEO Specialist Aalst nodig? Hét marketing bureau voor Aalst. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Aalst.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Aalst | Marketing Bureau Aalst - Niblah',
     description: 'SEO Specialist Aalst nodig? Hét marketing bureau voor Aalst. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Aalst.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

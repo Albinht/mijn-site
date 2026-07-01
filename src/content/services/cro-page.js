@@ -9,7 +9,7 @@ const copy = {
         title: 'Conversieoptimalisatie (CRO) | Niblah',
         description:
           'Data-gedreven CRO die conversies, orderwaarde en customer lifetime value verhoogt.',
-        images: ['/avatar.png'],
+        images: ['/niblah-headshot.webp'],
       },
     },
     hero: {

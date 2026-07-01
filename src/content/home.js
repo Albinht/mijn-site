@@ -9,7 +9,7 @@ const copy = {
         title: 'Marketing bureau dat groei realiseert | Niblah',
         description:
           'Online marketing bureau voor ondernemers die willen groeien met SEO, Google Ads, content, websites en marketing automation.',
-        images: ['/avatar.png'],
+        images: ['/niblah-headshot.webp'],
       },
     },
     hero: {
@@ -62,7 +62,7 @@ const copy = {
       ],
     },
     caseStudy: {
-      image: '/avatar.avif',
+      image: '/niblah-headshot.webp',
       imageAlt: 'Niblah groeispecialist in gesprek over online marketing',
       quote:
         'Geen losse marketingacties, maar een groeisysteem waarin SEO, advertenties, websites en opvolging samen meer aanvragen opleveren.',

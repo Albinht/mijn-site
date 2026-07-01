@@ -5,7 +5,7 @@ export const metadata = {
   openGraph: {
     title: 'YouTube Channel | Digital Marketing Tips & Case Studies',
     description: 'Watch my latest digital marketing videos on YouTube. SEO tips, Google Ads tutorials, case studies, and marketing strategies.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 }
 

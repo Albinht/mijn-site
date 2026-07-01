@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Button from '../../components/Button'
 import ReviewSlider from '../../components/ReviewSlider'
-import avatarImage from '../../assets/avatar.png'
+import avatarImage from '../../assets/niblah-headshot.webp'
 import graphImage from '../../assets/graph.png'
 import { getWorkWithMeCopy } from '@/content/work-with-me'
 

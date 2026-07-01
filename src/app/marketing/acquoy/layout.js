@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Acquoy | Marketing Bureau Acquoy - Niblah',
     description: 'SEO Specialist Acquoy nodig? Hét marketing bureau voor Acquoy. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Acquoy.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Acquoy | Marketing Bureau Acquoy - Niblah',
     description: 'SEO Specialist Acquoy nodig? Hét marketing bureau voor Acquoy. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Acquoy.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

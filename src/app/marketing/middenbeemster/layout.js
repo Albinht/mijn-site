@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Middenbeemster | Marketing Bureau Middenbeemster - Niblah',
     description: 'SEO Specialist Middenbeemster nodig? Het lokale marketing bureau voor het hart van de Beemster. Meer klanten met lokale SEO, Google Ads en websites.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Middenbeemster | Marketing Bureau Middenbeemster - Niblah',
     description: 'SEO Specialist Middenbeemster nodig? Het lokale marketing bureau voor het hart van de Beemster. Meer klanten met lokale SEO, Google Ads en websites.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

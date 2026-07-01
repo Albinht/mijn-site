@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Utrecht | Marketing Bureau Utrecht - Niblah',
     description: 'SEO Specialist Utrecht nodig? Hét marketing bureau voor Utrecht. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Utrecht.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Utrecht | Marketing Bureau Utrecht - Niblah',
     description: 'SEO Specialist Utrecht nodig? Hét marketing bureau voor Utrecht. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Utrecht.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

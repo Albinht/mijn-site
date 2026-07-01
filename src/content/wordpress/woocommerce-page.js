@@ -7,7 +7,7 @@ const copy = {
       openGraph: {
         title: 'WooCommerce Webshop | Niblah',
         description: 'WooCommerce development voor schaalbare WordPress e-commerce.',
-        images: ['/avatar.png'],
+        images: ['/niblah-headshot.webp'],
       },
     },
     hero: {

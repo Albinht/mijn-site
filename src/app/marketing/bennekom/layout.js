@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Bennekom | Marketing Bureau Bennekom - Niblah',
     description: 'SEO Specialist Bennekom nodig? Hét marketing bureau voor Bennekom. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Bennekom.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Bennekom | Marketing Bureau Bennekom - Niblah',
     description: 'SEO Specialist Bennekom nodig? Hét marketing bureau voor Bennekom. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Bennekom.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

@@ -5,7 +5,7 @@ export const metadata = {
   openGraph: {
     title: 'SEO Services | Professional Search Engine Optimization',
     description: 'Professional SEO services to improve your website rankings. Keyword research, content optimization, technical SEO, and link building.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 }
 

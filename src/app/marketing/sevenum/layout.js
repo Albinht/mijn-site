@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Sevenum | Marketing Bureau Sevenum - Niblah',
     description: 'SEO Specialist Sevenum nodig? Hét marketing bureau voor Sevenum. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Sevenum.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Sevenum | Marketing Bureau Sevenum - Niblah',
     description: 'SEO Specialist Sevenum nodig? Hét marketing bureau voor Sevenum. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Sevenum.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

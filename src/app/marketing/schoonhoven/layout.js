@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Schoonhoven | Marketing Bureau Schoonhoven - Niblah',
     description: 'SEO Specialist Schoonhoven nodig? Hét marketing bureau voor Schoonhoven. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven in de Zilverstad.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Schoonhoven | Marketing Bureau Schoonhoven - Niblah',
     description: 'SEO Specialist Schoonhoven nodig? Hét marketing bureau voor Schoonhoven. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven in de Zilverstad.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

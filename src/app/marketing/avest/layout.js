@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Avest | Marketing Bureau Avest - Niblah',
     description: 'SEO Specialist Avest nodig? Hét marketing bureau voor Avest. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Avest.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Avest | Marketing Bureau Avest - Niblah',
     description: 'SEO Specialist Avest nodig? Hét marketing bureau voor Avest. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Avest.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Hobrede | Marketing Bureau Hobrede - Niblah',
     description: 'SEO Specialist Hobrede nodig? Het lokale marketing bureau voor het kleinste dorp. Meer klanten uit Hobrede en Waterland met SEO en Google Ads.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Hobrede | Marketing Bureau Hobrede - Niblah',
     description: 'SEO Specialist Hobrede nodig? Het lokale marketing bureau voor het kleinste dorp. Meer klanten uit Hobrede en Waterland met SEO en Google Ads.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

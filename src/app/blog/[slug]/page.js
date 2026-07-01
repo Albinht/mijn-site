@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import prisma from '@/lib/prisma'
-import avatarImage from '../../../assets/avatar.png'
+import avatarImage from '../../../assets/niblah-headshot.webp'
 import TableOfContents from './TableOfContents'
 import ArticleContent from './ArticleContent'
 

@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Harskamp | Marketing Bureau Harskamp - Niblah',
     description: 'SEO Specialist Harskamp nodig? Hét marketing bureau voor Harskamp. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Harskamp.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Harskamp | Marketing Bureau Harskamp - Niblah',
     description: 'SEO Specialist Harskamp nodig? Hét marketing bureau voor Harskamp. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Harskamp.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

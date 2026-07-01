@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Schoonebeek | Marketing Bureau Schoonebeek - Niblah',
     description: 'SEO Specialist Schoonebeek nodig? Hét marketing bureau voor Schoonebeek. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven in Drenthe.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Schoonebeek | Marketing Bureau Schoonebeek - Niblah',
     description: 'SEO Specialist Schoonebeek nodig? Hét marketing bureau voor Schoonebeek. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven in Drenthe.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

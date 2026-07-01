@@ -7,7 +7,7 @@ const copy = {
       openGraph: {
         title: 'Remarketing uitbesteden | Niblah',
         description: 'Gepersonaliseerde remarketing die converteert.',
-        images: ['/avatar.png'],
+        images: ['/niblah-headshot.webp'],
       },
     },
     hero: {

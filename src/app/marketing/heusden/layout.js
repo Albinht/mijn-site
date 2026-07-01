@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Heusden | Marketing Bureau Heusden - Niblah',
     description: 'SEO Specialist Heusden nodig? Hét marketing bureau voor Heusden. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit historisch Heusden.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Heusden | Marketing Bureau Heusden - Niblah',
     description: 'SEO Specialist Heusden nodig? Hét marketing bureau voor Heusden. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit historisch Heusden.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

@@ -7,7 +7,7 @@ const copy = {
       openGraph: {
         title: 'Technische SEO | Niblah',
         description: 'Technische SEO verbeteringen die rankings en conversies verhogen.',
-        images: ['/avatar.png'],
+        images: ['/niblah-headshot.webp'],
       },
     },
     hero: {

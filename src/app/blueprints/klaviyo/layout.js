@@ -5,7 +5,7 @@ export const metadata = {
   openGraph: {
     title: 'Klaviyo Blueprint Course | Master Email Marketing',
     description: 'Learn Klaviyo email marketing from scratch. Master email automation, segmentation, campaigns, and flows.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 }
 

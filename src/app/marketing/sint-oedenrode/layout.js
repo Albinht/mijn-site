@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Sint-Oedenrode | Marketing Bureau Sint-Oedenrode - Niblah',
     description: 'SEO Specialist Sint-Oedenrode nodig? Hét marketing bureau voor Sint-Oedenrode. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Sint-Oedenrode.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Sint-Oedenrode | Marketing Bureau Sint-Oedenrode - Niblah',
     description: 'SEO Specialist Sint-Oedenrode nodig? Hét marketing bureau voor Sint-Oedenrode. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Sint-Oedenrode.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

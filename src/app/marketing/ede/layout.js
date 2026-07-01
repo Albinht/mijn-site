@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Ede | Marketing Bureau Ede - Niblah',
     description: 'SEO Specialist Ede nodig? Hét marketing bureau voor Ede. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Ede.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Ede | Marketing Bureau Ede - Niblah',
     description: 'SEO Specialist Ede nodig? Hét marketing bureau voor Ede. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Ede.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 

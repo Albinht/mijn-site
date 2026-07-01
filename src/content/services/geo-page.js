@@ -9,7 +9,7 @@ const copy = {
         title: 'GEO - SEO voor AI | Niblah',
         description:
           'Word vindbaar in AI-zoekmachines met Generative Engine Optimization (GEO).',
-        images: ['/avatar.png'],
+        images: ['/niblah-headshot.webp'],
       },
     },
     hero: {

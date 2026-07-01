@@ -5,13 +5,13 @@ export const metadata = {
   openGraph: {
     title: 'SEO Specialist Harselaar | Marketing Bureau Harselaar - Niblah',
     description: 'SEO Specialist Harselaar nodig? Hét marketing bureau voor Harselaar. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Harselaar.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'SEO Specialist Harselaar | Marketing Bureau Harselaar - Niblah',
     description: 'SEO Specialist Harselaar nodig? Hét marketing bureau voor Harselaar. Krijg meer klanten met lokale SEO, Google Ads & professionele marketing voor bedrijven uit Harselaar.',
-    images: ['/avatar.png'],
+    images: ['/niblah-headshot.webp'],
   },
 };
 
