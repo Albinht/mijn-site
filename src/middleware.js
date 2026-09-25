@@ -28,6 +28,10 @@ function getTokenFromCookies(request) {
 export async function middleware(request) {
   const { pathname } = request.nextUrl;
 
+  if (process.env.NIBLAH_WORDPRESS_PROXY === '1') {
+    return NextResponse.next();
+  }
+
   if (pathname === '/youtube' || pathname.startsWith('/youtube/')) {
     const redirectUrl = request.nextUrl.clone();
     redirectUrl.pathname = pathname.replace(/^\/youtube/, '/yt');
