@@ -1,0 +1,9 @@
+wordpress/
+output/
+backups/
+.playwright-cli/
+coverage/
+*.zip
+node_modules/
+.next/
+.git/
