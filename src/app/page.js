@@ -1,8 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import HeroButton from '../components/HeroButton'
 import GoogleReviewBar from '../components/GoogleReviewBar'
 import { getHomeCopy } from '@/content/home'
-import { ArrowRightIcon, ArrowTopRightOnSquareIcon, CalendarDaysIcon, CheckCircleIcon } from '@heroicons/react/24/outline'
+import { ArrowRightIcon, CalendarDaysIcon, CheckCircleIcon } from '@heroicons/react/24/outline'
 
 export async function generateMetadata() {
   const copy = getHomeCopy()
@@ -176,316 +177,23 @@ function getAvailabilityQuarter() {
   return currentQuarter === 4 ? 1 : currentQuarter + 1
 }
 
-const heroNavLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/services/seo', label: 'SEO' },
-  { href: '/services', label: 'Diensten' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/contact', label: 'Contact' },
-]
-
-function HomeEditorialHero({ availabilityQuarter }) {
+function HeroGrowthImage({ className = '' }) {
   return (
-    <section className="relative isolate min-h-[100svh] overflow-hidden bg-[#050708] px-5 pb-5 pt-5 text-white md:px-8 lg:h-[100svh] lg:px-12">
-      <Image
-        src="/home-hero-bloom-v2.png"
-        alt=""
-        fill
-        priority
-        sizes="100vw"
-        className="absolute inset-0 -z-30 h-full w-full object-cover object-[66%_center] md:object-center"
+    <div
+      className={`overflow-hidden rounded-[1.35rem] border-2 border-[#331300]/70 bg-white shadow-[0_24px_80px_rgba(25,149,255,0.24),0_14px_56px_rgba(51,19,0,0.18)] ${className}`}
+    >
+      <img
+        src="/home-hero-growth.webp"
+        alt="Groeigrafiek voor Google, Meta, TikTok en Shopify marketing"
+        fetchPriority="high"
+        decoding="async"
+        className="h-full w-full object-contain p-4 md:p-5"
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-20 bg-[linear-gradient(90deg,rgba(5,7,8,0.98)_0%,rgba(5,7,8,0.94)_25%,rgba(5,7,8,0.68)_48%,rgba(5,7,8,0.16)_86%,rgba(5,7,8,0.08)_100%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_88%_16%,rgba(25,149,255,0.2),transparent_32%),radial-gradient(circle_at_12%_80%,rgba(51,19,0,0.12),transparent_34%)] mix-blend-multiply"
       />
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 -z-10 opacity-[0.22] [background-image:radial-gradient(rgba(255,255,255,0.7)_0.5px,transparent_0.6px)] [background-size:3px_3px]"
-      />
-
-      <header className="relative z-10 flex flex-col gap-5 lg:grid lg:grid-cols-[1fr_minmax(30rem,42rem)_1fr] lg:items-start">
-        <div className="flex items-start justify-between gap-4">
-          <Link href="/" className="inline-flex items-center">
-            <Image
-              src="/niblah-logo-black.png"
-              alt="Niblah"
-              width={120}
-              height={33}
-              className="h-9 w-auto brightness-0 invert"
-            />
-          </Link>
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center rounded-lg border border-white/18 px-4 py-2 text-xs font-semibold uppercase text-white md:hidden"
-          >
-            Contact
-          </Link>
-        </div>
-
-        <nav className="hidden md:block" aria-label="Hoofdnavigatie">
-          <p className="mb-4 text-xs font-semibold uppercase text-white/42">{'//'} Navigatie</p>
-          <ul className="flex flex-wrap items-center gap-x-5 gap-y-2 text-base font-black uppercase text-white/50">
-            {heroNavLinks.map((item, index) => (
-              <li key={item.href} className="flex items-center gap-5">
-                <Link
-                  href={item.href}
-                  className={index === 0 ? 'text-white transition-colors hover:text-[#FFE500]' : 'transition-colors hover:text-white'}
-                >
-                  {item.label}
-                </Link>
-                {index < heroNavLinks.length - 1 && (
-                  <span className="text-white/28" aria-hidden="true">/</span>
-                )}
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        <div className="hidden grid-cols-2 gap-10 justify-self-end text-right text-sm uppercase leading-relaxed text-white/52 lg:grid">
-          <div>
-            <p className="font-semibold text-white/42">{'//'} SEO studio</p>
-            <p className="mt-4 text-lg text-white/70">Actief - kwartaal {availabilityQuarter}</p>
-          </div>
-          <div>
-            <p className="font-semibold text-white/42">{'//'} Nederland</p>
-            <p className="mt-4 text-lg text-white/70">Strategie + uitvoering</p>
-          </div>
-        </div>
-      </header>
-
-      <div className="relative z-10 grid min-h-[calc(100svh-6rem)] content-end gap-8 pt-24 md:pt-32 lg:min-h-[calc(100svh-8rem)] lg:grid-cols-[25rem_minmax(30rem,46rem)_1fr] lg:items-end lg:gap-9 lg:pt-20">
-        <aside className="order-2 max-w-md lg:order-1 lg:pb-1">
-          <div className="mb-7">
-            <div className="mb-3 flex items-center gap-2 text-sm font-black uppercase text-white/68">
-              <span className="text-xl leading-none text-[#FFE500]" aria-hidden="true">★</span>
-              Niblah proof
-            </div>
-            <p className="text-2xl font-black text-white">Tot 300% meer</p>
-            <p className="mt-1 text-sm font-semibold text-white/64">organisch verkeer bij klanten</p>
-            <div className="mt-4 flex gap-1.5" aria-hidden="true">
-              {[...Array(5)].map((_, index) => (
-                <span key={index} className="flex h-5 w-5 items-center justify-center bg-[#1995FF] text-[10px] font-black text-white">
-                  ★
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className="flex items-center gap-4 bg-white/10 p-3 backdrop-blur-sm lg:max-w-[23.5rem]">
-            <div className="flex -space-x-2">
-              {['/niblah-headshot.webp', '/avatar.avif'].map((src) => (
-                <span key={src} className="relative h-11 w-11 overflow-hidden bg-white/10">
-                  <Image src={src} alt="" fill sizes="48px" className="object-cover" />
-                </span>
-              ))}
-              <span className="flex h-11 w-11 items-center justify-center bg-[#FFE500] text-sm font-black text-[#331300]">
-                N
-              </span>
-            </div>
-            <p className="text-xs font-black uppercase leading-snug text-white/58">
-              Klein team, direct contact en klaar om aan je SEO-systeem te werken.
-            </p>
-          </div>
-        </aside>
-
-        <div className="order-1 max-w-3xl lg:order-2 lg:pb-0">
-          <h1
-            className="max-w-3xl text-4xl font-black uppercase leading-[0.98] text-white/58 sm:text-5xl md:text-6xl lg:text-[3.65rem]"
-            style={{ fontFamily: 'var(--font-poppins), sans-serif' }}
-          >
-            SEO specialist die <span className="text-white">groei</span> niet aan toeval overlaat.
-          </h1>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/56 md:text-lg">
-            Technische SEO, content, autoriteit en conversie in een systeem dat meer zichtbaarheid omzet in betere aanvragen.
-          </p>
-          <Link
-            href="/contact"
-            className="mt-7 grid max-w-[44rem] grid-cols-[4.5rem_1fr] overflow-hidden bg-[#FFE500] text-[#331300] shadow-[0_18px_60px_rgba(255,229,0,0.16)] transition-transform duration-200 hover:translate-y-0.5 md:grid-cols-[5.25rem_1fr]"
-            aria-label="Plan gratis groeiscan"
-          >
-            <span className="flex min-h-16 items-center justify-center border-r-2 border-[#331300] bg-[#FFE500]">
-              <ArrowRightIcon className="h-6 w-6" aria-hidden="true" />
-            </span>
-            <span className="flex min-h-16 items-center justify-center px-5 text-center text-base font-black uppercase md:text-lg">
-              Plan gratis groeiscan
-            </span>
-          </Link>
-        </div>
-
-        <aside className="order-3 hidden justify-self-end self-end pb-1 text-right text-xs font-semibold uppercase text-white/44 xl:block">
-          Scroll down
-        </aside>
-      </div>
-    </section>
-  )
-}
-
-function FeaturedProjectsSection({ projects }) {
-  return (
-    <section id="projecten" aria-labelledby="featured-projects-title" className="bg-[#F7F8F6] px-6 py-16 md:py-24">
-      <div className="w-full">
-        <div className="mb-10 grid gap-6 lg:grid-cols-[0.78fr_1fr] lg:items-end">
-          <div>
-            <div className="mb-4 inline-flex items-center gap-2 text-sm font-semibold text-[#1995FF]">
-              <span className="h-2 w-2 rounded-full bg-[#1995FF]" />
-              {projects.eyebrow}
-            </div>
-            <h2
-              id="featured-projects-title"
-              className="max-w-4xl text-3xl font-bold leading-tight text-gray-950 md:text-5xl"
-              style={{ fontFamily: 'var(--font-poppins), sans-serif' }}
-            >
-              {projects.heading}
-            </h2>
-          </div>
-          <p className="max-w-3xl text-base leading-relaxed text-gray-700 md:text-lg lg:justify-self-end">
-            {projects.description}
-          </p>
-        </div>
-
-        <div className="space-y-8">
-          {projects.featured.map((project, index) => (
-            <article
-              key={project.url}
-              className="grid overflow-hidden rounded-xl border border-[#331300]/10 bg-white shadow-[0_18px_54px_rgba(51,19,0,0.08)] lg:grid-cols-2"
-            >
-              <a
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`group relative block aspect-[16/11] min-h-72 bg-[#331300]/5 focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#1995FF] lg:aspect-auto ${index % 2 === 1 ? 'lg:order-2' : ''}`}
-                aria-label={`${projects.visitLabel}: ${project.title}`}
-              >
-                <Image
-                  src={project.image}
-                  alt={project.imageAlt}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover object-left-top transition-transform duration-500 group-hover:scale-[1.015]"
-                />
-                <span className="absolute bottom-4 left-4 rounded-md bg-white px-3 py-2 text-xs font-bold text-[#331300] shadow-sm">
-                  Bekijk de website <ArrowTopRightOnSquareIcon className="ml-1 inline h-4 w-4" aria-hidden="true" />
-                </span>
-              </a>
-
-              <div className="flex min-w-0 flex-col p-6 md:p-9 lg:p-10">
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#126AAE]">
-                  Case {String(index + 1).padStart(2, '0')} / {project.type} / {project.location}
-                </p>
-                <h3
-                  className="mt-4 text-3xl font-bold leading-tight text-gray-950 md:text-4xl"
-                  style={{ fontFamily: 'var(--font-poppins), sans-serif' }}
-                >
-                  {project.title}
-                </h3>
-                <dl className="mt-7 space-y-5 text-sm leading-relaxed text-gray-700 md:text-[15px]">
-                  <div>
-                    <dt className="font-bold text-gray-950">De vraag</dt>
-                    <dd className="mt-1">{project.question}</dd>
-                  </div>
-                  <div>
-                    <dt className="font-bold text-gray-950">Onze uitwerking</dt>
-                    <dd className="mt-1">{project.approach}</dd>
-                  </div>
-                  <div>
-                    <dt className="font-bold text-gray-950">Wat er nu staat</dt>
-                    <dd className="mt-1">{project.result}</dd>
-                  </div>
-                </dl>
-                <ul className="mt-7 flex flex-wrap gap-2" aria-label="Projectonderdelen">
-                  {project.highlights.map((highlight) => (
-                    <li key={highlight} className="rounded-full bg-[#1995FF]/10 px-3 py-1.5 text-xs font-semibold text-[#126AAE]">
-                      {highlight}
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-8 inline-flex w-fit items-center gap-2 font-semibold text-[#331300] underline decoration-[#1995FF] decoration-2 underline-offset-4 hover:text-[#126AAE] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1995FF]"
-                >
-                  {projects.visitLabel}: {project.title}
-                  <ArrowTopRightOnSquareIcon className="h-4 w-4" aria-hidden="true" />
-                </a>
-              </div>
-            </article>
-          ))}
-        </div>
-
-        <h3 className="mb-6 mt-14 text-2xl font-bold text-gray-950 md:text-3xl" style={{ fontFamily: 'var(--font-poppins), sans-serif' }}>
-          {projects.moreHeading}
-        </h3>
-        <div className="grid gap-6 lg:grid-cols-3">
-          {projects.cards.map((project) => (
-            <article
-              key={project.url}
-              className="flex min-w-0 flex-col overflow-hidden rounded-lg border border-[#331300]/12 bg-white shadow-[0_18px_54px_rgba(51,19,0,0.08)]"
-            >
-              <a
-                href={project.url}
-                target="_blank"
-                rel="noreferrer"
-                className="group relative block aspect-[36/25] overflow-hidden bg-[#331300]/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1995FF] focus-visible:ring-offset-2"
-                aria-label={`${projects.visitLabel}: ${project.title}`}
-              >
-                <Image
-                  src={project.image}
-                  alt={project.imageAlt}
-                  fill
-                  sizes="(max-width: 1024px) calc(100vw - 3rem), 33vw"
-                  className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.025]"
-                />
-                <span className="absolute right-4 top-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-white/94 text-[#331300] shadow-[0_10px_24px_rgba(0,0,0,0.12)]">
-                  <ArrowTopRightOnSquareIcon className="h-5 w-5" aria-hidden="true" />
-                </span>
-              </a>
-
-              <div className="flex flex-1 flex-col p-5 md:p-6">
-                <div className="mb-4 flex flex-wrap items-center gap-2">
-                  <span className="rounded-full bg-[#1995FF]/10 px-3 py-1 text-xs font-semibold text-[#126AAE]">
-                    {project.type}
-                  </span>
-                  <span className="text-xs font-semibold uppercase text-[#331300]/42">
-                    Live project
-                  </span>
-                </div>
-
-                <h3
-                  className="text-2xl font-bold leading-tight text-gray-950"
-                  style={{ fontFamily: 'var(--font-poppins), sans-serif' }}
-                >
-                  {project.title}
-                </h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-gray-700 md:text-[15px]">
-                  {project.description}
-                </p>
-
-                <ul className="mt-5 grid gap-2 border-t border-[#331300]/10 pt-5">
-                  {project.services.map((service) => (
-                    <li key={`${project.title}-${service}`} className="flex items-center gap-2 text-sm text-gray-800">
-                      <CheckCircleIcon className="h-4 w-4 shrink-0 text-[#1995FF]" aria-hidden="true" />
-                      <span>{service}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-6 inline-flex w-fit items-center gap-2 text-sm font-semibold text-[#331300] transition-colors hover:text-[#1995FF]"
-                >
-                  <span>{projects.visitLabel}</span>
-                  <ArrowRightIcon className="h-4 w-4" aria-hidden="true" />
-                </a>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
+    </div>
   )
 }
 
@@ -495,7 +203,44 @@ export default async function Home() {
 
   return (
     <main className="min-h-screen">
-      <HomeEditorialHero availabilityQuarter={availabilityQuarter} />
+      {/* Hero Section */}
+      <section className="relative isolate overflow-hidden bg-white px-6 pb-10 pt-10 md:py-28 lg:py-32">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_right,rgba(16,24,40,0.07)_1px,transparent_1px),linear-gradient(to_bottom,rgba(16,24,40,0.07)_1px,transparent_1px)] bg-[size:34px_34px] opacity-70 md:inset-y-0 md:left-auto md:right-0 md:w-[58%] md:[mask-image:linear-gradient(to_left,black_54%,transparent)]"
+        />
+        <div className="relative w-full">
+          <div className="mx-auto max-w-3xl text-center md:mx-0 md:text-left">
+            <div className="relative left-1/2 mb-5 flex w-screen -translate-x-1/2 flex-nowrap items-center justify-center gap-2 whitespace-nowrap text-[13.6px] font-semibold text-gray-800 [text-wrap:nowrap] md:static md:inline-flex md:w-auto md:translate-x-0 md:justify-start">
+              <span
+                aria-hidden="true"
+                className="h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-500 shadow-[0_0_18px_rgba(16,185,129,0.55)] motion-safe:animate-pulse"
+              />
+              <span className="shrink-0 text-center md:text-left">{copy.hero.availabilityPrefix} Kwartaal {availabilityQuarter}</span>
+            </div>
+            <h1
+              className="mx-auto mb-6 max-w-3xl text-[2.55rem] font-bold leading-[0.98] text-gray-950 md:mx-0 md:text-[3.2rem] lg:text-[3.85rem]"
+              style={{
+                fontFamily: 'var(--font-poppins), sans-serif',
+                fontSize: 'clamp(1.9rem, 7.85vw, 2.25rem)',
+                lineHeight: '0.98',
+              }}
+            >
+              {copy.hero.titleLine1}<br />{copy.hero.titleLine2}
+            </h1>
+            <p
+              className="mx-auto mb-8 max-w-2xl text-[15.3px] leading-relaxed text-gray-700 md:mx-0 md:text-[17px]"
+              style={{ fontSize: 'clamp(0.85rem, 3.5vw, 1rem)' }}
+            >
+              {copy.hero.subtitle}
+            </p>
+            <HeroButton href="/contact">
+              {copy.hero.cta}
+            </HeroButton>
+          </div>
+          <HeroGrowthImage className="relative mx-auto mt-14 h-[22rem] w-[calc(100vw-3rem)] max-w-[40rem] md:hidden lg:absolute lg:right-14 lg:top-0 lg:z-[-10] lg:mx-0 lg:mt-0 lg:block lg:h-[26rem] lg:w-[28rem] lg:max-w-none xl:right-24" />
+        </div>
+      </section>
 
       {/* 4-Column Feature Section */}
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
@@ -796,8 +541,6 @@ export default async function Home() {
           </div>
         </div>
       </section>
-
-      <FeaturedProjectsSection projects={copy.projects} />
 
       {/* Stats Section - Dark */}
       <section className="bg-[#331300] py-16 md:py-24 px-6">
